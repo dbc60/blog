@@ -3,7 +3,6 @@
 # website: https://gohugo.io
 
 # generated files by hugo
-/public/
 /resources/_gen/
 
 ## OS Files
