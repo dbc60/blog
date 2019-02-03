@@ -1,0 +1,5 @@
+title = "Dream Sketch Code"
+baseURL = "http://douglascuthbertson.com/"
+languageCode = "en-us"
+theme = "academic"
+pluralizeListTitles = false

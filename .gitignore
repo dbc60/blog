@@ -1,2 +1,14 @@
-public/
-.idea/
+### Hugo ###
+# gitginore template for Hugo projects
+# website: https://gohugo.io
+
+# generated files by hugo
+/public/
+/resources/_gen/
+
+## OS Files
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
