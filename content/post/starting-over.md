@@ -49,36 +49,63 @@ for more details.
 $$\begin{array}{l c l}\hline \text{Command} & \text{Symbol}  & \text{Package} \\\ \hline & & \\\ \text{\square} & \square & \text{amssymb} \\\ \text{\blacksquare} & \blacksquare   & \text{amssymb} \\\ \text{\Box} & \Box & \text{amssymb} \\\ \text{\boxminus} & \boxminus & \text{amssymb} \\\ \text{\boxplus} & \boxplus & \text{amssymb} \\\ \text{\boxtimes} & \boxtimes & \text{amssymb} \\\ \hline \end{array}$$
 
 And an equation with an underbrace:
+
+`$${\bf I_n} = \underbrace{\left(\sqrt{2}+\sqrt{3}\right)^2 \}$$`
+
 $${\bf I_n} = \underbrace{\left(\sqrt{2}+\sqrt{3}\right)^2 \}$$
+
+`\\[{\bf I_n} = \underbrace{\left(\sqrt{2}+\sqrt{3}\right)^2 \}\\]`
 
 \\[{\bf I_n} = \underbrace{\left(\sqrt{2}+\sqrt{3}\right)^2 \}\\]
 
 An empty array with an underbrace and a right brace:
+
 \\[{\bf I_n} = \underbrace{\left.\left(\vphantom{\begin{array}{c}1\\\1\\\1\\\1\\\1\end{array}}\right) \right\\} }\\]
 
 An array:
+
 \\[{\bf I_n} = \begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array}\\]
 
 An array wrapped in parentheses:
+
 \\[{\bf I_n} = \left(\begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array}\right)\\]
 
 A vphantom array wrapped in parentheses:
+
 \\[{\bf I_n} = \left(\vphantom{\begin{array}{c}1\\\1\\\1\\\1\\\1\end{array}} \begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array}\right)\\]
 
 A vphantom array followed by an underbraced array:
-\\[{\bf I_n} = \left(\vphantom{\begin{array}{c}1\\\1\\\1\\\1\\\1\end{array}} \underbrace{ \begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array} } \right)\\]
+
+\\[{\bf I_n} = \left(\vphantom{\begin{array}{c}1\\\1\\\1\\\1\\\1\end{array}} \underbrace{ \begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array} } \right)\\]<br>
 
 A vphantom array followed by an underbraced array with a right brace (have to add both `\left.` and `\right\\}`):
-\\[{\bf I_n} = \left.\left(\vphantom{\begin{array}{c}1\\\1\\\1\\\1\\\1\end{array}} \underbrace{ \begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array} } \right) \right\\}\\]
+
+\\[{\bf I_n} = \left.\left(\vphantom{\begin{array}{c}1\\\1\\\1\\\1\\\1\end{array}} \underbrace{ \begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array} } \right) \right\\}\\]<br>
 
 Add row label:
-\\[{\bf I_n} = \left.\left(\vphantom{\begin{array}{c}1\\\1\\\1\\\1\\\1\end{array}} \underbrace{ \begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array} } \right) \right\\}\,n\text{ rows}\\]
+
+\\[{\bf I_n} = \left.\left(\vphantom{\begin{array}{c}1\\\1\\\1\\\1\\\1\end{array}} \underbrace{ \begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array} } \right) \right\\}\,n\text{ rows}\\]<br>
 
 Smash inner matrix:
-\\[{\bf I_n} = \left.\left(\vphantom{\begin{array}{c}1\\\1\\\1\\\1\\\1\end{array}} \smash{\underbrace{ \begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array} } } \right) \right\\}\,n\text{ rows}\\]
 
-Add a column label:
-\\[{\bf I_n} = \left.\left(\vphantom{\begin{array}{c}1\\\1\\\1\\\1\\\1\end{array}} \smash{\underbrace{ \begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array}}\_{n\text{ columns}}} \right) \right\\}\,n\text{ rows} \\]
-<br>
+\\[{\bf I_n} = \left.\left(\vphantom{\begin{array}{c}1\\\1\\\1\\\1\\\1\end{array}} \smash{\underbrace{ \begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array} } } \right) \right\\}\,n\text{ rows}\\]<br>
 
-The column label was the hardest part. I couldn't just add `_{n\text{ columns}}`. I had to replace the `$$` wrappers with `\\[` and `\\]` and escape the underscore (`\_{n\text{ columns}}`).
+Finally, put in a column label
+
+\\[{\bf I_n} = \left.\left(\vphantom{\begin{array}{c}1\\\1\\\1\\\1\\\1\end{array}} \smash{\underbrace{ \begin{array}{ccccc} 1&0&0&\cdots &0\\\ 0&1&0&\cdots &0\\\ 0&0&1&\cdots &0\\\ \vdots&&&\ddots&\\\ 0&0&0&\cdots &1 \end{array}}\_{n\text{ columns}}} \right) \right\\}\,n\text{ rows}\\]<br>
+
+The column label was the hardest part. I couldn't just add `_{n\text{ columns}}`. I had to replace the `$$` wrappers with `\\[` and `\\]` and escape the underscore (`\_{n\text{ columns}}`). Also, a `<br>` had to be added so this paragraph wouldn't overwrite "$n\ \text{columns}$". For whatever reason, there's not enough space between the end of an equation and the first line of plain text.
+
+The rules of writing \\(\LaTeX\\) with the current markdown parser, and whatever settings are used in this theme seem to be:
+
+* display math: wrap code in `\\[`, `\\]` pairs
+* inline math: wrap code in `\\(`, `\\)` or `$`,`$` pairs (the latter might have issues with subscripts)
+* escape end-of-line (`\\`) in arrays with one backslash (`\\\`)
+* escape the underscore for a subscript with a backslash (`_` becomes `\_`)
+* The escaped braces, such as `\left\{` and `\right\}` used when they have to be sized dynamically, have to be escaped with an additional backslash: `\left\\{` and `\right\\}`
+
+Here are a pair of (dynamically-sized) braces \\(\left\\{\right\\}\\) inlined with this sentence. Right clicking on it and selecting "Show Math As" -> "TeX Commands" from the pop-up menu will show `\left\{\right\}`, but the actual text is `\\(\left\\{\right\\}\\)`.
+
+# Reference
+
+* [A Survey of Math Syntax in Markdown](https://github.com/cben/mathdown/wiki/math-in-markdown)
