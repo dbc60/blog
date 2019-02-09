@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+{{ $section := .Site.GetPage "section" .Section }}
+<article>
+
+  <header>
+    <p>
+      {{/*
+        CurrentSection allows us to use the section title instead of inferring from the folder.
+        https://gohugo.io/variables/page/#section-variables-and-methods
+      */}}
+      {{with .CurrentSection.Title }}{{. | upper }}{{end}}
+    </p>
+    <h1>
+      {{- .Title -}}
+      <br>
+      {{ partial "date-and-tags.html" . }}
+    </h1>
+</header>
+
+  <section>
+    {{- .Content -}}
+    <div>
+      {{ template "_internal/disqus.html" . }}
+    </div>
+  </section>
+
+{{ end }}

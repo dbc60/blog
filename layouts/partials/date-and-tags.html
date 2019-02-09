@@ -1,0 +1,25 @@
+{{ $dateTime := .PublishDate.Format "2006-01-02" }}
+{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+
+{{/*
+    Show "reading time" and "word count" but only if one of the following are true:
+    1) A global config `params` value is set `show_reading_time = true`
+    2) A section front matter value is set `show_reading_time = true`
+    3) A page front matter value is set `show_reading_time = true`
+  */}}
+  <span> <i data-feather="calendar"></i> <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time> </span>
+  <span > - {{ .ReadingTime}} min read</span>
+  <span>
+    - {{ .WordCount }} words
+  </span>
+  {{ with .Params.tags }}
+    <br>
+    <i data-feather="tag"></i>
+    {{ range . }}
+    {{ $href := print (absURL "tags/") (urlize .) }}
+    <a class="btn btn-sm btn-outline-dark tag-btn" href="{{ $href }}">{{ . }}</a>
+    {{ end }}
+  {{ end }}
+
+<!--  <span class="f6 mv4 dib tracked"> - {{ .ReadingTime}} minutes read</span>
+  <span class="f6 mv4 dib tracked"> - {{ .WordCount}} words</span> -->

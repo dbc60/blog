@@ -1,5 +1,5 @@
 +++
-title = "Mathematical Notation"
+title = "Math Notes"
 date = 2019-04-08T10:32:30-05:00
 draft = true
 math = true
@@ -9,6 +9,19 @@ math = true
 tags = ["math"]
 categories = ["math"]
 +++
+
+## Using MathJax in a Web Page
+
+The first thing that must be done is to include the following script somewhere before the `</body>` tag:
+
+```html
+<!-- Load MathJax -->
+<script async type="text/javascript"
+  src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
+</script>
+```
+
+## Mathematical Notation
 
 The phrase "There exists an or $x$, element of $X$, such that
 predicate $P(x)$ holds (i.e., is true)" can be written in a few ways.

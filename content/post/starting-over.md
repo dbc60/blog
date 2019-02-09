@@ -7,16 +7,6 @@ draft = true
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
 tags = []
 categories = []
-
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-[image]
-  # Caption (optional)
-  caption = ""
-
-  # Focal point (optional)
-  # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
-  focal_point = ""
 +++
 
 A little over three years ago I started a blog on this site with hopes and dreams of writing about things that interested me. At the time, I had little focus, but I thought software development, design patterns, and other topics might be fun. What really happened is that I got bogged down configuring [Jekyll](https://jekyllrb.com/), [Compass](http://compass-style.org/), and playing with SCSS to make the site look nice.
