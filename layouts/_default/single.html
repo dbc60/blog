@@ -1,8 +1,6 @@
 {{ define "main" }}
 
 {{ $section := .Site.GetPage "section" .Section }}
-<article>
-
   <header>
     <p>
       {{/*
@@ -11,11 +9,8 @@
       */}}
       {{with .CurrentSection.Title }}{{. | upper }}{{end}}
     </p>
-    <h1>
-      {{- .Title -}}
-      <br>
-      {{ partial "date-and-tags.html" . }}
-    </h1>
+    <h1>{{- .Title -}}</h1>
+    <p>{{ partial "date-and-tags.html" . }}</p>
 </header>
 
   <section>
