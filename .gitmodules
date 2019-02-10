@@ -3,5 +3,5 @@
 	url = git@github.com:dbc60/dbc60.github.io.git
 	branch = master
 [submodule "themes/vanilla-bootstrap-hugo-theme"]
-	path = themes/vanilla-bootstrap-hugo-theme
+	path = themes/vanilla
 	url = https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme.git

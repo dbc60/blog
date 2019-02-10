@@ -1,0 +1,15 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {{ .Hugo.Generator }}
+  <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | absURL }}">
+  {{ $title := print .Title " | " .Site.Title }}
+  {{ if .IsHome }}
+    {{ $title = .Site.Title }}
+  {{ end }}
+  <title>{{ $title }}</title>
+  {{ partial "style.html" . }}
+
+  <!-- Add fontawesome icons and things -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+</head>

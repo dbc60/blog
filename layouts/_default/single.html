@@ -1,25 +1,28 @@
 {{ define "main" }}
 
-{{ $section := .Site.GetPage "section" .Section }}
-  <header>
-    <p>
-      {{/*
-        CurrentSection allows us to use the section title instead of inferring from the folder.
-        https://gohugo.io/variables/page/#section-variables-and-methods
-      */}}
-      {{with .CurrentSection.Title }}{{. | upper }}{{end}}
-    </p>
+<main>
+  <!-- default list template -->
+  <article>
+    <header id="home" class="jumbotron text-center">
+      <h1>{{ .Site.Title }}</h1>
+        <p class="font-125">{{ .Site.Params.homeText | markdownify }} </p>
+    </header>
+    <div class="links">
+      {{- range .Site.Params.links -}}
+        <a href="{{ .url }}" title="{{ .title }}">
+          <span class="{{ .iconset | default "fab" }} fa-{{ .icon }}"></span>
+        </a>
+      {{- end -}}
+    </div>
     <h1>{{- .Title -}}</h1>
     <p>{{ partial "date-and-tags.html" . }}</p>
-</header>
-
-  <section>
-    {{- .Content -}}
+      {{- .Content -}}
     {{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
     <section id="comments">
       {{ template "_internal/disqus.html" . }}
     </section>
     {{ end }}
-  </section>
+  </article>
+</main>
 
 {{ end }}

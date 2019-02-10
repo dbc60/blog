@@ -1,6 +1,7 @@
 +++
-date = 2016-04-20T00:00:00
 title = "About"
+date = 2016-04-20T00:00:00
+disable_comments = true
 +++
 
 I am Doug Cuthbertson, a professional programmer and software engineer living in Massachusetts. I develop applications and kernel drivers on Microsoft Windows in C and C++.
@@ -9,7 +10,7 @@ I tend to read too much about software development and not write enough code, so
 
 See my [Now](/now/) page for what I've been up to lately.
 
-Besides my professional work, I'm a husband and father to two fine young adults. My daughter graduated from Hofstra University in May 2013, and my son is attending his freshman year at Bridgewater State University.
+Besides my professional work, I'm a husband and father to two fine young adults.
 
 Among other things, I
 - study, practice and teach Hawaiian Shaolin Kempo at [Dragon Phoenix Martial Arts and Fitness](http://dpkempo.com).

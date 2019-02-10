@@ -2,40 +2,13 @@ title = "Dream Sketch Code"
 baseurl = "http://douglascuthbertson.com/"
 languageCode = "en-us"
 disqusShortname = "cuthbertson"
-Paginate = 10
 enableRobotsTXT = true
 # Name of Academic theme folder in `themes/`.
 # theme = "academic"
-theme = "vanilla-bootstrap-hugo-theme"
-[params]
-  favicon = ""
-  description = "The last theme you'll ever need. Maybe."
-  facebook = ""
-  twitter = "https://twitter.com/DougCuthbertson"
-  instagram = "https://www.instagram.com/dbc60/"
-  youtube = "https://www.youtube.com/channel/UCjYq4zK5Pc2vxwpCWUotPxg?view_as=subscriber"
-  github = "https://github.com/dbc60"
-  gitlab = ""
-  linkedin = "https://www.linkedin.com/in/douglas-cuthbertson-0487001/"
-  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
-  background_color_class = "bg-dark-green"
-  featured_image = "/images/gohugo-default-sample-hero-image.jpg"
-  recent_posts_number = 10
-  includeBootstrapJs = false
-  showActiveNav = true
-  containerMaxWidth = "700px"
-  dateFormat = "Monday Jan 2, 2006"
-  homeText = "An exploration of software development"
-  footerText = "Made with [Hugo](https://gohugo.io/) & [Vanilla](https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme)"
-  hideFooter = false
-
+theme = "vanilla"
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
-
-# Enter a copyright notice to display in the site footer.
-# To display a copyright symbol, type `&copy;`.
-copyright = "&copy; Douglas Cuthbertson 2015"
 
 # Uncomment below to enable syntax highlighting
 # pygmentsCodefences = true

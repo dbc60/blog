@@ -1,8 +1,7 @@
-
 {{ define "main" }}
 
 <main>
-    <!-- home page template -->
+    <!-- default list template -->
     <article>
       <header id="home" class="jumbotron text-center">
         <h1>{{ .Site.Title }}</h1>
@@ -17,12 +16,14 @@
           </a>
         {{- end -}}
       </div>
-      <!-- Ranges through content/posts/*.md -->
-      {{ range first (.Site.Params.Paginate | default 5) (where .Pages "Section" "post") }}
+      <h1>{{ .Title }}</h1>
+
+      <!-- Ranges through content/notes/*.md -->
+      {{ range first (.Site.Params.Paginate | default 5) .Pages.ByPublishDate.Reverse }}
       <p>
-        <h2><a class="font-125" href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <a class="font-125" href="{{ .Permalink }}">{{ .Title }}</a>
+        <br>
         {{ partial "date-and-tags.html" . }}
-        {{ .Render "summary" }}
       </p>
       {{ end }}
     </article>

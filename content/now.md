@@ -1,8 +1,8 @@
----
-layout: page
-title: What I'm Doing Now
-permalink: /now/
----
++++
+title = "What I'm Doing Now"
+date = 2019-02-10
+disable_comments = true
++++
 
 I'm working for [Threat Stack, Inc](https://www.threatstack.com/). in Boston Massachusetts. I'm on the Windows Agent Team, and am having a great time working there. My coworkers are very creative and thoughtful when it comes to digital security.
 
@@ -12,4 +12,4 @@ Of late, I've moved on to [Hugo](https://gohugo.io/) for blogging and maybe I'll
 
 This page is inspired by Derek Siver's [/now page movement](https://sivers.org/nowff). You can see [lots of sites](http://nownownow.com/) which have `/now` pages.
 
-*Last Updated: February 8, 2019*
+_Last Updated: February 10, 2019_
