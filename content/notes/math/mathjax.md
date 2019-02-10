@@ -12,9 +12,19 @@ categories = ["mathjax"]
 
 ## Using MathJax in a Web Page
 
-The first thing that must be done is to include the following script somewhere before the `</body>` tag:
+The first thing that must be done is to include a couple of scripts somewhere before the `</body>` tag. The first one is optional. It will configure MathJax to automatically number equations on a page. The second script loads MathJax from Cloudflare. If the first is included, it must precede the second.
 
 ```html
+<!-- Configure MathJax for automatic equation numbering. See
+   http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
+   for details
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
 <!-- Load MathJax -->
 <script async type="text/javascript"
   src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
@@ -23,7 +33,7 @@ The first thing that must be done is to include the following script somewhere b
 
 ## MathJax Caveats
 
-With any luck, you can see the \\(\LaTeX\\) commands for any of the examples below you by right clicking on it and selecting "Show Math As" -> "TeX Commands" from the pop-up menu. The original markdown code required a lot of extra backslashes to escape the ones in the \\(\LaTeX\\) code. The general rules are:
+With any luck, you can see the \\(\LaTeX\\) commands for any of the examples below you by right clicking on it and selecting "Show Math As" -> "\\(\TeX\\) Commands" from the pop-up menu. The original markdown code required a lot of extra backslashes to escape the ones in the \\(\LaTeX\\) code. The general rules are:
 
 * display math: wrap code in `\\[`, `\\]` pairs
 * inline math: wrap code in `\\(`, `\\)` pairs
@@ -49,7 +59,6 @@ commands](http://docs.mathjax.org/en/latest/tex.html#supported-latex-commands)
 or [TeX commands available in MathJax](http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm)
 for more details.
 
-
 \\[
   \begin{array}{l c l}
     \hline
@@ -67,11 +76,17 @@ for more details.
 
 And an equation with an underbrace:
 
-\\[{\bf I_n} = \underbrace{\left(\sqrt{2}+\sqrt{3}\right)^2 \}\\]
+\\[
+  \begin{equation}
+  {\bf I_n} = \underbrace{\left(\sqrt{2}+\sqrt{3}\right)^2 \}
+  \end{equation}
+\\]
 
 An empty array surounded by dynamically-size parentheses, an underbrace, and a right brace:
 
-\\[{\bf I_n} =
+\\[
+  \begin{equation}
+  {\bf I_n} =
   \underbrace{
     \left.
     \left(
@@ -80,11 +95,13 @@ An empty array surounded by dynamically-size parentheses, an underbrace, and a r
     \right)
     \right\\}
   }
+  \end{equation}
 \\]
 
-An array:
+Here's a simple array.
 
 \\[
+  \begin{equation}
   {\bf I_n} =
   \begin{array}{ccccc}
     1               &      0 &      0 & \cdots & 0 \\\\\
@@ -93,12 +110,34 @@ An array:
     \vdots & \vdots & \vdots & \ddots \\\\\
     0      &        0        &      0 & \cdots & 1
   \end{array}
+  \end{equation}
 \\]
 
-An array wrapped in parentheses:
+Let's wrap it in parentheses.
 
 \\[
+  \begin{equation}
   {\bf I_n} =
+  \left(
+  \begin{array}{ccccc}
+    1               &      0 &      0 & \cdots & 0 \\\\\
+    0               &      1 &      0 & \cdots & 0 \\\\\
+    0               &      0 &      1 & \cdots & 0 \\\\\
+    \vdots & \vdots & \vdots & \ddots \\\\\
+    0      &        0        &      0 & \cdots & 1
+  \end{array}
+  \right)
+  \label{eq:wrapped}
+  \end{equation}
+\\]
+
+Add a right brace and an underbrace.
+
+\\[
+  \begin{equation}
+  {\bf I_n} =
+  \underbrace{
+    \left.
     \left(
     \begin{array}{ccccc}
       1               &      0 &      0 & \cdots & 0 \\\\\
@@ -108,61 +147,15 @@ An array wrapped in parentheses:
       0      &        0        &      0 & \cdots & 1
     \end{array}
     \right)
+    \right\\}
+  }
+  \end{equation}
 \\]
 
-A vphantom array wrapped in parentheses:
+Note how the underbrace envelopes the parentheses and the right brace. It would look better if it was restricted to the columns of the array. To fix that, we first need to add a vphantom array inside the parentheses.
 
 \\[
-  {\bf I_n} =
-  \left(
-  \vphantom{
-    \begin{array}{c}
-      1 \\\\\
-      1 \\\\\
-      1 \\\\\
-      1 \\\\\
-      1
-    \end{array}
-  }
-  \begin{array}{ccccc}
-    1               &      0 &      0 & \cdots & 0 \\\\\
-    0               &      1 &      0 & \cdots & 0 \\\\\
-    0               &      0 &      1 & \cdots & 0 \\\\\
-    \vdots & \vdots & \vdots & \ddots \\\\\
-    0      &        0        &      0 & \cdots & 1
-  \end{array}
-  \right)
-\\]<br>
-
-A vphantom array followed by an underbraced array:
-
-\\[
-  {\bf I_n} =
-  \left(
-  \vphantom{
-    \begin{array}{c}
-      1 \\\\\
-      1 \\\\\
-      1 \\\\\
-      1 \\\\\
-      1
-    \end{array}
-  }
-  \underbrace{
-    \begin{array}{ccccc}
-      1               &      0 &      0 & \cdots & 0 \\\\\
-      0               &      1 &      0 & \cdots & 0 \\\\\
-      0               &      0 &      1 & \cdots & 0 \\\\\
-      \vdots & \vdots & \vdots & \ddots \\\\\
-      0      &        0        &      0 & \cdots & 1
-    \end{array}
-  }
-  \right)
-\\]<br>
-
-A vphantom array followed by an underbraced array with a right brace (have to add both `\left.` and `\right\\}`):
-
-\\[
+  \begin{equation}
   {\bf I_n} =
   \left.
   \left(
@@ -186,11 +179,13 @@ A vphantom array followed by an underbraced array with a right brace (have to ad
   }
   \right)
   \right\\}
-\\]<br>
+  \end{equation}
+\\]
 
-Add row label:
+That looks better, but it's still not quite right. The parentheses are supposed to delineate the array, but they're wrapping the underbrace and are taller than the right brace. Let's add labels to the braces to exagerate the problem.
 
 \\[
+  \begin{equation}
   {\bf I_n} =
   \left.
   \left(
@@ -211,44 +206,16 @@ Add row label:
         \vdots & \vdots & \vdots & \ddots \\\\\
         0      &        0        &      0 & \cdots & 1
       \end{array}
-    }
+    }\_{n\text{ columns}}
     \right)
   \right\\}\,n\text{ rows}
-\\]<br>
+  \end{equation}
+\\]
 
-Smash inner matrix:
-
-\\[
-  {\bf I_n} =
-  \left.
-  \left(
-  \vphantom{
-    \begin{array}{c}
-      1 \\\\\
-      1 \\\\\
-      1 \\\\\
-      1 \\\\\
-      1
-    \end{array}
-  }
-  \smash{
-    \underbrace{
-      \begin{array}{ccccc}
-        1               &      0 &      0 & \cdots & 0 \\\\\
-        0               &      1 &      0 & \cdots & 0 \\\\\
-        0               &      0 &      1 & \cdots & 0 \\\\\
-        \vdots & \vdots & \vdots & \ddots \\\\\
-        0      &        0        &      0 & \cdots & 1
-      \end{array}
-    }
-  }
-  \right)
-  \right\\}\,n\text{ rows}
-\\]<br>
-
-Finally, put in a column label
+Using the `\smash` command we can set the vertical space of the box containing the array and underbrace to zero. This will resize the parentheses to be closer to what we intended.
 
 \\[
+  \begin{equation}
   {\bf I_n} =
   \left.
   \left(
@@ -274,10 +241,48 @@ Finally, put in a column label
   }
   \right)
   \right\\}\,n\text{ rows}
-\\]<br>
+  \end{equation}
+\\]
+<br>
 
-The column label was the hardest part. I couldn't just add `_{n\text{ columns}}`. I had to replace the `$$` wrappers with `\\[` and `\\]` and escape the underscore (`\_{n\text{ columns}}`). Also, a `<br>` had to be added so this paragraph wouldn't overwrite "$n\ \text{columns}$". For whatever reason, there's not enough space between the end of an equation and the first line of plain text.
+Finally, I'm going to add one more row to the vphantom array for aesthics. It will stretch the parentheses just a little bit more, so the equation looks more like the one in \\(\eqref{eq:wrapped}\\) above.
+
+\\[
+  \begin{equation}
+  {\bf I_n} =
+  \left.
+  \left(
+  \vphantom{
+    \begin{array}{c}
+      1 \\\\\
+      1 \\\\\
+      1 \\\\\
+      1 \\\\\
+      1 \\\\\
+      1
+    \end{array}
+  }
+  \smash{
+    \underbrace{
+      \begin{array}{ccccc}
+        1               &      0 &      0 & \cdots & 0 \\\\\
+        0               &      1 &      0 & \cdots & 0 \\\\\
+        0               &      0 &      1 & \cdots & 0 \\\\\
+        \vdots & \vdots & \vdots & \ddots \\\\\
+        0      &        0        &      0 & \cdots & 1
+      \end{array}
+    }\_{n\text{ columns}}
+  }
+  \right)
+  \right\\}\,n\text{ rows}
+  \end{equation}
+\\]
+<br>
+
+
+Now that I've learned more about the interactions between Markdown and \\(\LaTeX\\), I must say \\(\LaTeX\\) should be wrapped in `\\[` and `\\]` for math blocks (display math) and pairs of `\\(` and `\\)` for inline math. Do not use `$$` for display math nor `$` wrappers for inline math. It just doesn't work so well. Also, subscripting requires the underscore to be escaped (`\_{n\text{ columns}}`). Lastly, sometimes a `<br>` is needed to separate the end of an equation from the next paragraph of text. In examples above, smashing vertical space is probably the cause.
 
 # Reference
 
 * [A Survey of Math Syntax in Markdown](https://github.com/cben/mathdown/wiki/math-in-markdown)
+* [Automatic Equation Numbering](http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering) in MathJax

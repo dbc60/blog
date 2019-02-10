@@ -8,6 +8,16 @@
 <script src="{{ "js/bootstrap.bundle.min.js" | absURL }}"></script>
 {{ end }}
 
+<!-- Configure MathJax for automatic equation numbering. See
+   http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
+   for details
+-->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
 <!-- Load MathJax -->
 <script async type="text/javascript"
   src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
