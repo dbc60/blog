@@ -1,0 +1,25 @@
+<div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-left">
+  {{ $showActiveNav := .Site.Params.showActiveNav }}
+  {{ $currentPage := . }}
+  {{ range .Site.Menus.nav }}
+    {{ $active := "" }}
+    {{ if eq $showActiveNav true }}
+      {{ $isMenu := or ($currentPage.IsMenuCurrent "nav" .) ($currentPage.HasMenuCurrent "nav" .) }}
+      {{ if or $isMenu (eq $currentPage.Title .Name) }}
+        {{ $active = "nav-link-active" }}
+      {{ end }}
+    {{ end }}
+    {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }}
+    {{ $text := print $icon " " .Name | safeHTML }}
+    <a class="nav-link {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
+  {{ end }}
+    <div class="links">
+      {{- range .Site.Params.links -}}
+      <a href="{{ .url }}" title="{{ .title }}">
+        <span class="social-link {{ .iconset | default "fab" }} fa-{{ .icon }}"></span>
+      </a>
+    {{- end -}}
+    </div>
+  </nav>
+</div>

@@ -7,7 +7,9 @@ tags:
   - plans
 ---
 
-This filing plan is more fleshed out than [the alternate plan]({% post_url /projects/2016-03-28-filing-plan-alternate %}). It also moves the section on `Computer Backup Files and Passwords` from its own section to a part under [Section 9 General Records](#9 General Records).
+This filing plan is more fleshed out than [the alternate plan](/notes/projects/filing-plan-alternate). It also moves the section on `Computer Backup Files and Passwords` from its own section to a part under [Section 9 General Records](#9 General Records).
+
+<!--more-->
 
 ## Categories
 I'm not sure about the sections listed in the Brief Outline, below. Here are some other top-level sections that might work (in no particular order):

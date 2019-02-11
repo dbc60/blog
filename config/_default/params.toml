@@ -1,14 +1,23 @@
 # Vanilla theme's paramters
 includeBootstrapJs = false
 showActiveNav = true
-containerMaxWidth = "700px"
+containerMaxWidth = "900px"
 dateFormat = "Monday Jan 2, 2006"
-homeText = "An exploration of software development"
+homeText = "IT'S WHAT I DO"
 footerText = "&copy; Douglas Cuthbertson 2015. Made with [Hugo](https://gohugo.io/) & [Vanilla](https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme)"
 hideFooter = false
+#featured_image = "/images/gohugo-sample-hero.jpg"
+featured_image = "/images/motif-1.jpg"
 
-# Custom params
-paginate = 7
+[[links]]
+    icon = "github"
+    title = "Github"
+    url = "https://github.com/dbc60"
+
+[[links]]
+    icon = "stack-overflow"
+    title = "Stack Overflow"
+    url = "http://stackoverflow.com/users/165347/doug-cuthbertson"
 
 [[links]]
     icon = "twitter"
@@ -21,16 +30,27 @@ paginate = 7
     url = "https://www.instagram.com/dbc60/"
 
 [[links]]
+    icon = "pinterest"
+    title = "pinterest"
+    url = "https://www.pinterest.com/dougcuthbertson/"
+
+[[links]]
+    icon = "tumblr"
+    title = "Tumblr"
+    url = "https://dbc60.tumblr.com"
+
+[[links]]
     icon = "youtube"
     title = "YouTube"
     url = "https://www.youtube.com/channel/UCjYq4zK5Pc2vxwpCWUotPxg?view_as=subscriber"
 
 [[links]]
-    icon = "github"
-    title = "Github"
-    url = "https://github.com/dbc60"
-
-[[links]]
     icon = "linkedin"
     title = "LinkedIn"
     url = "https://www.linkedin.com/in/douglas-cuthbertson-0487001/"
+
+[[links]]
+    iconset = "fas"
+    icon = "envelope"
+    title = "E-mail"
+    url = "mailto:doug.cuthbertson@gmail.com"

@@ -2,9 +2,12 @@
 title: Make Digital Data Backup Service
 date: 2016-09-05T07:33:00-05:00
 disable_comments: true
-categories: goals
-excerpt: Make a data backup service for a little extra income.
+categories: [projects]
 ---
+
+I'd like to see if I can make a data backup service.
+
+<!--more-->
 
 ## Things To Do
 

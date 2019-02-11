@@ -3,12 +3,13 @@ title = "MathJax and Markdown"
 date = 2019-04-08T10:32:30-05:00
 draft = true
 math = true
-
-# Tags and categories
-# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
 tags = ["mathjax", "math"]
 categories = ["mathjax"]
 +++
+
+Here are some notes on using MathJax and Markdown to create pages with really beautiful equations.
+
+<!--more-->
 
 ## Using MathJax in a Web Page
 

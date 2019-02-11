@@ -1,28 +1,10 @@
 {{ define "main" }}
 
-<main>
-  <!-- default list template -->
-  <article>
-    <header id="home" class="jumbotron text-center">
-      <h1>{{ .Site.Title }}</h1>
-        <p class="font-125">{{ .Site.Params.homeText | markdownify }} </p>
-    </header>
-    <div class="links">
-      {{- range .Site.Params.links -}}
-        <a href="{{ .url }}" title="{{ .title }}">
-          <span class="{{ .iconset | default "fab" }} fa-{{ .icon }}"></span>
-        </a>
-      {{- end -}}
-    </div>
-    <h1>{{- .Title -}}</h1>
-    <p>{{ partial "date-and-tags.html" . }}</p>
-      {{- .Content -}}
-    {{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
-    <section id="comments">
-      {{ template "_internal/disqus.html" . }}
-    </section>
-    {{ end }}
-  </article>
-</main>
+  <!-- default single template -->
+  <h1>{{- .Title -}}</h1>
+  <p>{{ partial "date-and-tags.html" . }}</p>
+  <section>
+    {{- .Content -}}
+  </section>
 
 {{ end }}
