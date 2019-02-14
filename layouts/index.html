@@ -1,4 +1,3 @@
-
 {{ define "main" }}
 
 <main>
@@ -9,14 +8,14 @@
     <!-- Paginates through content/post/*.md -->
     {{ $paginator := .Paginate (where .Pages "Type" "post") }}
     {{ range $paginator.Pages }}
-      <p>
-        <h2><a class="font-125" href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <h2><a class="font-125" href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <div class="article-meta-data">
         {{ partial "date-and-tags.html" . }}
         <!-- this renders based on layouts/_default/summary.html (either the
         local one, or the one in a theme -->
         {{ .Render "summary" }}
-      </p>
-    {{ end }}
+      </div>
+      {{ end }}
     {{ template "_internal/pagination.html" . }}
   </article>
 </main>

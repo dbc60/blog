@@ -1,17 +1,19 @@
 ---
-layout: post
 title: Morning Routine and Daily Schedule
-author: Douglas Cuthbertson
-categories: notes
-tags: [routine, planning, time-management]
-excerpt: According to [this article](http://www.bakadesuyo.com/2015/03/morning-routine/) by [Eric Barker](http://www.bakadesuyo.com/about/) (and various [books by Laura Vanderkam](http://www.amazon.com/Laura-Vanderkam/e/B001JRX55A/ref=dp_byline_cont_book_1) ), one of the best ways to get things done is to have a morning routine. In addition to a routine you need a plan, so here is Barker's advice to build a roadmap for getting things done and having *real* free time.
+date: 2016-03-07
+draft: true
+categories: [time management]
+tags: [routine, planning]
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+According to
+[this article](http://www.bakadesuyo.com/2015/03/morning-routine/)
+by [Eric Barker](http://www.bakadesuyo.com/about/)
+(and various [books by Laura Vanderkam](http://www.amazon.com/Laura-Vanderkam/e/B001JRX55A/ref=dp_byline_cont_book_1) ),
+one of the best ways to get things done is to have a morning routine. In addition
+to a routine you need a plan, so here is Barker's advice to build a roadmap for
+getting things done and having *real* free time.
+<!--more-->
 
 ## Detailed To-Do Lists for Everyday Tasks
 I read about these in some comments on HN about a completely different topic. Some people create detailed to-do lists for basic tasks to eliminate analysis-paralysis. Here's one person's task list for cleaning house:
@@ -30,8 +32,8 @@ For some, even this task is too big. Here's a smaller example:
 Living room:
 - Remove garbage
 - Put dirty dishes in kitchen
-- Put stuff that doesn't belong in tote 
-- Put everything that does belong on shelves 
+- Put stuff that doesn't belong in tote
+- Put everything that does belong on shelves
 - Vacuum
 
 ## Stop Reacting

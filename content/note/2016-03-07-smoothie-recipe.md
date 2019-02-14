@@ -1,23 +1,21 @@
 ---
-layout: post
 title: Workout Smoothie
-categories: blog
+date: 2016-03-07
+categories: recipes
 tags:
   - food
   - fitness
   - health
-excerpt: This recipe is a variation on [The Perfect Pre-workout Green Smoothie Recipe](http://simplegreensmoothies.com/green-smoothie-recipes/pre-workout-green-smoothie).
 ---
 
-## Contents
-{:.no_toc}
+This recipe is a variation on [The Perfect Pre-workout Green Smoothie Recipe](http://simplegreensmoothies.com/green-smoothie-recipes/pre-workout-green-smoothie).
 
-- TOC
-{:toc}
+<!--more-->
 
 That site suggests serving it 30-60 minutes either before or after a workout. Feel free to adjust the ingredients and quantities to suit your own taste. This recipe makes about 2 16oz servings.
 
 ## Ingredients
+
 - 2 cups greens (fresh spinach, Swiss chard, and/or kale, and parsley)
 - 2 cups almond milk, unsweetened
 - 1 large apple, cored, any variety (optional - I substitute the frozen fruit below)

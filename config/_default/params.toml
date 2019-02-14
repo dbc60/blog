@@ -3,11 +3,11 @@ includeBootstrapJs = false
 showActiveNav = true
 containerMaxWidth = "900px"
 dateFormat = "Monday Jan 2, 2006"
-homeText = "IT'S WHAT I DO"
+homeText = "It's What I Do"
 footerText = "&copy; Douglas Cuthbertson 2015. Made with [Hugo](https://gohugo.io/) & [Vanilla](https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme)"
 hideFooter = false
-#featured_image = "/images/gohugo-sample-hero.jpg"
-featured_image = "/images/motif-1.jpg"
+#featured_image = "/images/hero-header-default.jpg"
+featured_image = "/images/hero-header-april.jpg"
 
 [[links]]
     icon = "github"

@@ -1,12 +1,14 @@
 ---
 title: 3D Transforms
+date: 2016-03-07
+draft: true
 math: true
-disable_comments: true
-categories: notes
+categories: math
 tags:
   - 3d
   - graphics
 ---
+
 World, view and projection matrices.
 
 <!--more-->

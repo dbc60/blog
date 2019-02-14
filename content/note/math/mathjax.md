@@ -3,11 +3,10 @@ title = "MathJax and Markdown"
 date = 2019-04-08T10:32:30-05:00
 draft = true
 math = true
-tags = ["mathjax", "math"]
-categories = ["mathjax"]
+categories = ["mathjax", "math"]
 +++
 
-Here are some notes on using MathJax and Markdown to create pages with really beautiful equations.
+These are my notes and examples for using MathJax and Markdown to create pages with really beautiful equations.
 
 <!--more-->
 

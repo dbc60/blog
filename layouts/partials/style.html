@@ -1,17 +1,52 @@
 <style>
+body {
+  font-family: sans-serif;
+}
+
 #home-jumbotron {
-  background-color: light;
-}
-.jumbotron {
   background-size: cover;
-  background-position: center bottom;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
-.navbar-nav .nav-item:first-child .nav-link {
+
+#nav-border {
     padding-left: 0;
 }
+
+#nav-border .nav:first-child {
+    padding-left: 0;
+}
+
+#nav-border .nav:first-child .nav-link {
+    padding-left: 0;
+}
+
 .social-link {
   position: sticky;
   top: 1rem;
 }
 
+h1.simple-jumbotron-title {
+  margin-right: 1rem;
+  color: black;
+  padding-bottom: 20rem;
+}
+
+h1 div.simple-jumbotron-subtitle {
+  font-size: 1.5rem;
+}
+
+p {
+  color: black;
+}
+
+.article-meta-data {
+  margin-bottom: 1rem;
+}
+
+/* move the read-more footer up a line to compensate for p's bottom margin*/
+p+footer.read-more {
+  margin-top: -1rem;
+}
 </style>

@@ -1,16 +1,12 @@
 ---
-layout: post
 title: JavaScript
-categories: notes
+date: 2016-03-07
+categories: programming
 tags: [javascript]
-excerpt: Learning to learn JavaScript
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+Learning to learn JavaScript
+<!--more-->
 
 ## Project Directory Layouts
 

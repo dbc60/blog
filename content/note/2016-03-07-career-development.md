@@ -1,17 +1,12 @@
 ---
-layout: post
 title: Career and Job Search
-author: Douglas Cuthbertson
-categories: notes
-tags: [career]
-excerpt: Notes on finding a new job.
+date: 2016-03-07
+categories: career
+tags: [job hunting]
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+Notes on finding a new job.
+<!--more-->
 
 ## Current Employment
 I work for Threat Stack, Inc., 55 Summer Street, Boston, MA. I'm on the Agent Team, also known as the Committee to Release Agents to Production (CRAP). Specifically, I _am_ the _Windows_ Agent Team (so, I work on Windows CRAP).

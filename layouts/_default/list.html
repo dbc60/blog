@@ -5,7 +5,7 @@
     <article>
       <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
       {{ .Content }}
-      <h1>{{ .Title }}</h1>
+      <h2>{{ .Title }}</h2>
 
     <!--
       Paginates through content/note/*.md
@@ -13,13 +13,13 @@
     -->
     {{ $paginator := .Paginate (where .Pages "Type" "note") }}
     {{ range $paginator.Pages }}
-      <p>
         <h2><a class="font-125" href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        {{ partial "date-and-tags.html" . }}
-        <!-- this renders based on layouts/_default/summary.html (either the
-        local one, or the one in a theme -->
-        {{ .Render "summary" }}
-      </p>
+        <div class="article-meta-data">
+          {{ partial "date-and-tags.html" . }}
+          <!-- this renders based on layouts/_default/summary.html (either the
+          local one, or the one in a theme -->
+          {{ .Render "summary" }}
+        </div>
     {{ end }}
     {{ template "_internal/pagination.html" . }}
     </article>

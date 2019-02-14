@@ -1,20 +1,17 @@
 ---
-layout: post
 title: Jekyll Configuration
+date: 2016-03-07
+draft: true
 categories:
   - blog
-  - notes
+  - web
 tags:
   - jekyll
   - yaml
-excerpt: Jekyll is so easy to get up and running.
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+Jekyll is easy to get up and running.
+<!--more-->
 
 It really is easy to install and use. What takes time is learning enough about its bells and whistles, markdown, HTML, CSS and Sass to make a blog or website you're own. Also, I need a place to host my blog. I may eventually create my own web server, perhaps on a [DigitalOcean](https://www.digitalocean.com/) droplet (mostly because they don't cost very much and a small server in a cloud is adequate for a static website). For now, I'm using [GitHub pages](https://pages.github.com/).
 
