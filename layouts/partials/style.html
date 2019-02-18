@@ -45,7 +45,15 @@ p {
   margin-bottom: 1rem;
 }
 
-/* move the read-more footer up a line to compensate for p's bottom margin*/
+/*
+  Move the read-more footer up a line to compensate for p's bottom margin.
+  When I use the <!--more--> separator to control what Hugo pulls in as a
+  summary, the text is the paragraph(s) from the note or post. If I let Hugo
+  calculate the summary text, it pulls in the text as plain text without
+  <p></p> tags. To get consistent spacing for the read-more footer, I have
+  wrap the summary in paragraph tags and move the footer's top margin up into
+  the paragraph's bottom margin.
+*/
 p+footer.read-more {
   margin-top: -1rem;
 }

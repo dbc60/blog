@@ -8,6 +8,7 @@
 <script src="{{ "js/bootstrap.bundle.min.js" | absURL }}"></script>
 {{ end }}
 
+{{ if or .Params.math .Site.Params.math }}
 <!-- Configure MathJax for automatic equation numbering. See
    http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
    for details
@@ -24,6 +25,15 @@
   that will work for my purposes.
   http://docs.mathjax.org/en/latest/config-files.html#common-configurations
 -->
-<script async type="text/javascript"
-  src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'>
-</script>
+<!-- MathJax: Fall back to local if CDN offline -->
+<script async type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+<!--<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script type="text/javascript" src="{{ "js/MathJax-2.7.5/MathJax.js" | absURL }}?config=TeX-MML-AM_CHTML">\x3C/script>')</script>-->
+
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script type="text/javascript" src="{{ "js/MathJax-2.7.5/MathJax.js" | absURL }}?config=TeX-AMS-MML_HTMLorMML">\x3C/script>')</script>
+
+<!--
+  Example fallback from
+      https://github.com/mathjax/MathJax-docs/wiki/How-to:-MathJax-CDN-fallback
+
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="<<PATH_TO_YOUR_LOCAL_MATHJAX>>MathJax.js?config=TeX-AMS_HTML-full"><\/script>')</script>-->
+{{ end }}

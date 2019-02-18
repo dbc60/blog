@@ -4,6 +4,7 @@ description: "A d3js example that alternates shades of gray from one paragraph t
 categories: [d3]
 tags: [example]
 title: "D3 Example: Alternating Shades of Gray"
+d3: true
 ---
 
 We can have a black background and alternate shades of gray for each paragraph

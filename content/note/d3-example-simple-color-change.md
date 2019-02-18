@@ -4,6 +4,7 @@ description: "A d3js Example"
 categories: [d3]
 tags: [example]
 title: "D3 Example: Simple Color Change"
+d3: true
 ---
 
 This is supposed to do what the [W3C Simple Color Change](/note/w3c-dom-api-example-simple/) example is doing, but use D3 instead.

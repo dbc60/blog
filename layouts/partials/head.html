@@ -21,6 +21,22 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
-<!-- Let's try our local d3js -->
-<script type="text/javascript" src="{{ "js/d3.min.js" | absURL }}"></script>
+  {{ if or .Params.d3 .Site.Params.d3 }}
+
+    <!--
+      The defer property doesn't work for d3, nor can its script be loaded at the
+      end of the HTML file. There are other scripts that must be loaded in <head>
+      rather than at the end, just before the closing </body> tag. For example, see
+        https://stackoverflow.com/questions/6272702/should-modernizr-file-be-placed-in-head
+      and
+        https://stackoverflow.com/questions/2105327/should-jquery-code-go-in-header-or-footer
+
+      <script type="text/javascript" src="https://d3js.org/d3.v5.min.js" defer="defer"></script>
+    -->
+
+    <!-- d3js: Fall back to local if CDN offline -->
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+    <script>window.d3 || document.write('<script type="text/javascript" src="{{ "js/d3-v5.9.1.min.js" | absURL }}">\x3C/script>')</script>
+
+  {{ end }}
 </head>

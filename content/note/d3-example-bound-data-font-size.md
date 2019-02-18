@@ -4,6 +4,7 @@ description: "A d3js example using bound data to choose the font size"
 categories: [d3]
 tags: [example]
 title: "D3 Example: Bound Data for Font Size"
+d3: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc neque, tristique eu scelerisque at, condimentum id turpis. Aliquam erat volutpat. Mauris aliquam nibh tincidunt sem pretium sollicitudin. Suspendisse in vehicula magna. Ut vel gravida tortor, id mattis lacus. Fusce ornare, nisl eu vestibulum ultricies, libero enim semper nisi, ac porta ipsum tortor in nunc. Sed rutrum quam vel felis facilisis pretium. Cras placerat, sapien eget vestibulum tincidunt, odio ipsum efficitur arcu, in laoreet lectus enim sit amet velit. Vivamus ac dolor vitae turpis blandit lobortis. Suspendisse vel tellus felis. Aliquam sodales nisl nec condimentum cursus. Nullam lacinia eu justo quis mattis.

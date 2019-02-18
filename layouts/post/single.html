@@ -1,6 +1,8 @@
 {{ define "main" }}
 
-  <!-- post template -->
+  <!--
+    post template - unlike the default template, blog posts get disqus comments
+  -->
   <h2>{{- .Title -}}</h2>
   <div class="article-meta-data">{{ partial "date-and-tags.html" . }}</div>
   <section>
