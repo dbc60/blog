@@ -1,6 +1,7 @@
 ---
 title: Workout Smoothie
 date: 2016-03-07
+draft: true
 categories: recipes
 tags:
   - food

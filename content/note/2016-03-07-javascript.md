@@ -1,6 +1,7 @@
 ---
 title: JavaScript
 date: 2016-03-07
+draft: true
 categories: programming
 tags: [javascript]
 ---

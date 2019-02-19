@@ -1,16 +1,10 @@
 ---
-layout: post
 title: Designing My Blog
-categories: notes
-tags: [blog,design]
-excerpt: Thoughts and inspirations to be used toward designing my blog.
+date: 2016-03-15
+draft: true
+categories: design
+tags: [blog, inspiration]
 ---
-
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
 
 ## New Inspiration
 I looked at a Jekyll theme called [hyde](https://github.com/JuanjoSalvador/hyde). It has several simplifications I like, so I'm going to try to pull in some of its CSS/SCSS to my notes and my blog. As I do that, I will keep in mind the four principles of design from Robin William's book, The Non-Designer's Design Book:
@@ -73,39 +67,39 @@ I want an icon that portrays the concepts of dreaming, sketching and coding. It 
 
 Icons should come in several standard sizes. The standard sizes are all square, but are different depending on the particular operating system:
 
-|         |         |          |       |       |       |           |   Windows  |
-| OS/Size | Windows | Mac OS X | Linux | iOS 6 | iOS 8 | Android L |    Phone   |
-|--------:|:-------:|:--------:|:-----:|:-----:|:-----:|:---------:|:----------:|
-| 1024    |         |    x     |       |   x   |   x   |           |            |
-|  512    |         |    x     |       |       |       |     x     |            |
-|  256    |    x    |    x     |       |       |       |           |            |
-|  200    |         |          |       |       |       |           |      x     |
-|  192    |         |          |       |       |       |     x     |            |
-|  180    |         |          |       |       |   x   |           |            |
-|  173    |         |          |       |       |       |           |      x     |
-|  152    |         |          |       |       |   x   |           |            |
-|  144    |         |          |       |   x   |       |           |            |
-|  128    |         |     x    |       |       |       |           |            |
-|  120    |         |          |       |       |   x   |           |            |
-|  114    |         |          |       |   x   |       |           |            |
-|  100    |         |          |       |   x   |       |           |            |
-|   99    |         |          |       |       |       |           |      x     |
-|   96    |         |          |   x   |       |       |           |            |
-|   80    |         |          |       |       |   x   |           |            |
-|   76    |         |          |       |       |   x   |           |            |
-|   72    |         |          |       |   x   |       |           |            |
-|   64    |         |     x    |       |       |       |           |            |
-|   62    |         |          |       |       |       |           |      x     |
-|   60    |         |          |       |       |   x   |           |            |
-|   58    |         |          |       |   x   |   x   |           |            |
-|   57    |         |          |       |   x   |       |           |            |
-|   50    |         |          |       |   x   |       |           |            |
-|   48    |    x    |          |   x   |       |       |     x     |            |
-|   40    |         |          |       |       |   x   |           |            |
-|   32    |    x    |     x    |       |       |       |           |            |
-|   29    |         |          |       |   x   |   x   |           |            |
-|   24    |    x    |          |   x   |       |       |     x     |            |
-|   16    |    x    |     x    |   x   |       |       |           |            |
+    |         |         |          |       |       |       |           |   Windows  |
+    | OS/Size | Windows | Mac OS X | Linux | iOS 6 | iOS 8 | Android L |    Phone   |
+    |--------:|:-------:|:--------:|:-----:|:-----:|:-----:|:---------:|:----------:|
+    | 1024    |         |    x     |       |   x   |   x   |           |            |
+    |  512    |         |    x     |       |       |       |     x     |            |
+    |  256    |    x    |    x     |       |       |       |           |            |
+    |  200    |         |          |       |       |       |           |      x     |
+    |  192    |         |          |       |       |       |     x     |            |
+    |  180    |         |          |       |       |   x   |           |            |
+    |  173    |         |          |       |       |       |           |      x     |
+    |  152    |         |          |       |       |   x   |           |            |
+    |  144    |         |          |       |   x   |       |           |            |
+    |  128    |         |     x    |       |       |       |           |            |
+    |  120    |         |          |       |       |   x   |           |            |
+    |  114    |         |          |       |   x   |       |           |            |
+    |  100    |         |          |       |   x   |       |           |            |
+    |   99    |         |          |       |       |       |           |      x     |
+    |   96    |         |          |   x   |       |       |           |            |
+    |   80    |         |          |       |       |   x   |           |            |
+    |   76    |         |          |       |       |   x   |           |            |
+    |   72    |         |          |       |   x   |       |           |            |
+    |   64    |         |     x    |       |       |       |           |            |
+    |   62    |         |          |       |       |       |           |      x     |
+    |   60    |         |          |       |       |   x   |           |            |
+    |   58    |         |          |       |   x   |   x   |           |            |
+    |   57    |         |          |       |   x   |       |           |            |
+    |   50    |         |          |       |   x   |       |           |            |
+    |   48    |    x    |          |   x   |       |       |     x     |            |
+    |   40    |         |          |       |       |   x   |           |            |
+    |   32    |    x    |     x    |       |       |       |           |            |
+    |   29    |         |          |       |   x   |   x   |           |            |
+    |   24    |    x    |          |   x   |       |       |     x     |            |
+    |   16    |    x    |     x    |   x   |       |       |           |            |
 
 ## Other Resources
 - [Basic Guidelines to Product Sketching](http://www.hongkiat.com/blog/basic-guidelines-to-product-sketching/)

@@ -1,7 +1,8 @@
 ---
-layout: post
 title: LMAX Disruptor
-categories: blog
+date: 2016-03-14
+draft: true
+categories: programming
 tags:
   - queues
   - concurrency
@@ -10,14 +11,10 @@ tags:
   - events
   - patterns
   - disruptor
-excerpt: The Disruptor is a general-purpose pattern for building low-latency, high-throughput event processing queues.
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+The Disruptor is a general-purpose pattern for building low-latency, high-throughput event processing queues.
+<!--more-->
 
 ## The Design of the LMAX Disruptor
 - queues conflate several data-storage concerns for handling the needs of producers and consumers. The Disruptor separates these concerns.
@@ -29,7 +26,7 @@ This is my attempt to recreate the original class diagram. My skills with the [d
 
 <figure>
   <img class="content-image"
-       src="/img/disruptor.svg">
+       src="/svg/disruptor.svg">
   <figcaption>
     <strong>Fig. 1 | </strong> The Disruptor class relationships.
   </figcaption>
@@ -67,7 +64,7 @@ Producer
 :   This is the user code that calls the Disruptor to enqueue `Events`. This concept also has no representation in the code.
 
 <figure>
-<img class="content-image" src="/img/LMAX-Disruptor-Models.png">
+<img class="content-image" src="/images/LMAX-Disruptor-Models.png">
 <figcaption>
     <strong>Fig. 2 | </strong> Relationships among the main classes and interfaces.
 </figcaption>
