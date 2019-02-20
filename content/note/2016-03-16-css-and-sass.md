@@ -1,16 +1,13 @@
 ---
-layout: post
 title: CSS and Sass
-categories: notes
+date: 2016-03-16
+draft: true
+categories: web
 tags: [css, compass, sass]
-excerpt: I can't memorize 30 separate CSS selectors, unless they're organized.
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+I can't memorize 30 separate CSS selectors, unless they're organized.
+<!--more-->
 
 ## Give Your Project Some Structure
 There are several ways to organize your Sass files. A good structure will make small projects easy to manage, and continue to work as they grow. [Vinay Raghu](http://www.sitepoint.com/look-different-sass-architectures/) reviewed some of the techniques in use to provide some sort of logic to the structure of the files and folders in use as of August 2014. I looked at one from Dale Sande, who [went over it in depth](https://www.youtube.com/watch?v=EmNcD3b3ZtI) at [SASS Conf 2013](https://www.youtube.com/watch?v=z-TEqa0MPlY&list=PLXrTmSPkhnXsd_MGL5Y__7IoRemarkRVi). He also [wrote about](http://gist.io/4436524) what he covered in his talk. He also has a [series of guidelines](http://coderecipez.roughdraft.io/) for developers who are new to Sass. Dale looks to be an intense resource of knowledge for writing and structuring Sass files.
@@ -174,7 +171,7 @@ Here's some sample content for `_scss/_base/_config.scss`. The key here is to us
 
 ```scss
 @charset "UTF-8";
- 
+
 // Colors
 $black: #000;
 $white: #fff;
@@ -183,18 +180,18 @@ $gray-light: #c9c8c8;
 $gray: #838282;
 $gray-dark: #333333;
 $blue: #253652;
- 
+
 // Corp-Colors
 $corp-color: $blue !default;
 $corp-color-dark: darken($corp-color, 15%) !default;
 $corp-color-second: $red !default;
 $corp-color-second-dark: darken($corp-color-second, 15%) !default;
- 
+
 // Font
 $base-font-size: 1.8 !default;
 $base-font-family: Helvetica, Arial, Sans-Serif !default;
 $base-font-color: $gray-dark !default;
- 
+
 // Border
 $base-border-radius: 2px !default;
 $rounded-border-radius: 50% !default;
@@ -214,14 +211,14 @@ $colorbox-background:   '../images/base/colorbox-background.png' !default;
 
 ```scss
 @charset 'UTF-8';
- 
+
 // 1.Base
 @import '_base/_config.scss';
- 
+
 // 2.Layouts
 @import '_layouts/_l-grid',
         '_layouts/_l-default';
- 
+
 // 3.Modules
 @import '_modules/_m-accordions',
         '_modules/_m-teasers';
@@ -232,25 +229,25 @@ The following code could be used in `_sass/_themes/_light-theme/light.scss`. Not
 
 ```scss
 @charset 'UTF-8';
- 
+
 // 1.Overwrite stuff
 $corp-color: $gray;
 $corp-color-darken: darken($corp-color, 10%);
 $corp-color-second: $blue;
 $corp-color-second-dark: darken($corp-color-second, 10%);
-  
+
 $base-font-size: 1.6;
 $base-font-family: Droid Sans, Georgia, Arial;
-  
+
 $base-border-radius: 0px;
 $base-border-color: $gray-light;
-  
+
 // Images
 $sprite:              '../images/light/sprite.png';
 $colorbox-background: '../images/light/colorbox-background.png';
-  
+
 $accordion-bgcolor: $gray-light;
- 
+
 // 2. Import basic theme
 @import '../../application';
 ```

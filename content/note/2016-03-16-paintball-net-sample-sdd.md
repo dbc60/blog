@@ -1,24 +1,13 @@
 ---
-layout: post
 title: Paintball Net Sample Software Design Document
-categories: notes
-tags: [template,design,project,game]
-excerpt: An outline to help organize the design of a software project, whether it be a game or other type of application.
+date: 2016-03-16
+draft: true
+categories: design
+tags: [template, game, planning]
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
-
-## Document History
-Include a table with columns for date modified, author/editor, and a summary of changes made.
-
-| Date | Author | Summary of Changes |
-|-----------:|-------------:|:------------|
-| 2016.03.16 | Douglas Cuthbertson | Initial draft |
-| 2016.03.20 | Douglas Cuthbertson | Fixed the title and added this table. |
+An outline to help organize the design of a software project, whether it be a game or other type of application.
+<!--more-->
 
 ## Design Summary
 This section, also called the *treatment* describes what makes your game unique and fun. Focus on high-level features and gameplay elments. Resist the temptation to get too detailed or implmentation-specific. You are trying to describe your game's *Unique Selling Point* (USP) in as few words as possible. The USP is what makes the game stand out -- what makes it different from al the other available games.
@@ -26,11 +15,11 @@ This section, also called the *treatment* describes what makes your game unique 
 - What excites you about your game idea?
 - What do you think will excite the game's players?
 - Include a note on the target platform. Will it be:
-    - PC
-    - Mac
-    - Consoles
-    - tablet or other handheld device
-    - Phone (iPhone, Android, Windows Phone)
+  - PC
+  - Mac
+  - Consoles
+  - tablet or other handheld device
+  - Phone (iPhone, Android, Windows Phone)
 - Can it be played solo, or does it need to connect to other players?
 - What advantages does the target platform provide that you hope to exploit?
 
@@ -56,21 +45,37 @@ Once the player has created his account, he must choose a paintball field to pla
 There are a lot of FPS games available, including some paintabll-themed mods of those games, and some with better technology driving them. What makes us think that *Paintball Net* will find a place among them?
 
 Player progression against competition.
-: Players learn the game while playing against each other in a well-balanced environemtn. All players have the same 'weight limt' for equipment carried, so even advanced players with better equipment must choose their weapons and equipment carefully.
+: Players learn the game while playing against each other in a well-balanced
+  environment. All players have the same 'weight limit' for equipment carried,
+  so even advanced players with better equipment must choose their weapons and
+  equipment carefully.
 
 Player persistence.
-: All player information is tracked and mainatained. Whichever field a player plays on, his statistics and equipment are there waiting for him. Players can also customize their equipment to fit their own playing style.
+: All player information is tracked and mainatained. Whichever field a player
+  plays on, his statistics and equipment are there waiting for him. Players can
+  also customize their equipment to fit their own playing style.
 
 Community emphasis.
-: *Paintball Net* is designed to support a *real* sense of community. WIth full-featured chat in the Ready Room, players can interact (or not) and get to know each other. Also, *Paintball Net* supports global teams of players that play together.
+: *Paintball Net* is designed to support a *real* sense of community. WIth
+  full-featured chat in the Ready Room, players can interact (or not) and get
+  to know each other. Also, *Paintball Net* supports global teams of players
+  that play together.
 
-Unique paintball equpment with a 'real' paintball fell.
-* *Paintball Net* uses 3D technology to create unique and outlandish paintball equipment, such as 'refracto suits' and 'jetpacks,' while preserving the thrill of real paintball. And unlike a lot of paintball mods based on 'deathmatch' games, *Paintball Net* uses a single-hit match elimination model --- no endless 'respawning' of players.
+Unique paintball equipment with a 'real' paintball feel.
+: *Paintball Net* uses 3D technology to create unique and outlandish paintball
+  equipment, such as 'refracto suits' and 'jetpacks,' while preserving the
+  thrill of real paintball. And unlike a lot of paintball mods based on
+  'deathmatch' games, *Paintball Net* uses a single-hit match elimination model
+  --- no endless 'respawning' of players.
 
 ### Storyboard in Pictures
-You might also want to include a more traditional storyboard section in your design summary. It can be a collection of screenshot mock-ups that show the game as it might be played, with accompanying descriptions of what is happening in each scene.
+You might also want to include a more traditional storyboard section in your
+design summary. It can be a collection of screenshot mock-ups that show the
+game as it might be played, with accompanying descriptions of what is happening
+in each scene.
 
 ## Design Details
 
 ## References
+
 - *The* Indie Game Development Survival Guide.
