@@ -1,30 +1,21 @@
 ---
-layout: page
 title: Vagrant
-author: Douglas Cuthbertson
+date: 2016-03-18
+draft: true
 categories: notes
 tags:
     - vagrant
     - devops
-excerpt: Using vagrant to create, and manipulate virtual machines.
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
-
-## Document History
-
-| Date | Author | Summary of Changes |
-|-----------:|-------------:|:------------|
-| 2016.03.18 | Douglas Cuthbertson | Initial draft |
+Using vagrant to create, and manipulate virtual machines.
+<!--more-->
 
 ## Running an Established Vagrant Environment
+
 A recent vagrant session.
 
-```
+```shell
 C:\> P:
 
 P:\> cd Vagrant

@@ -16,7 +16,7 @@ Here are some key commands for running Windows Update and other tools on Windows
 ## Configure Windows Update
 Log in as an administrator and `cd \Windows\System32`. It seems to be the place where scripts and services are located. Run the following commands to set Windows Update to run automatically, and to automatically detect new updates.
 
-```terminal
+```doscon
 C:\Windows\System32>Cscript SCregEdit.wsf /Au /v
 Microsoft (R) Windows Script Host Version 5.8
 Copyright (C) Microsoft Corporation. All rights reserved.

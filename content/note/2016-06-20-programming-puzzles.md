@@ -1,21 +1,19 @@
 ---
-layout: post
 title: Programming Puzzles
-categories: work
+date: 2016-06-20
+draft: true
+categories: career
 tags:
   - c
   - c++
   - puzzles
-excerpt: Programming puzzles for interviews.
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+Programming puzzles for interviews.
+<!--more-->
 
 ## The Type of the Variable
+
 1. `int t;`
 1. `int *t;`
 1. `int t[10];`
@@ -29,7 +27,7 @@ excerpt: Programming puzzles for interviews.
 ## C++ in C
 What structs would you need to create in C to produce a representation of the following class:
 
-```
+```cpp
 class C {
     int i;
 
@@ -47,4 +45,5 @@ public:
 - Given a singly-linked list, reverse the order of its elements.
 
 ## Other Questions & Puzzles
+
 - What's the difference between big-endian and little-endian data?

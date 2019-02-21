@@ -1,31 +1,23 @@
 ---
-layout: page
 title: Kernel Debugging
+date: 2016-07-29
+draft: true
 tags:
   - kernel
   - debugging
   - windbg
-excerpt: Using windbg to debug kernel drivers, such as the FIM mini filter.
 ---
 
-## Contents
-{:.no_toc}
-
-* TOC
-{:toc}
-
-## Document History
-
-| Date | Author | Summary of Changes |
-|-----------:|-------------:|:------------|
-| 2016.07.29 | Douglas Cuthbertson | Initial draft |
+Using windbg to debug kernel drivers, such as the FIM mini filter.
+<!--more-->
 
 ## Running Windbg against VM2
+
 See [Setting Up Kernel-Mode Debugging over a Network Cable](https://msdn.microsoft.com/en-us/library/windows/hardware/hh439346%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396) for details.
 
 First, make sure you can ping the IP address of the host computer from the target computer. Next, on the target computer, run `bcdedit /debug on` and `bcdedit /dbgsettings net hostip:w.x.y.z port:n`. For example, if the host computer's IP address is `192.168.1.137`:
 
-```terminal
+```shell
 > bcdedit /debug on
 > bcdedit /dbgsettings net hostip:192.168.1.137 port:50500
 ```
@@ -35,19 +27,23 @@ First, make sure you can ping the IP address of the host computer from the targe
 - IP: 192.168.0.58
 - key: 2e66e0ucoz48s.1dmf6gmay7xk9.3b96yqmcnd39s.1w0h1ju7m4tot
 
-The command will print out a key, such as `3nhs6jf46pi4k.370rq4gpgkfxf.1wjvy2fkm4mzf.wfrfsr0t7o3a`. This will make it possible for `windbg` running on the host computer to connect.
+The command will print out a key, such as
+`3nhs6jf46pi4k.370rq4gpgkfxf.1wjvy2fkm4mzf.wfrfsr0t7o3a`. This will make it
+possible for `windbg` running on the host computer to connect.
 
 On the host computer, launch `windbg` with the same port number and key:
 
-```terminal
+```shell
 windbg -k net:port=50500,key=xjduq2ysrb0k.2utttn53q7ngn.24b65jduczrip.1cdkiyd8fely2
 ```
 
-You might also want to turn on testsigning to test/debug the minifilter: run `bcdedit /set TESTSIGNING ON`
+You might also want to turn on testsigning to test/debug the minifilter: run
+`bcdedit /set TESTSIGNING ON`
 
 ## WinDBG Commands
 
 ### Initial Analysis
+
 These commands typically give you an overview of what happened so you can dig further. In the dase dealing withlibraries, where you don't have source, sending the ersulting log file to the vendor along with the build number of the binary library should be sufficient for them to trace it to a known issue if there is one.
 
 - `!analyze -v`
@@ -112,13 +108,15 @@ These commands typically give you an overview of what happened so you can dig fu
 - `bl`: list all breakpoints
 - `bu`: set an unresolved breakpoint (`bu MyModule!MyFunction`)
 - `bc`: clear a breakpoint, or clear all breakpoints
-    - `bc 2` will clear breakpoint 2
-    - `bc *` will clear all of the breakpoints
+  - `bc 2` will clear breakpoint 2
+  - `bc *` will clear all of the breakpoints
 
 ## Displaying Objects
-Here are a couple of examples of how to use the `dx` command to view memory as a C or C++ object.
 
-```terminal
+Here are a couple of examples of how to use the `dx` command to view memory as
+a C or C++ object.
+
+```text
 kd> dx (*(ThreatStackFIM!FIM_RULE *)(0xffffe001`9b3e3948))
 (*(ThreatStackFIM!FIM_RULE *)(0xffffe001`9b3e3948))                 [Type: FIM_RULE]
     [+0x000] RuleId           : {2C6D89AB-C2F9-11E6-8B3B-55553F93DC1E} [Type: _GUID]
@@ -132,7 +130,7 @@ kd> dx (*(ThreatStackFIM!FIM_RULE *)(0xffffe001`9b3e3948))
     [+0x028] Paths            [Type: _FIM_PATH [1]]
 ```
 
-```terminal
+```text
 kd> dx (*(ThreatStackFIM!FIM_RULE *)(0xffffe001`9b3e3948 + 0x5b0))
 (*(ThreatStackFIM!FIM_RULE *)(0xffffe001`9b3e3948 + 0x5b0))                 [Type: FIM_RULE]
     [+0x000] RuleId           : {FD274E95-C600-11E6-A896-2D11D9E5A7A6} [Type: _GUID]
@@ -146,11 +144,11 @@ kd> dx (*(ThreatStackFIM!FIM_RULE *)(0xffffe001`9b3e3948 + 0x5b0))
     [+0x028] Paths            [Type: _FIM_PATH [1]]
 ```
 
-
 ## Symbol Search Path
+
 If you're local to both t2 and the engineering server, then use the following symbol path:
 
-```sh
+```doscon
 SRV*\\t2\bitbucket\symbols*http://msdl.microsoft.com/download/symbols;
 SRV*\\eng-file-server\builds\symbols;
 SRV*\\eng-file-server\releases\symbols;
@@ -158,7 +156,7 @@ SRV*\\eng-file-server\releases\symbols;
 
 If you're remote, then create a directory, like C:\LocalSymbols, to cache the symbols you'll need for debugging and use the following symbol path:
 
-```sh
+```doscon
 SRV*C:\LocalSymbols*http://msdl.microsoft.com/download/symbols;
 SRV* C:\LocalSymbols*\\eng-file-server\builds\symbols;
 SRV* C:\LocalSymbols*\\eng-file-server\releases\symbols;
@@ -166,7 +164,7 @@ SRV* C:\LocalSymbols*\\eng-file-server\releases\symbols;
 
 As of [2015-05-08 Fri]:
 
-```sh
+```doscon
 SRV*\\t2\bitbucket\symbols*http://msdl.microsoft.com/download/symbols;
 SRV*\\eng-file-server\builds\symbols;
 SRV*\\eng-file-server\releases\symbols;
@@ -180,7 +178,7 @@ cache*E:\SymbolCache;srv*http://msdl.microsoft.com/download/symbols;
 ## Source Search Path
 Place the following path in Windbg's source search path:
 
-```sh
+```doscon
 SRV*\\t2\bitbucket\source
 ```
 
@@ -190,7 +188,7 @@ Remember to save these values (both the source and symbol search paths) in a wor
 ## Evaluate C++ Expression
 Use the ~??~ command. For example, =?? Parity!g_ParityFilterInterfaces= returns:
 
-```sh
+```text
 3: kd> ?? Parity!g_ParityFilterInterfaces
 struct ParityFilterInterfaces
    +0x000 m_pMiniFilter    : 0xf73185a8 MiniFilter
@@ -209,7 +207,7 @@ struct ParityFilterInterfaces
 
 In that simple example, ~??~ produces the same results as the ~dt~ command:
 
-```sh
+```text
 3: kd> dt Parity!g_ParityFilterInterfaces
    +0x000 m_pMiniFilter    : 0xf73185a8 MiniFilter
    +0x004 m_pRegistryHook  : 0xf73189a0 RegistryHook
@@ -227,10 +225,10 @@ In that simple example, ~??~ produces the same results as the ~dt~ command:
 
 ### Parity Configuration properties
 
-```sh
+```text
 3: kd> ?? Parity!g_ParityFilterInterfaces.m_pConfigProps
 class ConfigProps * 0xf7318de0
-   +0x000 __VFN_table : 0xf730bde8 
+   +0x000 __VFN_table : 0xf730bde8
    +0x004 m_bVerbose       : 0
    +0x008 m_PoolTag        : 0x70673942
    +0x00c m_ReferenceCount : 0n0
@@ -307,7 +305,7 @@ class ConfigProps * 0xf7318de0
 
 ### Parity Driver Version Information
 
-```sh
+```text
 3: kd> ?? Parity!g_ParityFilterInterfaces.m_pConfigProps->m_VersionInfo
 struct VersionInfo
    +0x000 major            : 0n6
@@ -355,12 +353,13 @@ struct VersionInfo
   - `.effmach x86`
 
 ### Using dt Recursively
+
 The `dt` command can recursivly display the subtype fields of a struct or class:
 
-```conf
+```text
 3: kd> dt Parity!g_ParityFilterInterfaces -r2
    +0x000 m_pMiniFilter    : 0xf73185a8 MiniFilter
-      +0x000 __VFN_table : 0xf730c59c 
+      +0x000 __VFN_table : 0xf730c59c
       +0x004 m_bVerbose       : 0
       +0x008 m_PoolTag        : 0x6c663942
       +0x00c m_ReferenceCount : 0n0
@@ -379,7 +378,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       =f7319da0 s_UserModeReady  : 1
       =f7319da1 s_HaveEnabledState : 1
       +0x028 m_AgentPort      : 0xe1a7c668 AgentPort
-         +0x000 __VFN_table : 0xf730b2bc 
+         +0x000 __VFN_table : 0xf730b2bc
          +0x008 m_SelfReference  : 0xe1a7c668 Void
          +0x00c m_ClientPort     : 0x80002064 _FLT_PORT
          +0x010 m_ServerPort     : 0x800000ec _FLT_PORT
@@ -398,16 +397,16 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x128 m_MessageBytesReceived : PeakCounter
          +0x160 m_MessageCounts  : [38] Counter
       +0x02c m_CliPort        : 0xe199ad28 CLIPort
-         +0x000 __VFN_table : 0xf730b410 
+         +0x000 __VFN_table : 0xf730b410
          +0x008 m_SelfReference  : 0xe199ad28 Void
-         +0x00c m_ClientPort     : (null) 
+         +0x00c m_ClientPort     : (null)
          +0x010 m_ServerPort     : 0x800000e8 _FLT_PORT
          +0x014 m_MaxConnections : 0n1
          +0x018 m_PortName       : UnicodeString
          +0x020 m_MessageNumber  : 0n0
          +0x028 m_PostMessageList : _LIST_ENTRY [ 0xe199ad50 - 0xe199ad50 ]
          +0x030 m_PostMessageListLock : Mutex
-         +0x03c m_PostMessageWorker : (null) 
+         +0x03c m_PostMessageWorker : (null)
          +0x040 m_PostMessageEvent : 0x8aed9b38 _KEVENT
          +0x044 m_Terminate      : 0
          +0x048 m_MessageTime    : PeakCounter
@@ -416,20 +415,20 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x0f0 m_MessageBytesSentVariable : PeakCounter
          +0x128 m_MessageBytesReceived : PeakCounter
       +0x030 m_RunningTime    : Timestamp
-         +0x000 __VFN_table : 0xf730b028 
+         +0x000 __VFN_table : 0xf730b028
          +0x008 m_StartTicks     : _LARGE_INTEGER 0x219
          +0x010 m_TimestampType  : 2 ( TimestampTypeTickCount )
       +0x048 m_ConnectedTime  : Timestamp
-         +0x000 __VFN_table : 0xf730b028 
+         +0x000 __VFN_table : 0xf730b028
          +0x008 m_StartTicks     : _LARGE_INTEGER 0x257e
          +0x010 m_TimestampType  : 2 ( TimestampTypeTickCount )
       +0x060 m_TotalConnectedTime : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x078 m_AnalysisStallTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -438,12 +437,12 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0
       +0x0b0 m_AnalysisStallTimeouts : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x0c8 m_AcquireForSectionSynchronizationPreOpTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -452,7 +451,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x137a8a
          +0x030 m_Count          : 0x521a8
       +0x100 m_CreatePreOpTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -461,7 +460,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x2e427
          +0x030 m_Count          : 0x34f39d
       +0x138 m_CreatePostOpTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -470,7 +469,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x38aa8
          +0x030 m_Count          : 0x34f397
       +0x170 m_SetInfoPreOpTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -479,7 +478,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x46a90
          +0x030 m_Count          : 0x38d1
       +0x1a8 m_SetInfoPostOpTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -488,7 +487,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x79
          +0x030 m_Count          : 0x2b0
       +0x1e0 m_SetSecurityPreOpTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -497,7 +496,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0x5f
       +0x218 m_CleanupPreOpTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -506,7 +505,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x37dc4
          +0x030 m_Count          : 0x2bffe5
       +0x250 m_CleanupPostOpTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -515,7 +514,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0xb4
          +0x030 m_Count          : 0x14a0
       +0x288 m_WritePreOpTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -524,7 +523,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x93ece
          +0x030 m_Count          : 0x40634
       +0x2c0 m_ReadPreOpTime  : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -533,7 +532,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0xeec
          +0x030 m_Count          : 0x38d29
       +0x2f8 m_OpTime1        : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -542,7 +541,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0
       +0x330 m_OpTime2        : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -551,7 +550,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0
       +0x368 m_OpTime3        : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -560,7 +559,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0
       +0x3a0 m_OpTime4        : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -569,14 +568,14 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0
       +0x3d8 m_CachedOpHits   : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0x39fb1
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x3f0 m_ConnectedEvent : 0x8af34e18 _KEVENT
          +0x000 Header           : _DISPATCHER_HEADER
    +0x004 m_pRegistryHook  : 0xf73189a0 RegistryHook
-      +0x000 __VFN_table : 0xf730cda8 
+      +0x000 __VFN_table : 0xf730cda8
       +0x004 m_bVerbose       : 0
       +0x008 m_PoolTag        : 0x6f723942
       +0x00c m_ReferenceCount : 0n0
@@ -590,7 +589,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x020 m_PoolType       : 1 ( PagedPool )
       +0x024 m_PoolTag        : 0x6f723942
       +0x028 m_CreateKeyTime  : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -599,7 +598,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x4a8
          +0x030 m_Count          : 0x94cb
       +0x060 m_DeleteKeyTime  : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -608,7 +607,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x87
          +0x030 m_Count          : 0x784
       +0x098 m_SetValueKeyTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -617,7 +616,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x85a
          +0x030 m_Count          : 0xa44b
       +0x0d0 m_QueryValueKeyTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -626,7 +625,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x4984
          +0x030 m_Count          : 0x55b0d6
       +0x108 m_DeleteValueKeyTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -635,7 +634,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0
       +0x140 m_RenameKeyTime  : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -645,14 +644,14 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x030 m_Count          : 0
       +0x178 m_callbacks      : [47] RegistryCallback
          +0x000 pCallback        : 0xf72ee820           long  Parity!RegistryCallbacks::FilterRegistryPreDeleteKey+0
-         +0x004 pContext         : (null) 
+         +0x004 pContext         : (null)
       +0x2f0 m_Cookie         : _LARGE_INTEGER 0x01cfc97d`5eb2d24a
          +0x000 LowPart          : 0x5eb2d24a
          +0x004 HighPart         : 0n30394749
          +0x000 u                : <unnamed-tag>
          +0x000 QuadPart         : 0n130544454513906250
    +0x008 m_pObjectHook    : 0xf7318c98 ObjectHook
-      +0x000 __VFN_table : 0xf730c96c 
+      +0x000 __VFN_table : 0xf730c96c
       +0x004 m_bVerbose       : 0
       +0x008 m_PoolTag        : 0x6f6f3942
       +0x00c m_ReferenceCount : 0n0
@@ -665,9 +664,9 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x01c m_Name           : 0xf730a750  "ObjectHook"
       +0x020 m_PoolType       : 1 ( PagedPool )
       +0x024 m_PoolTag        : 0x6f6f3942
-      +0x028 m_RegistrationHandle : (null) 
+      +0x028 m_RegistrationHandle : (null)
       +0x030 m_OpenProcessTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -676,7 +675,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x483
          +0x030 m_Count          : 0xb3b15
       +0x068 m_OpenThreadTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -685,7 +684,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0x78
       +0x0a0 m_DuplicateProcessTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -694,7 +693,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0x2e2
       +0x0d8 m_DuplicateThreadTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -703,7 +702,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0x370e
       +0x110 m_ProtectMemoryTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -712,7 +711,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x30e
          +0x030 m_Count          : 0x472f
    +0x00c m_pConfigProps   : 0xf7318de0 ConfigProps
-      +0x000 __VFN_table : 0xf730bde8 
+      +0x000 __VFN_table : 0xf730bde8
       +0x004 m_bVerbose       : 0
       +0x008 m_PoolTag        : 0x70673942
       +0x00c m_ReferenceCount : 0n0
@@ -770,7 +769,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x104 m_WindowsUpdateServicePid : 0xa54
       =f72b6000 MaximumKernelStack : 0x905a4d
       +0x108 m_PropertyLock   : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf72ff830  "Properties"
          +0x008 m_PushLock       : 0
       +0x114 m_VerbosePattern : UnicodeString
@@ -800,13 +799,13 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x174 m_BuildNumber    : 0x30040124
       =f72b6000 s_RuleClassesAllowedWhenDisconnected : 0x905a4d
       +0x178 m_CounterThresholdLock : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf72ff800  "CounterThresholds"
          +0x008 m_PushLock       : 0
       +0x188 m_CounterThresholds : List
-         +0x000 __VFN_table : 0xf730c460 
+         +0x000 __VFN_table : 0xf730c460
          +0x008 m_PoolTag        : 0x74633942
-         +0x00c m_pListHead      : (null) 
+         +0x00c m_pListHead      : (null)
          +0x010 m_NumElements    : 0
          +0x014 m_pFreeFn        : 0xf72d3430           void  Parity!List::DeleteElement+0
          +0x018 m_Counter        : PeakCounter
@@ -821,7 +820,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x010 m_pLogFn         : 0xf72bea90           void  Parity!ConfigProps::LogSecCon+0
          +0x014 m_pDumpFn        : 0xf72beae0           void  Parity!ConfigProps::DumpSecCon+0
    +0x010 m_pABCache       : 0xf7318fc8 ABCache
-      +0x000 __VFN_table : 0xf730b214 
+      +0x000 __VFN_table : 0xf730b214
       +0x004 m_bVerbose       : 0
       +0x008 m_PoolTag        : 0x62613942
       +0x00c m_ReferenceCount : 0n0
@@ -835,7 +834,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x020 m_PoolType       : 1 ( PagedPool )
       +0x024 m_PoolTag        : 0x62613942
       +0x028 m_AbCache        : 0xe1a34680 HashTable<ABEntry>
-         +0x000 __VFN_table : 0xf730bfc8 
+         +0x000 __VFN_table : 0xf730bfc8
          +0x008 m_InternalLock   : SharedLock
          +0x01c m_ExternalLock   : Unlocked
          +0x024 m_Lock           : 0xe1a3469c LockObject
@@ -853,12 +852,12 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x0cc m_Buckets        : 0xe1ac4004 HashBucket<ABEntry>
          +0x0d0 m_Collisions     : 0x314e
       +0x02c m_Lock           : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf72fefc0  ""
          +0x008 m_PushLock       : 0
       +0x038 m_Instance       : 0xa490
       +0x03c m_PublisherCache : 0xe1a04008 HashTable<PublisherEntry>
-         +0x000 __VFN_table : 0xf730bfc8 
+         +0x000 __VFN_table : 0xf730bfc8
          +0x008 m_InternalLock   : SharedLock
          +0x01c m_ExternalLock   : Unlocked
          +0x024 m_Lock           : 0xe1a04024 LockObject
@@ -876,12 +875,12 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x0cc m_Buckets        : 0xe1a66114 HashBucket<PublisherEntry>
          +0x0d0 m_Collisions     : 0
       +0x040 m_Misses         : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0x1f
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
    +0x014 m_pRuleEngine    : 0xf7319020 RuleEngine
-      +0x000 __VFN_table : 0xf730da2c 
+      +0x000 __VFN_table : 0xf730da2c
       +0x004 m_bVerbose       : 0
       +0x008 m_PoolTag        : 0x75723942
       +0x00c m_ReferenceCount : 0n0
@@ -895,7 +894,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x020 m_PoolType       : 1 ( PagedPool )
       +0x024 m_PoolTag        : 0x75723942
       +0x028 m_StallTime      : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0x12b60
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -904,7 +903,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0xd0e0e
          +0x030 m_Count          : 0x1f
       +0x060 m_TimedOutStalls : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 6
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -913,55 +912,55 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x15
          +0x030 m_Count          : 6
       +0x098 m_InactiveStallHits : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 6
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x0b0 m_PotentialStallOnFileOpen : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x0c8 m_Blocks         : [4] Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 4
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x128 m_Prompts        : [4] Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x188 m_WouldBlocks    : [4] Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x1e8 m_WouldPrompts   : [4] Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x248 m_StalledOps     : List
-         +0x000 __VFN_table : 0xf730c460 
+         +0x000 __VFN_table : 0xf730c460
          +0x008 m_PoolTag        : 0x75723942
-         +0x00c m_pListHead      : (null) 
+         +0x00c m_pListHead      : (null)
          +0x010 m_NumElements    : 0
-         +0x014 m_pFreeFn        : (null) 
+         +0x014 m_pFreeFn        : (null)
          +0x018 m_Counter        : PeakCounter
       +0x298 m_StalledOpsLock : Mutex
-         +0x000 __VFN_table : 0xf730c428 
+         +0x000 __VFN_table : 0xf730c428
          +0x004 m_LockName       : 0xf7308390  "Stalled Operations"
          +0x008 m_Mutex          : 0x8aebe150 _FAST_MUTEX
       +0x2a8 m_ClassLists     : [9] List
-         +0x000 __VFN_table : 0xf730c460 
+         +0x000 __VFN_table : 0xf730c460
          +0x008 m_PoolTag        : 0x70673942
          +0x00c m_pListHead      : 0xe18a21e8 ListElement
          +0x010 m_NumElements    : 7
          +0x014 m_pFreeFn        : 0xf72d3430           void  Parity!List::DeleteElement+0
          +0x018 m_Counter        : PeakCounter
       +0x578 m_pFileOpRules   : 0xe2a9e7e8 RuleList
-         +0x000 __VFN_table : 0xf730d9f4 
+         +0x000 __VFN_table : 0xf730d9f4
          +0x004 m_bVerbose       : 0
          +0x008 m_PoolTag        : 0x75723942
          +0x00c m_ReferenceCount : 0n1
@@ -971,11 +970,11 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x06c m_RuleType       : 1 ( FileOpRules )
          +0x070 m_RuleListName   : UnicodeString
       +0x57c m_FileOpRulesLock : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf730d268  "FileOpRules"
          +0x008 m_PushLock       : 0
       +0x588 m_pPathPolicies  : 0xe2dc3dc0 RuleList
-         +0x000 __VFN_table : 0xf730d9f4 
+         +0x000 __VFN_table : 0xf730d9f4
          +0x004 m_bVerbose       : 0
          +0x008 m_PoolTag        : 0x75723942
          +0x00c m_ReferenceCount : 0n1
@@ -985,11 +984,11 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x06c m_RuleType       : 2 ( PathPolicyRules )
          +0x070 m_RuleListName   : UnicodeString
       +0x58c m_PathPoliciesLock : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf730d234  "PathPolicies"
          +0x008 m_PushLock       : 0
       +0x598 m_pRegistryRules : 0xe2453830 RuleList
-         +0x000 __VFN_table : 0xf730d9f4 
+         +0x000 __VFN_table : 0xf730d9f4
          +0x004 m_bVerbose       : 0
          +0x008 m_PoolTag        : 0x75723942
          +0x00c m_ReferenceCount : 0n1
@@ -999,11 +998,11 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x06c m_RuleType       : 3 ( RegistryRules )
          +0x070 m_RuleListName   : UnicodeString
       +0x59c m_RegistryRulesLock : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf730d218  "RegistryRules"
          +0x008 m_PushLock       : 0
       +0x5a8 m_pObjectRules   : 0xe194f220 RuleList
-         +0x000 __VFN_table : 0xf730d9f4 
+         +0x000 __VFN_table : 0xf730d9f4
          +0x004 m_bVerbose       : 0
          +0x008 m_PoolTag        : 0x75723942
          +0x00c m_ReferenceCount : 0n1
@@ -1013,22 +1012,22 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x06c m_RuleType       : 4 ( ObjectRules )
          +0x070 m_RuleListName   : UnicodeString
       +0x5ac m_ObjectRulesLock : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf730d250  "ObjectRules"
          +0x008 m_PushLock       : 0
       +0x5b8 m_TrustedUserSids : List
-         +0x000 __VFN_table : 0xf730c460 
+         +0x000 __VFN_table : 0xf730c460
          +0x008 m_PoolTag        : 0x75723942
-         +0x00c m_pListHead      : (null) 
+         +0x00c m_pListHead      : (null)
          +0x010 m_NumElements    : 0
          +0x014 m_pFreeFn        : 0xf72d3430           void  Parity!List::DeleteElement+0
          +0x018 m_Counter        : PeakCounter
       +0x608 m_TrustedUserLock : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf7308370  "Trusted Users"
          +0x008 m_PushLock       : 0
       +0x618 m_TargetInfoCache : HashTable<TargetInfo>
-         +0x000 __VFN_table : 0xf730bfc8 
+         +0x000 __VFN_table : 0xf730bfc8
          +0x008 m_InternalLock   : SharedLock
          +0x01c m_ExternalLock   : Unlocked
          +0x024 m_Lock           : 0xf7319654 LockObject
@@ -1046,11 +1045,11 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x0cc m_Buckets        : 0xe1a9300c HashBucket<TargetInfo>
          +0x0d0 m_Collisions     : 0
       +0x6f0 m_TargetInfoLock : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf7308340  "Target Info Cache"
          +0x008 m_PushLock       : 0
       +0x6fc m_ParityAnalysisList : 0xe19f5e78 HashTable<ParityAnalysisEntry>
-         +0x000 __VFN_table : 0xf730bfc8 
+         +0x000 __VFN_table : 0xf730bfc8
          +0x008 m_InternalLock   : SharedLock
          +0x01c m_ExternalLock   : Unlocked
          +0x024 m_Lock           : 0xe19f5e94 LockObject
@@ -1068,12 +1067,12 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x0cc m_Buckets        : 0xe1a78984 HashBucket<ParityAnalysisEntry>
          +0x0d0 m_Collisions     : 0x5f
       +0x700 m_ParityAnalysisLock : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf72fefc0  ""
          +0x008 m_PushLock       : 0
       =f73164ec s_RuleClassStrings : [9] 0xf730d2d0  "ABState"
    +0x018 m_pProcessTracking : 0xf7319730 ProcessTracking
-      +0x000 __VFN_table : 0xf730cb98 
+      +0x000 __VFN_table : 0xf730cb98
       +0x004 m_bVerbose       : 0
       +0x008 m_PoolTag        : 0x74703942
       +0x00c m_ReferenceCount : 0n0
@@ -1092,11 +1091,11 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       =f72b6000 ExpiredProcessAgeWithChildrenMs : 0n9460301
       =f72b6000 ExpiredProcessAgeIntervalMs : 0n9460301
       +0x028 m_TableLock      : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf7306ae0  "ProcessTrackingTable"
          +0x008 m_PushLock       : 0
       +0x034 m_ProcessTable   : 0xe1982538 TreeTable<ProcessInfo>
-         +0x000 __VFN_table : 0xf730c3f8 
+         +0x000 __VFN_table : 0xf730c3f8
          +0x008 m_InternalLock   : SharedLock
          +0x01c m_ExternalLock   : Unlocked
          +0x024 m_Lock           : 0xe1982554 LockObject
@@ -1115,23 +1114,23 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x00c m_Initialized    : 0n1
       +0x048 m_ScriptProcessorsDone : 1
       +0x04c m_ScriptProcessorLock : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf72fefc0  ""
          +0x008 m_PushLock       : 0
       +0x058 m_ImageDescriptorsDone : 1
       +0x05c m_ImageDescriptorLock : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf72fefc0  ""
          +0x008 m_PushLock       : 0
       +0x068 m_UsingExNotify  : 0
       +0x06c m_NtKernel       : KernelModuleInfo
-         +0x000 m_Base           : (null) 
+         +0x000 m_Base           : (null)
          +0x004 m_Length         : 0
       +0x074 m_NtDll          : KernelModuleInfo
-         +0x000 m_Base           : (null) 
+         +0x000 m_Base           : (null)
          +0x004 m_Length         : 0
       +0x080 m_ExpiredProcesses : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0x68
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1142,7 +1141,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x0b8 m_ExpiredProcessCount : 0x68
       +0x0bc m_ZwQueryVirtualMemoryFn : 0x90909000        long  +ffffffff90909000
    +0x01c m_pDirtyTracking : 0xf73197f0 DirtyTracking
-      +0x000 __VFN_table : 0xf730bf80 
+      +0x000 __VFN_table : 0xf730bf80
       +0x004 m_bVerbose       : 0
       +0x008 m_PoolTag        : 0x74643942
       +0x00c m_ReferenceCount : 0n0
@@ -1163,11 +1162,11 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x02c m_WakeTimerEvent : 0x8afddd48 _KEVENT
          +0x000 Header           : _DISPATCHER_HEADER
       +0x030 m_TimerStartTime : Timestamp
-         +0x000 __VFN_table : 0xf730b028 
+         +0x000 __VFN_table : 0xf730b028
          +0x008 m_StartTicks     : _LARGE_INTEGER 0x9b340
          +0x010 m_TimestampType  : 2 ( TimestampTypeTickCount )
       +0x048 m_DirtyThreadTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1176,7 +1175,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x1e
          +0x030 m_Count          : 0x5d8
       +0x080 m_TransitionsDuringWalks : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 1
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1189,11 +1188,11 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x0c0 m_LastUpdateTimeout : 0
       +0x0c4 m_ShortestWaitMilliseconds : 0xffffffff
       +0x0c8 m_TableLock      : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf72fefc0  ""
          +0x008 m_PushLock       : 0
       +0x0d4 m_DirtyTable     : 0xe1a909b8 HashTable<DirtyEntry>
-         +0x000 __VFN_table : 0xf730bfc8 
+         +0x000 __VFN_table : 0xf730bfc8
          +0x008 m_InternalLock   : SharedLock
          +0x01c m_ExternalLock   : Unlocked
          +0x024 m_Lock           : 0xe1a909d4 LockObject
@@ -1211,7 +1210,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x0cc m_Buckets        : 0xe1aed004 HashBucket<DirtyEntry>
          +0x0d0 m_Collisions     : 0x148
       +0x0d8 m_DirectoryCountTable : 0xe1a67ba0 HashTable<DirectoryCountEntry>
-         +0x000 __VFN_table : 0xf730bfc8 
+         +0x000 __VFN_table : 0xf730bfc8
          +0x008 m_InternalLock   : SharedLock
          +0x01c m_ExternalLock   : Unlocked
          +0x024 m_Lock           : 0xe1a67bbc LockObject
@@ -1229,7 +1228,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x0cc m_Buckets        : 0xe1af0004 HashBucket<DirectoryCountEntry>
          +0x0d0 m_Collisions     : 4
       +0x0e0 m_UnsentRegularDirties : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 8
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1238,7 +1237,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x8b97
          +0x030 m_Count          : 0x627
       +0x118 m_UnsentFileDeletions : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1247,7 +1246,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x223c
          +0x030 m_Count          : 0x24d
       +0x150 m_UnsentDirectoryDeletions : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1256,7 +1255,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x23c
          +0x030 m_Count          : 0x89
       +0x188 m_UnsentFileRenames : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1265,7 +1264,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x39
          +0x030 m_Count          : 0x73
       +0x1c0 m_UnsentDirectoryRenames : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1274,12 +1273,12 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 1
       +0x1f8 m_TimedOutDirties : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0x1ba
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
    +0x020 m_pNormalization : 0xf7319a00 Normalization
-      +0x000 __VFN_table : 0xf730c900 
+      +0x000 __VFN_table : 0xf730c900
       +0x004 m_bVerbose       : 0
       +0x008 m_PoolTag        : 0x616e3942
       +0x00c m_ReferenceCount : 0n0
@@ -1294,7 +1293,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x024 m_PoolTag        : 0x616e3942
       =f72b6000 NormalizationTimerMinimumSleepMs : 0x905a4d
       +0x028 m_IntermediateNameFromRelated : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1303,7 +1302,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0
       +0x060 m_NoRelatedObject : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1312,7 +1311,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0
       +0x098 m_NoRelatedStreamContext : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1321,16 +1320,16 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0
          +0x030 m_Count          : 0
       +0x0d0 m_LastDirectoryRenameTime : Timestamp
-         +0x000 __VFN_table : 0xf730b028 
+         +0x000 __VFN_table : 0xf730b028
          +0x008 m_StartTicks     : _LARGE_INTEGER 0x219
          +0x010 m_TimestampType  : 2 ( TimestampTypeTickCount )
       +0x0e8 m_LastDirectoryRenameCounter : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x100 m_NormalizeFromFilterTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1339,7 +1338,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x54cc5
          +0x030 m_Count          : 0x50ba56
       +0x138 m_NormalizeFromPathTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1348,7 +1347,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x11c17
          +0x030 m_Count          : 0x2de7
       +0x170 m_NormalizeFromFileObjectTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1360,18 +1359,18 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x1ac m_WakeTimerEvent : 0x8aecf068 _KEVENT
          +0x000 Header           : _DISPATCHER_HEADER
       +0x1b0 m_TimerStartTime : Timestamp
-         +0x000 __VFN_table : 0xf730b028 
+         +0x000 __VFN_table : 0xf730b028
          +0x008 m_StartTicks     : _LARGE_INTEGER 0x9635d
          +0x010 m_TimestampType  : 2 ( TimestampTypeTickCount )
       +0x1c8 m_TimerAction    : 2 ( NormalizationTimerUpdate )
       +0x1cc m_SleepMilliseconds : 0xffffffff
       +0x1d0 m_ShortestWaitMilliseconds : 0xffffffff
       +0x1d4 m_TableLock      : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf72fefc0  ""
          +0x008 m_PushLock       : 0
       +0x1e0 m_NormalizationCache : 0xe1aab248 HashTable<NormalizationEntry>
-         +0x000 __VFN_table : 0xf730bfc8 
+         +0x000 __VFN_table : 0xf730bfc8
          +0x008 m_InternalLock   : SharedLock
          +0x01c m_ExternalLock   : Unlocked
          +0x024 m_Lock           : 0xe1aab264 LockObject
@@ -1389,7 +1388,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x0cc m_Buckets        : 0xe1ac1004 HashBucket<NormalizationEntry>
          +0x0d0 m_Collisions     : 1
    +0x024 m_pDeviceTracking : 0xf7319be8 DeviceTracking
-      +0x000 __VFN_table : 0xf730bed0 
+      +0x000 __VFN_table : 0xf730bed0
       +0x004 m_bVerbose       : 0
       +0x008 m_PoolTag        : 0x65643942
       +0x00c m_ReferenceCount : 0n0
@@ -1404,11 +1403,11 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x024 m_PoolTag        : 0x65643942
       =f73103fc s_MediaCodeStrings : [0] 0xf730ae2c  "Unknown"
       +0x028 m_TableLock      : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf7300030  "DeviceTrackingTable"
          +0x008 m_PushLock       : 0
       +0x034 m_DeviceTable    : 0xe1a48db0 HashTable<DeviceInfo>
-         +0x000 __VFN_table : 0xf730bfc8 
+         +0x000 __VFN_table : 0xf730bfc8
          +0x008 m_InternalLock   : SharedLock
          +0x01c m_ExternalLock   : Unlocked
          +0x024 m_Lock           : 0xe1a48dcc LockObject
@@ -1426,7 +1425,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x0cc m_Buckets        : 0xe1a82624 HashBucket<DeviceInfo>
          +0x0d0 m_Collisions     : 0
       +0x038 m_Mounts         : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0xec
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1435,7 +1434,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x6d3e
          +0x030 m_Count          : 0xec
       +0x070 m_Dismounts      : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0xe8
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1449,7 +1448,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x008 m_pTimerContext  : 0x8aec01f8 TimerContext
          +0x00c m_Initialized    : 0n1
    +0x028 m_pWatchdogServices : 0xf7319ca0 WatchdogServices
-      +0x000 __VFN_table : 0xf730cc40 
+      +0x000 __VFN_table : 0xf730cc40
       +0x004 m_bVerbose       : 0
       +0x008 m_PoolTag        : 0x72643942
       +0x00c m_ReferenceCount : 0n0
@@ -1466,15 +1465,15 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
       +0x02c m_WakeTimerEvent : 0x8af2c248 _KEVENT
          +0x000 Header           : _DISPATCHER_HEADER
       +0x030 m_TimerStartTime : Timestamp
-         +0x000 __VFN_table : 0xf730b028 
+         +0x000 __VFN_table : 0xf730b028
          +0x008 m_StartTicks     : _LARGE_INTEGER 0xa3b72
          +0x010 m_TimestampType  : 2 ( TimestampTypeTickCount )
       +0x048 m_TableLock      : PushLock
-         +0x000 __VFN_table : 0xf730b078 
+         +0x000 __VFN_table : 0xf730b078
          +0x004 m_LockName       : 0xf72fefc0  ""
          +0x008 m_PushLock       : 0
       +0x054 m_WatchdogTable  : 0xe1a71f00 TreeTable<WatchdogEntry>
-         +0x000 __VFN_table : 0xf730c3f8 
+         +0x000 __VFN_table : 0xf730c3f8
          +0x008 m_InternalLock   : SharedLock
          +0x01c m_ExternalLock   : Unlocked
          +0x024 m_Lock           : 0xe1a71f1c LockObject
@@ -1487,12 +1486,12 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x090 m_CurrentEntries : PeakCounter
          +0x0c8 m_Table          : _RTL_AVL_TABLE
       +0x058 m_WatchdogExpirations : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
    +0x02c m_pControl       : 0xf7318430 Control
-      +0x000 __VFN_table : 0xf730be34 
+      +0x000 __VFN_table : 0xf730be34
       +0x004 m_bVerbose       : 0
       +0x008 m_PoolTag        : 0x6c663942
       +0x00c m_ReferenceCount : 0n16
@@ -1515,7 +1514,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x010 m_FileTypeCountersTableLock : PushLock
          +0x01c m_FileTypeCountersTable : 0xe1a777a8 TreeTable<FileTypeCountersEntry>
       +0x048 m_StringCounter  : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0x2e
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1524,7 +1523,7 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x00000002`8bd18d72
          +0x030 m_Count          : 0x479cde7
       +0x080 m_DeferredWorkTime : PeakCounter
-         +0x000 __VFN_table : 0xf730b260 
+         +0x000 __VFN_table : 0xf730b260
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
@@ -1533,47 +1532,48 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
          +0x028 m_Total          : 0x2d
          +0x030 m_Count          : 0x10c
       +0x0b8 m_ExceptionCountRegistryHook : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x0d0 m_ExceptionCountNormalization : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x0e8 m_ExceptionCountProcessInfo : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x100 m_ExceptionCountObjectHook : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x118 m_ExceptionCountFileHook : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x130 m_ExceptionCountDeferredWork : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x148 m_ExceptionCountUserModeMemory : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
       +0x160 m_MemoryAllocationCountFailures : Counter
-         +0x000 __VFN_table : 0xf730b02c 
+         +0x000 __VFN_table : 0xf730b02c
          +0x008 m_Value          : 0
          +0x010 m_NumViolations  : 0
          +0x014 m_Id             : 0
 ```
 
 ## References
+
 - [Common windbg commands (Thematically Grouped)](http://windbg.info/doc/1-common-cmds.html)
 - [Common Wndbg Commands: breakpoints](http://windbg.info/doc/1-common-cmds.html#13_breakpoints)

@@ -10,8 +10,9 @@ What is Data-Oriented Design and how does it relate to other design methods, suc
 <!--more-->
 
 ## Data-Oriented Design Principles
+
 - The purpose of all programs and all parts of all programs is to transform data from one form to another.
 
-
 ## References
+
 - [Data-Oriented Design and C++](https://www.youtube.com/watch?v=rX0ItVEVjHc), a talk by Mike Acton at CppCon 2014.

@@ -1,27 +1,25 @@
 ---
-layout: post
 title: PowerShell Notes
-categories: work
-excerpt: Powershell notes, examples, links and reference material.
+date: 2016-09-12T09:53:00-05:00
+draft: true
+categories: programming
+tags: [powershell]
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+Powershell notes, examples, links and reference material.
+<!--more-->
 
 ## Escape Sequences
 
 Today I learned that to escape double quotes in PowerShell scripts they must be preceded by a backtick (`` ` ``). For example:
 
-```
+```ps1
 $cmd="\\server\toto.exe -batch=B -param=`"sort1;parmtxt='Security ID=1234'`""
 ```
 
 `$cmd` is returned as:
 
-```
+```ps1
 \\server\toto.exe -batch=B -param="sort1;parmtxt='Security ID=1234'"
 ```
 
@@ -36,5 +34,5 @@ and file name of the script ($MyInvocation.MyCommand.Path) or the name of a func
 
 Beginning in Windows PowerShell 3.0, $MyInvocation has the following new properties.
 
--- PSScriptRoot: Contains the full path to the script that invoked the current command. The value of this property is populated only when the caller is a script.  
--- PSCommandPath: Contains the full path and file name of the script that invoked the current command. The value of this property is populated only when the caller is a script.
+- `PSScriptRoot`: Contains the full path to the script that invoked the current command. The value of this property is populated only when the caller is a script.
+- `PSCommandPath`: Contains the full path and file name of the script that invoked the current command. The value of this property is populated only when the caller is a script.

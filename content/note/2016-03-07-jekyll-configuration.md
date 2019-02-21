@@ -22,7 +22,7 @@ Head over to the [Ruby](https://www.ruby-lang.org/en/) site and download the [la
 
 According to the [Jekyll website](https://jekyllrb.com) all you have to do to install Jekyll, create a new blog project and start a web server that watches for changes is:
 
-```terminal
+```shell
 gem install jekyll
 jekyll new my-blog
 cd my-blog
@@ -33,7 +33,7 @@ I've found [Bundler](http://bundler.io/) is useful for keeping gems up-to-date. 
 
 Create a git repository on your local computer:
 
-```terminal
+```shell
 E:\> git init my-jekyll-site-project
 Initialized empty Git repository in E:/Users/Doug/Projects/my-jekyll-site-project/.git/
 ```
@@ -42,7 +42,7 @@ Change the current directory to the new repository (`cd my-jekyll-site-project`)
 
 Now we can prepare to install Jekyll using Bundler. Ruby and Bundler will use a Gemfile to track dependencies among various gems, so create or edit a Gemfile in your favorite editor. It must start with:
 
-```terminal
+```shell
 source 'https://rubygems.org'
 ```
 
@@ -203,7 +203,7 @@ The other major change is in the handling of `post_url`. It is no longer enough 
 ## Rouge Values for Fenced Code Blocks
 Run `rougify list` to get the latest list of languages supported by Rouge for fenced code blocks.
 
-```terminal
+```shell
 > rougify list
 ```
 

@@ -241,7 +241,7 @@ javascripts_dir = "js"
 
 This is the directory structure that I'm starting with.
 
-```terminal
+```shell
 |-- .git/
 |-- .sass-cache/
 |-- _drafts/

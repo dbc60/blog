@@ -1,10 +1,13 @@
 ---
-layout: post
 title: Version Control Schema
-categories: notes
-tags: [history,version]
-excerpt: This is pulled from the sqlite3 database that is the storage for the Fossil-SCM version control system. I put it here for reference in case I ever wanted to figure out how to keep a history of changes to a project (for example, adding, removing, or deferring features or tasks).
+date: 2016-03-28
+draft: true
+categories: sql
+tags: [version control, change history]
 ---
+
+This is pulled from the sqlite3 database that is the storage for the Fossil-SCM version control system. I put it here for reference in case I ever wanted to figure out how to keep a history of changes to a project (for example, adding, removing, or deferring features or tasks).
+<!--more-->
 
 ```sql
 CREATE TABLE blob(
