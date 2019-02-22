@@ -1,9 +1,10 @@
 ---
+title: "D3 Example: Simple Color Change"
 date: 2019-02-14T07:37:05-05:00
+draft: true
 description: "A d3js Example"
 categories: [d3]
 tags: [example]
-title: "D3 Example: Simple Color Change"
 d3: true
 ---
 

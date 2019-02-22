@@ -1,24 +1,17 @@
 ---
-layout: post
 title: Business Development & Startups
+date: 2016-11-04
+draft: true
+categories: [business development]
 tags:
-    - notes
-excerpt: Things about business development and startups
+    - startup
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
-
-## Document History
-
-| Date | Author | Summary of Changes |
-|-----------:|-----------------:|:---------------|
-| 2016.11.04 | Doug Cuthbertson | Initial draft. |
+Things about business development and startups
+<!--more-->
 
 ## Signs You Might be Playing Startup
+
 Notes from [Too Many Startups Like Playing Startup](https://www.groovehq.com/blog/startups-playing-startup).
 
 The author says there are seven signs:
@@ -32,6 +25,7 @@ The author says there are seven signs:
 1. Having more conversations with people outside of your market than people in it.
 
 ## Setting the Stage for Boostrapping a SaaS Startup
+
 The first rule is that building and running a SaaS business has _nothing_ to do with your ability to write code. Code is the least important thing about a SaaS business. Typically, codebases are dismal abysses of darkness, pain and hte cause for much wailing and gnashing of teeth. The reason is that a business's software serves one purpose and one purpose only: To make the business money.
 
 Ask yourself how any of these goals that developers might have will make the business money:
@@ -52,6 +46,7 @@ The point is not to abandon software engineering principles, but to focus work o
 The other thing to realize is that once your product is off the ground, you'll spend very little time writing code.
 
 ### Ideas are only Guesses
+
 Your idea is worth something only if other people care about it. Your SaaS business idea is just a _guess_! You don't have an idea, you have a hunch or guess. Think of it that way - just a guess. It will help to disassociate your emotions from the process.
 
 The next few sections talk about creating your message so you can go **Prospecting**, **Qualifying and Investigating**, **Demonstrating** and **Closing** commitments for sales. This is all to test to see if we can sell our solution, and identify to whom we could sell it, and why.
@@ -59,9 +54,9 @@ The next few sections talk about creating your message so you can go **Prospecti
 As of the beginning of [Part 2](https://medium.com/@cliffordoravec/the-no-bs-approach-to-building-your-saas-startups-launch-list-part-2-of-the-epic-guide-to-8cc371be772c#.e5m2bz5ds), the process is:
 
 - Find the right words for your message
-    - What do I think people want to do?
-    - Why would they want to do that?
-    - Why would they pay money for that?
+  - What do I think people want to do?
+  - Why would they want to do that?
+  - Why would they pay money for that?
 - Prospecting: Find potential customers
 - Qualifying & Investigating: Test to see if our solution sticks with those potential customers
 - Demonstrating: tell them about your solution to their need
@@ -69,13 +64,14 @@ As of the beginning of [Part 2](https://medium.com/@cliffordoravec/the-no-bs-app
 - Build a launch list so you have a potential customer base and to guage whether or not you're going to be able to successfully _market_ your SaaS offering. If you can't get an email address, you'll never get a credit card number.
 
 #### Finding the Right Words
+
 Now that we have our guess, we need to answer three important questions:
 
 1. What do I think people want to do?
 1. Why would they want to do that?
 1. Why would they pay money for that?
 
-Excercise: Fill in the blank. Define the ability, outcome and value for your guess. _I believe that people want to [ability] so that they can [outcome]_, _and they would pay good money for that because [value]_.
+Exercise: Fill in the blank. Define the ability, outcome and value for your guess. _I believe that people want to [ability] so that they can [outcome]_, _and they would pay good money for that because [value]_.
 
 Example:
 
@@ -92,6 +88,7 @@ Another way to put this is: _If you [value]_, _you can [ability] with [Your Busi
 Are your business hypothesis and customer-facing message believable? Do you really think people would give you good money for the ability you're giving them? Is the outcome you came up with plausible and something that people actually want to acieve? If not, go back to the drawing board until it sings. This can take minutes, hours, days, weeks or even months to get right. If you never get it right, chances are your guess was wrong and you'll need to come up with a new one.
 
 #### Prospecting: Find Potential Customers
+
 Now our job is to find people that meet this criteria. Using the example, we're looking for people who **have been trying to convert leads by manually sending emails or by using something like MailChimp and think it's hard and takes forever**. To do this we need to discover these thing:
 
 1. How do we find these people?
@@ -119,6 +116,7 @@ If you've done a good job, you'll get a few helpful responses from the 200 messa
 1. Scrap your "idea" and start over. You guessed wrong.
 
 #### Qualitfying and Investigating: Test to see if Our Solution Sticks
+
 Assuming you have some confirmation that people are feeling the pain point, seeking the **value** you guessed at, it's time to find out if your solution is worth anything. You can reply to their thoughtful and helpful response with something like this (**Demonstrating**):
 
 > Thanks for getting back to me! I've actually been asking some other bloggers about their newsletters too and they're basically echoing what you're saying — that it's a little rough to do everything by hand or with MailChimp and that they're not getting the results they want. Out of curiosity, if there were something that would let you send automated drip email campaigns to your email list signups so that you could automatically nurture leads and convert them into paying customers, would that be something you'd be interested in? I only ask because after hearing everyone talking about this, I'm thinking there could be a good opportunity to do something different here. Plus I'm a developer, and I think that could be a fun project to work on :)
@@ -141,6 +139,7 @@ If they've said, "Oh yes", you're nailing it. After you get these responses, tel
 The goal is to get to 20 "Heck yes" responses that are interested in hearing about what you come up with. You'll need to refine your message, listen to feedback, adjust your message again, try different approaches, different places, different people, etc. If you can't get to 20, you might want to reconsider what you're doing.
 
 ### Landing Pages
+
 You haven't built enough landing pages until you're sick of building landing pages. I'm going to have to learn a little about JavaScript, CSS, Web Design and a few other things to build landing pages.
 
 Clifford Oravec, the author of [The Epic Guide to Bootstrapping a SaaS Startup from Scratch - By Yourself](https://medium.com/@cliffordoravec/the-no-bs-approach-to-building-your-saas-startups-launch-list-part-2-of-the-epic-guide-to-8cc371be772c#.e5m2bz5ds) claims that building the actual landing page is the easiest part of this process. You can use services like Leadpages to build one out or you can roll your own (if you're so inclined).
@@ -149,9 +148,9 @@ Your landing page needs to do the following:
 
 - Collect an email address and save it in a database somewher
 - Incorporate elements from your messaging (the one that got you your 20 "Heck Yeses"). Specifically, it needs to articulate (in any order):
-    - Who is this for?
-    - What does it do?
-    - Why should they give you money for it?
+  - Who is this for?
+  - What does it do?
+  - Why should they give you money for it?
 - Incorporate some kind of promise. What are you promising (explicitly or implicitly) that people will get if they decide to use your service? Make sure this is clear.
 
 Don't create a page that looks _exactly_ like a finished marketing site, complete with screenshots, etc. and that you should "trick" people int signing up for your service to test if they'd pay for the finished product. You'll just piss off potential customers.
@@ -166,14 +165,14 @@ Assume that it would take you one year to build your whole solution. Just assume
 
 Here's Tamboos first landing page as an example:
 
-<img srcset="/assets/Startups/TamboosFirstLandingPage.png 880w"
+<img srcset="/images/startups/TamboosFirstLandingPage.png 880w"
      sizes="(min-width: 1745px) 650px, 37vw"
      alt="Example: Tamboo's First Landing Page"
      crossorigin="anonymous">
 
 After some experimentation, he distilled the essence and narrowed in on the message:
 
-<img srcset="/assets/Startups/TamboosImprovedLandingPage.png 1100w"
+<img srcset="/images/startups/TamboosImprovedLandingPage.png 1100w"
      sizes="(min-width: 1745px) 650px, 37vw"
      alt="Example: Tamboo's Improved Landing Page"
      crossorigin="anonymous">
@@ -182,7 +181,7 @@ The beauty of this approach is he didn't have to figure out what the app should 
 
 He also uses this tactic when he wants to test out if he should build new features. When people client the "Request an Invite" button, you add them to your email list (just a table in a database) along with the HTTP referrer that sent them (so you know where signups come from), thank them, and then ideally ask them to take some other action to help you out. For example, invite them to become an existing customer of the main product:
 
-<img srcset="/assets/Startups/TamboosFeatureThankYou.png 880w"
+<img srcset="/images/startups/TamboosFeatureThankYou.png 880w"
      sizes="(min-width: 1745px) 650px, 37vw"
      alt="Example: Tamboo's Feature Thank You page"
      crossorigin="anonymous">

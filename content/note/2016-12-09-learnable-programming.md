@@ -1,20 +1,16 @@
 ---
-layout: post
 title: Learnable Programming
-tags:
-    - notes
-    - programming
-excerpt: Bret Victor's essay on Learnable Programming
+date: 2016-12-09
+draft: true
+categories: [programming]
+tags: [design]
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
-
+Bret Victor's essay on Learnable Programming
+<!--more-->
 
 ## LEARNABLE PROGRAMMING
+
 Designing a programming system for understanding programs
 
 - [Bret Victor](http://worrydream.com/) / September 2012

@@ -1,9 +1,10 @@
 ---
+title: "W3C DOM API Example: Simple Color Change"
 date: 2019-02-14T07:33:05-05:00
+draft: true
 description: "A simple DOM API Example"
 categories: [d3]
 tags: [example]
-title: "W3C DOM API Example: Simple Color Change"
 ---
 
 This example uses the [W3C DOM API](https://www.w3.org/DOM/DOMTR) to change the color of the paragraphs above it on this page.

@@ -1,24 +1,16 @@
 ---
-layout: post
 title: Neural Networks
-tags:
-excerpt: Stuff about neural networks I found on the net that looked interesting
+date: 2016-11-08
+draft: true
+categories: computer science
+tags: [machine learning, neural nets, artificial intelligence, ai, ml]
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
-
-## Document History
-
-| Date | Author | Summary of Changes |
-|-----------:|-----------------:|:---------------|
-| 2016.11.08 | Doug Cuthbertson | Initial draft. |
-| 2016.11.10 | Me               | Added References |
+Stuff about neural networks I found on the net that looked interesting
+<!--more-->
 
 ## Types of Neural Networks
+
 Fjodor Van Veen posted [a mostly complete chart of neural networks](http://www.asimovinstitute.org/neural-network-zoo/#) (dated 2016.09.14). He lists 13 cell types and a labeled diagram, node map, for each of 27 neural networks. Each node map shows the types of cells it contains and how they are connected. The 13 cell types are:
 
 1. Backfed Input Cell
@@ -70,8 +62,8 @@ The author notes that this list is far from comprehensive, there are variations 
 The training methods vary among these networks.
 
 1. back-propagation: giving the network paired datasets of "what goes in" and "what we want to have coming out." This is call ed supervised learning.
-    - P
-    - FF
+   - P
+   - FF
 1. unsupervised learning: provide input and let the network fill in the blanks. The error is being back-propagated is often some variation of the difference between the input and the output (like MSE or just the linear difference).
 
 ## References
@@ -82,12 +74,14 @@ The training methods vary among these networks.
 - Stanford EE263: [Introduction to Linear Dynamical Systems](http://ee263.stanford.edu/)
 
 Beginner:
+
 - [An Introduction to Machine Learning for Developers](http://blog.algorithmia.com/introduction-machine-learning-developers/)
 - [Andrew Ng's class](http://cs229.stanford.edu)
 - [Python Machine Learning](https://smile.amazon.com/Python-Machine-Learning-Sebastian-R...)
 - [An Introduction to Statistical Learning](https://smile.amazon.com/Introduction-Statistical-Learning-A...)
 
 Intermediate:
+
 - [Pattern Recognition and Machine Learning](https://smile.amazon.com/Pattern-Recognition-Learning-Inform...)
 - [Machine Learning: A Probabilistic Perspective](https://smile.amazon.com/Machine-Learning-Probabilistic-Pers...)
 - [All of Statistics: A Concise Course in Statistical Inference](https://smile.amazon.com/gp/product/0387402721/)
@@ -99,6 +93,7 @@ Intermediate:
 - [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
 
 Advanced:
+
 - [Probabilistic Graphical Models: Principles and Techniques](https://smile.amazon.com/Probabilistic-Graphical-Models-Prin...)
 
 Looking into probabilistic programming is helpful too. These resources are pretty good:
@@ -106,4 +101,4 @@ Looking into probabilistic programming is helpful too. These resources are prett
 - [The Design and Implementation of Probabilistic Programming Languages](http://dippl.org)
 - [Practical Probabilistic Programming](https://smile.amazon.com/Practical-Probabilistic-Programming...)
 
-The currently most popular ML frameworks are scikit-learn, Tensorflow, Theano and Keras.
+Currently (as of 2016.11.08), the most popular ML frameworks are scikit-learn, Tensorflow, Theano and Keras.

@@ -1,6 +1,7 @@
 ---
-layout: post
 title: The NTFS Master File Table
+date: 2016-09-25
+draft: true
 categories: windows
 tags: [mft, ntfs]
 ---
@@ -31,8 +32,11 @@ I'll list all the structures I need to read here and have two subsections; one t
 
 - [x] size of each MFT entry (1024 bytes).
 - [x] layout of `struct MftEntry`, which is a header for a MFT entry.
-- [x] Representing a MFT entry as its header, `MftEntry`, followed by an array of bytes called the `UpdateSequenceArray`.
-- [x] Enumerate optical disks (CD/DVD/BluRay). Note that the code for getting the alignment descriptor worked in September, but now fails in November with "Error: 1, Incorrect function".
+- [x] Representing a MFT entry as its header, `MftEntry`, followed by an array
+      of bytes called the `UpdateSequenceArray`.
+- [x] Enumerate optical disks (CD/DVD/BluRay). Note that the code for getting
+      the alignment descriptor worked in September, but now fails in November
+      with "Error: 1, Incorrect function".
 - [x] Enumerate physical drives.
 - [x] Get information about the Master Boot Record (MBR).
 - [x] Retrieve the NTFS Volume Boot Record.

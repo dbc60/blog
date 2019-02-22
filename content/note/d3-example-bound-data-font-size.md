@@ -1,6 +1,7 @@
 ---
 title: "D3 Example: Bound Data for Font Size"
 date: 2019-02-14T11:39:00-05:00
+draft: true
 description: "A d3js example using bound data to choose the font size"
 d3: true
 categories: [d3]
