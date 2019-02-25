@@ -9,6 +9,13 @@ hideFooter = false
 #featured_image = "/images/hero-header-default.jpg"
 featured_image = "/images/hero-header-april.jpg"
 
+# The links below use fontawesome icons. They default to the "fab" set,
+# but some come from other sets. Fontawesome has four sets:
+#
+#   fab: brands
+#   fas: solid icons
+#   far: regular icons
+#   fal: light icons
 [[links]]
     icon = "github"
     title = "Github"
@@ -23,6 +30,12 @@ featured_image = "/images/hero-header-april.jpg"
     icon = "twitter"
     title = "Twitter"
     url = "https://twitter.com/DougCuthbertson"
+
+[[links]]
+    icon = "reddit"
+    title = "reddit"
+    url = "https://www.reddit.com/user/dbc60"
+
 
 [[links]]
     icon = "instagram"

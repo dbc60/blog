@@ -17,8 +17,11 @@
   {{ end }}
   {{ partial "style.html" . }}
 
-  <!-- Add fontawesome icons and things -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!--
+    Add fontawesome icons and things. See https://fontawesome.com/start for the
+    latest version
+   -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
   {{ if or .Params.d3 .Site.Params.d3 }}

@@ -65,3 +65,27 @@ pygmentsCodefencesGuessSyntax = true
     pre = "rss"
     url = "/index.xml"
     weight = 7
+
+# Hugo default privacy settings that work with its internal templates
+# (See https://gohugo.io/templates/internal/).
+[privacy]
+  [privacy.disqus]
+    disable = false
+  [privacy.googleAnalytics]
+    anonymizeIP = false
+    disable = false
+    respectDoNotTrack = false
+    useSessionStorage = false
+  [privacy.instagram]
+    disable = false
+    simple = false
+  [privacy.twitter]
+    disable = false
+    enableDNT = false
+    simple = false
+  [privacy.vimeo]
+    disable = false
+    simple = false
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = false
