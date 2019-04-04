@@ -27,6 +27,11 @@ featured_image = "/images/hero-header-april.jpg"
     url = "http://stackoverflow.com/users/165347/doug-cuthbertson"
 
 [[links]]
+    icon = "linkedin"
+    title = "LinkedIn"
+    url = "https://www.linkedin.com/in/douglas-cuthbertson-0487001/"
+
+[[links]]
     icon = "twitter"
     title = "Twitter"
     url = "https://twitter.com/DougCuthbertson"
@@ -56,11 +61,6 @@ featured_image = "/images/hero-header-april.jpg"
     icon = "youtube"
     title = "YouTube"
     url = "https://www.youtube.com/channel/UCjYq4zK5Pc2vxwpCWUotPxg?view_as=subscriber"
-
-[[links]]
-    icon = "linkedin"
-    title = "LinkedIn"
-    url = "https://www.linkedin.com/in/douglas-cuthbertson-0487001/"
 
 [[links]]
     iconset = "fas"
