@@ -3,7 +3,7 @@ title: Programming Tips & Snippets
 date: 2017-02-02
 draft: true
 categories: [programming, windows]
-tags: [go, c++, sound, graphics, workspace]
+tags: [golang, c++, sound, graphics, workspace]
 ---
 
 Some code. Some notes. Some organization. Some graphics. Some Handmade Hero stuff.
@@ -15,7 +15,7 @@ A good directory layout can help keep files organized. Jekyll does this well. Th
 
 ### Go Workspace
 
-Go code is kept in a _workspace_. A workspace contains _many_ source repositories (that is, `git` or `mercurial` repositories). The Go tool understands the layout of a workspace. You don't need a `Makefile`. The file and directory layout contain all the necessary information.
+[Go code][go] is kept in a _workspace_. A workspace contains _many_ source repositories (that is, `git` or `mercurial` repositories). The Go tool understands the layout of a workspace. You don't need a `Makefile`. The file and directory layout contain all the necessary information.
 
 A Go workspace looks like this:
 
@@ -582,3 +582,5 @@ Nano Server is only available to customers who subscribe to the [Microsoft Softw
 - [Ray Tracing the Next Week](http://in1weekend.blogspot.com/2016/01/ray-tracing-second-weekend.html)
 - [Ray Tracing: The Rest of Your Life](http://in1weekend.blogspot.com/2016/03/ray-tracing-rest-of-your-life.html)
 - [Revisiting Network I/O APIs: The netmap Framework](http://queue.acm.org/detail.cfm?id=2103536) in the January 17, 2012 issue of ACM Queue magazine (Vol. 10, No. 1).
+
+[go]: https://golang.org/

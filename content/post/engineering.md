@@ -1,13 +1,13 @@
-+++
-title = "What is Engineering?"
-date = 2019-04-08T10:32:30-05:00
-draft = true
+---
+title: What is Engineering?
+date: 2019-04-08T10:32:30-05:00
+draft: true
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = ["principles", "concepts"]
-categories = ["engineering"]
-+++
+tags: [principles, concepts]
+categories: [engineering]
+---
 
 This doesn't have to be my first blog post.
 
