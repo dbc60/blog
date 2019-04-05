@@ -19,3 +19,5 @@ To help with [Window does not appear in front](http://answers.microsoft.com/en-u
 
 - [Foreground Lock Timeout](https://technet.microsoft.com/en-us/library/cc957208.aspx)
 - [Foreground Flash Count](https://technet.microsoft.com/en-us/library/cc957205.aspx?f=255&MSPPError=-2147217396)
+
+Windows 10 hides error codes when there's a Blue Screen of Death (BSOD). To make display the error code, open the registry editor and navigate to ``HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl``. Create a new DWORD value named **DisplayParameters** and set it to 1. Restart and next time it BSOD's the error code will be diplayed.

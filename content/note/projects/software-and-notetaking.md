@@ -361,6 +361,20 @@ w:\
 ```
 
 ## Resources & References
+
+- [Hugo ReStructured](https://github.com/fisodd/hugo-restructured) a fisodd github repo.
+- [A ReStructuredText Primer](https://www.fisodd.org/rest/quickstart/) a fisodd.org blog post.
+- [reStructuredText Demonstration](https://www.fisodd.org/rest/rst-demo/) a fisodd.org blog post.
+- [Hugo and reStructuredText](https://www.fisodd.org/rest/hugo-and-restructuredtext/) a fisodd.org blog post.
+- [Support in Hugo for using reST](https://github.com/gohugoio/hugo/issues/472) a (closed) Hugo issue.
+- [Abandoned go-rst parser](https://github.com/demizer/go-rst). It implements 28 of 283 items of the official specification. It does [have a breakdown](https://github.com/demizer/go-rst/blob/master/doc/README.rst) of what's implmented, and a [roadmap](https://github.com/demizer/go-rst/blob/master/doc/implementation.rst#roadmap). It might be worth taking over.
+- [Discussion of native reST parser for Hugo](https://github.com/gohugoio/hugo/issues/1436) has some interesting background.
+- [hhatto/gorst](https://github.com/hhatto/gorst) is another attempt to create a Go-based parser for reST.
+- [rst2html5](https://pypi.org/project/rst2html5/) generates (X)HTML5 documents from standalone reStructuredText sources. It is a complete rewrite of the docutils’ ``rst2html`` and uses new HTML5 constructs such as ``<section>`` and ``<aside>``. Install: ``pip install rst2html5``. Usage: ``rst2html5 [options] SOURCE``.
+- [reStructuredText Markup Specification](http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html).
+- [Reference reST Parser](https://repo.or.cz/docutils.git/tree/HEAD:/docutils/docutils/parsers/rst).
+- [Problems with StructuredText](https://docutils.readthedocs.io/en/sphinx-docs/dev/rst/problems.html).
+- [reST tests](https://repo.or.cz/docutils.git/tree/HEAD:/docutils/test/test_parsers/test_rst) from the [reference implmentation](https://repo.or.cz/docutils.git).
 - [Sphinx Documentation Generator](http://www.sphinx-doc.org/en/stable/) renders HTML, LaTeX, ePub, Texinfo, manual pages and plain text from reStructuredText.
 - [Scribble: The Racket Documentation Tool](https://docs.racket-lang.org/scribble/index.html)
 - [LiveReload Application](https://github.com/livereload/LiveReload) source code.
