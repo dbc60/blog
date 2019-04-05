@@ -379,18 +379,18 @@ w:\
 - [Scribble: The Racket Documentation Tool](https://docs.racket-lang.org/scribble/index.html)
 - [LiveReload Application](https://github.com/livereload/LiveReload) source code.
 - [LiveReload.js](https://github.com/livereload/livereload-js). If this script is on your web page, and an appropriately configured web server is running, then it creates a web socket and listens for incoming change notifications. When someone changes a CSS or image file, the script refreshes the effected portions of the web page w/o reloading the page. When you change any other file, the script reloads the page. The server notifies the client (this script) when to refresh the page. Available servers are:
-    - [LiveReload app for Mac](http://livereload.com/).
-    - [rack-livereload](https://github.com/johnbintz/rack-livereload).
-    - [guard-livereload](https://github.com/guard/guard-livereload).
-    - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch).
-    - Jekyll with the [Hawkins gem](https://github.com/awood/hawkins) plug-in.
-    - write your own: refer to the [LiveReload protocol](http://help.livereload.com/kb/ecosystem/livereload-protocol).
+  - [LiveReload app for Mac](http://livereload.com/).
+  - [rack-livereload](https://github.com/johnbintz/rack-livereload).
+  - [guard-livereload](https://github.com/guard/guard-livereload).
+  - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch).
+  - Jekyll with the [Hawkins gem](https://github.com/awood/hawkins) plug-in.
+  - write your own: refer to the [LiveReload protocol](http://help.livereload.com/kb/ecosystem/livereload-protocol).
 - Other LiveReload Resources
-    - [LiveReload Plugin Repository](https://github.com/livereload/livereload-plugins).
-    - [LiveReload JavaScript Client Code](https://github.com/livereload/livereload-js).
-    - [LiveReload Browser Extensions Repository](https://github.com/livereload/livereload-extensions).
-    - [The Story of LiveReload](http://tarantsov.com/blog/2011/07/the-story-of-livereload-the-first-anniversary/).
-    - [LiveReload Screencast Walkthrough](https://www.youtube.com/watch?v=EZ8vy_cNMVQ).
+  - [LiveReload Plugin Repository](https://github.com/livereload/livereload-plugins).
+  - [LiveReload JavaScript Client Code](https://github.com/livereload/livereload-js).
+  - [LiveReload Browser Extensions Repository](https://github.com/livereload/livereload-extensions).
+  - [The Story of LiveReload](http://tarantsov.com/blog/2011/07/the-story-of-livereload-the-first-anniversary/).
+  - [LiveReload Screencast Walkthrough](https://www.youtube.com/watch?v=EZ8vy_cNMVQ).
 - [Janson Repository](https://github.com/akheron/jansson). [Jansson](http://www.digip.org/jansson/) is a C library for encoding, decoding and manipulating JSON data. LiveReload 2 depends on it.
 - [WebPutty Repository](https://github.com/FogCreek/WebPutty/).
 - [WebPutty Overview Video](https://www.youtube.com/watch?v=FNaN789JsUc).

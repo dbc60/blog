@@ -239,6 +239,7 @@ Finally, determine how you'd like to re-distribute your time in the future. What
 ### 4. Create a Success List
 
 ## Goal Setting and Action Workbook
+
 1. Reflect on what made last year awesome, or not so awesome.
 2. Define your areas of attention. List the core areas of your life where you want to get results.
 3. Define resolutions and habbits. These are general themes of improvement or change you want to work on.
@@ -252,6 +253,7 @@ Finally, determine how you'd like to re-distribute your time in the future. What
 11. Do something now, no matter how small.
 
 ## References
+
 - [Why Your To-Do List is Broken and How You Can Fix It](https://zapier.com/blog/to-do-list-broken/), by Melissa Joy Kon, February 27, 2014.
 - [Extraordinary Results Require ONE Thing](http://www.baylor.edu/business/kellercenter/news.php?action=story&story=130075), by Curtis Schroeder. Ask yourself, "What is the ONE Thing I can do such that by doing it everything else will be easier or unnecessary?"
 - Book: [The ONE Thing: THe Surprisingly Simple Truth Behind Extraordinary Results](http://www.amazon.com/The-ONE-Thing-Surprisingly-Extraordinary/dp/1885167776)
@@ -260,3 +262,4 @@ Finally, determine how you'd like to re-distribute your time in the future. What
 - [Need More Hours in the Day? Plan It Backwards](http://www.inc.com/the-muse/need-more-hours-in-the-day-plan-it-backwards.html) on Inc.com
 - [Need More Hours in the Day? Plan It Backwards](https://www.themuse.com/advice/need-more-hours-in-the-day-plan-it-backward), by Lily Herman (the original article, but the site can be annoying)
 - [How to Reclaim Your Time in Seven Days for a More Productive and Stress-Free Workday](http://lifehacker.com/5839691/how-to-reclaim-your-time-in-seven-days-with-rescuetime) - it talks about using [RescueTime](http://www.rescuetime.com/) to track your time.
+- [Fountain Markup](https://fountain.io/) for screenwriters. Fountain is a simple markup syntax for writing, editing and sharing screenplays in plain, human-readable text. Fountain allows you to work on your screenplay anywhere, on any computer or tablet, using any software that edits text files.
