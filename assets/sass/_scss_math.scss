@@ -1,0 +1,213 @@
+// ipow: raise $base to the power of $exponent, where $exponent is
+// an integer.
+@function ipow($base, $exponent) {
+  $value: $base;
+  $itr: abs($exponent);
+
+  @if $exponent == 0 {
+    $value: 1;
+  } @else {
+    @for $i from 2 through $itr {
+      $value: $value * $base;
+    }
+
+    @if $exponent < 0 {
+      // invert for negative exponents
+      $value: 1 / $value;
+    }
+  }
+
+  @return $value;
+}
+
+
+// The base of the natural logarithm, e, approximated to a more than sufficient
+// number of decimal places.
+$base_ln: 2.7182818284590452353602874713526624977572470937;
+
+// The Taylor series expansion to calculate the natural logarithm of $x. Note
+// that $x MUST be in the range -1 < $x < 1.
+@function series_ln($x, $epsilon: 0.000001) {
+  $i: 2;
+  $x1: $x;
+  $xpow: $x * $x;
+  $x2: $x1 - $xpow/$i;
+  $doAdd: 1;
+  @while abs($x1 - $x2) > $epsilon {
+    $i: $i + 1;
+    $x1: $x2;
+    $xpow: $xpow * $x;
+    @if $doAdd == 1 {
+      $x2: $x1 + $xpow/$i;
+      $doAdd: 0;
+    } @else {
+      $x2: $x1 - $xpow/$i;
+      $doAdd: 1;
+    }
+  }
+
+  @return $x2;
+}
+
+
+/*
+  Taylor series expansion to raise $base_ln to the power of $exponent
+
+  Note that: x^n = pow(x,n) = exp(ln(x)*n), where 'exp(x)' raises e (the base
+  of the natural logarithm) to the power of x, and 'ln(x)' is the natural
+  logarithm. The Taylor series expansions for exp(x) and ln(x) are:
+
+    exp(x) = 1 + x + {x^2}/{2!} + {x^3}/{3!} + ... for all x
+    ln(1-x) = - {x} - {x^2}/2 - {x^3}/3 ...   |x| < 1
+    ln(1+x) = x - {x^2}/2 + {x^3}/3 - {x^4}/4 + ...  for |x| < 1
+
+  If we want to compute exp(z), where z = n + f, and 'n' is an integer and 'f'
+  lies between -0.5 and +0.5. We can write:
+    
+      exp(z) = exp(n + f) = exp(n) * exp(f)
+
+  The first term can be calculated entirely with mulitplications if n is
+  positive, or with multiplications and one division if n is negative. The
+  second term can be computed using the power-series approximation. Since
+  the argument doesn't exceed 0.5 in magnitude, relatively few terms are
+  needed. For example, four significant digits can be obtained with no more
+  than six terms. For example:
+
+      (2.5)^(3.5) = (2.5)^3 * (2.5)^(0.5)
+*/
+@function series_exp($exponent, $epsilon: 0.000001) {
+  $x: abs($exponent);
+  $i: 1;
+  $fact: $i;
+  $x1: 1;
+  $xpow: $x;
+  $x2: $x1 + $xpow;
+  @while ($x2 - $x1) > $epsilon {
+    $i: $i + 1;
+    $fact: $fact * $i;
+    $x1: $x2;
+    $xpow: $xpow * $x;
+    $x2: $x1 + $xpow/$fact;
+  }
+
+  @if $x != $exponent {
+    // negative exponent, so invert the result
+    $x2: 1/$x2;
+  }
+
+  @return $x2;
+}
+
+// Raise $base_ln to the power of $exponent
+@function exp($exponent, $epsilon: 0.000001) {
+  // Decompose $exponent into an integer part, $n, and a rational part, $r.
+  $n: floor(abs($exponent));
+  @if $exponent < 0 {$n: -$n;}
+  $result: ipow($base_ln, $n);
+
+  @if ($n != $exponent) {
+    // There's a rational part, $r. Raise $base_ln to $r using the Taylor
+    // expansion and update our result.
+    $r: $exponent - $n;
+    $result: $result * series_exp($r, $epsilon);
+  }
+
+  @return $result;
+}
+
+
+// ln(2) approximated to a sufficient number of decimal places. 
+$ln_2: 0.693147180559945309417232121458;
+
+
+// Return the number that will raise 2 to the smallest power of 2
+// greater than x. We expect $x > 0.
+@function next_exponent_of_2($x) {
+  $exp: 1;
+  $x: floor($x / 2);
+  @while $x > 0 {
+    $exp: $exp + 1;
+    $x: floor($x / 2);
+  }
+
+  @return $exp;
+}
+
+
+/*
+  Calculate the natural logarithm of $x, where $x > 0. We are using the
+  following definition of ln(x):
+
+        ln(1+x) = x - {x^2}/2 + {x^3}/3 - {x^4}/4 + ...  for |x| < 1
+
+  Algorithm - Compute ln(z) with /argument reduction/:
+
+    - find an integer {n} such that 2^{n-1} <= z < 2^{n}
+    - ln(z) = ln(2^{-n} * z * 2^{n})
+            = ln(1 + (2^{-n} * z - 1)) + {n}*ln(2)
+    - Now the argument to be used in the series expansion of the ln()
+      function is {x = 2^{-n} * z - 1}, which is between -0.5 and 0.0.
+      When the argument of -0.5 is used in the expansion, only 10 terms
+      are needed to achieve four-digit precision, compared with nearly
+      60 terms when the argument is -0.9.
+*/ 
+@function ln($x, $epsilon: 0.000001) {
+  $n: next_exponent_of_2($x);
+
+  @return series_ln((ipow(2, -$n) * $x - 1), $epsilon) + $n * $ln_2;
+}
+
+
+// Raise x to the power of n: x^n = e^(n*ln(x))
+// Algorithm:
+//  - Decompose the exponent into an integer part and a rational part
+//  - Calculate teh integer power with a loop (you can optimize it by
+//    decomposing in factors and reusing partial calculations)
+//  - Calculate the root with any algorithm you like (any iterative
+//  - approximation or bisection or Newton method could work)
+//  - Multiply the two results.
+//  - If the exponent was negative, apply the inverse (result = 1/result).
+// Example:
+//  2^(-3.5) = (2^3) * (2(1/2)))^(-1) = 1 / (2*2*2 * sqrt(2))
+//  = 0.08838834764831844055010554526311
+@function pow($base, $exponent, $epsilon: 0.000001) {
+  // Note: if $x is negative, floor() will return the least negative integer
+  // not greater than $x, which is too negative for us, so we use the floor of
+  // the absolute value of the exponent.
+  $x: abs($exponent);
+  $n: floor($x);
+  @if $exponent < 0 {
+    // Fix the sign of the integer part of the exponent
+    $n: -$n;
+  }
+
+  // Calculate the integer result  
+  $result: ipow($base, $n);
+
+  @if $n != $exponent {
+    // There's a rational part. Use the Taylor series expansion
+    // to update the result
+    $r: $exponent - $n;
+    $result: $result * series_exp($r * ln($base, $epsilon), $epsilon);
+  }
+
+  @return $result;
+}
+
+
+// Some test cases
+.squareroot2::after {
+    content: quote(inspect(pow(2, 0.5)));
+}
+
+.inverse_squareroot2::after {
+    content: quote(inspect(pow(2, -0.5)));
+}
+
+.ln_54::after {
+    content: quote(inspect(ln(54)));
+}
+
+.exp_ln_54::after {
+    content: quote(inspect(exp(ln(54))));
+}
