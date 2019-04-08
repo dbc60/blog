@@ -147,6 +147,8 @@ blockquote {
 	border: 1px solid #cccccc;
 	padding: 0.5em 0.5rem 0.5em 0.5rem;
 	background-color: #fefefe;
+	width: 50%;
+	clear: left;
 }
 blockquote blockquote {
 	/* nested blockquotes, only need a bit of the border box... */
@@ -176,8 +178,6 @@ blockquote.pull-quote {
 	font-size: 1.2rem;
 	color: $color-text;
 	position: relative;
-	width: 50%;
-	clear: left;
 }
 blockquote.pull-quote:before {
 	font-family: "Archivo Narrow", "Times New Roman", sans-serif;

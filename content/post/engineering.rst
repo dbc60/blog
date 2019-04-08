@@ -15,7 +15,7 @@ This doesn't have to be my first blog post.
 
 .. _contents:
 
-.. contents::
+.. contents:: Contents
    :class: sidebar
 
 I can write one or more posts about engineering concepts and principles after

@@ -2,16 +2,12 @@
 title: Minifilters
 date: 2019-04-04T11:11:11-05:00
 draft: true
-tags:
-  - windows
-  - kernel
-  - minifilter
+categories: [windows, kernel]
+tags: [minifilter]
 ---
 
 Notes on writing a Windows minifilter
 <!--more-->
-
-9269044
 
 ## Part I: Fundamentals of IRP_MJ_CREATE
 

@@ -126,11 +126,6 @@ a {
     color: $color-title;
 }
 
-a:link,
-a:visited {
-	/* Do not recolor links in the default blue-link coloration */
-	color: inherit;
-}
 a:hover {
     color: seagreen;
 }
