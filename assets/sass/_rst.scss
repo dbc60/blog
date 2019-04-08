@@ -170,17 +170,20 @@ blockquote.epigraph p:not(.attribution) {
 
 blockquote.pull-quote {
 	padding: 1em 5rem 1em 5rem;
+	border: none;
 	font-weight: bold;
 	font-style: oblique;
-	font-size: 1.5rem;
-	color: #a00000;
+	font-size: 1.2rem;
+	color: $color-text;
 	position: relative;
+	width: 50%;
+	clear: left;
 }
 blockquote.pull-quote:before {
 	font-family: "Archivo Narrow", "Times New Roman", sans-serif;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 8rem;
+	font-size: 6rem;
 	content: "\0201c";
 	color: #f2dede;
 	position: absolute;
@@ -192,7 +195,7 @@ blockquote.pull-quote:after {
 	font-style: normal;
 	font-weight: normal;
 	font-style: normal;
-	font-size: 8rem;
+	font-size: 6rem;
 	content: "\0201d";
 	color: #f2dede;
 	position: absolute;
@@ -201,7 +204,7 @@ blockquote.pull-quote:after {
 }
 blockquote.pull-quote p {
 	display: block;
-	font-size: 0.75rem;
+	font-size: 1.0rem;
 	font-weight: normal;
 	font-style: normal;
 	color: #222222;
@@ -210,8 +213,8 @@ blockquote.pull-quote p:not(.attribution) {
 	display: inline;
 	font-weight: bold;
 	font-style: oblique;
-	font-size: 1.5rem;
-	color: #a00000;
+	font-size: 1.2rem;
+	color: $color-text;
 }
 
 p.rubric {
