@@ -77,6 +77,32 @@ This places limitations on what each layer of the OS knows about the request. Fo
 
 Similarly, during the ``postCreate`` callback, the filter knows how the FS ahndled the request (whether it was successful or not), but the IO manager doesn't. Trying to call a function that involves the IO manager for that ``FILE_OBJECT`` (e.g., ``ObOpenObjectByPointer``, which wants to create a ``HANDLE`` given an object) will fail.
 
+FltMgr synchronizes ``IRP_MJ_CREATE``. Other requests can be synchronized by returning `FLT_PREOP_SYNCHRONIZE instead of FLT_PREOP_SUCCESS_WITH_CALLBACK.
+
+N.B.: the [documentation for ](https://docs.microsoft.com/en-us/windows-hardware/drivers/ifs/returning-flt-preop-synchronize) specifically states
+
+Minifilter drivers should not return ``FLT_PREOP_SYNCHRONIZE`` for create operations, because these operations are already synchronized by the filter manager. If a minifilter driver has registered preoperation and postoperation callback routines for IRP_MJ_CREATE operations, the post-create callback routine is called at ``IRQL = PASSIVE_LEVEL``, in the same thread context as the pre-create callback routine.
+
+Also,
+
+Minifilter drivers must never return ``FLT_PREOP_SYNCHRONIZE`` for asynchronous read or write operations. Doing so can severely degrade both minifilter driver and system performance and can even cause deadlocks if, for example, the modified page writer thread is blocked. Before returning FLT_PREOP_SYNCHRONIZE for an IRP-based read or write operation, a minifilter driver should verify that the operation is synchronous by calling [FltIsOperationSynchronous](https://msdn.microsoft.com/library/windows/hardware/ff543351).
+
+The following types of IO operations cannot be synchronized:
+
+- Oplock file system control (FSCTL) operations (``MajorFunction`` is RP_MJ_FILE_SYSTEM_CONTROL; FsControlCode is [FSCTL_REQUEST_FILTER_OPLOCK](https://msdn.microsoft.com/library/windows/hardware/ff545518), [FSCTL_REQUEST_BATCH_OPLOCK](https://msdn.microsoft.com/library/windows/hardware/ff545510), [FSCTL_REQUEST_OPLOCK_LEVEL_1](https://msdn.microsoft.com/library/windows/hardware/ff545538), or [FSCTL_REQUEST_OPLOCK_LEVEL_2](https://msdn.microsoft.com/library/windows/hardware/ff545546).)
+- Notify change directoyr operations (``MajorFunction`` is ``IRP_MJ_DIRECTORY_CONTROL``; ``MinorFunction`` is ``IRP_MN_NOTIFY_CHANGE_DIRECTORY``.)
+- Byte-range lock requests (``MajorFunction`` is ``IRP_MJ_LOCK_CONTROL``; ``MinorFunction`` is ``IRP_MN_LOCK``.)
+
+``FLT_PREOP_SYNCHRONIZE`` cannot be returned for any of these operations.
+
+### Processing I/O Operations
+
+In its preoperation callback routine, the minifilter driver can queue the operation to a worker thread if needed by calling [FltQueueDeferredIoWorkItem](https://msdn.microsoft.com/library/windows/hardware/ff543449). After doing so, the minifilter driver returns ``FLT_PREOP_PENDING`` from its preoperation callback routine to indicate that the I/O operation is pending, and the minifilter driver is responsible for completing or resuming processing of the request. To resume processing, the minifilter driver calls [FltCompletePendedPreOperation](https://msdn.microsoft.com/library/windows/hardware/ff541913) from the worker thread.
+
+The filter manager calls a minifilter driver's postoperation callback routine for an I/O operation when lower filter drivers (legacy filters and minifilter drivers) have finished completion processing.
+
+In its postoperation callback routine, the minifilter driver can call [FltDoCompletionProcessingWhenSafe](https://msdn.microsoft.com/library/windows/hardware/ff542047) to ensure that completion processing is performed at safe IRQL. Or it can queue the completion processing of the operation to a worker thread if needed by calling [FltQueueDeferredIoWorkItem](https://msdn.microsoft.com/library/windows/hardware/ff543449). After doing so, the minifilter driver returns FLT_POSTOP_MORE_PROCESSING_REQUIRED from its postoperation callback routine to halt the filter manager's completion processing for the I/O operation. To resume completion processing, the minifilter driver calls [FltCompletePendedPostOperation](https://msdn.microsoft.com/library/windows/hardware/ff541897) from the worker thread.
+
 ## References
 
 * [About IRP_MJ_CREATE and minifilter design considerations - Part 1](http://fsfilters.blogspot.com/2010/12/about-irpmjcreate-and-minifilter-design.html)
