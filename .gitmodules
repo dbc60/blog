@@ -5,6 +5,3 @@
 [submodule "themes/vanilla-bootstrap-hugo-theme"]
 	path = themes/vanilla
 	url = https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme.git
-[submodule "themes/hugo-restructured"]
-	path = themes/hugo-restructured
-	url = git@github.com:dbc60/hugo-restructured.git
