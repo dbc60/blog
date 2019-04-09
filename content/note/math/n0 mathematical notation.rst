@@ -18,7 +18,7 @@ meaning, and how to *read* them.
   transaction will be allowed to act on the state.
 * :math:`F:(State, Inputs) \to Transaction`: A function :math:`F` which takes
   some input and the current state, and produces a Transaction.
-* \\(P(s, (i, t)) := F(s, i) \stackrel{?}{=} t\\): predicate :math:`P` with
+* :math:`P(s, (i, t)) := F(s, i) \stackrel{?}{=} t`: predicate :math:`P` with
   arguments state :math:`s` and a transaction object :math:`(i, t)`, where
   :math:`i` is some input and :math:`t` is a transaction, is defined as the
   result of a function :math:`F` whose arguments are the state :math:`s` and
@@ -60,7 +60,10 @@ Predicate logic extends propositional logic with two quantifiers:
 
 .. math::
 
-  \begin{align*}    \forall && \text{universal quantification (for all)} \\    \exists && \text{existential quantification (there exists)}  \end{align*}
+    \begin{align}
+        \forall && \text{universal quantification (for all)} \\\\
+        \exists && \text{existential quantification (there exists)}
+    \end{align}
 
 The phrase "There exists an :math:`x`, element of :math:`X`, such that
 predicate :math:`P(x)` holds (i.e., is true)" can be written in a few ways.
@@ -82,15 +85,15 @@ commands`_ or `TeX commands available in MathJax`_ for more details.
 .. math::
 
   \begin{array}{l c l}
-    \hline                                                \\
-    \text{Command}      & \text{Symbol}  & \text{Package} \\
-    \hline              &                &                \\
-    \text{\square}      & \square        & \text{amssymb} \\
-    \text{\blacksquare} & \blacksquare   & \text{amssymb} \\
-    \text{\Box}         & \Box           & \text{amssymb} \\
-    \text{\boxminus}    & \boxminus      & \text{amssymb} \\
-    \text{\boxplus}     & \boxplus       & \text{amssymb} \\
-    \text{\boxtimes}    & \boxtimes      & \text{amssymb} \\
+    \hline                                                \\\\
+    \text{Command}      & \text{Symbol}  & \text{Package} \\\\
+    \hline              &                &                \\\\
+    \text{\square}      & \square        & \text{amssymb} \\\\
+    \text{\blacksquare} & \blacksquare   & \text{amssymb} \\\\
+    \text{\Box}         & \Box           & \text{amssymb} \\\\
+    \text{\boxminus}    & \boxminus      & \text{amssymb} \\\\
+    \text{\boxplus}     & \boxplus       & \text{amssymb} \\\\
+    \text{\boxtimes}    & \boxtimes      & \text{amssymb} \\\\
     \hline
   \end{array}
 
