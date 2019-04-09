@@ -1,15 +1,6 @@
-.. _logic:
+---
+title: Logic
+date: 2019-01-01T00:00:00
+---
 
-#####
-Logic
-#####
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Table of Contents
-
-    propositional logic
-    first-order logic
-    second-order logic
-
-In logic and mathematics :ref:`second-order logic` is an extension of :ref:`first-order logic`, which itself is an extension of :ref:`propositional logic`. :ref:`Second-order logic` is in turn extended by higher-order logic and type theory.
+In logic and mathematics :title-reference:`second-order logic` is an extension of :title-reference:`first-order logic`, which itself is an extension of :title-reference:`propositional logic`. :title-reference:`Second-order logic` is in turn extended by higher-order logic and type theory.

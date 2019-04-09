@@ -37,7 +37,7 @@ Daniel responded to `Sascha's post <http://zettelkasten.de/posts/luhmann-folgeze
 
 Links or references do not emphasize the relationship between notes (ideas, concepts). The context of connections usually remains unclear due to arbitrary relationships. Fogezettel, however, create specific relationships - adding manual links (references) to these relationships create relationships of relationships, the core aspect of Luhmann's working principle.
 
-Daniel goes on to say that all notes in a note sequence are on the same level. They do not represent a parent-child relationship of thoughts. Also, there are no categories. There is a :ref:`keyword register <keyword-register>`) which is functionally equivalent to categories, but more powerful and allows multiple storage. It defines certain notes as thematic "entrances" into the Zettelkasten. That's cool.
+Daniel goes on to say that all notes in a note sequence are on the same level. They do not represent a parent-child relationship of thoughts. Also, there are no categories. There is a :title-reference:`keyword register <keyword-register>`) which is functionally equivalent to categories, but more powerful and allows multiple storage. It defines certain notes as thematic "entrances" into the Zettelkasten. That's cool.
 
 ######################
 My Take on Folgezettel

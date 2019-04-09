@@ -1,6 +1,10 @@
-#####################
-Mathematical Notation
-#####################
+---
+title: Mathematical Notation
+date: 2019-04-08T09:57:48-04:00
+draft: true
+categories: math
+math: true
+---
 
 These are examples of mathematical notation taken from a talk on `Post's
 Theorem and Blockchain Languages <https://www.youtube.com/watch?
@@ -14,7 +18,7 @@ meaning, and how to *read* them.
   transaction will be allowed to act on the state.
 * :math:`F:(State, Inputs) \to Transaction`: A function :math:`F` which takes
   some input and the current state, and produces a Transaction.
-* :math:`P(s, (i, t)) := F(s, i) \stackrel{?}{=} t`: predicate :math:`P` with
+* \\(P(s, (i, t)) := F(s, i) \stackrel{?}{=} t\\): predicate :math:`P` with
   arguments state :math:`s` and a transaction object :math:`(i, t)`, where
   :math:`i` is some input and :math:`t` is a transaction, is defined as the
   result of a function :math:`F` whose arguments are the state :math:`s` and
@@ -49,7 +53,6 @@ meaning, and how to *read* them.
 By the way, use ``\ldots`` for an ellipsis. It ensures the dots are correctly
 placed for a *typographical ellipsis*.
 
-*********************************
 Sets and Predicate Logic Notation
 *********************************
 
@@ -57,10 +60,7 @@ Predicate logic extends propositional logic with two quantifiers:
 
 .. math::
 
-  \begin{align*}
-    \forall && \text{universal quantification (for all)} \\
-    \exists && \text{existential quantification (there exists)}
-  \end{align*}
+  \begin{align*}    \forall && \text{universal quantification (for all)} \\    \exists && \text{existential quantification (there exists)}  \end{align*}
 
 The phrase "There exists an :math:`x`, element of :math:`X`, such that
 predicate :math:`P(x)` holds (i.e., is true)" can be written in a few ways.
@@ -168,7 +168,6 @@ improved readability of formulas.
 Likewise, use ``\iff`` (:math:`p \iff q`) instead of ``\Leftrightarrow``
 (:math:`p \Leftrightarrow q`) for better readability.
 
-*********************************
 :math:`\LaTeX` Notes and Examples
 *********************************
 
@@ -286,7 +285,6 @@ Two equations:
   \end{split}
   \end{equation}
 
-******
 Tables
 ******
 
@@ -314,7 +312,6 @@ The prime symbol (:math:`'`) may be rendered with either ``^{\prime}`` or its
 shortcut, a single quote (``'``). Some people use the former to avoid typos. I
 find the latter convenient.
 
-***********
 Underbraces
 ***********
 
@@ -392,7 +389,6 @@ Here are a few underbraces under parts of an equation.
         \end{pmatrix}
       }_{\boldsymbol{q}}
 
-******************************
 Phrases in Mathematical Proofs
 ******************************
 
@@ -418,7 +414,6 @@ neither does it mean
 but a person who doesn't know the lingo might interpret the phrase in the wrong
 way, and feel frustrated.
 
-***************************************
 Defining Binary Operators and Relations
 ***************************************
 
@@ -462,7 +457,6 @@ approach at showcasing the difference:
   \end{array}
 
 
-**********************
 Limitations of MathJax
 **********************
 
@@ -536,7 +530,6 @@ so we get:
     then P}\unicode{x2019}\unicode{x2019})
   \end{align*}
 
-**********
 References
 **********
 

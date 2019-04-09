@@ -67,31 +67,31 @@ To create a hyperlink, write some text between a pair of backticks and put the l
 
 I've created that label at the top of this file. `Here's the link <link_notes_>`_.
 
-The ``:ref:`` role can also be used to create links to labels. If the label is above a title, the more simple form can be used, and the text of the link will be the title. For example, here's how to link to the heading at the top of this file using the ``link_notes`` label::
+The ``:title-reference:`` role can also be used to create links to labels. If the label is above a title, the more simple form can be used, and the text of the link will be the title. For example, here's how to link to the heading at the top of this file using the ``link_notes`` label::
 
-  :ref:`link_notes`
+  :title-reference:`link_notes`
 
 If the label doesn't have an associated title, then an explicit caption must be added. For example::
 
-  :ref:`A Caption <link_labels>`
+  :title-reference:`A Caption <link_labels>`
 
-will create a link called "A Caption": :ref:`A Caption <link_labels>`.
+will create a link called "A Caption": :title-reference:`A Caption <link_labels>`.
 
-Note that by using the ``:ref:`` role, trailing underscores are not needed.
+Note that by using the ``:title-reference:`` role, trailing underscores are not needed.
 
 External Links
 ==============
 
-The only options for external links (those outside of the *current* file) are two use one of the two variants of the ``:ref:`` role::
+The only options for external links (those outside of the *current* file) are two use one of the two variants of the ``:title-reference:`` role::
 
-  :ref:`explicit_links_rst`
+  :title-reference:`explicit_links_rst`
 
-  :ref:`Docs on Explicit Links <explicit_links_rst>`
+  :title-reference:`Docs on Explicit Links <explicit_links_rst>`
 
 Where the label in the first case must be associated with a title. In the second case, the caption, "Docs on Explicit Links", will be used for when the label is *not* associated with a title, or it will replace the title for labels that *are* associated with one.
 
-* :ref:`explicit_links_rst`
-* :ref:`Docs on Explicit Links <explicit_links_rst>`
+* :title-reference:`explicit_links_rst`
+* :title-reference:`Docs on Explicit Links <explicit_links_rst>`
 
 Other Link Notes
 ================
@@ -102,10 +102,10 @@ If the link text is a single word, such as kalamazoo_, it can work without the s
 
   .. _kalamazoo: https://www.python.org
 
-The ``:ref:`` role requires a label. I put the label ``.. _javascript:`` at the top of the index page for my JavaScript notes. Now I can create a link to it using the ``:ref:`` role::
+The ``:title-reference:`` role requires a label. I put the label ``.. _javascript:`` at the top of the index page for my JavaScript notes. Now I can create a link to it using the ``:title-reference:`` role::
 
-  :ref:`javascript`
+  :title-reference:`javascript`
 
-Here is the index to my :ref:`javascript` notes.
+Here is the index to my :title-reference:`javascript` notes.
 
 .. _kalamazoo: https://www.python.org

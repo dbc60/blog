@@ -1,18 +1,8 @@
-.. index:: ! note taking
-
 ###########
 Note Taking
 ###########
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Table of Contents
-
-    n0 an ideal note taking app
-    restructuredtext/index
-    zettelkasten/index
-
-This is my first experiment in note taking using reStructuredText and my best interpretation of what a :doc:`Zettelkasten <zettelkasten/index>` is.
+This is my first experiment in note taking using reStructuredText and my best interpretation of what a `Zettelkasten <zettelkasten/index>`_ is.
 
 Each note should have just three things
 
@@ -34,14 +24,11 @@ My new notes are written with the Zettelkasten method, and use reStructuredText 
 
     pandoc --template=template-file --from=markdown --to=rst --output=README.rst README.md
 
-See :ref:`pandoc-template-file` for an example template that helps to convert markdown to restructuredText.
+See :title-reference:`pandoc-template-file` for an example template that helps to convert markdown to restructuredText.
 
 Instead of `Jekyll <http://jekyllrb.com/>`_, my new notes rely on `Sphinx <http://www.sphinx-doc.org/en/stable/index.html>`_, which requires python. I installed Python 3.4 from `Anaconda <https://www.continuum.io/downloads>`_, and ran ``conda install sphinx`` to install Sphinx 1.5.1.
 
 Per the `documentation <http://www.sphinx-doc.org/en/stable/tutorial.html>`_, I ran ``sphinx-quickstart`` to set up my new notes directory. Among other things, it created a file called ``make.bat``. All I have to do to build HTML files from my content is run ``make html``.
-
-.. index::
-    single: reStructuredText
 
 *************************
 Sphinx & reStructuredText

@@ -286,3 +286,4 @@ Now that I've learned more about the interactions between Markdown and \\(\LaTeX
 
 * [A Survey of Math Syntax in Markdown](https://github.com/cben/mathdown/wiki/math-in-markdown)
 * [Automatic Equation Numbering](http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering) in MathJax
+* [Setting MathJax with Hugo](https://divadnojnarg.github.io/blog/mathjax/)
