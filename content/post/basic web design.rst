@@ -181,3 +181,7 @@ The current front page of `CSS Zen Garden`_ has a more simple style:
 .. _css zen garden: http://www.csszengarden.com/
 .. _main html element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main
 .. _css zen codepen: https://codepen.io/stephanie08/pen/RoBYBR/
+.. _docutils syntax highlighting: http://docutils.sourceforge.net/sandbox/code-block-directive/docs/syntax-highlight.html
+.. _docutils pygments long: http://docutils.sourceforge.net/sandbox/stylesheets/pygments-long.css
+.. _docutuls pygments default: http://docutils.sourceforge.net/sandbox/stylesheets/pygments-default.css
+.. _ducutils stylesheets: http://docutils.sourceforge.net/sandbox/stylesheets/
