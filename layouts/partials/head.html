@@ -6,8 +6,13 @@
   {{ hugo.Generator }}
   <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | absURL }}">
 
-  {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  <!-- For more info about using SCSS and this pipeline see: 
+    https://github.com/gohugoio/hugo/commit/dea71670c059ab4d5a42bd22503f18c087dd22d4,
+    https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
+    and https://gohugo.io/hugo-pipes/
+  -->
+  {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Digest }}" media="screen">
 
   {{ $title := print .Title " | " .Site.Title }}
   {{ if .IsHome }}

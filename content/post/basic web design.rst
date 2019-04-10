@@ -174,6 +174,11 @@ The current front page of `CSS Zen Garden`_ has a more simple style:
       position: relative;
     }
 
+Take a Course
+*************
+
+What I really need to do is learn some more about CSS and HTML. Mozilla has an `Introduction to CSS <mdn intro css_>`_ course as well as an `Introduction to HTML <mdn intro html_>`_ course.
+
 .. _58 bytes of css: https://news.ycombinator.com/item?id=19607169
 .. _jrl ninja config: https://jrl.ninja/configs/
 .. _web design in 4 minutes: https://jgthms.com/web-design-in-4-minutes/
@@ -185,3 +190,5 @@ The current front page of `CSS Zen Garden`_ has a more simple style:
 .. _docutils pygments long: http://docutils.sourceforge.net/sandbox/stylesheets/pygments-long.css
 .. _docutuls pygments default: http://docutils.sourceforge.net/sandbox/stylesheets/pygments-default.css
 .. _ducutils stylesheets: http://docutils.sourceforge.net/sandbox/stylesheets/
+.. _mdn intro css: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS
+.. _mdn intro html: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML
