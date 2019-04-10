@@ -1,6 +1,10 @@
-#################
-Matrix Operations
-#################
+---
+title: Matrix Operations
+date: 2017-12-14T05:47:30-04:00
+draft: true
+categories: math
+tags: [matrices]
+---
 
 *******
 Inverse

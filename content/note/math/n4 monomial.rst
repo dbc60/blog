@@ -1,11 +1,16 @@
-.. _monomial:
+---
+title: Monomial
+date: 2018-10-09T04:27:30-04:00
+draft: true
+categories: math
+tags: [monomials]
+---
 
-########
-Monomial
-########
-
+<!--more-->
 From Wikipedia's `definition of a monomial
 <https://en.wikipedia.org/wiki/Monomial>`_:
+
+.. _monomial:
 
 Two definitions of a monomial may be encoutered:
 

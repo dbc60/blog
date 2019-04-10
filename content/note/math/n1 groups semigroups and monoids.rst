@@ -1,6 +1,10 @@
-###############################
-Groups, Semigroups, and Monoids
-###############################
+---
+title: Groups, Semigroups, and Monoids
+date: 2017-12-14T05:48:00-04:00
+draft: true
+categories: math
+tags: [groups,semigroups,monoids]
+---
 
 .. _monoid:
 
