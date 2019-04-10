@@ -85,15 +85,15 @@ commands`_ or `TeX commands available in MathJax`_ for more details.
 .. math::
 
   \begin{array}{l c l}
-    \hline                                                \\\\
-    \text{Command}      & \text{Symbol}  & \text{Package} \\\\
-    \hline              &                &                \\\\
-    \text{\square}      & \square        & \text{amssymb} \\\\
-    \text{\blacksquare} & \blacksquare   & \text{amssymb} \\\\
-    \text{\Box}         & \Box           & \text{amssymb} \\\\
-    \text{\boxminus}    & \boxminus      & \text{amssymb} \\\\
-    \text{\boxplus}     & \boxplus       & \text{amssymb} \\\\
-    \text{\boxtimes}    & \boxtimes      & \text{amssymb} \\\\
+    \hline                                                \\
+    \text{Command}      & \text{Symbol}  & \text{Package} \\
+    \hline              &                &                \\
+    \text{\square}      & \square        & \text{amssymb} \\
+    \text{\blacksquare} & \blacksquare   & \text{amssymb} \\
+    \text{\Box}         & \Box           & \text{amssymb} \\
+    \text{\boxminus}    & \boxminus      & \text{amssymb} \\
+    \text{\boxplus}     & \boxplus       & \text{amssymb} \\
+    \text{\boxtimes}    & \boxtimes      & \text{amssymb} \\
     \hline
   \end{array}
 
