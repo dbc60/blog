@@ -9,10 +9,13 @@ tags: [web]
 How much structure is really needed to make a web page. I have a lot to learn.
 <!--more-->
 
+###########
 Inspiration
-***********
+###########
 
-I read an article on `HN <https://news.ycombinator.com>`_ titled `58 Bytes of CSS to look great nearly everywhere <58 bytes of css_>`_. The article itself was inspiring as the author was advocating just these 5 lines of CSS for styling:
+I read an article on `HN <https://news.ycombinator.com>`_ titled `58 Bytes of CSS to
+look great nearly everywhere <58 bytes of css_>`_. The article itself was inspiring as
+the author was advocating just these 5 lines of CSS for styling:
 
 .. code-block:: css
 
@@ -22,8 +25,8 @@ I read an article on `HN <https://news.ycombinator.com>`_ titled `58 Bytes of CS
       margin: auto;
     }
 
-
-I then wondered "How could this be?" I looked at the page source. It used a little more CSS.
+I then wondered "How could this be?" I looked at the page source. It used a little
+more CSS.
 
 .. code-block:: css
 
@@ -115,15 +118,26 @@ The author's `configs page <jrl ninja config_>`_ page had this concoction.
       background-color: #d2ffdf;
     }
 
-Clearly ``main`` is still there, but I read the article as stating that's all that was *really* necessary. Why would someone write something so misleading, especially to novices?
+Clearly ``main`` is still there, but I read the article as stating that's all
+that was *really* necessary. Why would someone write something so misleading, especially
+to novices?
 
-Well, at least it provoked `a conversation <58 bytes of css_>`_. `Web Design in 4 minutes <web design in 4 minutes_>`_ was one site cited as an example of simple web design. It's CSS is quite a bit longer.
+Well, at least it provoked `a conversation <58 bytes of css_>`_. `Web Design in 4
+minutes <web design in 4 minutes_>`_ was one site cited as an example of simple web
+design. It's CSS is quite a bit longer.
 
-While `content <wdi4m content_>`_ is the first thing one should work on, it got me wondering about how to structure the content. How much structure is needed to make content easy to read?
+While `content <wdi4m content_>`_ is the first thing one should work on, it got me
+wondering about how to structure the content. How much structure is needed to make
+content easy to read?
 
-Now I'm reminded of `CSS Zen Garden`_. It was a beautiful experiment in how CSS could be applied to the same content to create a wide variety of presentations. How much structure was used there?
+Now I'm reminded of `CSS Zen Garden`_. It was a beautiful experiment in how CSS could
+be applied to the same content to create a wide variety of presentations. How much
+structure was used there?
 
-It starts with an HTML5 doctype, ``<!DOCTYPE html>``. The ``html`` tag is simply ``<html lang="en">``. The ``<head>...</head>`` section contains a ``<meta>`` tag to define the charset, a ``<title>`` tag, two ``<link>`` tags, one for a CSS stylesheet and the other for an RSS link:
+It starts with an HTML5 doctype, ``<!DOCTYPE html>``. The ``html`` tag is simply
+``<html lang="en">``. The ``<head>...</head>`` section contains a ``<meta>`` tag to
+define the charset, a ``<title>`` tag, two ``<link>`` tags, one for a CSS stylesheet
+and the other for an RSS link:
 
 .. code-block:: html
 
@@ -133,29 +147,37 @@ It starts with an HTML5 doctype, ``<!DOCTYPE html>``. The ``html`` tag is simply
     <link rel="stylesheet" media="screen" href="style.css?v=8may2013">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.csszengarden.com/zengarden.xml">
 
-These are followed by four more ``<meta>`` elements to define the viewport, author, description, and robots data properties.
+These are followed by four more ``<meta>`` elements to define the viewport, author,
+description, and robots data properties.
 
-The ``<body>`` element has only an ``id`` attribute. It's followed by a ``<div>`` element with a ``class`` attribute. This div wraps all of the content on the page.
+The ``<body>`` element has only an ``id`` attribute. It's followed by a ``<div>``
+element with a ``class`` attribute. This div wraps all of the content on the page.
 
-Is a ``<main>`` element a substitute for a full-body ``<div>`` wrapper? `Mozilla MDN web docs <main html element_>`_ says ``<main>`` represents the dominant content of the ``<body>`` of a document. The example they give shows other content can both precede and succeed the ``<main>`` element, so it is not a substitute for a ``<div>`` element that wraps everything. 
+Is a ``<main>`` element a substitute for a full-body ``<div>`` wrapper? `Mozilla MDN
+web docs <main html element_>`_ says ``<main>`` represents the dominant content of the
+``<body>`` of a document. The example they give shows other content can both precede
+and succeed the ``<main>`` element, so it is not a substitute for a ``<div>`` element
+that wraps everything.
 
-Is a full-body ``<div>`` wrapper necessary? It is used in the sample CSS to provide an opportunity for markup. The original `CSS Zen Garden`_ had CSS definitions for ``<body>`` and the page-wrapper ``<div>`` as follows:
+Is a full-body ``<div>`` wrapper necessary? It is used in the sample CSS to provide an
+opportunity for markup. The original `CSS Zen Garden`_ had CSS definitions for
+``<body>`` and the page-wrapper ``<div>`` as follows:
 
 .. code-block:: css
 
-    body { 
+    body {
         font: 75% georgia, sans-serif;
         line-height: 1.88889;
-        color: #555753; 
-        background: #fff url(http://csszengarden.com/001/blossoms.jpg) no-repeat bottom right; 
-        margin: 0; 
+        color: #555753;
+        background: #fff url(http://csszengarden.com/001/blossoms.jpg) no-repeat bottom right;
+        margin: 0;
         padding: 0;
     }
 
-    .page-wrapper { 
-        background: url(http://csszengarden.com/001/zen-bg.jpg) no-repeat top left; 
-        padding: 0 175px 0 110px;  
-        margin: 0; 
+    .page-wrapper {
+        background: url(http://csszengarden.com/001/zen-bg.jpg) no-repeat top left;
+        padding: 0 175px 0 110px;
+        margin: 0;
         position: relative;
     }
 
@@ -174,10 +196,50 @@ The current front page of `CSS Zen Garden`_ has a more simple style:
       position: relative;
     }
 
+#############
 Take a Course
-*************
+#############
 
-What I really need to do is learn some more about CSS and HTML. Mozilla has an `Introduction to CSS <mdn intro css_>`_ course as well as an `Introduction to HTML <mdn intro html_>`_ course.
+What I really need to do is learn some more about CSS and HTML. Mozilla has an
+`Introduction to CSS <mdn intro css_>`_ course as well as an `Introduction to HTML
+<mdn intro html_>`_ course on .
+
+******************
+Dealing with Files
+******************
+
+I started with `Dealing with files
+<https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/
+Dealing_with_files>`_
+just so my site had some consistency with the conventions used in the `MDN`_ courses.
+I had to rename several files to replace spaces with dashes.
+
+This site is built by `Hugo`_, so folders such as ``images``, ``styles``, and
+``scripts`` are under the ``static`` directory. I renamed ``static/js`` to
+``static/scripts`` to mirror the MDN convention.
+
+******************
+Learn Me Some HTML
+******************
+
+My goal is to really understand the structure of my site, so I know where things are
+and what needs to be modified as I build it to look the way I want it to. The `Vanilla
+theme <https://vanilla-bootstrap-hugo-theme.netlify.com/>`_ is a nice place to start,
+but I don't understand the choices made for structure and styling. Additionally, it
+uses `Bootstrap <https://getbootstrap.com/>`_. Do I need all of Bootstrap or can I
+build a good looking website with less CSS?
+
+I've also played with SCSS. I'd like to use that as much asa possible. Thanks to
+Hugo-extended for making SASS/SCSS possible.
+
+Terms:
+
+* an opening tag is an element name wrapped in a pair of angle brackets.
+* a closing tag is the same as an opening tag, except that it includes a forward slash
+  before the element name.
+* the content of an element is the text between an opening and closing tag. The content
+  may contain other elements.
+* the element consists of the opening and closing tags, plus the content between them.
 
 .. _58 bytes of css: https://news.ycombinator.com/item?id=19607169
 .. _jrl ninja config: https://jrl.ninja/configs/
@@ -192,3 +254,6 @@ What I really need to do is learn some more about CSS and HTML. Mozilla has an `
 .. _ducutils stylesheets: http://docutils.sourceforge.net/sandbox/stylesheets/
 .. _mdn intro css: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS
 .. _mdn intro html: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML
+.. _mdn: https://developer.mozilla.org/en-US/
+.. _hugo: https://gohugo.io/
+.. _bootstrap layout overview: https://getbootstrap.com/docs/4.3/layout/overview/
