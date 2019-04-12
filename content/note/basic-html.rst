@@ -5,6 +5,10 @@ draft: true
 categories: [web]
 ---
 
+.. |--| unicode:: U+2013   .. en dash
+.. |---| unicode:: U+2014  .. em dash, trimming surrounding whitespace
+   :trim:
+
 Mozilla has an `Introduction to CSS <mdn intro css_>`_ course as well as an `Introduction to HTML <mdn intro html_>`_ course.
 
 <!--more-->
@@ -44,6 +48,102 @@ Terms:
   content may contain other elements.
 * the element consists of the opening and closing tags, plus the content
   between them.
+
+Nesting Elements
+================
+
+Elements can be nested.
+
+.. code-block:: html
+
+    <p>My cat is <strong>very</strong> grumpy.</p>
+
+.. raw:: html
+
+    <p>My cat is <strong>very</strong> grumpy.</p>
+
+Block versus Inline Elements
+============================
+
+There are two important categories of elements in HTML. They are bock-level elements and
+inline elements.
+
+Block-level elements form a visible clock on a page -- they will appear on a new line
+form whatever content went before it, and any content that goes after it will also appear
+on a new line. Block-level elements tend to be strucural elements on the page that
+represent, for example, paragraphs, lists, navigation menus, footers, etc. A block-level
+element wouldn't be nested inside an inline element, but it might be nested inside
+another block-level element.
+
+Inline elements are those that are contained within block-level elements and surround
+only small parts of the documment's content, not entire paragraphs and groupings of
+content. An inline element will not cause a new line to appear in the document, they
+would normally appear inside a paragraph of text, for example an ``<a>`` element
+(hyperlink) or emphasis elements such as ``<em>`` or ``<strong>``.
+
+.. note::
+
+    HTML5 redefined the element categories. See `Element content categories <https://
+    html.spec.whatwg.org/multipage/indices.html#element-content-categories>`_. These
+    definitions are more accurate and less ambiguous than the ones that went before, but
+    they are a lot more complicated to understand than "block" and "inline".
+
+.. note::
+
+    You can find useful reference pages that include lists of block and inline elements |--| see `Block-level elements <https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements>`_ and `Inline elements <https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements>`_.
+
+Empty Elements
+==============
+
+Not all elements follow the above pattern of opening tag, content, closing tag. Some
+elements consist only of a single tag, which is usually used to insert/embed something in
+the document at the place it is included. For example, the <img> element embeds an image
+file onto a page in the position it is included in:
+
+.. code-block:: html
+
+    <img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/
+    firefox-icon.png">
+
+.. raw:: html
+
+    <img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/
+    firefox-icon.png">
+
+Attributes
+==========
+
+Elements can have attributes. The paragraph element below has a ``class`` attribute:
+
+.. code-block:: html
+
+    <p class="editor-note">My cat is very grumpy</p>
+
+Attributes contain extra information about the element which you don't want to appear in
+the actual content. In this case, the ``class`` attribute allows you to give the element
+an identifying name that can be later used to target the element with style information
+and other things.
+
+An attribute should have:
+
+#. A space between it and the element name (or the previous attribute, if the element has
+   more than one attribute).
+#. The attribute name, followed by an equal sign.
+#. An attribute value, with opening and closing quote marks wrapped around it.
+
+For example:
+
+.. code-block:: html
+
+    <p>A link to my <a href="http://douglascuthbertson.com" title="Dream, Sketch, Code"
+    target="_blank">favorite website</a>.</p>
+
+forms a link:
+
+.. raw:: html
+
+    <p>A link to my <a href="http://douglascuthbertson.com" title="Dream, Sketch, Code"
+    target="_blank">favorite website</a>.</p>
 
 .. _mdn intro css: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS
 .. _mdn intro html: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML
