@@ -120,14 +120,6 @@ $color-grey:       #828282;
 $color-grey-light: lighten($color-grey, 40%);
 $color-grey-dark:  darken($color-grey, 25%);
 
-// Body
-//
-// Settings for the `<body>` element.
-
-$body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
-
-
 $base-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
