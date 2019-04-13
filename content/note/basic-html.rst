@@ -1,7 +1,6 @@
 ---
 title: "Basic Html"
 date: 2019-04-11T07:34:55-04:00
-draft: true
 categories: [web]
 ---
 
@@ -144,6 +143,64 @@ forms a link:
 
     <p>A link to my <a href="http://douglascuthbertson.com" title="Dream, Sketch, Code"
     target="_blank">favorite website</a>.</p>
+
+List Elements
+=============
+
+There are unordered lists ordered lists. Here's an unordered list.
+
+.. code-block:: html
+
+    <ul>
+      <li>milk</li>
+      <li>eggs</li>
+      <li>bread</li>
+      <li>hummus</li>
+    </ul>
+
+.. raw:: html
+
+    <ul>
+      <li>milk</li>
+      <li>eggs</li>
+      <li>bread</li>
+      <li>hummus</li>
+    </ul>
+
+Here's an ordered list.
+
+.. code-block:: html
+
+    <ol>
+      <li>Drive to the end of the road</li>
+      <li>Turn right</li>
+      <li>Go straight across the first two roundabouts</li>
+      <li>Turn left at the third roundabout</li>
+      <li>The school is on your right, 300 meters up the road</li>
+    </ol>
+
+.. raw:: html
+
+    <ol>
+      <li>Drive to the end of the road</li>
+      <li>Turn right</li>
+      <li>Go straight across the first two roundabouts</li>
+      <li>Turn left at the third roundabout</li>
+      <li>The school is on your right, 300 meters up the road</li>
+    </ol>
+
+Emphasis and Importance
+=======================
+
+Use the ``<em>`` element for emphasis. It is recognized by screen readers and spoken in a
+different tone. Note that ``<em>`` is often styled in italic, by default.  Don't use this
+tag purely for italic styling. Instead use a ``<span>`` element and some CSS.
+
+Use the ``<strong>`` element to indicate importance. To emphasize important words, we
+tend to stress them in spoken language and bold them in written language. The
+``<<strong>>`` element is also recognized by screen readers, and spoken in a different
+tone. It is often styled in bold, but shouldn't be used purely for bold styling. Instead
+use a ``<span>`` element and some CSS.
 
 .. _mdn intro css: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS
 .. _mdn intro html: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML
