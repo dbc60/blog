@@ -196,6 +196,26 @@ The current front page of `CSS Zen Garden`_ has a more simple style:
       position: relative;
     }
 
+###########################
+Anatomy of an HTML Document
+###########################
+
+.. code-block:: html
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="uktf-8">
+      <title>My Test Page</title>
+    </head>
+    <body>
+      <p>This is my page</p>
+    </body>
+  </html>
+
+.. raw:: html
+
+      <p>This is my page</p>
 
 .. _58 bytes of css: https://news.ycombinator.com/item?id=19607169
 .. _jrl ninja config: https://jrl.ninja/configs/

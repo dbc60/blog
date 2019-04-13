@@ -1,17 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 {{ $lang := .Site.Language.Lang | default "en" }}
-<html lang="{{ $lang }}" class="h-100">
+<html lang="{{ $lang }}">
   {{ partial "head.html" . }}
-  <body class="d-flex flex-column h-100">
+  <body class="base">
     <div class="container">
-      {{ partial "nav.html" . }}
-      {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
+      {{- partial "nav.html" . }}
+      <!-- header contains the title in an h1 element and a subtitle -->
+      {{- block "header" . }}{{ partial "site-header.html" . -}}{{- end }}
       <main id="main">
-        {{ block "main" . }}{{ end }}
+        {{- block "main" . -}}{{- end }}
       </main>
     </div>
     {{ partial "footer.html" . }}
-    {{ partial "script.html" . }}
-    {{ partial "google-analytics-async.html" . }}
+    <!--{{ partial "google-analytics-async.html" . }}-->
   </body>
 </html>

@@ -8,7 +8,7 @@ Paginate = 8
 
 # Name of Academic theme folder in `themes/`.
 # theme = "academic"
-theme = "vanilla"
+#theme = "vanilla"
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""

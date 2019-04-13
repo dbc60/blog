@@ -74,7 +74,7 @@ $base_ln: 2.7182818284590452353602874713526624977572470937;
 
   If we want to compute exp(z), where z = n + f, and 'n' is an integer and 'f'
   lies between -0.5 and +0.5. We can write:
-    
+
       exp(z) = exp(n + f) = exp(n) * exp(f)
 
   The first term can be calculated entirely with mulitplications if n is
@@ -127,7 +127,7 @@ $base_ln: 2.7182818284590452353602874713526624977572470937;
 }
 
 
-// ln(2) approximated to a sufficient number of decimal places. 
+// ln(2) approximated to a sufficient number of decimal places.
 $ln_2: 0.693147180559945309417232121458;
 
 
@@ -166,7 +166,7 @@ $ln_2: 0.693147180559945309417232121458;
       When the argument of -0.5 is used in the expansion, only 10 terms
       are needed to achieve four-digit precision, compared with nearly
       60 terms when the argument is -0.9.
-*/ 
+*/
 @function ln($x, $epsilon: 0.000001) {
   $n: next_exponent_of_2($x);
 
@@ -197,7 +197,7 @@ $ln_2: 0.693147180559945309417232121458;
     $n: -$n;
   }
 
-  // Calculate the integer result  
+  // Calculate the integer result
   $result: ipow($base, $n);
 
   @if $n != $exponent {
@@ -214,21 +214,21 @@ $ln_2: 0.693147180559945309417232121458;
  * Here is a version of color_luminance and contrast_ratio in pure SASS!
  * From: https://gist.github.com/voxpelli/6304812.
  *
- * Pure SASS-adaption of Lea Verou's contrast-ratio javascript 
- * (https://github.com/LeaVerou/contrast-ratio). Can be useful when eg. 
- * generating colored buttons from a single supplied color as you can then 
+ * Pure SASS-adaption of Lea Verou's contrast-ratio javascript
+ * (https://github.com/LeaVerou/contrast-ratio). Can be useful when eg.
+ * generating colored buttons from a single supplied color as you can then
  * check which out of a couple of text colors would give the best contrast.
  *
- * This script currently lacks the support for alpha-transparency that Lea 
+ * This script currently lacks the support for alpha-transparency that Lea
  * supports in her script though. An exponent of 2.4 is used to calculate the
  * luminance of a color.
  *
  * Normal usage: color: pick_best_color(#f00, (#fff, #ccc, #666));
  *
  * Bonus feature: Just want to get warned when the contrast becomes
- * unacceptably low? Supply just that one color in the color-pick function: 
+ * unacceptably low? Supply just that one color in the color-pick function:
  * color:
- * 
+ *
  *    pick_best_color(#f00, #fff);
  */
  @function color_luminance($color) {
@@ -327,4 +327,91 @@ $ln_2: 0.693147180559945309417232121458;
 
 .exp_ln_54::after {
     content: quote(inspect(exp(ln(54))));
+}
+
+// Bootstrap functions
+//
+// Utility mixins and functions for evaluating source code across our variables, maps, and mixins.
+
+// Ascending
+// Used to evaluate Sass maps like our grid breakpoints.
+@mixin _assert-ascending($map, $map-name) {
+  $prev-key: null;
+  $prev-num: null;
+  @each $key, $num in $map {
+    @if $prev-num == null or unit($num) == "%" {
+      // Do nothing
+    } @else if not comparable($prev-num, $num) {
+      @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+    } @else if $prev-num >= $num {
+      @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+    }
+    $prev-key: $key;
+    $prev-num: $num;
+  }
+}
+
+// Starts at zero
+// Used to ensure the min-width of the lowest breakpoint starts at 0.
+@mixin _assert-starts-at-zero($map, $map-name: "$grid-breakpoints") {
+  $values: map-values($map);
+  $first-value: nth($values, 1);
+  @if $first-value != 0 {
+    @warn "First breakpoint in #{$map-name} must start at 0, but starts at #{$first-value}.";
+  }
+}
+
+// Replace `$search` with `$replace` in `$string`
+// Used on our SVG icon backgrounds for custom forms.
+//
+// @author Hugo Giraudel
+// @param {String} $string - Initial string
+// @param {String} $search - Substring to replace
+// @param {String} $replace ('') - New value
+// @return {String} - Updated string
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// Color contrast
+@function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+  @if ($yiq >= $yiq-contrasted-threshold) {
+    @return $dark;
+  } @else {
+    @return $light;
+  }
+}
+
+// Retrieve color Sass maps
+@function color($key: "blue") {
+  @return map-get($colors, $key);
+}
+
+@function theme-color($key: "primary") {
+  @return map-get($theme-colors, $key);
+}
+
+@function gray($key: "100") {
+  @return map-get($grays, $key);
+}
+
+// Request a theme color level
+@function theme-color-level($color-name: "primary", $level: 0) {
+  $color: theme-color($color-name);
+  $color-base: if($level > 0, $black, $white);
+  $level: abs($level);
+
+  @return mix($color-base, $color, $level * $theme-color-interval);
 }

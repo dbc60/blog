@@ -1,53 +1,75 @@
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  {{ hugo.Generator }}
-  <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | absURL }}">
+<!---->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <meta property="og:description" name="description" content="{{ .Site.Params.description }}">
 
-  <!-- For more info about using SCSS and this pipeline see:
-    https://github.com/gohugoio/hugo/commit/dea71670c059ab4d5a42bd22503f18c087dd22d4,
-    https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
-    and https://gohugo.io/hugo-pipes/
-  -->
-  {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Digest }}" media="screen">
+    {{ $title := print .Title " | " .Site.Title -}}
+    {{- if .IsHome -}}
+      {{- $title = .Site.Title }}
+    {{- end -}}
 
-  {{ $title := print .Title " | " .Site.Title }}
-  {{ if .IsHome }}
-    {{ $title = .Site.Title }}
-  {{ end }}
-  <title>{{ $title }}</title>
-  <meta name="robots" content="index, follow">
-  {{ range .AlternativeOutputFormats -}}
-  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
-  {{ end -}}
-  {{ partial "style.html" . }}
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#4aa7c1">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/images/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- The four required og properties are og:title, og:type, og:url, and og:image. See
+    Open Graph Protocol (ogp.me) I used https://realfavicongenerator.net/ to generate the
+    icons and
+    https://realfavicongenerator.net/social/ to generate the og metadata -->
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://douglascuthbertson.com">
+    <meta property="og:image:width" content="279">
+    <meta property="og:image:height" content="279">
+    <meta property="og:image" content="http://douglascuthbertson.com/images/og-image.jpg">
 
-  <!--
-    Add fontawesome icons and things. See https://fontawesome.com/start for the
-    latest version
-   -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <meta name="twitter:title" content="Dream, Sketch, Code">
 
+    {{- hugo.Generator -}}
 
-  {{ if or .Params.d3 .Site.Params.d3 }}
+    <!-- For more info about using SCSS and this pipeline see:
+      https://github.com/gohugoio/hugo/commit/dea71670c059ab4d5a42bd22503f18c087dd22d4,
+      https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
+      and https://gohugo.io/hugo-pipes/
+    -->
+    <!--{{ $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}-->
+    {{- $style := resources.Get "scss/main.scss" | toCSS -}}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Digest }}" media="screen">
+
+    <title>{{ $title }}</title>
+    <meta name="robots" content="index, follow">
+    {{- range .AlternativeOutputFormats }}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+    {{- end -}}
 
     <!--
-      The defer property doesn't work for d3, nor can its script be loaded at the
-      end of the HTML file. There are other scripts that must be loaded in <head>
-      rather than at the end, just before the closing </body> tag. For example, see
-        https://stackoverflow.com/questions/6272702/should-modernizr-file-be-placed-in-head
-      and
-        https://stackoverflow.com/questions/2105327/should-jquery-code-go-in-header-or-footer
+      Add fontawesome icons and things. See https://fontawesome.com/start for the
+      latest version
+     -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-      <script type="text/javascript" src="https://d3js.org/d3.v5.min.js" defer="defer"></script>
-    -->
+    {{- if or .Params.d3 .Site.Params.d3 -}}
+      <!--
+        The defer property doesn't work for d3, nor can its script be loaded at the
+        end of the HTML file. There are other scripts that must be loaded in <head>
+        rather than at the end, just before the closing </body> tag. For example, see
+          https://stackoverflow.com/questions/6272702/should-modernizr-file-be-placed-in-head
+        and
+          https://stackoverflow.com/questions/2105327/should-jquery-code-go-in-header-or-footer
 
-    <!-- d3js: Fall back to local if CDN offline -->
-    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
-    <script>window.d3 || document.write('<script type="text/javascript" src="{{ "scripts/d3-v5.9.1.min.js" | absURL }}">\x3C/script>')</script>
+        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js" defer="defer"></script>
+      -->
 
-  {{ end }}
-</head>
+      <!-- d3js: Fall back to local if CDN offline -->
+      <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+      <script>window.d3 || document.write('<script type="text/javascript" src="{{ "scripts/d3-v5.9.1.min.js" | absURL }}">\x3C/script>')</script>
+    {{- end }}
+  </head>

@@ -1,14 +1,13 @@
-{{ define "main" }}
+{{- define "main" -}}
 
-<main>
     <!-- default list template -->
-    <article>
+    <article class="article-list">
       <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
       {{ .Content }}
     <!-- Paginates through content/note/*.md -->
     {{ $paginator := .Paginate (where .Pages "Type" "note") }}
     {{ range $paginator.Pages }}
-      <h2><a class="font-125" href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       <div class="article-meta-data">
         {{ partial "date-and-tags.html" . }}
         <!-- this renders based on layouts/_default/summary.html (either the
@@ -18,6 +17,5 @@
     {{ end }}
     {{ template "_internal/pagination.html" . }}
     </article>
-</main>
 
-{{ end }}
+{{- end -}}

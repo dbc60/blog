@@ -1,16 +1,16 @@
-{{ $featured_image := .Param "featured_image"}}
-{{ if $featured_image }}
-  {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
-  {{ $featured_image := (trim $featured_image "/") | absURL }}
-  <header id="home-jumbotron" class="jumbotron text-left" style="background-image: url('{{ $featured_image }}');">
-      <h1 class="simple-jumbotron-title">
+      {{- $featured_image := .Param "featured_image" -}}
+      {{- if $featured_image -}}
+      {{- /* Trimming the slash and adding absURL make sure the image works no matter where our site lives */ -}}
+      {{- $featured_image := (trim $featured_image "/") | absURL -}}
+      <header id="site-header" style="background-image: url('{{ $featured_image }}');">
+        <h1 id="site-title">
           {{ .Site.Title }}
-          <div class="simple-jumbotron-subtitle">{{ .Site.Params.homeText | markdownify }}</div>
+          <div>{{- .Site.Params.homeText | markdownify -}}</div>
         </h1>
-  </header>
-{{ else }}
-  <header id="home-jumbotron" class="jumbotron text-left">
-    <h1>{{ .Site.Title }}</h1>
-    <p class="font-125">{{ .Site.Params.homeText | markdownify }} </p>
-  </header>
-{{ end }}
+      </header>
+      {{- else -}}
+      <header id="site-header">
+        <h1 id="site-title">{{- .Site.Title -}}</h1>
+        <p id="site-subtitle">{{- .Site.Params.homeText | markdownify -}} </p>
+      </header>
+      {{- end -}}
