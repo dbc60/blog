@@ -147,7 +147,7 @@ forms a link:
 List Elements
 =============
 
-There are unordered lists ordered lists. Here's an unordered list.
+There are three different kinds of lists. THere are unordered, ordered, and description lists. Here's an unordered list.
 
 .. code-block:: html
 
@@ -189,6 +189,65 @@ Here's an ordered list.
       <li>The school is on your right, 300 meters up the road</li>
     </ol>
 
+Here's a description list.
+
+.. code-block:: html
+
+    <dl>
+      <dt>solilquy</dt>
+      <dd>
+        In drama, where a character speaks to themselves, representing their inner
+        thoughts or feelings and in the process relaying them to the audience (but not to
+        other characters.)
+      </dd>
+      <dt>monologue</dt>
+      <dd>
+        In drama, where a character speaks their thoughts out loud to share them with the
+        audience and any other characters present.
+      </dd>
+      <dt>aside</dt>
+      <dd>
+        In drama, where a character shares a comment only with the audience for humorous
+        or dramatic effect. This is usually a feeling, thought, or piece of additional
+        background information.
+      </dd>
+      <dd>
+        In writing, a section of content that is related to the current topic, but
+        doesn't fit directly into the main flow of content so is presented nearby (often
+        in a box off to the side.)
+      </dd>
+    </dl>
+
+.. raw:: html
+
+    <dl>
+      <dt>solilquy</dt>
+      <dd>
+        In drama, where a character speaks to themselves, representing their inner
+        thoughts or feelings and in the process relaying them to the audience (but not to
+        other characters.)
+      </dd>
+      <dt>monologue</dt>
+      <dd>
+        In drama, where a character speaks their thoughts out loud to share them with the
+        audience and any other characters present.
+      </dd>
+      <dt>aside</dt>
+      <dd>
+        In drama, where a character shares a comment only with the audience for humorous
+        or dramatic effect. This is usually a feeling, thought, or piece of additional
+        background information.
+      </dd>
+      <dd>
+        In writing, a section of content that is related to the current topic, but
+        doesn't fit directly into the main flow of content so is presented nearby (often
+        in a box off to the side.)
+      </dd>
+    </dl>
+
+Note that it is permitted to have a single term with multiple descriptions, as in "aside",
+above.
+
 Emphasis and Importance
 =======================
 
@@ -198,9 +257,127 @@ tag purely for italic styling. Instead use a ``<span>`` element and some CSS.
 
 Use the ``<strong>`` element to indicate importance. To emphasize important words, we
 tend to stress them in spoken language and bold them in written language. The
-``<<strong>>`` element is also recognized by screen readers, and spoken in a different
-tone. It is often styled in bold, but shouldn't be used purely for bold styling. Instead
-use a ``<span>`` element and some CSS.
+``<strong>`` element is also recognized by screen readers, and spoken in a different
+tone. It is often styled in **bold**, but shouldn't be used purely for bold styling.
+Instead use a ``<span>`` element and some CSS.
+
+The ``<blockquote>`` Element
+============================
+
+If a section of block level content (a paragraph, multiple paragraphs, a list, etc.) is
+quoted from somewhere, wrap it inside a ``<blockquote>`` element to signify this, and
+include a URL pointing to the source of the quote insdie a ``<cite>`` attribute. For
+example, the following markup is taken from the MDN ``<blockquote>`` element page:
+
+.. code-block:: html
+
+  <p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block
+  Quotation Element</em>) indicates that the enclosed text is an extended quotation.</p>
+
+To turn this into a block quote, do this:
+
+.. code-block:: html
+
+  <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+    <p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML
+    Block Quotation Element</em>) indicates that the enclosed text is an extended
+    quotation.</p>
+  </blockquote>
+
+Allegedly, browser default styling will render this as an indented paragraph to indicate
+it is a quote.
+
+.. raw:: html
+
+  <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+    <p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML
+    Block Quotation Element</em>) indicates that the enclosed text is an extended
+    quotation.</p>
+  </blockquote>
+
+Inline Quotations
+=================
+
+Inline quotations work in the same way, except they use the ``<q>`` element. For example:
+
+.. code-block:: html
+
+  <p>The quote element — <code>&lt;q&gt;</code> — is <q cite="https://
+  developer.mozilla.org/en-US/docs/Web/HTML/Element/q">intended
+  for short quotations that don't require paragraph breaks.</q></p>
+
+Browser default styling is minimal. The inline quote is, however, rendered in quotes to
+indicate a quotation.
+
+.. raw:: html
+
+  <p>The quote element — <code>&lt;q&gt;</code> — is <q cite="https://
+  developer.mozilla.org/en-US/docs/Web/HTML/Element/q">intended
+  for short quotations that don't require paragraph breaks.</q></p>
+
+Citations
+=========
+
+The content of the ``cite`` attribute sounds useful, but unfortunately browsers,
+screenreaders, etc. don't really do much with it. There is no way to get the browser to
+display the contents of ``cite``, without writing your own solution using JavaScript or
+CSS. If you want to make the source of the quotation available on the page you need to
+make it available in the text via a link or some other appropriate way.
+
+There is a ``<cite>`` element, but this is meant to contain the title of the resource
+being quoted, e.g. the name of the book. There is no reason however why you couldn't link
+the text inside <cite> to the quote source in some way:
+
+.. code-block:: html
+
+    <p>
+      According to the
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+        <cite>MDN blockquote page</cite>
+      </a>:
+    </p>
+
+    <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+      <p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML
+      Block Quotation Element</em>) indicates that the enclosed text is an extended
+      quotation.</p>
+    </blockquote>
+
+    <p>
+      The quote element — <code>&lt;q&gt;</code> — is
+      <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">intended for
+      short quotations that don't require paragraph breaks.</q> --
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+        <cite>MDN q page</cite>
+      </a>.
+    </p>
+
+Citations are styled in italic font by default. Here's what the example above looks like:
+
+.. raw:: html
+
+    <p>
+      According to the
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+        <cite>MDN blockquote page</cite>
+      </a>:
+    </p>
+
+    <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+      <p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML
+      Block Quotation Element</em>) indicates that the enclosed text is an extended
+      quotation.</p>
+    </blockquote>
+
+    <p>
+      The quote element — <code>&lt;q&gt;</code> — is
+      <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">intended for
+      short quotations that don't require paragraph breaks.</q> --
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+        <cite>MDN q page</cite>
+      </a>.
+    </p>
+
 
 .. _mdn intro css: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS
 .. _mdn intro html: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML

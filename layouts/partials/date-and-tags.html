@@ -14,7 +14,7 @@
             <br>
             <i data-feather="tag"></i>
             {{- range . -}}
-            {{- $href := print (absURL "tags/") (urlize .) -}}
+            {{- $href := print (relURL "tags/") (urlize .) -}}
             <a href="{{ $href }}">{{ . }}</a>
             {{- end -}}
             {{- end -}}
