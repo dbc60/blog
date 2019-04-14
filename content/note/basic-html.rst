@@ -147,7 +147,8 @@ forms a link:
 List Elements
 =============
 
-There are three different kinds of lists. THere are unordered, ordered, and description lists. Here's an unordered list.
+There are three different kinds of lists. THere are unordered, ordered, and description
+lists. Here's an unordered list.
 
 .. code-block:: html
 
@@ -378,6 +379,263 @@ Citations are styled in italic font by default. Here's what the example above lo
       </a>.
     </p>
 
+Abbreviations
+=============
+
+The abbreviation element, ``<abbr>``, is used to wrap an abbreviation or acronym. The
+value of the ``title`` attribute will appear in a tooltip when the term is hovered over.
+
+.. code-block:: html
+
+    <p>We use <abbr title="Hypertext Markup Language">HTML</abbr> to structure our web
+    documents.</p>
+
+    <p>I think <abbr title="Reverend">Rev.</abbr> Green did it in the kitchen with the
+    chainsaw.</p>
+
+.. raw:: html
+
+    <p>We use <abbr title="Hypertext Markup Language">HTML</abbr> to structure our web
+    documents.</p>
+
+    <p>I think <abbr title="Reverend">Rev.</abbr> Green did it in the kitchen with the
+    chainsaw.</p>
+
+Contact Details
+===============
+
+Use the ``<address>`` element to wrap contact details. It is meant for marking up the
+contact details of the person who wrote the HTML document, not *any* address. So the
+below would only be ok if Chris had written the document on which the markup appears.
+
+.. code-block:: html
+
+    <address>
+      <p>Chris Mills, Manchester, The Grim North, UK</p>
+    </address>
+
+.. raw:: html
+
+    <address>
+      <p>Chris Mills, Manchester, The Grim North, UK</p>
+    </address>
+
+Superscript and Subscript
+=========================
+
+Use the ``<sup>`` and ``<sub>`` elements.
+
+.. code-block:: html
+
+    <p>My birthday is on the 25<sup>th</sup> of May 2001.</p>
+    <p>Caffeine's chemical formula is C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.</p>
+    <p>If x<sup>2</sup> is 9, x must equal 3 or -3.</p>
+
+.. raw:: html
+
+    <p>My birthday is on the 25<sup>th</sup> of May 2001.</p>
+    <p>Caffeine's chemical formula is C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.</p>
+    <p>If x<sup>2</sup> is 9, x must equal 3 or -3.</p>
+
+Representing Computer Code
+==========================
+
+There are several elements available for marking up computer code in HTML.
+
+* ``<code>``: for marking up generic pieces of computer code.
+* ``<pre>``: for retaining whitespace (generally code blocks) |--| if you use indentation
+  or excess whitespace inside your text, browsers will ignore it and you will not see it
+  on your rendered page. If you wrap the text in ``<pre></pre>`` tags however, you
+  whitespace will be rendered identically to how you see it in your text editor.
+* ``<var>``: for specifically marking up variable names.
+* ``<kbd>``: for marking up keyboard (and other types of) input entered into the computer.
+* ``<samp>``: for marking up the output of a computer program.
+
+Here's one example:
+
+.. code-block:: html
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>Other semantics examples</title>
+      </head>
+      <body>
+        <p>We use <abbr title="Hypertext Markup Language">HTML</abbr> to structure our web documents.</p>
+
+        <p>I think <abbr title="Reverend">Rev.</abbr> Green did it in the kitchen with the chainsaw.</p>
+
+        <address>
+          <p>Chris Mills, Manchester, The Grim North, UK</p>
+        </address>
+
+        <p>My birthday is on the 25<sup>th</sup> of May 2001.</p>
+
+        <p>Caffeine's chemical formula is C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.</p>
+
+        <p>If x<sup>2</sup> is 9, x must equal 3.</p>
+
+        <pre><code>var para = document.querySelector('p');
+
+    para.onclick = function() {
+      alert('Owww, stop poking me!');
+    }</code></pre>
+
+        <p>You shouldn't use presentational elements like <code>&lt;font&gt;</code> and <code>&lt;center&gt;</code>.</p>
+
+        <p>In the above JavaScript example, <var>para</var> represents a paragraph element.</p>
+
+        <p>Select all the text with <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+
+        <pre>$ <kbd>ping mozilla.org</kbd>
+    <samp>PING mozilla.org (63.245.215.20): 56 data bytes
+    64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
+
+      </body>
+    </html>
+
+And here is that example in raw form:
+
+.. raw:: html
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>Other semantics examples</title>
+      </head>
+      <body>
+        <p>We use <abbr title="Hypertext Markup Language">HTML</abbr> to structure our web documents.</p>
+
+        <p>I think <abbr title="Reverend">Rev.</abbr> Green did it in the kitchen with the chainsaw.</p>
+
+        <address>
+          <p>Chris Mills, Manchester, The Grim North, UK</p>
+        </address>
+
+        <p>My birthday is on the 25<sup>th</sup> of May 2001.</p>
+
+        <p>Caffeine's chemical formula is C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.</p>
+
+        <p>If x<sup>2</sup> is 9, x must equal 3.</p>
+
+        <pre><code>var para = document.querySelector('p');
+
+    para.onclick = function() {
+      alert('Owww, stop poking me!');
+    }</code></pre>
+
+        <p>You shouldn't use presentational elements like <code>&lt;font&gt;</code> and <code>&lt;center&gt;</code>.</p>
+
+        <p>In the above JavaScript example, <var>para</var> represents a paragraph element.</p>
+
+        <p>Select all the text with <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+
+        <pre>$ <kbd>ping mozilla.org</kbd>
+    <samp>PING mozilla.org (63.245.215.20): 56 data bytes
+    64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
+
+      </body>
+    </html>
+
+Is this the same **example**?
+
+.. code-block:: html
+
+    <pre><code>var para = document.querySelector('p');
+
+    para.onclick = function() {
+      alert('Owww, stop poking me!');
+    }</code></pre>
+
+    <p>You shouldn't use presentational elements like <code>&lt;font&gt;</code> and <code>&lt;center&gt;</code>.</p>
+
+    <p>In the above JavaScript example, <var>para</var> represents a paragraph element.</p>
+
+
+    <p>Select all the text with <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+
+    <pre>$ <kbd>ping mozilla.org</kbd>
+    <samp>PING mozilla.org (63.245.215.20): 56 data bytes
+    64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
+
+Here is the **second** example in raw form:
+
+.. raw:: html
+
+    <pre><code>var para = document.querySelector('p');
+
+    para.onclick = function() {
+      alert('Owww, stop poking me!');
+    }</code></pre>
+
+    <p>You shouldn't use presentational elements like <code>&lt;font&gt;</code> and <code>&lt;center&gt;</code>.</p>
+
+    <p>In the above JavaScript example, <var>para</var> represents a paragraph element.</p>
+
+
+    <p>Select all the text with <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+
+    <pre>$ <kbd>ping mozilla.org</kbd>
+    <samp>PING mozilla.org (63.245.215.20): 56 data bytes
+    64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
+
+Date and Time Markup
+====================
+
+Use the ``<time>`` element and set the ``datetime`` attribute to a machine-readable
+format.
+
+.. code-block:: html
+
+    <!-- Standard simple date -->
+    <p><time datetime="2016-01-20">20 January 2016</time></p>
+    <!-- Just year and month -->
+    <p><time datetime="2016-01">January 2016</time></p>
+    <!-- Just month and day -->
+    <p><time datetime="01-20">20 January</time></p>
+    <!-- Just time, hours and minutes -->
+    <p><time datetime="19:30">19:30</time></p>
+    <!-- You can do seconds and milliseconds too! -->
+    <p><time datetime="19:30:01.856">19:30:01.856</time></p>
+    <!-- Date and time -->
+    <p><time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time></p>
+    <!-- Date and time with timezone offset-->
+    <p><time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time></p>
+    <!-- Calling out a specific week number-->
+    <p><time datetime="2016-W04">The fourth week of 2016</time></p>
+
+.. raw:: html
+
+    <!-- Standard simple date -->
+    <p><time datetime="2016-01-20">20 January 2016</time></p>
+    <!-- Just year and month -->
+    <p><time datetime="2016-01">January 2016</time></p>
+    <!-- Just month and day -->
+    <p><time datetime="01-20">20 January</time></p>
+    <!-- Just time, hours and minutes -->
+    <p><time datetime="19:30">19:30</time></p>
+    <!-- You can do seconds and milliseconds too! -->
+    <p><time datetime="19:30:01.856">19:30:01.856</time></p>
+    <!-- Date and time -->
+    <p><time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time></p>
+    <!-- Date and time with timezone offset-->
+    <p><time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time></p>
+    <!-- Calling out a specific week number-->
+    <p><time datetime="2016-W04">The fourth week of 2016</time></p>
+
+*******
+Summary
+*******
+
+That's the end of `MDN's study of HTML text semantics <https://developer.mozilla.org/
+en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting>`_. There are a lot
+more HTML elements.
+
+The next section to study is `Document and Website Structure <https://
+developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/
+Document_and_website_structure>`_.
 
 .. _mdn intro css: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS
 .. _mdn intro html: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML
