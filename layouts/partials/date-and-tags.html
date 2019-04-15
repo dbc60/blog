@@ -7,9 +7,9 @@
               2) A section front matter value is set `show_reading_time = true`
               3) A page front matter value is set `show_reading_time = true`
               */ -}}
-            <span> <i data-feather="calendar"></i> <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time> </span>
-            <span > - {{ .ReadingTime}} min read</span>
-            <span> - {{ .WordCount }} words </span>
+            <span><i  data-feather="calendar"></i> <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time></span>
+            <span> - {{ .ReadingTime}} min read</span>
+            <span> - {{ .WordCount }} words</span>
             {{- with .Params.tags -}}
             <br>
             <i data-feather="tag"></i>

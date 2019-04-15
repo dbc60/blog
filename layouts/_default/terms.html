@@ -1,11 +1,11 @@
 {{ define "main" }}
-
+<!-- See https://bwaycer.github.io/hugo_tutorial.hugo/templates/terms/ -->
 <h2>{{ .Title }}</h2>
 
 {{ $type := .Type }}
-{{ range $key, $value := .Data.Terms.ByCount }}
+{{ range $key, $value := .Data.Terms.Alphabetical }}
   {{ $name := .Name }}
-  {{ $count := .Count }}
+  {{ $count := $value.Count }}
   {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
   <p>
     <a href="{{ .Permalink }}">

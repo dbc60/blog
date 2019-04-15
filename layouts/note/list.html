@@ -4,6 +4,7 @@
       {{- .Content -}}
     <!-- Paginates through content/note/*.md -->
     {{- $paginator := .Paginate (where .Pages "Type" "note") -}}
+    <h2>layouts\note\list.html</h2>
     {{- range $paginator.Pages -}}
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       <div class="article-meta-data">

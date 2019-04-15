@@ -3,15 +3,12 @@
 <html lang="{{ $lang }}">
   {{ partial "head.html" . }}
   <body class="base">
-    <div class="container">
-      {{- partial "nav.html" . }}
-      <!-- header contains the title in an h1 element and a subtitle -->
-      {{- block "header" . }}{{ partial "site-header.html" . -}}{{- end }}
-      <main id="main">
-        {{- block "main" . -}}{{- end }}
-      </main>
-    </div>
+    {{ block "header" . }}{{ partial "site-header.html" . -}}{{- end }}
+    {{- partial "nav.html" . }}
+    <main id="main">
+      {{- block "main" . -}}{{- end }}
+    </main>
     {{ partial "footer.html" . }}
-    {{ partial "google-analytics-async.html" . }}
+    {{ partial "script.html" . }}
   </body>
 </html>

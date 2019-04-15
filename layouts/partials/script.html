@@ -1,8 +1,7 @@
 <script src="{{ "js/feather.min.js" | relURL }}"></script>
-<script>
-  feather.replace()
-</script>
-{{ if or .Params.math .Site.Params.math }}
+<script>feather.replace()</script>
+<!-- Include MathJaX if either the page or the site params define math=true -->
+{{- if or .Params.math .Site.Params.math -}}
 <!-- Configure MathJax for automatic equation numbering. See
    http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
    for details
@@ -29,4 +28,18 @@
       https://github.com/mathjax/MathJax-docs/wiki/How-to:-MathJax-CDN-fallback
 
   <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="<<PATH_TO_YOUR_LOCAL_MATHJAX>>MathJax.js?config=TeX-AMS_HTML-full"><\/script>')</script>-->
-{{ end }}
+{{- end -}}
+
+<!-- Google Analytics if the site is *not* running in a local Hugo server and the
+     GoogleAnalytics tracking id is set in config.toml or params.toml
+-->
+{{- if not .Site.IsServer -}}
+  {{- with .Site.GoogleAnalytics -}}
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', '{{ . }}', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  {{- end -}}
+{{- end }}

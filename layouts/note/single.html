@@ -1,0 +1,10 @@
+{{ define "main" }}
+
+  <h2>layouts\note\single.html overrides layouts\_default\single.html</h2>
+  <h2>{{- .Title -}}</h2>
+  <div class="article-meta-data">{{ partial "date-and-tags.html" . }}</div>
+  <section>
+    {{- .Content -}}
+  </section>
+
+{{ end }}

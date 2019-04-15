@@ -1,19 +1,18 @@
-      {{- define "main" -}}
-        <!-- home page template -->
-        <article class="article-main">
-          <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
-          {{- .Content -}}
-          <!-- Paginates through content/post/*.md -->
-          {{- $paginator := .Paginate (where .Pages "Type" "post") -}}
-          {{- range $paginator.Pages -}}
-          <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-          <div class="article-meta-data">
-              {{- partial "date-and-tags.html" . -}}
-              <!-- this renders based on layouts/_default/summary.html (either the
-              local one, or the one in a theme -->
-              {{- .Render "summary" }}
-            </div>
-          {{- end -}}
-          {{- template "_internal/pagination.html" . }}
-        </article>
-      {{- end -}}
+    {{- define "main" }}
+      <article class="article-main">
+        <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+        {{- .Content -}}
+        <!-- Paginates through content/post/*.md -->
+        {{- $paginator := .Paginate (where .Pages "Type" "post") -}}
+        {{- range $paginator.Pages -}}
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <div class="article-meta-data">
+            {{ partial "date-and-tags.html" . -}}
+            <!-- this renders based on layouts/_default/summary.html (either the
+            local one, or the one in a theme -->
+            {{- .Render "summary" }}
+          </div>
+        {{- end -}}
+        {{- template "_internal/pagination.html" . }}
+      </article>
+    {{- end -}}

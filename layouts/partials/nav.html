@@ -2,6 +2,7 @@
         <nav id="nav" class="nav justify-content-left">
         {{- $showActiveNav := .Site.Params.showActiveNav -}}
         {{- $currentPage := . -}}
+        <ul>
         {{- range .Site.Menus.nav -}}
           {{- $active := "" -}}
           {{- if eq $showActiveNav true -}}
@@ -12,12 +13,13 @@
           {{- end -}}
           {{- $icon := printf "<i data-feather=\"%s\"></i>" .Pre -}}
           {{- $text := print $icon " " .Name | safeHTML }}
-          <a class="nav-link {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
+          <li><a class="nav-link {{ $active }}" href="{{ .URL }}">{{ $text }}</a></li>
         {{- end }}
-          <div class="links">
-          {{- range .Site.Params.links }}
-            <a href="{{ .url }}" title="{{ .title }}"> <span class="social-link {{ .iconset | default "fab" }} fa-{{ .icon }}"></span> </a>
-          {{- end }}
-          </div>
+        </ul>
+        <ul>
+        {{- range .Site.Params.links }}
+          <li><a href="{{ .url }}" title="{{ .title }}"> <span class="social-link {{ .iconset | default "fab" }} fa-{{ .icon }}"></span> </a></li>
+        {{- end }}
+        </ul>
         </nav>
       </div><!-- nav-border -->
