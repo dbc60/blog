@@ -46,15 +46,15 @@ pygmentsCodefencesGuessSyntax = true
     url = "/now/"
     weight = 4
   [[menu.nav]]
-    name = "Categories"
-    pre = "bookmark"
-    url = "/categories"
-    weight = 6
-  [[menu.nav]]
     name = "Tags"
     pre = "tag"
     url = "/tags/"
     weight = 5
+  [[menu.nav]]
+    name = "Categories"
+    pre = "bookmark"
+    url = "/categories"
+    weight = 6
   [[menu.nav]]
     name = "RSS"
     pre = "rss"

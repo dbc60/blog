@@ -2,7 +2,7 @@
 title: "Basic Web Design"
 date: 2019-04-13T04:45:15-04:00
 categories: [design]
-tags: [web,000test-tag,c++]
+tags: [web]
 ---
 
 How much structure is really needed to make a web page. I have a lot to learn.
