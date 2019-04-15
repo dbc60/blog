@@ -1,6 +1,8 @@
 ---
 title: "Website Structure"
 date: 2019-04-14T09:32:09-04:00
+categories: [design]
+tags: [web,design]
 ---
 
 These notes are from MDN `Document and Website Structure <https://

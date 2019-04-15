@@ -7,6 +7,7 @@ dateFormat = "Monday Jan 2, 2006"
 homeText = "It's What I Do"
 footerText = "&copy; Douglas Cuthbertson 2015. Made with [Hugo](https://gohugo.io/)"
 hideFooter = false
+mainParts = ["post", "note"]
 #featured_image = "/images/hero-header-default.jpg"
 #featured_image = "/images/hero-header-april.jpg"
 

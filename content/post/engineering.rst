@@ -2,8 +2,8 @@
 title: What is Engineering?
 date: 2019-04-08T10:32:30-05:00
 draft: true
-tags: [principles, concepts]
 categories: [engineering]
+tags: [principles, concepts,design]
 ---
 
 This doesn't have to be my first blog post.

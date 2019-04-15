@@ -3,8 +3,8 @@
       <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
       {{- .Content -}}
     <!-- Paginates through content/note/*.md -->
-    <h2>layouts\_default\list.html</h2>
     {{- $paginator := .Paginate (where .Pages "Type" "note") -}}
+    <h2>layouts\note\list.html</h2>
     {{- range $paginator.Pages -}}
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       <div class="article-meta-data">
