@@ -181,4 +181,4 @@ Is there magic? If so, how does it manifest itself? How is it acquired, controll
 
 - Book: [Tinkertoys: A Handbook of Creative-Thinking Techniques (2nd Edition)](https://www.amazon.com/Thinkertoys-Handbook-Creative-Thinking-Techniques-2nd/dp/1580087736?ie=UTF8&*Version*=1&*entries*=0).
 - Video: [Rob Daviau - how he designed Risk: Legacy (59:11)](https://vimeo.com/82383614)
-- [MMO Idea](/notes/2016-03-16-mmo-idea)
+- [MMO Idea](/note/2016-03-16-mmo-idea)

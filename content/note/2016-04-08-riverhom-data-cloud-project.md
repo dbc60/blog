@@ -64,7 +64,7 @@ Discuss how revenue is acquired. Is it subscription based, freemium (free to pla
 
 ## Competition
 
-In my post on [businesses and startups](/notes/2016-11-04-business-and-startups), I copied a list of the best backup software of 2016 from PC Magazine's article [The Best Online Backup Services of 2016]((http://www.pcmag.com/article2/0,2817,2288745,00.asp) (note: I need to look at PC Magazine's article [The Best Backup Software of 2016](http://www.pcmag.com/article2/0,2817,2278661,00.asp). One of the best services is [CrashPlan](https://www.crashplan.com/en-us/).
+In my post on [businesses and startups](/note/2016-11-04-business-and-startups), I copied a list of the best backup software of 2016 from PC Magazine's article [The Best Online Backup Services of 2016]((http://www.pcmag.com/article2/0,2817,2288745,00.asp) (note: I need to look at PC Magazine's article [The Best Backup Software of 2016](http://www.pcmag.com/article2/0,2817,2278661,00.asp). One of the best services is [CrashPlan](https://www.crashplan.com/en-us/).
 
 I installed the standalone version of CrashPlan, and I think I can easily beat its performance. Instead of keeping a list of changed files, it scans the entire harddisk once each day. I think I can use the NTFS journal to keep track of which files have changed, and just update the backup copy of those files.
 

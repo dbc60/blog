@@ -7,7 +7,7 @@ tags:
   - plans
 ---
 
-This filing plan is more fleshed out than [the alternate plan](/notes/projects/filing-plan-alternate). It also moves the section on `Computer Backup Files and Passwords` from its own section to a part under [Section 9 General Records](#9 General Records).
+This filing plan is more fleshed out than [the alternate plan](/note/projects/filing-plan-alternate). It also moves the section on `Computer Backup Files and Passwords` from its own section to a part under [Section 9 General Records](#9 General Records).
 
 <!--more-->
 

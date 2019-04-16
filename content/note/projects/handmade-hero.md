@@ -1,8 +1,9 @@
 ---
 title: Handmade Hero
 date: 2017-02-18
-disable_comments: true
-tags: [games, design, handmade hero]
+draft: true
+categories: [project, design, development, programming]
+tags: [games, handmade hero]
 ---
 Notes on game design and programming from Casey Muratori's Handmade Hero videos.
 
@@ -61,7 +62,7 @@ Similarly, you might want to get the command line arguments. They are provided b
 LPTSTR WINAPI GetCommandLine(void);
 ```
 
-For a few more details about entry points (including using `wmain`), see [Programming Tips & Snippets](/notes/2017-02-02-programming-tips-and-snippets).
+For a few more details about entry points (including using `wmain`), see [Programming Tips & Snippets](/note/2017-02-02-programming-tips-and-snippets).
 
 ## Interface: Platform-Specific vs Platform Nonspecific Code
 One of the basic design premises in Handmade hero is that code can be split into functions written for a specific operating system and those that are for the game.
