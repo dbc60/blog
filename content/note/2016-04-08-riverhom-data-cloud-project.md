@@ -3,10 +3,7 @@ title: Riverhom Cloud Bank Project
 date: 2016-04-08
 draft: true
 categories: projects
-tags:
-  - design
-  - project
-  - backup
+tags: [design, project, backup]
 ---
 
 A data backup project. I might rename it to just Riverhom with a slogan/subtitle of "Data Storage".

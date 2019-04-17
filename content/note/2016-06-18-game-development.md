@@ -3,10 +3,7 @@ title: Game Development Methods and Ideas
 date: 2016-06-18
 draft: true
 categories: projects
-tags:
-  - games
-  - development
-  - fun
+tags: [games, development, fun]
 ---
 
 Mostly about processes, but there's some stuff on an MMO idea I have for a world based on a steampunk theme.

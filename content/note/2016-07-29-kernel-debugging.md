@@ -3,10 +3,7 @@ title: Kernel Debugging
 date: 2016-07-29
 draft: true
 categories: [software]
-tags:
-  - kernel
-  - debugging
-  - windbg
+tags: [windows, kernel, debugging, windbg]
 ---
 
 Using windbg to debug kernel drivers, such as the FIM mini filter.

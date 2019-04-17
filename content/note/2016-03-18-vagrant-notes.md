@@ -2,8 +2,8 @@
 title: Vagrant
 date: 2016-03-18
 draft: true
-categories: notes
-tags:
+categories: [software]
+tags: [vagramt. devops, admin]
     - vagrant
     - devops
 ---
