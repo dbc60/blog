@@ -1,7 +1,10 @@
 ---
 title: "Basic Html"
 date: 2019-04-11T07:34:55-04:00
-categories: [web]
+draft: true
+categories: [software]
+tags: [web]
+
 ---
 
 .. |--| unicode:: U+2013   .. en dash

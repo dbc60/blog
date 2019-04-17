@@ -2,8 +2,8 @@
 title: Analytical Reading
 date: 2016-08-04
 draft: true
-categories: self-improvement
-tags: [reading, knowledge]
+categories: misc
+tags: [self-improvement, reading, knowledge]
 ---
 
 Analytical reading is a thorough reading. There are rules to analytical reading.

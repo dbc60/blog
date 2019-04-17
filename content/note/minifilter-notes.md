@@ -2,8 +2,8 @@
 title: Minifilters
 date: 2019-04-04T11:11:11-05:00
 draft: true
-categories: [windows, kernel]
-tags: [minifilter]
+categories: [software]
+tags: [windows, minifilter, kernel]
 ---
 
 Notes on writing a Windows minifilter

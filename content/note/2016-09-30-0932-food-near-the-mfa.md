@@ -2,11 +2,8 @@
 title: Food near Fenway and the MFA
 date: 2016-09-30T09:32:00-05:00
 draft: true
-categories: [dining]
-tags:
-  - boston
-  - fenway
-  - mfa
+categories: [misc]
+tags: [dining, boston, fenway, mfa, parking]
 ---
 
 Here's a list of places to eat near the MFA.

@@ -2,8 +2,8 @@
 title: Miscellaneous Windows Settings
 date: 2016-09-12T09:45:00-05:00
 draft: true
-categories: windows
-tags: [kernel, debug, boot, config]
+categories: software
+tags: [windows, kernel, debug, boot, config]
 ---
 
 Registry, boot (bcdedit), and other settings

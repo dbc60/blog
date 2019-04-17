@@ -3,8 +3,8 @@ title: "D3 Example: Simple Color Change"
 date: 2019-02-14T07:37:05-05:00
 draft: true
 description: "A d3js Example"
-categories: [d3]
-tags: [example]
+categories: [software]
+tags: [d3, example]
 d3: true
 ---
 

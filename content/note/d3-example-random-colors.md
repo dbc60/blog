@@ -3,8 +3,8 @@ title: "D3 Example: Randomly Colored Paragraphs"
 date: 2019-02-14T09:21:00-05:00
 draft: true
 description: "A d3js Example"
-categories: [d3]
-tags: [example]
+categories: [software]
+tags: [d3, example]
 d3: true
 ---
 

@@ -2,11 +2,8 @@
 title: Remote Debugging with Visual Studio
 date: 2016-10-20
 draft: true
-categories: programming
-tags:
-    - debugging
-    - software development
-    - visual studio
+categories: software
+tags: [debugging, software development, visual studio]
 ---
 
 Remote debugging is a useful technique for debugging Windows services. First, the remote host needs to be properly configured.

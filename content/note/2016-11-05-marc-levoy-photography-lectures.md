@@ -2,9 +2,8 @@
 title: Marc Levoy Photography Course
 date: 2016-11-05
 draft: true
-categories: [photography, skills]
-tags:
-    - photography
+categories: [hobbies]
+tags: [photography]
 ---
 
 Notes from [Lectures on Digital Photography](https://sites.google.com/site/marclevoylectures/home), by Marc Levoy.

@@ -2,11 +2,8 @@
 title: Windows Server Core Administration
 date: 2016-11-11
 draft: true
-categories: operating systems
-tags:
-    - windows
-    - core
-    - cli
+categories: [computers]
+tags: [windows, administration]
 ---
 
 Here are some key commands for running Windows Update and other tools on Windows Server 2012 R2 Core.

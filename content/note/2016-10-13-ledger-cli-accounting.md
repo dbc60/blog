@@ -2,10 +2,8 @@
 title: Ledger Command-line Accounting
 date: 2016-10-13
 draft: true
-categories: financial
-tags:
-  - accounting
-  - finances
+categories: misc
+tags: [accounting, finances, budgeting]
 ---
 
 Better budgeting through automated transactions and virtual accounts.

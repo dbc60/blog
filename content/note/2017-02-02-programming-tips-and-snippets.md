@@ -2,8 +2,8 @@
 title: Programming Tips & Snippets
 date: 2017-02-02
 draft: true
-categories: [programming, windows]
-tags: [golang, c++, sound, graphics, workspace]
+categories: [software]
+tags: [windows, golang, c++, sound, graphics, workspace]
 ---
 
 Some code. Some notes. Some organization. Some graphics. Some Handmade Hero stuff.

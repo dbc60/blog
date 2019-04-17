@@ -3,8 +3,8 @@ title: "D3 Example: Alternating Shades of Gray"
 date: 2019-02-14T09:43:00-05:00
 draft: true
 description: "A d3js example that alternates shades of gray from one paragraph to the next"
-categories: [d3]
-tags: [example]
+categories: [software]
+tags: [d3, example]
 d3: true
 ---
 

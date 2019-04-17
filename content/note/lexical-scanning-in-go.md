@@ -2,8 +2,8 @@
 title: Lexical Scanning in Go
 date: 2019-04-05T05:26:00-05:00
 draft: true
-tags: [lexing, Scanning,golang]
-categories: [programming]
+tags: [software]
+categories: [lexing, scanning, golang]
 ---
 
 Notes from Rob Pike's talk on [Lexical Scanning in Go][lexscantalk]

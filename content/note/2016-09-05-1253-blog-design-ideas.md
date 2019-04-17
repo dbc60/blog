@@ -2,12 +2,8 @@
 title: Blog Styling Ideas
 date: 2016-09-05T12:53:00-05:00
 draft: true
-categories: project
-tags:
-  - blog
-  - css
-  - styling
-  - design
+categories: projects
+tags: [blog, css, styling, design]
 ---
 
 Here are some styling changes to try.

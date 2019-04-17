@@ -2,7 +2,7 @@
 title: Learnable Programming
 date: 2016-12-09
 draft: true
-categories: [programming]
+categories: [software]
 tags: [design]
 ---
 

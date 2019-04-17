@@ -2,10 +2,8 @@
 title: Budgeting
 date: 2016-10-06
 draft: true
-categories: financial
-tags:
-    - budgeting
-    - planning
+categories: misc
+tags: [skills, budgeting, finances]
 ---
 
 How to spend money without going broke

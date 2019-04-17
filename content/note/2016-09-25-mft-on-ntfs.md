@@ -2,8 +2,8 @@
 title: The NTFS Master File Table
 date: 2016-09-25
 draft: true
-categories: windows
-tags: [mft, ntfs]
+categories: [software]
+tags: [windows, mft, ntfs]
 ---
 
 How to find and read the Master File Table (MFT) on NTFS

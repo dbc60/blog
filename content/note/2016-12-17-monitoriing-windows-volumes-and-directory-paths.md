@@ -2,12 +2,8 @@
 title: Monitoring Windows Volumes and Directory Paths
 date: 2016-12-17
 draft: true
-categories: [programming]
-tags:
-    - windows
-    - directories
-    - file system
-    - paths
+categories: [software]
+tags: [windows]
 ---
 
 Matching real paths to rules containing paths to be matched. These rules may contain an asterisk representing zero or more characters in the path.

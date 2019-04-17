@@ -1,8 +1,8 @@
 ---
 title: "Website Structure"
 date: 2019-04-14T09:32:09-04:00
-categories: [design]
-tags: [web,design]
+categories: [software]
+tags: [web, design]
 ---
 
 These notes are from MDN `Document and Website Structure <https://
@@ -99,3 +99,14 @@ Here are some links with advice on how to use categories and tags:
 
 .. _wpbeginner categories and tags: https://www.wpbeginner.com/beginners-guide/categories-vs-tags-seo-best-practices-which-one-is-better/
 .. _yoast tags and categories: https://yoast.com/tags-and-categories-difference/
+
+*************
+My Categories
+*************
+
+#. career: interviewing, job search, etc.
+#. hobbies: photography, model railroading, woodworking
+#. math: anything primarily about mathematics.
+#. projects: home/personal projects.
+#. software: anything to do with software development, planning, testing, etc.
+#. misc: the catch all for stuff that's hard to categorize.

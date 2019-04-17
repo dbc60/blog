@@ -2,9 +2,8 @@
 title: Business Development & Startups
 date: 2016-11-04
 draft: true
-categories: [business development]
-tags:
-    - startup
+categories: [misc]
+tags: [business development, startup]
 ---
 
 Things about business development and startups

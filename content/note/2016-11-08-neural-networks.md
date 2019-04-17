@@ -2,7 +2,7 @@
 title: Neural Networks
 date: 2016-11-08
 draft: true
-categories: computer science
+categories: [software]
 tags: [machine learning, neural nets, artificial intelligence, ai, ml]
 ---
 

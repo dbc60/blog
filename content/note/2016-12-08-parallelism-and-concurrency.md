@@ -1,8 +1,8 @@
 ---
 title: Parallelism & Concurrency
 date: 2016-12-08
-categories: [software engineering]
-tags: [java, concurrency, parallelism]
+categories: [software]
+tags: [concurrency, parallelism]
 ---
 
 Notes from Martin Thompson's talk "A quest for predictable latency with Java concurrency."

@@ -2,6 +2,7 @@
 title: Myspace Music Archive
 date: 2019-04-04T13:07:23-05:00
 draft: true
+categories: misc
 tags:
   - music
   - archive
