@@ -1,11 +1,12 @@
 ---
 title: An Editor and Debugger for Windows Installers
 date: 2016-12-09
-disable_comments: true
-tags:
-    - msi
+categories: [projects]
+tags: [software]
 ---
+
 I've been completely frustrated with the [WiX Toolset](https://wixtoolset.org). There is no visibility into what is actually taking place in the installer when one describes it using XML. The candle and light tools provide insufficient warning and error messages. Installers fail during runtime and the failure logs do not help enough to uncover the errors.
+<!--more-->
 
 ## Windows Installer
 The [Roadmap to the Documentation](https://msdn.microsoft.com/en-us/library/aa371366(v=vs.85).aspx) for Windows Installer is my starting point for understanding the API and the elements of the installer database.

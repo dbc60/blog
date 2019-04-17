@@ -2,12 +2,8 @@
 title: Miscellaneous Notes
 date: 2016-03-16
 draft: true
-categories: miscellaneous
-tags:
-    - jekyll
-    - finances
-    - retirement
-    - business
+categories: misc
+tags: [writing, finances]
 ---
 
 The directory structure in your repository and the configuration of Jekyll and Compass are tied closely together.
@@ -87,7 +83,7 @@ Details:
     - Power On
     - Wiring Fault
   - Audible Alarms
-  	- On Battery
+    - On Battery
     - Low Battery
     - Overload
   - Software: PowerPanel® Personal Edition
@@ -185,10 +181,10 @@ Details:
   - Serial Port: Yes
   - Cable Management: USB Cable
   - LED Indicators
-  	- Power On
+    - Power On
     - Wiring Fault
   - Audible Alarms
-  	- On Battery
+    - On Battery
     - Low Battery
     - Overload
   - Software: PowerPanel® Personal Edition

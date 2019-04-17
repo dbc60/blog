@@ -2,8 +2,8 @@
 title: Web Application Development
 date: 2016-03-16
 draft: true
-categories: [web, development]
-tags: [soa, ]
+categories: [software]
+tags: [soa, web, development]
 ---
 
 A collection of issues and concerns related to developing web applications. Eventually, I'll get to writing about some solutions. For now, it's just a list.

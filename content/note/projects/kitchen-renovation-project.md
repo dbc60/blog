@@ -1,13 +1,13 @@
 ---
 title: Kitchen Renovation
 date: 2016-03-28
-disable_comments: true
+draft: true
 categories: projects
-tags:
-    - renovation
-    - kitchen
-excerpt: We need to remodel our old kitchen so it is more functional an more pleasant to work in. The floor tiles are chipping and our cabinets are falling apart.
+tags: [renovation, kitchen]
 ---
+
+We need to remodel our old kitchen so it is more functional an more pleasant to work in. The floor tiles are chipping and our cabinets are falling apart.
+<!--more-->
 
 ## Kitchen Renovation Project Summary
 The general idea is to:

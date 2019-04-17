@@ -1,14 +1,13 @@
 ---
 title: Project Sampler
 date: 2017-02-17
-disable_comments: true
-tags:
-    - sampler
-    - code
-    - projects
-    - ideas
+draft: true
+categories: [projects]
+tags: [software]
 ---
+
 How about making a sampler of design, code and tools?
+<!--more-->
 
 ## Project Sampler
 I was just thinking this morning of a project to display what I can do on Windows. Mostly, it covered using Windows I/O APIs (graphics, sound, input from a keyboard, mouse, game controller or pen and tablet). I then had a wild idea to expand on that and make a code sampler, something like an embroidery sampler done to show off a needleworkers skill.

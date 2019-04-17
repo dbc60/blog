@@ -4,9 +4,7 @@ date: 2016-03-07
 draft: true
 math: true
 categories: math
-tags:
-  - 3d
-  - graphics
+tags: [3d, graphics]
 ---
 
 World, view and projection matrices.

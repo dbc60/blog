@@ -1,8 +1,9 @@
 ---
 title: About Electronic Files
 date: 2016-03-07
-categories: programming
 draft: true
+categories: [software]
+tags: [files]
 ---
 
 If you can get a collection of important files, their attributes and contents, what kinds of things can you do with that information?
@@ -63,4 +64,5 @@ I've read that there are a few ways to enumerate all the volumes, folders and fi
 More to come ...
 
 ## References
+
 - [NTFS overview on Wikipedia](https://en.wikipedia.org/wiki/NTFS).

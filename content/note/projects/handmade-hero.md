@@ -3,10 +3,9 @@ title: Handmade Hero
 date: 2017-02-18
 draft: true
 categories: [projects]
-tags: [games, handmade hero]
+tags: [games]
 ---
 Notes on game design and programming from Casey Muratori's Handmade Hero videos.
-
 <!--more-->
 
 ## The Workspace

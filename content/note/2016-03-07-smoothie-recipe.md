@@ -2,11 +2,8 @@
 title: Workout Smoothie
 date: 2016-03-07
 draft: true
-categories: recipes
-tags:
-  - food
-  - fitness
-  - health
+categories: [misc]
+tags: [recipes]
 ---
 
 This recipe is a variation on [The Perfect Pre-workout Green Smoothie Recipe](http://simplegreensmoothies.com/green-smoothie-recipes/pre-workout-green-smoothie).

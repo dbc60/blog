@@ -1,11 +1,13 @@
 ---
 title: Learning Blender
 date: 2016-11-23
-disable_comments: true
-tags:
-    - blender
-excerpt: I'd really like to learn how to use this marvelous tool.
+draft: true
+categories: [projects]
+tags: [blender]
 ---
+
+I'd really like to learn how to use this marvelous tool.
+<!--more-->
 
 ## Blender Workflow
 I found an inspiring video, [Successfully Developing Artwork in Blender](https://www.youtube.com/watch?v=TEl8Z-Gemro), where Zacharias Reinhardt talks about his workflow for developing static images and short animations in Blender. His general workflow is:

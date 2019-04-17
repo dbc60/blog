@@ -1,14 +1,13 @@
 ---
 title: Project Planning
 date: 2016-03-07
-disable_comments: true
-categories: projects
-tags:
-  - planning
-  - experiments
-  - commitments
+draft: true
+categories: [projects]
+tags: [software]
 ---
+
 The purpose of project planning is to create the foundation for a visible sense of progress at each stage of the project. What this means is that as each step o the plan is completed there is evidence of progress.
+<!--more-->
 
 ## Experiments vs Commitments
 I was reading [My advice on learning Python efficiently][2] because I'm interested in learning Python. That led me to [How to Build the Habit of Finishing What You Start][1] which highlighted a useful way to distinguish between projects you should finish and those that are okay to abandon. The author separates projects into two kinds: those that are experiements and those that are commitments. It is the key to deciding what's worth finishing, no matter how boring, dull or uninspiring, and what's okay to quit.

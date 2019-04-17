@@ -1,12 +1,13 @@
 ---
 title: Kitchen Renovation Design Document
 date: 2016-10-20
-disable_comments: true
-tags:
-    - renovation
-    - kitchen
+draft: true
+categories: [projects]
+tags: [renovation, kitchen]
 ---
+
 We need to remodel our old kitchen so it is more functional an more pleasant to work in. The floor tiles are chipping and our cabinets are falling apart.
+<!--more-->
 
 ## Design Summary
 

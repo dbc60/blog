@@ -2,8 +2,8 @@
 title: Data-Oriented Design
 date: 2016-03-15
 draft: true
-categories: design
-tags: [data-oriented, c++, c++11, tdd, bdd]
+categories: [software]
+tags: [design]
 ---
 
 What is Data-Oriented Design and how does it relate to other design methods, such as Test Driven or Behavior Driven Design?

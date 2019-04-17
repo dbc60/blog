@@ -3,7 +3,7 @@ title: Neural Networks
 date: 2016-11-08
 draft: true
 categories: [software]
-tags: [machine learning, neural nets, artificial intelligence, ai, ml]
+tags: [ai, ml]
 ---
 
 Stuff about neural networks I found on the net that looked interesting

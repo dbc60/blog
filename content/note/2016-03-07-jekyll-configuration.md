@@ -2,12 +2,8 @@
 title: Jekyll Configuration
 date: 2016-03-07
 draft: true
-categories:
-  - blog
-  - web
-tags:
-  - jekyll
-  - yaml
+categories: [software]
+tags: [web]
 ---
 
 Jekyll is easy to get up and running.

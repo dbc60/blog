@@ -1,13 +1,13 @@
-+++
-title = "MathJax and Markdown"
-date = 2019-04-08T10:32:30-05:00
-draft = true
-math = true
-categories = ["mathjax", "math"]
-+++
+---
+title: MathJax and Markdown
+date: 2019-04-08T10:32:30-05:00
+draft: true
+math: true
+categories: [math]
+tags: [mathjax]
+---
 
 These are my notes and examples for using MathJax and Markdown to create pages with really beautiful equations.
-
 <!--more-->
 
 ## Using MathJax in a Web Page

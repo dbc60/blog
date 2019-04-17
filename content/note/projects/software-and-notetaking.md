@@ -1,11 +1,14 @@
 ---
 title: Software Development and Note Taking Platform
 date: 2016-06-19
-disable_comments: true
-categories: projects
-tags: [software, development, notes]
-excerpt: Jekyll isn't a horrible tool for generating sites from markdown, but it is a bit fickle and I don't enjoy some of the conventions baked in. It's also slow. It takes nearly 8 seconds to rebuild my notes for even the smallest change. I don't have so much content here, so why does it take so much time? Is there another way?
+draft: true
+categories: [projects]
+tags: [software]
 ---
+
+Jekyll isn't a horrible tool for generating sites from markdown, but it is a bit fickle and I don't enjoy some of the conventions baked in. It's also slow. It takes nearly 8 seconds to rebuild my notes for even the smallest change. I don't have so much content here, so why does it take so much time? Is there another way?
+<!--more-->
+
 ## What I Want
 I want a tool of set of tools that enable me to write documentation in a text editor using markup, and render it in HTML and PDF. For the HTML version, I'd like to see the results as I edit - it doesn't even have to render in real-time as I type. Updating the browser after each save is often enough. PDF output is more of an afterthought. It might be nice to have, but for most of my notes well-styled HTML is fine. Other output formats are a bonus.
 

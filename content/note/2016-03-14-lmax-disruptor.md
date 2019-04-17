@@ -2,21 +2,15 @@
 title: LMAX Disruptor
 date: 2016-03-14
 draft: true
-categories: programming
-tags:
-  - queues
-  - concurrency
-  - threads
-  - asynchronous
-  - events
-  - patterns
-  - disruptor
+categories: [software]
+tags: [design, patterns, queues, concurrency, threads, asynchronous, events]
 ---
 
 The Disruptor is a general-purpose pattern for building low-latency, high-throughput event processing queues.
 <!--more-->
 
 ## The Design of the LMAX Disruptor
+
 - queues conflate several data-storage concerns for handling the needs of producers and consumers. The Disruptor separates these concerns.
 - Ensure that any data are owned by only one thread for write access, eliminating write contention. This is the Disruptor design.
 - At the heart of the disruptor is a pre-allocated bounded data structure in the form of a ring buffer. Data is added to the ring buffer through one or more producers, and processed by one or more consumers.

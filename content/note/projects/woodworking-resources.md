@@ -1,11 +1,13 @@
 ---
 title: Woodworking Resources for Beginners
 date: 2016-11-24
-disable_comments: true
-tags:
-    - woodworking
-excerpt: Woodworking is an important skill. Here are some resources I've found on the 'net for learning some basic woodworking skills. I'm going to try to emphasize those that avoid expensive power tools.
+draft: true
+categories: [hobbies]
+tags: [woodworking]
 ---
+
+Woodworking is an important skill. Here are some resources I've found on the 'net for learning some basic woodworking skills. I'm going to try to emphasize those that avoid expensive power tools.
+<!--more-->
 
 ## Woodworking Resources
 My information starts with [this post](https://news.ycombinator.com/item?id=12995244) on Hacker News. The link, [Beginning Woodworking](http://woodgears.ca/beginner/) is to an article on Mathias Wandel's site, but according to the comments, he favors power tools. Some of the commenters have recommendations for books and sites where more hand tools are used, making woodworking less expensive. Nevertheless, I read the article and it didn't seem unreasonable. He also has a lot of really cool projects and information on woodworking.
@@ -125,91 +127,91 @@ In addition to that list of hand tools, Popular Woodworking thinks the well-equi
 Christopher Schwarz's _The Anarchist's Tool Chest_ has a list of forty or so tools required to build just about any piece of fine furiture. Here is the list and how [one person](http://blowery.org/the-48/) filled it.
 
 - Handplanes
-    - jack plane, such as an antique Stanley #5 with a replacement iron and breaker, and a Veritas Low Angle Jack.
-    - plow plane: Vertitas small plow plane
-    - rabbet/shoulder plane: Lie-Nielsen rabbeting block plane and a Lie-Nielsen large shoulder plane.
-    - router plane: Veritas large router plane.
-    - block plane: Lie-Nikelsen low angle block plane.
+  - jack plane, such as an antique Stanley #5 with a replacement iron and breaker, and a Veritas Low Angle Jack.
+  - plow plane: Vertitas small plow plane
+  - rabbet/shoulder plane: Lie-Nielsen rabbeting block plane and a Lie-Nielsen large shoulder plane.
+  - router plane: Veritas large router plane.
+  - block plane: Lie-Nikelsen low angle block plane.
 - Marking & Measuring
-    - cutting guages: Veritas wheel gauge x 2, one with microadjust. Dual-beam gauge from Lee Valley.
-    - panel gauge.
-    - 6" combination square: Starret 6" combo
-    - 6" rule: Bridge City Toolworks 6" non-glare rule.
-    - 24" folding rule or 24" steel rule: no-name 24" rule from Staples.
-    - 12' tape measure: Stanley LeverLock.
-    - Marking knife: Utilitas striking knife from Lee Valley, Blue Spruce marking knife.
-    - Wooden winding sticks: shop made from some CVG Douglas Fir. Will remake in cherry or mahogany.
-    - 36" wooden straightedge.
-    - Wooden try square, 12" blade
-    - Sliding bevel: Starret second and a Lowes special.
-    - Dividers, two to four pair.
-    - Trammel points.
+  - cutting guages: Veritas wheel gauge x 2, one with microadjust. Dual-beam gauge from Lee Valley.
+  - panel gauge.
+  - 6" combination square: Starret 6" combo
+  - 6" rule: Bridge City Toolworks 6" non-glare rule.
+  - 24" folding rule or 24" steel rule: no-name 24" rule from Staples.
+  - 12' tape measure: Stanley LeverLock.
+  - Marking knife: Utilitas striking knife from Lee Valley, Blue Spruce marking knife.
+  - Wooden winding sticks: shop made from some CVG Douglas Fir. Will remake in cherry or mahogany.
+  - 36" wooden straightedge.
+  - Wooden try square, 12" blade
+  - Sliding bevel: Starret second and a Lowes special.
+  - Dividers, two to four pair.
+  - Trammel points.
 - Essential Cutting Tools
-    - Bevel-edge chisels; 1/8", 1/4", 3/8", 1/2", 3/4" and 1-1/4": [Ashley Iles MK2 chisels](http://www.toolsforworkingwood.com/store/item/IL-100-40.XX).
-    - Mortise chisels, 1/4" or 5/16": [English Mortise Chisels by Ray Iles](http://www.toolsforworkingwood.com/store/item/MS-MORT.XX).
-    - Spokeshave: Stanley #81 shave, antique (but the mouth is too large - the owner needs a finer one, like the [Boggs Flat Spkeshave](https://www.lie-nielsen.com/product/1-sp-boggs-f-boggs-spokeshaves)).
-    - Cabinet, modeling and rattail rasp.
-    - Card scrapers.
+  - Bevel-edge chisels; 1/8", 1/4", 3/8", 1/2", 3/4" and 1-1/4": [Ashley Iles MK2 chisels](http://www.toolsforworkingwood.com/store/item/IL-100-40.XX).
+  - Mortise chisels, 1/4" or 5/16": [English Mortise Chisels by Ray Iles](http://www.toolsforworkingwood.com/store/item/MS-MORT.XX).
+  - Spokeshave: Stanley #81 shave, antique (but the mouth is too large - the owner needs a finer one, like the [Boggs Flat Spkeshave](https://www.lie-nielsen.com/product/1-sp-boggs-f-boggs-spokeshaves)).
+  - Cabinet, modeling and rattail rasp.
+  - Card scrapers.
 - Striking & Fastening Tools
-    - Chisel mallet.
-    - Cross-peen hammer.
-    - 13 oz. to 16 oz. claw hammer.
-    - Deadblow mallet.
-    - Nailsets.
-    - Nail pincers
-    - Set of slotted screwdrivers.
-    - Screw tips of drill/drivers.
-    - Sawnut drivers.
-    - Countersinks & counterbores.
-    - 10" brace.
-    - Hand drill.
-    - Set of 13 auger bits.
-    - Brad points; 1/8", 3/16", 1/4", 5/16", 3/8", 7/16" and 1/2"
-    - Birdcage awl
-    - Dowel plate
+  - Chisel mallet.
+  - Cross-peen hammer.
+  - 13 oz. to 16 oz. claw hammer.
+  - Deadblow mallet.
+  - Nailsets.
+  - Nail pincers
+  - Set of slotted screwdrivers.
+  - Screw tips of drill/drivers.
+  - Sawnut drivers.
+  - Countersinks & counterbores.
+  - 10" brace.
+  - Hand drill.
+  - Set of 13 auger bits.
+  - Brad points; 1/8", 3/16", 1/4", 5/16", 3/8", 7/16" and 1/2"
+  - Birdcage awl
+  - Dowel plate
 - Saws
-    - Dovetail saw
-    - Carcase saw
-    - Tenon saw
-    - Panel saws (rip saw, crosscut saw, fine crosscut saw)
-    - Flush cut saw.
-    - Coping saw
+  - Dovetail saw
+  - Carcase saw
+  - Tenon saw
+  - Panel saws (rip saw, crosscut saw, fine crosscut saw)
+  - Flush cut saw.
+  - Coping saw
 - Sharpening
-    - Sharpening stones (honing and polishing): [Naniwa Superstones](http://www.toolsforworkingwood.com/store/blog/45).
-    - Strop
-    - Grinder
-    - Oilcan or plant mister
-    - Burnisher
+  - Sharpening stones (honing and polishing): [Naniwa Superstones](http://www.toolsforworkingwood.com/store/blog/45).
+  - Strop
+  - Grinder
+  - Oilcan or plant mister
+  - Burnisher
 - Appliances
-    - Bench hook
-    - Sawbenches
-    - Miter box
-    - End-grain shooting board
-    - Long-grain shooting board
-    - Cork-backed sanding block
-    - Workbench, like the [Nicholson Workbench](http://www.theenglishwoodworker.com/the-english-tradition/). Apparently, it's a [good workbench for beginners](https://blog.lostartpress.com/2014/05/24/the-nicholson-bench-for-starters-also-beginners-newbies-and-novices/).
+  - Bench hook
+  - Sawbenches
+  - Miter box
+  - End-grain shooting board
+  - Long-grain shooting board
+  - Cork-backed sanding block
+  - Workbench, like the [Nicholson Workbench](http://www.theenglishwoodworker.com/the-english-tradition/). Apparently, it's a [good workbench for beginners](https://blog.lostartpress.com/2014/05/24/the-nicholson-bench-for-starters-also-beginners-newbies-and-novices/).
 - Good-to-have Tools
-    - Dial caliper
-    - 12" combination square
-    - Dovetail marker
-    - Jointer plane, like the Stanley Bedrock 608 with a corrugated base, or a Lie-Nielsen #7.
-    - Smooth plane.
-    - Large shoulder plane.
-    - Carpenter's hatchet.
-    - Drawknife.
-    - No. 80 cabinet scraper.
-    - Beading plane.
-    - Small complex moulder, such as an ogee or square ovolo
-    - Half-set of hollows & rounds.
-    1-1/2"-wide paring chisel
-    - Fishtail chisel.
-    - Drawer-lock chisel
-    - Mortise float
-    - Expansive bit
-    - Drawbore pins
-    - 12" bowsaw
-    - Sawfils
-    - Mill file
-    - Saw vise
-    - Saw set
-    - Side-clamp honing guide: like [this $8 model](https://www.lie-nielsen.com/product/blade-sharpening-side-clamping-honing-guide-), or [this $125 Lie-Nielsen model](https://www.lie-nielsen.com/product/honing-guide-bladesstandard). The $8 model is not well made - it flexes when you tighten it. There's a YouTube video for [modifying it](https://www.youtube.com/watch?v=ojzzCXq5ook) by Lie-Nielson Toolworks.
+  - Dial caliper
+  - 12" combination square
+  - Dovetail marker
+  - Jointer plane, like the Stanley Bedrock 608 with a corrugated base, or a Lie-Nielsen #7.
+  - Smooth plane.
+  - Large shoulder plane.
+  - Carpenter's hatchet.
+  - Drawknife.
+  - No. 80 cabinet scraper.
+  - Beading plane.
+  - Small complex moulder, such as an ogee or square ovolo
+  - Half-set of hollows & rounds.
+  - 1-1/2"-wide paring chisel
+  - Fishtail chisel.
+  - Drawer-lock chisel
+  - Mortise float
+  - Expansive bit
+  - Drawbore pins
+  - 12" bowsaw
+  - Sawfils
+  - Mill file
+  - Saw vise
+  - Saw set
+  - Side-clamp honing guide: like [this $8 model](https://www.lie-nielsen.com/product/blade-sharpening-side-clamping-honing-guide-), or [this $125 Lie-Nielsen model](https://www.lie-nielsen.com/product/honing-guide-bladesstandard). The $8 model is not well made - it flexes when you tighten it. There's a YouTube video for [modifying it](https://www.youtube.com/watch?v=ojzzCXq5ook) by Lie-Nielson Toolworks.

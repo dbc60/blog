@@ -2,8 +2,8 @@
 title: Real Time Linux
 date: 2016-03-07
 draft: true
-categories: operating systems
-tags: [project, linux]
+categories: [projects]
+tags: [linux]
 ---
 
 My goal is to learn how to install a real-time Linux kernel and use it to build and run real-time applications.

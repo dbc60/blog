@@ -2,8 +2,8 @@
 title: Morning Routine and Daily Schedule
 date: 2016-03-07
 draft: true
-categories: [time management]
-tags: [routine, planning]
+categories: [misc]
+tags: [skills]
 ---
 
 According to
@@ -30,6 +30,7 @@ Task: 'Clean the house'
 For some, even this task is too big. Here's a smaller example:
 
 Living room:
+
 - Remove garbage
 - Put dirty dishes in kitchen
 - Put stuff that doesn't belong in tote

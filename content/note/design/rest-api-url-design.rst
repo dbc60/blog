@@ -2,12 +2,11 @@
 title: REST API URI Design
 date: 2019-04-08
 draft: true
-categories: design
-tags: [rest, api, uri]
+categories: [software]
+tags: [design, rest, api, uri]
 ---
 
 Uniform Resource Identifiers and REST APIs in design.
-
 <!--more-->
 
 .. contents:: Contents

@@ -110,3 +110,14 @@ My Categories
 #. projects: home/personal projects.
 #. software: anything to do with software development, planning, testing, etc.
 #. misc: the catch all for stuff that's hard to categorize.
+
+Should I make a tag or category for any of these topics?
+
+* writing
+* skills (life skills)
+
+*******
+My Tags
+*******
+
+* design

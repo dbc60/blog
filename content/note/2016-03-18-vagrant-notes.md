@@ -4,8 +4,6 @@ date: 2016-03-18
 draft: true
 categories: [software]
 tags: [vagramt. devops, admin]
-    - vagrant
-    - devops
 ---
 
 Using vagrant to create, and manipulate virtual machines.

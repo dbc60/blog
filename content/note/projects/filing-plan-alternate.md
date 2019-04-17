@@ -1,11 +1,11 @@
 ---
 title: Alternate Filing Plan
 date: 2016-03-28T07:30:00-05:00
-disable_comments: true
-tags: [filing, plan]
+draft: true
+categories: [projects]
+tags: [filing]
 ---
 An outline of an alternate, detailed filing plan.
-
 <!--more-->
 
 ## Brief Contents

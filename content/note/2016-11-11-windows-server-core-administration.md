@@ -2,7 +2,7 @@
 title: Windows Server Core Administration
 date: 2016-11-11
 draft: true
-categories: [computers]
+categories: [software]
 tags: [windows, administration]
 ---
 

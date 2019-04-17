@@ -1,14 +1,12 @@
 ---
 title:  Budget Design
 date: 2016-06-12
-disable_comments: true
-tags:
-  - budget
-  - design
-  - plans
+draft: true
+categories: [projects]
+tags: [budget, design]
 ---
-A cornucopia of ideas for an outline of a rather detailed budget.
 
+A cornucopia of ideas for an outline of a rather detailed budget.
 <!--more-->
 
 ## Budget Groups

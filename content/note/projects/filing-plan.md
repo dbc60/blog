@@ -1,14 +1,12 @@
 ---
 title: Filing Plan
 date: 2016-03-28T06:30:00-05:00
-disable_comments: true
-tags:
-  - filing
-  - plans
+draft: true
+categories: [projects]
+tags: [filing]
 ---
 
 This filing plan is more fleshed out than [the alternate plan](/note/projects/filing-plan-alternate). It also moves the section on `Computer Backup Files and Passwords` from its own section to a part under [Section 9 General Records](#9 General Records).
-
 <!--more-->
 
 ## Categories

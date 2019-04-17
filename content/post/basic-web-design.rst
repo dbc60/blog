@@ -1,8 +1,8 @@
 ---
 title: "Basic Web Design"
 date: 2019-04-13T04:45:15-04:00
-categories: [design]
-tags: [web]
+categories: [software]
+tags: [design, web]
 ---
 
 How much structure is really needed to make a web page. I have a lot to learn.

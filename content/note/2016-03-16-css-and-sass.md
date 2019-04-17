@@ -2,8 +2,8 @@
 title: CSS and Sass
 date: 2016-03-16
 draft: true
-categories: web
-tags: [css, compass, sass]
+categories: [software]
+tags: [web, css, sass]
 ---
 
 I can't memorize 30 separate CSS selectors, unless they're organized.

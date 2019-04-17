@@ -1,9 +1,9 @@
 ---
 title: Microservice Archtecture
 date: 2016-03-07
-categories: web
 draft: true
-tags: [micrososervices]
+categories: [software]
+tags: [web]
 ---
 
 What is a microservice architecture and how can I put it to use?

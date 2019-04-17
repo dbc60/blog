@@ -1,10 +1,10 @@
-+++
-title = "Excel Spreadsheets"
-date = 2016-03-26T10:32:30-05:00
-draft = true
-categories = ["skills"]
-tags = ["excel", "spreadsheet"]
-+++
+---
+title: Excel Spreadsheets
+date: 2016-03-26T10:32:30-05:00
+draft: true
+categories: software
+tags: [excel, spreadsheets]
+---
 
 Notes on using Excel.
 <!--more-->

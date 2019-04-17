@@ -1,10 +1,13 @@
 ---
 title: Kitchen Cabinets
 date: 2016-09-05T07:28:50-05:00
-disable_comments: true
-categories: goals
-excerpt: Install the new kitchen cabinets.
+draft: true
+categories: [projects]
+tags: [renovation, kitchen]
 ---
+
+Install the new kitchen cabinets.
+<!--more-->
 
 ## Things That Need to be Done
 
