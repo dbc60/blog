@@ -1,14 +1,13 @@
 ---
 title: Parallelism & Concurrency
 date: 2016-12-08
+draft: true
 categories: [software]
 tags: [concurrency, parallelism]
 ---
 
 Notes from Martin Thompson's talk "A quest for predictable latency with Java concurrency."
 <!--more-->
-
-## Parallelism and Concurrency
 
 > 1. Parallel is the opposite of Serial
 > 1. Concurrent is the opposite of Sequential

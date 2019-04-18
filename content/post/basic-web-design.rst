@@ -12,9 +12,10 @@ How much structure is really needed to make a web page. I have a lot to learn.
 Inspiration
 ###########
 
-I read an article on `HN <https://news.ycombinator.com>`_ titled `58 Bytes of CSS to
-look great nearly everywhere <58 bytes of css_>`_. The article itself was inspiring as
-the author was advocating just these 5 lines of CSS for styling:
+I read an article on `HN <https://news.ycombinator.com>`_ titled `58 Bytes of
+CSS to look great nearly everywhere <58 bytes of css_>`_. The article itself
+was inspiring as the author was advocating just these 5 lines of CSS for
+styling:
 
 .. code-block:: css
 
@@ -24,8 +25,8 @@ the author was advocating just these 5 lines of CSS for styling:
       margin: auto;
     }
 
-I then wondered "How could this be?" I looked at the page source. It used a little
-more CSS.
+I then wondered "How could this be?" I looked at the page source. It used a
+little more CSS.
 
 .. code-block:: css
 
@@ -118,25 +119,25 @@ The author's `configs page <jrl ninja config_>`_ page had this concoction.
     }
 
 Clearly ``main`` is still there, but I read the article as stating that's all
-that was *really* necessary. Why would someone write something so misleading, especially
-to novices?
+that was *really* necessary. Why would someone write something so misleading,
+especially to novices?
 
-Well, at least it provoked `a conversation <58 bytes of css_>`_. `Web Design in 4
-minutes <web design in 4 minutes_>`_ was one site cited as an example of simple web
-design. It's CSS is quite a bit longer.
+Well, at least it provoked `a conversation <58 bytes of css_>`_. `Web Design in
+4 minutes <web design in 4 minutes_>`_ was one site cited as an example of
+simple web design. It's CSS is quite a bit longer.
 
-While `content <wdi4m content_>`_ is the first thing one should work on, it got me
-wondering about how to structure the content. How much structure is needed to make
-content easy to read?
+While `content <wdi4m content_>`_ is the first thing one should work on, it got
+me wondering about how to structure the content. How much structure is needed
+to make content easy to read?
 
-Now I'm reminded of `CSS Zen Garden`_. It was a beautiful experiment in how CSS could
-be applied to the same content to create a wide variety of presentations. How much
-structure was used there?
+Now I'm reminded of `CSS Zen Garden`_. It was a beautiful experiment in how CSS
+could be applied to the same content to create a wide variety of presentations.
+How much structure was used there?
 
 It starts with an HTML5 doctype, ``<!DOCTYPE html>``. The ``html`` tag is simply
-``<html lang="en">``. The ``<head>...</head>`` section contains a ``<meta>`` tag to
-define the charset, a ``<title>`` tag, two ``<link>`` tags, one for a CSS stylesheet
-and the other for an RSS link:
+``<html lang="en">``. The ``<head>...</head>`` section contains a ``<meta>``
+tag to define the charset, a ``<title>`` tag, two ``<link>`` tags, one for a
+CSS stylesheet and the other for an RSS link:
 
 .. code-block:: html
 
@@ -146,21 +147,22 @@ and the other for an RSS link:
     <link rel="stylesheet" media="screen" href="style.css?v=8may2013">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.csszengarden.com/zengarden.xml">
 
-These are followed by four more ``<meta>`` elements to define the viewport, author,
-description, and robots data properties.
+These are followed by four more ``<meta>`` elements to define the viewport,
+author, description, and robots data properties.
 
-The ``<body>`` element has only an ``id`` attribute. It's followed by a ``<div>``
-element with a ``class`` attribute. This div wraps all of the content on the page.
+The ``<body>`` element has only an ``id`` attribute. It's followed by a
+``<div>`` element with a ``class`` attribute. This div wraps all of the content
+on the page.
 
-Is a ``<main>`` element a substitute for a full-body ``<div>`` wrapper? `Mozilla MDN
-web docs <main html element_>`_ says ``<main>`` represents the dominant content of the
-``<body>`` of a document. The example they give shows other content can both precede
-and succeed the ``<main>`` element, so it is not a substitute for a ``<div>`` element
-that wraps everything.
+Is a ``<main>`` element a substitute for a full-body ``<div>`` wrapper?
+`Mozilla MDN web docs <main html element_>`_ says ``<main>`` represents the
+dominant content of the ``<body>`` of a document. The example they give shows
+other content can both precede and succeed the ``<main>`` element, so it is not
+a substitute for a ``<div>`` element that wraps everything.
 
-Is a full-body ``<div>`` wrapper necessary? It is used in the sample CSS to provide an
-opportunity for markup. The original `CSS Zen Garden`_ had CSS definitions for
-``<body>`` and the page-wrapper ``<div>`` as follows:
+Is a full-body ``<div>`` wrapper necessary? It is used in the sample CSS to
+provide an opportunity for markup. The original `CSS Zen Garden`_ had CSS
+definitions for ``<body>`` and the page-wrapper ``<div>`` as follows:
 
 .. code-block:: css
 
@@ -215,6 +217,13 @@ Anatomy of an HTML Document
 .. raw:: html
 
       <p>This is my page</p>
+
+That's an outline of the most basic elements:
+
+* ``<!DOCTYPE html>``
+* ``<html>``
+* ``<head>``
+* ``<body>``
 
 .. _58 bytes of css: https://news.ycombinator.com/item?id=19607169
 .. _jrl ninja config: https://jrl.ninja/configs/

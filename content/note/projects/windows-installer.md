@@ -1,6 +1,7 @@
 ---
 title: An Editor and Debugger for Windows Installers
 date: 2016-12-09
+draft: true
 categories: [projects]
 tags: [software]
 ---

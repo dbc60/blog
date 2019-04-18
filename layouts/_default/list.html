@@ -2,7 +2,6 @@
     <article class="article-list">
       <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
       {{- .Content -}}
-    <!-- Paginates through content/note/*.md -->
     {{- $paginator := .Paginate (where .Pages "Type" "note") -}}
     {{- range $paginator.Pages -}}
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
