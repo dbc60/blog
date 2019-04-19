@@ -1,27 +1,20 @@
-      <div id="nav-border" class="container">
-        <nav id="nav" class="nav justify-content-left">
-        {{- $showActiveNav := .Site.Params.showActiveNav -}}
-        {{- $currentPage := . -}}
-        <ul>
-        {{- range .Site.Menus.nav -}}
-          {{- $active := "" -}}
-          {{- if eq $showActiveNav true -}}
-            {{- $isMenu := or ($currentPage.IsMenuCurrent "nav" .) ($currentPage.HasMenuCurrent "nav" .) -}}
-            {{- if or $isMenu (eq $currentPage.Title .Name) -}}
-              {{- $active = "nav-link-active" -}}
-            {{- end -}}
+    <div id="nav-border" class="container">
+      <nav id="site-nav">
+      {{- $showActiveNav := .Site.Params.showActiveNav -}}
+      {{- $currentPage := . -}}
+      {{- range .Site.Menus.nav -}}
+        {{- $active := "" -}}
+        {{- if eq $showActiveNav true -}}
+          {{- $isMenu := or ($currentPage.IsMenuCurrent "nav" .) ($currentPage.HasMenuCurrent "nav" .) -}}
+          {{- if or $isMenu (eq $currentPage.Title .Name) -}}
+            {{- $active = "nav-link-active" -}}
           {{- end -}}
-          {{- $featherUrl := print "/images/feather/feather-sprite.svg" -}}
-          <!--{{- $icon := printf "<i data-feather=\"%s\"></i>" .Pre -}}-->
-            {{- $icon := printf "<svg class=\"feather\"><use xlink:href=\"%s#%s\"/></svg>" $featherUrl .Pre -}}
-          {{- $text := print $icon " " .Name | safeHTML }}
-          <li><a class="nav-link {{ $active }}" href="{{ .URL }}">{{ $text }}</a></li>
-        {{- end }}
-        </ul>
-        <ul>
-        {{- range .Site.Params.links }}
-          <li><a href="{{ .url }}" title="{{ .title }}"> <span class="social-link {{ .iconset | default "fab" }} fa-{{ .icon }}"></span> </a></li>
-        {{- end }}
-        </ul>
-        </nav>
-      </div><!-- nav-border -->
+        {{- end -}}
+        {{- $featherUrl := print "/images/feather/feather-sprite.svg" -}}
+        <!--{{- $icon := printf "<i data-feather=\"%s\"></i>" .Pre -}}-->
+          {{- $icon := printf "<svg class=\"feather\"><use xlink:href=\"%s#%s\"/></svg>" $featherUrl .Pre -}}
+        {{- $text := print $icon " " .Name | safeHTML }}
+        <a class="nav-link {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
+      {{- end }}
+      </nav>
+    </div><!-- nav-border -->

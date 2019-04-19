@@ -1,7 +1,6 @@
 ---
 title: "Basic Html"
 date: 2019-04-11T07:34:55-04:00
-draft: true
 categories: [software]
 tags: [web]
 
