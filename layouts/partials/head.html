@@ -1,6 +1,6 @@
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="{{ .Site.Params.author }}">
     <meta property="og:description" name="description" content="{{ .Site.Params.description }}">
@@ -41,7 +41,7 @@
     -->
     <!--{{ $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}-->
     {{- $style := resources.Get "scss/main.scss" | toCSS -}}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Digest }}" media="screen">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Digest }}">
 
     <title>{{ $title }}</title>
     <meta name="robots" content="index, follow">

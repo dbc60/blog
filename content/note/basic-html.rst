@@ -321,15 +321,9 @@ indicate a quotation.
 Citations
 =========
 
-The content of the ``cite`` attribute sounds useful, but unfortunately browsers,
-screenreaders, etc. don't really do much with it. There is no way to get the browser to
-display the contents of ``cite``, without writing your own solution using JavaScript or
-CSS. If you want to make the source of the quotation available on the page you need to
-make it available in the text via a link or some other appropriate way.
+The content of the ``cite`` *attribute* in a ``<q>`` element sounds useful, but unfortunately browsers, screenreaders, etc. don't really do much with it. There is no way to get the browser to display the contents of ``cite``, without writing your own solution using JavaScript or CSS. If you want to make the source of the quotation available on the page you need to make it available in the text via a link or some other appropriate way.
 
-There is a ``<cite>`` element, but this is meant to contain the title of the resource
-being quoted, e.g. the name of the book. There is no reason however why you couldn't link
-the text inside <cite> to the quote source in some way:
+There is a ``<cite>`` element, but this is meant to contain the title of the resource being quoted, e.g. the name of the book. There is no reason however why you couldn't link the text inside ``<cite>`` to the quote source in some way:
 
 .. code-block:: html
 
@@ -406,9 +400,7 @@ value of the ``title`` attribute will appear in a tooltip when the term is hover
 Contact Details
 ===============
 
-Use the ``<address>`` element to wrap contact details. It is meant for marking up the
-contact details of the person who wrote the HTML document, not *any* address. So the
-below would only be ok if Chris had written the document on which the markup appears.
+Use the ``<address>`` element to wrap contact details. It is meant for marking up the contact details of the person who wrote the HTML document, not *any* address. So the below would only be ok if Chris had written the document on which the markup appears.
 
 .. code-block:: html
 
@@ -445,10 +437,7 @@ Representing Computer Code
 There are several elements available for marking up computer code in HTML.
 
 * ``<code>``: for marking up generic pieces of computer code.
-* ``<pre>``: for retaining whitespace (generally code blocks) |--| if you use indentation
-  or excess whitespace inside your text, browsers will ignore it and you will not see it
-  on your rendered page. If you wrap the text in ``<pre></pre>`` tags however, you
-  whitespace will be rendered identically to how you see it in your text editor.
+* ``<pre>``: for retaining whitespace (generally code blocks) |--| if you use indentation or excess whitespace inside your text, browsers will ignore it and you will not see it on your rendered page. If you wrap the text in ``<pre></pre>`` tags however, you whitespace will be rendered identically to how you see it in your text editor.
 * ``<var>``: for specifically marking up variable names.
 * ``<kbd>``: for marking up keyboard (and other types of) input entered into the computer.
 * ``<samp>``: for marking up the output of a computer program.
@@ -586,8 +575,7 @@ Here is the **second** example in raw form:
 Date and Time Markup
 ====================
 
-Use the ``<time>`` element and set the ``datetime`` attribute to a machine-readable
-format.
+Use the ``<time>`` element and set the ``datetime`` attribute to a machine-readable format.
 
 .. code-block:: html
 
@@ -631,13 +619,9 @@ format.
 Summary
 *******
 
-That's the end of `MDN's study of HTML text semantics <https://developer.mozilla.org/
-en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting>`_. There are a lot
-more HTML elements.
+That's the end of `MDN's study of HTML text semantics <https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting>`_. There are a lot more HTML elements.
 
-The next section to study is `Document and Website Structure <https://
-developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/
-Document_and_website_structure>`_.
+The next section to study is `Document and Website Structure <https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure>`_.
 
 .. _mdn intro css: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS
 .. _mdn intro html: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML

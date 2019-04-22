@@ -9,6 +9,11 @@ These notes are from `MDN Document and Website Structure`_.
 
 <!--more-->
 
+.. _contents:
+
+.. contents:: Contents
+   :class: sidebar
+
 *****************
 General Structure
 *****************
@@ -125,6 +130,13 @@ Would render like this:
     <hr>
     <p>Meanwhile, Harry was sitting at home, staring at his royalty statement and pondering when the next spin off series would come out, when an enchanted distress letter flew through his window and landed in his lap. He read it hazily and sighed; "better get back to work then", he mused.</p>
 
+*******************************
+Links to Miscellaneous Elements
+*******************************
+
+* `<address> <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address>`_
+* `<time> <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time>`_
+
 ****************************
 Planning a My Simple Website
 ****************************
@@ -223,4 +235,11 @@ My Tags
 * design
 * web
 
+************
+Continuation
+************
+
+From here, continue with `MDN Structuring a Page of Content`_.
+
 .. _mdn document and website structure: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure
+.. _mdn structuring a page of content: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Structuring_a_page_of_content
