@@ -1,9 +1,8 @@
 ---
-title: "Basic Html"
+title: "Basic HTML"
 date: 2019-04-11T07:34:55-04:00
 categories: [software]
 tags: [web]
-
 ---
 
 .. |--| unicode:: U+2013   .. en dash
@@ -13,6 +12,11 @@ tags: [web]
 Mozilla has an `Introduction to CSS <mdn intro css_>`_ course as well as an `Introduction to HTML <mdn intro html_>`_ course.
 
 <!--more-->
+
+.. _contents:
+
+.. contents:: Contents
+   :class: sidebar
 
 ******************
 Dealing with Files

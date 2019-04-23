@@ -2,7 +2,7 @@
 title: "Website Structure"
 date: 2019-04-14T09:32:09-04:00
 categories: [software]
-tags: [web, design]
+tags: [design, web]
 ---
 
 These notes are from `MDN Document and Website Structure`_.
