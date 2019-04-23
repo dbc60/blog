@@ -16,12 +16,12 @@
             <span> - {{ .ReadingTime}} min read</span>
             <span> - {{ .WordCount }} words</span>
             {{- with .Params.tags -}}
-            <br>
+              <br>
             <svg class="feather">
               <use xlink:href="{{ printf "%s%s" $featherUrl "#tag" }}"/>
             </svg>
-                {{- range . -}}
-            {{- $href := print (relURL "tags/") (urlize .) -}}
-            <a href="{{ $href }}">{{ . }}</a>
+            {{- range . -}}
+                {{- $href := print (relURL "tags/") (urlize .) -}}
+                <span class="tag"><a href="{{ $href }}">{{ . }}</a></span>
             {{- end -}}
             {{- end -}}

@@ -21,48 +21,38 @@ hideFooter = false
     icon = "github"
     title = "Github"
     url = "https://github.com/dbc60"
-
 [[links]]
     icon = "stack-overflow"
     title = "Stack Overflow"
     url = "http://stackoverflow.com/users/165347/doug-cuthbertson"
-
 [[links]]
     icon = "linkedin"
     title = "LinkedIn"
     url = "https://www.linkedin.com/in/douglas-cuthbertson-0487001/"
-
 [[links]]
     icon = "twitter"
     title = "Twitter"
     url = "https://twitter.com/DougCuthbertson"
-
 [[links]]
     icon = "reddit"
     title = "reddit"
     url = "https://www.reddit.com/user/dbc60"
-
-
 [[links]]
     icon = "instagram"
     title = "Instagram"
     url = "https://www.instagram.com/dbc60/"
-
 [[links]]
     icon = "pinterest"
     title = "pinterest"
     url = "https://www.pinterest.com/dougcuthbertson/"
-
 [[links]]
     icon = "tumblr"
     title = "Tumblr"
     url = "https://dbc60.tumblr.com"
-
 [[links]]
     icon = "youtube"
     title = "YouTube"
     url = "https://www.youtube.com/channel/UCjYq4zK5Pc2vxwpCWUotPxg?view_as=subscriber"
-
 [[links]]
     iconset = "fas"
     icon = "envelope"
