@@ -365,6 +365,7 @@ w:\
 
 ## Resources & References
 
+- [Gwern](https://www.gwern.net/index) is a blog that has just about everything I want for my blog. Its technological distinctiveness should be carefully added to this blog's own. Resistance is futile. Note that the site uses jQuery, and the tablesorter.js is probably the one [documented here](https://mottie.github.io/tablesorter/docs/) and [listed here](https://plugins.jquery.com/tablesorter/).
 - [Hugo ReStructured](https://github.com/fisodd/hugo-restructured) a fisodd github repo.
 - [A ReStructuredText Primer](https://www.fisodd.org/rest/quickstart/) a fisodd.org blog post.
 - [reStructuredText Demonstration](https://www.fisodd.org/rest/rst-demo/) a fisodd.org blog post.
