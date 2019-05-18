@@ -365,7 +365,69 @@ w:\
 
 ## Resources & References
 
-- [Gwern](https://www.gwern.net/index) is a blog that has just about everything I want for my blog. Its technological distinctiveness should be carefully added to this blog's own. Resistance is futile. Note that the site uses jQuery, and the tablesorter.js is probably the one [documented here](https://mottie.github.io/tablesorter/docs/) and [listed here](https://plugins.jquery.com/tablesorter/).
+### Gwern.net
+
+[Gwern](https://www.gwern.net/index) is a blog that has just about everything I want for my blog. Its technological distinctiveness should be carefully added to this blog's own. Resistance is futile. Note that the site uses jQuery, and the tablesorter.js is probably the one [documented here](https://mottie.github.io/tablesorter/docs/) and [listed here](https://plugins.jquery.com/tablesorter/).
+
+I note that most of the javascript on his site is at the end of each article:
+
+```html
+<div id="footer">
+<p><a href="https://docs.google.com/forms/d/17cNf0ohMHKeTwmUM_V_hDVkirjsf8HLMWsJco8gt2Eg/viewform"><em>Submit Anonymous Feedback</em></a></p>
+</div>
+</article>
+</main>
+
+<script src="./static/js/jquery-1.7.1.min.js" defer=""></script>
+
+<script src="./static/js/tablesorter.js" defer=""></script>
+
+<script src="./static/js/image-focus.js" defer=""></script>
+
+<script id="googleAnalytics" src="https://www.googletagmanager.com/gtag/js?id=UA-18912926-1" async=""></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-18912926-1');
+    </script>
+
+<div id="comments">
+<div id="disqus_thread"></div>
+<script>
+         var disqus_shortname = 'gwern';
+         (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+         })();
+      </script>
+<noscript><p>Enable JavaScript for Disqus comments</p></noscript>
+</div>
+
+<script src="./static/js/rewrite.js"></script>
+</body></html>
+```
+
+Also, note that the main page has no footer, and only the Google analytics `<script>` element:
+
+```html
+</article>
+</main>
+
+<script id="googleAnalytics" src="https://www.googletagmanager.com/gtag/js?id=UA-18912926-1" async></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-18912926-1');
+    </script>
+</body>
+</html>
+```
+
+### Other References
+
 - [Hugo ReStructured](https://github.com/fisodd/hugo-restructured) a fisodd github repo.
 - [A ReStructuredText Primer](https://www.fisodd.org/rest/quickstart/) a fisodd.org blog post.
 - [reStructuredText Demonstration](https://www.fisodd.org/rest/rst-demo/) a fisodd.org blog post.
