@@ -249,3 +249,4 @@ It looks like inline monospace text in ``.rst`` files is rendered with ``<tt></t
 
 .. _mdn document and website structure: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure
 .. _mdn presentational elements: https://wiki.whatwg.org/wiki/Presentational_elements_and_attributes
+.. _mdn structuring a page of content: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Structuring_a_page_of_content
