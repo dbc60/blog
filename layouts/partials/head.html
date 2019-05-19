@@ -39,7 +39,6 @@
       https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
       and https://gohugo.io/hugo-pipes/
     -->
-    <!--{{ $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}-->
     {{- $style := resources.Get "scss/main.scss" | toCSS -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Digest }}">
 

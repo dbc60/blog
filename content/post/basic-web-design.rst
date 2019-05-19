@@ -120,11 +120,81 @@ The author's `configs page <jrl ninja config_>`_ page had this concoction.
 
 Clearly ``main`` is still there, but I read the article as stating that's all
 that was *really* necessary. Why would someone write something so misleading,
-especially to novices?
+especially to novices? He was just unclear. He really meant 58 bytes for layout,
+not layout + styling. Still, his count is wrong. It's 63 bytes as written.
 
 Well, at least it provoked `a conversation <58 bytes of css_>`_. `Web Design in
 4 minutes <web design in 4 minutes_>`_ was one site cited as an example of
-simple web design. It's CSS is quite a bit longer.
+simple web design. It's CSS is quite a bit longer. Still, it's ``main`` layout consists of just:
+
+.. code-block:: css
+
+    main {
+      margin: 0 auto;
+      max-width: 50em;
+      padding: 4em 1em;
+    }
+
+NOTE: The author has recently updated his CSS to replace the ``max-width`` and
+``padding`` values with ``70ch`` and ``2ch``, respectively (and some other
+minor changes). Apparently, ``ch`` for ``max-width`` is more generic and
+portable, which means fewer changes to handle mobile devices.
+`Some say <https://www.reddit.com/r/css/comments/bb73cw/58_bytes_of_css_to_look_great_nearly_everywhere/ekj8yhm/>`_ a value in the
+range of 50-80 characters is optimal. There's an explanation of the 'ch' unit
+`here <https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/>`_.
+They are not exactly character width, especially if you're not using a
+fixed-width font.
+They are `defined as <https://drafts.csswg.org/css-values-3/#ch>`_:
+
+  Equal to the used advance measure of the “0” (ZERO, U+0030) glyph found in
+  the font used to render it. (The advance measure of a glyph is its advance
+  width or height, whichever is in the inline axis of the element.)
+
+So, fonts with a skinny zero might look compact. Be careful about selecting different fonts, say one for headlines and another for body copy. They will likely fill the space very differently.
+
+.. code-block:: css
+
+    body {
+      font-family: Liberation Sans, Arial, sans-serif;
+      background-color: #fffaf7;
+      line-height: 1.3;
+    }
+    main {
+      max-width: 70ch;
+      padding: 2ch;
+      margin: auto;
+    }
+    header {
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      margin-bottom: .5rem;
+    }
+    time {
+      color: #888;
+    }
+    hr {
+      border: 2px solid #ddd;
+      margin: 2rem auto;
+    }
+    #fn {
+      font-size: 85%;
+    }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    a {
+      color: #ff3c3c;
+      text-decoration: none;
+      outline: 0;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ::selection {
+      background-color: #fff888;
+    }
 
 While `content <wdi4m content_>`_ is the first thing one should work on, it got
 me wondering about how to structure the content. How much structure is needed
@@ -196,6 +266,8 @@ The current front page of `CSS Zen Garden`_ has a more simple style:
     .page-wrapper {
       position: relative;
     }
+
+Another source of inspiration is `Gwern's blog <https://www.gwern.net/index>`_. It is beautifully designed and has a lot of the features I want. Considering the sight is written in markdown, it may even be possible for me to use markdown and still get things like a table of contents for each article, and sidebars. Then again, markdown may require manually adding ``<section>``'s and other HTML.
 
 ###########################
 Anatomy of an HTML Document
