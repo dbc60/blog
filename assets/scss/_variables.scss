@@ -102,7 +102,8 @@ $yiq-text-dark:             $gray-900 !default;
 $yiq-text-light:            $white !default;
 
 // My Old Color definitions
-$color-text:       #111;
+$color-text:       #555;
+$color-text-strong: #111;
 $color-background: #fdfdfd;
 $color-title:      #900000;
 $color-danger-admonition-title: #f00000;
@@ -120,7 +121,8 @@ $color-grey:       #828282;
 $color-grey-light: lighten($color-grey, 40%);
 $color-grey-dark:  darken($color-grey, 25%);
 
-$base-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//$base-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;

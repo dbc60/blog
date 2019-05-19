@@ -36,14 +36,8 @@ html {
 
 body {
   font-family: $base-font-family;
-}
-
-pre {
-  margin: 0.5em 0rem 0.5em 0rem;
-  padding: 0.5em 0.5rem 0.5em 0.5rem;
-  overflow: auto;
-  overflow-y: hidden;
-  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
 // Feather icons
@@ -55,4 +49,52 @@ pre {
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+}
+
+body {
+    color: $secondary;
+}
+
+h1, h2, strong {
+  color: $color-text-strong;
+}
+
+code, pre {
+  background: #eee;
+  margin: 0.5em 0rem 0.5em 0rem;
+  overflow: auto;
+  overflow-y: hidden;
+  font-family: "Inconsolata", monospace;
+}
+
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+pre {
+  padding: 1em;
+}
+
+/*
+Primary color. Most brands have a primary color that acts as a visual accent.
+On a website, this accent can be used to provide emphasis on interactive
+elements, like links.
+*/
+a {
+  color: $primary;
+}
+
+/*
+Secondary color. The accent color can be omplemented with more subtle shades, to
+be used on borders, backgrounds, or even the body text.
+*/
+code, pre {
+  background: #f5f7f9;
+  border-bottom: 1px solid #d8dee9;
+  color: $secondary;
+}
+
+pre {
+  border-left: 2px solid #69c
 }
