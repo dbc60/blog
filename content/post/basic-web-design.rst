@@ -547,9 +547,29 @@ how-to-choose-color-for-your-website/>`_ `suggest fewer <https://
 www.smashingmagazine.com/2016/04/web-developer-guide-color/>`_ colors, in the
 range of four to six. Also, pink (#e83e8c) is an awful accent color.
 
-Following `A Simple Web Developer's Color Guide <https://www.smashingmagazine.com/2016/04/web-developer-guide-color/>`_, I decided I like a light-grayish yellow (#f2eee2) as a base color. I'll eventually navigate over to `Paletton <http://paletton.com/>`_ and choose an accent (complimentary) color. It came up with #f2eee2, which is a purpley gray.
+Following `A Simple Web Developer's Color Guide <https://
+www.smashingmagazine.com/2016/04/web-developer-guide-color/>`_, I decided I
+like a light-grayish yellow (#f2eee2) as a base color. I'll eventually navigate
+over to `Paletton <http://paletton.com/>`_ and choose an accent (complimentary)
+color. It came up with #f2eee2, which is a purpley gray.
 
-Maybe #C0BCAB for a primary, and #7A7885 for an accent.
+There are too many variables and considerations to add color quickly. I
+simplified by going with a white background and black text. I used blue
+(#007bff) for the accent (link coloring) and a bright highlight. The dark
+highlight is ``$gray-400`` (``#ced4da``), the background for ``code`` and
+``pre`` sections is ``$gray-100`` (``#f8f9fa``).
+
+*********
+Reference
+*********
+
+* `Why Programmers Suck at Picking Colors`_
+* `Using Color in Information Display Graphics`_
+  * `Designing a Color Graphics Page`_
+  * `Heirarchy of Color Usage Guidelines`_
+* `Munsell Color System`_
+* `CIELab color space`_
+* `CIECAM02`_
 
 .. _gwern.net: https://www.gwern.net/index
 .. _58 bytes of css: https://news.ycombinator.com/item?id=19607169
@@ -563,3 +583,10 @@ Maybe #C0BCAB for a primary, and #7A7885 for an accent.
 .. _docutils pygments long: http://docutils.sourceforge.net/sandbox/stylesheets/pygments-long.css
 .. _docutuls pygments default: http://docutils.sourceforge.net/sandbox/stylesheets/pygments-default.css
 .. _ducutils stylesheets: http://docutils.sourceforge.net/sandbox/stylesheets/
+.. _using color in information display graphics: https://colorusage.arc.nasa.gov/
+.. _designing a color graphics page: https://colorusage.arc.nasa.gov/graphics_page_design.php
+.. _heirarchy of color usage guidelines: https://colorusage.arc.nasa.gov/GuidelinesHierarchy.php
+.. _munsell color system: https://en.wikipedia.org/wiki/Munsell_color_system
+.. _cielab color space: https://en.wikipedia.org/wiki/CIELAB_color_space
+.. _ciecam02: https://en.wikipedia.org/wiki/CIECAM02
+.. _why programmers suck at picking colors: https://web.archive.org/web/20150311143508/http://www.betaversion.org/~stefano/linotype/news/108

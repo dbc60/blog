@@ -231,7 +231,7 @@ $ln_2: 0.693147180559945309417232121458;
  *
  *    pick_best_color(#f00, #fff);
  */
- @function color_luminance($color) {
+@function color_luminance($color) {
   // Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
   // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
   $rgba: red($color), green($color), blue($color);
@@ -241,12 +241,12 @@ $ln_2: 0.693147180559945309417232121458;
     $rgb: nth($rgba, $i);
     $rgb: $rgb / 255;
 
-    $rgb: if ($rgb < .03928, $rgb / 12.92, pow(($rgb + .055) / 1.055, 2.4));
+    $rgb: if($rgb < .03928, $rgb / 12.92, pow(($rgb + .055) / 1.055, 2.4));
 
     $rgba2: append($rgba2, $rgb);
   }
 
-  @return .2126 * nth($rgba2, 1) + .7152 * nth($rgba2, 2) + 0.0722 * nth($rgba2, 3);
+  @return (.2126 * nth($rgba2, 1)) + (.7152 * nth($rgba2, 2)) + (0.0722 * nth($rgba2, 3));
 }
 
 @function contrast_ratio($color1, $color2) {
@@ -279,40 +279,47 @@ $ln_2: 0.693147180559945309417232121458;
     }
   }
 
-  @if ($ratio < 3) {
-    @warn "Contrast ratio of #{$best} on #{$base} is pretty bad, just #{$ratio}";
+  @if ($ratio < 4.5) {
+    @warn "Contrast ratio of #{$best} on #{$base} is just #{$ratio} which is less than 4.5:1, the minimum recommended by the Web Content Accessibility Guidelines.";
   }
 
   @return $best;
 }
 
-@function text-contrast($color, $bgcolor: $color) {
+// Given a color, find a color whose contrast is at least $threshold. The
+// starting color, $contrast, (a provided one, or $color if none is provided)
+// is lightened and darkened by the percents in $list. The first to meet the
+// threshold is returned. If none meet the threshold, then text-contrast
+// returns white or black, which ever is farther in lightness from $color.
+@function make_contrast($color, $contrast: $color) {
   $threshold: 7.0; // 4.5 = WCAG AA,7= WCAG AAA
   $list: 20 30 40 50 60 70 80 90 100;
   @each $percent in $list {
-    $lighter: lighten($bgcolor, $percent);
-    $darker: darken($bgcolor, $percent);
+    $lighter: lighten($contrast, $percent);
+    $darker: darken($contrast, $percent);
     $darker-ratio: contrast_ratio($color, $darker);
     $lighter-ratio: contrast_ratio($color, $lighter);
 
     @if ($lighter-ratio > $darker-ratio) {
-      @if ($lighter-ratio > $threshold) {
+      @if ($lighter-ratio >= $threshold) {
         @return $lighter;
       }
     }
 
     @if ($darker-ratio > $lighter-ratio) {
-      @if ($darker-ratio > $threshold) {
+      @if ($darker-ratio >= $threshold) {
         @return $darker;
       }
     }
   }
 
-  @return if (lightness($color) < 51, #FFF, #000)
+  @return if(lightness($color) < 51, #FFF, #000)
 }
 
 
-// Some test cases
+// Some test cases. Note: inspect($value) returns a string representation of
+// $value, and quote($string) returns $string as a quoted string.
+
 .squareroot2::after {
     content: quote(inspect(pow(2, 0.5)));
 }
@@ -329,9 +336,11 @@ $ln_2: 0.693147180559945309417232121458;
     content: quote(inspect(exp(ln(54))));
 }
 
+
 // Bootstrap functions
 //
-// Utility mixins and functions for evaluating source code across our variables, maps, and mixins.
+// Utility mixins and functions for evaluating source code across our variables,
+// maps, and mixins.
 
 // Ascending
 // Used to evaluate Sass maps like our grid breakpoints.
@@ -387,11 +396,7 @@ $ln_2: 0.693147180559945309417232121458;
 
   $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
 
-  @if ($yiq >= $yiq-contrasted-threshold) {
-    @return $dark;
-  } @else {
-    @return $light;
-  }
+  @return if($yiq >= $yiq-contrasted-threshold, $dark, $light);
 }
 
 // Retrieve color Sass maps
