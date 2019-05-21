@@ -52,7 +52,8 @@ body {
 }
 
 body {
-    color: $secondary;
+    background: $primary;
+    color: $color-body-text;
 }
 
 h1, h2, strong {
@@ -60,7 +61,6 @@ h1, h2, strong {
 }
 
 code, pre {
-  background: #eee;
   margin: 0.5em 0rem 0.5em 0rem;
   overflow: auto;
   overflow-y: hidden;
@@ -82,7 +82,7 @@ On a website, this accent can be used to provide emphasis on interactive
 elements, like links.
 */
 a {
-  color: $primary;
+  color: $accent;
 }
 
 /*
@@ -90,11 +90,11 @@ Secondary color. The accent color can be omplemented with more subtle shades, to
 be used on borders, backgrounds, or even the body text.
 */
 code, pre {
-  background: #f5f7f9;
-  border-bottom: 1px solid #d8dee9;
-  color: $secondary;
+  background: $alt-background;
+  border-bottom: 1px solid $highlight-dark;
+  color: $color-body-text;
 }
 
 pre {
-  border-left: 2px solid #69c
+  border-left: 2px solid $highlight-bright;
 }

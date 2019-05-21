@@ -154,7 +154,9 @@ They are `defined as <https://drafts.csswg.org/css-values-3/#ch>`_:
   the font used to render it. (The advance measure of a glyph is its advance
   width or height, whichever is in the inline axis of the element.)
 
-So, fonts with a skinny zero might look compact. Be careful about selecting different fonts, say one for headlines and another for body copy. They will likely fill the space very differently.
+So, fonts with a skinny zero might look compact. Be careful about selecting
+different fonts, say one for headlines and another for body copy. They will
+likely fill the space very differently.
 
 .. code-block:: css
 
@@ -301,6 +303,255 @@ That's an outline of the most basic elements:
 * ``<head>``
 * ``<body>``
 
+************
+Basic Layout
+************
+
+I'm starting my layout with the basics from `Web Design in 4 Minutes`_. The
+first step is to center the website on the screen and set a maximum line length:
+
+.. code-block:: css
+
+    body {
+        margin: 0 auto;
+        max-width: 70ch;
+    }
+
+The second step is to style the text with a font to make it more readable. `Web
+Design in 4 Minutes`_ suggests
+
+.. code-block:: css
+
+    body {
+      font-family: "Helvetica", "Arial", sans-serif;
+    }
+
+I have a several locally cached fonts from `gwern.net`_, so I chose
+
+.. code-block:: scss
+
+    $base-font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial,  sans-serif;
+
+    body {
+      font-family: $base-font-family;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+The next step is to make the text more readable by adjusting the spacing
+between lines and headings, as follows:
+
+.. code-block:: css
+
+    body {
+      line-height: 1.5;
+      padding: 4em 1em;
+    }
+
+    h2 {
+      margin-top: 1em;
+      padding-top: 1em;
+    }
+
+The next step adds color and contrast. The author asserts black text on a white
+background is harsh on the eyes, so he uses color ``#555`` for body text, and
+``#333`` for a couple of headings and strong text:
+
+.. code-block:: css
+
+    body {
+      color: #555;
+    }
+
+    h1,
+    h2,
+    strong {
+      color: #333;
+    }
+
+I disagree with him. I find the lack of contrast makes text more difficult to
+read. For more contrast, I wrote:
+
+.. code-block:: scss
+
+    body {
+        color: $secondary;
+    }
+
+    h1, h2, strong {
+      color: $color-text-strong;
+    }
+
+and added these SCSS variable definitions:
+
+.. code-block:: scss
+
+    // Variables
+    //
+    // Variables should follow the `$component-state-property-size` formula for
+    // consistent naming.
+
+    // Color system
+
+    $white:    #fff !default;
+    $gray-100: #f8f9fa !default;
+    $gray-200: #e9ecef !default;
+    $gray-300: #dee2e6 !default;
+    $gray-400: #ced4da !default;
+    $gray-500: #adb5bd !default;
+    $gray-600: #6c757d !default;
+    $gray-700: #495057 !default;
+    $gray-800: #343a40 !default;
+    $gray-900: #212529 !default;
+    $black:    #000 !default;
+
+    $grays: () !default;
+    // stylelint-disable-next-line scss/dollar-variable-default
+    $grays: map-merge(
+      (
+        "100": $gray-100,
+        "200": $gray-200,
+        "300": $gray-300,
+        "400": $gray-400,
+        "500": $gray-500,
+        "600": $gray-600,
+        "700": $gray-700,
+        "800": $gray-800,
+        "900": $gray-900
+      ),
+      $grays
+    );
+
+    $blue:    #007bff !default;
+    $indigo:  #6610f2 !default;
+    $purple:  #6f42c1 !default;
+    $pink:    #e83e8c !default;
+    $red:     #dc3545 !default;
+    $orange:  #fd7e14 !default;
+    $yellow:  #ffc107 !default;
+    $green:   #28a745 !default;
+    $teal:    #20c997 !default;
+    $cyan:    #17a2b8 !default;
+
+    $colors: () !default;
+    // stylelint-disable-next-line scss/dollar-variable-default
+    $colors: map-merge(
+      (
+        "blue":       $blue,
+        "indigo":     $indigo,
+        "purple":     $purple,
+        "pink":       $pink,
+        "red":        $red,
+        "orange":     $orange,
+        "yellow":     $yellow,
+        "green":      $green,
+        "teal":       $teal,
+        "cyan":       $cyan,
+        "white":      $white,
+        "gray":       $gray-600,
+        "gray-dark":  $gray-800
+      ),
+      $colors
+    );
+
+    $primary:       $blue !default;
+    $secondary:     $gray-900 !default;
+
+The next step adds a nice light gray background to code and ``<pre></pre>``
+sections:
+
+.. code-block:: css
+
+    code,
+    pre {
+      background: #eee;
+    }
+
+    code {
+      padding: 2px 4px;
+      vertical-align: text-bottom;
+    }
+
+    pre {
+      padding: 1em;
+    }
+
+Next we use the primary color to add a visual accent to links. The author of
+`Web Design in 4 Minutes`_ uses a redish color:
+
+.. code-block:: css
+
+    a {
+      color: #e81c4f;
+    }
+
+I used my primary color, defined above:
+
+.. code-block:: scss
+
+    a {
+      color: $primary;
+    }
+
+Next, `Web Design in 4 Minutes`_ says the accent color can be complimented with
+more subtle shades to be used on borders, background, and even body text. To do
+that, the author presents us with CSS which sets the color of body text, and
+creates colored borders on code and monospaced text in ``<pre></pre>`` blocks.
+The body text is now a slightly bluish gray. While the normal background is
+white, the background for ``pre`` and code sections is a light bluish gray. The
+left border is a deep blue, while the bottom border is only one pixel wide, and
+a subtley darker bluish gray:
+
+.. code-block:: css
+
+    body {
+      color: #566b78;
+    }
+
+    code,
+    pre {
+      background: #f5f7f9;
+      border-bottom: 1px solid #d8dee9;
+      color: #a7adba;
+    }
+
+    pre {
+      border-left: 2px solid #69c;
+    }
+
+My primary color is a shade of blue (``#007bff``), so I chose different
+complimentary colors. By this reasoning, I should update the colors of the text
+for ``body``,``code`` and ``pre`` sections, and the background color of ``code``
+and ``pre`` sections.
+
+Well, now I'm running into a puzzle. The suggestions have morphed into 7 color
+categories.
+
+#. background: defaults to white.
+#. accent: #e81c4f, a redish color for links and probably some other little
+   things.
+#. complimentary: #566b78, a blue-gray color to compliment the accent and be
+   used on body text.
+#. section-background: #f5f7f9, a light-gray or off-white color used for
+   background on code and pre sections.
+#. section-text: #a7adba, a medium-gray color for text in code and pre sections.
+#. seciont-border-bottom: #d8dee9, a slightly darker grayish color for the
+   bottom-border of code and pre sections.
+#. section-border-left: a brighter bluish-gray for the left-border of code and
+   pre sections.
+
+What I don't understand is why these colors were chosen, what is the intent for
+their general usage, and why seven colors? Other sites that talk about `color
+palettes <https://www.websitebuilderexpert.com/designing-websites/
+how-to-choose-color-for-your-website/>`_ `suggest fewer <https://
+www.smashingmagazine.com/2016/04/web-developer-guide-color/>`_ colors, in the
+range of four to six. Also, pink (#e83e8c) is an awful accent color.
+
+Following `A Simple Web Developer's Color Guide <https://www.smashingmagazine.com/2016/04/web-developer-guide-color/>`_, I decided I like a light-grayish yellow (#f2eee2) as a base color. I'll eventually navigate over to `Paletton <http://paletton.com/>`_ and choose an accent (complimentary) color. It came up with #f2eee2, which is a purpley gray.
+
+Maybe #C0BCAB for a primary, and #7A7885 for an accent.
+
+.. _gwern.net: https://www.gwern.net/index
 .. _58 bytes of css: https://news.ycombinator.com/item?id=19607169
 .. _jrl ninja config: https://jrl.ninja/configs/
 .. _web design in 4 minutes: https://jgthms.com/web-design-in-4-minutes/
