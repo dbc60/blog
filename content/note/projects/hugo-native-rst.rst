@@ -2,6 +2,8 @@
 title: "Hugo Native Rst"
 date: 2019-05-24T08:36:34-04:00
 draft: true
+categories: [projects]
+tags: [software, hugo, golang]
 ---
 
 The goal is to create a better parser for content files marked up with

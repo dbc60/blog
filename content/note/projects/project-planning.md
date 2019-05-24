@@ -19,8 +19,8 @@ Planning begins with knowing what needs to be done. For this we need a:
 
 - Design document
 - Task list containing
-    - a list of the major tasks that need to be done.
-    - a list of subtasks for each task.
+  - a list of the major tasks that need to be done.
+  - a list of subtasks for each task.
 - Dependency list showing which tasks can't be started until another task is started or completed.
 - Schedule showing when each piece (subproject) will be started and the corresponding milestone will be achieved.
 - Budget including costs of possible catastrophies as well as the costs of obvious price tags.
