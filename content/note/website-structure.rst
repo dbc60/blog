@@ -245,7 +245,9 @@ From here, continue with `MDN Structuring a Page of Content`_.
 Disappointment
 **************
 
-It looks like inline monospace text in ``.rst`` files is rendered with ``<tt></tt>`` elements. The `MDN Presentational Elements`_ page says it's obsolete.
+It looks like inline monospace text in ``.rst`` files is rendered with
+``<tt></tt>`` elements. The `MDN Presentational Elements`_ page says it's
+obsolete.
 
 .. _mdn document and website structure: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure
 .. _mdn presentational elements: https://wiki.whatwg.org/wiki/Presentational_elements_and_attributes

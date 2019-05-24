@@ -78,7 +78,7 @@ And an equation with an underbrace:
 
 \[
   \begin{equation}
-  {\bf I_n} = \underbrace{\left(\sqrt{2}+\sqrt{3}\right)^2 \}
+  {\mathbf{I_n}} = \underbrace{\left(\sqrt{2}+\sqrt{3}\right)^2 \}
   \end{equation}
 \]
 
@@ -86,7 +86,7 @@ An empty array surounded by dynamically-size parentheses, an underbrace, and a r
 
 \[
   \begin{equation}
-  {\bf I_n} =
+  {\mathbf{I_n}} =
   \underbrace{
     \left.
     \left(
@@ -102,7 +102,7 @@ Here's a simple array.
 
 \[
   \begin{equation}
-  {\bf I_n} =
+  {\mathbf{I_n}} =
   \begin{array}{ccccc}
     1               &      0 &      0 & \cdots & 0 \\\\\
     0               &      1 &      0 & \cdots & 0 \\\\\
@@ -117,7 +117,7 @@ Let's wrap it in parentheses.
 
 \[
   \begin{equation}
-  {\bf I_n} =
+  {\mathbf{I_n}} =
   \left(
   \begin{array}{ccccc}
     1               &      0 &      0 & \cdots & 0 \\\\\
@@ -135,7 +135,7 @@ Add a right brace and an underbrace.
 
 \[
   \begin{equation}
-  {\bf I_n} =
+  {\mathbf{I_n}} =
   \underbrace{
     \left.
     \left(
@@ -156,7 +156,7 @@ Note how the underbrace envelopes the parentheses and the right brace. It would 
 
 \[
   \begin{equation}
-  {\bf I_n} =
+  {\mathbf{I_n}} =
   \left.
   \left(
   \vphantom{
@@ -186,7 +186,7 @@ That looks better, but it's still not quite right. The parentheses are supposed 
 
 \[
   \begin{equation}
-  {\bf I_n} =
+  {\mathbf{I_n}} =
   \left.
   \left(
     \vphantom{
@@ -216,7 +216,7 @@ Using the `\smash` command we can set the vertical space of the box containing t
 
 \[
   \begin{equation}
-  {\bf I_n} =
+  {\mathbf{I_n}} =
   \left.
   \left(
   \vphantom{
@@ -249,7 +249,7 @@ Finally, I'm going to add one more row to the vphantom array for aesthics. It wi
 
 \[
   \begin{equation}
-  {\bf I_n} =
+  {\mathbf{I_n}} =
   \left.
   \left(
   \vphantom{
