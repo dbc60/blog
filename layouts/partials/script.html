@@ -2,11 +2,21 @@
 {{- if or .Params.math .Site.Params.math -}}
 <!-- Configure MathJax for automatic equation numbering. See
    http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
-   for details
+   for details.
+   Also, for tex2jax configuration see http://docs.mathjax.org/en/latest/
+   options/preprocessors/tex2jax.html
 -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+            extensions: ["AMSmath.js", "AMSsymbols.js"] },
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
   });
 </script>
 
@@ -23,12 +33,6 @@
 <script async type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script type="text/javascript" src="{{ "scripts/MathJax-2.7.5/MathJax.js" | relURL }}?config=TeX-AMS-MML_HTMLorMML"><\/script>')</script>
-
-<!--
-  Example fallback from
-      https://github.com/mathjax/MathJax-docs/wiki/How-to:-MathJax-CDN-fallback
-
-  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="<<PATH_TO_YOUR_LOCAL_MATHJAX>>MathJax.js?config=TeX-AMS_HTML-full"><\/script>')</script>-->
 {{- end -}}
 
 <!-- Google Analytics if the site is *not* running in a local Hugo server and the

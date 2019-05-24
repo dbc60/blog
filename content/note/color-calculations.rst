@@ -10,6 +10,24 @@ tags: [css, design, web]
 033-0129426448
 <!--more-->
 
+**************
+Verify MathJax
+**************
+
+.. math::
+
+   \begin{equation}
+   {\bf I_n} =
+   \begin{array}{ccccc}
+     1               &      0 &      0 & \cdots & 0 \\\\\\
+     0               &      1 &      0 & \cdots & 0 \\\\\\
+     0               &      0 &      1 & \cdots & 0 \\\\\\
+     \vdots          & \vdots & \vdots & \ddots &   \\\\\\
+     0               &      0 &      0 & \cdots & 1
+   \end{array}
+   \end{equation}
+
+
 *******************
 Complimentary Color
 *******************

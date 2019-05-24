@@ -12,10 +12,6 @@ How much structure is really needed to make a web page. I have a lot to learn.
 Inspiration
 ###########
 
-*Italics text*
-
-**Bold text**
-
 I read an article on `HN <https://news.ycombinator.com>`_ titled `58 Bytes of
 CSS to look great nearly everywhere <58 bytes of css_>`_. The article itself
 was inspiring as the author was advocating just these 5 lines of CSS for
