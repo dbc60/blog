@@ -16,10 +16,13 @@
   that will work for my purposes.
   http://docs.mathjax.org/en/latest/config-files.html#common-configurations
 -->
-<!-- MathJax: Fall back to local if CDN offline -->
+<!-- MathJax: Fall back to local if your computer is offline and can't connect
+  to the CDN. For convenience, the configuration for the fallback deactivates
+  image fonts support (imageFont:null). This allows you to host a slim local
+  copy by deleting the PNG fonts.-->
 <script async type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
-<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script type="text/javascript" src="{{ "scripts/MathJax-2.7.5/MathJax.js" | relURL }}?config=TeX-AMS-MML_HTMLorMML">\x3C/script>')</script>
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script type="text/javascript" src="{{ "scripts/MathJax-2.7.5/MathJax.js" | relURL }}?config=TeX-AMS-MML_HTMLorMML"><\/script>')</script>
 
 <!--
   Example fallback from
