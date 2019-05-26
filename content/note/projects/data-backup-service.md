@@ -2,8 +2,8 @@
 title: Make Digital Data Backup Service
 date: 2016-09-05T07:33:00-05:00
 draft: true
-categories: [projects]
-tags: [software]
+categories: [projects, software]
+tags: [data backup, service, cloud, application]
 ---
 
 I'd like to see if I can make a data backup service.

@@ -2,8 +2,7 @@
 title: Project Sampler
 date: 2017-02-17
 draft: true
-categories: [projects]
-tags: [software]
+categories: [projects, software, ideas]
 ---
 
 How about making a sampler of design, code and tools?

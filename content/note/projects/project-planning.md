@@ -2,8 +2,8 @@
 title: Project Planning
 date: 2016-03-07
 draft: true
-categories: [projects]
-tags: [software]
+categories: [projects, software]
+tags: [planning, design, tasks, milestones, dependencies, estimation, scheduling, bugdeting, risk, records, finances]
 ---
 
 The purpose of project planning is to create the foundation for a visible sense of progress at each stage of the project. What this means is that as each step o the plan is completed there is evidence of progress.

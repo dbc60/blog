@@ -2,8 +2,8 @@
 title: Software Development and Note Taking Platform
 date: 2016-06-19
 draft: true
-categories: [projects]
-tags: [software]
+categories: [projects, software, notetaking]
+tags: [application, markdown, restructuredtext]
 ---
 
 Jekyll isn't a horrible tool for generating sites from markdown, but it is a bit fickle and I don't enjoy some of the conventions baked in. It's also slow. It takes nearly 8 seconds to rebuild my notes for even the smallest change. I don't have so much content here, so why does it take so much time? Is there another way?
