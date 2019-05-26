@@ -49,7 +49,7 @@ Here's a simple array in MathJax:
 .. math::
 
    \begin{equation}
-   {\bf I_n} =
+   {\mathbf{I_n}} =
    \begin{array}{ccccc}
      1               &      0 &      0 & \cdots & 0 \\\\\\
      0               &      1 &      0 & \cdots & 0 \\\\\\

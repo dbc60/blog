@@ -69,7 +69,8 @@ Reference
 * `Writing a Lexer and Parser in Go - Part 3`_
 * `Handwritten Parsers and Lexers in Go`_
 * `Some Strategies for Fast Lexical Analysis`_
-*
+* `Git Searching Issues and PRs`_
+* `Hugo Starter Kits`_
 
 Open Issues Related to reStructuredText
 ***************************************
@@ -96,3 +97,5 @@ Open Issues Related to reStructuredText
 .. _writing a lexer and parser in go - part 3: https://web.archive.org/web/20160204184840/http://adampresley.com/2015/06/01/writing-a-lexer-and-parser-in-go-part-3.html
 .. _handwritten parsers and lexers in go: https://blog.gopheracademy.com/advent-2014/parsers-lexers/
 .. _some strategies for fast lexical analysis: http://nothings.org/computer/lexing.html
+.. _git searching issues and prs: https://help.github.com/en/articles/searching-issues-and-pull-requests#search-by-the-title-body-or-comments
+.. _hugo starter kits: https://gohugo.io/tools/starter-kits/
