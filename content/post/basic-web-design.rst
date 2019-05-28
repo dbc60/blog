@@ -555,6 +555,59 @@ simplified by going with a white background and black text. I used blue
 highlight is ``$gray-400`` (``#ced4da``), the background for ``code`` and
 ``pre`` sections is ``$gray-100`` (``#f8f9fa``).
 
+**********
+Components
+**********
+
+Building a web UI is more than a CSS problem. Beyond building anything trivial,
+developers have difficulties trying to do things that are not just related to
+building an application or adapting widgets. Developers spend more time
+managing assets and their dependencies to avoid making changes in one place
+that cause unexpected changes in what appeared to be an unrelated part of the
+application.
+
+Components help to define an interface for widgets and isolate their
+implementations. Thus it becomes easier to reason about the application.
+
+A component is a module that encapsulates a set of related functions. It
+includes behavior, presentation, and the logic that determines when certain
+presentations are displayed.
+
+Use a component as a primary unit of scale. A prefabricated component is more
+than just CSS. It is everything you need to create that widget. You end up with
+HTML, CSS, JavaScript (JS), possibly images, and other assets.
+
+Each component should have a directory with all the assets it needs. One of the
+characteristics of components is that they are simpler abstraction than modules,
+because modules are not a concept of how you assemble various technologies
+into one widget. Also, components are composable through their interfaces and a
+compositional model.
+
+Note that simple does not mean easy. It refers to a lack of complexity. There's
+a lack of entanglement in the system. It's about component A not knowing how
+component B is made, and instead using the interface the component provides.
+
+Think about composabilty of just reusability when designing components. Mere
+reusability leads to entanglement. So, be careful when pulling apparently
+common items from components into reusable objects. It can lead to complexity
+and entanglement when the components diverge, and what was once common needs to
+be specialized for each component.
+
+Tools supporting Web Components
+*******************************
+
+* Define components with `React <https://facebook.github.io/react>`_
+* Style components with `SUIT CSS <https://suitcss.github.io>`_. It is a
+  modular, simple set of tools which try to make it easier to style components.
+  Instead of managing large CSS files, you can think about just the CSS you
+  need for a particular component, and then you can compose more complicated
+  interfaces from a variety of composable components.
+* Manage components with `Component <https://github.com/componnet/component>`_,
+  which is a node.js tool. Use it by defining your assets and
+  dependent-components for a comonent in a ``component.json`` file. The tool
+  will track dependendencies among components, which is particularly useful for
+  CSS, because order is important.
+
 *********
 Reference
 *********
@@ -566,6 +619,12 @@ Reference
 * `Munsell Color System`_
 * `CIELab color space`_
 * `CIECAM02`_
+* `Enduring CSS`_ A Guide to Writing Style Sheets for Large Scale, Rapidly
+   Changing, Long-ived Web Projects.
+* `Enduring CSS blog post`_
+* `Nicolas Gallagher - Adaptation and Components <adaptation and components
+  video_>`_ video on YouTube.
+* `Nicolas Gallagher <http://nicolasgallagher.com/>`_
 
 .. _gwern.net: https://www.gwern.net/index
 .. _58 bytes of css: https://news.ycombinator.com/item?id=19607169
@@ -586,3 +645,6 @@ Reference
 .. _cielab color space: https://en.wikipedia.org/wiki/CIELAB_color_space
 .. _ciecam02: https://en.wikipedia.org/wiki/CIECAM02
 .. _why programmers suck at picking colors: https://web.archive.org/web/20150311143508/http://www.betaversion.org/~stefano/linotype/news/108
+.. _enduring css: https://ecss.io/
+.. _enduring css blog post: https://benfrain.com/enduring-css-writing-style-sheets-rapidly-changing-long-lived-projects/
+.. _adaptation and components video: https://www.youtube.com/watch?v=m0oMHG6ZXvo
