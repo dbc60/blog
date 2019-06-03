@@ -206,10 +206,10 @@ Now I'm reminded of `CSS Zen Garden`_. It was a beautiful experiment in how CSS
 could be applied to the same content to create a wide variety of presentations.
 How much structure was used there?
 
-It starts with an HTML5 doctype, ``<!DOCTYPE html>``. The ``html`` tag is simply
-``<html lang="en">``. The ``<head>...</head>`` section contains a ``<meta>``
-tag to define the charset, a ``<title>`` tag, two ``<link>`` tags, one for a
-CSS stylesheet and the other for an RSS link:
+It starts with an HTML5 doctype, ``<!DOCTYPE html>``. The ``html`` tag is
+simply ``<html lang="en">``. The ``<head>...</head>`` section contains a
+``<meta>`` tag to define the charset, a ``<title>`` tag, two ``<link>`` tags,
+one for a CSS stylesheet and the other for an RSS link:
 
 .. code-block:: html
 
@@ -269,7 +269,12 @@ The current front page of `CSS Zen Garden`_ has a more simple style:
       position: relative;
     }
 
-Another source of inspiration is `Gwern's blog <https://www.gwern.net/index>`_. It is beautifully designed and has a lot of the features I want. Considering the sight is written in markdown, it may even be possible for me to use markdown and still get things like a table of contents for each article, and sidebars. Then again, markdown may require manually adding ``<section>``'s and other HTML.
+Another source of inspiration is `Gwern's blog <https://www.gwern.net/index>`_.
+It is beautifully designed and has a lot of the features I want. Considering
+the sight is written in markdown, it may even be possible for me to use
+markdown and still get things like a table of contents for each article, and
+sidebars. Then again, markdown may require manually adding ``<section>``'s and
+other HTML.
 
 ###########################
 Anatomy of an HTML Document
@@ -304,7 +309,8 @@ Basic Layout
 ************
 
 I'm starting my layout with the basics from `Web Design in 4 Minutes`_. The
-first step is to center the website on the screen and set a maximum line length:
+first step is to center the website on the screen and set a maximum line
+length:
 
 .. code-block:: css
 
@@ -530,7 +536,8 @@ categories.
    used on body text.
 #. section-background: #f5f7f9, a light-gray or off-white color used for
    background on code and pre sections.
-#. section-text: #a7adba, a medium-gray color for text in code and pre sections.
+#. section-text: #a7adba, a medium-gray color for text in code and pre
+   sections.
 #. seciont-border-bottom: #d8dee9, a slightly darker grayish color for the
    bottom-border of code and pre sections.
 #. section-border-left: a brighter bluish-gray for the left-border of code and
@@ -555,9 +562,478 @@ simplified by going with a white background and black text. I used blue
 highlight is ``$gray-400`` (``#ced4da``), the background for ``code`` and
 ``pre`` sections is ``$gray-100`` (``#f8f9fa``).
 
-**********
+######################
+Block Element Modifier
+######################
+
+The `Block Element Modifier <bem methodology_>`_ is a way to organize web page design and development. Blocks are the primary unit of organization. As such, each block is stored in a separate folder, and each technology (e.g., HTML or CSS) is represented by a separate file in the folder. Also, each block has documentation contained in a ``.wiki`` file inside the folder.
+
+*******************************
+Directory Structure Conventions
+*******************************
+
+Block implementations consist of separate files. Each technology (HTML, CSS,
+etc.) gets its own file. For example, if the appearance of the ``input`` block
+is defined using CSS, the code is stored in the ``input.css`` file.
+::
+
+    project
+        common.blocks/
+            input.css   # CSS implementation of the input block
+            input.js    # JavaScript implementation of the input block
+
+The code of modifiers and elements is also stored in separate files of the
+block. This approach allows you to include just the modifiers and elements
+that are needed for this implementation of the block.
+::
+
+    project
+        common.blocks/
+            input.css            # CSS implementation of the input block
+            input.js             # JavaScript implementation of the input block
+            input_theme_sun.css  # Implementation of the input_theme_sun modifier
+            input__clear.css     # CSS implementation of the input__clear element
+            input__clear.js      # JavaScript implementation of the input__clear element
+
+Files are grouped by meaning, not by type. Each block has a directory with the
+name of the block that contains the files for implementing the block.
+
+In some approaches to file structure organization, block directories are not
+used. In this case, the block files are grouped using a namespace that is set
+as the block name.
+::
+
+    project
+        common.blocks/
+            input/            # Directory for the input block
+                input.css     # CSS implementation of the input block
+                input.js      # JavaScript implementation of the input block
+            popup/            # Directory for the popup block
+                popup.css     # CSS implementation of the popup block
+                popup.js      # JavaScript implementation of the popup block
+
+To improve navigation across the project, block modifiers with multiple values
+can also be combined in separate directories.
+::
+
+    project
+        common.blocks/                     # Redefinition level with blocks
+            input/                         # Directory for the input block
+                _type/                     # Directory for the input_type modifier
+                    input_type_search.css  # CSS implementation of the input_type modifier
+                    input_type_pass.css    # CSS implementation of the input_type modifier
+                input.css                  # CSS implementation of the input block
+                input.js                   # JavaScript implementation of the input block
+            popup/                         # Directory for the popup block
+
+Approaches
+==========
+
+The approaches to folder structure are:
+
+* Nested
+* Flat
+* Flex
+
+Nested
+------
+
+This is the classic file structure approach for BEM projects:
+
+* Each block corresponds to a single directory.
+* The code of modifiers and elements is stored in separate files.
+* The files of modifiers and elements are stored in separate directories.
+* The block directory is the root directory for the subdirectories of its
+  elements and modifiers.
+* Names of element directories begin with a double underscore (``__``).
+* Names of modifier directories begin with a single underscore (``_``).
+
+::
+
+    project
+        common.blocks/                            # Redefinition level with blocks
+            input/                                # Directory for the input block
+                _type/                            # Directory for the input_type modifier
+                    input_type_search.css         # CSS implementation of the input_type modifier
+                __clear/                          # Directory for the input__clear element
+                    _visible/                     # Directory for the input__clear_visible modifier
+                        input__clear_visible.css  # CSS implementation of the input__clear_visible modifier
+                    input__clear.css              # CSS implementation of the input__clear element
+                    input__clear.js               # JavaScript implementation of the input__clear element
+            input.css                             # CSS implementation of the input block
+            input.js                              # JavaScript implementation of the input block
+
+The nested approach is used in the file structure of BEM libraries:
+
+* bem-core
+* bem-components
+
+Flat
+----
+
+Simplified structure for the file structure:
+
+* Directories aren't used for blocks.
+* Optional elements and modifiers are implemented in separate files or in the
+  main block file.
+
+::
+
+    project
+        common.blocks/
+            input_type_search.css     # The input_type_search modifier in CSS
+            input_type_search.js      # The input_type_search modifier in JavaScript
+            input__clear.js           # Optional element of the input block
+            input.css
+            input.js
+            popup.css
+            popup.js
+            popup.png
+
+Flex
+----
+
+The most flexible approach is a combination of flat and nested. Blocks with a
+branched file structure used the nested approach. Simple blocks use the flat
+approach. How it works:
+
+* Each block corresponds to a separate directory.
+* Elements and modifiers can be implemented in block files or in separate
+  files.
+
+::
+
+    project
+        common.blocks/
+            input/                                # Directory for the input block
+                _type/                            # Directory for the input_type modifier
+                    input_type_search.css         # CSS implementation of the input_type modifier
+                __clear/                          # Directory for the input__clear element
+                    _visible/                     # Directory for the input__clear_visible modifier
+                        input__clear_visible.css  # CSS implementation of the input__clear_visible modifier
+                    input__clear.css              # CSS implementation of the input__clear element
+                    input__clear.js               # JavaScript implementation of the input__clear element
+                input.css                         # CSS implementation of the input block
+                input.js                          # JavaScript implementation of the input block
+            popup/                                # Directory for the popup block
+                popup.css
+                popup.js
+                popup.png
+
+*****************
+Naming Convention
+*****************
+
+* Names are written in lowercase Latin letters.
+* Words within names are separated by a hyphen (``-``).
+* The block name specifies a namespace for its elements and modifiers.
+* The element name is separated from the block name by a double underscore
+  (``__``).
+* The modifier name is separated from the block or element name by a single
+  underscore (``_``).
+* The modifier value is separated from the modifier name by a single
+  underscore (``_``).
+* For boolean modifiers, the value is not included in the name.
+
+Block Example
+=============
+
+Here is an example of a block in HTML and CSS. The block is a CSS class used
+in an HTML element.
+
+.. code-block:: html
+
+    <div class="menu">...</div>
+
+.. code-block:: css
+
+    .menu { color: red; }
+
+Element Example
+===============
+
+An element cannot exist outside of a block, and its name is appended to its
+parent block with two underscores as a separator. For example ``menu__name``
+is a valid name for an ``item`` contained in a ``menu`` block.
+
+.. important::
+
+    Important: Identical elements in the same block have the same name. For
+    example, all menu items in the menu block are called ``menu__item``.
+
+Here is an example of an element in HTML and CSS.
+
+.. code-block:: html
+
+    <div class="menu">
+        ...
+        <span class="menu__item"></span>
+    </div>
+
+.. code-block:: css
+
+    .menu__item { color: red; }
+
+Block Modifier Example
+======================
+
+Here are two examples of valid block modifier names where the block is menu
+and the modifier is separated from the menu by an underscore. The first one is
+a boolean, so it has no value. The name of the second one is ``theme`` with a
+modifier value of ``islands``::
+
+    menu_hidden
+
+    menu_theme_islands
+
+Here are how the two block modifiers are represented in HTML and CSS.
+
+HTML:
+
+.. code-block:: html
+
+    <div class="menu menu_hidden"> ... </div>
+    <div class="menu menu_theme_islands"> ... </div>
+
+CSS:
+
+.. code-block:: css
+
+    .menu_hidden { display: none; }
+    .menu_theme_islands { color: green; }
+
+Element Modifier Example
+========================
+
+Here a two examples of element modifiers. Note the block and element are both
+part of the modifier name. Again, the first one is a boolean, so the modifier
+has an intrinsic value of ``true``, and in the second the modifier value
+follows its name and is separated by an underscore::
+
+    menu__item_visible
+
+    menu__item_type_radio
+
+Here is how these element modifiers are defined in HTML and CSS.
+
+HTML:
+
+.. code-block:: html
+
+    <div class="menu">
+        ...
+        <span class="menu__item menu__item_visible menu__item_type_radio"> ... </span>
+    </div>
+
+CSS:
+
+.. code-block:: css
+
+    .menu__item_visible {}
+    .menu__item_type_radio { color: blue; }
+
+******************************
+Alternative Naming Conventions
+******************************
+
+There are a few alternative naming conventions used among those who adhere to
+the BEM method.
+
+* Two-dash Style
+* CamelCase Style
+* React Style
+* No Namespace Style
+
+Two-dash Style
+==============
+
+``block-name__elem-name--mod-name--mod-val``
+
+* Names are written in lowercase Latin letters.
+* Words within the names of BEM entities are separated by a hyphen (``-``).
+* The element name is separated from the block name by a double underscore
+  (``__``).
+* Boolean modifiers are separated from the name of the block or element by a
+  double hyphen (``--``).
+* The value of a modifier is separated from its name by a double hyphen
+  (``--``).
+
+CamelCase Style
+===============
+
+``blockName-elemName_modName_modVal``
+
+* Names are written in Latin letters.
+* Each word inside a name begins with an uppercase letter.
+* The separators for names of blocks, elements, and modifiers are the same as
+  in the standard scheme.
+
+React Style
+===========
+
+``BlockName-ElemName_modName_modVal``
+
+* Names are written in Latin letters.
+* Names of blocks and elements begin with an uppercase letter. Names of
+  modifiers begin with a lowercase letter.
+* Each word inside a name begins with an uppercase letter.
+* An element name is separated from the block name by a single hyphen (``-``).
+* The separators between names and values of modifiers are the same as in the
+  standard scheme.
+
+No Namespace Style
+==================
+
+``_available``
+
+* Names are written in Latin letters.
+* The name of the block or element is not included before the modifier.
+
+This naming scheme limits the use of mixes, because it makes it impossible to
+determine which block or element a modifier belongs to.
+
+*****
+Mixes
+*****
+
+A mix is an instance of different BEM entities being hosted on a single DOM
+node. Mixes allow us to
+
+* Combine the behaviors and styles of several BEM entities while avoiding code
+  duplication.
+* Create semantically new interface components on the basis of existing BEM
+  entities.
+
+Consider the case of a mix comprising a block and an element of another block.
+Assume that links in your project are implemented via a ``link`` block. We
+need to format menu items as links. There are several ways to do that.
+
+* Create a modifier for a menu item that turns the item into a link.
+  Implementing such a modifier would necessarily involve copying the behavior
+  and styles of the ``link`` block. That would result in code duplication.
+* Have a mix combining a generic ``link`` block and a ``link`` element of a
+  ``menu`` block. A mix of the two BEM entities will allow us to use the basic
+  link functionality of the ``link`` block and additional CSS rules of the
+  ``menu`` block without copying the code.
+
+***********
+Definitions
+***********
+
+Block Implementation
+====================
+
+A set of different technologies that determine the following aspects of a BEM
+entity:
+
+* behavior
+* appearance
+* tests
+* templates
+* documentation
+* description of dependencies
+* additional data (e.g., images)
+
+Block Redefinition
+==================
+
+Modifying a block implementation by adding new features to the block on a
+different level.
+
+Redefinition Level
+==================
+
+A set of BEM entities and their partial implementations.
+
+The final implementation of a block can be divided into different redefinition
+levels. Each new level extends or overrides the original implementation of the
+block. The end result is assembled from individual implementation technologies
+of the block from all redefinition levels in a pre-determined consecutive
+order.
+
+Any implementation technologies of BEM entities can be redefined.
+
+For example, there is a third-party library linked to a project on a separate
+level. The library contains ready-made block implementations. The
+project-specific blocks are stored on a different redefinition level.
+
+Let's say we need to modify the appearance of one of the library blocks. That
+doesn't require changing the CSS rules of the block in the library source code
+or copying the code at the project level. We only need to create additional
+CSS rules for that block at the project level. During the build process, the
+resulting implementation will incorporate both the original rules from the
+library level and the new styles from the project level.
+
+############
+Enduring CSS
+############
+
+`Enduring CSS`_ is an approach to organizing and developing Cascading Style
+Sheets (CSS) for enduring and rapidly changing web applications. Long-term
+maintainability is the main concern of this approach. As such, it doesn't
+prescribe the Don't Repeat Yourself (DRY) practice, which has a goal of
+minimizing the code base so each variable, propery, function, and other
+objects are defined just once. Instead, Enduring CSS values independent
+components where some components may look very similar to others, but their
+code bases can be manipulated independently with impunity. That is, you can be
+sure that modifying one component will have no unintended side effects on
+another.
+
+*************
+Naming Things
+*************
+
+The basic rules for naming and organizing components is FUN:
+
+* Flat hierarchy of selectors
+* Utility styles
+* Name-spaced components
+
+Flat Hierarchy of Selectors
+===========================
+
+The benefits of a flat hierarchy of selectors is `well justified <shoot to kill css selector intent_>`_. Three important practices to apply to your CSS are:
+
+1. Use only classes for selectors except in specific circumstances.
+2. Never nest selectors unless essential.
+3. Always avoid using IDs as styling hooks.
+
+Utility Styles
+==============
+
+Utility styles are single responsibility styles. They should have no reliance
+on other selectors or specific structures. For example, ``w100`` would set
+``width: 100%;``, and ``Tbl`` would be ``display: table; table-layout: fixed;``
+
+.. note::
+
+    Some people prefix their utility styles with a `u`, for example `u-100`.
+    However, name them to your own convention. For me, if it is lower case
+    with with no hyphens either side, it’s a utility style.
+
+The only rigid rule with the utility styles is that once made and used, they
+cannot, ever, be amended or removed. Make as many utility styles as you need
+but ensure they can be used for as long as you can possibly imagine as they
+will sit in the CSS of the project for EVER.
+
+Name-spaced Components
+======================
+
+Name-spacing the CSS of each visual component can be used to create some form
+of isolation. By preventing name collisions with other components, chunks of
+CSS can be more easily moved one environment to another (from prototype to
+production for example).
+
+One scheme is a simple 2–3 letter namespace for each component. Building a
+shopping cart? Try .sc- as your namespace prefix. Building the next version of
+that same shopping cart? That’ll be .sc2- then. It’s just enough to isolate
+your component styles and allow the styles to be more self documenting. For
+example, a wrapper for the shopping cart could be something like .sc-Wrapper.
+Is there a remove item button? Something like .sc-RemoveItem would be suitable.
+
+##########
 Components
-**********
+##########
 
 Building a web UI is more than a CSS problem. Beyond building anything trivial,
 developers have difficulties trying to do things that are not just related to
@@ -578,10 +1054,10 @@ than just CSS. It is everything you need to create that widget. You end up with
 HTML, CSS, JavaScript (JS), possibly images, and other assets.
 
 Each component should have a directory with all the assets it needs. One of the
-characteristics of components is that they are simpler abstraction than modules,
-because modules are not a concept of how you assemble various technologies
-into one widget. Also, components are composable through their interfaces and a
-compositional model.
+characteristics of components is that they are simpler abstraction than
+modules, because modules are not a concept of how you assemble various
+technologies into one widget. Also, components are composable through their
+interfaces and a compositional model.
 
 Note that simple does not mean easy. It refers to a lack of complexity. There's
 a lack of entanglement in the system. It's about component A not knowing how
@@ -593,6 +1069,7 @@ common items from components into reusable objects. It can lead to complexity
 and entanglement when the components diverge, and what was once common needs to
 be specialized for each component.
 
+*******************************
 Tools supporting Web Components
 *******************************
 
@@ -608,9 +1085,9 @@ Tools supporting Web Components
   will track dependendencies among components, which is particularly useful for
   CSS, because order is important.
 
-*********
+#########
 Reference
-*********
+#########
 
 * `Why Programmers Suck at Picking Colors`_
 * `Using Color in Information Display Graphics`_
@@ -625,6 +1102,9 @@ Reference
 * `Nicolas Gallagher - Adaptation and Components <adaptation and components
   video_>`_ video on YouTube.
 * `Nicolas Gallagher <http://nicolasgallagher.com/>`_
+* `BEM Methodology`_
+* `Enduring CSS`_
+* `Enduring CSS Blog Post`_
 
 .. _gwern.net: https://www.gwern.net/index
 .. _58 bytes of css: https://news.ycombinator.com/item?id=19607169
@@ -648,3 +1128,6 @@ Reference
 .. _enduring css: https://ecss.io/
 .. _enduring css blog post: https://benfrain.com/enduring-css-writing-style-sheets-rapidly-changing-long-lived-projects/
 .. _adaptation and components video: https://www.youtube.com/watch?v=m0oMHG6ZXvo
+.. _bem methodology: https://en.bem.info/methodology/
+.. _pep8 max line length: https://www.python.org/dev/peps/pep-0008/#maximum-line-length
+.. _shoot to kill css selector intent: https://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/
