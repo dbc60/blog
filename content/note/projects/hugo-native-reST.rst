@@ -71,6 +71,12 @@ Reference
 * `Some Strategies for Fast Lexical Analysis`_
 * `Git Searching Issues and PRs`_
 * `Hugo Starter Kits`_
+* `Fountain Markup`_ is a markup language used for screenwriting. It might be
+  interesting to make a Fountain parser plug-in for Hugo. Someone suggested
+  assigning `.fou` as a default file extension, much like `.md` and
+  `.markdown` are used for markdown files. They're all plain text in the end,
+  but it's nice to have a file extension as a hint to the format of a file's
+  content.
 
 Open Issues Related to reStructuredText
 ***************************************
@@ -99,3 +105,4 @@ Open Issues Related to reStructuredText
 .. _some strategies for fast lexical analysis: http://nothings.org/computer/lexing.html
 .. _git searching issues and prs: https://help.github.com/en/articles/searching-issues-and-pull-requests#search-by-the-title-body-or-comments
 .. _hugo starter kits: https://gohugo.io/tools/starter-kits/
+.. _fountain markup: https://fountain.io/

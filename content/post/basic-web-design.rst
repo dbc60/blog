@@ -735,6 +735,10 @@ Naming Convention
   underscore (``_``).
 * For boolean modifiers, the value is not included in the name.
 
+I wonder if it might be wise to use an explicit, but optional, namespace in
+addition to the block name. Wouldn't it be needed to avoid a collision between
+libraries and our own custom components?
+
 Block Example
 =============
 
@@ -964,73 +968,6 @@ CSS rules for that block at the project level. During the build process, the
 resulting implementation will incorporate both the original rules from the
 library level and the new styles from the project level.
 
-############
-Enduring CSS
-############
-
-`Enduring CSS`_ is an approach to organizing and developing Cascading Style
-Sheets (CSS) for enduring and rapidly changing web applications. Long-term
-maintainability is the main concern of this approach. As such, it doesn't
-prescribe the Don't Repeat Yourself (DRY) practice, which has a goal of
-minimizing the code base so each variable, propery, function, and other
-objects are defined just once. Instead, Enduring CSS values independent
-components where some components may look very similar to others, but their
-code bases can be manipulated independently with impunity. That is, you can be
-sure that modifying one component will have no unintended side effects on
-another.
-
-*************
-Naming Things
-*************
-
-The basic rules for naming and organizing components is FUN:
-
-* Flat hierarchy of selectors
-* Utility styles
-* Name-spaced components
-
-Flat Hierarchy of Selectors
-===========================
-
-The benefits of a flat hierarchy of selectors is `well justified <shoot to kill css selector intent_>`_. Three important practices to apply to your CSS are:
-
-1. Use only classes for selectors except in specific circumstances.
-2. Never nest selectors unless essential.
-3. Always avoid using IDs as styling hooks.
-
-Utility Styles
-==============
-
-Utility styles are single responsibility styles. They should have no reliance
-on other selectors or specific structures. For example, ``w100`` would set
-``width: 100%;``, and ``Tbl`` would be ``display: table; table-layout: fixed;``
-
-.. note::
-
-    Some people prefix their utility styles with a `u`, for example `u-100`.
-    However, name them to your own convention. For me, if it is lower case
-    with with no hyphens either side, it’s a utility style.
-
-The only rigid rule with the utility styles is that once made and used, they
-cannot, ever, be amended or removed. Make as many utility styles as you need
-but ensure they can be used for as long as you can possibly imagine as they
-will sit in the CSS of the project for EVER.
-
-Name-spaced Components
-======================
-
-Name-spacing the CSS of each visual component can be used to create some form
-of isolation. By preventing name collisions with other components, chunks of
-CSS can be more easily moved one environment to another (from prototype to
-production for example).
-
-One scheme is a simple 2–3 letter namespace for each component. Building a
-shopping cart? Try .sc- as your namespace prefix. Building the next version of
-that same shopping cart? That’ll be .sc2- then. It’s just enough to isolate
-your component styles and allow the styles to be more self documenting. For
-example, a wrapper for the shopping cart could be something like .sc-Wrapper.
-Is there a remove item button? Something like .sc-RemoveItem would be suitable.
-
 ##########
 Components
 ##########
@@ -1105,6 +1042,11 @@ Reference
 * `BEM Methodology`_
 * `Enduring CSS`_
 * `Enduring CSS Blog Post`_
+* `Battling BEM CSS`_: 10 Common Problems and How to Avoid Them.
+* `Scaling Down the BEM for Small Projects <bem for small projects_>`_.
+* `Code Guide for Sustainable HTML and CSS <code guide for html and css_>`_
+* `Atomic CSS`_
+* * `Block Element Module <bem_>`_
 
 .. _gwern.net: https://www.gwern.net/index
 .. _58 bytes of css: https://news.ycombinator.com/item?id=19607169
@@ -1128,6 +1070,11 @@ Reference
 .. _enduring css: https://ecss.io/
 .. _enduring css blog post: https://benfrain.com/enduring-css-writing-style-sheets-rapidly-changing-long-lived-projects/
 .. _adaptation and components video: https://www.youtube.com/watch?v=m0oMHG6ZXvo
+.. _bem: https://en.bem.info/
 .. _bem methodology: https://en.bem.info/methodology/
 .. _pep8 max line length: https://www.python.org/dev/peps/pep-0008/#maximum-line-length
 .. _shoot to kill css selector intent: https://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/
+.. _battling bem css: https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them/
+.. _bem for small projects: https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/
+.. _code guide for html and css: https://codeguide.co
+.. _atomic css: https://acss.io/
