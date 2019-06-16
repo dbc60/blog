@@ -3,6 +3,7 @@ title: "Senior Software Engineer II"
 date: 2019-04-08T11:55:50-04:00
 draft: true
 categories: career
+cssDetail: drop-caps-goudy
 ---
 
 The Senior Software Engineer II is an experienced software engineer who designs, develops, troubleshoots and debugs complex software applications, demonstrating for others how to resolve issues in innovative and practical ways. The role works on problems of diverse scope where analysis of data requires evaluation of identifiable and obscure factors, applying good judgment in selecting methods and techniques for obtaining solutions; takes initiative in planning and prioritization of design and development activities to resolve a wide range of issues; interacts with senior internal and external personnel; and may act as a technical lead on complex projects. As a recognized specialist in one or more fields, the role is a key contributor to complex projects, advising on design and development approach. Through leadership and expertise, the Senior Software Engineer II acts as a role model to inspire, teach and help develop team members, moderates peer review and mentors junior staff.

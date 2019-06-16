@@ -22,6 +22,6 @@
             </svg>
             {{- range . -}}
                 {{- $href := print (relURL "tags/") (urlize .) -}}
-                <span class="tag"><a href="{{ $href }}">{{ . }}</a></span>
+                <a class="tag" href="{{ $href }}">{{ . }}</a>
             {{- end -}}
             {{- end -}}

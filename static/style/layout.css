@@ -1,0 +1,28 @@
+body {
+    margin: 0 auto;
+    max-width: 90ch;
+    padding: 2ch;
+    line-height: 1.5;
+    padding: 4em 1em;
+}
+
+h2 {
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+.tag {
+  margin-right: 0.5ch;
+}
+
+ul.pagination {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li.page-item {
+  float: left;
+  margin-right: 1ch;
+}

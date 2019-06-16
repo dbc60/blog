@@ -4,11 +4,10 @@ date: 2019-06-11T07:29:40-04:00
 draft: true
 categories: [blog]
 tags: [html, css]
+cssDetail: "drop-caps-cheshire"
 ---
 
 I'm going to try applying naming convention of the `Block Element Modifier <bem_>`_ methodology and the file/folder organization advice from `Enduring CSS <https://ecss.io/>`_ to organize my Sass, CSS, and HTML templeates.
-
-<!--more-->
 
 The first question is, will Hugo and Sass support organizing components by
 directory? Suppose I want a navigation menu with navigation items. The
@@ -57,5 +56,14 @@ config.toml`` as:
         pre = "rss"
         url = "/index.xml"
         weight = 7
+
+*********
+Drop Caps
+*********
+
+* drop-caps-cheshire
+* drop-caps-goudy
+* drop-caps-de-zs
+* drop-caps-yinit
 
 .. _bem: https://en.bem.info/

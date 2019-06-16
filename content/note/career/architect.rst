@@ -3,9 +3,18 @@ title: "Architect"
 date: 2019-04-08T12:07:32-04:00
 draft: true
 categories: career
+cssDetail: drop-caps-goudy
 ---
 
-An architect is responsible for driving the evolution of the technical structure, organization, conceptual integrity of the platform, product architecture of a major platform sub‐system and the high level design of the key modules that comprise it. The role works with other architects, technical leads and other senior engineering personnel to define, refine, revise and guide the architecture, system design, development paths/tools, and integration planning required for software development initiatives. The role also works collaboratively with development team(s) to help them maintain high levels of productivity and quality.
+An architect is responsible for driving the evolution of the technical
+structure, organization, conceptual integrity of the platform, product
+architecture of a major platform sub‐system and the high level design of the
+key modules that comprise it. The role works with other architects, technical
+leads and other senior engineering personnel to define, refine, revise and
+guide the architecture, system design, development paths/tools, and
+integration planning required for software development initiatives. The role
+also works collaboratively with development team(s) to help them maintain high
+levels of productivity and quality.
 <!--more-->
 
 .. _contents:
@@ -56,4 +65,3 @@ Competencies
 * **Relays the Vision**: Models behavior consistent with the company's vision to help the organization get there; exhibits clarity and focus; uses persuasion and influence to connect others
 * **Inspires Others**: Demonstrates pride, enthusiasm and passion, which are motivating to others; celebrates success and gives credit to others; exhibits optimism and vigor
 * **Strategic Thinking**: Demonstrates a big‐picture perspective and ability to consider all relevant information when making recommendations; gathers complete information; makes recommendations based on facts, technical knowledge, analytical and deductive reasoning; identifies key issues and understands their impact in a broad context
-

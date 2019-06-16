@@ -4,12 +4,10 @@ date: 2017-02-04
 draft: true
 categories: [software]
 tags: [graphics, ray tracing]
+cssDetail: drop-caps-cheshire
 ---
 
 Peter Shirley has written a little book called "Ray Tracing in One Weekend". It's referenced by some people who are familiar with a program called [smallpaint](https://users.cg.tuwien.ac.at/zsolnai/gfx/smallpaint/), which uses concepts from the book.
-<!--more-->
-
-## Ray Tracing in One Weekend
 
 I want to get [this book](https://smile.amazon.com/gp/product/B01B5AODD8/ref=smi_www_rco2_go_smi_2609328962?_encoding=UTF8&*Version*=1&*entries*=0&ie=UTF8). It's only $2.99, but exists only as a Kindle Edition and is only $49 pages long. The blog post [announcing the book](http://in1weekend.blogspot.com/2016/01/ray-tracing-in-one-weekend.html) has the table of contents, and a link to a post about [the tools he used to write the book](http://psgraphics.blogspot.com/2016/01/process-for-speed-writing-book.html).
 

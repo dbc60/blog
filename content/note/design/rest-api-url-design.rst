@@ -4,20 +4,11 @@ date: 2019-04-08
 draft: true
 categories: [software]
 tags: [design, rest, api, uri]
+cssDetail: drop-caps-goudy
 ---
 
-Uniform Resource Identifiers and REST APIs in design.
-<!--more-->
-
-.. contents:: Contents
-   :class: sidebar
-
-
-**********************************
-`7 Rules for REST API URI Design`_
-**********************************
-
-REST APIs use Uniform Resource Identifiers (URIs) to identify and address resources. Some designs are based is this quote:
+REST APIs use Uniform Resource Identifiers (URIs) to identify and address
+resources. Some designs are based is this quote:
 
 .. pull-quote::
 
@@ -25,7 +16,8 @@ REST APIs use Uniform Resource Identifiers (URIs) to identify and address resour
 
     -- Tim Burners-Lee
 
-It means that these two URIs are equivalent, but the first one conveys too much information::
+It means that these two URIs are equivalent, but the first one conveys too
+much information::
 
     http://api.example.com/louvre/leonardo-da-vinci/mona-lisa
 
@@ -34,6 +26,15 @@ It means that these two URIs are equivalent, but the first one conveys too much 
 First a reminder of the URI format, as the rules and guidelines below depend on it. The generic URI syntax, as defined by `RFC 3986`_, is::
 
     URI = scheme "://" authority "/" path ["?" query]["#" fragment]
+
+<!--more-->
+
+.. contents:: Contents
+   :class: sidebar
+
+**********************************
+`7 Rules for REST API URI Design`_
+**********************************
 
 Rule 1: Trailing Slash
 **********************

@@ -4,11 +4,12 @@ date: 2019-03-07
 draft: true
 categories: career
 tags: [interview, golang, c++]
+cssDetail: drop-caps-goudy
 ---
 
-A small collection of questions to ask engineering candidates.
-
+Here is a small collection of questions to ask engineering candidates.
 <!--more-->
+
 .. contents:: Contents
    :class: sidebar
 

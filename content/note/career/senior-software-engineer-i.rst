@@ -3,6 +3,7 @@ title: "Senior Software Engineer I"
 date: 2019-04-08T11:53:25-04:00
 draft: true
 categories: career
+cssDetail: drop-caps-goudy
 ---
 
 The Senior Software Engineer I is an experienced software engineer who designs, develops, tests, troubleshoots and debugs complex software applications, resolving issues in innovative and practical ways. The role is involved with planning and prioritization of design and development activities to resolve a wide range of issues; having gained progressive recognition as a specialist in one or more fields, and is a key contributor to multiple successful projects, and through their leadership and experience is able to inspire and help develop more junior team members; and may moderate peer review and mentor junior staff.
@@ -50,4 +51,3 @@ To transition from Senior Software Engineer I to Senior Software Engineer II, yo
 * Take initiative to suggest specific modifications to design and development activities to improve future results.
 * Share ideas in ways that encourages discussion and proactively spread knowledge within the team and demonstrate software development and documentation best practices within projects.
 * Act as a subject matter expert providing input and guidance to engineering teams and other departments (Product, Marketing, Engineering, Ops) on technical matters and product designs.
-

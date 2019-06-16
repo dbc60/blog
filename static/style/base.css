@@ -35,7 +35,7 @@ html {
 }
 
 body {
-  font-family: $base-font-family;
+  font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -52,12 +52,12 @@ body {
 }
 
 body {
-    background: $primary;
-    color: $color-body-text;
+    background: #fff;
+    color: #000;
 }
 
 h1, h2, strong {
-  color: $color-text-strong;
+  color: #111;
 }
 
 code, pre {
@@ -82,7 +82,7 @@ On a website, this accent can be used to provide emphasis on interactive
 elements, like links.
 */
 a {
-  color: $accent;
+  color: #007bff;
 }
 
 /*
@@ -90,11 +90,11 @@ Secondary color. The accent color can be omplemented with more subtle shades, to
 be used on borders, backgrounds, or even the body text.
 */
 code, pre {
-  background: $alt-background;
-  border-bottom: 1px solid $highlight-dark;
-  color: $color-body-text;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ced4da;
+  color: black;
 }
 
 pre {
-  border-left: 2px solid $highlight-bright;
+  border-left: 2px solid black;
 }
