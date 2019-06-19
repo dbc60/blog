@@ -5,10 +5,10 @@ draft: true
 categories: [web]
 tags: [hugo]
 cssDetail: "drop-caps-cheshire"
-summary: Some notes on `Hugo`_, a static site generator.
+summary: Some notes on Hugo, a static site generator.
 ---
 
-Hugo has an extended version that seems to be for supporting Sass/SCSS.  It
+`Hugo`_ has an extended version that seems to be for supporting Sass/SCSS.  It
 adds ``toCSS`` to the ``resources`` object. Vanilla Hugo doesn't have that
 method.
 
