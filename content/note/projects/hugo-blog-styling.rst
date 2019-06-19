@@ -57,9 +57,18 @@ config.toml`` as:
         url = "/index.xml"
         weight = 7
 
+One person uses ``layouts/TYPE/block.html`` that usually contains one ``<div
+class="TYPE">`` element to emulate the concept of a block in the BEM
+methodology. He also has a ``static/TYPE.styl`` that gets compiled to
+``TYPE.css``. While not quite BEM, it's a start.
+
+Hugo has `a roadmap <hugo 1.0 roadmap_>`_. It's worth consulting before I get too deeply involved in making modifications to Hugo.
+
 *********
 Drop Caps
 *********
+
+My current drop-cap styles:
 
 * drop-caps-cheshire
 * drop-caps-goudy
@@ -67,3 +76,4 @@ Drop Caps
 * drop-caps-yinit
 
 .. _bem: https://en.bem.info/
+.. _hugo 1.0 roadmap: https://discourse.gohugo.io/t/roadmap-to-hugo-v1-0/2278
