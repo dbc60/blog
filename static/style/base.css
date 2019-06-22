@@ -38,6 +38,8 @@ body {
   font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
+  background: #fff;
+  color: #000;
 }
 
 /* Feather icons */
@@ -51,9 +53,11 @@ body {
   fill: none;
 }
 
-body {
-    background: #fff;
-    color: #000;
+.base, .document {
+  /*  Try to avoid scrollbars on paragraphs: prevents long unbroken
+      un-hyphenatable lines from causing H-scrolling
+      */
+  overflow-wrap: break-word;
 }
 
 h1, h2, strong {
