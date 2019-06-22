@@ -8,7 +8,7 @@ tags: [d3, example]
 d3: true
 ---
 
-We can have a black background and alternate shades of gray for each paragraph
+We can have a slate gray background and alternate shades of gray for each paragraph
 of the text.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc neque, tristique eu scelerisque at, condimentum id turpis. Aliquam erat volutpat. Mauris aliquam nibh tincidunt sem pretium sollicitudin. Suspendisse in vehicula magna. Ut vel gravida tortor, id mattis lacus. Fusce ornare, nisl eu vestibulum ultricies, libero enim semper nisi, ac porta ipsum tortor in nunc. Sed rutrum quam vel felis facilisis pretium. Cras placerat, sapien eget vestibulum tincidunt, odio ipsum efficitur arcu, in laoreet lectus enim sit amet velit. Vivamus ac dolor vitae turpis blandit lobortis. Suspendisse vel tellus felis. Aliquam sodales nisl nec condimentum cursus. Nullam lacinia eu justo quis mattis.
@@ -25,7 +25,9 @@ The script is below.
 
 ```html
 <script>
-  d3.select("body").style("background-color", "black");
+  d3.select("body").style("background-color", "slategray");
+  d3.select("code").style("background-color", "dimgray");
+  d3.select("pre").style("background-color", "dimgray");
 
   d3.selectAll("p").style("color", function(d, i) {
     return i % 2 ? "#fff" : "#ccc";
@@ -34,7 +36,9 @@ The script is below.
 ```
 
 <script>
-  d3.select("body").style("background-color", "black");
+  d3.select("body").style("background-color", "slategray");
+  d3.select("code").style("background-color", "dimgray");
+  d3.select("pre").style("background-color", "dimgray");
   d3.selectAll("p").style("color", function(d, i) {
     return i % 2 ? "#fff" : "#ccc";
   });

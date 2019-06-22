@@ -27,20 +27,44 @@ The script is here.
 
 ```html
 <script>
-  document.body.style.backgroundColor = "black";
+  document.body.style.backgroundColor = "slategray";
   var paragraphs = document.getElementsByTagName("p");
   for (var i = 0; i < paragraphs.length; i++) {
     var paragraph = paragraphs.item(i);
-    paragraph.style.setProperty("color", "green", null);
+    paragraph.style.setProperty("color", "aqua", null);
+  }
+
+  var codeBlocks = document.getElementsByTagName("code");
+  for (var i = 0; i < codeBlocks.length; i++) {
+    var codeBlock = codeBlocks.item(i);
+    codeBlock.style.setProperty("background-color", "dimgray");
+  }
+
+  var preBlocks = document.getElementsByTagName("pre");
+  for (var i = 0; i < preBlocks.length; i++) {
+    var preBlock = preBlocks.item(i);
+    preBlock.style.setProperty("background-color", "dimgray");
   }
 </script>
 ```
 
 <script>
-  document.body.style.backgroundColor = "black";
+  document.body.style.backgroundColor = "slategray";
   var paragraphs = document.getElementsByTagName("p");
   for (var i = 0; i < paragraphs.length; i++) {
     var paragraph = paragraphs.item(i);
-    paragraph.style.setProperty("color", "green", null);
+    paragraph.style.setProperty("color", "aqua", null);
+  }
+
+  var codeBlocks = document.getElementsByTagName("code");
+  for (var i = 0; i < codeBlocks.length; i++) {
+    var codeBlock = codeBlocks.item(i);
+    codeBlock.style.setProperty("background-color", "dimgray");
+  }
+
+  var preBlocks = document.getElementsByTagName("pre");
+  for (var i = 0; i < preBlocks.length; i++) {
+    var preBlock = preBlocks.item(i);
+    preBlock.style.setProperty("background-color", "dimgray");
   }
 </script>

@@ -14,10 +14,6 @@ These notes are from `MDN Document and Website Structure`_.
 .. contents:: Contents
    :class: sidebar
 
-*****************
-General Structure
-*****************
-
 Some of the more common components of web pages are:
 
 header

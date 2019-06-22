@@ -6,6 +6,9 @@ categories: [software]
 tags: [bash]
 ---
 
+So far, this note is just about my bash configuration.
+<!--more-->
+
 My bash profile (``.bash_profile``) is very simple:
 
 .. code-block:: shell

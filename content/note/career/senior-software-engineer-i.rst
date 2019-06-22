@@ -3,10 +3,12 @@ title: "Senior Software Engineer I"
 date: 2019-04-08T11:53:25-04:00
 draft: true
 categories: career
-cssDetail: drop-caps_goudy
 ---
 
-The Senior Software Engineer I is an experienced software engineer who designs, develops, tests, troubleshoots and debugs complex software applications, resolving issues in innovative and practical ways. The role is involved with planning and prioritization of design and development activities to resolve a wide range of issues; having gained progressive recognition as a specialist in one or more fields, and is a key contributor to multiple successful projects, and through their leadership and experience is able to inspire and help develop more junior team members; and may moderate peer review and mentor junior staff.
+The Senior Software Engineer I is an experienced software engineer who designs, develops, tests, troubleshoots and debugs complex software applications, resolving issues in innovative and practical ways.
+<!--more-->
+
+The role is involved with planning and prioritization of design and development activities to resolve a wide range of issues; having gained progressive recognition as a specialist in one or more fields, and is a key contributor to multiple successful projects, and through their leadership and experience is able to inspire and help develop more junior team members; and may moderate peer review and mentor junior staff.
 <!--more-->
 
 .. _contents:

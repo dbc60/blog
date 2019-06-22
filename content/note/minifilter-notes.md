@@ -9,11 +9,11 @@ tags: [windows, minifilter, kernel]
 Notes on writing a Windows minifilter
 <!--more-->
 
-## Part I: Fundamentals of IRP_MJ_CREATE
-
 Each service in the OS has its own protocol. A stateful protocol must have some kind of context object to pass from function to function to maintain the current state of the "conversation."
 
 In the case of the file system, that object is a ``FILE_OBJECT``. It represents the state associated with the OS talking to a ``DEVICE_OBJECT``. Note that there is no ``IRP_MJ_OPEN``, because there is no way to open an existing ``FILE_OBJECT``. In order to get a ``FILE_OBJECT`` one must either create it or already have a reference to it.
+
+## Part I: Fundamentals of IRP_MJ_CREATE
 
 ## Part II: How IO Flows
 

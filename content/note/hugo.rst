@@ -4,7 +4,6 @@ date: 2019-06-12T07:18:40-04:00
 draft: true
 categories: [web]
 tags: [hugo]
-cssDetail: "drop-caps_yinit"
 summary: Some notes on Hugo, a static site generator.
 ---
 

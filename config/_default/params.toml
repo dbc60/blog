@@ -10,6 +10,8 @@ hideFooter = false
 #featured_image = "/images/hero-header-default.jpg"
 #featured_image = "/images/hero-header-april.jpg"
 
+cssDetail = "drop-caps_goudy"
+
 # The links below use fontawesome icons. They default to the "fab" set,
 # but some come from other sets. Fontawesome has four sets:
 #

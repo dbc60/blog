@@ -10,7 +10,6 @@ Notes from Rob Pike's talk on [Lexical Scanning in Go][lexscantalk]
 
 <!--more-->
 
-## Template System
 In the talk, he shows how the lexer works in Go's [text template system][gotexttemplate]. Here's some background on what the template system does.
 
 Actions are contained within two pairs of braces. For example ``{{.Title}}`` will evaluate the field of some structure ``.Title``. There is an implicit context within which ``.Title`` is evaluated.

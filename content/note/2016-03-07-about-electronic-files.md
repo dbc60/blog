@@ -4,7 +4,6 @@ date: 2016-03-07
 draft: true
 categories: [software]
 tags: [files]
-cssDetail: drop-caps_cheshire
 ---
 
 If you can get a collection of important files, their attributes and contents, what kinds of things can you do with that information?

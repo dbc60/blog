@@ -24,12 +24,16 @@ The script is here. It's just a call to a D3 function.
 
 ```html
 <script>
-  d3.select("body").style("background-color", "black");
-  d3.selectAll("p").style("color", "green");
+  d3.select("body").style("background-color", "slategray");
+  d3.select("code").style("background-color", "dimgray");
+  d3.select("pre").style("background-color", "dimgray");
+  d3.selectAll("p").style("color", "aqua");
 </script>
 ```
 
 <script>
-  d3.select("body").style("background-color", "black");
-  d3.selectAll("p").style("color", "green");
+  d3.select("body").style("background-color", "slategray");
+  d3.select("code").style("background-color", "dimgray");
+  d3.select("pre").style("background-color", "dimgray");
+  d3.selectAll("p").style("color", "aqua");
 </script>

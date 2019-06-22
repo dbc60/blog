@@ -4,13 +4,13 @@ date: 2019-06-04T05:50:26-04:00
 draft: true
 categories: [software]
 tags: [design, web]
-cssDetail: drop-caps_cheshire
 ---
 
 In `Battling BEM CSS`_, David Berner recommends using namespaces. He says
 namespaces have made his code more readable. He borrows from Harry Robert's
 `namespacing technique <ui code with namespaces_>`_ to form his own namespace
 convention.
+<!--more-->
 
 * Component: ``c-``. Examples: ``c-card``, ``c-checklist``. Form the backbone
   of an application and contain all of the cosmetics for a standalone

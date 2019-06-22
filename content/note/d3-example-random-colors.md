@@ -22,7 +22,9 @@ Wow! The color of each paragraph changes each time the page is reloaded. The scr
 
 ```html
 <script>
-  d3.select("body").style("background-color", "black");
+  d3.select("body").style("background-color", "slategray");
+  d3.select("code").style("background-color", "dimgray");
+  d3.select("pre").style("background-color", "dimgray");
   d3.selectAll("p").style("color", function() {
     return "hsl(" + Math.random() * 360 + ", 100%, 50%)";
   });
@@ -30,7 +32,9 @@ Wow! The color of each paragraph changes each time the page is reloaded. The scr
 ```
 
 <script>
-  d3.select("body").style("background-color", "black");
+  d3.select("body").style("background-color", "slategray");
+  d3.select("code").style("background-color", "dimgray");
+  d3.select("pre").style("background-color", "dimgray");
   d3.selectAll("p").style("color", function() {
     return "hsl(" + Math.random() * 360 + ", 100%, 50%)";
   });

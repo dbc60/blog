@@ -3,15 +3,10 @@ title: "Basic Web Design"
 date: 2019-04-13T04:45:15-04:00
 categories: [software]
 tags: [design, web]
-cssDetail: "drop-caps_goudy"
 ---
 
 How much structure is really needed to make a web page. I have a lot to learn.
 <!--more-->
-
-###########
-Inspiration
-###########
 
 I read an article on `HN <https://news.ycombinator.com>`_ titled `58 Bytes of
 CSS to look great nearly everywhere <58 bytes of css_>`_. The article itself

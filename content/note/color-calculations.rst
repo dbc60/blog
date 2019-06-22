@@ -7,12 +7,14 @@ categories: [software, math]
 tags: [css, design, web]
 ---
 
-033-0129426448
+Colors? This note was supposed to be about colors. As it happens, I got
+side-tracked on MathJax rendering. It doesn't work as well as I expected it to.
 <!--more-->
 
-**************
-Verify MathJax
-**************
+This site is rendered using the Hugo static site generator. MathJax has yet to
+play nice with Hugo and reStructuredText files.
+
+A mathjax example:
 
 .. math::
 

@@ -1,6 +1,9 @@
 {{ if .Params.cssDetail }}
   {{ $cssDetail := .Params.cssDetail }}
   <section class="drop-caps {{ $cssDetail }}">
+{{ else if .Site.Params.cssDetail }}
+  {{ $cssDetail := .Site.Params.cssDetail }}
+  <section class="drop-caps {{ $cssDetail }}">
 {{ else }}
   <section class="no-details-note">
 {{ end }}
