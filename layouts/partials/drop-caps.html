@@ -1,0 +1,8 @@
+{{ if .Params.cssDetail }}
+  {{ $cssDetail := .Params.cssDetail }}
+  <section class="drop-caps {{ $cssDetail }}">
+{{ else }}
+  <section class="no-details-note">
+{{ end }}
+  {{- .Content -}}
+</section>

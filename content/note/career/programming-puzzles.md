@@ -7,7 +7,7 @@ tags:
   - c
   - c++
   - puzzles
-cssDetail: drop-caps-goudy
+cssDetail: drop-caps_goudy
 ---
 
 Programming puzzles for interviews.

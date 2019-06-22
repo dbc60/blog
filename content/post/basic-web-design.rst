@@ -3,6 +3,7 @@ title: "Basic Web Design"
 date: 2019-04-13T04:45:15-04:00
 categories: [software]
 tags: [design, web]
+cssDetail: "drop-caps_goudy"
 ---
 
 How much structure is really needed to make a web page. I have a lot to learn.

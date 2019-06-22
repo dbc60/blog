@@ -3,7 +3,7 @@ title: "Architect"
 date: 2019-04-08T12:07:32-04:00
 draft: true
 categories: career
-cssDetail: drop-caps-goudy
+cssDetail: drop-caps_goudy
 ---
 
 An architect is responsible for driving the evolution of the technical

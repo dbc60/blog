@@ -4,7 +4,7 @@ date: 2019-04-08
 draft: true
 categories: [software]
 tags: [design, rest, api, uri]
-cssDetail: drop-caps-goudy
+cssDetail: drop-caps_goudy
 ---
 
 REST APIs use Uniform Resource Identifiers (URIs) to identify and address

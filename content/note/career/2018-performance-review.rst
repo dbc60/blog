@@ -4,7 +4,7 @@ date: 2019-04-08T09:57:48-04:00
 draft: true
 categories: career
 math: true
-cssDetail: drop-caps-goudy
+cssDetail: drop-caps_goudy
 ---
 
 Meeting with Coop to go over the greatly anticipated 2018 Performance Review and make plans for 2019. We'll do it all in 50 minutes or less.

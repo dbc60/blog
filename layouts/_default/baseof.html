@@ -2,12 +2,7 @@
 {{ $lang := .Site.Language.Lang | default "en" }}
 <html lang="{{ $lang }}">
   {{ partial "head.html" . }}
-  {{ if .Params.cssDetail }}
-    {{ $cssDetail := .Params.cssDetail }}
-    <body class="{{ $cssDetail }}">
-  {{ else }}
-    <body class="base">
-  {{ end }}
+  <body class="base">
       {{ block "header" . }}{{ partial "site-header.html" . -}}{{- end }}
     {{- partial "nav.html" . }}
     <main>

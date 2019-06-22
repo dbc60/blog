@@ -4,9 +4,7 @@
   -->
   <h2>{{- .Title -}}</h2>
   <div class="article-meta-data">{{ partial "date-and-tags.html" . }}</div>
-  <section>
-    {{- .Content -}}
-  </section>
+  {{- partial "drop-caps.html" . }}
 
   {{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
     <section id="comments">

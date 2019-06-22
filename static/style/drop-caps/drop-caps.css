@@ -1,0 +1,42 @@
+/*************/
+/* DROP CAPS */
+/*************/
+/*  "drop caps"/"initials" (https://en.wikipedia.org/wiki/Initial
+    https://wiki.obormot.net/Reference/DropCapsDemo) are large fancy
+    block letters used to start a page/section. We skip them on mobile because
+    they use up 8-12KB each (even after @font-face subset optimization to load
+    only 1 letter at a time), and take up a lot of screen space.
+    (Mobile users can't have nice things.) To implement them, each Markdown
+    page has a custom metadata field like "css: drop-caps_de-zs" which is
+    substituted into the compiled HTML like
+    '<body class="pagename drop-caps_de-zs">', allowing defining of multiple
+    drop-caps and customized per page. The 3 drop-caps right now are Goudy
+    ('drop-caps_de-zs'), yinit ('drop-caps_yinit'), and
+    De-Zs/Deutsche Zierschrift ('drop-caps_de-zs'). Goudy is for
+    literary/historical/humanities pages, yinit is for technical/scientific
+    pages, and De-Zs is for everything else.
+    */
+
+@media only screen and (min-width: 65ch) {
+  .drop-caps > p:first-child::first-letter,
+  .drop-caps > blockquote:first-child + p::first-letter,
+  .drop-caps > .epigraph:first-child + p::first-letter
+  {
+      font-style: normal;
+      font-weight: normal;
+      float: left;
+  }
+
+  /*
+    rst2html5 adds a section with a .document class, so all posts/notes
+    generated from reStructuredText files instead of markdown need this.
+  */
+  .drop-caps > .document > p:first-child::first-letter,
+  .drop-caps > .document > blockquote:first-child + p::first-letter,
+  .drop-caps > .document > .epigraph:first-child + p::first-letter
+  {
+      font-style: normal;
+      font-weight: normal;
+      float: left;
+  }
+}

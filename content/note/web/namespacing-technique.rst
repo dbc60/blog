@@ -4,7 +4,7 @@ date: 2019-06-04T05:50:26-04:00
 draft: true
 categories: [software]
 tags: [design, web]
-cssDetail: drop-caps-cheshire
+cssDetail: drop-caps_cheshire
 ---
 
 In `Battling BEM CSS`_, David Berner recommends using namespaces. He says

@@ -3,7 +3,7 @@ title: "Software Engineer II"
 date: 2019-04-08T11:46:00-04:00
 draft: true
 categories: career
-cssDetail: drop-caps-goudy
+cssDetail: drop-caps_goudy
 ---
 
 The Software Engineer II develops, troubleshoots, tests and debugs software components of moderate scope and complexity; shares responsibility for planning and implementation with team members and assumes increasing responsibility as a solid technical contributor in a group; works on technical solutions in a particular area of specialty; output is peer reviewed, and the engineer is a capable peer reviewer of other team members’ work.

@@ -2723,7 +2723,7 @@ hr {
         body.drop-caps-cheshire #markdownBody > p:first-child::first-letter,
         body.drop-caps-cheshire #markdownBody > blockquote:first-child + p::first-letter,
         body.drop-caps-cheshire #markdownBody > .epigraph:first-child + p::first-letter,
-        #markdownBody .drop-cap-kanzlcheshireei::first-letter {
+        #markdownBody .drop-cap-cheshire::first-letter {
             font-size: 6.625em;
         }
         body.drop-caps-kanzlei #markdownBody > p:first-child::first-letter,

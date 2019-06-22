@@ -1,0 +1,51 @@
+/* Cheshire */
+@media only screen and (min-width: 65ch) {
+  /*  All of these numbers are magic.
+      */
+  .drop-caps_cheshire > p:first-child::first-letter,
+  .drop-caps_cheshire > blockquote:first-child + p::first-letter,
+  .drop-caps_cheshire > .epigraph:first-child + p::first-letter,
+  .drop-caps_cheshire::first-letter,
+  .drop-caps_cheshire > .document > p:first-child::first-letter,
+  .drop-caps_cheshire > .document > blockquote:first-child + p::first-letter,
+  .drop-caps_cheshire > .document > .epigraph:first-child + p::first-letter,
+  .drop-caps_cheshire > .document .drop-caps_cheshire::first-letter {
+    font-family: Cheshire Initials;
+    font-size: 6.75em;
+    line-height: 1;
+    margin: 0.02em 0.04em -0.25em 0;
+    opacity: 0.9;
+  }
+}
+
+@media only screen and (min-width: 65ch) {
+  /*  Compensating for responsive line-height reduction. */
+  @media only screen and (max-width: 120ch) {
+    .drop-caps_cheshire > p:first-child::first-letter,
+    .drop-caps_cheshire > blockquote:first-child + p::first-letter,
+    .drop-caps_cheshire > .epigraph:first-child + p::first-letter,
+    .drop-caps_cheshire::first-letter,
+    .drop-caps_cheshire .document > p:first-child::first-letter,
+    .drop-caps_cheshire .document > blockquote:first-child + p::first-letter,
+    .drop-caps_cheshire .document > .epigraph:first-child + p::first-letter,
+    .document > .drop-caps_cheshire::first-letter {
+        font-size: 6.25em;
+    }
+  }
+}
+
+@media only screen and (min-width: 65ch) {
+  /*  Compensating for responsive line-height reduction. */
+  @media only screen and (max-width: 100ch) {
+    .drop-caps_cheshire > p:first-child::first-letter,
+    .drop-caps_cheshire > blockquote:first-child + p::first-letter,
+    .drop-caps_cheshire > .epigraph:first-child + p::first-letter,
+    .drop-caps_cheshire::first-letter,
+    .drop-caps_cheshire .document > p:first-child::first-letter,
+    .drop-caps_cheshire .document > blockquote:first-child + p::first-letter,
+    .drop-caps_cheshire .document > .epigraph:first-child + p::first-letter,
+    .document > .drop-caps_cheshire::first-letter {
+      font-size: 6.3125em;
+    }
+  }
+}
