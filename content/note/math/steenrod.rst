@@ -6,10 +6,10 @@ categories: math
 tags: [overview]
 ---
 
-I'm not sure why I saved this particular bit of information on a mathmetician named Steenrod.
+I am not sure why I saved this particular bit of information on a mathmetician
+named Steenrod. It's a collection of four essays on mathematical writing,
+commissioned by the American Mathematical Society
 <!--more-->
-
-A collection of four essays on mathematical writing, commissioned by the American Mathematical Society:
 
 The committee was authorized by the Council of the American Mathematical Society in August 1968; the last appointment to it was made by Oscar Zariski, then president, in March 1969. The charge was to prepare "a pamphlet on expository writing of books and papers at the research level and at the level of graduate texts."
 

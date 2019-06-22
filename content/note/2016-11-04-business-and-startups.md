@@ -9,8 +9,6 @@ tags: [business development, startup]
 Things about business development and startups
 <!--more-->
 
-## Signs You Might be Playing Startup
-
 Notes from [Too Many Startups Like Playing Startup](https://www.groovehq.com/blog/startups-playing-startup).
 
 The author says there are seven signs:

@@ -6,16 +6,8 @@ categories: [projects, software]
 tags: [data backup, service, cloud, application]
 ---
 
-I'd like to see if I can make a data backup service.
+I would like to see if I can make a data backup service.
 <!--more-->
-
-## Things To Do
-
-- Planning
-- Architecture
-- Features
-
-## Project Goals
 
 There are two, or possibly three backup service levels for which I'd like to provide:
 

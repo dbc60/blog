@@ -9,9 +9,7 @@ tags: [windows, kernel, debugging, windbg]
 Using windbg to debug kernel drivers, such as the FIM mini filter.
 <!--more-->
 
-## Running Windbg against VM2
-
-See [Setting Up Kernel-Mode Debugging over a Network Cable](https://msdn.microsoft.com/en-us/library/windows/hardware/hh439346%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396) for details.
+These notes are about running windbg against a Virtual Box VM. They are, in part, based on information from [Setting Up Kernel-Mode Debugging over a Network Cable](https://msdn.microsoft.com/en-us/library/windows/hardware/hh439346%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396).
 
 First, make sure you can ping the IP address of the host computer from the target computer. Next, on the target computer, run `bcdedit /debug on` and `bcdedit /dbgsettings net hostip:w.x.y.z port:n`. For example, if the host computer's IP address is `192.168.1.137`:
 

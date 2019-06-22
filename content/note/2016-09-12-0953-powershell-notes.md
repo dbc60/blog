@@ -9,8 +9,6 @@ tags: [powershell]
 Powershell notes, examples, links and reference material.
 <!--more-->
 
-## Escape Sequences
-
 Today I learned that to escape double quotes in PowerShell scripts they must be preceded by a backtick (`` ` ``). For example:
 
 ```ps1

@@ -6,11 +6,8 @@ categories: [career]
 tags: [job hunting]
 ---
 
-Notes on finding a new job.
-<!--more-->
-
-## Current Employment
 I work for Threat Stack, Inc., 55 Summer Street, Boston, MA. I'm on the Agent Team, also known as the Committee to Release Agents to Production (CRAP). Specifically, I _am_ the _Windows_ Agent Team (so, I work on Windows CRAP).
+<!--more-->
 
 ## Some Advice for Finding a New Job
 These notes are taken from a [blog post](https://medium.freecodecamp.com/5-key-learnings-from-the-post-bootcamp-job-search-9a07468d2331#.kxrh48tuk) by a junior programmer who spent three months looking for a job after taking a 12 week coding bootcamp (Hack Reactor). While he's young and very junior, he is also smart. As an introduction, he plotted his "recruiting funnel" that shows the number of jobs to which he applied and the numbers of each job opportunity that reached each stage of his job search. His funnel stages were:

@@ -6,12 +6,8 @@ categories: [misc]
 tags: [dining, boston, fenway, mfa, parking]
 ---
 
-Here's a list of places to eat near the MFA.
+Here's a list of places to eat near the MFA. This is a list from Ryan Plessner. It's particularly good for places near the MFA on a Red Sox game night. He says, "most places in Fenway are actually pretty open by 7:10. But otherwise, I'd say either restaurants at the prudential or Audubon circle."
 <!--more-->
-
-## Food Near the Museum of Fine Arts (MFA)
-
-This is a list from Ryan Plessner. It's particularly good for places near the MFA on a Red Sox game night. He says, "most places in Fenway are actually pretty open by 7:10. But otherwise, I'd say either restaurants at the prudential or Audubon circle."
 
 - At Northeastern there's Symphony Sushi, Ginger Exchange and if you want to eat with your hands Lucy’s Cafe. These are probably the closest to MFA
 - In Fenway: Sweet Cheeks and Tasty Burger are probably the best bets for getting seated. Tapestry will be empty, because it is always empty, but that’s because its incredibly overpriced and not good

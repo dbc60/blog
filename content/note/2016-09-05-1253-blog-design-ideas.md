@@ -9,10 +9,6 @@ tags: [blog, css, styling, design]
 Here are some styling changes to try.
 <!--more-->
 
-## Sidebar
+For a sidebar try right alignment instead of centering both for the heading and the list. It should look more dramatic. You might have to remove the bullets, and use some other kind of separator to make the list look nice.
 
-- Try right alignment instead of centering both for the heading and the list. It should look more dramatic. You might have to remove the bullets, and use some other kind of separator to make the list look nice.
-
-## Footer
-
-- Similar to the sidebar, try right alignment on the footer-list that's already floated on the right.
+For a footer, similar to the sidebar, try right alignment on the footer-list that's already floated on the right.

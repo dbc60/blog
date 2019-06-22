@@ -94,11 +94,14 @@ Secondary color. The accent color can be omplemented with more subtle shades, to
 be used on borders, backgrounds, or even the body text.
 */
 code, pre {
-  background: #f8f9fa;
+  background-color: slategray;
   border-bottom: 1px solid #ced4da;
-  color: black;
 }
 
 pre {
   border-left: 2px solid black;
+}
+
+.language-sql {
+  background-color: slategray;
 }

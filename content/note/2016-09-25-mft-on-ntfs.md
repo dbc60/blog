@@ -6,12 +6,10 @@ categories: [software]
 tags: [windows, mft, ntfs]
 ---
 
-How to find and read the Master File Table (MFT) on NTFS
+How to find and read the Master File Table (MFT) on NTFS. A program must have administrator or system privileges to access the master file table. I think what's best is to create a service to do the hard work, and a client program to access the results.
 <!--more-->
 
-## Objectives
-
-A program must have administrator or system privileges to access the master file table. I think what's best is to create a service to do the hard work, and a client program to access the results. I'd like to create a program similar to Everything from voidtools.com that lists all files in a volume. In fact, it should list all volumes attached to the local host as well as all files on each volume. I'll deal with network attached drives and mapped volumes later.
+I'd like to create a program similar to Everything from voidtools.com that lists all files in a volume. In fact, it should list all volumes attached to the local host as well as all files on each volume. I'll deal with network attached drives and mapped volumes later.
 
 How can I present that information to the user? I need either a native GUI app or a web server/browser interface. They both require some design and interface decisions. The former requires some decisions regarding GUI libraries, or writing the interface from scratch, ala Handmade Hero. The latter requires knowledge of HTTP(S), CSS, JavaScript (or some language that compiles to JavaScript, like [TypeScript](https://www.typescriptlang.org/)), REST API development and maybe some kind of RPC interface.
 

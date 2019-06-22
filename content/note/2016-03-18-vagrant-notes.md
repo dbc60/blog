@@ -9,9 +9,7 @@ tags: [vagramt. devops, admin]
 Using vagrant to create, and manipulate virtual machines.
 <!--more-->
 
-## Running an Established Vagrant Environment
-
-A recent vagrant session.
+Here is an example of running vagrant in an established vagrant environment
 
 ```shell
 C:\> P:

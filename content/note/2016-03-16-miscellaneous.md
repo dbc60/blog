@@ -6,7 +6,7 @@ categories: misc
 tags: [writing, finances]
 ---
 
-The directory structure in your repository and the configuration of Jekyll and Compass are tied closely together.
+The directory structure in your repository and the configuration of Jekyll and Compass are tied closely together. These notes also cover Windows 10 Developer Mode, how to make the Windows control panels more accessible, UPS backup power, and several random thoughts.
 <!--more-->
 
 ## Windows 10 Developer Mode

@@ -7,12 +7,10 @@ categories: math
 tags: [3d, graphics]
 ---
 
-World, view and projection matrices.
+Notes on world, view and projection matrices.
 
-<!--more-->
-
-## Homogeneous Coordinates
 3D vertices can be represented as a \\((x, y, z)\\) triplet, but it's far more useful to use a \\((x, y, z, w)\\) vector. According to [Tutorial 3: Matrices](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-3-matrices/), \\(w\)) takes on one of two values that determines how the vector should be interpreted:
+<!--more-->
 
 - if `w == 1`, then the vector `(x, y, z, w)` is a position in space.
 - if `w == 0`, then the vector `(x, y, z, w)` is a direction.

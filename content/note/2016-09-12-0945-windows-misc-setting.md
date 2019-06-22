@@ -9,10 +9,6 @@ tags: [windows, kernel, debug, boot, config]
 Registry, boot (bcdedit), and other settings
 <!--more-->
 
-## Registry Settings
-
-## Boot Settings
-
 These may overlap with those in [Kernel Debugging](2016-07-29-kernel-debugging).
 
 To help with [Window does not appear in front](http://answers.microsoft.com/en-us/windows/forum/windows_7-performance/windows-7-explorer-window-does-not-appear-in-front/1199682e-2415-4a7a-bf21-f57a972122ee), see the following links:

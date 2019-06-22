@@ -6,10 +6,8 @@ categories: [projects]
 tags: [art, 3d, graphics]
 ---
 
-I've decided I'm going to learn how to use Krita and Blender to make 2D and 3D digital art.
+I have decided I'm going to learn how to use Krita and Blender to make 2D and 3D digital art. I should probably record key-bindings as they come up, and workflow patterns.
 <!--more-->
-
-I should probably record key bindings as they come up, and workflow patterns.
 
 ## Environment
 

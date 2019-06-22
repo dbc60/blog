@@ -9,7 +9,7 @@ tags: [renovation, kitchen]
 Install the new kitchen cabinets.
 <!--more-->
 
-## Things That Need to be Done
+Here is a quick list of things that still need to be done:
 
 - Planning
 - Floor

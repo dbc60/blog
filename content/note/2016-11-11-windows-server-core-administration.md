@@ -9,9 +9,7 @@ tags: [windows, administration]
 Here are some key commands for running Windows Update and other tools on Windows Server 2012 R2 Core.
 <!--more-->
 
-## Configure Windows Update
-
-Log in as an administrator and `cd \Windows\System32`. It seems to be the place where scripts and services are located. Run the following commands to set Windows Update to run automatically, and to automatically detect new updates.
+First,  configure Windows Update. Log in as an administrator and `cd \Windows\System32`. It seems to be the place where scripts and services are located. Run the following commands to set Windows Update to run automatically, and to automatically detect new updates.
 
 ```doscon
 C:\Windows\System32>Cscript SCregEdit.wsf /Au /v

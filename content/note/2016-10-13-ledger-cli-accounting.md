@@ -9,12 +9,6 @@ tags: [accounting, finances, budgeting]
 Better budgeting through automated transactions and virtual accounts.
 <!--more-->
 
-## Virtual Accounts are Budgets
-
-Really!
-
-## Ledger Format
-
 The initial character of each line determines what the line means and how it should be interpreted. Allowable initial characters are:
 
 - Number: denotes a transaction. See below for a description.

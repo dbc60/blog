@@ -9,8 +9,6 @@ tags: [ai, ml]
 Stuff about neural networks I found on the net that looked interesting
 <!--more-->
 
-## Types of Neural Networks
-
 Fjodor Van Veen posted [a mostly complete chart of neural networks](http://www.asimovinstitute.org/neural-network-zoo/#) (dated 2016.09.14). He lists 13 cell types and a labeled diagram, node map, for each of 27 neural networks. Each node map shows the types of cells it contains and how they are connected. The 13 cell types are:
 
 1. Backfed Input Cell

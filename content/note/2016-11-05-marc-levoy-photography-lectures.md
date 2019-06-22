@@ -2,20 +2,19 @@
 title: Marc Levoy Photography Course
 date: 2016-11-05
 draft: true
+math: true
 categories: [hobbies]
 tags: [photography]
 ---
 
-Notes from [Lectures on Digital Photography](https://sites.google.com/site/marclevoylectures/home), by Marc Levoy.
+Notes from [Lectures on Digital Photography](https://sites.google.com/site/marclevoylectures/home), by Marc Levoy. These notes cover most, if not all of his first lectur.
 <!--more-->
-
-## Lecture 1
 
 The depth of field equation is:
 
-$$DoF = \frac{2NCU^2}{F^2}$$
+\[DoF = \frac{2NCU^2}{F^2}\]
 
-where $$N$$ is the _F_ number, $$C$$ is the Circle of Confusion, $$U$$ is the distance to the subject, and $$F$$ is the focal length. Details to follow during the course.
+where \\(N\\) is the _F_ number, \\(C\\) is the Circle of Confusion, \\(U\\) is the distance to the subject, and \\(F\\) is the focal length. Details to follow during the course.
 
 We'll talk about:
 
@@ -29,25 +28,25 @@ and lots of other stuff. See if you can find the syllabus.
 
 Readings: London, Ch. 2 (Camera) & 13 (History).
 
-### Laws of Perspective
+## Laws of Perspective
 
 Rules:
 - Light travels in a straight line
 - Light converges at the eye
 
-Natural Perspective vs Linear Perspective. See the handout on [image formation][1]. To open the slides in a new window, click <a href="{{ site.url }}/assets/Marc Levoy Course/Week01/image-formation-23mar16.key.pdf" target="_blank">this link</a>.
+Natural Perspective vs Linear Perspective. See the handout on [image formation][1]. To open the slides in a new window, click <a href="{{ Site.url }}/assets/Marc Levoy Course/Week01/image-formation-23mar16.key.pdf" target="_blank">this link</a>.
 
-[1]:{{ site.url }}/assets/Marc Levoy Course/Week01/image-formation-23mar16.key.pdf
+[1]:{{ Site.url }}/assets/Marc Levoy Course/Week01/image-formation-23mar16.key.pdf
 
 - A "full frame" Canon 5D Mark III has a sensor size of 24mm x 36mm.
-- Nikon D5100 has a sensor size  of APS-C (15.7 mm x 23.6mm) and a crop factor of $$1.5x$$ ($$36/23.67$$ is approximately $$1.5$$).
-- Nexus 6P has a sensor size of 4.5mm x 6.2mm, which gives it a crop factor of $$6x$$.
+- Nikon D5100 has a sensor size  of APS-C (15.7 mm x 23.6mm) and a crop factor of 1.5x (\\(\frac{36}{23.67}\\) is approximately \\(1.5\\)).
+- Nexus 6P has a sensor size of 4.5mm x 6.2mm, which gives it a crop factor of \\(6x\\).
 
-Longest Exposure Time. On average, humans can hand-hold down to $$1/60$$ second. There is a _rule of thumb_ that the longest exposure is $$1/f$$, where $$f$$ is the 35mm equivalent focal length. So, if you have a 90mm lense on a camera with a crop factor of $$2x$$, then $$1/180$$ second is the longest exposure you should use while hand-holding the camera.
+Longest Exposure Time. On average, humans can hand-hold down to 1/60 second. There is a _rule of thumb_ that the longest exposure is \\(1/f\\), where \\(f\\) is the 35mm equivalent focal length. So, if you have a 90mm lense on a camera with a crop factor of \\(2x\\), then \\(1/180\\) second is the longest exposure you should use while hand-holding the camera.
 
-For my Nikon DX 18-55mm lense, and D5100 camera (with a crop factor of $$1.5x$$), the longest hand-held exposure I can manage is as long as $$1/(18 x 1.5)$$ = $$1/27$$ second, down to $$1/(55 x 1.5) = 1/82.5$$ second. Around these values it has settings for 20, 25, 30, 40, 50, 60, 80 and 100. I might be able to get away with 25 and 80, but I should probably stick to a range of 30 to 100, depending on the zoom. The more the zoom, the shorter my maximum exposure time is to avoid bluring the picture with my hand.
+For my Nikon DX 18-55mm lense, and D5100 camera (with a crop factor of \\(1.5x\\), the longest hand-held exposure I can manage is as long as \\(\frac{1}{18 x 1.5} = \frac{1}{27}\\) second, down to \\(\frac{1}{55 x 1.5} = \frac{1}{82.5}\\) second. Around these values it has settings for 20, 25, 30, 40, 50, 60, 80 and 100. I might be able to get away with 25 and 80, but I should probably stick to a range of 30 to 100, depending on the zoom. The more the zoom, the shorter my maximum exposure time is to avoid bluring the picture with my hand.
 
-### Assignment 1
+## Assignment 1
 
 [Taking 'bad' photos](https://sites.google.com/site/marclevoylectures/assignments/assign1-bad-photos). The camera in automatic mode will try to take care of the technical aspects of photography for you, and just let you frame the scene and shoot. The goal of this assignment is to produce photographs that the camera might consider "bad" in some way, but are nonetheless interesting to look at, and even artistic.
 

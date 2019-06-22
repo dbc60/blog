@@ -8,11 +8,8 @@ tags: [steampunk]
 
 Steampunk notes and related delights.
 
-<!--more-->
-
-## Steampunk Titles
-
 Use [these titles](http://2016.steampunkworldsfair.com/about/about-jeff-mach/steampunk-titles-available/) as inspiration. They have been created by Jeff Mach for his Steampunk rock opera, "[Absinthe Heroes](https://www.kickstarter.com/projects/jeffmach/absinthe-heroes-the-darkly-humorous-steampunk-rock/description)."
+<!--more-->
 
 - Inspector-General of All Cheeses
 - Lord Commander of the Twinkienibbles

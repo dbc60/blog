@@ -6,11 +6,10 @@ categories: [projects]
 tags: [blender]
 ---
 
-I'd really like to learn how to use this marvelous tool.
+I would really like to learn how to use this marvelous tool. I found an inspiring video, [Successfully Developing Artwork in Blender](https://www.youtube.com/watch?v=TEl8Z-Gemro), where Zacharias Reinhardt talks about his workflow for developing static images and short animations in Blender.
 <!--more-->
 
-## Blender Workflow
-I found an inspiring video, [Successfully Developing Artwork in Blender](https://www.youtube.com/watch?v=TEl8Z-Gemro), where Zacharias Reinhardt talks about his workflow for developing static images and short animations in Blender. His general workflow is:
+His general workflow is:
 
 - Preparation
 - Research & Testing

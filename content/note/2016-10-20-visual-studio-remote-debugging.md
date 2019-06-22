@@ -9,8 +9,6 @@ tags: [debugging, software development, visual studio]
 Remote debugging is a useful technique for debugging Windows services. First, the remote host needs to be properly configured.
 <!--more-->
 
-## Preface
-
 The idea is to install `msvsmon.exe` on a remote host so Visual Studio 2015 can
 attach to it and perform remote debugging tasks. Please refer to the [full
 instructions](https://msdn.microsoft.com/en-us/library/y7f5zaaa.aspx). Note

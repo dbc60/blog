@@ -6,10 +6,9 @@ categories: [projects]
 tags: [games]
 ---
 Notes on game design and programming from Casey Muratori's Handmade Hero videos.
-<!--more-->
 
-## The Workspace
 A good directory layout can help keep files organized. Jekyll does this well. The Go programming language and the simple directory hierarchy Casey Muratori uses for [Handmade Hero](https://handmadehero.org/) are also good models.
+<!--more-->
 
 The Handmade Hero model is as simple a directory layout as anyone could ask for. There are four directories. A `/handmade/code` directory for all C source files and headers, `/handmade/misc` for shell scripts, editor configuration and other stuff, `/handmade/data` for test assets and `/build` where all the build results go.
 

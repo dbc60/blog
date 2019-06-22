@@ -6,13 +6,11 @@ categories: [software]
 tags: [javascript]
 ---
 
-Learning to learn JavaScript
+Learning to learn JavaScript. At one point in my career, I needed to learn JavaScript and Node.js. The versions we were using were quite old at the time. It was 2018, and we were using some old version of Node, like v4.1. It was horrible.
 <!--more-->
 
 ## Project Directory Layouts
-
-### One Layout
-This layout is what one team uses for their ReactJS projects.
+I'm sure there are several ways to organize one's project direcgtories. This layout is what one team uses for their ReactJS projects.
 
 ```
 project/
@@ -80,8 +78,8 @@ app/
 |-- routes.js
 ```
 
-
 ## JavaScript Libraries
+
 - redux: keeps track of all the state (UI and domain) in a single object.
 - immutable.js: for the immutable data structures which play nicely with the React ecosystem. It also has a rich set of data structures taht aren't found natively within JavaScript. For example, one could make use of `Records` to simulate domain models.
 - react-router: for routing within the application.

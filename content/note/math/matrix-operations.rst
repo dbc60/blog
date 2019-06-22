@@ -6,6 +6,9 @@ categories: math
 tags: [matrices]
 ---
 
+Here are some notes on some matrix operations. Specifically, inverse and transpose.
+<!--more-->
+
 *******
 Inverse
 *******

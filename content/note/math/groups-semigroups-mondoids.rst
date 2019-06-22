@@ -1,18 +1,13 @@
 ---
-title: Groups, Semigroups, and Monoids
+title: Monoids, Groups, and Semigroups
 date: 2017-12-14T05:48:00-04:00
 draft: true
 categories: math
 tags: [groups,semigroups,monoids]
 ---
 
-.. _monoid:
-
-*******
-Monoids
-*******
-
 Today I learned that a monoid is simply a set with an associative binary operation, and an identity element. In other words, it is a `semigroup <semigroups_>`_ with an identity element.
+<!--more-->
 
 For example, the set of integers under addition forms a monoid, because addition is associative and zero is the identity element. Similarly, integers and reals form monoids under addition and multiplication (where the identity elements are zero and one, respectively).
 

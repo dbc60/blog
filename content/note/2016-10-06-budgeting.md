@@ -9,11 +9,9 @@ tags: [skills, budgeting, finances]
 How to spend money without going broke
 <!--more-->
 
-## File Organization
+The plan is to keep a journal for expenses and budgeting. The journal shall be in a text file using the format [Ledger CLI](http://www.ledger-cli.org) needs for generating reports. See the [Ledger 3 docs](http://www.ledger-cli.org/3.0/doc/ledger3.html) for details.
 
-I'm going to keep a journal for expenses and budgeting. The journal shall be in a text file using the format [Ledger CLI](http://www.ledger-cli.org) needs for generating reports. See the [Ledger 3 docs](http://www.ledger-cli.org/3.0/doc/ledger3.html) for details.
-
-I'm going to use two files. The first one, `cuthbertson-stavis-budget.dat` will keep the journal of daily expenses. The second one, `cuthbertson-stavis-accounts.dat` will declare the names of the actual accounts in play. It's supposed to help [keep the journal consistent](http://www.ledger-cli.org/3.0/doc/ledger3.html#Keeping-it-Consistent).
+Use two files. The first one, `cuthbertson-stavis-budget.dat` will keep the journal of daily expenses. The second one, `cuthbertson-stavis-accounts.dat` will declare the names of the actual accounts in play. It's supposed to help [keep the journal consistent](http://www.ledger-cli.org/3.0/doc/ledger3.html#Keeping-it-Consistent).
 
 ## The Five Budget Categories
 

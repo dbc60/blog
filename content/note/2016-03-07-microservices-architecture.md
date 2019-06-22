@@ -7,10 +7,9 @@ tags: [web]
 ---
 
 What is a microservice architecture and how can I put it to use?
-<!--more-->
 
-## Goals
 I'd like to understand how to design a highly scalable web application where it can serve lots of requests, provide dashboards and logs of the ongoing and historical activity on the site, and make the data available for automated analysis. It should be secure, so the data that can be viewed by any particular party is limited to a subset of the total data in the system and that subset is defined by access control rules based on the party's authentication and authorization.
+<!--more-->
 
 ## The Monolithic Application Architecture
 A monolithic architecture typically consists of a three-tier design. The front end is the presentation tier, which might be an application-specific GUI on the desktop or in a browser. The middle tier is the application, and at the back end is a data tier. The application delivers data to the browser, which provides the means for users to request information from the application, view it, and (usually) manipulate or change it. The application reads and writes information from and to the data tier, where a database or other storage device or application organizes and maintains it. The application has the logic for interacting with the other two tiers and for transforming the data as requested by the user.

@@ -5,11 +5,8 @@ draft: true
 categories: [projects, software, ideas]
 ---
 
-How about making a sampler of design, code and tools?
-<!--more-->
-
-## Project Sampler
 I was just thinking this morning of a project to display what I can do on Windows. Mostly, it covered using Windows I/O APIs (graphics, sound, input from a keyboard, mouse, game controller or pen and tablet). I then had a wild idea to expand on that and make a code sampler, something like an embroidery sampler done to show off a needleworkers skill.
+<!--more-->
 
 In this case, the sampler would consists of working code examples to demonstrate I/O, graphics and sound on computer, web and handheld mobile devices. The samples would have to work on several operating systems where possible. I should aim for Windows, FreeBSD, Linux and Mac OSX for desktop and server samples. For client-side samples, I should include Android and IOS.
 

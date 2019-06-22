@@ -9,8 +9,6 @@ tags: [design]
 Bret Victor's essay on Learnable Programming
 <!--more-->
 
-## LEARNABLE PROGRAMMING
-
 Designing a programming system for understanding programs
 
 - [Bret Victor](http://worrydream.com/) / September 2012

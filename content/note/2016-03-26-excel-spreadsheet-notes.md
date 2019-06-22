@@ -9,8 +9,6 @@ tags: [excel, spreadsheets]
 Notes on using Excel.
 <!--more-->
 
-## Excel Key Bindings
-
 See [Excel Keyboard Shortcuts](http://www.asap-utilities.com/excel-tips-shortcuts.php) online for a long list. Here are some important ones:
 
 - tab: move right one column

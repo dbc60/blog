@@ -9,7 +9,7 @@ tags: [renovation, kitchen]
 We need to remodel our old kitchen so it is more functional an more pleasant to work in. The floor tiles are chipping and our cabinets are falling apart.
 <!--more-->
 
-## Kitchen Renovation Project Summary
+## Project Summary
 The general idea is to:
 
 - remove the cabinet tower and the cabinets over the counter between the kitchen and dining room to open up the space.

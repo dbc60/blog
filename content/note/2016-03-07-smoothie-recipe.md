@@ -6,11 +6,8 @@ categories: [misc]
 tags: [recipes]
 ---
 
-This recipe is a variation on [The Perfect Pre-workout Green Smoothie Recipe](http://simplegreensmoothies.com/green-smoothie-recipes/pre-workout-green-smoothie).
-
+This recipe is a variation on [The Perfect Pre-workout Green Smoothie Recipe](http://simplegreensmoothies.com/green-smoothie-recipes/pre-workout-green-smoothie). That site suggests serving it 30-60 minutes either before or after a workout. Feel free to adjust the ingredients and quantities to suit your own taste. This recipe makes about 2 16oz servings.
 <!--more-->
-
-That site suggests serving it 30-60 minutes either before or after a workout. Feel free to adjust the ingredients and quantities to suit your own taste. This recipe makes about 2 16oz servings.
 
 ## Ingredients
 
