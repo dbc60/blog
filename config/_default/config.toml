@@ -30,37 +30,37 @@ pygmentsCodefencesGuessSyntax=true
 [menu]
   [[menu.nav]]
     name = "Home"
-    pre = "home"
+    #pre = "home"
     url = "/"
     weight = 1
   [[menu.nav]]
     name = "Notes"
-    pre = "edit"
+    #pre = "edit"
     url = "/note/"
     weight = 2
   [[menu.nav]]
     name = "About"
-    pre = "smile"
+    #pre = "smile"
     url = "/about/"
     weight = 3
   [[menu.nav]]
     name = "Now"
-    pre = "coffee"
+    #pre = "coffee"
     url = "/now/"
     weight = 4
   [[menu.nav]]
     name = "Tags"
-    pre = "tag"
+    #pre = "tag"
     url = "/tags/"
     weight = 5
   [[menu.nav]]
     name = "Categories"
-    pre = "bookmark"
+    #pre = "bookmark"
     url = "/categories"
     weight = 6
   [[menu.nav]]
     name = "RSS"
-    pre = "rss"
+    #pre = "rss"
     url = "/index.xml"
     weight = 7
 

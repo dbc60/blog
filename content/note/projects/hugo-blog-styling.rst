@@ -109,6 +109,8 @@ With Hugo's constraints, I kind of like:
 Simiilarly colors for the drop-caps block would be modifiers, such as ``static/
 modifier/drop-caps_green.css``.
 
+I thought I might have separate files for modifying the drop-cap fonts based on screen width. I consider files like ``static/drop-caps/drop-caps_goudy-120.css`` for screens with a max-width of 120ch. After some experimentation I simplified, and just included a set of ``@media`` sections in the existing files.
+
 When should layout HTML be placed in a subdirectory of ``layouts`` and when
 should it be placed under ``layouts/partials``? I think the answer is to place
 HTML under a subdirectory of ``layouts/`` when there is content in a

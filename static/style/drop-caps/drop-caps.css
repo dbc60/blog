@@ -18,9 +18,9 @@
     */
 
 @media only screen and (min-width: 65ch) {
-  .drop-caps > p:first-child::first-letter,
-  .drop-caps > blockquote:first-child + p::first-letter,
-  .drop-caps > .epigraph:first-child + p::first-letter
+  .c-drop-caps > p:first-child::first-letter,
+  .c-drop-caps > blockquote:first-child + p::first-letter,
+  .c-drop-caps > .epigraph:first-child + p::first-letter
   {
       font-style: normal;
       font-weight: normal;
@@ -31,9 +31,9 @@
     rst2html5 adds a section with a .document class, so all posts/notes
     generated from reStructuredText files instead of markdown need this.
   */
-  .drop-caps > .document > p:first-child::first-letter,
-  .drop-caps > .document > blockquote:first-child + p::first-letter,
-  .drop-caps > .document > .epigraph:first-child + p::first-letter
+  .c-drop-caps > .document > p:first-child::first-letter,
+  .c-drop-caps > .document > blockquote:first-child + p::first-letter,
+  .c-drop-caps > .document > .epigraph:first-child + p::first-letter
   {
       font-style: normal;
       font-weight: normal;
