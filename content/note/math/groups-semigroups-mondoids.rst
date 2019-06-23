@@ -6,6 +6,8 @@ categories: math
 tags: [groups,semigroups,monoids]
 ---
 
+.. _monoid:
+
 Today I learned that a monoid is simply a set with an associative binary operation, and an identity element. In other words, it is a `semigroup <semigroups_>`_ with an identity element.
 <!--more-->
 
@@ -63,7 +65,7 @@ The Hierarchy
 
 * A `magma`_ is a set with a binary operation that is closed on the set.
 * A `semigroup`_ is a magma where the binary operation is `associative <associativity_>`_.
-* A `monoid`_ is a semigroup with an `identity`_ element.
+* A monoid_ is a semigroup with an `identity`_ element.
 * A `group`_ is a monoid where each element of the set has an inverse element under the given binary operation.
 
 **********

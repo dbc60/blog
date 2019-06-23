@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* Font overview: loads Source Serif Pro for body, Source Sans Pro for ToC, and yinit/Goudy/Deutsche Zierschrift for 3 kinds of drop caps (enabled in /static/css/default.css) */
+/* Font overview: loads Source Serif Pro for body, Source Sans Pro for ToC, and 5 kinds of drop caps via Yinit, Goudy, Deutsche Zierschrift, Cheshire, and Kanzlei Initialen (enabled in /static/style/drop-caps/*) */
 
 /********************/
 /* SOURCE SERIF PRO */

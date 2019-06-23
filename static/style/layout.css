@@ -26,3 +26,7 @@ li.page-item {
   float: left;
   margin-right: 1ch;
 }
+
+#site-title, #site-subtitle, .title-article {
+  font-variant-caps: small-caps;
+}

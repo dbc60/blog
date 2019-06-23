@@ -5,7 +5,7 @@
         <!-- Paginates through content/post/*.md -->
         {{- $paginator := .Paginate (where .Pages "Type" "post") -}}
         {{- range $paginator.Pages -}}
-        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <h2 class="title-article"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         <div class="article-meta-data">
             {{ partial "date-and-tags.html" . -}}
             <!-- this renders based on layouts/_default/summary.html (either the
