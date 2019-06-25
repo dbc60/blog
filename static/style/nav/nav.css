@@ -1,0 +1,13 @@
+#site-nav {
+  padding: 0;
+  background-color: whitesmoke;
+}
+
+#site-nav .nav-link {
+  color: black;
+}
+
+.nav-link_vertical {
+  display: block;
+  padding: 1ch 2ch;
+}

@@ -564,6 +564,26 @@ Block Element Modifier
 
 The `Block Element Modifier <bem methodology_>`_ is a way to organize web page design and development. Blocks are the primary unit of organization. As such, each block is stored in a separate folder, and each technology (e.g., HTML or CSS) is represented by a separate file in the folder. Also, each block has documentation contained in a ``.wiki`` file inside the folder.
 
+A block is a top-level component. For example, a sidebar: ``.sidebar { }``.
+The block is a parent and elements are child items placed with the block. For
+example, the name of a block: ``.sidebar__title { }``. Modifiers can
+manipulate either a block or an element. For example a sidebar on the right of
+a page would have ``sidebar--right`` as a class, and the associated CSS would
+be ``.sidebar--right { }``.
+
+Here is an outline of the CSS one might write for a sidebar:
+
+.. code-block:: css
+
+    /* Block component */
+    .sidebar{}
+
+    /* Element that depends upon the block */
+    .sidebar__title{}
+
+    /* Modifier that changes the style of the block */
+    .sidebar-left{} .sidebar-right{}
+
 *******************************
 Directory Structure Conventions
 *******************************

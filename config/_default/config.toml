@@ -26,7 +26,8 @@ pygmentsCodefencesGuessSyntax=true
   post = "/:filename/"
 
 # See https://feathericons.com/
-# The value of pre is the icon name
+# The value of pre is the icon name. I had code in nav.html to render feather
+# icons in the menu using SVG and the value of `pre` defined here.
 [menu]
   [[menu.nav]]
     name = "Home"

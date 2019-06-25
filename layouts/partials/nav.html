@@ -10,9 +10,7 @@
             {{- $active = "nav-link-active" -}}
           {{- end -}}
         {{- end -}}
-        {{- $featherUrl := print "/images/feather/feather-sprite.svg" -}}
-          {{- $icon := printf "<svg class=\"feather\"><use xlink:href=\"%s#%s\"/></svg>" $featherUrl .Pre -}}
-        {{- $text := print $icon .Name | safeHTML }}
+        {{- $text := print .Name | safeHTML }}
         <a class="nav-link {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
       {{- end }}
       </nav>
