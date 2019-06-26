@@ -1,15 +1,20 @@
 ---
+layout: post
 title: Microservice Archtecture
-date: 2016-03-07
-draft: true
-categories: [software]
-tags: [web]
+categories: notes
+tags:
+  - micrososervices
+excerpt: What is a microservice architecture and how can I put it to use?
 ---
 
-What is a microservice architecture and how can I put it to use?
+## Contents
+{:.no_toc}
 
+= TOC
+{:toc}
+
+## Goals
 I'd like to understand how to design a highly scalable web application where it can serve lots of requests, provide dashboards and logs of the ongoing and historical activity on the site, and make the data available for automated analysis. It should be secure, so the data that can be viewed by any particular party is limited to a subset of the total data in the system and that subset is defined by access control rules based on the party's authentication and authorization.
-<!--more-->
 
 ## The Monolithic Application Architecture
 A monolithic architecture typically consists of a three-tier design. The front end is the presentation tier, which might be an application-specific GUI on the desktop or in a browser. The middle tier is the application, and at the back end is a data tier. The application delivers data to the browser, which provides the means for users to request information from the application, view it, and (usually) manipulate or change it. The application reads and writes information from and to the data tier, where a database or other storage device or application organizes and maintains it. The application has the logic for interacting with the other two tiers and for transforming the data as requested by the user.
@@ -22,21 +27,21 @@ The three-tier architecture lacks scalability, because the functional components
 The four-tier model is designed to create a foundation for excellent performance, device-tailored experiences, and allows for integration of both internal services and applications as well as third-party services and APIs. The [Forrester Four-Tier Engagement Platform](http://blogs.forrester.com/ted_schadler/13-11-20-mobile_needs_a_four_tier_engagement_platform) is divided into client, delivery, aggregation and services layers.
 
 - Client tier.
-  - Responsible for experience delivery.
-  - Leverages the delivery, aggregation and services layers to create device-specific and highly tailored experiences.
-  - Mobile clients.
-  - Wearables.
-  - Internet of Things (IoT).
-  - Web browsers.
-  - Good old-fashion desktop app?
+    - Responsible for experience delivery.
+    - Leverages the delivery, aggregation and services layers to create device-specific and highly tailored experiences.
+    - Mobile clients.
+    - Wearables.
+    - Internet of Things (IoT).
+    - Web browsers.
+    - Good old-fashion desktop app?
 - Delivery tier.
-  - Optimizes content for proper display on device.
-  - Caches content for performant delivery.
-  - Drives personalization by using analytics to monitor user behavior.
+    - Optimizes content for proper display on device.
+    - Caches content for performant delivery.
+    - Drives personalization by using analytics to monitor user behavior.
 - Aggregation tier.
-  - Aggregates and federates services' tier data.
-  - Provides discovery for the underlying service library.
-  - Performs data protocol translation (e.g., SOAP to JSON).
+    - Aggregates and federates services' tier data.
+    - Provides discovery for the underlying service library.
+    - Performs data protocol translation (e.g., SOAP to JSON).
 - Services tier.
     - Existing on-premises systems of record, services, and data.
     - External third-party services (e.g., Box, Twilio, Urban Airship).

@@ -1,20 +1,25 @@
 ---
+layout: post
 title: Budgeting
-date: 2016-10-06
-draft: true
-categories: misc
-tags: [skills, budgeting, finances]
+categories: projects
+tags:
+    - budgeting
+    - planning
+excerpt: How to spend money without going broke
 ---
 
-How to spend money without going broke
-<!--more-->
+## Contents
+{:.no_toc}
 
-The plan is to keep a journal for expenses and budgeting. The journal shall be in a text file using the format [Ledger CLI](http://www.ledger-cli.org) needs for generating reports. See the [Ledger 3 docs](http://www.ledger-cli.org/3.0/doc/ledger3.html) for details.
+- TOC
+{:toc}
 
-Use two files. The first one, `cuthbertson-stavis-budget.dat` will keep the journal of daily expenses. The second one, `cuthbertson-stavis-accounts.dat` will declare the names of the actual accounts in play. It's supposed to help [keep the journal consistent](http://www.ledger-cli.org/3.0/doc/ledger3.html#Keeping-it-Consistent).
+## File Organization
+I'm going to keep a journal for expenses and budgeting. The journal shall be in a text file using the format [Ledger CLI](http://www.ledger-cli.org) needs for generating reports. See the [Ledger 3 docs](http://www.ledger-cli.org/3.0/doc/ledger3.html) for details.
+
+I'm going to use two files. The first one, `cuthbertson-stavis-budget.dat` will keep the journal of daily expenses. The second one, `cuthbertson-stavis-accounts.dat` will declare the names of the actual accounts in play. It's supposed to help [keep the journal consistent](http://www.ledger-cli.org/3.0/doc/ledger3.html#Keeping-it-Consistent).
 
 ## The Five Budget Categories
-
 I've made spreadsheets for budgets, but I don't seem to have any notes on the categories I used. I'm so disappointed. I was hoping to add them to my text-based expense journal.
 
 I'm starting to learn how to use the ledger tool to create reports from a well structured text journal. The documentation suggests five major categories of expenses:
@@ -27,10 +32,9 @@ I'm starting to learn how to use the ledger tool to create reports from a well s
 
 That's a good start. I have several categories and subcategories for expenses, but they are caught up in a spreadsheet somewhere on my home desktop.
 
-I found my notes and [added them here](/projects/budget-design)!
+I found my notes and [added them here]({% post_url /projects/2016-06-12-budget-design %})!
 
 ### Tips for Structuring Accounts
-
 One person recommends the following hierarchy for **Assets**, **Liabilities** and **Income**:
 
     Type : Country : Institution : Account : SubAccount
@@ -56,17 +60,17 @@ For **Expenses** accounts, there are no institutions. In this case it makes more
 
 - Expenses:Pet Care                ; stuff and care for critters.
 - Expenses:Services                ; accounting, laundry, legal, rentals.
-  - Expenses:Services:Accounting
-  - Expenses:Services:Laundry
+    - Expenses:Services:Accounting
+    - Expenses:Services:Laundry
 - Expenses:Subscriptions           ; newspapers, magazines, memberships, professional dues.
-  - Expenses:Subscriptions:Boston Globe
-  - Expenses:Subscriptions:IEEE
-  - Expenses:Subscriptions:DPMA   ; Dragon Phoenix Martial Arts
+    - Expenses:Subscriptions:Boston Globe
+    - Expenses:Subscriptions:IEEE
+    - Expenses:Subscriptions:DPMA   ; Dragon Phoenix Martial Arts
 - Expenses:Taxes                   ; federal, state, local, property.
-  - Expenses:Taxes:Federal:Income
-  - Expenses:Taxes:State:MA:Income
-  - Expenses:Taxes:Chelmsford:Property
-  - Expenses:Taxes:State:MA:Excise
+    - Expenses:Taxes:Federal:Income
+    - Expenses:Taxes:State:MA:Income
+    - Expenses:Taxes:Chelmsford:Property
+    - Expenses:Taxes:State:MA:Excise
 
 It is worth noting that the institution does not have to be a “real” institution. For instance, if you owned a condo unit in a building, you could use the **Loft4530** “institution” for all its related accounts:
 
@@ -82,7 +86,6 @@ It is worth noting that the institution does not have to be a “real” institu
 - Expenses:Loft4530:Taxes:School
 
 ### Notes on Equity Accounts
-
 You don't normally define many **Equity** accounts. These are mostly created to report the net income and currency conversions from previous years or the current exercise period on a balance sheet. Typically you will need at least one, and it doesn't matter much what you name it:
 
     Equity:Opening-Balances     ; Balances used to open accounts
@@ -109,7 +112,6 @@ When you first start your ledger, you will likely already have money in some of 
 ```
 
 ### Guidelines for Choosing an Account Type
-
 First, if the amounts to be posted to the account are only relevant to be reported for a _period of time_, they should be one of the income statement accounts: **Income** or **Expenses**. On the other hand, if the amount _always_ needs to be included in the total balance of an account, then it should be a balance sheet account: **Assets** or **Liabilities**
 
 Second, if the amounts are generally[^] positive, or "good from your perspective", the account should be either an **Assets** or an **Expenses** account. If the amounts are generally negative, or "bad from your perspective," the account should be either a **Liabilities** or an **Income** account.
@@ -119,45 +121,45 @@ Second, if the amounts are generally[^] positive, or "good from your perspective
 These are all personal expenses. I might want to prefix them with `Personal` and use the `apply account` directive (e.g., `apply account Personal`) in my ledger file. This way I could have multiple account trees; `Personal`, `Business`, `Lynn's Trust` and others as needed.
 
 1. Expenses:Donations               ; Charitable contributions.
-   - Charitable
-   - Religious
+    - Charitable
+    - Religious
 1. Expenses:Education               ; tuition, fees, books.
-   - Tuition
-   - Books & Supplies
-   - Fees
+    - Tuition
+    - Books & Supplies
+    - Fees
 1. Expenses:Entertainment           ; fun stuff.
-   - Books, Videos, DVDs and other Media
-   - Rentals
-   - Tickets & Events (including Movies, Theater, Concerts, Plays, Sports, Hobbies, Outdoor Recreation, Toys, Games, and Gadgets).
+    - Books, Videos, DVDs and other Media
+    - Rentals
+    - Tickets & Events (including Movies, Theater, Concerts, Plays, Sports, Hobbies, Outdoor Recreation, Toys, Games, and Gadgets).
 1. Expenses:Food                    ; food, meals in and out.
-   - Groceries
-   - Coffee Shops
-   - Fast Food
-   - Restaurants
+    - Groceries
+    - Coffee Shops
+    - Fast Food
+    - Restaurants
 1. Expenses:General Fund            ; money not allocated to any other budget/expense-group. The value here initially represents net income. To allocate money to another budget/expense-group, transfer money from here to a (sub)group.
 1. Expenses:Gifts                   ; gifts to family and friends.
 1. Expenses:Goods & Merchandise     ; clothes, toys, stuff.
-   - Clothing & Accessories
-   - Computers & Electronics
-   - Health & Beauty
-   - General Merchandise
+    - Clothing & Accessories
+    - Computers & Electronics
+    - Health & Beauty
+    - General Merchandise
 1. Expenses:Health & Lifestyle      ; barbers, doctors, fitness.
-   - Doctor & Dentist
-   - Medicine & Prescriptions
-   - Medical Emergency
-   - Vision Care (glasses, contact lenses, etc.)
-   - Clubs, Gyms, Fitness
-   - Salon/Barber
+    - Doctor & Dentist
+    - Medicine & Prescriptions
+    - Medical Emergency
+    - Vision Care (glasses, contact lenses, etc.)
+    - Clubs, Gyms, Fitness
+    - Salon/Barber
 1. Expenses:Home                    ; furniture, lawn, garden.
-   - Furnishings & Appliances
-   - Lawn & Garden Supplies & Tools
-   - Home Supplies & Tools
-   - Maintenance & Repairs
-   - Renovations & Improvements
+    - Furnishings & Appliances
+    - Lawn & Garden Supplies & Tools
+    - Home Supplies & Tools
+    - Maintenance & Repairs
+    - Renovations & Improvements
 1. Expenses:Insurance               ; auto, home, life.
-   - Auto
-   - Health
-   - Life
+    - Auto
+    - Health
+    - Life
 1. Expenses:Pet Care                ; stuff and care for critters.
 1. Expenses:Services                ; accounting, laundry, legal, rentals.
 1. Expenses:Subscriptions           ; newspapers, magazines, memberships, professional dues.
@@ -181,6 +183,13 @@ These are all personal expenses. I might want to prefix them with `Personal` and
 
 ### Liabilities
 
+1. Liabilities:Loans & Debts        : mortgage, credit cards, student loans.
+- Morgage
+- Second Mortgage
+- Visa:USAA
+- Visa:Citicorp
+- Visa:Amazon
+
 - Liabilities:Mortgage
 - Liabilities:Second Mortgage
 - Liabilities:Visa:Citicorp
@@ -194,11 +203,9 @@ These are all personal expenses. I might want to prefix them with `Personal` and
 ### Equity
 
 ## Using Ledger
-
 Here are some highlights from the documentation.
 
 ### Comments
-
 A comment may begin anywhere on a line starting with a semicolon, ';'. The comment ends at the end of the line. If a comment starts at the beginning of a line it can start with one of five characters: ';', '#', '|', '*' or '%'.
 
 Block comments start with `comment` at the beginning of the line. The body of the block comment follows on additional lines of text and ends with a single line containing `end comment`.

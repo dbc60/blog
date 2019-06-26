@@ -1,20 +1,23 @@
 ---
+layout: post
 title: Marc Levoy Photography Course
-date: 2016-11-05
-draft: true
-math: true
-categories: [hobbies]
-tags: [photography]
+tags:
+    - photography
+excerpt: Notes from the
 ---
 
-Notes from [Lectures on Digital Photography](https://sites.google.com/site/marclevoylectures/home), by Marc Levoy. These notes cover most, if not all of his first lectur.
-<!--more-->
+## Contents
+{:.no_toc}
 
+- TOC
+{:toc}
+
+## Lecture 1
 The depth of field equation is:
 
-\[DoF = \frac{2NCU^2}{F^2}\]
+$$DoF = \frac{2NCU^2}{F^2}$$
 
-where \\(N\\) is the _F_ number, \\(C\\) is the Circle of Confusion, \\(U\\) is the distance to the subject, and \\(F\\) is the focal length. Details to follow during the course.
+where $$N$$ is the _F_ number, $$C$$ is the Circle of Confusion, $$U$$ is the distance to the subject, and $$F$$ is the focal length. Details to follow during the course.
 
 We'll talk about:
 
@@ -28,26 +31,24 @@ and lots of other stuff. See if you can find the syllabus.
 
 Readings: London, Ch. 2 (Camera) & 13 (History).
 
-## Laws of Perspective
-
+### Laws of Perspective
 Rules:
 - Light travels in a straight line
 - Light converges at the eye
 
-Natural Perspective vs Linear Perspective. See the handout on [image formation][1]. To open the slides in a new window, click <a href="{{ Site.url }}/assets/Marc Levoy Course/Week01/image-formation-23mar16.key.pdf" target="_blank">this link</a>.
+Natural Perspective vs Linear Perspective. See the handout on [image formation][1]. To open the slides in a new window, click <a href="{{ site.url }}/assets/Marc Levoy Course/Week01/image-formation-23mar16.key.pdf" target="_blank">this link</a>.
 
-[1]:{{ Site.url }}/assets/Marc Levoy Course/Week01/image-formation-23mar16.key.pdf
+[1]:{{ site.url }}/assets/Marc Levoy Course/Week01/image-formation-23mar16.key.pdf
 
 - A "full frame" Canon 5D Mark III has a sensor size of 24mm x 36mm.
-- Nikon D5100 has a sensor size  of APS-C (15.7 mm x 23.6mm) and a crop factor of 1.5x (\\(\frac{36}{23.67}\\) is approximately \\(1.5\\)).
-- Nexus 6P has a sensor size of 4.5mm x 6.2mm, which gives it a crop factor of \\(6x\\).
+- Nikon D5100 has a sensor size  of APS-C (15.7 mm x 23.6mm) and a crop factor of $$1.5x$$ ($$36/23.67$$ is approximately $$1.5$$).
+- Nexus 6P has a sensor size of 4.5mm x 6.2mm, which gives it a crop factor of $$6x$$.
 
-Longest Exposure Time. On average, humans can hand-hold down to 1/60 second. There is a _rule of thumb_ that the longest exposure is \\(1/f\\), where \\(f\\) is the 35mm equivalent focal length. So, if you have a 90mm lense on a camera with a crop factor of \\(2x\\), then \\(1/180\\) second is the longest exposure you should use while hand-holding the camera.
+Longest Exposure Time. On average, humans can hand-hold down to $$1/60$$ second. There is a _rule of thumb_ that the longest exposure is $$1/f$$, where $$f$$ is the 35mm equivalent focal length. So, if you have a 90mm lense on a camera with a crop factor of $$2x$$, then $$1/180$$ second is the longest exposure you should use while hand-holding the camera.
 
-For my Nikon DX 18-55mm lense, and D5100 camera (with a crop factor of \\(1.5x\\), the longest hand-held exposure I can manage is as long as \\(\frac{1}{18 x 1.5} = \frac{1}{27}\\) second, down to \\(\frac{1}{55 x 1.5} = \frac{1}{82.5}\\) second. Around these values it has settings for 20, 25, 30, 40, 50, 60, 80 and 100. I might be able to get away with 25 and 80, but I should probably stick to a range of 30 to 100, depending on the zoom. The more the zoom, the shorter my maximum exposure time is to avoid bluring the picture with my hand.
+For my Nikon DX 18-55mm lense, and D5100 camera (with a crop factor of $$1.5x$$), the longest hand-held exposure I can manage is as long as $$1/(18 x 1.5)$$ = $$1/27$$ second, down to $$1/(55 x 1.5) = 1/82.5$$ second. Around these values it has settings for 20, 25, 30, 40, 50, 60, 80 and 100. I might be able to get away with 25 and 80, but I should probably stick to a range of 30 to 100, depending on the zoom. The more the zoom, the shorter my maximum exposure time is to avoid bluring the picture with my hand.
 
-## Assignment 1
-
+### Assignment 1
 [Taking 'bad' photos](https://sites.google.com/site/marclevoylectures/assignments/assign1-bad-photos). The camera in automatic mode will try to take care of the technical aspects of photography for you, and just let you frame the scene and shoot. The goal of this assignment is to produce photographs that the camera might consider "bad" in some way, but are nonetheless interesting to look at, and even artistic.
 
 There are five different requirements. Try to take photos such that each meets a different requirement. A photo may meet more than one requirement, but you should be able to label it as exemplifying a particular requirement.
@@ -230,9 +231,7 @@ Appendices.
 - Light Meter.
 
 ## Photography 11th Ed. TOC
-
 Brief Table of Contents:
-
 1. Getting Started
 1. Camera
 1. Lens
@@ -251,129 +250,128 @@ Brief Table of Contents:
 Full Table of Contents:
 
 1. Getting Started
-   - Introducing the Camera
-   - Getting Your Camera Ready
-   - Focusing and Setting the Exposure
-   - Taking Your Picture
-   - What Will You Photograph?
+    - Introducing the Camera
+    - Getting Your Camera Ready
+    - Focusing and Setting the Exposure
+    - Taking Your Picture
+    - What Will You Photograph?
 1. Camera
-   - Basic Camera Controls
-   - The Shutter
-   - The Aperture
-   - Using Shutter and Aperture Together
-   - Choosing a Camera
-   - Keeping the Camera Steady
+    - Basic Camera Controls
+    - The Shutter
+    - The Aperture
+    - Using Shutter and Aperture Together
+    - Choosing a Camera
+    - Keeping the Camera Steady
 1. Lens
-   - From Pinhole to Lens
-   - Lens Focal Length
-   - Special-Purpose Lenses
-   - Focusing your Lenses
-   - Focus and Depth of Field
-   - Perspective
-   - Guidelines for Buying a Lens
-   - Getting the Most from your Camera and Lens
+    - From Pinhole to Lens
+    - Lens Focal Length
+    - Special-Purpose Lenses
+    - Focusing your Lenses
+    - Focus and Depth of Field
+    - Perspective
+    - Guidelines for Buying a Lens
+    - Getting the Most from your Camera and Lens
 1. Exposure, Sensors and Film
-   - Exposure Basics
-   - How to Meter
-   - Responding to Light
-   - Selecting and Using Film
-   - Exposure Latitude and Dynamic Range
-   - Film and Sensor Speed
-   - Using Filters
-   - Extending Beyond Visible Light
-   - Using Exposure
+    - Exposure Basics
+    - How to Meter
+    - Responding to Light
+    - Selecting and Using Film
+    - Exposure Latitude and Dynamic Range
+    - Film and Sensor Speed
+    - Using Filters
+    - Extending Beyond Visible Light
+    - Using Exposure
 1. Color
-   - Color: Additive or Subtractive
-   - Color Photographs: Three Image Layers
-   - Color Characteristics
-   - Color Balance
-   - Making a Color Print from a Negative
+    - Color: Additive or Subtractive
+    - Color Photographs: Three Image Layers
+    - Color Characteristics
+    - Color Balance
+    - Making a Color Print from a Negative
 1. Setting up a Digital Darkroom
-   - Hardware and Software
-   - Photographs Are Files
-   - Color Management
-   - Channels
-   - Histograms
-   - Importing Your Images
-   - Setting Up a Workflow
-   - Workflow Applications
+    - Hardware and Software
+    - Photographs Are Files
+    - Color Management
+    - Channels
+    - Histograms
+    - Importing Your Images
+    - Setting Up a Workflow
+    - Workflow Applications
 1. Image Editing
-   - Digital Post-Processing: Getting Started
-   - An Image-Editing Workflow
-   - Adjusting Color and Value
-   - Adjusting All or Part of an Image
-   - Other Editing Commands
-   - Compositing
+    - Digital Post-Processing: Getting Started
+    - An Image-Editing Workflow
+    - Adjusting Color and Value
+    - Adjusting All or Part of an Image
+    - Other Editing Commands
+    - Compositing
 1. Digital Printing
-   - Printers and Printing
-   - Printing Options
-   - Display your Work
-   - Ethics: How Far Can You Go?
+    - Printers and Printing
+    - Printing Options
+    - Display your Work
+    - Ethics: How Far Can You Go?
 1. Organizing and Storing Your Work
-   - Image Storage
-   - Metadata: Data About Your Files
-   - Software to Keep You Organized
-   - Archiving Digital Images
-   - Archiving Film and Prints
+    - Image Storage
+    - Metadata: Data About Your Files
+    - Software to Keep You Organized
+    - Archiving Digital Images
+    - Archiving Film and Prints
 1. Print Finishing and Display
-   - Spotting to Remove Minor Flows
-   - Mounting a Print
+    - Spotting to Remove Minor Flows
+    - Mounting a Print
 1. Lighting
-   - Direction of Light
-   - Degree of Diffusion: From Hart to Soft Light
-   - Available Light – Outdoors
-   - Available Lights – Indoors
-   - Artificial Light
-   - The Main Light: The Dominant Source
-   - The Fill Light: To Lighten Shadows
-   - Lighting with Flash
-   - Simple Portrait Lighting
-   - Multiple-Light Portrait Setups
-   - Lighting Textured Objects
-   - Lighting Reflective Objects
-   - Lighting Translucent Objects
-   - Using Lighting
+    - Direction of Light
+    - Degree of Diffusion: From Hart to Soft Light
+    - Available Light – Outdoors
+    - Available Lights – Indoors
+    - Artificial Light
+    - The Main Light: The Dominant Source
+    - The Fill Light: To Lighten Shadows
+    - Lighting with Flash
+    - Simple Portrait Lighting
+    - Multiple-Light Portrait Setups
+    - Lighting Textured Objects
+    - Lighting Reflective Objects
+    - Lighting Translucent Objects
+    - Using Lighting
 1. Extending the Image
-   - Using Scale
-   - Multiple Images
-   - Fabricated to be Photographed
-   - The Photograph as Object
-   - Using Projections
-   - Making a Book
-   - Alternative Processes
-   - Pinhole Photography
-   - How to Make a Close-Up Photograph
+    - Using Scale
+    - Multiple Images
+    - Fabricated to be Photographed
+    - The Photograph as Object
+    - Using Projections
+    - Making a Book
+    - Alternative Processes
+    - Pinhole Photography
+    - How to Make a Close-Up Photograph
 1. Seeing Photographs
-   - Basic Choices
-   - Basic Design
-   - More Choices
-   - Looking at – and Talking About – Photographs
-   - Showing Your Work to Editors and Others
+    - Basic Choices
+    - Basic Design
+    - More Choices
+    - Looking at – and Talking About – Photographs
+    - Showing Your Work to Editors and Others
 1. History of Photography
-   - The Invention of Photography
-   - Daguerreotype: “Designs on Silver Bright”
-   - Calotype: Pictures on Paper
-   - Collodion Wet-Plate: Sharp and Reproducible
-   - Gelatin/Emulsion/Roll-Film Basse: Photography for Everyone
-   - Color Photography
-   - Early Portraits
-   - Early Travel Photography
-   - Early Images of War
-   - Time and Motion in Early Photography
-   - The Photograph as a Document
-   - Photography and Social Change
-   - Photojournalism
-   - Photography as Art in the 19th Century
-   - Pictorial Photography and the Photo-Secession
-   - The Direct Image in Art
-   - The Quest for a New Vision
-   - Photography as Art in the 1950s and 1960s
-   - Photography as Art in the 1970s and 1980s
-   - Digital Photography Becomes Mainstream
-   - A Gallery of Contemporary Photography
+    - The Invention of Photography
+    - Daguerreotype: “Designs on Silver Bright”
+    - Calotype: Pictures on Paper
+    - Collodion Wet-Plate: Sharp and Reproducible
+    - Gelatin/Emulsion/Roll-Film Basse: Photography for Everyone
+    - Color Photography
+    - Early Portraits
+    - Early Travel Photography
+    - Early Images of War
+    - Time and Motion in Early Photography
+    - The Photograph as a Document
+    - Photography and Social Change
+    - Photojournalism
+    - Photography as Art in the 19th Century
+    - Pictorial Photography and the Photo-Secession
+    - The Direct Image in Art
+    - The Quest for a New Vision
+    - Photography as Art in the 1950s and 1960s
+    - Photography as Art in the 1970s and 1980s
+    - Digital Photography Becomes Mainstream
+    - A Gallery of Contemporary Photography
 
 ## Photography 12th Edition TOC
-
 1. Getting Started
 1. Camera
 1. Lens
@@ -392,7 +390,6 @@ Full Table of Contents:
 1. History of Photography
 
 Remainder:
-
 - Troubleshooting
 - Glossary
 - Bibliography
@@ -407,14 +404,13 @@ Remainder:
 - [Marc Levoy - Lectures on Digital Photography - Lecture 1](https://www.youtube.com/watch?v=y7HrM-fk_Rc)
 - [Mathematical Expressions in LaTeX](https://www.sharelatex.com/learn/Mathematical_expressions).
 - [Fractions and Binomials in LaTeX](https://www.sharelatex.com/learn/Fractions_and_Binomials).
-- [Marc Levoy](https://graphics.stanford.edu/~levoy/) at Google.
 
 Readings:
 
 1. London, Stone, and Upton, Photography (11th edition), Pearson / Prentice Hall, 2011. 10th edition better if you can find it.
-   - 10th Edition: ISBN-10: 0205711499, ISBN-13: 2900205711498
-   - 11th Edition: ISBN-10: 0205933807, ISBN-13: 9780205933808
-   - 12th Edition: ISBN-10: 0134482026, ISBN-13: 9780134482026
+    - 10th Edition: ISBN-10: 0205711499, ISBN-13: 2900205711498
+    - 11th Edition: ISBN-10: 0205933807, ISBN-13: 9780205933808
+    - 12th Edition: ISBN-10: 0134482026, ISBN-13: 9780134482026
 1. Bryan Peterson, Learning to See Creatively, Watson-Guptill, 1988 (or any later edition).
 1. Eugene Hecht, Optics (4th ed.), Pearson / Addison-Wesley, 2002, chapter 5.1-5.2 (pp. 149-171) - geometrical optics.
 1. Tomas Moller et al., Real-Time Rendering (3rd ed.), AK Peters, 2008, Chapter 5.6.1 (pp. 117-124) - sampling and filtering theory.

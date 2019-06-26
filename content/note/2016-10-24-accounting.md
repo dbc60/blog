@@ -1,45 +1,40 @@
 ---
+layout: post
 title: Accounting
-date: 2016-10-24
-draft: true
-categories: [misc]
-tags: [skills, accounting, budgeting, planning, finances]
+tags:
+    - accounting
+    - budgeting
+    - planning
+excerpt: Picking up a new skill by learning some principles of accounting.
 ---
 
-Picking up a new skill by learning some principles of accounting.
-<!--more-->
+## Contents
+{:.no_toc}
+
+- TOC
+{:toc}
 
 Continue [here](http://www.principlesofaccounting.com/chapter-1/accounting-equation/)
 
 ## Fundamental Concepts
-
 Some basic terms and definitions:
 
-Accounting
-: A set of concepts and techniques that are used to measure and report
-  financial information about an economic unit.
+- Accounting
+: A set of concepts and techniques that are used to measure and report financial information about an economic unit.
 
-Financial Accounting
+- Financial Accounting
 : Encompasses external reporting issues.
 
-Managerial Accounting
+- Managerial Accounting
 : Encompasses internal reporting issues.
 
-Historical Cost Principle
-: The concept that many transactions and events are to be measured and
-  reported at acquisition cost (in contrast to fair value). This principle is
-  based on the concept that it is best to report certain financial statement
-  elements at amounts that are tied to _objective_ and verifiable past
-  transactions.
+- Historical Cost Principle
+: The concept that many transactions and events are to be measured and reported at acquisition cost (in contrast to fair value). This principle is based on the concept that it is best to report certain financial statement elements at amounts that are tied to _objective_ and verifiable past transactions.
 
-Fair Value Cost
-: The alternative to the historical cost principle is to value (and
-  periodically revalue) accounts based on _subjective_ assessments of current
-  worth.
+- Fair Value Cost
+: The alternative to the historical cost principle is to value (and periodically revalue) accounts based on _subjective_ assessments of current worth.
 
-The Fundamental Accounting Equation is `Assets = Liabilities + Equity`. This
-equality is preserved as transactions are processed through an accounting
-system.
+The Fundamental Accounting Equation is `Assets = Liabilities + Equity`. This equality is preserved as transactions are processed through an accounting system.
 
 Different types of financial statements include the:
 

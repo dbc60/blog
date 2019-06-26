@@ -1,19 +1,17 @@
 ---
+layout: post
 title: Morning Routine and Daily Schedule
-date: 2016-03-07
-draft: true
-categories: [misc]
-tags: [skills]
+author: Douglas Cuthbertson
+categories: notes
+tags: [routine, planning, time-management]
+excerpt: According to [this article](http://www.bakadesuyo.com/2015/03/morning-routine/) by [Eric Barker](http://www.bakadesuyo.com/about/) (and various [books by Laura Vanderkam](http://www.amazon.com/Laura-Vanderkam/e/B001JRX55A/ref=dp_byline_cont_book_1) ), one of the best ways to get things done is to have a morning routine. In addition to a routine you need a plan, so here is Barker's advice to build a roadmap for getting things done and having *real* free time.
 ---
 
-According to
-[this article](http://www.bakadesuyo.com/2015/03/morning-routine/)
-by [Eric Barker](http://www.bakadesuyo.com/about/)
-(and various [books by Laura Vanderkam](http://www.amazon.com/Laura-Vanderkam/e/B001JRX55A/ref=dp_byline_cont_book_1) ),
-one of the best ways to get things done is to have a morning routine. In addition
-to a routine you need a plan, so here is Barker's advice to build a roadmap for
-getting things done and having *real* free time.
-<!--more-->
+## Contents
+{:.no_toc}
+
+- TOC
+{:toc}
 
 ## Detailed To-Do Lists for Everyday Tasks
 I read about these in some comments on HN about a completely different topic. Some people create detailed to-do lists for basic tasks to eliminate analysis-paralysis. Here's one person's task list for cleaning house:
@@ -30,11 +28,10 @@ Task: 'Clean the house'
 For some, even this task is too big. Here's a smaller example:
 
 Living room:
-
 - Remove garbage
 - Put dirty dishes in kitchen
-- Put stuff that doesn't belong in tote
-- Put everything that does belong on shelves
+- Put stuff that doesn't belong in tote 
+- Put everything that does belong on shelves 
 - Vacuum
 
 ## Stop Reacting
@@ -240,7 +237,6 @@ Finally, determine how you'd like to re-distribute your time in the future. What
 ### 4. Create a Success List
 
 ## Goal Setting and Action Workbook
-
 1. Reflect on what made last year awesome, or not so awesome.
 2. Define your areas of attention. List the core areas of your life where you want to get results.
 3. Define resolutions and habbits. These are general themes of improvement or change you want to work on.
@@ -254,7 +250,6 @@ Finally, determine how you'd like to re-distribute your time in the future. What
 11. Do something now, no matter how small.
 
 ## References
-
 - [Why Your To-Do List is Broken and How You Can Fix It](https://zapier.com/blog/to-do-list-broken/), by Melissa Joy Kon, February 27, 2014.
 - [Extraordinary Results Require ONE Thing](http://www.baylor.edu/business/kellercenter/news.php?action=story&story=130075), by Curtis Schroeder. Ask yourself, "What is the ONE Thing I can do such that by doing it everything else will be easier or unnecessary?"
 - Book: [The ONE Thing: THe Surprisingly Simple Truth Behind Extraordinary Results](http://www.amazon.com/The-ONE-Thing-Surprisingly-Extraordinary/dp/1885167776)
@@ -263,4 +258,3 @@ Finally, determine how you'd like to re-distribute your time in the future. What
 - [Need More Hours in the Day? Plan It Backwards](http://www.inc.com/the-muse/need-more-hours-in-the-day-plan-it-backwards.html) on Inc.com
 - [Need More Hours in the Day? Plan It Backwards](https://www.themuse.com/advice/need-more-hours-in-the-day-plan-it-backward), by Lily Herman (the original article, but the site can be annoying)
 - [How to Reclaim Your Time in Seven Days for a More Productive and Stress-Free Workday](http://lifehacker.com/5839691/how-to-reclaim-your-time-in-seven-days-with-rescuetime) - it talks about using [RescueTime](http://www.rescuetime.com/) to track your time.
-- [Fountain Markup](https://fountain.io/) for screenwriters. Fountain is a simple markup syntax for writing, editing and sharing screenplays in plain, human-readable text. Fountain allows you to work on your screenplay anywhere, on any computer or tablet, using any software that edits text files.

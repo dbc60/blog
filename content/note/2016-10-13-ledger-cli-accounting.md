@@ -1,14 +1,22 @@
 ---
+layout: post
 title: Ledger Command-line Accounting
-date: 2016-10-13
-draft: true
-categories: misc
-tags: [accounting, finances, budgeting]
+tags:
+  - accounting
+  - finance
+excerpt: Better budgeting through automated transactions and virtual accounts.
 ---
 
-Better budgeting through automated transactions and virtual accounts.
-<!--more-->
+## Contents
+{:.no_toc}
 
+- TOC
+{:toc}
+
+## Virtual Accounts are Budgets
+Really!
+
+## Ledger Format
 The initial character of each line determines what the line means and how it should be interpreted. Allowable initial characters are:
 
 - Number: denotes a transaction. See below for a description.
@@ -34,7 +42,6 @@ The format of the lines that make up the body of the transaction is `ACCOUNT  AM
 - The `NOTE` may specify an actual and/or effective date for the posting by using the syntax `[ACTUAL_DATE]` or `[=EFFECTIVE_DATE]` or `[ACTUAL_DATE=EFFECTIVE_DATE]`.
 
 ## Tips for Using Ledger in a Business
-
 The general format for a ledger is usually Assets, Liabilities, Equity, Income and Expenses. Customer invoices would typically be under Assets:Accounts Receivable and supplier invoices would be under Liabilities:Accounts Payable.
 
 Assuming you're using ledger for a U.S. business, take a look at Schedule C, since that's likely what you're going to have to fill out on a regular basis from your ledger. My expense categories, for example, match the categories on lines 18-27. My revenue categories come from lines 1-4.
@@ -81,7 +88,6 @@ can reconcile your deposits easily.
     - Consider only real accounts: `ledger reg checking --real`
 
 ### Reporting over a Given Period
-
 The `--period` (`-p`) command-line option will generate reports over a specific period of time, rather than the entire time encompassed by your journal. For a **register** report, only the transactions that satisfy the period expression will be displayed. For **balance** reports, only those transactions will be accounted for in the final balances.
 
 A period expression is writting as `[INTERVAL] [BEGIN] [END]`, meaning it has three optional parts. The *INTERVAL* part may be any one of:

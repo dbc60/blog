@@ -1,14 +1,23 @@
 ---
+layout: post
 title: Blog Styling Ideas
-date: 2016-09-05T12:53:00-05:00
-draft: true
-categories: projects
-tags: [blog, css, styling, design]
+categories: to-do
+tags:
+  - blog
+  - css
+  - styling
+excerpt: Here are some styling changes to try.
 ---
 
-Here are some styling changes to try.
-<!--more-->
+## Contents
+{:.no_toc}
 
-For a sidebar try right alignment instead of centering both for the heading and the list. It should look more dramatic. You might have to remove the bullets, and use some other kind of separator to make the list look nice.
+- TOC
+{:toc}
 
-For a footer, similar to the sidebar, try right alignment on the footer-list that's already floated on the right.
+## Sidebar
+- Try right alignment instead of centering both for the heading and the list. It should look more dramatic. You might have to remove the bullets, and use some other kind of separator to make the list look nice.
+
+## Footer
+- Similar to the sidebar, try right alignment on the footer-list that's already floated on the right.
+

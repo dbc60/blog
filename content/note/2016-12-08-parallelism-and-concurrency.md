@@ -1,30 +1,33 @@
 ---
+layout: post
 title: Parallelism & Concurrency
-date: 2016-12-08
-draft: true
-categories: [software]
-tags: [concurrency, parallelism]
+tags:
+    - notes
+excerpt: Notes from Martin Thompson's talk "A quest for predictable latency with Java concurrency."
 ---
 
-Notes from Martin Thompson's talk "A quest for predictable latency with Java concurrency."
-<!--more-->
+## Contents
+{:.no_toc}
+
+- TOC
+{:toc}
+
+## Parallelism and Concurrency
 
 > 1. Parallel is the opposite of Serial
 > 1. Concurrent is the opposite of Sequential
 > 1. Vector is the opposite of Scalar
->
->     -- John Gustafson
+>     - John Gustafson
 
-> - Concurrency is about *dealing* with lots of things at once.
-> - Parallelism is about *doing* lots of things at once.
->
->     -- Rob Pike
+
+> Concurrency is about *dealing* with lots of things at once.
+> Parallelism is about *doing* lots of things at once.
+>     - Rob Pike
+
 
 - Concurrent Example: One processor that time-slices two threads.
-- Parallel Example: Two processors, each with their own region of memory, each
-  executing a single thread.
-- Parallel & Concurrent Example: Two processors, sharing the same memory
-  system, each one executing a single thread.
+- Parallel Example: Two processors, each with their own region of memory, each executing a single thread.
+- Parallel & Concurrent Example: Two processors, sharing the same memory system, each one executing a single thread.
 
 ## References
 

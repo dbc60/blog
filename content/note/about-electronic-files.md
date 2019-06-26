@@ -1,33 +1,35 @@
 ---
+layout: post
 title: About Electronic Files
+author: Douglas Cuthbertson
 date: 2016-03-07
 draft: true
-categories: [software]
-tags: [files]
+categories: notes
 ---
 
 If you can get a collection of important files, their attributes and contents, what kinds of things can you do with that information?
-
 <!--more-->
 
+## Contents
+{:.no_toc}
+
+- TOC
+{:toc}
+
+## Overview
 One can hash the contents to create a unique identifier.
-
-- MD5 + file size should be unique and very fast
-- SHA1 will be less likely to create a hash collision
-- SHA256 will be even less likely to create a hash collision.
-
-Other actions:
-
+    - MD5 + file size should be unique and very fast
+    - SHA1 will be less likely to create a hash collision
+    - SHA256 will be even less likely to create a hash collision.
 - Find files and folders based on attributes such as size, last access time, last modification time, owner, or whether or not the file is hidden.
 - Find and possibly eliminate duplicates.
 - Backup files and determine if a file has changed since it was last copied to one or more backup locations.
 - Create different views of the contents of the file system. The views could be based on a number of file attributes.
 - File Sharing
-
-  - Access your own files from your own devices (desktop, laptop, tablet, mobile devices)
-  - Enable others to access your files from their devices.
-  - Control when files can be accessed and by whom.
-  - Control the kind of access others may have (read, write, delete, move, rename, etc.).
+    - Access your own files from your own devices (desktop, laptop, tablet, mobile devices)
+    - Enable others to access your files from their devices.
+    - Control when files can be accessed and by whom.
+    - Control the kind of access others may have (read, write, delete, move, rename, etc.).
 
 Note that *read* means copy to another device so the user of that device can access the contents of the file. Unless the app provides a Snapchat like feature that will delete the file after some period of time, the person who reads the file will have their own copy and will likely be able to modify that copy to their hearts content. They will *not* be able to modify the shared original, unless they are given write access. Delete controls who can delete the shared file. It has no bearing on the copy that is created to share the file.
 
@@ -62,5 +64,4 @@ I've read that there are a few ways to enumerate all the volumes, folders and fi
 More to come ...
 
 ## References
-
 - [NTFS overview on Wikipedia](https://en.wikipedia.org/wiki/NTFS).

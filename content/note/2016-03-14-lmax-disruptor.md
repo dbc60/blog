@@ -1,16 +1,25 @@
 ---
+layout: post
 title: LMAX Disruptor
-date: 2016-03-14
-draft: true
-categories: [software]
-tags: [design, patterns, queues, concurrency, threads, asynchronous, events]
+categories: blog
+tags:
+  - queues
+  - concurrency
+  - threads
+  - asynchronous
+  - events
+  - patterns
+  - disruptor
+excerpt: The Disruptor is a general-purpose pattern for building low-latency, high-throughput event processing queues.
 ---
 
-The Disruptor is a general-purpose pattern for building low-latency, high-throughput event processing queues.
-<!--more-->
+## Contents
+{:.no_toc}
+
+- TOC
+{:toc}
 
 ## The Design of the LMAX Disruptor
-
 - queues conflate several data-storage concerns for handling the needs of producers and consumers. The Disruptor separates these concerns.
 - Ensure that any data are owned by only one thread for write access, eliminating write contention. This is the Disruptor design.
 - At the heart of the disruptor is a pre-allocated bounded data structure in the form of a ring buffer. Data is added to the ring buffer through one or more producers, and processed by one or more consumers.
@@ -20,7 +29,7 @@ This is my attempt to recreate the original class diagram. My skills with the [d
 
 <figure>
   <img class="content-image"
-       src="/svg/disruptor.svg">
+       src="/img/disruptor.svg">
   <figcaption>
     <strong>Fig. 1 | </strong> The Disruptor class relationships.
   </figcaption>
@@ -58,7 +67,7 @@ Producer
 :   This is the user code that calls the Disruptor to enqueue `Events`. This concept also has no representation in the code.
 
 <figure>
-<img class="content-image" src="/images/LMAX-Disruptor-Models.png">
+<img class="content-image" src="/img/LMAX-Disruptor-Models.png">
 <figcaption>
     <strong>Fig. 2 | </strong> Relationships among the main classes and interfaces.
 </figcaption>

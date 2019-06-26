@@ -1,13 +1,16 @@
 ---
+layout: post
 title: Real Time Linux
-date: 2016-03-07
-draft: true
-categories: [projects]
-tags: [linux]
+categories: notes
+tags: [project, linux]
+excerpt: My goal is to learn how to install a real-time Linux kernel and use it to build and run real-time applications.
 ---
 
-My goal is to learn how to install a real-time Linux kernel and use it to build and run real-time applications.
-<!--more-->
+## Contents
+{:.no_toc}
+
+- TOC
+{:toc}
 
 ## Getting Started
 I'm starting out by running CentOS 7 on a VirtualBox VM. I used the minimal install to keep things as clean and simple as possible. One of the first things I did was to update the kernel via ```yum -y update kernel```. After rebooting, the kernel version is:

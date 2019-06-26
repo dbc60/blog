@@ -1,16 +1,27 @@
 ---
+layout: post
 title: Monitoring Windows Volumes and Directory Paths
-date: 2016-12-17
-draft: true
-categories: [software]
-tags: [windows]
+tags:
+    - windows
+    - directories
+    - file system
+    - paths
 ---
-
 Matching real paths to rules containing paths to be matched. These rules may contain an asterisk representing zero or more characters in the path.
-<!--more-->
+
+## Contents
+{:.no_toc}
+
+- TOC
+{:toc}
+
+## Document History
+
+| Date | Author | Summary of Changes |
+|-----------:|-----------------:|:---------------|
+| 2016.12.17 | Doug Cuthbertson | Initial draft. |
 
 ## Rules for Directory Paths
-
 Directory paths will typically take the form of a string starting with a volume name (a letter followed by a colon), a backslash and a sequence of characters where backslashes represent directory separators. Customers would like to place an asterisk between a pair of backslashes to represent any directory path starting with the path preceding the asterisk and ending with the path succeeding the asterisk. Of course, the path may also begin or end with an asterisk, too. For example, `C:\Users\*\AppData\Local` represents a path on the `C:` volume that starts with `\Users\`, and continues with any directory or sequence of directories that end in `AppData\Local`.
 
 These rules will be matched against real paths of the form `\Device\<DeviceName>\<Path>`, where `<DeviceName>` might be `HarddiskVolume2`, `CdRom0` or some similar DOS device name. I believe `<path>` is a normal directory path.
@@ -29,17 +40,14 @@ In other words, the asterisk can be placed at the beginning, middle or end of a 
 Note that a kleene closure is a regular expression where the character (or regular expression) preceding the asterisk may be repeated zero or more times. Here we use the asterisk to represent a directory path of zero or more characters. If it's placed between a pair of directory separators (`Foo\*\Baz`), then the paths `Foo\Bar\Baz` and `Foo\Baz` will both match the rule. The pair of directory separators may be combined into one when there are no directories separating the higher and lower level paths on either side of the asterisk.
 
 ### Requirements
-
 I don't want the minifilter converting each rule from "volume\path" to `\device\<device name>\path` each time it tries to match a given path. That would be a huge waste of time. Therefore, each rule should be converted to some path or set of paths that can be easily compared against a real path.
 
 A path on the NTFS file system, as represented in the kernel, seems to be made from two components; the device and the directory path. The device takes the form of `\Device\<device name>` and is separated from the directory path by a directory separator, the backslash(`\`).
 
 ### Algorithms
-
 There are a surprising number of algorithms for matching strings against multiple patterns. Of course, each comes with a set of assumptions and limitations. I need to find one that will quickly decide whether a given path matches one of the patterns and return a value that indicates which of the patterns it matched. If the string matches more than one pattern, I'm not sure I care which one of the matches it returns. At the moment, I don't think it matters.
 
 #### PHP Example from Stackoverflow
-
 [This stackoverflow question](http://stackoverflow.com/questions/4038885/how-to-design-a-string-matching-algorithm-where-the-input-is-the-exact-string-an) on string-matching against regex-like patterns recommends the Aho-Corasick algorithm where there are no wildcards in the patterns. For those with wildcards, one answer suggests first breaking up the patterns into the "constant string" parts. Put those strings in the list of ones you are searching for separately. Only if the text matches all of the constant parts for a particular pattern do you then do more processing to make sure it has the parts in the desired order.
 
 Another answer takes the example of matching URL patterns like:
@@ -56,7 +64,7 @@ Another answer takes the example of matching URL patterns like:
 Other assumptions are:
 
 1. A URL is a list of tokens. To get them, we drop the protocol, drop the query string and find the first `/` (and if none, add it to the end). The stuff before the `/` is the hostname, and the stuff after `/` is the path.
-1. We get teh hostname tokens by splitting on `.`.
+1. We get the hostname tokens by splitting on `.`.
 1. We get the path tokens by splitting on `/`.
 
 The URL `www.stackoverflow.com/users/230289` is split into the tokens: `www`, `stackoverflow`, `com`, `/`, `users`, and `239289`. Note that the only `/` we allow is the one separating the hostname and path.
@@ -211,7 +219,7 @@ function do_search($tokens, $compiled_site_list) {
 }
 ```
 
-So to see the whole thing in action - if you have `$site_list` which is an array of your URLs, you'd do:
+So to see the whole thing in action - if you have $site_list which is an array of your URLs, you'd do:
 
 ```php
 $url_to_check = "http://www.stackoverflow.com/users/120262?tab=accounts";
@@ -221,11 +229,9 @@ var_dump($result);
 ```
 
 #### Aho-Corasick
-
 This is a multiple string-matching algorithm that constructs a finite-state machine from a pattern (a list of keywords), then uses the machine to locate all occurrences of the keywords in a body of text. Construction of the machine takes time proportional to the sum of the lengths of the keywords. The machine is used to process the text string in a single pass. The number of transitions made by the machine is independent of the nubmer of keywords.
 
 ## File Integrity Monitoring Service
-
 The File Integrity Monitoring (FIM) service must not only match directory paths against rules such as those above, but it must have a default set of exclusion paths so it doesn't report against it's own files and directories. This is most important for the logging directory.
 
 I think the easiest way to do this is to create a file containing a set of default rules. The first rule would exclude the installation directory (usually `C:\Program Files\Threat Stack\`) and its two subdirectories `etc` and `logs`.
@@ -236,10 +242,10 @@ Perhaps this could be a signed file to make it more difficult to tamper with. Th
 
 - [Aho-Corasick](https://xlinux.nist.gov/dads/HTML/ahoCorasick.html) on NIST's [Dictionary of Algorithms and Data Strucctures](https://www.nist.gov/dads/) website.
 - [How to efficiently match an input string against several regular expressions at once?](http://stackoverflow.com/questions/7049894/how-to-efficiently-match-an-input-string-against-several-regular-expressions-at). This question was asked on [Stackoverflow](https://stackoverflow.com). The accepted answer references:
-  - The [Aho-Corasick algorithm](https://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_algorithm) on [Wikipedia](https://en.wikipedia.org).
-  - A GNU Lesser GPL license [implementation in Python](https://code.google.com/archive/p/esmre/) that handles regular expressions.
-  - The source for [Snort](https://www.snort.org/) may have an implementation in C. It would be licensed under the GPL.
-  - [RE2 regular expression engine](https://github.com/google/re2) in C++ in a 3-clause BSD license. There is a [tour through the source code](https://swtch.com/~rsc/regexp/regexp3.html), too.
+    - The [Aho-Corasick algorithm](https://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_algorithm) on [Wikipedia](https://en.wikipedia.org).
+    - A GNU Lesser GPL license [implementation in Python](https://code.google.com/archive/p/esmre/) that handles regular expressions.
+    - The source for [Snort](https://www.snort.org/) may have an implementation in C. It would be licensed under the GPL.
+    - [RE2 regular expression engine](https://github.com/google/re2) in C++ in a 3-clause BSD license. There is a [tour through the source code](https://swtch.com/~rsc/regexp/regexp3.html), too.
 - [Approximate GREP](https://github.com/Wikinaut/agrep) source code in C (3-clause BSD-like license).
 - [AGREP](https://www.tgries.de/agrep/) website.
 - [Glimpse](https://github.com/gvelez17/glimpse) source code in C. It is a tool to search an entire file system. Using a very small index, it allows very flexible full-text retrieval including Boolean queries, approximate matching (allowing for misspellings) and searching for regular expressions.

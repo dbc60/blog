@@ -1,16 +1,23 @@
 ---
+layout: post
 title: Art Projects Overview
-date: 2016-09-18T06:07:00-05:00
-draft: true
-categories: [projects]
-tags: [art, 3d, graphics]
+categories: projects
+tags:
+  - art
+  - 3d
+  - graphics
+excerpt: I've decided I'm going to learn how to use Krita and Blender to make 2D and 3D digital art.
 ---
 
-I have decided I'm going to learn how to use Krita and Blender to make 2D and 3D digital art. I should probably record key-bindings as they come up, and workflow patterns.
-<!--more-->
+## Contents
+{:.no_toc}
+
+- TOC
+{:toc}
+
+I should probably record key bindings as they come up, and workflow patterns.
 
 ## Environment
-
 One article [^2] recommends the optional step of setting up [Linux Mint](https://www.linuxmint.com/) on a dedicated desktop. The reasoning behind this step is Linux works on older computers that are no longer sufficient for the latest version of Windows. However, I find Windows 10 runs fine on my 6+ year old desktop.
 
 That said, Linux Mint is a derivative of Ubuntu for users who don't want to fiddle as much with setup and just need multimedia capabilities out of the box. I'd say Fedora or maybe CentOS might work. They are derived from RedHat, but I don't know if they are as simple as Linux Mint is purported to be.

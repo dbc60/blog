@@ -1,13 +1,20 @@
 ---
+layout: post
 title: Jekyll Configuration
-date: 2016-03-07
-draft: true
-categories: [software]
-tags: [web]
+categories:
+  - blog
+  - notes
+tags:
+  - jekyll
+  - yaml
+excerpt: Jekyll is so easy to get up and running.
 ---
 
-Jekyll is easy to get up and running.
-<!--more-->
+## Contents
+{:.no_toc}
+
+- TOC
+{:toc}
 
 It really is easy to install and use. What takes time is learning enough about its bells and whistles, markdown, HTML, CSS and Sass to make a blog or website you're own. Also, I need a place to host my blog. I may eventually create my own web server, perhaps on a [DigitalOcean](https://www.digitalocean.com/) droplet (mostly because they don't cost very much and a small server in a cloud is adequate for a static website). For now, I'm using [GitHub pages](https://pages.github.com/).
 
@@ -18,7 +25,7 @@ Head over to the [Ruby](https://www.ruby-lang.org/en/) site and download the [la
 
 According to the [Jekyll website](https://jekyllrb.com) all you have to do to install Jekyll, create a new blog project and start a web server that watches for changes is:
 
-```shell
+```terminal
 gem install jekyll
 jekyll new my-blog
 cd my-blog
@@ -29,7 +36,7 @@ I've found [Bundler](http://bundler.io/) is useful for keeping gems up-to-date. 
 
 Create a git repository on your local computer:
 
-```shell
+```terminal
 E:\> git init my-jekyll-site-project
 Initialized empty Git repository in E:/Users/Doug/Projects/my-jekyll-site-project/.git/
 ```
@@ -38,7 +45,7 @@ Change the current directory to the new repository (`cd my-jekyll-site-project`)
 
 Now we can prepare to install Jekyll using Bundler. Ruby and Bundler will use a Gemfile to track dependencies among various gems, so create or edit a Gemfile in your favorite editor. It must start with:
 
-```shell
+```terminal
 source 'https://rubygems.org'
 ```
 
@@ -160,7 +167,7 @@ The thing with GitHub pages is that you have to run Bundler to ensure you have a
 ## The Jekyll Configuration File
 The `_config.yml` file contains the site configuration information. The first topic I'd like to get a handle on is how Jekyll should create the URL for each post.
 
-According to [this Whiteboard Friday](https://moz.com/blog/subdomains-vs-subfolders-rel-canonical-vs-301-how-to-structure-links-optimally-for-seo-whiteboard-friday) article on Mozilla's blog, it's not a good idea, from an SEO point of view, to put content in a subdomain. Mozilla also has an article on [structuring URLs](https://moz.com/blog/15-seo-best-practices-for-structuring-urls) for SEO. With this information in mind, I'm setting `permalink: date`, which is a built-in style that is equivalent to `/:categories/:year/:month/:day/:title.html`. That will enable me to designate some posts going to `/blog/`, others to `/note/` and others to different directory paths all by setting the `category` or `categories` variable in the YAML front matter of each post.
+According to [this Whiteboard Friday](https://moz.com/blog/subdomains-vs-subfolders-rel-canonical-vs-301-how-to-structure-links-optimally-for-seo-whiteboard-friday) article on Mozilla's blog, it's not a good idea, from an SEO point of view, to put content in a subdomain. Mozilla also has an article on [structuring URLs](https://moz.com/blog/15-seo-best-practices-for-structuring-urls) for SEO. With this information in mind, I'm setting `permalink: date`, which is a built-in style that is equivalent to `/:categories/:year/:month/:day/:title.html`. That will enable me to designate some posts going to `/blog/`, others to `/notes/` and others to different directory paths all by setting the `category` or `categories` variable in the YAML front matter of each post.
 
 I think I'm okay with the other values I've set in my [_config.yml](https://github.com/dbc60/dbc60.github.io/blob/master/_config.yml) file.
 
@@ -199,7 +206,7 @@ The other major change is in the handling of `post_url`. It is no longer enough 
 ## Rouge Values for Fenced Code Blocks
 Run `rougify list` to get the latest list of languages supported by Rouge for fenced code blocks.
 
-```shell
+```terminal
 > rougify list
 ```
 

@@ -1,25 +1,34 @@
 ---
+layout: post
 title: Programming Tips & Snippets
-date: 2017-02-02
-draft: true
-categories: [software]
-tags: [windows, golang, c++, sound, graphics, workspace]
+tags:
+    - notes
+    - software
+    - programming
 ---
-
 Some code. Some notes. Some organization. Some graphics. Some Handmade Hero stuff.
-<!--more-->
+
+## Contents
+{:.no_toc}
+
+- TOC
+{:toc}
+
+## Document History
+
+| Date | Author | Summary of Changes |
+|-----------:|-----------------:|:---------------|
+| 2017.02.02 | Doug Cuthbertson | Initial draft. |
 
 ## Keep the Environment Organized
-
 A good directory layout can help keep files organized. Jekyll does this well. The Go programming language and the simple directory hierarchy Casey Muratori uses for [Handmade Hero](https://handmadehero.org/) are also good models.
 
 ### Go Workspace
-
-[Go code][go] is kept in a _workspace_. A workspace contains _many_ source repositories (that is, `git` or `mercurial` repositories). The Go tool understands the layout of a workspace. You don't need a `Makefile`. The file and directory layout contain all the necessary information.
+Go code is kept in a _workspace_. A workspace contains _many_ source repositories (that is, `git` or `mercurial` repositories). The Go tool understands the layout of a workspace. You don't need a `Makefile`. The file and directory layout contain all the necessary information.
 
 A Go workspace looks like this:
 
-```text
+```terminal
 $GOPATH/
     src/
         github.com/user/repo/
@@ -34,7 +43,7 @@ $GOPATH/
 
 Making a workspace is as simple as:
 
-```sh
+```terminal
 mkdir /tmp/gows
 GOPATH=/tmp/gows
 ```
@@ -47,10 +56,9 @@ You can find more information about Go workspaces here:
 - [How to Write Go Code](https://golang.org/doc/code.html)
 
 ### Handmade Hero Workspace
-
 Casey Muratori created a simple directory layout for his projects. There are four directories. A `/handmade/code` directory for all C/C++ source files and headers, `/handmade/misc` for shell scripts, editor configuration and other stuff, `/handmade/data` for test assets and `/build` where all the build results go.
 
-```text
+```terminal
 w:\
     handmade\
         code\
@@ -60,7 +68,6 @@ w:\
 ```
 
 ## Windows Main Program
-
 When writing a main routine for a console program in C or C++, the function signature is typically `int main(int argc, char* argv[])` or just `int main()`. There is also a third form for the signature of the main startup routine: `int main(int argc, char* argv[], char*envp[])`, but it is not typically used. While it's supported on Windows and several compilers on Unix-based operating systems, it is not necessarily supported everywhere.
 
 On Window, we can also use either `int wmain()` or `int wmain(int argc, wchar_t* argv[])` so filenames with non-ascii characters can be supported. Again, the third parameter, `wchar_t* envp[]` for environment variables, is supported but not typically used.
@@ -90,7 +97,6 @@ For a console program Windows creates a console window automatically if needed. 
 Conversely, a GUI subsystem program is one that doesn't require a console window. The command interpreter does not wait for a GUI subsystem program, except in batch files. One way to avoid the completion wait, for both kinds of program, is to use the `start` command. One way to present console window text from a GUI subsystem program is to redirect its standard output stream. Another way is to explicitly create a console window from the program's code.
 
 ## Creating a Window
-
 One of the first things our Windows program needs to do is create a new window. First retrieve the module handle for the application. Next, fill out a `WNDCLASSEX` structure that describes the kind of window we need, and register it with the Windows subsystem. Finally, pass the module handleand a few other arguments to the `CreateWindowEx` function, and it will return a handle to a new window.
 
 ```cpp
@@ -155,7 +161,6 @@ It's probably a good idea to review the documentation on messages and queues.
 - [Using Messages and Queues](https://msdn.microsoft.com/en-us/library/windows/desktop/ms644928(v=vs.85).aspx) has code examples for creating a message loop, examining a message queue, and for posting and sending a message.
 
 ## Windows I/O
-
 I think I need to consider all forms of input and output that Windows allows. Off the top of my head, here's a quick list:
 
 - Keyboard and mouse (process Window event messages).
@@ -167,14 +172,13 @@ I think I need to consider all forms of input and output that Windows allows. Of
 - Memory allocation. This can be done through standard libraries, or one can have the OS allocate a single block and let the application manage its own memory. The final decision depends on how the app uses memory. I'm told that some games grab one large block of memory, and slice it up for graphics and sound on their own via a simple arena allocator. Once memory is segmented, it isn't released until the game ends.
 - Network I/O. [RakNet](http://www.jenkinssoftware.com/) was a commercial network engine for game programmers. The company was purchased by [Oculus](https://www.oculus.com/) and is now a cross-platform [open source](https://github.com/OculusVR/RakNet) C++ networking engine for game programmers. That said, the github repo hasn't been touched in 3 years. Other network APIs to consider are:
 
-  - Valve's [SteamWorks](https://partner.steamgames.com/documentation/api)
-  - [Google Play Games Services](https://developers.google.com/games/services/common/concepts/realtimeMultiplayer)
-  - Microsoft native [network APIs](https://msdn.microsoft.com/en-us/library/windows/desktop/aa365249(v=vs.85).aspx)
+    - Valve's [SteamWorks](https://partner.steamgames.com/documentation/api)
+    - [Google Play Games Services](https://developers.google.com/games/services/common/concepts/realtimeMultiplayer)
+    - Microsoft native [network APIs](https://msdn.microsoft.com/en-us/library/windows/desktop/aa365249(v=vs.85).aspx)
 
 Additionally, consider Windows APIs and instrinsics for managing and measuring dates and time.
 
 ## Keyboard Input
-
 The simple example I've been following, from Handmade Hero, is too simple for general use of the keyboard. Here are some references for better keyboard handling:
 
 - [About Keyboard Input](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646267(v=vs.85).aspx) is a general overview of the input model, focus and activation, messages, status and character translation.
@@ -182,7 +186,6 @@ The simple example I've been following, from Handmade Hero, is too simple for ge
 - [Keyboard Input Reference](https://msdn.microsoft.com/en-us/library/windows/desktop/ff468857(v=vs.85).aspx) has links to documentation about keyboard functions, messages, notifications, structures and constants.
 
 ### A Simple Keyboard, Mouse and Game Controller Interface
-
 Windows allows up to four game controllers to be connected at one time. Here we use a simple model where the keyboard is interpreted as a fifth game controller and mouse input is passed to the application along side those five controls. The interface common to both the OS and the app is written in C so the platform-specific (OS) code and platform-non-specific (app) code can be written in any programming language with a C interface.
 
 ```cpp
@@ -545,7 +548,6 @@ if (SUCCEEDED(ds_result)) {
 ```
 
 ### Push, Pull, Polling and Events
-
 The set of structures shown in the section title "A Simple Keyboard, Mouse and Game Controller Interface" was designed by Casey Muratori for Handmade Hero. It works for that game, because fresh data for the state of the keyboard, mouse and any connected game controllers is pushed from the OS to the game 30 to 60 times a second. It is a push model. The OS pushes fresh state at regular intervals to the application code. The application has the remainder of the interval to respond with an update to its state.
 
 I wonder if other apps would be better served by a pull model, where there would be a callback function supplied to the application during initialization. The app would call that function to get the current state of the user input when it needed it.
@@ -555,7 +557,6 @@ On one hand, an app could be designed on an event-based model. The OS initialize
 It will be educational to build and test different models.
 
 ## Windows Application Manifest
-
 I need to learn how to define an application manifest, and what it does to effect how a program runs on Windows. I do know that different versions of Windows handle uncaught exceptions differently. As of Windows 7 and Server 2008 R2, a 64-bit program running on 64-bit Windows will first terminate the process and then the Program Compatibility Assistant (PCA) offers to fix it then next time you run the application. You can disable the PCA mitigation by adding a Compatibility section to the [application manifest](https://msdn.microsoft.com/en-us/library/dd371711(VS.85).aspx).
 
 References:
@@ -563,11 +564,9 @@ References:
 - [Application Manifest](https://msdn.microsoft.com/en-us/library/dd371711(VS.85).aspx)
 
 ## Windows 32-bit on Windows 64-bit
-
 This is abbreviated as WOW64. It is subsystem of the Windows Operating System capable of running 32-bit applications in the 64-bit versions of Windows. It is an optional subsystem that is not included in Nano Server.
 
 ### Nano Server
-
 By the way, Nano Server is one of three installation options in both Windows Server 2016 Standard and Datacenter. The other two are Server with Desktop Experience and Server Core. According to [Wikipedia, Nano Server](https://en.wikipedia.org/wiki/Windows_Server_2016#Nano_Server) is a minimal-footprint headless version of Windows Server. It excludes the graphical user interface, WOW64 (support for 32-bit software) and Windows Installer. It does not support console login, either locally or via Remote Desktop Connection. All management is performed remotely via Windows Management Instrumentation (WMI), Windows Powershell and Remote Server Management Tools (a collection of web-based GUI and command-line tools). However, in Technical Preview 5, Microsoft has re-added the ability to administer Nano Server locally through PowerShell. According to Microsoft engineer Jeffrey Snover, Nano Server has 93% lower VHD size, 92% fewer critical security advisories, and 80% fewer reboots than Windows Server.
 
 Nano Server is only available to customers who subscribe to the [Microsoft Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx) program. There is a [Wikipedia page](https://en.wikipedia.org/wiki/Microsoft_Software_Assurance) that summarizes the program.
@@ -582,5 +581,3 @@ Nano Server is only available to customers who subscribe to the [Microsoft Softw
 - [Ray Tracing the Next Week](http://in1weekend.blogspot.com/2016/01/ray-tracing-second-weekend.html)
 - [Ray Tracing: The Rest of Your Life](http://in1weekend.blogspot.com/2016/03/ray-tracing-rest-of-your-life.html)
 - [Revisiting Network I/O APIs: The netmap Framework](http://queue.acm.org/detail.cfm?id=2103536) in the January 17, 2012 issue of ACM Queue magazine (Vol. 10, No. 1).
-
-[go]: https://golang.org/

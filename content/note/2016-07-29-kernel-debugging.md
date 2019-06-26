@@ -1,19 +1,31 @@
 ---
+layout: page
 title: Kernel Debugging
-date: 2016-07-29
-draft: true
-categories: [software]
-tags: [windows, kernel, debugging, windbg]
+tags:
+  - kernel
+  - debugging
+  - windbg
+excerpt: Using windbg to debug kernel drivers, such as the FIM mini filter.
 ---
 
-Using windbg to debug kernel drivers, such as the FIM mini filter.
-<!--more-->
+## Contents
+{:.no_toc}
 
-These notes are about running windbg against a Virtual Box VM. They are, in part, based on information from [Setting Up Kernel-Mode Debugging over a Network Cable](https://msdn.microsoft.com/en-us/library/windows/hardware/hh439346%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396).
+* TOC
+{:toc}
+
+## Document History
+
+| Date | Author | Summary of Changes |
+|-----------:|-------------:|:------------|
+| 2016.07.29 | Douglas Cuthbertson | Initial draft |
+
+## Running Windbg against VM2
+See [Setting Up Kernel-Mode Debugging over a Network Cable](https://msdn.microsoft.com/en-us/library/windows/hardware/hh439346%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396) for details.
 
 First, make sure you can ping the IP address of the host computer from the target computer. Next, on the target computer, run `bcdedit /debug on` and `bcdedit /dbgsettings net hostip:w.x.y.z port:n`. For example, if the host computer's IP address is `192.168.1.137`:
 
-```shell
+```terminal
 > bcdedit /debug on
 > bcdedit /dbgsettings net hostip:192.168.1.137 port:50500
 ```
@@ -23,23 +35,22 @@ First, make sure you can ping the IP address of the host computer from the targe
 - IP: 192.168.0.58
 - key: 2e66e0ucoz48s.1dmf6gmay7xk9.3b96yqmcnd39s.1w0h1ju7m4tot
 
-The command will print out a key, such as
-`3nhs6jf46pi4k.370rq4gpgkfxf.1wjvy2fkm4mzf.wfrfsr0t7o3a`. This will make it
-possible for `windbg` running on the host computer to connect.
+    hostip:192.168.10.5
+    Key=33by8fsn9688w.2elbl1jcgfurp.322b9g06n7he7.1wj0wd6odlwt6
+
+The command will print out a key, such as `3nhs6jf46pi4k.370rq4gpgkfxf.1wjvy2fkm4mzf.wfrfsr0t7o3a`. This will make it possible for `windbg` running on the host computer to connect.
 
 On the host computer, launch `windbg` with the same port number and key:
 
-```shell
+```terminal
 windbg -k net:port=50500,key=xjduq2ysrb0k.2utttn53q7ngn.24b65jduczrip.1cdkiyd8fely2
 ```
 
-You might also want to turn on testsigning to test/debug the minifilter: run
-`bcdedit /set TESTSIGNING ON`
+You might also want to turn on testsigning to test/debug the minifilter: run `bcdedit /set TESTSIGNING ON`
 
 ## WinDBG Commands
 
 ### Initial Analysis
-
 These commands typically give you an overview of what happened so you can dig further. In the dase dealing withlibraries, where you don't have source, sending the ersulting log file to the vendor along with the build number of the binary library should be sufficient for them to trace it to a known issue if there is one.
 
 - `!analyze -v`
@@ -104,15 +115,13 @@ These commands typically give you an overview of what happened so you can dig fu
 - `bl`: list all breakpoints
 - `bu`: set an unresolved breakpoint (`bu MyModule!MyFunction`)
 - `bc`: clear a breakpoint, or clear all breakpoints
-  - `bc 2` will clear breakpoint 2
-  - `bc *` will clear all of the breakpoints
+    - `bc 2` will clear breakpoint 2
+    - `bc *` will clear all of the breakpoints
 
 ## Displaying Objects
+Here are a couple of examples of how to use the `dx` command to view memory as a C or C++ object.
 
-Here are a couple of examples of how to use the `dx` command to view memory as
-a C or C++ object.
-
-```text
+```terminal
 kd> dx (*(ThreatStackFIM!FIM_RULE *)(0xffffe001`9b3e3948))
 (*(ThreatStackFIM!FIM_RULE *)(0xffffe001`9b3e3948))                 [Type: FIM_RULE]
     [+0x000] RuleId           : {2C6D89AB-C2F9-11E6-8B3B-55553F93DC1E} [Type: _GUID]
@@ -126,7 +135,7 @@ kd> dx (*(ThreatStackFIM!FIM_RULE *)(0xffffe001`9b3e3948))
     [+0x028] Paths            [Type: _FIM_PATH [1]]
 ```
 
-```text
+```terminal
 kd> dx (*(ThreatStackFIM!FIM_RULE *)(0xffffe001`9b3e3948 + 0x5b0))
 (*(ThreatStackFIM!FIM_RULE *)(0xffffe001`9b3e3948 + 0x5b0))                 [Type: FIM_RULE]
     [+0x000] RuleId           : {FD274E95-C600-11E6-A896-2D11D9E5A7A6} [Type: _GUID]
@@ -140,11 +149,11 @@ kd> dx (*(ThreatStackFIM!FIM_RULE *)(0xffffe001`9b3e3948 + 0x5b0))
     [+0x028] Paths            [Type: _FIM_PATH [1]]
 ```
 
-## Symbol Search Path
 
+## Symbol Search Path
 If you're local to both t2 and the engineering server, then use the following symbol path:
 
-```doscon
+```sh
 SRV*\\t2\bitbucket\symbols*http://msdl.microsoft.com/download/symbols;
 SRV*\\eng-file-server\builds\symbols;
 SRV*\\eng-file-server\releases\symbols;
@@ -152,7 +161,7 @@ SRV*\\eng-file-server\releases\symbols;
 
 If you're remote, then create a directory, like C:\LocalSymbols, to cache the symbols you'll need for debugging and use the following symbol path:
 
-```doscon
+```sh
 SRV*C:\LocalSymbols*http://msdl.microsoft.com/download/symbols;
 SRV* C:\LocalSymbols*\\eng-file-server\builds\symbols;
 SRV* C:\LocalSymbols*\\eng-file-server\releases\symbols;
@@ -160,7 +169,7 @@ SRV* C:\LocalSymbols*\\eng-file-server\releases\symbols;
 
 As of [2015-05-08 Fri]:
 
-```doscon
+```sh
 SRV*\\t2\bitbucket\symbols*http://msdl.microsoft.com/download/symbols;
 SRV*\\eng-file-server\builds\symbols;
 SRV*\\eng-file-server\releases\symbols;
@@ -174,7 +183,7 @@ cache*E:\SymbolCache;srv*http://msdl.microsoft.com/download/symbols;
 ## Source Search Path
 Place the following path in Windbg's source search path:
 
-```doscon
+```sh
 SRV*\\t2\bitbucket\source
 ```
 
@@ -184,7 +193,7 @@ Remember to save these values (both the source and symbol search paths) in a wor
 ## Evaluate C++ Expression
 Use the ~??~ command. For example, =?? Parity!g_ParityFilterInterfaces= returns:
 
-```text
+```sh
 3: kd> ?? Parity!g_ParityFilterInterfaces
 struct ParityFilterInterfaces
    +0x000 m_pMiniFilter    : 0xf73185a8 MiniFilter
@@ -203,7 +212,7 @@ struct ParityFilterInterfaces
 
 In that simple example, ~??~ produces the same results as the ~dt~ command:
 
-```text
+```sh
 3: kd> dt Parity!g_ParityFilterInterfaces
    +0x000 m_pMiniFilter    : 0xf73185a8 MiniFilter
    +0x004 m_pRegistryHook  : 0xf73189a0 RegistryHook
@@ -221,7 +230,7 @@ In that simple example, ~??~ produces the same results as the ~dt~ command:
 
 ### Parity Configuration properties
 
-```text
+```sh
 3: kd> ?? Parity!g_ParityFilterInterfaces.m_pConfigProps
 class ConfigProps * 0xf7318de0
    +0x000 __VFN_table : 0xf730bde8
@@ -301,7 +310,7 @@ class ConfigProps * 0xf7318de0
 
 ### Parity Driver Version Information
 
-```text
+```sh
 3: kd> ?? Parity!g_ParityFilterInterfaces.m_pConfigProps->m_VersionInfo
 struct VersionInfo
    +0x000 major            : 0n6
@@ -349,10 +358,9 @@ struct VersionInfo
   - `.effmach x86`
 
 ### Using dt Recursively
-
 The `dt` command can recursivly display the subtype fields of a struct or class:
 
-```text
+```conf
 3: kd> dt Parity!g_ParityFilterInterfaces -r2
    +0x000 m_pMiniFilter    : 0xf73185a8 MiniFilter
       +0x000 __VFN_table : 0xf730c59c
@@ -1570,6 +1578,5 @@ The `dt` command can recursivly display the subtype fields of a struct or class:
 ```
 
 ## References
-
 - [Common windbg commands (Thematically Grouped)](http://windbg.info/doc/1-common-cmds.html)
 - [Common Wndbg Commands: breakpoints](http://windbg.info/doc/1-common-cmds.html#13_breakpoints)
