@@ -1,5 +1,4 @@
 ---
-layout: post
 title: A Blog on GitHub
 date: 2015-12-30
 draft: true
@@ -13,15 +12,10 @@ tags: [jekyll, yaml, liquid-templates,
        bundler,
        dns
        ]
-excerpt: What do you really need to know to setup a blog on GitHub?
 ---
 
-
-## Contents
-{:.no_toc}
-
-* TOC
-{:toc}
+What do you really need to know to setup a blog on GitHub?
+<!--more-->
 
 I want a platform to write about software development, design patterns, and anything else that came to mind. [GitHub user pages](https://help.github.com/articles/user-organization-and-project-pages/) looked like a good place to start. I've toyed with [Jekyll](https://jekyllrb.com/) and [Compass](http://compass-style.org/) in the past, so I thought it would be easy to setup. For the most part, it is. Along the way, I discovered a few stumbling blocks that I will share.
 

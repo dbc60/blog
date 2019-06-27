@@ -1,16 +1,14 @@
 ---
-layout: post
 title: Marc Levoy Photography Course
+date: 2016-11-05
+draft: true
+categories: hobby
 tags:
     - photography
-excerpt: Notes from the
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+Notes from Marc Levoy's online photography course.
+<!--more-->
 
 ## Lecture 1
 The depth of field equation is:

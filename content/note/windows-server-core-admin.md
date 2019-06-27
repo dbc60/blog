@@ -1,24 +1,16 @@
 ---
-layout: post
 title: Windows Server Core Administration
+date: 2016-11-11
+draft: true
+categories: computer
 tags:
     - windows
     - core
     - cli
-excerpt: Here are some key commands for running Windows Update and other tools on Windows Server 2012 R2 Core.
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
-
-## Document History
-
-| Date | Author | Summary of Changes |
-|-----------:|-----------------:|:---------------|
-| 2016.11.11 | Doug Cuthbertson | Initial draft. |
+Here are some key commands for running Windows Update and other tools on Windows Server 2012 R2 Core.
+<!--more-->
 
 ## Configure Windows Update
 Log in as an administrator and `cd \Windows\System32`. It seems to be the place where scripts and services are located. Run the following commands to set Windows Update to run automatically, and to automatically detect new updates.

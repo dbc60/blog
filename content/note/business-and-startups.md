@@ -1,22 +1,12 @@
 ---
-layout: post
 title: Business Development & Startups
-tags:
-    - notes
-excerpt: Things about business development and startups
+date: 2016-11-04
+draft: true
+categories: business
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
-
-## Document History
-
-| Date | Author | Summary of Changes |
-|-----------:|-----------------:|:---------------|
-| 2016.11.04 | Doug Cuthbertson | Initial draft. |
+Things about business development and startups
+<!--more-->
 
 ## Signs You Might be Playing Startup
 Notes from [Too Many Startups Like Playing Startup](https://www.groovehq.com/blog/startups-playing-startup).

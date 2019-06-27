@@ -1,22 +1,12 @@
 ---
-layout: post
 title: Personal Financial Goals
-tags:
-    - finances
-excerpt: My goals and plans for getting on a more even financial footing.
+date: 2016-11-22
+draft: true
+categories: finance
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
-
-## Document History
-
-| Date | Author | Summary of Changes |
-|-----------:|-----------------:|:---------------|
-| 2016.11.22 | Doug Cuthbertson | Initial draft. |
+My goals and plans for getting on a more even financial footing.
+<!--more-->
 
 ## Financial Goals
 

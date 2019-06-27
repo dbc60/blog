@@ -11,7 +11,7 @@ tags:
     - windows
 ---
 
-excerpt: The directory structure in your repository and the configuration of Jekyll and Compass are tied closely together.
+The directory structure in your repository and the configuration of Jekyll and Compass are tied closely together.
 <!--more-->
 
 ## Windows 10 Developer Mode

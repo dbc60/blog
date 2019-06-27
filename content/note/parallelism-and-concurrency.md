@@ -1,16 +1,12 @@
 ---
-layout: post
 title: Parallelism & Concurrency
-tags:
-    - notes
-excerpt: Notes from Martin Thompson's talk "A quest for predictable latency with Java concurrency."
+date: 2016-12-08
+draft: true
+categories: computer science
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+Notes from Martin Thompson's talk "A quest for predictable latency with Java concurrency."
+<!--more-->
 
 ## Parallelism and Concurrency
 

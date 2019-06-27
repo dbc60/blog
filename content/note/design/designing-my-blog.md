@@ -6,7 +6,7 @@ categories: notes
 tags: [blog,design]
 ---
 
-excerpt: Thoughts and inspirations to be used toward designing my blog.
+Thoughts and inspirations to be used toward designing my blog.
 <!--more-->
 
 ## New Inspiration

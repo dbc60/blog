@@ -1,25 +1,17 @@
 ---
-layout: post
 title: Monitoring Windows Volumes and Directory Paths
+date: 2016-12-08
+draft: true
+categories: computer
 tags:
     - windows
     - directories
     - file system
     - paths
 ---
+
 Matching real paths to rules containing paths to be matched. These rules may contain an asterisk representing zero or more characters in the path.
-
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
-
-## Document History
-
-| Date | Author | Summary of Changes |
-|-----------:|-----------------:|:---------------|
-| 2016.12.17 | Doug Cuthbertson | Initial draft. |
+<!--more-->
 
 ## Rules for Directory Paths
 Directory paths will typically take the form of a string starting with a volume name (a letter followed by a colon), a backslash and a sequence of characters where backslashes represent directory separators. Customers would like to place an asterisk between a pair of backslashes to represent any directory path starting with the path preceding the asterisk and ending with the path succeeding the asterisk. Of course, the path may also begin or end with an asterisk, too. For example, `C:\Users\*\AppData\Local` represents a path on the `C:` volume that starts with `\Users\`, and continues with any directory or sequence of directories that end in `AppData\Local`.

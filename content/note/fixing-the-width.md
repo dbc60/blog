@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Fixing the Width
 date: 2016-03-10
 draft: true
@@ -14,8 +13,9 @@ tags:
     - git
     - mathjax
     - bundler
-excerpt: What an ugly, fragile blog.
 ---
+What an ugly, fragile blog.
+<!--more-->
 
 All I wanted to do was make the page a little wider. Suddenly the widths of the left and right columns were varying in size depending on content. Headings were crazy sizes. Both headings and paragraphs had awkward line spacing. While syntax highlighting is a great feature, poor color choices make code very hard to read. It was a mess.
 

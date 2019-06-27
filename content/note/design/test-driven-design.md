@@ -6,7 +6,7 @@ categories: blog
 tags: [software, development, notes]
 ---
 
-excerpt: A few words on TDD.
+A few words on TDD.
 <!--more-->
 
 ## Selling TDD

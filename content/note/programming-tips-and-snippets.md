@@ -1,24 +1,12 @@
 ---
-layout: post
 title: Programming Tips & Snippets
-tags:
-    - notes
-    - software
-    - programming
+date: 2017-02-02
+draft: true
+categories: programming
 ---
+
 Some code. Some notes. Some organization. Some graphics. Some Handmade Hero stuff.
-
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
-
-## Document History
-
-| Date | Author | Summary of Changes |
-|-----------:|-----------------:|:---------------|
-| 2017.02.02 | Doug Cuthbertson | Initial draft. |
+<!--more-->
 
 ## Keep the Environment Organized
 A good directory layout can help keep files organized. Jekyll does this well. The Go programming language and the simple directory hierarchy Casey Muratori uses for [Handmade Hero](https://handmadehero.org/) are also good models.

@@ -1,12 +1,13 @@
 ---
-layout: post
 title: The Pursuit of Happiness Gels in the Imagination
 date: 2016-03-09
 draft: true
 category: blog
 tags: [happiness,imagination,inspiration,comics]
-excerpt: Imagination is good, but action needs to be taken in the real world.
 ---
+
+Imagination is good, but action needs to be taken in the real world.
+<!--more-->
 
 I wonder if the reason I have so many non-fiction books waiting to be read is that I'm looking for the thrill of living in a world of fun and self-fulfillment, but I'm not willing to create it. I have books on game programming, drawing, sketching, animation, project managment, time management, organizing, clutter reduction, investing and other topics. Even among those I have read, they don't do me much good unless I act upon them.
 

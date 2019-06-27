@@ -1,18 +1,13 @@
 ---
-layout: post
 title: API Design
 date: 2016-03-07
 draft: true
 categories: blog
 tags: [api]
-excerpt: Certainly one aspect of API design is to make the API as regular and as easy to use as possible.
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+Certainly one aspect of API design is to make the API as regular and as easy to use as possible.
+<!--more-->
 
 ## Discontinuities
  I like this quote:

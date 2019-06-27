@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Notebooks
 date: 2015-12-30
 draft: true
@@ -7,14 +6,10 @@ categories: blog
 tags:
   - notebook
   - bulletjournal
-excerpt: What do you migrate into a new notebook?
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+What do you migrate into a new notebook?
+<!--more-->
 
 The short answer is only what still matters. Use December to close "open loops" -- tasks that keep nagging you or have become stagnant. There are two ways to do this: complete the task, or just get rid of it entirely. If you have a lot of open tasks related to a specific project, it's time to take a step back and see if the project is worth it. Ask yourself things like, "will it make you, or those you love happy? Do you really want to read every book on your reading list?"
 

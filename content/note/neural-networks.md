@@ -1,22 +1,12 @@
 ---
-layout: post
 title: Neural Networks
-tags:
-excerpt: Stuff about neural networks I found on the net that looked interesting
+date: 2016-11-06
+draft: true
+categories: computer science
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
-
-## Document History
-
-| Date | Author | Summary of Changes |
-|-----------:|-----------------:|:---------------|
-| 2016.11.08 | Doug Cuthbertson | Initial draft. |
-| 2016.11.10 | Me               | Added References |
+Stuff about neural networks I found on the net that looked interesting
+<!--more-->
 
 ## Types of Neural Networks
 Fjodor Van Veen posted [a mostly complete chart of neural networks](http://www.asimovinstitute.org/neural-network-zoo/#) (dated 2016.09.14). He lists 13 cell types and a labeled diagram, node map, for each of 27 neural networks. Each node map shows the types of cells it contains and how they are connected. The 13 cell types are:

@@ -1,18 +1,13 @@
 ---
-layout: post
 title: Character Templates
 date: 2016-03-07
 draft: true
 categories: blog
 tags: [writing, characters]
-excerpt: Wikipedia has [tables called infoboxes](https://en.wikipedia.org/wiki/Help:Infobox) which are designed to present a summary of some unifying aspect that articles share. It turns out there are [templates](https://en.wikipedia.org/wiki/Wikipedia:List_of_infoboxes) for lots of different kinds of infoboxes, including [fictional characters](https://en.wikipedia.org/wiki/Template:Infobox_character).
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+Wikipedia has [tables called infoboxes](https://en.wikipedia.org/wiki/Help:Infobox) which are designed to present a summary of some unifying aspect that articles share. It turns out there are [templates](https://en.wikipedia.org/wiki/Wikipedia:List_of_infoboxes) for lots of different kinds of infoboxes, including [fictional characters](https://en.wikipedia.org/wiki/Template:Infobox_character).
+<!--more-->
 
 It seems to me these are ready-made tools for creating a log or database of characters and their traits for a story or metaverse.
 

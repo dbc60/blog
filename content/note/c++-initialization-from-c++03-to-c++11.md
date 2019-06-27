@@ -1,5 +1,4 @@
 ---
-layout: post
 title: C++ Initialization from C++03 to C++11
 date: 2016-03-07
 draft: true
@@ -8,14 +7,10 @@ tags:
     - c++
     - c++11
     - initialization
-excerpt: Initialization of Plain Old Data (POD) types has become more consistent, and it is now possible to initialize member arrays, containers and dynamically allocated POD types with a clean uniform syntax.
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+Initialization of Plain Old Data (POD) types has become more consistent, and it is now possible to initialize member arrays, containers and dynamically allocated POD types with a clean uniform syntax.
+<!--more-->
 
 ## C++ Initialization Syntax
 Danny Kalev wrote a very informative article<sup>1</sup> comparing the four ways available in C++03 to initialize variables to the new uniform method available in C++11. The short version is that C++03 doesn't have any way to initialize member arrays, nor dynamically allocated Plain Old Data (POD) types, and it's difficult to initialize Standard Library containers. The initialization syntax available is inconsistent.

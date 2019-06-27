@@ -1,18 +1,13 @@
 ---
-layout: post
 title: A Little Structure
 date: 2016-03-07
 draft: true
 categories: blog
 tags: [html, css]
-excerpt: Sections and outlines in HTML5
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+Sections and outlines in HTML5
+<!--more-->
 
 ## Mozilla Recommendations
 I'm following the recommendations from the [Sections and Outlines](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document) part of the [Mozilla HTML5 Guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5). It starts out with an important note:

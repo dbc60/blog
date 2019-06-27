@@ -1,18 +1,13 @@
 ---
-layout: post
 title: About CPUs, Caches and Shared Data
 date: 2016-03-07
 draft: true
 categories: blog
 tags: [multiprocessing, c++, c++11]
-excerpt: This post is about when a central processing unit (CPU) can reorder instructions that load and store shared values, that is, values that are visible to more than one processor.
 ---
 
-## Contents
-{:.no_toc}
-
-- TOC
-{:toc}
+This post is about when a central processing unit (CPU) can reorder instructions that load and store shared values, that is, values that are visible to more than one processor.
+<!--more-->
 
 ## Sequential Consistency for Data-Race Free (SC-DRF) Programs
 Software memory models have converged on sequential consistency for data-race-free programs (SC-DRF).
