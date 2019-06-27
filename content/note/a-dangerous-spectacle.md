@@ -1,5 +1,4 @@
 ---
-layout: post
 title: A Dangerous Spectacle
 date: 2016-11-09
 draft: true
