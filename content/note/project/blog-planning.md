@@ -37,7 +37,7 @@ Consider subdirectories for the `note/project` folder to help organize project n
 - `filing`. Write about struggles with keeping paper files organized.
 - `budget` or `finanaces`. Ways of keeping a budget, making investments, and managing money.
 - `gaming`. Play. Games online and offline.
-- `game development`. Handmade Hero, and other inspirations. Tools. Techniques.
+- `game development`. Handmade Hero, and other inspirations. Tools. Techniques. Although, either the `project` directory may be enough or put this under the `project` directory.
 - `graphics`. D3, sketching, and related thoughts on visual design and presetation.
 - `home renovation`. The kitchen cabinet project, and others.
 - `book reviews`. That might motivate me to read more and take notes on technical books.

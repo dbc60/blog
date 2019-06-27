@@ -1,9 +1,9 @@
 ---
 layout: post
 title: A Dangerous Spectacle
-category: blog
 date: 2016-11-09
 draft: true
+category: blog
 tags:
     - 2016
     - president
