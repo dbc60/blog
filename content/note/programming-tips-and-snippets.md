@@ -569,3 +569,4 @@ Nano Server is only available to customers who subscribe to the [Microsoft Softw
 - [Ray Tracing the Next Week](http://in1weekend.blogspot.com/2016/01/ray-tracing-second-weekend.html)
 - [Ray Tracing: The Rest of Your Life](http://in1weekend.blogspot.com/2016/03/ray-tracing-rest-of-your-life.html)
 - [Revisiting Network I/O APIs: The netmap Framework](http://queue.acm.org/detail.cfm?id=2103536) in the January 17, 2012 issue of ACM Queue magazine (Vol. 10, No. 1).
+- [Using AWK and R to Parse 25 TB of Data](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/)
