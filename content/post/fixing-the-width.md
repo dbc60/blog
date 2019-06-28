@@ -2,6 +2,7 @@
 title: Fixing the Width
 date: 2016-03-10
 draft: true
+math: true
 category: blog
 tags:
     - jekyll
@@ -23,6 +24,27 @@ I spend a lot of time trying to figure out what was going wrong. One of the prob
 
 I also got rid jQuery and some other JavaScript. It was a holdover from another website I created a while ago. The only JavaScript remaining is for MathJax, which I plan to use for - what else? - math!
 
-$$\begin{bmatrix} a & b & c & d \\ e & f & g & h \\ i & j & k & l \\ m & n & o & p \end{bmatrix} \times \begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix} = \begin{bmatrix} ax + by + cz +dw \\ ex + fy + gz + hw \\ ix + jy + kz +lw \\ mx + ny + oz + pw\end{bmatrix}$$
+\[
+    \begin{bmatrix}
+      a & b & c & d \\\\\
+      e & f & g & h \\\\\
+      i & j & k & l \\\\\
+      m & n & o & p
+    \end{bmatrix}
+    \times
+    \begin{bmatrix}
+      x \\\\\
+      y \\\\\
+      z \\\\\
+      w
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      ax + by + cz +dw  \\\\\
+      ex + fy + gz + hw \\\\\
+      ix + jy + kz +lw  \\\\\
+      mx + ny + oz + pw
+    \end{bmatrix}
+\]
 
 This blog is still quite ugly, but I'm feeling better about it after putting in a couple of days work to make the width behave the way I want it to. Now to learn more about layout design, typography, Sass, CSS and how best to put to use semantic HTML5 tags, like  `<main>`, `<aside>`, `<header>` and others.
