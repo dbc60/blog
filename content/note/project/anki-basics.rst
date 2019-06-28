@@ -2,7 +2,7 @@
 title: "Anki Basics"
 date: 2019-06-08T07:29:35-04:00
 draft: true
-categories: [tool]
+categories: [project]
 tags: [anki, css, web]
 ---
 
@@ -51,5 +51,5 @@ Definitions
 
     Each card type has two *templates*, one for the question and one for the answer.
 
-    Each type of note can have one or more card types; when you add a note,
+    Each type of note can have one or more ``card types``; when you add a note,
     Anki will create one card for each card type.

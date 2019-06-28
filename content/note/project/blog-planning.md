@@ -2,6 +2,7 @@
 title: "Blog Planning"
 date: 2019-06-25T05:53:03-04:00
 draft: true
+categories: project
 ---
 
 What steps are left to actually launch this blog even though there are styling, presentation, and organizational issues I would like to address?
@@ -41,3 +42,7 @@ Consider subdirectories for the `note/project` folder to help organize project n
 - `graphics`. D3, sketching, and related thoughts on visual design and presetation.
 - `home renovation`. The kitchen cabinet project, and others.
 - `book reviews`. That might motivate me to read more and take notes on technical books.
+
+## Styling Changes
+
+The HTML `<code></code>` element is injected for inline monospace text for markdown files. Horribly, `<tt class="docutils literal"></tt>` is injected into reStructuredText files. Currently, `base.css` treats `code` and `tt.docutils.literal` identically. I'd prefer to have a class that applies to both `<code>` and `<tt>`, or have `.rst` files generate `<code>` elements and both `.md` and `.rst` apply a `class` attribute to `<code>` elements.

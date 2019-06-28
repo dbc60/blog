@@ -99,7 +99,7 @@ function tokenize_url($url) {
 }
 ```
 
-So, first we pre-process the list of URL patterns into a directed graph (a nested associative array) of tokens using the function above. This way, we only have to traverse teh graph once for exact matches, and a bit more to find wildcard matches. We mark the end of our patterns against which to match by hanging a special symbol, such as "`%!%!%`" off that node.
+So, first we pre-process the list of URL patterns into a directed graph (a nested associative array) of tokens using the function above. This way, we only have to traverse the graph once for exact matches, and a bit more to find wildcard matches. We mark the end of our patterns against which to match by hanging a special symbol, such as "`%!%!%`" off that node.
 
 Here's the function to build the graph:
 

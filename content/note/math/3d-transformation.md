@@ -79,7 +79,7 @@ The **view matrix**, also known as the **camera matrix** is used to transform th
 The **projection matrix** is based on near and far view distances,the angle of the view of the camera and your screen resolution in both the X and Y directions. This matrix creates perspective. It transforms view space into projection space.
 
 ### Summary
-To display an object in 3D, we have three matrices: *world*, *view* and *projection*. We can multiply all these matrices once to create a combined *world-view-projection* matrix. We now can operate on hte vertices of the objects with this combined matrix to place objects on the screen.
+To display an object in 3D, we have three matrices: *world*, *view* and *projection*. We can multiply all these matrices once to create a combined *world-view-projection* matrix. We now can operate on the vertices of the objects with this combined matrix to place objects on the screen.
 
 The matrix is produced by:
 

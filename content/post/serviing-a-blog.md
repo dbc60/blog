@@ -9,12 +9,8 @@ tags:
   - design
 ---
 
-Finding a system to put a blog on the web.
-<!--more-->
-
-## Background
-
 I want a blog where I control the design and layout. I want to be able to change the way it works and appears so I can experiment with various ideas, learn by attempting to replicate other designs and see what happens.
+<!--more-->
 
 I've tried CMS solutions running on Linux-based servers. One of the first ones I tried many years ago was [Apache Cocoon][1]. I was enticed by how flexible and programmable it was with its pipeline architecture. It seemed anything was possible. Ultimately, trying to program using XML and XSLT, and configure Java servlets proved to be too complicated. The languages and processes needed to keep the site up and running were too far removed from those for adding content.
 

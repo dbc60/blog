@@ -64,14 +64,14 @@ h1, h2, strong {
   color: #111;
 }
 
-code, pre {
+code, tt.docutils.literal, pre {
   margin: 0.5em 0rem 0.5em 0rem;
   overflow: auto;
   overflow-y: hidden;
   font-family: "Inconsolata", monospace;
 }
 
-code {
+code, tt.docutils.literal {
   padding: 2px 4px;
   vertical-align: text-bottom;
 }
@@ -80,26 +80,14 @@ pre {
   padding: 1em;
 }
 
-/*
-Primary color. Most brands have a primary color that acts as a visual accent.
-On a website, this accent can be used to provide emphasis on interactive
-elements, like links.
-*/
 a {
-  color: #007bff;
-}
-
-/*
-Secondary color. The accent color can be omplemented with more subtle shades, to
-be used on borders, backgrounds, or even the body text.
-*/
-code, pre {
-  background-color: slategray;
-  border-bottom: 1px solid #ced4da;
+  color: darkslategray;
 }
 
 pre {
-  border-left: 2px solid black;
+  background-color: gainsboro;
+  border-bottom: 1px solid silver;
+  border-left: 2px solid slategray;
 }
 
 .language-sql {

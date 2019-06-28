@@ -22,7 +22,7 @@ The author says there are seven signs:
 1. Having more conversations with people outside of your market than people in it.
 
 ## Setting the Stage for Boostrapping a SaaS Startup
-The first rule is that building and running a SaaS business has _nothing_ to do with your ability to write code. Code is the least important thing about a SaaS business. Typically, codebases are dismal abysses of darkness, pain and hte cause for much wailing and gnashing of teeth. The reason is that a business's software serves one purpose and one purpose only: To make the business money.
+The first rule is that building and running a SaaS business has _nothing_ to do with your ability to write code. Code is the least important thing about a SaaS business. Typically, codebases are dismal abysses of darkness, pain and the cause for much wailing and gnashing of teeth. The reason is that a business's software serves one purpose and one purpose only: To make the business money.
 
 Ask yourself how any of these goals that developers might have will make the business money:
 

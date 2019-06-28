@@ -681,7 +681,7 @@ In contrast to the [Better Motherfucking Website](#better-motherfucking-website-
 
 Interestingly, it sets the font size to `1.2em/1.62em`, which is about `0.74em`. To help understand this setting, look to the Mozilla Developer Network article on [CSS font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size). It has a lot to say about `em` and other measures. Specifically:
 
-> Another way of setting the font size is with `em` values. The size of an `em` value is dynamic. When defining the `font-size` property, an `em` is equal to the size of the font that applies to the parent of the element in question. If you haven't set the font size anywhere on the page, then it is the browser default, which is probably `16px`. So, by default `1em = 16px`, and `2em = 32px`. If you set a `font-size` of `20px` on the body element, then `1em = 20px` and `2em - 40px`. Not that the value `2` is essentially a multiplier of hte current `em` size.
+> Another way of setting the font size is with `em` values. The size of an `em` value is dynamic. When defining the `font-size` property, an `em` is equal to the size of the font that applies to the parent of the element in question. If you haven't set the font size anywhere on the page, then it is the browser default, which is probably `16px`. So, by default `1em = 16px`, and `2em = 32px`. If you set a `font-size` of `20px` on the body element, then `1em = 20px` and `2em - 40px`. Not that the value `2` is essentially a multiplier of the current `em` size.
 
 In order to calculate the em equivalent to any pixel value required, you can use this formula:
 

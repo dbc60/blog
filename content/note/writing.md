@@ -8,11 +8,10 @@ tags:
     - vocabulary
 ---
 
-Notes on point of view, writing prompts and time.
+[This article](http://writingcommons.org/index.php/open-text/style/point-of-view/635-understanding-second-person-point-of-view-wizard-activity) is the most enjoyable description of how to use the first, second and third person points of view I've ever seen. I have summarized a few good points.
 <!--more-->
 
-## Point of View
-[This article](http://writingcommons.org/index.php/open-text/style/point-of-view/635-understanding-second-person-point-of-view-wizard-activity) is the most enjoyable description of how to use the first, second and third person points of view I've ever seen.
+Even though the article's title is about understanding the second person point of view, it covers the first and third person as well. It probably does that for contrast and comparison.
 
 - Use the first person for telling personal stories and anecdotes.
 - Use the second person for things like instruction manuals, to paint a picture for people or to make clear that a situation is personally important to your reader. For example, I could say, "imagine that you need to finish a piece of writing for class and keep getting frustrating advice from crackpot wizards." You can also use the second person in role-playing games. For example, your character will be going on an adventure and you will suddenly be presented with a couple of options. "You turn left." "You turn right." I have fun playing those games.
@@ -25,11 +24,15 @@ Notes on point of view, writing prompts and time.
 
 So, the fountains of Darkness quietly flow in low, old places, the names of which are born by springs feeding a pool.
 
-Scripture refers to "the fountains of the deep." In the days of Noah and hte Ark, these pools of water beneath the Earth's crust burst forth onto the surface providing the massive amounts of water needed for the global flood judgement. Specifically, in the King James Bible:
+Scripture refers to "the fountains of the deep." In the days of Noah and the Ark, these pools of water beneath the Earth's crust burst forth onto the surface providing the massive amounts of water needed for the global flood judgement. Specifically, in the King James Bible:
 
 > In the six hundredth year of Noah's life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.
 
 See [ringwoodite](https://en.wikipedia.org/wiki/Ringwoodite) at Wikipedia.
+
+### The Professional Tourist
+
+> A man wearing khakis with lots of pockets, pulling a wheelie cart with handle, breezes through security of whichever airport he is in. He's a machinist. He encouters locks and opens them in moments. He's followed by another man wearing a pith helmet, sporting a handlebar moustache. The second man carries a large gun normally reserved for hunting elephants in the plains of Africa.
 
 ## Philosophy about Time
 

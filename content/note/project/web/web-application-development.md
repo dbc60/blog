@@ -208,7 +208,7 @@ There was a discussion on Stackoverflow about not being able to match HTML tags 
 - he comes
 - his unholy radiance destroying all enlightenment
 - HTML tags will leak from your eyes like liquid pain
-- extinguishes the voices of mortal man from teh sphere
+- extinguishes the voices of mortal man from the sphere
 - the pony he comes
 - Zalgo is Tony the Pony he comes
 
