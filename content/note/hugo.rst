@@ -2,14 +2,14 @@
 title: "Hugo"
 date: 2019-06-12T07:18:40-04:00
 draft: true
-categories: [web]
+categories: [blog]
 tags: [hugo]
-summary: Some notes on Hugo, a static site generator.
 ---
 
 `Hugo`_ has an extended version that seems to be for supporting Sass/SCSS.  It
 adds ``toCSS`` to the ``resources`` object. Vanilla Hugo doesn't have that
 method.
+<!--more-->
 
 The `0.43 release <https://gohugo.io/news/0.43-relnotes/>`- announced you need
 the extended version only if you want to edit SCSS. Hugo extended places

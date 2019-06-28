@@ -2,7 +2,7 @@
 title: Alternate Filing Plan
 date: 2016-03-28T07:30:00-05:00
 draft: true
-categories: [projects]
+categories: [project]
 tags: [filing]
 ---
 An outline of an alternate, detailed filing plan.

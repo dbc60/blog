@@ -2,7 +2,7 @@
 title: Kitchen Renovation Design Document
 date: 2016-10-20
 draft: true
-categories: [projects]
+categories: [project]
 tags: [renovation, kitchen]
 ---
 

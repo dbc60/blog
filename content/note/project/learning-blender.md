@@ -2,7 +2,7 @@
 title: Learning Blender
 date: 2016-11-23
 draft: true
-categories: [projects]
+categories: [project]
 tags: [blender]
 ---
 

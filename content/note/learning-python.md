@@ -2,7 +2,7 @@
 title: Learn to Program with Python
 date: 2016-03-09
 draft: true
-categories: notes
+categories: note
 tags: [python]
 ---
 

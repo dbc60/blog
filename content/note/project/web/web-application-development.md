@@ -2,7 +2,7 @@
 title: Web Application Development
 date: 2016-03-16
 draft: true
-categories: notes
+categories: note
 tags: [web, development]
 ---
 

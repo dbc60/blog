@@ -2,8 +2,8 @@
 title: An Editor and Debugger for Windows Installers
 date: 2016-12-09
 draft: true
-categories: [projects, software]
-tags: [editor, debugger]
+categories: [project]
+tags: [editor, debugger, software]
 ---
 
 I have been completely frustrated with the [WiX Toolset](https://wixtoolset.org). There is no visibility into what is actually taking place in the installer when one describes it using XML. The candle and light tools provide insufficient warning and error messages. Installers fail during runtime and the failure logs do not help enough to uncover the errors.

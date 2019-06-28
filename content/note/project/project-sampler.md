@@ -2,7 +2,8 @@
 title: Project Sampler
 date: 2017-02-17
 draft: true
-categories: [projects, software, ideas]
+categories: project
+tags: [software, idea]
 ---
 
 I was just thinking this morning of a project to display what I can do on Windows. Mostly, it covered using Windows I/O APIs (graphics, sound, input from a keyboard, mouse, game controller or pen and tablet). I then had a wild idea to expand on that and make a code sampler, something like an embroidery sampler done to show off a needleworkers skill.

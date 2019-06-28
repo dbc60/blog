@@ -2,7 +2,7 @@
 title: Writing
 date: 2016-03-18
 draft: true
-categories: notes
+categories: note
 tags:
     - writing
     - vocabulary

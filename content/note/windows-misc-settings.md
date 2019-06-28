@@ -2,7 +2,7 @@
 title: Miscellaneous Windows Settings
 date: 2016-09-12T09:45:00-05:00
 draft: true
-categories: work
+categories: computer
 ---
 
 Registry, boot (bcdedit), and other settings

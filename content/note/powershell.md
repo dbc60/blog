@@ -2,7 +2,7 @@
 title: PowerShell Notes
 date: 2016-09-12T09:53:00-05:00
 draft: true
-categories: work
+categories: programming
 ---
 
 Powershell notes, examples, links and reference material.

@@ -2,7 +2,7 @@
 title: Woodworking Resources for Beginners
 date: 2016-11-24
 draft: true
-categories: [hobbies]
+categories: [hobby]
 tags: [woodworking]
 ---
 

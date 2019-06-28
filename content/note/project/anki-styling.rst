@@ -2,7 +2,7 @@
 title: "Anki Styling"
 date: 2019-06-08T06:23:59-04:00
 draft: true
-categories: [tools]
+categories: [tool]
 tags: [anki, css, web]
 ---
 

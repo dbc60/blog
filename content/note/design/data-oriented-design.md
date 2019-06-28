@@ -2,7 +2,7 @@
 title: Data-Oriented Design
 date: 2016-03-15
 draft: true
-categories: notes
+categories: note
 tags: [data-oriented, c++, c++11]
 ---
 

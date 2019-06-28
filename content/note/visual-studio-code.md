@@ -2,9 +2,10 @@
 title: Visual Studio Code
 date: 2016-10-12T06:12:00-04:00
 draft: true
-categories: skill
+categories: programming
 tags:
     - code
+    - editor
 ---
 
 Notes about using VS Code.

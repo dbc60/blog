@@ -5,7 +5,7 @@
     {{- $paginator := .Paginate (where .Pages "Type" "in" (slice "post" "note")) -}}
     {{- range $paginator.Pages -}}
     {{ $page := .Page }}
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a> {{ title $page.Type }}</h2>
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       <div class="article-meta-data">
         {{- partial "date-and-tags.html" . -}}
         <!-- this renders based on layouts/_default/summary.html (either the

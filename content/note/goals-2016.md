@@ -2,7 +2,7 @@
 title: 2016 Goals
 date: 2016-09-18T06:12:00-04:00
 draft: true
-categories: projects
+categories: project
 ---
 
 My very first goal is to secure my financial future so I never have to go through another long period out of work with no income.

@@ -2,7 +2,7 @@
 title: Project Planning
 date: 2016-03-07
 draft: true
-categories: [projects, software]
+categories: [project]
 tags: [planning, design]
 ---
 

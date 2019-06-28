@@ -2,7 +2,7 @@
 title: Art Projects Overview
 date: 2016-09-18T06:07:00-05:00
 draft: true
-categories: projects
+categories: project
 tags:
   - art
   - 3d

@@ -2,7 +2,7 @@
 title: Kitchen Cabinets
 date: 2016-09-05T07:28:50-05:00
 draft: true
-categories: [projects]
+categories: [project]
 tags: [renovation, kitchen]
 ---
 

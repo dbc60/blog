@@ -2,7 +2,7 @@
 title: About Electronic Files
 date: 2016-03-07
 draft: true
-categories: notes
+categories: note
 ---
 
 If you can get a collection of important files, their attributes and contents, what kinds of things can you do with that information?

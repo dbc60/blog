@@ -2,7 +2,7 @@
 title: Analytical Reading
 date: 2016-04-08
 draft: true
-categories: notes
+categories: note
 tags: [reading, knowledge]
 ---
 

@@ -2,7 +2,7 @@
 title: Riverhom Cloud Bank Project
 date: 2016-04-08
 draft: true
-categories: projects
+categories: project
 tags:
   - design
   - project

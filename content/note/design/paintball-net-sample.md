@@ -2,7 +2,7 @@
 title: Paintball Net Sample Software Design Document
 date: 2016-03-16
 draft: true
-categories: notes
+categories: note
 tags: [template,design,project,game]
 ---
 

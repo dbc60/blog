@@ -2,7 +2,7 @@
 title: "Anki Basics"
 date: 2019-06-08T07:29:35-04:00
 draft: true
-categories: [tools]
+categories: [tool]
 tags: [anki, css, web]
 ---
 

@@ -2,7 +2,7 @@
 title: Excel Spreadsheets
 date: 2016-03-26
 draft: true
-categories: notes
+categories: note
 tags: [excel, spreadsheet]
 ---
 

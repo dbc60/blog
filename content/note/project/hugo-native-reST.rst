@@ -2,8 +2,8 @@
 title: "Hugo Native reStructuredText"
 date: 2019-05-24T08:36:34-04:00
 draft: true
-categories: [projects, software]
-tags: [hugo, golang]
+categories: [project]
+tags: [hugo, golang, software]
 ---
 
 The goal is to create a better parser for content files marked up with

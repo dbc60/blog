@@ -2,7 +2,7 @@
 title:  Budget Design
 date: 2016-06-12
 draft: true
-categories: [projects]
+categories: [project]
 tags: [budget, design]
 ---
 

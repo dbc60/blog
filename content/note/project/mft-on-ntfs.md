@@ -2,7 +2,7 @@
 title: The NTFS Master File Table
 date: 2016-09-25T06:12:00-04:00
 draft: true
-categories: projects
+categories: project
 ---
 
 How to find and read the Master File Table (MFT) on NTFS

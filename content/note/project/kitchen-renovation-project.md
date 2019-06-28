@@ -2,7 +2,7 @@
 title: Kitchen Renovation
 date: 2016-03-28
 draft: true
-categories: projects
+categories: project
 tags: [renovation, kitchen]
 ---
 

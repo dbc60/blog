@@ -2,7 +2,7 @@
 title: Version Control Schema
 date: 2016-03-28
 draft: true
-categories: notes
+categories: note
 tags: [history,version]
 ---
 

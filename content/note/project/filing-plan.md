@@ -2,7 +2,7 @@
 title: Filing Plan
 date: 2016-03-28T06:30:00-05:00
 draft: true
-categories: [projects]
+categories: [project]
 tags: [filing]
 ---
 

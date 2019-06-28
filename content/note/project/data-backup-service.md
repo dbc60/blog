@@ -2,7 +2,7 @@
 title: Make Digital Data Backup Service
 date: 2016-09-05T07:33:00-05:00
 draft: true
-categories: [projects, software]
+categories: [project, software]
 tags: [data backup, service, cloud, application]
 ---
 
