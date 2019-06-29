@@ -9,6 +9,19 @@ tags: [planning, design]
 The purpose of project planning is to create the foundation for a visible sense of progress at each stage of the project. What this means is that as each step o the plan is completed there is evidence of progress.
 <!--more-->
 
+Before starting any project, it might be wise to apply the [Heilmeier Catechism]. It is a series of questions to answer that will help you think through and evaluate proposed projects to see if they are worth pursuing. The questions are:
+
+1. What are you trying to do? Articulate your objectives using absolutely no jargon.
+1. How is it done today, and what are the limits of current practice?
+1. What is new in your approach and why do you think it will be successful?
+1. Who cares? If you are successful, what difference will it make?
+1. What are the risks?
+1. How much will it cost?
+1. How long will it take?
+1. What are the mid-term and final "exams" to check for success?
+
+For simple projects, especially home projects, don't spend too much time, if any, on questions 5 - 7 (evaluating risks, costs, and how long it will take).
+
 ## Experiments vs Commitments
 I was reading [My advice on learning Python efficiently][2] because I'm interested in learning Python. That led me to [How to Build the Habit of Finishing What You Start][1] which highlighted a useful way to distinguish between projects you should finish and those that are okay to abandon. The author separates projects into two kinds: those that are experiements and those that are commitments. It is the key to deciding what's worth finishing, no matter how boring, dull or uninspiring, and what's okay to quit.
 
@@ -352,9 +365,11 @@ You don't need to have a full accounting system. Start out with a simple spreads
 
 
 ## References
+
 - *The* Indie Game Development Survival Guide.
 - [The Python Tutorial](https://docs.python.org/3/tutorial/index.html)
 - [The Zen of Python](https://www.python.org/dev/peps/pep-0020/)
+- [The Simple Genius of Checklists](https://blog.nuclino.com/the-simple-genius-of-checklists-from-b-17-to-the-apollo-missions)
 
 [1]: https://www.scotthyoung.com/blog/2015/04/01/finish-what-you-start/
 [2]: http://www.simplydjango.com/learn-python-efficiently/

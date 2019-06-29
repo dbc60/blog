@@ -24,17 +24,17 @@ These notes are from [The 100:10:1 Method](https://nickbentleygames.wordpress.co
 
 Here's a list of three games he developed with this method and the time spent in Step 3:
 
-* Cat Herders: 1 year.
-* Stinkers: 3 years.
-* Catchup: 4 years.
+- Cat Herders: 1 year.
+- Stinkers: 3 years.
+- Catchup: 4 years.
 
 ### Focus on Process Not Outcome
 
-* Don't pursue the rewards directly, trust that they will come. Focus on the process with diligence and effortful study, and let the outcome take care of itself.
-* Stop worrying about what others will think of your performance.
-* View each attempt as merely practice for the next attempt.
-* Choose for yourself how to rate your performance. Rate yourself based on the effort, not the outcome. Don't try to win today, try to become a winner. Be happier when your best effort results in defeat than when a weak effort results in victory. Determine what your best effort would look like, and then make it happen.
-* Bring awareness to your performance, either during or immediately after it, so you can learn to identify when bad results follow good processes, and vice-versa. With practice you will build the confidence needed to avoid second-guessing yourself when the results are bad but your technique is good.
+- Don't pursue the rewards directly, trust that they will come. Focus on the process with diligence and effortful study, and let the outcome take care of itself.
+- Stop worrying about what others will think of your performance.
+- View each attempt as merely practice for the next attempt.
+- Choose for yourself how to rate your performance. Rate yourself based on the effort, not the outcome. Don't try to win today, try to become a winner. Be happier when your best effort results in defeat than when a weak effort results in victory. Determine what your best effort would look like, and then make it happen.
+- Bring awareness to your performance, either during or immediately after it, so you can learn to identify when bad results follow good processes, and vice-versa. With practice you will build the confidence needed to avoid second-guessing yourself when the results are bad but your technique is good.
 
 ### Selection Criteria
 
@@ -68,15 +68,15 @@ Other permanent changes depend on the results of previous games. For example, if
 
 Just doing things without an effect on the game is pointless. Here are a few examples of player activities that are pointless when they have no effect on the outcome of the game:
 
-* Recording winners
-* Naming continents
-* Naming cities
+- Recording winners
+- Naming continents
+- Naming cities
 
 On the other hand, when these actions do effect the game, it becomes interesting and possibly fun:
 
-* Recording winners. Winners get certain bonuses. They might get a missile for each time they've won. It reminds the players that previous winners are more powerful and should be taken down. The players are motivated to balance the game (rather than requiring the game designer to ensure the game continues to stay balanced).
-* If naming a continent gives you a +1 when you own it, you now have a reason to name it and you can pick your favorite spot. It also gives other players a reason to blow it up, because they know you like it.
-* By naming a city, if you win and own the city, only **you** can start there in future games.
+- Recording winners. Winners get certain bonuses. They might get a missile for each time they've won. It reminds the players that previous winners are more powerful and should be taken down. The players are motivated to balance the game (rather than requiring the game designer to ensure the game continues to stay balanced).
+- If naming a continent gives you a +1 when you own it, you now have a reason to name it and you can pick your favorite spot. It also gives other players a reason to blow it up, because they know you like it.
+- By naming a city, if you win and own the city, only **you** can start there in future games.
 
 ## Changes to Legacy Games
 
@@ -88,19 +88,19 @@ I like this idea of gradually introducing rules. Players can start with a few se
 
 Good things that happened:
 
-* Using a "solved" game like Risk.
-* Players don't own factions.
-* Unpredictability (not chaos) with unlocks
-* Introducing a draft
-* Pulling from non-games: cliff hangers. This is related to the game packets, which create new rules. People actually looked forward to opening them and learning how to use them instead of "Oh no. We have to learn more rules."
-* Gimmicks - "Do not open. Ever". Resulted in a meta-game. The contents of the envelope is one of 4 possible bad things. Some people decide as a group to open it anyways and take responsibility for the outcome (or not - some just want to see what's inside).
-* Unboxing the game. Breaking the seals on the envelopes. Destroying certain cards along the way. Drawing on the board. It makes it impossible to reset the game to its unboxed condition.
+- Using a "solved" game like Risk.
+- Players don't own factions.
+- Unpredictability (not chaos) with unlocks
+- Introducing a draft
+- Pulling from non-games: cliff hangers. This is related to the game packets, which create new rules. People actually looked forward to opening them and learning how to use them instead of "Oh no. We have to learn more rules."
+- Gimmicks - "Do not open. Ever". Resulted in a meta-game. The contents of the envelope is one of 4 possible bad things. Some people decide as a group to open it anyways and take responsibility for the outcome (or not - some just want to see what's inside).
+- Unboxing the game. Breaking the seals on the envelopes. Destroying certain cards along the way. Drawing on the board. It makes it impossible to reset the game to its unboxed condition.
 
 ## Brainstormed Game Concepts
 
-1. Railworld - build railroads. Gain points by covering territory, enhancing economies through increased trade. The railroads shuttle people and goods enabling other industries and commerce in general.
-1. Go (the game), Chess or other old board games on servers. Hold tournaments, track progress, keep a leader board.
-1. Steampunk-based game. Here are some terms to excite the imagination
+- Railworld - build railroads. Gain points by covering territory, enhancing economies through increased trade. The railroads shuttle people and goods enabling other industries and commerce in general.
+- Go (the game), Chess or other old board games on servers. Hold tournaments, track progress, keep a leader board.
+- Steampunk-based game. Here are some terms to excite the imagination
 - Leviathans, Behemoths, Goliaths
 - Submersibles
 - Airships
@@ -129,25 +129,25 @@ Good things that happened:
 - Regeneration Machine
 - Cosmic Blueprint
 - Artifice
-    - A clever expedient
-    - Ingenious strategem
-    - Crafty or subtle deception
-    - Craftsmanship
-    - A skillfully contrived device (as from the Guild of Artificers)
+  - A clever expedient
+  - Ingenious strategem
+  - Crafty or subtle deception
+  - Craftsmanship
+  - A skillfully contrived device (as from the Guild of Artificers)
 - Clothing
-    - Top hats
-    - Elegant waistcoats
-    - Frock coats
-    - Bustled gowns
+  - Top hats
+  - Elegant waistcoats
+  - Frock coats
+  - Bustled gowns
 - Styles, Ornamentations, Knick-knacks and other Apparatus
-    - Coiffured hair
-    - Ringlets
-    - Corsets, corsetry
-    - Khaki desert suits
-    - Pith helmet
-    - Timepieces
-    - Goggles
-    - Artificial extensions, such as robotic arms and breathing apparatus
+  - Coiffured hair
+  - Ringlets
+  - Corsets, corsetry
+  - Khaki desert suits
+  - Pith helmet
+  - Timepieces
+  - Goggles
+  - Artificial extensions, such as robotic arms and breathing apparatus
 
 ## Railroads Win
 I've thought of a game world where the car never takes off, but rail is the preferred means of transportation. What would it be like if all cities and towns were connected by rail? There are no cars or buses in general use. Transportation is purely by light rail for local travel and heavy rail for long distance and transportation of cargo over land. Ships are necessary for long distances over water, whether it be down a river like the Mississippi, or across lakes, seas and oceans. Other than that, transportation is either on foot, bicycle or rail. If set late enough, then small planes are available for air travel.
