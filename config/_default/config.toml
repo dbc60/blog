@@ -5,6 +5,8 @@ disqusShortname = "cuthbertson"
 enableRobotsTXT = true
 # Set Hugo built-in pagination
 #Paginate = 8
+canonifyURLs = true
+footnoteReturnLinkContents = "↩"
 
 # Name of Academic theme folder in `themes/`.
 # theme = "academic"
@@ -12,6 +14,10 @@ enableRobotsTXT = true
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
+
+[blackfriday]
+  plainIDAnchors = true
+  footnoteAnchorPrefix = "footnote"
 
 # Uncomment below to enable syntax highlighting
 pygmentsCodefences=true

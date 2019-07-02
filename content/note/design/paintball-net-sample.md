@@ -2,8 +2,8 @@
 title: Paintball Net Sample Software Design Document
 date: 2016-03-16
 draft: true
-categories: note
-tags: [template,design,project,game]
+categories: design
+tags: [software, template,design,project,game]
 ---
 
 An outline to help organize the design of a software project, whether it be a game or other type of application.

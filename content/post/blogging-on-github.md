@@ -1,8 +1,7 @@
 ---
 title: A Blog on GitHub
 date: 2015-12-30
-draft: true
-category: blog
+categories: blog
 tags: [jekyll, yaml, liquid-templates,
        markdown,
        html, css, javascript,

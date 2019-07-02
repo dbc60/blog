@@ -2,8 +2,8 @@
 title: REST API URI Design
 date: 2019-04-08
 draft: true
-categories: [software]
-tags: [design, rest, api, uri]
+categories: [design]
+tags: [rest, api, uri]
 ---
 
 REST APIs use Uniform Resource Identifiers (URIs) to identify and address

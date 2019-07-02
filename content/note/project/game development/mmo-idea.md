@@ -2,7 +2,7 @@
 title: An Idea for a Role Playing Game
 date: 2016-03-16
 draft: true
-categories: note
+categories: game development
 tags:
   - mmo
   - games

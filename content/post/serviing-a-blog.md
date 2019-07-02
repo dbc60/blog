@@ -1,8 +1,7 @@
 ---
 title: Serving a Blog
-category: blog
 date: 2016-09-04
-draft: true
+categories: blog
 tags:
   - css
   - layout

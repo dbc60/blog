@@ -1,4 +1,5 @@
-{{- .Summary }}
+<!-- the regex removes footnote links from the summary text -->
+{{- .Summary | replaceRE `<sup.*footnote-ref.*><a href.*#fn:.*/a></sup>` "" | safeHTML }}
 <footer class="read-more">
   <a href='{{ .Permalink }}'><span class="read-more">Read more →</span></a>
 </footer>

@@ -1,8 +1,7 @@
 ---
 title: A Dangerous Spectacle
 date: 2016-11-09
-draft: true
-category: blog
+categories: blog
 tags:
     - 2016
     - president

@@ -1,6 +1,6 @@
 {{- define "main" -}}
     <article class="article-list">
-      <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+      <!-- "{.Content}" pulls from the markdown content of the corresponding _index.md -->
       {{- .Content -}}
     {{- $paginator := .Paginate (where .Pages "Type" "note") -}}
     {{- range $paginator.Pages -}}

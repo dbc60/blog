@@ -2,16 +2,15 @@
 title: Be Kind
 date: 2016-10-14
 draft: true
-categories: blog
+categories: career
 tags:
   - kindness
   - trust
+  - company culture
 ---
 
-I read a really nice, concise article on what happens when we remember that we all make mistakes.
+I read a really nice, concise article, [Be Kind](https://www.briangilham.com/blog/2016/10/10/be-kind) by Brian Gilham, on what happens when we remember that we all make mistakes. I have experienced what happens when, not only an individual is not kind, but a company's culture is unkind and unforgiving of errors and dissent.
 <!--more-->
-
-This post, [Be Kind](https://www.briangilham.com/blog/2016/10/10/be-kind) by Brian Gilham, is right on target. I have experienced what happens when, not only an individual is not kind, but a company's culture is unkind and unforgiving of errors and dissent.
 
 When I started worked at *previous employer* as a Sustaining Engineer, things were moving fast. The development team was hard at work on the next big thing. Nevertheless, they were always helpful, supportive and would point us sustainers in the most likely direction that would solve a technical issue with each release. Still, customer problem reports would fly in at amazing rates after a new release. I worked hard, and picked up on their technology. By the end of three months, I was making significant contributions to resolving customer problems and was reducing the support load on the development team.
 

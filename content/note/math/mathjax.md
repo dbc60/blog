@@ -4,7 +4,7 @@ date: 2019-04-08T10:32:30-05:00
 draft: true
 math: true
 categories: [math]
-tags: [mathjax]
+tags: [mathjax, markdown]
 ---
 
 These are my notes and examples for using MathJax and Markdown to create pages with really beautiful equations.

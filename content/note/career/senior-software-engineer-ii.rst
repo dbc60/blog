@@ -3,6 +3,7 @@ title: "Senior Software Engineer II"
 date: 2019-04-08T11:55:50-04:00
 draft: true
 categories: career
+tags: [job title, software engineer]
 ---
 
 The Senior Software Engineer II is an experienced software engineer who designs, develops, troubleshoots and debugs complex software applications, demonstrating for others how to resolve issues in innovative and practical ways.

@@ -3,6 +3,7 @@ title: "Architect"
 date: 2019-04-08T12:07:32-04:00
 draft: true
 categories: career
+tags: [job title, architect]
 ---
 
 An architect is responsible for driving the evolution of the technical

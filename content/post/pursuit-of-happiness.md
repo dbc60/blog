@@ -1,8 +1,7 @@
 ---
 title: The Pursuit of Happiness Gels in the Imagination
 date: 2016-03-09
-draft: true
-category: blog
+categories: blog
 tags: [happiness,imagination,inspiration,comics]
 ---
 

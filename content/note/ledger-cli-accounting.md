@@ -2,12 +2,11 @@
 title: Ledger Command-line Accounting
 date: 2016-10-13T06:12:00-04:00
 draft: true
-categories:
-  - accounting
-  - finance
+categories: learning
+tags: [budget, ledger cli, tips, ledger, business, command line tool]
 ---
 
-etter budgeting through automated transactions and virtual accounts.
+Better budgeting through automated transactions and virtual accounts.
 <!--more-->
 
 Virtual Accounts are Budgets. Really! That's the basis for creating and managing a budget in Ledger.

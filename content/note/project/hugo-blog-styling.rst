@@ -2,11 +2,12 @@
 title: "Hugo Blog Styling"
 date: 2019-06-11T07:29:40-04:00
 draft: true
-categories: [blog]
-tags: [html, css]
+categories: learning
+tags: [blog, html, css, web]
 ---
 
-I am going to try applying naming convention of the `Block Element Modifier <bem_>`_ methodology and the file/folder organization advice from `Enduring CSS <https://ecss.io/>`_ to organize my Sass, CSS, and HTML templeates.
+I am going to try applying naming convention of the `Block Element Modifier <bem_>`_ methodology and the file/folder organization advice from `Enduring CSS <https://ecss.io/>`_ to organize my Sass, CSS, and HTML templates.
+<!--more-->
 
 The first question is, will Hugo and Sass support organizing components by
 directory? Suppose I want a navigation menu with navigation items. The
@@ -166,15 +167,21 @@ The HTML file uses the definition of the variable ``componentDropCaps`` to defin
 
 I should create a mechanism for a page to opt-out of drop-caps entirely. Maybe set ``componentDropCaps`` to "``drop-caps_none``", or have another template variable, like ``componentDropCapsNone``, that if defined will select ``<section class="c-drop-caps_none">``. The former is simple enough. It puts an undefined CSS class into the ``<section>`` element.
 
-##################
+###########
+The Sidebar
+###########
+
+It might be nice to have a sidebar to hold the navigation menu, and to use the categories list as a table of contents. I'd also like to have an expandable list of blog posts by year. I had that on my original blog, and I think it was handy.
+
+******************
 Sidebar Navigation
-##################
+******************
 
 The drop-caps component worked out okay. Next I will try to organize a sidebar and place the navigation menu there. I have a head start in that I have a partial for navigation, ``layouts/partials/nav.html``. It is included in ``layouts/_default/baseof.html``. I might have to make a ``body`` or ``grid`` component to contain a sidebar and another "main" section. Probably a grid with rows and columns to layout the sidebar, header, footer, and main areas.
 
 Note that Hugo has its own `convention for defining a site menu <https://gohugo.io/content-management/menus/>`_. Menus *can* be defined in ``config.toml`` and referenced in partials through Hugo's template system. For example, placing ``range .Site.Menus.nav`` between template open (``{{``) and close (``}}``) pairs. I don't think Hugo *requires* menus to be defined this way. I think it exists as a convenience for website and theme developers.
 
-While I'm working on this, the `Drupal Charity Theme <https://github.com/ShuvoHabib/charity-theme>`_ is worth looking at. Its components are organized per the BEM methodology. Likewise for the `Drupal Greek Theme <https://github.com/ShuvoHabib/Geek-Theme>`_.
+While I'm working on this, the `Drupal Charity Theme`_ is worth looking at. Its components are organized per the BEM methodology. Likewise for the `Drupal Greek Theme`_.
 
 A sidebar component could have elements like a title, and modifiers such as ``left`` and ``right``. Notionally, CSS following the BEM methodology would look like:
 
@@ -189,5 +196,108 @@ A sidebar component could have elements like a title, and modifiers such as ``le
     /* Modifier that changes the style of the block */
     .sidebar-left{} .sidebar-right{}
 
+###################################
+Code Blocks and Syntax Highlighting
+###################################
+
+The HTML for code blocks generated from markdown files embeds CSS styling. I'd rather have it generate HTML with a "well known" (i.e., predefined) set of class attributes. For example, this code block:
+
+.. code-block:: text
+
+    ```css
+    code, tt.docutils.literal, pre {
+      margin: 0.5em 0rem 0.5em 0rem;
+      overflow: auto;
+      overflow-y: hidden;
+      font-family: "Inconsolata", monospace;
+    }
+
+    code, tt.docutils.literal {
+      padding: 2px 4px;
+      vertical-align: text-bottom;
+    }
+
+    pre {
+      padding: 1em;
+      background-color: gainsboro;
+      border-bottom: 1px solid silver;
+      border-left: 2px solid slategray;
+    }
+    ```
+
+will generate this kind of HTML output:
+
+.. code-block:: html
+
+    <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4; -o-tab-size:4;tab-size:4">
+      <code class="language-css" data-lang="css">
+        <span style="color:#f92672">code</span>
+        <span style="color:#f92672">,</span>
+        <span style="color:#f92672">tt</span>.
+
+Putting the same CSS in a code block in a reStructuredText file, like so:
+
+.. code-block:: css
+
+    code, tt.docutils.literal, pre {
+      margin: 0.5em 0rem 0.5em 0rem;
+      overflow: auto;
+      overflow-y: hidden;
+      font-family: "Inconsolata", monospace;
+    }
+
+    code, tt.docutils.literal {
+      padding: 2px 4px;
+      vertical-align: text-bottom;
+    }
+
+    pre {
+      padding: 1em;
+      background-color: gainsboro;
+      border-bottom: 1px solid silver;
+      border-left: 2px solid slategray;
+    }
+
+results in this kind of HTML output:
+
+.. code-block:: html
+
+    <pre class="code css literal-block">
+    <span class="name tag">code</span>
+    <span class="operator">,</span>
+    <span class="name tag">tt</span>
+    <span class="name class">.docutils.literal</span>
+    <span class="operator">,</span>
+    <span class="name tag">pre</span>
+    <span class="punctuation">{</span>
+      <span class="keyword">margin</span>
+      <span class="operator">:</span>
+      <span class="literal number">0.5em</span>
+    </pre>
+
+which is much easier to reason about, and I can define my own styling rules. It also shows the shortcomings of my current CSS definitions (margins and padding aren't correct).
+
+Hugo's opinions about HTML output may be too strong. I would prefer having more control over style and syntax highlighting. On the other hand, I may just be ignorant of the correct tuning knobs.
+
+#########
+Resources
+#########
+
+- `BEM`_
+- `Hugo 1.0 Roadmap`_
+- `The Difference between Blog Categories and Blog Tags <blog categories vs tags_>`_
+- `Categories and Tags`_
+- `Organize Your Blog Design with Categories and Tags`_
+- `Blog Planning <{{< ref "blog-planning.md" >}}>`_.
+- `Drupal Charity Theme`_
+- `Drupal Greek Theme`_
+- `Learn Theme for Hugo`_ is a highly customizable theme to help you learn how to create custom styles using Hugo.
+
 .. _bem: https://en.bem.info/
 .. _hugo 1.0 roadmap: https://discourse.gohugo.io/t/roadmap-to-hugo-v1-0/2278
+.. _blog categories vs tags: https://www.bloggingbasics101.com/what-is-the-difference-between-blog-categories-and-blog-tags/
+.. _categories and tags: https://www.websitemuscle.com/top-10-must-dos-for-good-blog-posts-9-categories-and-tags/
+.. _organize your blog design with categories and tags: https://www.dummies.com/social-media/blogging/organize-your-blog-design-with-categories-and-tags/
+.. _drupal charity theme:  https://github.com/ShuvoHabib/charity-theme
+.. _drupal greek theme: https://github.com/ShuvoHabib/Geek-Theme
+.. _learn theme for hugo: https://learn.netlify.com/en/basics/style-customization/

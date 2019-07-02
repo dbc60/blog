@@ -70,28 +70,28 @@ Elements can be nested.
 Block versus Inline Elements
 ============================
 
-There are two important categories of elements in HTML. They are bock-level elements and
-inline elements.
+There are two important categories of elements in HTML. They are bock-level elements and inline elements.
 
-Block-level elements form a visible clock on a page -- they will appear on a new line
-form whatever content went before it, and any content that goes after it will also appear
-on a new line. Block-level elements tend to be strucural elements on the page that
-represent, for example, paragraphs, lists, navigation menus, footers, etc. A block-level
-element wouldn't be nested inside an inline element, but it might be nested inside
-another block-level element.
+Block-level elements form a visible clock on a page -- they will appear on a
+new line after whatever content went before it, and any content that goes
+after it will also appear on a new line. Block-level elements tend to be
+strucural elements on the page that represent, for example, paragraphs, lists,
+navigation menus, footers, etc. A block-level element wouldn't be nested
+inside an inline element, but it might be nested inside another block-level
+element.
 
-Inline elements are those that are contained within block-level elements and surround
-only small parts of the documment's content, not entire paragraphs and groupings of
-content. An inline element will not cause a new line to appear in the document, they
-would normally appear inside a paragraph of text, for example an ``<a>`` element
-(hyperlink) or emphasis elements such as ``<em>`` or ``<strong>``.
+Inline elements are those that are contained within block-level elements and
+surround only small parts of the documment's content, not entire paragraphs
+and groupings of content. An inline element will not cause a new line to
+appear in the document, they would normally appear inside a paragraph of text,
+for example an ``<a>`` element (hyperlink) or emphasis elements such as
+``<em>`` or ``<strong>``.
 
 .. note::
 
-    HTML5 redefined the element categories. See `Element content categories <https://
-    html.spec.whatwg.org/multipage/indices.html#element-content-categories>`_. These
-    definitions are more accurate and less ambiguous than the ones that went before, but
-    they are a lot more complicated to understand than "block" and "inline".
+    HTML5 redefined the element categories. See
+    `Element content categories <https://
+    html.spec.whatwg.org/multipage/indices.html#element-content-categories>`_. These definitions are more accurate and less ambiguous than the ones that went before, but they are a lot more complicated to understand than "block" and "inline".
 
 .. note::
 
@@ -100,10 +100,8 @@ would normally appear inside a paragraph of text, for example an ``<a>`` element
 Empty Elements
 ==============
 
-Not all elements follow the above pattern of opening tag, content, closing tag. Some
-elements consist only of a single tag, which is usually used to insert/embed something in
-the document at the place it is included. For example, the <img> element embeds an image
-file onto a page in the position it is included in:
+Not all elements follow the above pattern of opening tag, content, closing
+tag. Some elements consist only of a single tag, which is usually used to insert/embed something in the document at the place it is included. For example, the <img> element embeds an image file onto a page in the position it is included in:
 
 .. code-block:: html
 
@@ -252,8 +250,8 @@ Here's a description list.
       </dd>
     </dl>
 
-Note that it is permitted to have a single term with multiple descriptions, as in "aside",
-above.
+Note that it is permitted to have a single term with multiple descriptions, as
+in "aside", above.
 
 Emphasis and Importance
 =======================

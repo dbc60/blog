@@ -2,8 +2,8 @@
 title: Designing My Blog
 date: 2016-03-07
 draft: true
-categories: note
-tags: [blog,design]
+categories: design
+tags: [blog, inspiration]
 ---
 
 Thoughts and inspirations to be used toward designing my blog.
@@ -32,29 +32,29 @@ There's a second row that spans all three columns with a copyright statement and
 
 I extracted the following CSS from the Modern Studio theme, because I'm curious about the Unicode values. These are not valid Unicode characters. For example [FileFormat.info](http://www.fileformat.info/index.htm) shows ["\e915"](http://www.fileformat.info/info/unicode/char/e915/index.htm) as invalid. In fact, the range [from U+E000 to U+F8FF](http://www.fileformat.info/info/unicode/block/private_use_area/index.htm) is designated as the 'Private Use Area'.
 
-```
+```css
 .icon-logo-genesis:before {
-	content: "\e914";
+  content: "\e914";
 }
 .icon-logo-rm:before {
-	content: "\e915";
+  content: "\e915";
 }
 .icon-logo-sp-outline:before,
 .icon-StudioPress:before {
-	content: "\e916";
+  content: "\e916";
 }
 .icon-logo-sp:before {
-	content: "\e917";
+  content: "\e917";
 }
 .icon-logo-wp:before {
-	content: "\e918";
+  content: "\e918";
 }
 
 // FYI: logo.png is a 300x300 px image
 .logo {
-	background: url(images/logo.png) no-repeat;
-	display: block;
-	height: 16px;
+  background: url(images/logo.png) no-repeat;
+  display: block;
+  height: 16px;
 }
 ```
 

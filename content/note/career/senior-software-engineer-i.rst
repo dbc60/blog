@@ -3,6 +3,7 @@ title: "Senior Software Engineer I"
 date: 2019-04-08T11:53:25-04:00
 draft: true
 categories: career
+tags: [job title, software engineer]
 ---
 
 The Senior Software Engineer I is an experienced software engineer who designs, develops, tests, troubleshoots and debugs complex software applications, resolving issues in innovative and practical ways.

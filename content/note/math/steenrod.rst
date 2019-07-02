@@ -3,7 +3,7 @@ title: Steenrod Essays
 date: 2018-10-09T08:44:00-04:00
 draft: true
 categories: math
-tags: [overview]
+tags: [steenrod, writing]
 ---
 
 I am not sure why I saved this particular bit of information on a mathmetician

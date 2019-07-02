@@ -2,7 +2,8 @@
 title: Personal Financial Goals
 date: 2016-11-22
 draft: true
-categories: finance
+categories: personal finance
+tags: [goals, finance, debt reduction]
 ---
 
 My goals and plans for getting on a more even financial footing.

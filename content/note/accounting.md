@@ -2,11 +2,8 @@
 title: Accounting
 date: 2016-10-24T06:12:00-04:00
 draft: true
-categories: finance
-tags:
-    - accounting
-    - budgeting
-    - planning
+categories: learning
+tags: [accounting, budget, skills, finance, assets, liabilities, equity]
 ---
 
 Picking up a new skill by learning some principles of accounting.

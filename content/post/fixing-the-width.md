@@ -1,9 +1,8 @@
 ---
 title: Fixing the Width
 date: 2016-03-10
-draft: true
 math: true
-category: blog
+categories: blog
 tags:
     - jekyll
     - yaml

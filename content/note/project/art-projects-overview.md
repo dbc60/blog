@@ -2,11 +2,8 @@
 title: Art Projects Overview
 date: 2016-09-18T06:07:00-05:00
 draft: true
-categories: project
-tags:
-  - art
-  - 3d
-  - graphics
+categories: learning
+tags: [art, 3d, graphics, krita, blender]
 ---
 
 I have decided I'm going to learn how to use Krita and Blender to make 2D and 3D digital art.

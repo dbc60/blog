@@ -3,10 +3,11 @@ title: "2018 Performance Review"
 date: 2019-04-08T09:57:48-04:00
 draft: true
 categories: career
+tags: [personal notes, okr, objectives, key results]
 math: true
 ---
 
-Met with Coop to go over the greatly anticipated 2018 Performance Review and make plans for 2019. We'll do it all in 50 minutes or less.
+I met with Coop to go over the greatly anticipated 2018 Performance Review and make plans for 2019. We'll do it all in 50 minutes or less.
 <!--more-->
 
 .. _contents:

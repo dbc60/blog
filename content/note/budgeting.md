@@ -2,10 +2,8 @@
 title: Budgeting
 date: 2016-10-06T06:12:00-04:00
 draft: true
-categories: finance
-tags:
-    - budget
-    - plan
+categories: personal finance
+tags: [budget, ledger, ledger cli, expenses, assets, income, liabilities, equity, tips, accounting, finance]
 ---
 
 How to spend money without going broke.
@@ -56,17 +54,17 @@ For **Expenses** accounts, there are no institutions. In this case it makes more
 
 - Expenses:Pet Care                ; stuff and care for critters.
 - Expenses:Services                ; accounting, laundry, legal, rentals.
-    - Expenses:Services:Accounting
-    - Expenses:Services:Laundry
+  - Expenses:Services:Accounting
+  - Expenses:Services:Laundry
 - Expenses:Subscriptions           ; newspapers, magazines, memberships, professional dues.
-    - Expenses:Subscriptions:Boston Globe
-    - Expenses:Subscriptions:IEEE
-    - Expenses:Subscriptions:DPMA   ; Dragon Phoenix Martial Arts
+  - Expenses:Subscriptions:Boston Globe
+  - Expenses:Subscriptions:IEEE
+  - Expenses:Subscriptions:DPMA   ; Dragon Phoenix Martial Arts
 - Expenses:Taxes                   ; federal, state, local, property.
-    - Expenses:Taxes:Federal:Income
-    - Expenses:Taxes:State:MA:Income
-    - Expenses:Taxes:Chelmsford:Property
-    - Expenses:Taxes:State:MA:Excise
+  - Expenses:Taxes:Federal:Income
+  - Expenses:Taxes:State:MA:Income
+  - Expenses:Taxes:Chelmsford:Property
+  - Expenses:Taxes:State:MA:Excise
 
 It is worth noting that the institution does not have to be a “real” institution. For instance, if you owned a condo unit in a building, you could use the **Loft4530** “institution” for all its related accounts:
 
@@ -90,22 +88,18 @@ You can customize the name of the other Equity accounts that get automatically c
 
 When you first start your ledger, you will likely already have money in some of your accounts. Let’s say there’s $100 in your checking account; then add a transaction to your ledger to reflect this amount. Where will the money come from? The answer: your equity.
 
-```ledger
-10/2  Opening Balance
-    Assets:Checking                         $100.00
-    Equity:Opening Balances
-```
+    10/2  Opening Balance
+        Assets:Checking                         $100.00
+        Equity:Opening Balances
 
 **Example Transactions**:
 
-```ledger
-2016/09/30 * Paycheck
-  Income:Acme Corp:Paycheck           $1000.00   ; paycheck from Acme Corp.
-  Expenses:Taxes:State                 $100.00
-  Expenses:Taxes:Federal               $250.00
-  Expenses:Taxes:FICA                  $100.00
-  Assets:Metro Credit Union:Checking
-```
+    2016/09/30 * Paycheck
+      Income:Acme Corp:Paycheck           $1000.00   ; paycheck from Acme Corp.
+      Expenses:Taxes:State                 $100.00
+      Expenses:Taxes:Federal               $250.00
+      Expenses:Taxes:FICA                  $100.00
+      Assets:Metro Credit Union:Checking
 
 ### Guidelines for Choosing an Account Type
 First, if the amounts to be posted to the account are only relevant to be reported for a _period of time_, they should be one of the income statement accounts: **Income** or **Expenses**. On the other hand, if the amount _always_ needs to be included in the total balance of an account, then it should be a balance sheet account: **Assets** or **Liabilities**
@@ -208,87 +202,83 @@ Block comments start with `comment` at the beginning of the line. The body of th
 
 Transactions can have several forms of comments, most of which have special meaning. The global comment can start with any of the five comment characters and has no special meaning. Generally, comments in transactions look like:
 
-```ledger
-2011/12/11  Something Sweet
-    ; German Chocolate Cake
-    ; :Broke Diet:
-    Expenses:Food               $10.00 ; Friends: The gang
-    Assets:Credit Union:Checking
-```
+    2011/12/11  Something Sweet
+        ; German Chocolate Cake
+        ; :Broke Diet:
+        Expenses:Food               $10.00 ; Friends: The gang
+        Assets:Credit Union:Checking
 
-The first is a global comment and carries no special meaning. The other comments must start with a semicolon. The colon, '`:`' indicate meta-data and tags.
+The first is a global comment and carries no special meaning. The other comments must start with a semicolon. The colon, '`:`' indicates meta-data and tags.
 
 ## Example Ledger File
 
-```ledger
-; -*- ledger -*-
+    ; -*- ledger -*-
 
-= /^Income/
-  (Liabilities:Tithe)                    0.12
+    = /^Income/
+      (Liabilities:Tithe)                    0.12
 
-;~ Monthly
-;  Assets:Checking                     $500.00
-;  Income:Salary
+    ;~ Monthly
+    ;  Assets:Checking                     $500.00
+    ;  Income:Salary
 
-;~ Monthly
-;   Expenses:Food  $100
-;   Assets
+    ;~ Monthly
+    ;   Expenses:Food  $100
+    ;   Assets
 
-2010/12/01 * Checking balance
-  Assets:Checking                   $1000.00
-  Equity:Opening Balances
+    2010/12/01 * Checking balance
+      Assets:Checking                   $1000.00
+      Equity:Opening Balances
 
-2010/12/20 * Organic Co-op
-  Expenses:Food:Groceries             $ 37.50  ; [=2011/01/01]
-  Expenses:Food:Groceries             $ 37.50  ; [=2011/02/01]
-  Expenses:Food:Groceries             $ 37.50  ; [=2011/03/01]
-  Expenses:Food:Groceries             $ 37.50  ; [=2011/04/01]
-  Expenses:Food:Groceries             $ 37.50  ; [=2011/05/01]
-  Expenses:Food:Groceries             $ 37.50  ; [=2011/06/01]
-  Assets:Checking                   $ -225.00
+    2010/12/20 * Organic Co-op
+      Expenses:Food:Groceries             $ 37.50  ; [=2011/01/01]
+      Expenses:Food:Groceries             $ 37.50  ; [=2011/02/01]
+      Expenses:Food:Groceries             $ 37.50  ; [=2011/03/01]
+      Expenses:Food:Groceries             $ 37.50  ; [=2011/04/01]
+      Expenses:Food:Groceries             $ 37.50  ; [=2011/05/01]
+      Expenses:Food:Groceries             $ 37.50  ; [=2011/06/01]
+      Assets:Checking                   $ -225.00
 
-2010/12/28=2011/01/01 Acme Mortgage
-  Liabilities:Mortgage:Principal    $  200.00
-  Expenses:Interest:Mortgage        $  500.00
-  Expenses:Escrow                   $  300.00
-  Assets:Checking                  $ -1000.00
+    2010/12/28=2011/01/01 Acme Mortgage
+      Liabilities:Mortgage:Principal    $  200.00
+      Expenses:Interest:Mortgage        $  500.00
+      Expenses:Escrow                   $  300.00
+      Assets:Checking                  $ -1000.00
 
-2011/01/02 Grocery Store
-  Expenses:Food:Groceries             $ 65.00
-  Assets:Checking
+    2011/01/02 Grocery Store
+      Expenses:Food:Groceries             $ 65.00
+      Assets:Checking
 
-2011/01/05 Employer
-  Assets:Checking                   $ 2000.00
-  Income:Salary
+    2011/01/05 Employer
+      Assets:Checking                   $ 2000.00
+      Income:Salary
 
-2011/01/14 Bank
-  ; Regular monthly savings transfer
-  Assets:Savings                     $ 300.00
-  Assets:Checking
+    2011/01/14 Bank
+      ; Regular monthly savings transfer
+      Assets:Savings                     $ 300.00
+      Assets:Checking
 
-2011/01/19 Grocery Store
-  Expenses:Food:Groceries             $ 44.00 ; hastag: not block
-  Assets:Checking
+    2011/01/19 Grocery Store
+      Expenses:Food:Groceries             $ 44.00 ; hastag: not block
+      Assets:Checking
 
-2011/01/25 Bank
-  ; Transfer to cover car purchase
-  Assets:Checking                  $ 5,500.00
-  Assets:Savings
-  ; :nobudget:
+    2011/01/25 Bank
+      ; Transfer to cover car purchase
+      Assets:Checking                  $ 5,500.00
+      Assets:Savings
+      ; :nobudget:
 
-apply tag hastag: true
-apply tag nestedtag: true
-2011/01/25 Tom's Used Cars
-  Expenses:Auto                    $ 5,500.00
-  ; :nobudget:
-  Assets:Checking
+    apply tag hastag: true
+    apply tag nestedtag: true
+    2011/01/25 Tom's Used Cars
+      Expenses:Auto                    $ 5,500.00
+      ; :nobudget:
+      Assets:Checking
 
-2011/01/27 Book Store
-  Expenses:Books                       $20.00
-  Liabilities:MasterCard
-end tag
-2011/12/01 Sale
-  Assets:Checking:Business            $ 30.00
-  Income:Sales
-end tag
-```
+    2011/01/27 Book Store
+      Expenses:Books                       $20.00
+      Liabilities:MasterCard
+    end tag
+    2011/12/01 Sale
+      Assets:Checking:Business            $ 30.00
+      Income:Sales
+    end tag

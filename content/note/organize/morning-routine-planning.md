@@ -2,8 +2,8 @@
 title: Morning Routine and Daily Schedule
 date: 2016-03-07
 draft: true
-categories: note
-tags: [routine, planning, time-management]
+categories: personal productivity
+tags: [routines, planning, time-management, to-do lists]
 ---
 
 According to [this article](http://www.bakadesuyo.com/2015/03/morning-routine/) by [Eric Barker](http://www.bakadesuyo.com/about/) (and various [books by Laura Vanderkam](http://www.amazon.com/Laura-Vanderkam/e/B001JRX55A/ref=dp_byline_cont_book_1) ), one of the best ways to get things done is to have a morning routine. In addition to a routine you need a plan, so here is Barker's advice to build a roadmap for getting things done and having *real* free time.

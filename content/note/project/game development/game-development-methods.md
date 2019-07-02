@@ -2,11 +2,8 @@
 title: Game Development Methods and Ideas
 date: 2016-06-18
 draft: true
-categories: project
-tags:
-  - games
-  - development
-  - fun
+categories: personal productivity
+tags: [games, development, fun, process]
 ---
 
 Mostly about processes, but there's some stuff on an MMO idea I have for a world based on a steampunk theme.
@@ -171,6 +168,7 @@ Are there heros? If so, who are they defending and against what? What threats ar
 Is there magic? If so, how does it manifest itself? How is it acquired, controlled and used? I like the idea of places of power that are unique to the individual. Perhaps a character can derive power from more than one location, but with varying degrees of efficacy.
 
 ## Characters
+
 - Mimi Storm: extrovert, loud, injects self into conversation, gossip, wants to know everything about what others are doing in their lives.
 - Criso Oliviera: extrovert, brilliant, irreverant. Frequently invokes the Immigrant Song.
 
@@ -179,3 +177,7 @@ Is there magic? If so, how does it manifest itself? How is it acquired, controll
 - Book: [Tinkertoys: A Handbook of Creative-Thinking Techniques (2nd Edition)](https://www.amazon.com/Thinkertoys-Handbook-Creative-Thinking-Techniques-2nd/dp/1580087736?ie=UTF8&*Version*=1&*entries*=0).
 - Video: [Rob Daviau - how he designed Risk: Legacy (59:11)](https://vimeo.com/82383614)
 - [MMO Idea]({% post_url /notes/2016-03-16-mmo-idea %})
+- [HN: A 30th Anniversay Note to Prince of Persia Fans](https://news.ycombinator.com/item?id=20293779)
+- [A 30th Anniversary Note to Prince of Persia Fans](https://www.jordanmechner.com/prince-of-persia-30th-anniversary/)
+- Article: [Making of the Prince of Persia](https://www.jordanmechner.com/backstage/journals/)
+- Amazon: [Making of the Prince of Persia](https://www.amazon.com/Making-Prince-Persia-ebook/dp/B005WUE6Q2)

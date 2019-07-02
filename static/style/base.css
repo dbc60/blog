@@ -78,18 +78,11 @@ code, tt.docutils.literal {
 
 pre {
   padding: 1em;
-}
-
-a {
-  color: darkslategray;
-}
-
-pre {
   background-color: gainsboro;
   border-bottom: 1px solid silver;
   border-left: 2px solid slategray;
 }
 
-.language-sql {
-  background-color: slategray;
+a {
+  color: darkslategray;
 }

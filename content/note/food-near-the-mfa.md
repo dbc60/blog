@@ -2,6 +2,7 @@
 title: Food near Fenway and the MFA
 date: 2016-09-30T10:32:00-04:00
 draft: true
+categories: food
 tags:
   - boston
   - fenway

@@ -2,8 +2,8 @@
 title: Career and Job Search
 date: 2016-03-07
 draft: true
-categories: note
-tags: [career]
+categories: career
+tags: [job search, advice]
 ---
 
 I work for Threat Stack, Inc., 55 Summer Street, Boston, MA. I'm on the Agent Team, also known as the Committee to Release Agents to Production (CRAP). Specifically, I _am_ the _Windows_ Agent Team (so, I work on Windows CRAP).

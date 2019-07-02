@@ -2,8 +2,8 @@
 title: Web Design
 date: 2016-07-31
 draft: true
-categories: blog
-tags: [typography, design]
+categories: design
+tags: [typography, blog]
 ---
 
 A study of various web designs with the hope of bringing a good one to this website.
