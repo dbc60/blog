@@ -68,6 +68,10 @@ Tags are more like index entries. Several tags are likely to apply to each post,
 
 One way to display tags is to list the applicable ones at either the top or bottom of a blog post. I suppose it wouldn't hurt to have a tag page that lists the complete set of tags across all posts. It might be easier than having a tag cloud or other arrangement in a sidebar.
 
+## Progress
+
+- 2019.07.05: I created a draft blog post, [Evidence-Based Software Engineering]({{< ref "evidence-based-software-engineering.md" >}}). It needs some refinement. I should review and probably condense the sections describing the process, and make my own opions stand out - maybe by placing them at the beginning of each section as an introduction, just before parroting the original article.
+
 ## Resources
 
 - [Hugo Blog Styling]({{< ref "hugo-blog-styling.rst" >}})

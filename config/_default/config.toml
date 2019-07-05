@@ -7,6 +7,7 @@ enableRobotsTXT = true
 #Paginate = 8
 canonifyURLs = true
 footnoteReturnLinkContents = "↩"
+enableGitInfo = true
 
 # Name of Academic theme folder in `themes/`.
 # theme = "academic"

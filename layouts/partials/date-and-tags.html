@@ -1,5 +1,6 @@
           {{- $dateTime := .PublishDate.Format "2006-01-02" -}}
           {{- $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+          {{- $dateFormatExtended := .Site.Params.dateFormatExtended | default "Jan 2, 2006 15:04" }}
 
           {{- /*
               Show "reading time" and "word count" but only if one of the following are true:
@@ -9,12 +10,11 @@
               */ -}}
             {{- $featherUrl := print "/images/feather/feather-sprite.svg" -}}
             <span>
-              <svg class="feather">
-                <use xlink:href="{{ printf "%s%s" $featherUrl "#calendar" }}"/>
-              </svg>
-              <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time></span>
+              <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+            </span>
             <span> - {{ .ReadingTime}} min read</span>
             <span> - {{ .WordCount }} words</span>
+            <div>last updated: {{ .Lastmod.Format $dateFormatExtended }}</div>
             {{- with .Params.tags -}}
               <br>
             <svg class="feather">
