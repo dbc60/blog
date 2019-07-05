@@ -8,7 +8,7 @@ tags: [ebse, spi]
 
 > The aim of EBSE is to provide the means by which current best evidence from research can be integrated with practical experience and human values in the decision making process regarding the development and maintenance of software.
 >
->   - Kitchenham et al., 2004 [^1]
+> --- Kitchenham et al., 2004 [^1]
 <!--more-->
 
 The goal of Evidence-Based Software Engineering (EBSE) is to help practioners and software menagers make better decisions about what technologies to employ on their projects. When I first came across references to the paper, Evidence-Based Software Engineering, I was enticed by the prospect of having a process for software developement that provides some reassurance that changes to that process actually improve it. I want to be able to authoritatively back up my decisions with good reasons and strong supporting evidence. What's more reassuring than being able to say "These changes I made are good. Here's the evidence."?
