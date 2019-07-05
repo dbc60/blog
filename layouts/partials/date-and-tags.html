@@ -8,20 +8,16 @@
               2) A section front matter value is set `show_reading_time = true`
               3) A page front matter value is set `show_reading_time = true`
               */ -}}
-            {{- $featherUrl := print "/images/feather/feather-sprite.svg" -}}
-            <span>
+            <div class="post-metadata">
               <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
-            </span>
-            <span> - {{ .ReadingTime}} min read</span>
-            <span> - {{ .WordCount }} words</span>
-            <div>last updated: {{ .Lastmod.Format $dateFormatExtended }}</div>
+               - {{ .ReadingTime}} min read - {{ .WordCount }} words
+            </div>
+            <div class="post-metadata">last updated: {{ .Lastmod.Format $dateFormatExtended }}</div>
+            <div class="post-metadata">
             {{- with .Params.tags -}}
-              <br>
-            <svg class="feather">
-              <use xlink:href="{{ printf "%s%s" $featherUrl "#tag" }}"/>
-            </svg>
             {{- range . -}}
                 {{- $href := print (relURL "tags/") (urlize .) -}}
                 <a class="tag" href="{{ $href }}">{{ . }}</a>
             {{- end -}}
+            </div>
             {{- end -}}

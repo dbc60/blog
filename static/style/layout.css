@@ -30,3 +30,8 @@ li.page-item {
 #site-title, #site-subtitle, .title-article {
   font-variant-caps: small-caps;
 }
+
+.post-metadata {
+  font-size: smaller;
+  line-height: 1em;
+}
