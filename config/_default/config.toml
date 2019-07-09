@@ -47,30 +47,35 @@ pygmentsCodefencesGuessSyntax=true
     url = "/note/"
     weight = 2
   [[menu.nav]]
+    name = "Projects"
+    #pre = "edit"
+    url = "/project/"
+    weight = 3
+  [[menu.nav]]
     name = "About"
     #pre = "smile"
     url = "/about/"
-    weight = 3
+    weight = 4
   [[menu.nav]]
     name = "Now"
     #pre = "coffee"
     url = "/now/"
-    weight = 4
+    weight = 5
   [[menu.nav]]
     name = "Tags"
     #pre = "tag"
     url = "/tags/"
-    weight = 5
+    weight = 6
   [[menu.nav]]
     name = "Categories"
     #pre = "bookmark"
     url = "/categories"
-    weight = 6
+    weight = 7
   [[menu.nav]]
     name = "RSS"
     #pre = "rss"
     url = "/index.xml"
-    weight = 7
+    weight = 8
 
 # Hugo default privacy settings that work with its internal templates
 # (See https://gohugo.io/templates/internal/).

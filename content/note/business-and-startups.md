@@ -5,13 +5,10 @@ draft: true
 categories: business
 ---
 
-Things about business development and startups
+Notes from [Too Many Startups Like Playing Startup](https://www.groovehq.com/blog/startups-playing-startup).
 <!--more-->
 
-## Signs You Might be Playing Startup
-Notes from [Too Many Startups Like Playing Startup](https://www.groovehq.com/blog/startups-playing-startup).
-
-The author says there are seven signs:
+The author says there are seven signs that indicate you might be playing startup:
 
 1. Too many meetings.
 1. Having multiple persons do what a single person can do. In other words, hiring more people than you really need.
