@@ -5,6 +5,8 @@
   <body class="base">
       {{ block "header" . }}{{ partial "site-header.html" . -}}{{- end }}
     {{- partial "nav.html" . }}
+    {{ partial "breadcrumbs.html" . }}
+
     <main>
       {{- block "main" . -}}{{- end }}
     </main>

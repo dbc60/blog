@@ -39,16 +39,30 @@
       https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
       and https://gohugo.io/hugo-pipes/
     -->
-    <link rel="stylesheet" href="/style/base.css">
-    <link rel="stylesheet" href="/style/layout.css">
-    <link rel="stylesheet" href="/style/drop-caps/drop-caps.css">
-    <link rel="stylesheet" href="/style/drop-caps/drop-caps_cheshire.css">
-    <link rel="stylesheet" href="/style/drop-caps/drop-caps_de-zs.css">
-    <link rel="stylesheet" href="/style/drop-caps/drop-caps_goudy.css">
-    <link rel="stylesheet" href="/style/drop-caps/drop-caps_kanzlei.css">
-    <link rel="stylesheet" href="/style/drop-caps/drop-caps_yinit.css">
-    <link rel="stylesheet" href="/style/nav/nav.css">
-    <link rel="stylesheet" href="/style/fonts.css">
+    {{ $cssBase := resources.Get "style/base.css" }}
+    {{ $cssLayout := resources.Get "style/layout.css" }}
+    {{ $cssDropCaps := resources.Get "style/drop-caps/drop-caps.css" }}
+    {{ $cssDropCapsFont := resources.Get "style/drop-caps/drop-caps--font.css" }}
+    {{ $cssBreadcrumb := resources.Get "style/breadcrumbs/breadcrumb.css" }}
+    {{ $cssNav := resources.Get "style/nav/nav.css" }}
+    {{ $cssFonts := resources.Get "style/fonts.css" }}
+    {{ $styles := slice $cssBase $cssLayout $cssDropCaps $cssDropCapsFont $cssBreadcrumb $cssNav $cssFonts | resources.Concat "style/style.css" | minify | fingerprint }}
+
+    <link
+      rel="stylesheet"
+      href="{{ $styles.Permalink }}"
+      integrity="{{ $styles.Data.Integrity }}"
+      media="screen">
+
+    <!--
+      <link rel="stylesheet" href="/style/base.css">
+      <link rel="stylesheet" href="/style/layout.css">
+      <link rel="stylesheet" href="/style/drop-caps/drop-caps.css">
+      <link rel="stylesheet" href="/style/drop-caps/drop-caps--font.css">
+      <link rel="stylesheet" href="/style/breadcrumb/breadcrumb.css">
+      <link rel="stylesheet" href="/style/nav/nav.css">
+      <link rel="stylesheet" href="/style/fonts.css">
+    -->
 
     <title>{{ $title }}</title>
     <meta name="robots" content="index, follow">

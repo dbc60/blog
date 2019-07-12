@@ -38,6 +38,10 @@ What content should I post? Just technical or should I include family events? In
   - [ ] `home renovation`. The kitchen cabinet project, and others.
   - [ ] `book reviews`. That might motivate me to read more and take notes on technical books.
 
+I think I want to get rid of the title and subtitle. I also want two columns, where the left column is a narrow, vertical menu and the right is the main content. The main content can be a list of blog posts for a given "section", or an individual post.
+
+A "section" is a Hugo-defined section, where each page in the section can be found in a directory under the `content` directory that is named for the section. For example, all markdown or reStructuredText files under `content/notes/` are in the `notes` section.
+
 ## Categories
 
 Think of categories as entries in a table of contents for your website, and tags as index entries. Use categories sparingly. Each blog post should have one or no more than two categories assigned. `One site <organize your blog design with categories and tags_>`_ recommends limitiing yourself to a total of 10 categories across the site.
