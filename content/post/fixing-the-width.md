@@ -21,7 +21,7 @@ All I wanted to do was make the page a little wider. Suddenly the widths of the 
 
 I spend a lot of time trying to figure out what was going wrong. One of the problems was using `flex-grow: 1;` for the left column and `width: auto;` on the right. These settings left too many decisions up to the browser. I now calculate the column widths and margins based on the width of the whole body. The code also floats the two columns to the left and right, respectively. It may not be the best solution, but it will do until I learn how to responsive grid systems work.
 
-I also got rid jQuery and some other JavaScript. It was a holdover from another website I created a while ago. The only JavaScript remaining is for MathJax, which I plan to use for - what else? - math!
+I also got rid of jQuery and some other JavaScript. It was a holdover from another website I created a while ago. The only JavaScript remaining is for MathJax, which I plan to use for - what else? - math!
 
 \[
     \begin{bmatrix}

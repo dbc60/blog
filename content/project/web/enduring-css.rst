@@ -82,7 +82,7 @@ origin point of this element.
 Child Node
 **********
 
-If something UpperCamelCase is preceded by an underscore (``_``) it is a child
+If something UpperCamelCase (this is also known as Pascal Case) is preceded by an underscore (``_``) it is a child
 node of a module or component. For example:
 
 .. code-block:: css

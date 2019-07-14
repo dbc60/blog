@@ -745,8 +745,8 @@ Naming Convention
 * The block name specifies a namespace for its elements and modifiers.
 * The element name is separated from the block name by a double underscore
   (``__``).
-* The modifier name is separated from the block or element name by a single
-  underscore (``_``).
+* The modifier name is [separated from the block or element name by a single
+  underscore](https://en.bem.info/methodology/quick-start/#modifier) (``_``). though [a few](https://css-tricks.com/abem-useful-adaptation-bem/) [articles](https://css-tricks.com/abem-useful-adaptation-bem/) [on the CSS Tricks](https://css-tricks.com/bem-101/) site claim the separator is a double hyphen (`--`).
 * The modifier value is separated from the modifier name by a single
   underscore (``_``).
 * For boolean modifiers, the value is not included in the name.
@@ -860,7 +860,7 @@ There are a few alternative naming conventions used among those who adhere to
 the BEM method.
 
 * Two-dash Style
-* CamelCase Style
+* Camel Case Style
 * React Style
 * No Namespace Style
 
@@ -878,8 +878,10 @@ Two-dash Style
 * The value of a modifier is separated from its name by a double hyphen
   (``--``).
 
-CamelCase Style
-===============
+Camel Case Style
+================
+
+Names start with a lowercase letter and words within a name start with a capital letter, as in camelCase.
 
 ``blockName-elemName_modName_modVal``
 
