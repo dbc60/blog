@@ -85,5 +85,5 @@
   background: hsla(34, 85%, 25%, 1);
 }
 .breadcrumb li a:hover:after {
-  border-left-color: hsla(34, 85%, 25%, 1) !important;
+  border-left-color: hsla(34, 85%, 25%, 1);
 }

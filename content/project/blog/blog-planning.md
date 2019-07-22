@@ -76,6 +76,83 @@ One way to display tags is to list the applicable ones at either the top or bott
 
 - 2019.07.05: I created a draft blog post, [Evidence-Based Software Engineering]({{< ref "evidence-based-software-engineering.md" >}}). It needs some refinement. I should review and probably condense the sections describing the process, and make my own opions stand out - maybe by placing them at the beginning of each section as an introduction, just before parroting the original article.
 
+## Current Structure
+
+As of 2019.07.22, the overall structure of my blog's HTML is:
+
+```html
+
+<html>
+  <head>
+    <!-- some meta and link elements -->
+    <title>Dream Sketch Code</title>
+  </head>
+
+  <body class="base">
+    <header id="site-header">
+      <h1 id="site-title">Dream Sketch Code</h1>
+      <p id="site-subtitle">It&rsquo;s What I DO</p>
+    </header>
+
+    <div id="nav-border" class="container">
+      <nav id="site-nav">
+        <a class="nav-link nav-link-active" href="#">Home</a>
+        <!-- rinse and repeat for each menu item -->
+      </nav>
+    </div>
+
+    <ul class="breadcrumb">
+      <li class="breadcrumb__item"><a href="#">Home</a></li>
+      <!-- deeper nesting just adds to the breadcrumbs -->
+    </ul>
+
+    <main>
+      <article class="article-main">
+        <!-- _index.md front matter -->
+        <p>This is the blog of Douglas Cuthbertson</p>
+        <ul>
+          <li><a href="note">Notes</a></li>
+          <li><a href="project">Projects</a></li>
+        </ul>
+
+        <h2 class="title-article">
+          <a href="link-to-article">article title</a>
+        </h2>
+        <div class="article-meta-data">
+          <div class="post-meta-data">
+            <time datetime="format">Timestamp</time>
+            text
+          </div>
+          <div class="post-metadata">last updated:</div>
+          <div class="post-metadata"><a class="tag" href="#">tag</a></div>
+        </div>
+
+        <span class="post-summary">
+          <!-- variable data -->
+        </span>
+        <footer class="read-more">
+          <a href="#">
+            <span class="read-more">...</span>
+          </a>
+        </footer>
+
+        <!-- repeat with <h2> through </footer> for each article -->
+      </article>
+    </main>
+    <footer class="mt-auto text-left text-muted">
+      <div class="container">copyright</div>
+      <a href="https://github.com/dbc60" title="Github">
+        <span class="social-link fab fa-github"></span>
+      </a>
+      <!-- repeat anchors for each social link -->
+    </footer>
+  </html>
+```
+
+At first glance, it seems to me that ``<article class="article-main">`` should wrap each article summary, and something else should wrap the entire list of articles.
+
+I also think I need to remove some ``id="..."`` attributes and use a class definition other than ``class="container">``. Make some distinct classes, so the different blocks with that attribute can be changed independently of each other.
+
 ## Resources
 
 - [Hugo Blog Styling]({{< ref "hugo-blog-styling.rst" >}})

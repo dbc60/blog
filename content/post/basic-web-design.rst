@@ -746,7 +746,7 @@ Naming Convention
 * The element name is separated from the block name by a double underscore
   (``__``).
 * The modifier name is [separated from the block or element name by a single
-  underscore](https://en.bem.info/methodology/quick-start/#modifier) (``_``). though [a few](https://css-tricks.com/abem-useful-adaptation-bem/) [articles](https://css-tricks.com/abem-useful-adaptation-bem/) [on the CSS Tricks](https://css-tricks.com/bem-101/) site claim the separator is a double hyphen (`--`).
+  underscore](https://en.bem.info/methodology/quick-start/#modifier) (``_``). though [a few](https://css-tricks.com/abem-useful-adaptation-bem/) [articles](https://css-tricks.com/abem-useful-adaptation-bem/) [on the CSS Tricks](https://css-tricks.com/bem-101/) [and elsewhere](https://cssguidelin.es/#bem-like-naming) claim the separator is a double hyphen (`--`).
 * The modifier value is separated from the modifier name by a single
   underscore (``_``).
 * For boolean modifiers, the value is not included in the name.
@@ -1024,6 +1024,121 @@ common items from components into reusable objects. It can lead to complexity
 and entanglement when the components diverge, and what was once common needs to
 be specialized for each component.
 
+**************************
+Cross-Component Components
+**************************
+
+Suppose we have a card:
+
+.. code-block:: html
+
+  <div class="card">
+      <div class="card__header">
+
+          <h2 class="card__title">Title text here</h2>
+
+      </div>
+      <div class="card__body">
+
+          <img class="card__img" src="some-img.png">
+
+          <p class="card__text">Lorem ipsum dolor sit amet, consectetur</p>
+          <p class="card__text">Adipiscing elit.
+              <a href="/somelink.html" class="card__link">Pellentesque amet</a>
+          </p>
+
+      </div>
+  </div>
+
+Also, suppose we have a previously defined button:
+
+.. code-block:: html
+
+  <button class="button button--primary">Click me!</button>
+
+We'd like to add our button to the card body. The author of `Battling BEM CSS`_ suggests that if there are no styling differences to the regular button, we just drop it in like so:
+
+.. code-block:: html
+
+  <div class="card">
+      <div class="card__header">
+
+          <h2 class="card__title">Title text here</h2>
+
+      </div>
+      <div class="card__body">
+
+          <img class="card__img" src="some-img.png">
+
+          <p class="card__text">Lorem ipsum dolor sit amet, consectetur</p>
+          <p class="card__text">Adipiscing elit. Pellentesque.</p>
+
+          <button class="button button--primary">Click me!</button>
+
+      </div>
+  </div>
+
+If there are some styling differences, he proposes using a cross-component class (``card__button`` in the example below):
+
+.. code-block:: html
+
+  <div class="card">
+      <div class="card__header">
+
+          <h2 class="card__title">Title text here</h2>
+
+      </div>
+      <div class="card__body">
+
+          <img class="card__img" src="some-img.png">
+
+          <p class="card__text">Lorem ipsum dolor sit amet, consectetur</p>
+          <p class="card__text">Adipiscing elit. Pellentesque.</p>
+
+          <button class="button button--primary card__button">Click me!</button>
+
+      </div>
+  </div>
+
+The unique styling attributes are applied to card__button which lives in the with the rest of the CSS for card. This means if you decide to remove the card component, the unique button styles are removed with it, without you having to remember to do so. It’s worth putting a comment in your CSS to indicate that it is a cross component style.
+
+Along these lines, `Basic BEM Naming Conventions Construction`_ says:
+
+BEM can also help you sort out what properties a block object can have that belong to its place within a parent block container, as well as which elements or styles are for the named block itself. For example, a ``<div class="header">`` container might have multiple child blocks that have position styles. Semantically these properties are elements of the header, and should be named accordingly using a double underscore name.
+
+For example, a search bar that needs to be floated right in the header would be named ``<div class="header__search">``. At the same time, that element is reused on a sidebar on other pages in the site; therefore, it needs to retain its own independent set of styles as to not override properties that only pertain to another parent’s position. The goal is to avoid using the parent’s class as a specific CSS parent while also avoiding the need to override styles that are specific to a certain instance of the block. In order to avoid this, we will set our search form styles using a more global generic class (i.e. ``search-form``) and use the header element name to define placement in that containing block. The result would be:
+
+.. code-block:: html
+
+  <div class="header">
+      <div class="search-form header__search-form">Search Form</div>
+  </div>
+
+As a result, the CSS (SASS) could retain a clean set of properties:
+
+.. code-block:: scss
+
+  .header {
+
+      &__search-form {
+          float: right;
+      }
+  }
+
+  .search-form {
+      border: 1px solid black;
+      margin: 0 auto;
+  }
+
+This outputs to:
+
+.. code-block:: css
+
+  .header__search-form { float: right; }
+  .search-form { border: 1px solid black; margin: 0 auto; }
+
+Both search forms use the global styles to govern border and centering properties; however, the form will be positioned to the right with a float in the header container.
+
 *******************************
 Tools supporting Web Components
 *******************************
@@ -1065,6 +1180,7 @@ Reference
 * `Code Guide for Sustainable HTML and CSS <code guide for html and css_>`_
 * `Atomic CSS`_
 * * `Block Element Module <bem_>`_
+* `Nesting Components`_
 
 .. _gwern.net: https://www.gwern.net/index
 .. _58 bytes of css: https://news.ycombinator.com/item?id=19607169
@@ -1096,3 +1212,5 @@ Reference
 .. _bem for small projects: https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/
 .. _code guide for html and css: https://codeguide.co
 .. _atomic css: https://acss.io/
+.. _nesting components: https://web.archive.org/web/20151205143414/http://simurai.com/blog/2015/05/11/nesting-components/
+.. _basic bem naming conventions construction: https://www.unleashed-technologies.com/blog/2017/04/13/basics-bem-naming-conventions-construction

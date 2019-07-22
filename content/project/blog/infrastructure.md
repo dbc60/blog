@@ -21,6 +21,8 @@ The Atomic Design prefixes relate to the relative sizes of components, and wheth
 
 Atomic Design also talks about templates and pages. Templates consist mostly of groups of organisms stitched together to form pages. It’s here where we start to see the design coming together and start seeing things like layout in action. The first three categories are part of the author's chemistry analogy. Templates is where we leave behind the idea of a periodic table.
 
+Pages are specific instances of templates. Here, placeholder content is replaced with real representative content to give an accurate depiction of what a user will ultimately see.
+
 ## Resources
 
 [^1]: [ABEM A More Useful Adaptation of BEM](https://css-tricks.com/abem-useful-adaptation-bem/)
