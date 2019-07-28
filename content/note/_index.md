@@ -1,5 +1,5 @@
 ---
-title: "All the Notes"
+title: "Notes"
 date: 2019-07-21T06:50:24-04:00
 draft: true
 ---
@@ -7,5 +7,5 @@ draft: true
 - [Career](career)
 - [Design](design)
 - [Math](math)
-- [Organization](organize)
+- [Organizing](organize)
 - [Web](web)

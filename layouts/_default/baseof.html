@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 {{ $lang := .Site.Language.Lang | default "en" }}
 <html lang="{{ $lang }}">
-  {{ partial "head.html" . }}
-  <body class="base">
-      {{ block "header" . }}{{ partial "site-header.html" . -}}{{- end }}
-    {{- partial "nav.html" . }}
-    {{ partial "breadcrumbs.html" . }}
+  {{- block "head" . -}}
+  {{- partial "head.html" . -}}
+  {{- end -}}
+  <body>
+    {{- block "header" . -}}
+        {{- partial "siteHeader.html" . -}}
+    {{- end -}}
 
+    {{ block "nav__breadcrumbs" . }}
+      {{- partial "nav__breadcrumbs.html" . -}}
+    {{ end }}
     <main>
       {{- block "main" . -}}{{- end }}
     </main>
-    {{ partial "footer.html" . -}}
-    {{ partial "script.html" . -}}
+    {{ "<!-- I might want to wrap footer and script in blocks -->" | safeHTML }}
+    {{ block "footer" . }}
+      {{ partial "footer.html" . -}}
+    {{ end }}
+
+    {{ block "postScript" . }}
+      {{ partial "postScript.html" . -}}
+    {{ end }}
   </body>
 </html>

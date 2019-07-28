@@ -1,13 +1,13 @@
-#site-nav {
+#siteNav {
   padding: 0;
   background-color: whitesmoke;
 }
 
-#site-nav .nav-link {
+#site-nav .navLink {
   color: black;
 }
 
-.nav-link_vertical {
+.navLink__vertical {
   display: block;
   padding: 1ch 2ch;
 }

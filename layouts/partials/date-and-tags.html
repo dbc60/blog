@@ -1,23 +1,26 @@
-          {{- $dateTime := .PublishDate.Format "2006-01-02" -}}
+          {{- $dateTimeFormatShort := "2006-01-02" -}}
+          {{- $dateTimeFormatLong := "2006-01-02T15:04" -}}
+          {{- $dateTime := .PublishDate.Format $dateTimeFormatShort -}}
           {{- $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-          {{- $dateFormatExtended := .Site.Params.dateFormatExtended | default "Jan 2, 2006 15:04" }}
-
-          {{- /*
+          {{- $dateFormatExtended := .Site.Params.dateFormatExtended | default "Jan 2, 2006 15:04" -}}
+          <header class="article-meta-data">
+              {{- /*
               Show "reading time" and "word count" but only if one of the following are true:
               1) A global config `params` value is set `show_reading_time = true`
               2) A section front matter value is set `show_reading_time = true`
               3) A page front matter value is set `show_reading_time = true`
               */ -}}
-            <div class="post-metadata">
-              <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
-               - {{ .ReadingTime}} min read - {{ .WordCount }} words
-            </div>
-            <div class="post-metadata">last updated: {{ .Lastmod.Format $dateFormatExtended }}</div>
-            <div class="post-metadata">
-            {{- with .Params.tags -}}
+            <section class="post-metadata">
+            <time datetime="{{ $dateTime }}">{{- .PublishDate.Format $dateFormat -}}</time>
+              - {{ .ReadingTime}} min read - {{ .WordCount }} words.
+            <time class="post-metadata" datetime="{{ .Lastmod.Format $dateTimeFormatLong }}">Last updated: {{ .Lastmod.Format $dateFormatExtended }}</time>
+          </section>
+            {{ with .Params.tags -}}
+            <section class="post-metadata">
             {{- range . -}}
-                {{- $href := print (relURL "tags/") (urlize .) -}}
-                <a class="tag" href="{{ $href }}">{{ . }}</a>
+            {{- $href := print (relURL "tags/") (urlize .) -}}
+            <a class="tag" href="{{ $href }}">{{ . }}</a>
             {{- end -}}
-            </div>
-            {{- end -}}
+            </section>
+            {{ end -}}
+          </header>

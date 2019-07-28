@@ -1,7 +1,7 @@
 {{- define "main" -}}
-    <article class="article-list">
       <!-- "{.Content}" pulls from the markdown content of the corresponding _index.md -->
-      {{- .Content -}}
+      <h1>All Posts in {{ .CurrentSection.Title }}</h1>
+     {{- .Content -}}
       {{- $paginator := .Paginate (where .Pages "Section" .Section) -}}
       {{- range $paginator.Pages -}}
         <h2 class="title-article"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
@@ -13,5 +13,8 @@
         {{ .Render "summary" }}
           {{ end }}
           {{- template "_internal/pagination.html" . }}
-        </article>
+{{ end }}
+
+{{ define "title" }}
+The Grand Answer
 {{ end }}

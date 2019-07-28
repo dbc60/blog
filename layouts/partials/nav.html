@@ -1,17 +1,15 @@
-    <div id="nav-border" class="container">
-      <nav id="site-nav">
-      {{- $showActiveNav := .Site.Params.showActiveNav -}}
-      {{- $currentPage := . -}}
-      {{- range .Site.Menus.nav -}}
-        {{- $active := "" -}}
-        {{- if eq $showActiveNav true -}}
-          {{- $isMenu := or ($currentPage.IsMenuCurrent "nav" .) ($currentPage.HasMenuCurrent "nav" .) -}}
-          {{- if or $isMenu (eq $currentPage.Title .Name) -}}
-            {{- $active = "nav-link-active" -}}
-          {{- end -}}
+  <nav class="siteNav">
+    {{- $showActiveNav := .Site.Params.showActiveNav -}}
+    {{- $currentPage := . -}}
+    {{- range .Site.Menus.nav -}}
+      {{- $active := "" -}}
+      {{- if eq $showActiveNav true -}}
+        {{- $isMenu := or ($currentPage.IsMenuCurrent "nav" .) ($currentPage.HasMenuCurrent "nav" .) -}}
+        {{- if or $isMenu (eq $currentPage.Title .Name) -}}
+          {{- $active = "navLink-active" -}}
         {{- end -}}
-        {{- $text := print .Name | safeHTML }}
-        <a class="nav-link {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
-      {{- end }}
-      </nav>
-    </div><!-- nav-border -->
+      {{- end -}}
+      {{- $text := print .Name | safeHTML }}
+      <a class="navLink {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
+    {{- end }}
+    </nav>

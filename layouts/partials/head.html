@@ -1,38 +1,9 @@
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="{{ .Site.Params.author }}">
-    <meta property="og:description" name="description" content="{{ .Site.Params.description }}">
-
-    {{ $title := print .Title " | " .Site.Title -}}
+    <!-- Variable definitions -->
+    {{ $titleDefault := print .Title " | " .Site.Title -}}
     {{- if .IsHome -}}
-      {{- $title = .Site.Title }}
+      {{- $titleDefault = .Site.Title }}
     {{- end -}}
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#4aa7c1">
-    <link rel="shortcut icon" href="/images/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="/images/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    <!-- The four required og properties are og:title, og:type, og:url, and og:image. See
-    Open Graph Protocol (ogp.me) I used https://realfavicongenerator.net/ to generate the
-    icons and
-    https://realfavicongenerator.net/social/ to generate the og metadata -->
-    <meta property="og:title" content="{{ $title }}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://douglascuthbertson.com">
-    <meta property="og:image:width" content="279">
-    <meta property="og:image:height" content="279">
-    <meta property="og:image" content="http://douglascuthbertson.com/images/og-image.jpg">
-
-    <meta name="twitter:title" content="Dream, Sketch, Code">
-
-    {{- hugo.Generator -}}
 
     <!-- For more info about using SCSS and this pipeline see:
       https://github.com/gohugoio/hugo/commit/dea71670c059ab4d5a42bd22503f18c087dd22d4,
@@ -46,50 +17,35 @@
     {{ $cssBreadcrumb := resources.Get "style/breadcrumbs/breadcrumb.css" }}
     {{ $cssNav := resources.Get "style/nav/nav.css" }}
     {{ $cssFonts := resources.Get "style/fonts.css" }}
-    {{ $styles := slice $cssBase $cssLayout $cssDropCaps $cssDropCapsFont $cssBreadcrumb $cssNav $cssFonts | resources.Concat "style/style.css" | minify | fingerprint }}
+    {{ $styles := slice $cssBase $cssLayout $cssDropCaps $cssDropCapsFont $cssBreadcrumb $cssNav $cssFonts | resources.Concat "style/style.css" }}
 
-    <link
-      rel="stylesheet"
-      href="{{ $styles.Permalink }}"
-      integrity="{{ $styles.Data.Integrity }}"
-      media="screen">
+    <!-- minify and fingerprint only if not running locally -->
+    {{ if not (in (print .Site.BaseURL) "localhost") }}
+    {{ $styles = $styles | minify | fingerprint }}
+    {{ end }}
 
-    <!--
-      <link rel="stylesheet" href="/style/base.css">
-      <link rel="stylesheet" href="/style/layout.css">
-      <link rel="stylesheet" href="/style/drop-caps/drop-caps.css">
-      <link rel="stylesheet" href="/style/drop-caps/drop-caps--font.css">
-      <link rel="stylesheet" href="/style/breadcrumb/breadcrumb.css">
-      <link rel="stylesheet" href="/style/nav/nav.css">
-      <link rel="stylesheet" href="/style/fonts.css">
+    <!-- map . (the current context) to "context" and $titleDefault to
+      titleSite. This means that anything in the block that needs to access
+      dot-variables will have to use ".context.Var" instead of ".Var". For
+      example, in this file I can use ".Site.BaseURL", but in any blocks or
+      partials where I pass "$context" instead of ".", those blocks or partials
+      will have to use ".context.Site.BaseURL".
     -->
+    {{ $context := (dict "context" . "titleSite" $titleDefault "styles" $styles) }}
 
-    <title>{{ $title }}</title>
-    <meta name="robots" content="index, follow">
-    {{- range .AlternativeOutputFormats }}
-    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
-    {{- end -}}
+    {{ block "head__meta" $context }}
+    {{ partial "head__meta.html" . }}
+    {{ end }}
 
-    <!--
-      Add fontawesome icons and things. See https://fontawesome.com/start for the
-      latest version
-     -->
-    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">-->
+    {{ block "head__styles" $context }}
+    {{ partial "head__styles.html" . }}
+    {{ end }}
 
-    {{- if or .Params.d3 .Site.Params.d3 -}}
-      <!--
-        The defer property doesn't work for d3, nor can its script be loaded at the
-        end of the HTML file. There are other scripts that must be loaded in <head>
-        rather than at the end, just before the closing </body> tag. For example, see
-          https://stackoverflow.com/questions/6272702/should-modernizr-file-be-placed-in-head
-        and
-          https://stackoverflow.com/questions/2105327/should-jquery-code-go-in-header-or-footer
+    {{ block "head__title" $context }}
+    {{ partial "head__title.html" . }}
+    {{ end }}
 
-        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js" defer="defer"></script>
-      -->
-
-      <!-- d3js: Fall back to local if CDN offline -->
-      <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
-      <script>window.d3 || document.write('<script type="text/javascript" src="{{ "scripts/d3-v5.9.1.min.js" | relURL }}">\x3C/script>')</script>
-    {{- end }}
+    {{ block "head__scripts" $context }}
+    {{ partial "head__scripts.html" . }}
+    {{ end }}
   </head>

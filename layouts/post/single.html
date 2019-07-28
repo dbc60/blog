@@ -2,7 +2,8 @@
   <!--
     post template - unlike the default template, blog posts get disqus comments
   -->
-  <h2 class="title-article">{{- .Title -}}</h2>
+  {{- "<!-- BEGIN layouts/post/single.html -->" | safeHTML -}}
+  <h1 class="title-article">{{- .Title -}}</h1>
   <div class="article-meta-data">{{ partial "date-and-tags.html" . }}</div>
   {{- partial "drop-caps.html" . }}
 

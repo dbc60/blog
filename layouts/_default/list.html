@@ -1,17 +1,19 @@
 {{- define "main" -}}
-    <article class="article-list">
+    <h1>All Posts Layout Default Lists</h1>
+    <p>If this shows up, _index.md is missing from a folder somewhere.</p>
       <!-- "{.Content}" pulls from the markdown content of the corresponding _index.md -->
       {{- .Content -}}
     {{- $paginator := .Paginate (where .Pages "Section" .Section) -}}
     {{- range $paginator.Pages -}}
+      <article>
       <h2 class="title-article"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-      <div class="article-meta-data">
+      <header class="article-meta-data">
         {{- partial "date-and-tags.html" . -}}
-      </div>
+      </header>
         <!-- this renders based on layouts/_default/summary.html (either the
         local one, or the one in a theme -->
         {{ .Render "summary" }}
+      </article>
     {{- end -}}
     {{- template "_internal/pagination.html" . }}
-    </article>
 {{- end -}}

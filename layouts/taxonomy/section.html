@@ -1,9 +1,8 @@
 {{- define "main" -}}
-    <article class="article-list">
-      <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+<h1 class="title">Taxonomy: {{ .Title | title }}</h1>
+<!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
       {{- .Content -}}
     {{- $paginator := .Paginate (where .Pages "Type" "note") -}}
-    <h2>TAXONOMY SECTION</h2>
     {{- range $paginator.Pages -}}
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       <div class="article-meta-data">
@@ -14,5 +13,4 @@
         {{ .Render "summary" }}
     {{- end -}}
     {{- template "_internal/pagination.html" . }}
-    </article>
 {{- end -}}

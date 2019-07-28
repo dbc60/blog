@@ -53,7 +53,7 @@ body {
   fill: none;
 }
 
-.base, .document {
+body, .document {
   /*  Try to avoid scrollbars on paragraphs: prevents long unbroken
       un-hyphenatable lines from causing H-scrolling
       */

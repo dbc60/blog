@@ -1,6 +1,5 @@
 {{- define "main" -}}
-    <article class="article-list">
-    <h2 id="title">{{ .Title }}</h2>
+    <h1 class="title">Posts Tagged {{ .Title | title }}</h1>
     {{- template "_internal/pagination.html" . }}
     {{- $paginator := .Paginate (where .Pages "Type" "in" (slice "post" "note")) -}}
     {{- range $paginator.Pages -}}
@@ -14,5 +13,4 @@
         {{ .Render "summary" }}
     {{- end -}}
     {{- template "_internal/pagination.html" . }}
-    </article>
 {{- end -}}

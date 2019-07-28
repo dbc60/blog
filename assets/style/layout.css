@@ -76,7 +76,7 @@ li.page-item {
   margin-right: 1ch;
 }
 
-#site-title, #site-subtitle, .title-article {
+.siteTitle, .siteSubtitle, .title-article {
   font-variant-caps: small-caps;
 }
 
