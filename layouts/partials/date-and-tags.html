@@ -10,17 +10,17 @@
               2) A section front matter value is set `show_reading_time = true`
               3) A page front matter value is set `show_reading_time = true`
               */ -}}
-            <section class="post-metadata">
+            <div class="post-metadata">
             <time datetime="{{ $dateTime }}">{{- .PublishDate.Format $dateFormat -}}</time>
               - {{ .ReadingTime}} min read - {{ .WordCount }} words.
             <time class="post-metadata" datetime="{{ .Lastmod.Format $dateTimeFormatLong }}">Last updated: {{ .Lastmod.Format $dateFormatExtended }}</time>
-          </section>
+            </div>
             {{ with .Params.tags -}}
-            <section class="post-metadata">
+            <div class="post-metadata">
             {{- range . -}}
             {{- $href := print (relURL "tags/") (urlize .) -}}
             <a class="tag" href="{{ $href }}">{{ . }}</a>
             {{- end -}}
-            </section>
+            </div>
             {{ end -}}
           </header>

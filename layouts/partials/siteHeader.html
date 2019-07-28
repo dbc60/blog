@@ -4,12 +4,12 @@
   {{- if $featured_image -}}
   {{- $featured_image := (trim $featured_image "/") | relURL -}}
   <header style="background-image: url('{{ $featured_image }}');">
-    <section class="siteTitle">{{ .Site.Title }}</section>
-    <section class="siteSubtitle">{{- .Site.Params.homeText | markdownify -}}</section>
+    <section class="siteTitle"><h2>{{ .Site.Title }}</h2></section>
+    <section class="siteSubtitle"><h3>{{- .Site.Params.homeText | markdownify -}}</h3></section>
   {{- else -}}
   <header>
-    <section class="siteTitle">{{- .Site.Title -}}</section>
-    <section class="siteSubtitle">{{- .Site.Params.homeText | markdownify -}} </section>
+    <section class="siteTitle"><h2>{{- .Site.Title -}}</h2></section>
+    <section class="siteSubtitle"><h3>{{- .Site.Params.homeText | markdownify -}}</h3></section>
   {{ end -}}
     {{- block "nav" . -}}
       {{- partial "nav.html" . -}}
