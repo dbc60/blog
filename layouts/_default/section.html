@@ -5,10 +5,10 @@
       {{- $paginator := .Paginate (where .Pages "Section" .Section) -}}
       {{- range $paginator.Pages -}}
         <h2 class="title-article"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        <div class="article-meta-data">
-          {{- partial "date-and-tags.html" . -}}
-        </div>
-        <!-- this renders based on layouts/_default/summary.html (either the
+        {{ block "articleMetaDataHeader" . -}}
+        {{- partial "date-and-tags.html" . -}}
+        {{ end }}
+          <!-- this renders based on layouts/_default/summary.html (either the
         local one, or the one in a theme -->
         {{ .Render "summary" }}
           {{ end }}

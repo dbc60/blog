@@ -5,9 +5,9 @@
     {{- range $paginator.Pages -}}
       {{ $page := .Page }}
       <h2 class="title-article"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-      <div class="article-meta-data">
-        {{- partial "date-and-tags.html" . -}}
-      </div>
+      {{ block "articleMetaDataHeader" . -}}
+      {{- partial "date-and-tags.html" . -}}
+      {{ end }}
         <!-- this renders based on layouts/_default/summary.html (either the
         local one, or the one in a theme -->
         {{ .Render "summary" }}

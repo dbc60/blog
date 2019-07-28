@@ -4,8 +4,10 @@
   -->
   {{- "<!-- BEGIN layouts/post/single.html -->" | safeHTML -}}
   <h1 class="title-article">{{- .Title -}}</h1>
-  <div class="article-meta-data">{{ partial "date-and-tags.html" . }}</div>
-  {{- partial "drop-caps.html" . }}
+  {{ block "articleMetaDataHeader" . -}}
+  {{- partial "date-and-tags.html" . -}}
+  {{ end }}
+{{- partial "drop-caps.html" . }}
 
   {{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
     <section id="comments">

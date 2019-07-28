@@ -2,7 +2,9 @@
   <!-- the default layout. See layouts/post/single.html for a variation -->
   {{- "<!-- BEGIN layouts/_default/single.html -->" | safeHTML -}}
   <h1 class="title-article">{{- .Title -}}</h1>
-  <div class="article-meta-data">{{ partial "date-and-tags.html" . }}</div>
-  {{- partial "drop-caps.html" . }}
+  {{ block "articleMetaDataHeader" . -}}
+  {{- partial "date-and-tags.html" . -}}
+  {{ end }}
+{{- partial "drop-caps.html" . }}
   {{- "<!-- BEGIN layouts/default/single.html -->" | safeHTML -}}
 {{ end }}
