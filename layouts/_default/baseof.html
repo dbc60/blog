@@ -5,23 +5,33 @@
   {{- partial "head.html" . -}}
   {{- end -}}
   <body>
+    <div class="wrapper">
     {{- block "header" . -}}
         {{- partial "siteHeader.html" . -}}
     {{- end -}}
 
-    {{ block "nav__breadcrumbs" . }}
-      {{- partial "nav__breadcrumbs.html" . -}}
-    {{ end }}
-    <main>
+    <nav class="main-nav">
+    {{- block "nav" . -}}
+    {{- partial "nav.html" . -}}
+    {{- end }}
+    </nav>
+
+      {{ block "nav__breadcrumbs" . }}
+        {{- partial "nav__breadcrumbs.html" . -}}
+      {{ end }}
+
       {{- block "main" . -}}{{- end }}
-    </main>
+
     {{ "<!-- I might want to wrap footer and script in blocks -->" | safeHTML }}
+    <footer class="main-footer">
     {{ block "footer" . }}
       {{ partial "footer.html" . -}}
     {{ end }}
+    </footer>
 
     {{ block "postScript" . }}
       {{ partial "postScript.html" . -}}
     {{ end }}
+  </div>
   </body>
 </html>

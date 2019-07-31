@@ -11,13 +11,11 @@
       and https://gohugo.io/hugo-pipes/
     -->
     {{ $cssBase := resources.Get "style/base.css" }}
-    {{ $cssLayout := resources.Get "style/layout.css" }}
     {{ $cssDropCaps := resources.Get "style/drop-caps/drop-caps.css" }}
     {{ $cssDropCapsFont := resources.Get "style/drop-caps/drop-caps--font.css" }}
     {{ $cssBreadcrumb := resources.Get "style/breadcrumbs/breadcrumb.css" }}
-    {{ $cssNav := resources.Get "style/nav/nav.css" }}
     {{ $cssFonts := resources.Get "style/fonts.css" }}
-    {{ $styles := slice $cssBase $cssLayout $cssDropCaps $cssDropCapsFont $cssBreadcrumb $cssNav $cssFonts | resources.Concat "style/style.css" }}
+    {{ $styles := slice $cssBase $cssDropCaps $cssDropCapsFont $cssBreadcrumb $cssFonts | resources.Concat "style/style.css" }}
 
     <!-- minify and fingerprint only if not running locally -->
     {{ if not (in (print .Site.BaseURL) "localhost") }}

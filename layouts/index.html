@@ -1,10 +1,11 @@
     {{- define "main" }}
+    <main class="content">
         <h1>All Posts</h1>
         {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
         {{ $paginator := .Paginate (where .Pages "Type" "post") -}}
         {{- range $paginator.Pages -}}
         <article>
-        <h2 class="title-article"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         {{ block "articleMetaDataHeader" . -}}
           {{ partial "date-and-tags.html" . -}}
         {{- end -}}
@@ -13,4 +14,5 @@
         </article>
         {{ end -}}
         {{- template "_internal/pagination.html" . }}
+    </main>
     {{- end -}}

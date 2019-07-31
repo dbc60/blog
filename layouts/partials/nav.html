@@ -1,4 +1,3 @@
-  <nav class="siteNav">
     {{- $showActiveNav := .Site.Params.showActiveNav -}}
     {{- $currentPage := . -}}
     {{- range .Site.Menus.nav -}}
@@ -10,6 +9,5 @@
         {{- end -}}
       {{- end -}}
       {{- $text := print .Name | safeHTML }}
-      <a class="navLink {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
+      <a class="main-nav__link {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
     {{- end }}
-    </nav>

@@ -1,5 +1,4 @@
 {{- if ne .Site.Params.hideFooter true -}}
-<footer class="mt-auto text-left text-muted">
   <div class="container">
     {{- .Site.Params.footerText | markdownify -}}
   </div>
@@ -7,5 +6,4 @@
   {{- range .Site.Params.links }}
     <a href="{{ .url }}" title="{{ .title }}"> <span class="social-link {{ .iconset | default "fab" }} fa-{{ .icon }}"></span> </a>
   {{- end }}
-</footer>
 {{- end -}}

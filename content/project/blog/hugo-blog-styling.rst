@@ -6,7 +6,7 @@ categories: learning
 tags: [blog, html, css, web]
 ---
 
-I am going to try applying naming convention of the `Block Element Modifier <bem_>`_ methodology and the file/folder organization advice from `Enduring CSS <https://ecss.io/>`_ to organize my Sass, CSS, and HTML templates.
+I am going to try applying the naming convention from the `Block Element Modifier <bem_>`_ methodology and the file/folder organization advice from `Enduring CSS <https://ecss.io/>`_ to organize my Sass, CSS, and HTML templates.
 <!--more-->
 
 The first question is, will Hugo and Sass support organizing components by

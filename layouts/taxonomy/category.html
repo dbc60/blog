@@ -4,7 +4,7 @@
     {{- $paginator := .Paginate (where .Pages "Type" "in" (slice "post" "note")) -}}
     {{- range $paginator.Pages -}}
       {{ $page := .Page }}
-      <h2 class="title-article"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <h2 class="title-article-category"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       {{ block "articleMetaDataHeader" . -}}
       {{- partial "date-and-tags.html" . -}}
       {{ end }}

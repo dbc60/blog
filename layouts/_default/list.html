@@ -4,16 +4,16 @@
       <!-- "{.Content}" pulls from the markdown content of the corresponding _index.md -->
       {{- .Content -}}
     {{- $paginator := .Paginate (where .Pages "Section" .Section) -}}
-    {{- range $paginator.Pages -}}
-      <article>
-      <h2 class="title-article"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{- range $paginator.Pages }}
+      <article class="article-default">
+      <h2 class="title-article-default"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       {{ block "articleMetaDataHeader" . -}}
       {{- partial "date-and-tags.html" . -}}
-      {{ end }}
+      {{ end -}}
         <!-- this renders based on layouts/_default/summary.html (either the
         local one, or the one in a theme -->
-        {{ .Render "summary" }}
+        {{ .Render "summary" -}}
       </article>
-    {{- end -}}
+    {{ end -}}
     {{- template "_internal/pagination.html" . }}
 {{- end -}}

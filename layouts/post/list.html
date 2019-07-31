@@ -3,8 +3,8 @@
 {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
 {{ $paginator := .Paginate (where .Pages "Type" "post") -}}
 {{- range $paginator.Pages -}}
-<article>
-<h2 class="title-article"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+<article class="content">
+<h2 class="title-article-post"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
 {{ block "articleMetaDataHeader" . -}}
 {{- partial "date-and-tags.html" . -}}
 {{ end }}

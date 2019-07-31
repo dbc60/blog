@@ -3,16 +3,13 @@
   {{ $featured_image := .Param "featured_image" -}}
   {{- if $featured_image -}}
   {{- $featured_image := (trim $featured_image "/") | relURL -}}
-  <header style="background-image: url('{{ $featured_image }}');">
+  <header class="main-head" style="background-image: url('{{ $featured_image }}');">
     <h1 class="siteTitle">{{ .Site.Title }}</h1>
     <p class="siteSubtitle">{{- .Site.Params.homeText | markdownify -}}</p>
   {{- else -}}
   <header>
-    <h1 class="siteTitle">{{- .Site.Title -}}</h1>
+    <h1 class="main-head siteTitle">{{- .Site.Title -}}</h1>
     <p class="siteSubtitle">{{- .Site.Params.homeText | markdownify -}}</p>
   {{ end -}}
-    {{- block "nav" . -}}
-      {{- partial "nav.html" . -}}
-    {{- end }}
   </header>
-  {{ "<!-- ENG layouts/partials/siteHeader.html -->" | safeHTML }}
+  {{ "<!-- END layouts/partials/siteHeader.html -->" | safeHTML }}

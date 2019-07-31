@@ -26,14 +26,6 @@ html {
   margin-right: 0;
 }
 
-/* Feels redundant with the above */
-@media screen and (min-width: 960px) {
-  html {
-    margin-left: calc(100vw - 100%);
-    margin-right: 0;
-  }
-}
-
 body {
   font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -81,8 +73,107 @@ pre {
   background-color: gainsboro;
   border-bottom: 1px solid silver;
   border-left: 2px solid slategray;
+  max-width: 632px;
 }
 
 a {
   color: darkslategray;
+}
+
+/**************************
+ CSS Grid for a nice layout
+ **************************/
+ * {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.wrapper > * {
+  border: 2px solid #f08c00;
+  background-color: #ffec99;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.empty {
+  grid-area: empty;
+}
+.main-head {
+  grid-area: header;
+}
+.content {
+  grid-area: content;
+}
+.main-nav {
+  grid-area: nav;
+}
+.breadcrumb {
+  grid-area: breadcrumbs;
+}
+.side {
+  grid-area: sidebar;
+}
+.secondary-nav {
+  grid-area: sn;
+
+}
+.main-footer {
+  grid-area: footer;
+}
+
+/* The mobile layout. One column with evertthing in source order */
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "header"
+    "nav"
+    "sidebar"
+    "breadcrumbs"
+    "sn"
+    "content"
+    "footer";
+}
+
+/* redefine the layout for when there is enough screen real estate to show two
+   columns. */
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "header nav"
+      "sidebar breadcrumbs"
+      "sn content"
+      "footer footer";
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+@media (min-width: 700px) {
+  .wrapper {
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+      "header  nav empty"
+      "sn breadcrumbs sidebar"
+      "sn content sidebar"
+      "footer footer  footer"
+   }
+   nav ul {
+     flex-direction: column;
+   }
 }
