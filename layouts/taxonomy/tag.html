@@ -1,7 +1,7 @@
 {{- define "main" -}}
+  <main class="content">
     <h1 class="title">Posts Tagged {{ .Title | title }}</h1>
-    {{- template "_internal/pagination.html" . }}
-    {{- $paginator := .Paginate (where .Pages "Type" "in" (slice "post" "note")) -}}
+    {{- $paginator := .Paginate (where .Pages "Type" "in" (slice "post" "note" "project")) -}}
     {{- range $paginator.Pages -}}
     {{ $page := .Page }}
     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
@@ -13,4 +13,5 @@
         {{ .Render "summary" }}
     {{- end -}}
     {{- template "_internal/pagination.html" . }}
+  </main>
 {{- end -}}

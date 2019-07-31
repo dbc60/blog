@@ -1,10 +1,17 @@
 {{ define "main" }}
   <!-- the default layout. See layouts/post/single.html for a variation -->
   {{- "<!-- BEGIN layouts/_default/single.html -->" | safeHTML -}}
+  <article class="content">
   <h1 class="title-article">{{- .Title -}}</h1>
   {{ block "articleMetaDataHeader" . -}}
   {{- partial "date-and-tags.html" . -}}
   {{ end }}
 {{- partial "drop-caps.html" . }}
-  {{- "<!-- BEGIN layouts/default/single.html -->" | safeHTML -}}
+{{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
+<section class="comments">
+  {{ template "_internal/disqus.html" . }}
+</section>
+{{ end }}
+</article>
+{{- "<!-- ENG layouts/_default/single.html -->" | safeHTML -}}
 {{ end }}

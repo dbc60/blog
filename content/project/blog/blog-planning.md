@@ -1,9 +1,9 @@
 ---
-title: "Blog Planning"
+title: Blog Planning
 date: 2019-06-25T05:53:03-04:00
 draft: true
 categories: planning
-tags: [blog, blog content, categories, tags]
+tags: [blog, blog content]
 ---
 
 What steps are left to actually launch this blog even though there are styling, presentation, and organizational issues I would like to address?

@@ -2,11 +2,8 @@
 title: Jekyll Configuration
 date: 2016-03-07
 draft: true
-categories:
-  - blog
-tags:
-  - jekyll
-  - yaml
+categories: [blog]
+tags: [jekyll, yaml]
 ---
 
 Jekyll is really is easy to install and use. What takes time is learning enough about its bells and whistles, markdown, HTML, CSS and Sass to make a blog or website you're own.

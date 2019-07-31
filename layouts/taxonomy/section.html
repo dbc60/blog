@@ -1,9 +1,11 @@
 {{- define "main" -}}
+<main class="content">
 <h1 class="title">Taxonomy: {{ .Title | title }}</h1>
 <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
       {{- .Content -}}
     {{- $paginator := .Paginate (where .Pages "Type" "note") -}}
     {{- range $paginator.Pages -}}
+    <article>
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       {{ block "articleMetaDataHeader" . -}}
       {{- partial "date-and-tags.html" . -}}
@@ -11,6 +13,8 @@
         <!-- this renders based on layouts/_default/summary.html (either the
         local one, or the one in a theme -->
         {{ .Render "summary" }}
+    </article>
     {{- end -}}
     {{- template "_internal/pagination.html" . }}
+  </main>
 {{- end -}}
