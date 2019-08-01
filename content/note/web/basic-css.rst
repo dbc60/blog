@@ -44,6 +44,8 @@ Types of Selectors
 * `Combinators <combinators and multiple selectors_>`_ are not exactly selectors themselves, but ways of combining two or more selectors in useful ways for very specific selections. So for example, you could select only paragraphs that are direct descendants of divs, or paragraphs that come directly after headings.
 * `Multiple selectors <combinators and multiple selectors_>`_ also are not separate selectors; the idea is that you can put multiple selectors on the same CSS rule, separated by commas, to apply a single set of declarations to all the elements selected by those selectors.
 
+
+
 .. _mdn css reference: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
 .. _simple selectors: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors/Simple_selectors
 .. _attribute selectors: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors/Attribute_selectors

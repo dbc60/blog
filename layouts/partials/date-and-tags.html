@@ -11,12 +11,12 @@
               3) A page front matter value is set `show_reading_time = true`
               */ -}}
             <div class="post-metadata">
-            <time datetime="{{ $dateTime }}">{{- .PublishDate.Format $dateFormat -}}</time>
+            <time class="post-metadata__timestamp" datetime="{{ $dateTime }}">{{- .PublishDate.Format $dateFormat -}}</time>
               - {{ .ReadingTime}} min read - {{ .WordCount }} words.
-            <time class="post-metadata" datetime="{{ .Lastmod.Format $dateTimeFormatLong }}">Last updated: {{ .Lastmod.Format $dateFormatExtended }}</time>
+            <time class="post-metadata__timestamp" datetime="{{ .Lastmod.Format $dateTimeFormatLong }}">Last updated: {{ .Lastmod.Format $dateFormatExtended }}</time>
             </div>
             {{ with .Params.tags -}}
-            <div class="post-metadata">
+            <div class="tag-list">
             {{- range . -}}
             {{- $href := print (relURL "tags/") (urlize .) -}}
             <a class="tag" href="{{ $href }}">{{ . }}</a>

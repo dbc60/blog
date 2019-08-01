@@ -1,6 +1,15 @@
 {{ define "main" }}
-  <!-- the default layout. See layouts/post/single.html for a variation -->
-  {{- "<!-- BEGIN layouts/_default/single.html -->" | safeHTML -}}
+  {{- "<!-- BEGIN main layouts/_default/single.html -->" | safeHTML -}}
+
+  {{ $sections := (.Site.GetPage .Section).Sections }}
+  <nav class="secondary-nav" aria-label="Secondary">
+    <ul>
+      {{ range $sections }}
+      <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
+      {{ end }}
+    </ul>
+  </nav>
+
   <article class="content">
   <h1 class="title-article">{{- .Title -}}</h1>
   {{ block "articleMetaDataHeader" . -}}
@@ -13,5 +22,5 @@
 </section>
 {{ end }}
 </article>
-{{- "<!-- ENG layouts/_default/single.html -->" | safeHTML -}}
+{{- "<!-- END main layouts/_default/single.html -->" | safeHTML -}}
 {{ end }}

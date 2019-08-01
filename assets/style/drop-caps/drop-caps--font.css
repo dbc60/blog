@@ -1,50 +1,11 @@
 /* Goudy */
 @media only screen and (min-width: 65ch) {
-  /*  All of these numbers are magic.
-      */
-  .drop-caps_goudy > p:first-child::first-letter,
-  .drop-caps_goudy > blockquote:first-child + p::first-letter,
-  .drop-caps_goudy > .epigraph:first-child + p::first-letter,
-  .drop-caps_goudy::first-letter,
-  .drop-caps_goudy > .document > p:first-child::first-letter,
-  .drop-caps_goudy > .document > blockquote:first-child + p::first-letter,
-  .drop-caps_goudy > .document > .epigraph:first-child + p::first-letter,
-  .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
+  /*  All of these numbers are magic. */
+  .drop-caps__goudy > p:first-of-type::first-letter,
+  .drop-caps__goudy > .document > p:first-child::first-letter {
     font-family: Goudy Initialen;
-    font-size: 7em;
+    font-size: 6em;
     line-height: 1;
-    margin: 0 0.02em -0.25em 0;
-  }
-}
-
-@media only screen and (min-width: 65ch) {
-  /*  Compensating for responsive line-height reduction. */
-  @media only screen and (max-width: 120ch) {
-    .drop-caps_goudy > p:first-child::first-letter,
-    .drop-caps_goudy > blockquote:first-child + p::first-letter,
-    .drop-caps_goudy > .epigraph:first-child + p::first-letter,
-    .drop-caps_goudy::first-letter,
-    .drop-caps_goudy .document > p:first-child::first-letter,
-    .drop-caps_goudy .document > blockquote:first-child + p::first-letter,
-    .drop-caps_goudy .document > .epigraph:first-child + p::first-letter,
-    .document > .drop-caps_goudy::first-letter {
-        font-size: 6.875em;
-    }
-  }
-}
-
-@media only screen and (min-width: 65ch) {
-  /*  Compensating for responsive line-height reduction. */
-  @media only screen and (max-width: 100ch) {
-    .drop-caps_goudy > p:first-child::first-letter,
-    .drop-caps_goudy > blockquote:first-child + p::first-letter,
-    .drop-caps_goudy > .epigraph:first-child + p::first-letter,
-    .drop-caps_goudy::first-letter,
-    .drop-caps_goudy .document > p:first-child::first-letter,
-    .drop-caps_goudy .document > blockquote:first-child + p::first-letter,
-    .drop-caps_goudy .document > .epigraph:first-child + p::first-letter,
-    .document > .drop-caps_goudy::first-letter {
-      font-size: 6.625em;
-    }
+    margin: 0.05em 0.02em -0.15em 0;
   }
 }

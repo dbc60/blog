@@ -30,7 +30,7 @@ body {
   font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
-  background: #fff;
+  background: #f0f0f0;
   color: #000;
 }
 
@@ -45,25 +45,31 @@ body {
   fill: none;
 }
 
-body, .document {
+body,
+.document {
   /*  Try to avoid scrollbars on paragraphs: prevents long unbroken
       un-hyphenatable lines from causing H-scrolling
       */
   overflow-wrap: break-word;
 }
 
-h1, h2, strong {
+h1,
+h2,
+strong {
   color: #111;
 }
 
-code, tt.docutils.literal, pre {
+code,
+tt.docutils.literal,
+pre {
   margin: 0.5em 0rem 0.5em 0rem;
   overflow: auto;
   overflow-y: hidden;
   font-family: "Inconsolata", monospace;
 }
 
-code, tt.docutils.literal {
+code,
+tt.docutils.literal {
   padding: 2px 4px;
   vertical-align: text-bottom;
 }
@@ -80,10 +86,34 @@ a {
   color: darkslategray;
 }
 
+.siteTitle {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+.pagination {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.page-item {
+float: left;
+margin-right: 1ch;
+}
+
+.tag {
+  margin-right: 0.5ch;
+}
+
+
 /**************************
  CSS Grid for a nice layout
  **************************/
- * {
+/* BEGIN Debug Border and Fill */
+
+* {
   box-sizing: border-box;
 }
 
@@ -99,81 +129,64 @@ a {
   padding: 10px;
 }
 
+/* END Debug Border and FILL */
+
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.empty {
-  grid-area: empty;
-}
-.main-head {
-  grid-area: header;
-}
-.content {
-  grid-area: content;
-}
-.main-nav {
-  grid-area: nav;
-}
-.breadcrumb {
-  grid-area: breadcrumbs;
-}
-.side {
-  grid-area: sidebar;
-}
-.secondary-nav {
-  grid-area: sn;
 
-}
-.main-footer {
-  grid-area: footer;
-}
-
-/* The mobile layout. One column with evertthing in source order */
-.wrapper {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-areas:
-    "header"
-    "nav"
-    "sidebar"
-    "breadcrumbs"
-    "sn"
-    "content"
-    "footer";
-}
-
-/* redefine the layout for when there is enough screen real estate to show two
-   columns. */
-@media (min-width: 500px) {
-  .wrapper {
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas:
-      "header nav"
-      "sidebar breadcrumbs"
-      "sn content"
-      "footer footer";
+@supports (display: grid) {
+  .main-head {
+    grid-area: header;
+  }
+  .content {
+    grid-area: content;
+  }
+  .main-nav {
+    grid-area: nav;
+  }
+  .breadcrumb {
+    grid-area: breadcrumbs;
+  }
+  .secondary-nav {
+    grid-area: sn;
+  }
+  .main-footer {
+    grid-area: footer;
   }
 
-  nav ul {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-
-@media (min-width: 700px) {
+  /* The mobile layout. One column with evertthing in source order */
   .wrapper {
-    grid-template-columns: 1fr 4fr 1fr;
+    display: grid;
+    grid-gap: 20px;
     grid-template-areas:
-      "header  nav empty"
-      "sn breadcrumbs sidebar"
-      "sn content sidebar"
-      "footer footer  footer"
-   }
-   nav ul {
-     flex-direction: column;
-   }
+      "header"
+      "nav"
+      "breadcrumbs"
+      "sn"
+      "content"
+      "footer";
+  }
+
+  /* redefine the layout for when there is enough screen real estate to show
+   two columns. */
+  @media (min-width: 540px) {
+    .wrapper {
+      grid-template-columns: minmax(120px, 1fr) minmax(360px, 3fr);
+      grid-template-areas:
+        "header nav"
+        "sidebar breadcrumbs"
+        "sn content"
+        "footer footer";
+    }
+
+    .main-nav {
+      display: flex;
+      justify-content: space-between;
+      align-content: end;
+    }
+  }
 }

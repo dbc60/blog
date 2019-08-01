@@ -12,14 +12,14 @@
     {{ "<!-- I used https://realfavicongenerator.net/ to generate the -->" | safeHTML }}
     {{ "<!-- icons and https://realfavicongenerator.net/social/ to -->" | safeHTML }}
     {{ "<!-- generate the og metadata -->" | safeHTML }}
-    <meta property="og:title" content="{{ .titleSite }}">
+    <meta property="og:title" content="{{ .context.Site.Title }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://douglascuthbertson.com">
     <meta property="og:image:width" content="279">
     <meta property="og:image:height" content="279">
     <meta property="og:image" content="http://douglascuthbertson.com/images/og-image.jpg">
 
-    <meta name="twitter:title" content="Dream, Sketch, Code">
+    <meta name="twitter:title" content="{{ .context.Site.Title }}">
 
     {{ "<!-- BEGIN hugo.Generator -->" | safeHTML }}
     {{ hugo.Generator }}

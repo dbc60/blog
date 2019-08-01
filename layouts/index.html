@@ -1,11 +1,21 @@
     {{- define "main" }}
-    <main class="content">
-        <h1>All Posts</h1>
+    {{ "<!-- BEGIN main in layouts/index.html -->" | safeHTML }}
+
+    {{ $sections := (.Site.GetPage .Section).Sections }}
+    <nav class="secondary-nav" aria-label="Secondary">
+      <ul>
+        {{ range $sections }}
+        <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+      <main class="content">
         {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
         {{ $paginator := .Paginate (where .Pages "Type" "post") -}}
         {{- range $paginator.Pages -}}
         <article>
-        <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <h1 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
         {{ block "articleMetaDataHeader" . -}}
           {{ partial "date-and-tags.html" . -}}
         {{- end -}}
@@ -15,4 +25,5 @@
         {{ end -}}
         {{- template "_internal/pagination.html" . }}
     </main>
+    {{ "<!-- END main in layouts/index.html -->" | safeHTML }}
     {{- end -}}

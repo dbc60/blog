@@ -1,7 +1,18 @@
 {{ define "main" }}
+{{ "<!-- BEGIN main layouts/_default/terms.html -->" | safeHTML }}
+
+{{ $sections := (.Site.GetPage "/").Sections }}
+<nav class="secondary-nav" aria-label="Secondary">
+  <ul>
+    {{ range $sections }}
+    <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
+    {{ end }}
+  </ul>
+</nav>
+
 <!-- See https://bwaycer.github.io/hugo_tutorial.hugo/templates/terms/ -->
 <main class="content">
-<h2 class="title-article-terms">{{ .Title }}</h2>
+<h1 class="title-article-terms">{{ .Title }}</h1>
 
 {{ $type := .Type }}
 {{ range $key, $value := .Data.Terms.Alphabetical }}
@@ -16,4 +27,5 @@
   {{ end }}
 {{ end }}
 </main>
+{{ "<!-- END main layouts/_default/terms.html -->" | safeHTML }}
 {{ end }}

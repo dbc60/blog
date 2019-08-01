@@ -1,17 +1,30 @@
 {{- define "main" -}}
-  <main class="content">
-    <h1 class="title">Posts Tagged {{ .Title | title }}</h1>
+  {{ "<!-- BEGIN main layouts/taxonomy/tag.html -->" | safeHTML }}
+
+  {{ $sections := (.Site.GetPage "/").Sections }}
+  <nav class="secondary-nav" aria-label="Secondary">
+    <ul>
+      {{ range $sections }}
+      <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
+      {{ end }}
+    </ul>
+  </nav>
+
+    <main class="content">
     {{- $paginator := .Paginate (where .Pages "Type" "in" (slice "post" "note" "project")) -}}
     {{- range $paginator.Pages -}}
-    {{ $page := .Page }}
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    {{ block "articleMetaDataHeader" . -}}
-    {{- partial "date-and-tags.html" . -}}
-    {{ end }}
+      {{ $page := .Page }}
+      <article>
+      <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+      {{ block "articleMetaDataHeader" . -}}
+      {{- partial "date-and-tags.html" . -}}
+      {{ end }}
       <!-- this renders based on layouts/_default/summary.html (either the
         local one, or the one in a theme -->
-        {{ .Render "summary" }}
+      {{ .Render "summary" }}
+    </article>
     {{- end -}}
     {{- template "_internal/pagination.html" . }}
   </main>
+  {{ "<!-- END main layouts/taxonomy/tag.html -->" | safeHTML }}
 {{- end -}}

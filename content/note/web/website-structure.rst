@@ -1,6 +1,7 @@
 ---
 title: "Website Structure"
 date: 2019-04-14T09:32:09-04:00
+draft: true
 categories: [software]
 tags: [design, web]
 ---

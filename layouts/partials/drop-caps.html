@@ -1,11 +1,13 @@
+{{ $componentDropCapsFont := "" }}
+{{ $componentDropCaps := "c-drop-caps" }}
 {{ if .Params.componentDropCaps }}
-  {{ $componentDropCaps := .Params.componentDropCaps }}
-  <section class="c-drop-caps {{ $componentDropCaps }}">
+  {{ $componentDropCapsFont = .Params.componentDropCaps }}
 {{ else if .Site.Params.componentDropCaps }}
-  {{ $componentDropCaps := .Site.Params.componentDropCaps }}
-  <section class="c-drop-caps {{ $componentDropCaps }}">
+  {{ $componentDropCapsFont = .Site.Params.componentDropCaps }}
 {{ else }}
-  <section class="c-drop-caps_none">
+  {{ $componentDropCaps = "c-drop-caps__none" }}
 {{ end }}
+
+<section class="{{ $componentDropCaps }} {{ $componentDropCapsFont }}">
   {{- .Content -}}
-</section>
+ </section>

@@ -1,7 +1,17 @@
 {{- define "main" -}}
+{{ "<!-- BEGIN main layouts/taxonomy/section.html -->" | safeHTML }}
+
+{{ $sections := (.Site.GetPage "/").Sections }}
+<nav class="secondary-nav" aria-label="Secondary">
+  <ul>
+    {{ range $sections }}
+    <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
+    {{ end }}
+  </ul>
+</nav>
+
 <main class="content">
 <h1 class="title">Taxonomy: {{ .Title | title }}</h1>
-<!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
       {{- .Content -}}
     {{- $paginator := .Paginate (where .Pages "Type" "note") -}}
     {{- range $paginator.Pages -}}
@@ -17,4 +27,5 @@
     {{- end -}}
     {{- template "_internal/pagination.html" . }}
   </main>
+  {{ "<!-- END main layouts/taxonomy/section.html -->" | safeHTML }}
 {{- end -}}

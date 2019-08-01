@@ -1,9 +1,16 @@
 {{ define "main" }}
 {{- "<!-- BEGIN layouts/post/single.html -->" | safeHTML -}}
-  <!--
-    post template - unlike the default template, blog posts get disqus comments
-  -->
-  <article class="content">
+
+{{ $sections := (.Site.GetPage "/").Sections }}
+<nav class="secondary-nav" aria-label="Secondary">
+  <ul>
+    {{ range $sections }}
+    <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
+    {{ end }}
+  </ul>
+</nav>
+
+<article class="content">
   <h1 class="title-article">{{- .Title -}}</h1>
   {{ block "articleMetaDataHeader" . -}}
   {{- partial "date-and-tags.html" . -}}
@@ -16,4 +23,5 @@
   </section>
   {{ end }}
 </article>
+{{ "<!-- END main layouts/post/single.html -->" | safeHTML }}
 {{ end }}

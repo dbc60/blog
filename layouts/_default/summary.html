@@ -1,5 +1,7 @@
-<!-- the regex removes footnote links from the summary text -->
-  {{- .Summary | replaceRE `<sup.*footnote-ref.*><a href.*#fn:.*/a></sup>` "" | safeHTML }}
-<footer class="read-more">
-  <a href='{{ .Permalink }}'><span class="read-more">Read more →</span></a>
-</footer>
+    {{ "<!-- BEGIN layouts/_default/summary.html-->" | safeHTML }}
+    <!-- the regex removes footnote links from the summary text -->
+    {{- .Summary | replaceRE `<sup.*footnote-ref.*><a href.*#fn:.*/a></sup>` "" | safeHTML }}
+    <footer class="read-more">
+      <a href='{{ .Permalink }}'><span class="read-more">Read more →</span></a>
+    </footer>
+    {{ "<!-- END layouts/_default/summary.html-->" | safeHTML }}

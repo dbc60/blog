@@ -1,16 +1,28 @@
 {{- define "main" }}
-<h1>All Posts Layout Posts Index</h1>
+{{ "<!-- BEGIN main layouts/post/list.html -->" | safeHTML }}
+
+{{ $sections := (.Site.GetPage "/").Sections }}
+<nav class="secondary-nav" aria-label="Secondary">
+  <ul>
+    {{ range $sections }}
+    <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
+    {{ end }}
+  </ul>
+</nav>
+
 {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
-{{ $paginator := .Paginate (where .Pages "Type" "post") -}}
-{{- range $paginator.Pages -}}
 <article class="content">
-<h2 class="title-article-post"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-{{ block "articleMetaDataHeader" . -}}
-{{- partial "date-and-tags.html" . -}}
-{{ end }}
-{{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
+  {{ $paginator := .Paginate (where .Pages "Type" "post") -}}
+  {{- range $paginator.Pages }}
+  <section>
+    <h1 class="title-article-post"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    {{ block "articleMetaDataHeader" . -}}
+    {{- partial "date-and-tags.html" . -}}
+    {{- end -}}
     {{- .Render "summary" }}
+  </section>
+  {{ end -}}
 </article>
-{{- end -}}
 {{- template "_internal/pagination.html" . }}
+{{ "<!-- END main layouts/post/list.html -->" | safeHTML }}
 {{- end -}}
