@@ -10,12 +10,12 @@
   </ul>
 </nav>
 
-<main class="content">
+<article class="content">
 <h1 class="title">Taxonomy: {{ .Title | title }}</h1>
       {{- .Content -}}
     {{- $paginator := .Paginate (where .Pages "Type" "note") -}}
     {{- range $paginator.Pages -}}
-    <article>
+    <section>
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       {{ block "articleMetaDataHeader" . -}}
       {{- partial "date-and-tags.html" . -}}
@@ -23,9 +23,9 @@
         <!-- this renders based on layouts/_default/summary.html (either the
         local one, or the one in a theme -->
         {{ .Render "summary" }}
-    </article>
+    </section>
     {{- end -}}
     {{- template "_internal/pagination.html" . }}
-  </main>
+</article>
   {{ "<!-- END main layouts/taxonomy/section.html -->" | safeHTML }}
 {{- end -}}

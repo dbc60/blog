@@ -21,16 +21,168 @@
 
  More details are at: https://aykevl.nl/2014/09/fix-jumping-scrollbar
 */
+
+/*****************
+* General Layout *
+******************/
+
+/* Per https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing border-box
+   makes dealing with the sizes of elements much easier, and generally
+   eliminates a number of pitfalls you can stumble on while laying out your
+   content.*/
+* {
+  box-sizing: border-box;
+}
+
 html {
   margin-left: calc(100vw - 100%);
   margin-right: 0;
 }
 
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/************************
+* Debug Border and Fill *
+************************/
+/**************************
+.wrapper > * {
+  border: 2px solid #f08c00;
+  background-color: #ffec99;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.main-content > * {
+  border: 2px solid #8c00f0;
+  background-color: #fca9ff;
+  border-radius: 5px;
+  padding: 10px;
+}
+**************************/
+
+
+/*****************
+* Flexbox Layout *
+*****************/
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-nav__items {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media (min-width: 96ch) {
+  .wrapper {
+    max-width: 1024px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .main-head {
+    width: 100%;
+  }
+
+  .main-nav {
+    flex-basis: 100%;
+  }
+
+  .breadcrumb {
+    flex-basis: 80%;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .secondary-nav {
+    align-self: flex-start;
+    flex-basis: 20%;
+  }
+
+  .content {
+    flex-basis: 80%;
+  }
+
+  .main-footer {
+    flex-basis: 100%;
+  }
+}
+
+
+/******************
+* CSS Grid Layout *
+******************/
+
+@supports (display: grid) {
+  .main-head {
+    grid-area: header;
+  }
+
+  .main-nav {
+    grid-area: nav;
+  }
+
+  .breadcrumb {
+    grid-area: breadcrumbs;
+  }
+
+  .empty {
+    grid-area: empty;
+  }
+
+  .main-content {
+    grid-area: main;
+  }
+
+  .main-footer {
+    grid-area: footer;
+  }
+
+  /* The mobile layout. One column with evertthing in source order */
+  .wrapper {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "nav"
+      "breadcrumbs"
+      "main"
+      "footer";
+  }
+
+  /* redefine the layout for when there is enough screen real estate to show
+   two columns. */
+  @media (min-width: 96ch) {
+    .wrapper {
+      /*grid-template-columns: minmax(120px, 1fr) minmax(360px, 3fr);*/
+      grid-template-columns: 1fr 4fr;
+      grid-template-areas:
+        "header header"
+        "nav    nav"
+        "empty breadcrumbs"
+        "main main"
+        "footer footer";
+    }
+  }
+}
+
+/***************************
+** The rest of the styling *
+****************************/
 body {
   font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
-  background: #f0f0f0;
+  background: whitesmoke;
   color: #000;
 }
 
@@ -66,6 +218,8 @@ pre {
   overflow: auto;
   overflow-y: hidden;
   font-family: "Inconsolata", monospace;
+  white-space: pre-wrap;
+  word-wrap: normal;
 }
 
 code,
@@ -79,7 +233,6 @@ pre {
   background-color: gainsboro;
   border-bottom: 1px solid silver;
   border-left: 2px solid slategray;
-  max-width: 632px;
 }
 
 a {
@@ -99,94 +252,16 @@ a {
 }
 
 .page-item {
-float: left;
-margin-right: 1ch;
+  float: left;
+  margin-right: 1ch;
 }
 
 .tag {
   margin-right: 0.5ch;
 }
 
-
-/**************************
- CSS Grid for a nice layout
- **************************/
-/* BEGIN Debug Border and Fill */
-
-* {
-  box-sizing: border-box;
-}
-
-.wrapper {
-  max-width: 1024px;
-  margin: 0 auto;
-}
-
-.wrapper > * {
-  border: 2px solid #f08c00;
-  background-color: #ffec99;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-/* END Debug Border and FILL */
-
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-
-@supports (display: grid) {
-  .main-head {
-    grid-area: header;
-  }
-  .content {
-    grid-area: content;
-  }
-  .main-nav {
-    grid-area: nav;
-  }
-  .breadcrumb {
-    grid-area: breadcrumbs;
-  }
-  .secondary-nav {
-    grid-area: sn;
-  }
-  .main-footer {
-    grid-area: footer;
-  }
-
-  /* The mobile layout. One column with evertthing in source order */
-  .wrapper {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-areas:
-      "header"
-      "nav"
-      "breadcrumbs"
-      "sn"
-      "content"
-      "footer";
-  }
-
-  /* redefine the layout for when there is enough screen real estate to show
-   two columns. */
-  @media (min-width: 540px) {
-    .wrapper {
-      grid-template-columns: minmax(120px, 1fr) minmax(360px, 3fr);
-      grid-template-areas:
-        "header nav"
-        "sidebar breadcrumbs"
-        "sn content"
-        "footer footer";
-    }
-
-    .main-nav {
-      display: flex;
-      justify-content: space-between;
-      align-content: end;
-    }
-  }
 }

@@ -1,5 +1,5 @@
 /* Goudy */
-@media only screen and (min-width: 65ch) {
+@media only screen and (min-width: 96ch) {
   /*  All of these numbers are magic. */
   .drop-caps__goudy > p:first-of-type::first-letter,
   .drop-caps__goudy > .document > p:first-child::first-letter {

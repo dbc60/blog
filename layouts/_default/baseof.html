@@ -16,11 +16,13 @@
     {{- end }}
     </nav>
 
-      {{ block "nav__breadcrumbs" . }}
-        {{- partial "nav__breadcrumbs.html" . -}}
-      {{ end }}
+    {{ block "nav__breadcrumbs" . }}
+      {{- partial "nav__breadcrumbs.html" . -}}
+    {{ end }}
 
+    <main class="main-content">
       {{- block "main" . -}}{{- end }}
+    </main>
 
     {{ "<!-- I might want to wrap footer and script in blocks -->" | safeHTML }}
     <footer class="main-footer">

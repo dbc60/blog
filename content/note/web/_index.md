@@ -1,5 +1,5 @@
 ---
-title: "Web Notes"
+title: "Web"
 draft: true
 ---
 

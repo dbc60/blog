@@ -47,7 +47,7 @@
   height: 0;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-left: 30px solid #f0f0f0;
+  border-left: 30px solid whitesmoke; /* must be same as background */
   position: absolute;
   top: 50%;
   margin-top: -50px;

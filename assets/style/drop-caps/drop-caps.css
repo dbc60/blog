@@ -16,20 +16,16 @@
     literary/historical/humanities pages, yinit is for technical/scientific
     pages, and De-Zs is for everything else.
     */
-@media only screen and (min-width: 65ch) {
-  .c-drop-caps > p:first-of-type::first-letter {
-      font-style: normal;
-      font-weight: normal;
-      float: left;
-  }
-
+@media only screen and (min-width: 96ch) {
+  .c-drop-caps > p:first-of-type::first-letter,
   /*
     rst2html5 adds a section with a .document class, so all posts/notes
-    generated from reStructuredText files instead of markdown need this.
+    generated from reStructuredText files need this.
   */
   .c-drop-caps > .document > p:first-of-type::first-letter {
-      font-style: normal;
+    font-style: normal;
       font-weight: normal;
       float: left;
+      color: green;
   }
 }

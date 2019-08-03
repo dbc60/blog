@@ -1,5 +1,6 @@
     {{- $showActiveNav := .Site.Params.showActiveNav -}}
     {{- $currentPage := . -}}
+    <div class="main-nav__items">
     {{- range .Site.Menus.nav -}}
       {{- $active := "" -}}
       {{- if eq $showActiveNav true -}}
@@ -11,3 +12,4 @@
       {{- $text := print .Name | safeHTML }}
       <a class="main-nav__link {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
     {{- end }}
+    </div>

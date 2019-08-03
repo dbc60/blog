@@ -11,7 +11,7 @@
 </nav>
 
 <!-- See https://bwaycer.github.io/hugo_tutorial.hugo/templates/terms/ -->
-<main class="content">
+<article class="content">
 <h1 class="title-article-terms">{{ .Title }}</h1>
 
 {{ $type := .Type }}
@@ -26,6 +26,6 @@
   </p>
   {{ end }}
 {{ end }}
-</main>
+</article>
 {{ "<!-- END main layouts/_default/terms.html -->" | safeHTML }}
 {{ end }}

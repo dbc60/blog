@@ -7,8 +7,8 @@
     <h1 class="siteTitle">{{ .Site.Title }}</h1>
     <p class="siteSubtitle">{{- .Site.Params.homeText | markdownify -}}</p>
   {{- else -}}
-  <header>
-    <h1 class="main-head siteTitle">{{- .Site.Title -}}</h1>
+  <header class="main-head">
+    <h1 class="siteTitle">{{- .Site.Title -}}</h1>
     <p class="siteSubtitle">{{- .Site.Params.homeText | markdownify -}}</p>
   {{ end -}}
   </header>

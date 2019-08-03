@@ -10,11 +10,11 @@
     </ul>
   </nav>
 
-    <main class="content">
+    <article class="content">
     {{- $paginator := .Paginate (where .Pages "Type" "in" (slice "post" "note" "project")) -}}
     {{- range $paginator.Pages -}}
       {{ $page := .Page }}
-      <article>
+      <section>
       <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
       {{ block "articleMetaDataHeader" . -}}
       {{- partial "date-and-tags.html" . -}}
@@ -22,9 +22,9 @@
       <!-- this renders based on layouts/_default/summary.html (either the
         local one, or the one in a theme -->
       {{ .Render "summary" }}
-    </article>
+      </section>
     {{- end -}}
     {{- template "_internal/pagination.html" . }}
-  </main>
+    </article>
   {{ "<!-- END main layouts/taxonomy/tag.html -->" | safeHTML }}
 {{- end -}}
