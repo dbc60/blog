@@ -984,6 +984,127 @@ I have some questions:
 - should each post, note, and project "article" be wrapped in an `<article>` element?
 - what should their classes be? Same or different?
 
+## CSS Grid
+
+For a short time, I had a CSS grid layout. It was preceded by a flexbox layout that it relied upon for some the styling. It was a good learning exercise, but I found I was able to do all the layout with flexbox. There's no need to add/override with grid.
+
+The flexbox layout is here:
+
+...css
+  /*****************
+  * Flexbox Layout *
+  *****************/
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-nav__items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  @media (min-width: 96ch) {
+    .wrapper {
+      max-width: 1024px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .main-head {
+      width: 100%;
+    }
+
+    .main-nav {
+      flex-basis: 100%;
+    }
+
+    .breadcrumb {
+      flex-basis: 80%;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .secondary-nav {
+      align-self: flex-start;
+      flex-basis: 20%;
+    }
+
+    .content {
+      flex-basis: 80%;
+    }
+
+    .main-footer {
+      flex-basis: 100%;
+    }
+  }
+```
+
+and here is the grid layout that followed:
+
+```css
+  /******************
+  * CSS Grid Layout *
+  ******************/
+
+  @supports (display: gridddd) {
+    .main-head {
+      grid-area: header;
+    }
+
+    .main-nav {
+      grid-area: nav;
+    }
+
+    .breadcrumb {
+      grid-area: breadcrumbs;
+    }
+
+    .empty {
+      grid-area: empty;
+    }
+
+    .main-content {
+      grid-area: main;
+    }
+
+    .main-footer {
+      grid-area: footer;
+    }
+
+    /* The mobile layout. One column with evertthing in source order */
+    .wrapper {
+      display: grid;
+      grid-template-areas:
+        "header"
+        "nav"
+        "breadcrumbs"
+        "main"
+        "footer";
+    }
+
+    /* redefine the layout for when there is enough screen real estate to show
+     two columns. */
+    @media (min-width: 96ch) {
+      .wrapper {
+        /*grid-template-columns: minmax(120px, 1fr) minmax(360px, 3fr);*/
+        grid-template-columns: 1fr 4fr;
+        grid-template-areas:
+          "header header"
+          "nav    nav"
+          "empty breadcrumbs"
+          "main main"
+          "footer footer";
+      }
+    }
+  }
+```
+
 ## Resources
 
 - [Hugo Blog Styling]({{< ref "hugo-blog-styling.rst" >}})

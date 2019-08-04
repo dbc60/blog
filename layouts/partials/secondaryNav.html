@@ -1,0 +1,9 @@
+{{ "<!-- BEGIN layouts/partial/secondaryNav.html -->" | safeHTML }}
+<nav class="secondary-nav" aria-label="Secondary">
+  <ul>
+  {{ range $index, $element := .sections }}
+  <li><a class="secondary-nav__link" href="{{ $element.Permalink }}">{{ $element.Title }}</a></li>
+  {{ end }}
+</ul>
+</nav>
+{{- "<!-- END layouts/partial/secondaryNav.html -->" | safeHTML -}}

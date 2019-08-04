@@ -2,13 +2,11 @@
 {{ "<!-- BEGIN main layouts/taxonomy/section.html -->" | safeHTML }}
 
 {{ $sections := (.Site.GetPage "/").Sections }}
-<nav class="secondary-nav" aria-label="Secondary">
-  <ul>
-    {{ range $sections }}
-    <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
-    {{ end }}
-  </ul>
-</nav>
+{{ $context := (dict "context" . "sections"  $sections) }}
+
+{{ block "secondary_nav" $context }}
+{{ partial "secondaryNav.html" . }}
+{{ end }}
 
 <article class="content">
 <h1 class="title">Taxonomy: {{ .Title | title }}</h1>

@@ -2,30 +2,30 @@
 {{ "<!-- BEGIN main layouts/_default/terms.html -->" | safeHTML }}
 
 {{ $sections := (.Site.GetPage "/").Sections }}
-<nav class="secondary-nav" aria-label="Secondary">
-  <ul>
-    {{ range $sections }}
-    <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
-    {{ end }}
-  </ul>
-</nav>
+{{ $context := (dict "context" . "sections"  $sections) }}
+
+{{ block "secondary_nav" $context }}
+{{ partial "secondaryNav.html" . }}
+{{ end }}
 
 <!-- See https://bwaycer.github.io/hugo_tutorial.hugo/templates/terms/ -->
 <article class="content">
-<h1 class="title-article-terms">{{ .Title }}</h1>
+  <section>
+    <h1 class="title-article-item">{{ .Title }}</h1>
 
-{{ $type := .Type }}
-{{ range $key, $value := .Data.Terms.Alphabetical }}
-  {{ $name := .Name }}
-  {{ $count := $value.Count }}
-  {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-  <p>
-    <a href="{{ .Permalink }}">
-      <span>{{ $count }}</span> {{ $name }}
-    </a>
-  </p>
-  {{ end }}
-{{ end }}
+    {{ $type := .Type }}
+    {{ range $key, $value := .Data.Terms.Alphabetical }}
+      {{ $name := .Name }}
+      {{ $count := $value.Count }}
+      {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+      <p>
+        <a href="{{ .Permalink }}">
+          <span>{{ $count }}</span> {{ $name }}
+        </a>
+      </p>
+      {{ end }}
+    {{ end }}
+  </section>
 </article>
 {{ "<!-- END main layouts/_default/terms.html -->" | safeHTML }}
 {{ end }}

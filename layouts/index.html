@@ -2,13 +2,11 @@
     {{ "<!-- BEGIN main in layouts/index.html -->" | safeHTML }}
 
     {{ $sections := (.Site.GetPage .Section).Sections }}
-    <nav class="secondary-nav" aria-label="Secondary">
-      <ul>
-        {{ range $sections }}
-        <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
-        {{ end }}
-      </ul>
-    </nav>
+    {{ $context := (dict "context" . "sections"  $sections) }}
+
+    {{ block "secondary_nav" $context }}
+    {{ partial "secondaryNav.html" . }}
+    {{ end }}
 
       <article class="content">
         {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}

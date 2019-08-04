@@ -2,21 +2,21 @@
 {{- "<!-- BEGIN layouts/post/single.html -->" | safeHTML -}}
 
 {{ $sections := (.Site.GetPage "/").Sections }}
-<nav class="secondary-nav" aria-label="Secondary">
-  <ul>
-    {{ range $sections }}
-    <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
-    {{ end }}
-  </ul>
-</nav>
+{{ $context := (dict "context" . "sections"  $sections) }}
+
+{{ block "secondary_nav" $context }}
+{{ partial "secondaryNav.html" . }}
+{{ end }}
 
 <article class="content">
-  <h1 class="title-article">{{- .Title -}}</h1>
-  {{ block "articleMetaDataHeader" . -}}
-  {{- partial "date-and-tags.html" . -}}
-  {{ end }}
-{{- partial "drop-caps.html" . }}
+  <section>
+    <h1 class="title-article">{{- .Title -}}</h1>
+    {{ block "articleMetaDataHeader" . -}}
+    {{- partial "date-and-tags.html" . -}}
+    {{ end }}
 
+    {{- partial "drop-caps.html" . }}
+  </section>
   {{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
     <section class="comments">
     {{ template "_internal/disqus.html" . }}

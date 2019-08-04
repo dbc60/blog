@@ -2,16 +2,14 @@
 {{ "<!-- BEGIN main layouts/post/list.html -->" | safeHTML }}
 
 {{ $sections := (.Site.GetPage "/").Sections }}
-<nav class="secondary-nav" aria-label="Secondary">
-  <ul>
-    {{ range $sections }}
-    <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
-    {{ end }}
-  </ul>
-</nav>
+{{ $context := (dict "context" . "sections"  $sections) }}
 
-{{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
+{{ block "secondary_nav" $context }}
+{{ partial "secondaryNav.html" . }}
+{{ end }}
+
 <article class="content">
+    {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
   {{ $paginator := .Paginate (where .Pages "Type" "post") -}}
   {{- range $paginator.Pages }}
   <section>
@@ -22,7 +20,7 @@
     {{- .Render "summary" }}
   </section>
   {{ end -}}
+  {{- template "_internal/pagination.html" . }}
 </article>
-{{- template "_internal/pagination.html" . }}
 {{ "<!-- END main layouts/post/list.html -->" | safeHTML }}
 {{- end -}}

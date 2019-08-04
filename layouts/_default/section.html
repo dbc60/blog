@@ -2,22 +2,23 @@
   {{ "<!-- BEGIN main in layouts/_default/section.html -->" | safeHTML }}
 
   {{ $sections := (.Site.GetPage .Section).Sections }}
-  <nav class="secondary-nav" aria-label="Secondary">
-    <ul>
-      {{ range $sections }}
-      <li><h2 class="title-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2></li>
-      {{ end }}
-    </ul>
-  </nav>
+  {{ $context := (dict "context" . "sections"  $sections) }}
+
+  {{ block "secondary_nav" $context }}
+  {{ partial "secondaryNav.html" . }}
+  {{ end }}
 
   {{- $paginator := .Paginate (where .Pages "Section" .Section) -}}
   <article class="content">
     {{- range $paginator.Pages -}}
-      <h2 class="title-article-section"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <!-- NOTE: <section> is important. It shrinks the size of the <h1> element-->
+      <section>
+      <h1 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
       {{ block "articleMetaDataHeader" . -}}
         {{- partial "date-and-tags.html" . -}}
       {{ end }}
       {{ .Render "summary" }}
+      </section>
     {{ end }}
     {{- template "_internal/pagination.html" . }}
   </article>

@@ -42,6 +42,17 @@ html {
 .wrapper {
   max-width: 1024px;
   margin: 0 auto;
+  padding: 10px;
+}
+
+.main-footer {
+  margin-top: 1em;
+}
+
+/* This is a magic number to keep the secondary nav and the first article in a
+   list of articles aligned. */
+.secondary-nav {
+  margin-top: 20.6px;
 }
 
 /************************
@@ -73,16 +84,37 @@ html {
   flex-direction: column;
 }
 
-.main-nav__items {
+.main-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
+.main-nav__items a {
+  font-size: 1.1em;
+  margin-right: 1ch;
+}
+
+.main-head {
+  background-color: rgb(241, 241, 241);
+  {{ $featured_image := .Site.Params.featured_image -}}
+  {{- if $featured_image -}}
+  {{- $featured_image := (trim $featured_image "/") | relURL -}}
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('{{ $featured_image }}');
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-size: 25% auto;
+  {{ end }}
+  display: flex;
+}
 
 @media (min-width: 96ch) {
   .wrapper {
     max-width: 1024px;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
@@ -119,70 +151,15 @@ html {
 }
 
 
-/******************
-* CSS Grid Layout *
-******************/
-
-@supports (display: grid) {
-  .main-head {
-    grid-area: header;
-  }
-
-  .main-nav {
-    grid-area: nav;
-  }
-
-  .breadcrumb {
-    grid-area: breadcrumbs;
-  }
-
-  .empty {
-    grid-area: empty;
-  }
-
-  .main-content {
-    grid-area: main;
-  }
-
-  .main-footer {
-    grid-area: footer;
-  }
-
-  /* The mobile layout. One column with evertthing in source order */
-  .wrapper {
-    display: grid;
-    grid-template-areas:
-      "header"
-      "nav"
-      "breadcrumbs"
-      "main"
-      "footer";
-  }
-
-  /* redefine the layout for when there is enough screen real estate to show
-   two columns. */
-  @media (min-width: 96ch) {
-    .wrapper {
-      /*grid-template-columns: minmax(120px, 1fr) minmax(360px, 3fr);*/
-      grid-template-columns: 1fr 4fr;
-      grid-template-areas:
-        "header header"
-        "nav    nav"
-        "empty breadcrumbs"
-        "main main"
-        "footer footer";
-    }
-  }
-}
-
 /***************************
 ** The rest of the styling *
 ****************************/
 body {
   font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-weight: normal;
   font-style: normal;
-  background: whitesmoke;
+  font-size: 1.1em;
+  background-color: rgb(241, 241, 241);
   color: #000;
 }
 
@@ -208,7 +185,7 @@ body,
 h1,
 h2,
 strong {
-  color: #111;
+  color: black;
 }
 
 code,
@@ -236,12 +213,15 @@ pre {
 }
 
 a {
-  color: darkslategray;
+  color: black;
 }
 
 .siteTitle {
   font-size: 1.5em;
   line-height: 1.5em;
+  {{ if .Site.Params.featured_image -}}
+  color: rgb(241, 241, 241);
+  {{ end }}
 }
 
 .pagination {
