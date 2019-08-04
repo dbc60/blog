@@ -34,15 +34,19 @@
   box-sizing: border-box;
 }
 
+{{ $siteWidth := .Site.Params.site_width }}
+{{ if not .Site.Params.site_width }}
+{{ $siteWidth = "780px" }}
+{{ end }}
+
 html {
   margin-left: calc(100vw - 100%);
   margin-right: 0;
 }
 
-.wrapper {
-  max-width: 1024px;
+body {
+  max-width: {{ $siteWidth }};
   margin: 0 auto;
-  padding: 10px;
 }
 
 .main-footer {
@@ -95,26 +99,30 @@ html {
 }
 
 .main-head {
+  display: flex;
   background-color: rgb(241, 241, 241);
   {{ $featured_image := .Site.Params.featured_image -}}
-  {{- if $featured_image -}}
-  {{- $featured_image := (trim $featured_image "/") | relURL -}}
+  {{- if .Site.Params.featured_image -}}
+  {{- $header_image := (trim $featured_image "/") | relURL -}}
   background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url('{{ $featured_image }}');
+    url('{{ $header_image }}');
   background-origin: border-box;
   background-repeat: no-repeat;
-  background-size: 25% auto;
+  background-size: cover;
+  height: 25vh;
   {{ end }}
-  display: flex;
+}
+
+.main-head h1 {
+  margin: 0;
 }
 
 @media (min-width: 96ch) {
   .wrapper {
-    max-width: 1024px;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
@@ -217,6 +225,7 @@ a {
 }
 
 .siteTitle {
+  width: 100%;
   font-size: 1.5em;
   line-height: 1.5em;
   {{ if .Site.Params.featured_image -}}
