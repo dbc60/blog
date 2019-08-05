@@ -5,13 +5,10 @@ categories: [software]
 tags: [design, web]
 ---
 
-How much structure is really needed to make a web page. I have a lot to learn.
+Early in my quest to understand HTML, CSS, and how to make a site I wouldn't be embarrassed to call my own, I read an article on `Hacker News`_ titled `58 Bytes of CSS to look great nearly everywhere <58 bytes of css_>`_. The article was inspiring as the author was advocating just these 5 lines of CSS for styling.
 <!--more-->
 
-I read an article on `HN <https://news.ycombinator.com>`_ titled `58 Bytes of
-CSS to look great nearly everywhere <58 bytes of css_>`_. The article itself
-was inspiring as the author was advocating just these 5 lines of CSS for
-styling:
+Here they are:
 
 .. code-block:: css
 
@@ -67,7 +64,7 @@ little more CSS.
       background-color: #fff888;
     }
 
-The author's `configs page <jrl ninja config_>`_ page had this concoction.
+`Another page <jrl ninja config_>`_ on the author's site used a slightly different stylesheet, but it was still not just 5 lines of CSS. I was disappointed.
 
 .. code-block:: css
 
@@ -115,11 +112,11 @@ The author's `configs page <jrl ninja config_>`_ page had this concoction.
     }
 
 Clearly ``main`` is still there, but I read the article as stating that's all
-that was *really* necessary. Why would someone write something so misleading,
-especially to novices? He was just unclear. He really meant 58 bytes for layout,
-not layout + styling. Still, his count is wrong. It's 63 bytes as written.
+that was *really* necessary. What was going on?
 
-Well, at least it provoked `a conversation <58 bytes of css_>`_. `Web Design in
+I'm going to be generous and guess his intent was to say that those 58 bytes was all that one needed for layout, and the rest is for styling. Otherwise, I'd assume the title was just click bait.
+
+Regardless, it provoked `a conversation <58 bytes of css_>`_. `Web Design in
 4 minutes <web design in 4 minutes_>`_ was one site cited as an example of
 simple web design. It's CSS is quite a bit longer. Still, it's ``main`` layout consists of just:
 
@@ -131,7 +128,7 @@ simple web design. It's CSS is quite a bit longer. Still, it's ``main`` layout c
       padding: 4em 1em;
     }
 
-NOTE: The author has recently updated his CSS to replace the ``max-width`` and
+The author updated his CSS to replace the ``max-width`` and
 ``padding`` values with ``70ch`` and ``2ch``, respectively (and some other
 minor changes). Apparently, ``ch`` for ``max-width`` is more generic and
 portable, which means fewer changes to handle mobile devices.
@@ -1184,6 +1181,7 @@ Reference
 
 .. _gwern.net: https://www.gwern.net/index
 .. _58 bytes of css: https://news.ycombinator.com/item?id=19607169
+.. _hacker news: https://news.ycombinator.com
 .. _jrl ninja config: https://jrl.ninja/configs/
 .. _web design in 4 minutes: https://jgthms.com/web-design-in-4-minutes/
 .. _wdi4m content: https://jgthms.com/web-design-in-4-minutes/#content

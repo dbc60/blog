@@ -9,7 +9,7 @@ hideFooter = false
 #featured_image = "/images/hero-header-default.jpg"
 #featured_image = "/images/hero-header-april.jpg"
 background_color = "rgb(241, 241, 241)"
-site_width = "960px"
+site_width = "90ch"
 
 componentDropCaps = "drop-caps__goudy"
 

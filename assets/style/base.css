@@ -46,7 +46,8 @@ html {
 
 body {
   max-width: {{ $siteWidth }};
-  margin: 0 auto;
+  margin: auto;
+  padding: 2ch;
 }
 
 .main-footer {
@@ -136,7 +137,7 @@ body {
   }
 
   .breadcrumb {
-    flex-basis: 80%;
+    flex-basis: 75%;
   }
 
   .main-content {
@@ -146,11 +147,11 @@ body {
 
   .secondary-nav {
     align-self: flex-start;
-    flex-basis: 20%;
+    flex-basis: 25%;
   }
 
   .content {
-    flex-basis: 80%;
+    flex-basis: 75%;
   }
 
   .main-footer {
@@ -167,6 +168,7 @@ body {
   font-weight: normal;
   font-style: normal;
   font-size: 1.1em;
+  line-height: 1.3em;
   background-color: rgb(241, 241, 241);
   color: #000;
 }
