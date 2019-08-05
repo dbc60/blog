@@ -2,7 +2,11 @@
   {{ "<!-- BEGIN main in layouts/_default/section.html -->" | safeHTML }}
 
   {{ $sections := (.Site.GetPage .Section).Sections }}
-  {{ $context := (dict "context" . "sections"  $sections) }}
+  {{ $rootSections := (.Site.GetPage "/").Sections }}
+  {{ if eq 0 (len $sections) }}
+  {{ $sections = $rootSections }}
+  {{ end }}
+    {{ $context := (dict "context" . "sections"  $sections) }}
 
   {{ block "secondary_nav" $context }}
   {{ partial "secondaryNav.html" . }}

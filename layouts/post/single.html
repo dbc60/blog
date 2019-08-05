@@ -1,7 +1,11 @@
 {{ define "main" }}
 {{- "<!-- BEGIN layouts/post/single.html -->" | safeHTML -}}
 
-{{ $sections := (.Site.GetPage "/").Sections }}
+{{ $sections := (.Site.GetPage .Section).Sections }}
+{{ $rootSections := (.Site.GetPage "/").Sections }}
+{{ if eq 0 (len $sections) }}
+{{ $sections = $rootSections }}
+{{ end }}
 {{ $context := (dict "context" . "sections"  $sections) }}
 
 {{ block "secondary_nav" $context }}
