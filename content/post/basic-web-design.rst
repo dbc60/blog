@@ -5,7 +5,7 @@ categories: [software]
 tags: [design, web]
 ---
 
-Early in my quest to understand HTML, CSS, and how to make a site I wouldn't be embarrassed to call my own, I read an article on `Hacker News`_ titled `58 Bytes of CSS to look great nearly everywhere <58 bytes of css_>`_. The article was inspiring as the author was advocating just these 5 lines of CSS for styling.
+Early in my latest attempt to use HTML and CSS to make a site I wouldn't be embarrassed to call my own, I read an article on `Hacker News`_ titled `58 Bytes of CSS to look great nearly everywhere <58 bytes of css_>`_. The article was inspiring as the author was advocating just these 5 lines of CSS for styling.
 <!--more-->
 
 Here they are:
@@ -133,9 +133,9 @@ The author updated his CSS to replace the ``max-width`` and
 minor changes). Apparently, ``ch`` for ``max-width`` is more generic and
 portable, which means fewer changes to handle mobile devices.
 `Some say <https://www.reddit.com/r/css/comments/bb73cw/58_bytes_of_css_to_look_great_nearly_everywhere/ekj8yhm/>`_ a value in the
-range of 50-80 characters is optimal. There's an explanation of the 'ch' unit
-`here <https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/>`_.
-They are not exactly character width, especially if you're not using a
+range of 50-80 characters is optimal. There's an explanation of `the 'ch' unit
+here <https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/>`_.
+It is not exactly a character width, especially if you're not using a
 fixed-width font.
 They are `defined as <https://drafts.csswg.org/css-values-3/#ch>`_:
 
