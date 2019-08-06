@@ -137,7 +137,7 @@ body {
   }
 
   .breadcrumb {
-    flex-basis: 75%;
+    flex-basis: 80%;
   }
 
   .main-content {
@@ -151,7 +151,7 @@ body {
   }
 
   .content {
-    flex-basis: 75%;
+    flex-basis: 80%;
   }
 
   .main-footer {
@@ -198,21 +198,23 @@ strong {
   color: black;
 }
 
-code,
-tt.docutils.literal,
+.code,
+.literal-block,
+.tt.docutils.literal,
 pre {
   margin: 0.5em 0rem 0.5em 0rem;
   overflow: auto;
   overflow-y: hidden;
   font-family: "Inconsolata", monospace;
-  white-space: pre-wrap;
   word-wrap: normal;
+  white-space: pre-wrap;
+  max-width: 60ch;
 }
 
-code,
-tt.docutils.literal {
+.code,
+.literal-block,
+.tt.docutils.literal {
   padding: 2px 4px;
-  vertical-align: text-bottom;
 }
 
 pre {

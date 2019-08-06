@@ -3,15 +3,16 @@
   /*  All of these numbers are magic. */
   .drop-caps__goudy > p:first-of-type,
   .drop-caps__goudy > .document > p:first-child {
-    margin-bottom: 20pt;
+    margin-bottom: 18pt;
   }
 
   /*  All of these numbers are magic. */
   .drop-caps__goudy > p:first-of-type::first-letter,
   .drop-caps__goudy > .document > p:first-child::first-letter {
     font-family: Goudy Initialen;
-    font-size: 6.3em;
+    font-size: 4.7em;
+    line-height: 1em;
     font-weight: normal;
-    margin: 0 0 -0.1em 0;
+    margin: 0 0 -0.18em 0;
   }
 }
