@@ -3,16 +3,7 @@ title: Fixing the Width
 date: 2016-03-10
 math: true
 categories: blog
-tags:
-    - jekyll
-    - yaml
-    - liquid-templates
-    - markdown
-    - html
-    - css
-    - git
-    - mathjax
-    - bundler
+tags: [css, design, html, layout, math]
 ---
 What an ugly, fragile blog.
 <!--more-->
@@ -49,3 +40,4 @@ I also got rid of jQuery and some other JavaScript. It was a holdover from anoth
 This blog is still quite ugly, but I'm feeling better about it after putting in a couple of days work to make the width behave the way I want it to. Now to learn more about layout design, typography, Sass, CSS and how best to put to use semantic HTML5 tags, like  `<main>`, `<aside>`, `<header>` and others.
 
 _2019.07.29 Edit: typos_
+_2019.08.07 Edit: tags_

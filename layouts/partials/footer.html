@@ -1,9 +1,5 @@
-{{- if ne .Site.Params.hideFooter true -}}
+{{- if not .Site.Params.hideFooter -}}
   <div class="container">
     {{- .Site.Params.footerText | markdownify -}}
   </div>
-
-  {{- range .Site.Params.links }}
-    <a href="{{ .url }}" title="{{ .title }}"> <span class="social-link {{ .iconset | default "fab" }} fa-{{ .icon }}"></span> </a>
-  {{- end }}
 {{- end -}}

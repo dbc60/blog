@@ -2,11 +2,7 @@
 title: A Dangerous Spectacle
 date: 2016-11-09
 categories: blog
-tags:
-    - 2016
-    - president
-    - election
-    - usa
+tags: [politics]
 ---
 
 I'm truly saddened by the outcome of the 2016 presidential election.

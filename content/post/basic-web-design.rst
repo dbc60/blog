@@ -1,6 +1,7 @@
 ---
 title: "Basic Web Design"
 date: 2019-04-13T04:45:15-04:00
+draft: true
 categories: [software]
 tags: [design, web]
 ---

@@ -1,9 +1,15 @@
-{{ "<!-- BEGIN layouts/partial/secondaryNav.html -->" | safeHTML }}
+{{ "<!-- BEGIN layouts/partials/secondaryNav.html -->" | safeHTML }}
 <nav class="secondary-nav" aria-label="Secondary">
+  {{ "<!-- BEGIN social icons inlayouts/partials/secondaryNav.html -->" | safeHTML }}
+  {{- range .context.Site.Params.links }}
+    <a href="{{ .url }}" title="{{ .title }}"> <span class="social-link {{ .iconset | default "fab" }} fa-{{ .icon }}"></span> </a>
+  {{- end }}
+  {{ "<!-- END social icons in layouts/partials/secondaryNav.html -->" | safeHTML }}
+
   <ul>
   {{ range $index, $element := .sections }}
   <li><a class="secondary-nav__link" href="{{ $element.Permalink }}">{{ $element.Title }}</a></li>
   {{ end }}
 </ul>
 </nav>
-{{- "<!-- END layouts/partial/secondaryNav.html -->" | safeHTML -}}
+{{- "<!-- END layouts/partials/secondaryNav.html -->" | safeHTML -}}

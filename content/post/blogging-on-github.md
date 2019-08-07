@@ -2,15 +2,7 @@
 title: A Blog on GitHub
 date: 2015-12-30
 categories: blog
-tags: [jekyll, yaml, liquid-templates,
-       markdown,
-       html, css, javascript,
-       compass, sass,
-       git,
-       mathjax,
-       bundler,
-       dns
-       ]
+tags: [jekyll, github]
 ---
 
 What do you really need to know to setup a blog on GitHub?
