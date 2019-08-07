@@ -13,11 +13,11 @@
   {{ end }}
 
   {{- $paginator := .Paginate (where .Pages "Section" .Section) -}}
-  <article class="content">
+  <div class="content">
     {{- range $paginator.Pages -}}
-      <!-- NOTE: <section> is important. It shrinks the size of the <h1> element-->
+      <!-- NOTE: <section> is important. It shrinks the size of the <h2> element-->
       <section>
-      <h1 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+      <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       {{ block "articleMetaDataHeader" . -}}
         {{- partial "date-and-tags.html" . -}}
       {{ end }}
@@ -25,7 +25,7 @@
       </section>
     {{ end }}
     {{- template "_internal/pagination.html" . }}
-  </article>
+    </div>
 
   {{ "<!-- END main in layouts/_default/section.html -->" | safeHTML }}
 {{ end }}

@@ -9,12 +9,12 @@
 {{ end }}
 
 <article class="content">
-<h1 class="title">Taxonomy: {{ .Title | title }}</h1>
+<h2 class="title">Taxonomy: {{ .Title | title }}</h2>
       {{- .Content -}}
     {{- $paginator := .Paginate (where .Pages "Type" "note") -}}
     {{- range $paginator.Pages -}}
     <section>
-      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       {{ block "articleMetaDataHeader" . -}}
       {{- partial "date-and-tags.html" . -}}
       {{ end }}

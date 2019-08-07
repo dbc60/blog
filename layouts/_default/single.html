@@ -8,9 +8,9 @@
   {{ partial "secondaryNav.html" . }}
   {{ end }}
 
-  <article class="content">
+  <div class="content">
     <section>
-    <h1 class="title-article">{{- .Title -}}</h1>
+    <h2 class="title-article">{{- .Title -}}</h2>
     {{ block "articleMetaDataHeader" . -}}
     {{- partial "date-and-tags.html" . -}}
     {{ end }}
@@ -22,6 +22,6 @@
       {{ template "_internal/disqus.html" . }}
     </section>
     {{ end }}
-  </article>
+  </div>
 {{- "<!-- END main layouts/_default/single.html -->" | safeHTML -}}
 {{ end }}

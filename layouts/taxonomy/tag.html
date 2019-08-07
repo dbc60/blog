@@ -8,12 +8,12 @@
   {{ partial "secondaryNav.html" . }}
   {{ end }}
 
-    <article class="content">
+    <div class="content">
     {{- $paginator := .Paginate (where .Pages "Type" "in" (slice "post" "note" "project")) -}}
     {{- range $paginator.Pages -}}
       {{ $page := .Page }}
       <section>
-      <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       {{ block "articleMetaDataHeader" . -}}
       {{- partial "date-and-tags.html" . -}}
       {{ end }}
@@ -23,6 +23,6 @@
       </section>
     {{- end -}}
     {{- template "_internal/pagination.html" . }}
-    </article>
+    </div>
   {{ "<!-- END main layouts/taxonomy/tag.html -->" | safeHTML }}
 {{- end -}}

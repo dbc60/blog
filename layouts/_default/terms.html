@@ -9,9 +9,9 @@
 {{ end }}
 
 <!-- See https://bwaycer.github.io/hugo_tutorial.hugo/templates/terms/ -->
-<article class="content">
+<div class="content">
   <section>
-    <h1 class="title-article-item">{{ .Title }}</h1>
+    <h2 class="title-article-item">{{ .Title }}</h2>
 
     {{ $type := .Type }}
     {{ range $key, $value := .Data.Terms.Alphabetical }}
@@ -26,6 +26,6 @@
       {{ end }}
     {{ end }}
   </section>
-</article>
+</div>
 {{ "<!-- END main layouts/_default/terms.html -->" | safeHTML }}
 {{ end }}
