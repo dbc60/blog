@@ -9,8 +9,6 @@ tags: [design, web]
 Early in my latest attempt to use HTML and CSS to make a site I wouldn't be embarrassed to call my own, I read an article on `Hacker News`_ titled `58 Bytes of CSS to look great nearly everywhere <58 bytes of css_>`_. The article was inspiring as the author was advocating just these 5 lines of CSS for styling.
 <!--more-->
 
-Here they are:
-
 .. code-block:: css
 
     main {
@@ -19,8 +17,9 @@ Here they are:
       margin: auto;
     }
 
-I then wondered "How could this be?" I looked at the page source. It used a
-little more CSS.
+What I learned was one can build a site with very little CSS for the site's layout, but the process to get to that realization took a little while. I also learned a little about the ``ch`` CSS unit.
+
+At First, I wondered "How could this be? I've never seen a site made with so little CSS." I looked at the page source. It used a little more CSS.
 
 .. code-block:: css
 
@@ -65,7 +64,7 @@ little more CSS.
       background-color: #fff888;
     }
 
-`Another page <jrl ninja config_>`_ on the author's site used a slightly different stylesheet, but it was still not just 5 lines of CSS. I was disappointed.
+I felt betrayed! I checked `another page <jrl ninja config_>`_ on the author's site. It used a slightly different stylesheet, but it was still a lot more than 5 lines of CSS.
 
 .. code-block:: css
 
@@ -115,11 +114,11 @@ little more CSS.
 Clearly ``main`` is still there, but I read the article as stating that's all
 that was *really* necessary. What was going on?
 
-I'm going to be generous and guess his intent was to say that those 58 bytes was all that one needed for layout, and the rest is for styling. Otherwise, I'd assume the title was just click bait.
+It wasn't clear to me from the article, but I guess his intent was to say that those 58 bytes were all that one needed for layout, and the rest is for styling.
 
-Regardless, it provoked `a conversation <58 bytes of css_>`_. `Web Design in
+Regardless, it provoked `a conversation <58 bytes of css_>`_. People supplied links to similar articles, which makes it a nice resource from which to learn. For example, `Web Design in
 4 minutes <web design in 4 minutes_>`_ was one site cited as an example of
-simple web design. It's CSS is quite a bit longer. Still, it's ``main`` layout consists of just:
+simple web design. It's CSS is quite a bit longer. Still, its ``main`` layout consists of just:
 
 .. code-block:: css
 
@@ -129,12 +128,7 @@ simple web design. It's CSS is quite a bit longer. Still, it's ``main`` layout c
       padding: 4em 1em;
     }
 
-The author updated his CSS to replace the ``max-width`` and
-``padding`` values with ``70ch`` and ``2ch``, respectively (and some other
-minor changes). Apparently, ``ch`` for ``max-width`` is more generic and
-portable, which means fewer changes to handle mobile devices.
-`Some say <https://www.reddit.com/r/css/comments/bb73cw/58_bytes_of_css_to_look_great_nearly_everywhere/ekj8yhm/>`_ a value in the
-range of 50-80 characters is optimal. There's an explanation of `the 'ch' unit
+I want to note that the author of "58 bytes" updated his CSS to replace the ``max-width`` and ``padding`` values with ``70ch`` and ``2ch``, respectively (and some other minor changes). Apparently, ``ch`` for ``max-width`` is more generic and portable, which means fewer changes to handle mobile devices. There's an explanation of `the 'ch' unit
 here <https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/>`_.
 It is not exactly a character width, especially if you're not using a
 fixed-width font.
@@ -144,63 +138,26 @@ They are `defined as <https://drafts.csswg.org/css-values-3/#ch>`_:
   the font used to render it. (The advance measure of a glyph is its advance
   width or height, whichever is in the inline axis of the element.)
 
-So, fonts with a skinny zero might look compact. Be careful about selecting
+So, fonts with a skinny zero might look compact.
+
+`Some say <https://www.reddit.com/r/css/comments/bb73cw/58_bytes_of_css_to_look_great_nearly_everywhere/ekj8yhm/>`_ that a value in the
+range of 50-80 characters is optimal. Be careful about selecting
 different fonts, say one for headlines and another for body copy. They will
 likely fill the space very differently.
 
-.. code-block:: css
-
-    body {
-      font-family: Liberation Sans, Arial, sans-serif;
-      background-color: #fffaf7;
-      line-height: 1.3;
-    }
-    main {
-      max-width: 70ch;
-      padding: 2ch;
-      margin: auto;
-    }
-    header {
-      margin-bottom: 1.5rem;
-    }
-    h1 {
-      margin-bottom: .5rem;
-    }
-    time {
-      color: #888;
-    }
-    hr {
-      border: 2px solid #ddd;
-      margin: 2rem auto;
-    }
-    #fn {
-      font-size: 85%;
-    }
-    footer {
-      margin-top: 2rem;
-      text-align: center;
-    }
-    a {
-      color: #ff3c3c;
-      text-decoration: none;
-      outline: 0;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    ::selection {
-      background-color: #fff888;
-    }
+###################
+Structuring Content
+###################
 
 While `content <wdi4m content_>`_ is the first thing one should work on, it got
 me wondering about how to structure the content. How much structure is needed
 to make content easy to read?
 
-Now I'm reminded of `CSS Zen Garden`_. It was a beautiful experiment in how CSS
+I'm reminded of `CSS Zen Garden`_. It was a beautiful experiment in how CSS
 could be applied to the same content to create a wide variety of presentations.
 How much structure was used there?
 
-It starts with an HTML5 doctype, ``<!DOCTYPE html>``. The ``html`` tag is
+It started with an HTML5 doctype, ``<!DOCTYPE html>``. The ``html`` tag is
 simply ``<html lang="en">``. The ``<head>...</head>`` section contains a
 ``<meta>`` tag to define the charset, a ``<title>`` tag, two ``<link>`` tags,
 one for a CSS stylesheet and the other for an RSS link:

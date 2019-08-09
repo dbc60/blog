@@ -15,7 +15,7 @@
   text-decoration: none;
   padding: 10px 0 10px 65px;
   background: black; /* fallback color */
-  background: hsla(105,05%,35%,1);
+  background: hsla(162,25%,27%,1);
   position: relative;
   display: block;
   float: left;
@@ -30,7 +30,7 @@
   height: 0;
   border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
   border-bottom: 50px solid transparent;
-  border-left: 30px solid hsla(105,05%,35%,1);
+  border-left: 30px solid hsla(162,25%,27%,1);
   position: absolute;
   top: 50%;
   margin-top: -50px;
@@ -74,20 +74,20 @@
 }
 
 
-.breadcrumb li:nth-child(2) a       { background:        hsla(105,05%,45%,1); }
-.breadcrumb li:nth-child(2) a:after { border-left-color: hsla(105,05%,45%,1); }
-.breadcrumb li:nth-child(3) a       { background:        hsla(105,05%,55%,1); }
-.breadcrumb li:nth-child(3) a:after { border-left-color: hsla(105,05%,55%,1); }
-.breadcrumb li:nth-child(4) a       { background:        hsla(105,05%,65%,1); }
-.breadcrumb li:nth-child(4) a:after { border-left-color: hsla(105,05%,65%,1); }
-.breadcrumb li:nth-child(5) a       { background:        hsla(105,05%,75%,1); }
-.breadcrumb li:nth-child(5) a:after { border-left-color: hsla(105,05%,75%,1); }
+.breadcrumb li:nth-child(2) a       { background:        hsla(162,25%,32%,1); }
+.breadcrumb li:nth-child(2) a:after { border-left-color: hsla(162,25%,32%,1); }
+.breadcrumb li:nth-child(3) a       { background:        hsla(162,25%,37%,1); }
+.breadcrumb li:nth-child(3) a:after { border-left-color: hsla(162,25%,37%,1); }
+.breadcrumb li:nth-child(4) a       { background:        hsla(162,25%,42%,1); }
+.breadcrumb li:nth-child(4) a:after { border-left-color: hsla(162,25%,42%,1); }
+.breadcrumb li:nth-child(5) a       { background:        hsla(162,25%,47%,1); }
+.breadcrumb li:nth-child(5) a:after { border-left-color: hsla(162,25%,47%,1); }
 
 /* hover */
 /* https://css-tricks.com/triangle-breadcrumbs/ */
 .breadcrumb li a:hover {
-  background: hsla(105,05%,25%,1);
+  background: hsla(120,100%,25%,1);
 }
 .breadcrumb li a:hover:after {
-  border-left-color: hsla(105,05%,25%,1);
+  border-left-color: hsla(120,100%,25%,1);
 }

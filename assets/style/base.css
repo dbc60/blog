@@ -46,8 +46,7 @@ html {
 
 body {
   max-width: {{ $siteWidth }};
-  margin: auto;
-  padding: 2ch;
+  margin: 0 auto;
 }
 
 .main-footer {
@@ -163,12 +162,47 @@ body {
 /***************************
 ** The rest of the styling *
 ****************************/
+/*
+ * Color Scheme 1
+    Anchor:
+      HEX:  #34564c
+      RGB:  52 86 76
+      HSL:  162 25% 27%
+      HWB:  120 100 30
+      CMYK: 40% 0% 12% 66%
+
+    Anchor Hover: (green)
+      HEX:  #008000
+      RGB:   0 128  0
+      HSL: 120 100% 25%
+      HWB: 120 0% 02%
+      HSV:  120 100 31.37
+      CMYK: 100% 0% 100% 68.63
+
+    pre, code background-color:
+      HEX:  #d7dedc
+      RGB:  215 222 220
+      HSV:  163 3 87
+      CMYK: 3 0 1 13
+
+    pre border-left:
+      HEX:  #879e97
+      RGB:  135 158 151
+      HSV:  162 15 62
+      CMYK: 15 0 4 38
+
+    pre border-bottom:
+      HEX:  #cccecd
+      RGB:  204 206 205
+      HSV:  150 1 81
+      CMYK: 1 0 0 19
+*/
+
 body {
   font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  font-style: normal;
   font-size: 1.1em;
-  line-height: 1.3em;
+  line-height: 1.5em;
+  padding: 4em 1em;
   background-color: rgb(241, 241, 241);
   color: #000;
 }
@@ -198,9 +232,19 @@ strong {
   color: black;
 }
 
-.code,
+/* both inline and block code */
+pre, code, tt.docutils.literal {
+  background-color: #d7dedc;
+}
+
+/* inline code */
+code,
 .literal-block,
-.tt.docutils.literal,
+tt.docutils.literal {
+  padding: 2px 4px;
+}
+
+/* blocks of code */
 pre {
   margin: 0.5em 0rem 0.5em 0rem;
   overflow: auto;
@@ -209,25 +253,18 @@ pre {
   word-wrap: normal;
   white-space: pre-wrap;
   max-width: 60ch;
-}
-
-.code,
-.literal-block,
-.tt.docutils.literal {
-  padding: 2px 4px;
-}
-
-pre {
   padding: 1em;
-  background-color: gainsboro;
-  border-bottom: 1px solid silver;
-  border-left: 2px solid slategray;
+  border-bottom: 1px solid #cccecd;
+  border-left: 2px solid #879e97;
 }
 
 a {
-  color: black;
+  color: hsla(162,25%,25%,1);
 }
 
+a:hover {
+  color: hsla(120,100%,25%,1);
+}
 .siteTitle {
   width: 100%;
   font-size: 1.5em;
