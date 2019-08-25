@@ -90,3 +90,10 @@ pygmentsCodefencesGuessSyntax=true
   [privacy.youtube]
     disable = false
     privacyEnhanced = false
+
+# A better RSS Feed
+copyright = "(c) 2019 Douglas Cuthbertson. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0, International License"
+rssLimit = 20
+[author]
+  name = "Douglas Cuthbertson"
+  email = "doug.cuthbertson@gmail.com"

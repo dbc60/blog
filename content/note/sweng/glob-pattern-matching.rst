@@ -349,7 +349,7 @@ Operators are the metacharacters ``*+?``, also known as repetition characters. F
   * :math:`e_1+` matches one or more.
   * :math:`e_1?` matches zero or one.
 
-Parentheses, ``(`` and ``)`` are are used to override operator precedence, and to make the order of operators explicit. For example, a sequence that starts with ``a`` and continues with zero or more ``b``'s is recognized by the regular expression ``ab*``. However, if you want to define a regular expression that recognizes zero or more sequences of ``a`` followed by ``b``, you would write ``(ab)*``.
+Parentheses, ``(`` and ``)`` are used to override operator precedence, and to make the order of operators explicit. For example, a sequence that starts with ``a`` and continues with zero or more ``b``'s is recognized by the regular expression ``ab*``. However, if you want to define a regular expression that recognizes zero or more sequences of ``a`` followed by ``b``, you would write ``(ab)*``.
 
 The vertical bar, ``|``, defines a choice, or alternate regular expression. It represents the union of two regular expressions. For example, :math:`e_1|e_2` defines a regular expression that matches strings in the set of those matched by either :math:`e_1` or :math:`e_2`.
 
