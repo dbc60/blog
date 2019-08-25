@@ -22,9 +22,9 @@
  More details are at: https://aykevl.nl/2014/09/fix-jumping-scrollbar
 */
 
-/*****************
-* General Layout *
-******************/
+/******************
+ * General Layout *
+ ******************/
 
 /* Per https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing border-box
    makes dealing with the sizes of elements much easier, and generally
@@ -59,10 +59,10 @@ body {
   margin-top: 20.6px;
 }
 
-/************************
-* Debug Border and Fill *
-************************/
-/**************************
+/*************************
+ * Debug Border and Fill *
+ *************************/
+/*****************************
 .wrapper > * {
   border: 2px solid #f08c00;
   background-color: #ffec99;
@@ -76,12 +76,12 @@ body {
   border-radius: 5px;
   padding: 10px;
 }
-**************************/
+*****************************/
 
 
-/*****************
-* Flexbox Layout *
-*****************/
+/******************
+ * Flexbox Layout *
+ ******************/
 
 .wrapper {
   display: flex;
@@ -160,8 +160,8 @@ body {
 
 
 /***************************
-** The rest of the styling *
-****************************/
+ * The rest of the styling *
+ ***************************/
 /*
  * Color Scheme 1
     Anchor:
@@ -180,27 +180,30 @@ body {
       CMYK: 100% 0% 100% 68.63
 
     pre, code background-color:
-      HEX:  #d7dedc
-      RGB:  215 222 220
-      HSV:  163 3 87
-      CMYK: 3 0 1 13
+      HEX:  #e3e8e7
+      RGB:  227 232 231
+      HSL: 	168 10% 90%
+      HSV:
+      CMYK: 2% 0% 0% 9%
 
     pre border-left:
-      HEX:  #879e97
-      RGB:  135 158 151
-      HSV:  162 15 62
-      CMYK: 15 0 4 38
+      HEX:  #8fa39f
+      RGB:  143 163 159
+      HSL:  168 10% 60%
+      HSV:
+      CMYK: 12% 0% 2% 36%
 
     pre border-bottom:
-      HEX:  #cccecd
-      RGB:  204 206 205
-      HSV:  150 1 81
-      CMYK: 1 0 0 19
+      HEX:  #cacfcf
+      RGB:  202 207 207
+      HSL: 	180 4% 80%
+      HSV:
+      CMYK: 2% 0% 0% 19%
 */
 
 body {
   font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.5em;
   padding: 4em 1em;
   background-color: rgb(241, 241, 241);
@@ -234,28 +237,28 @@ strong {
 
 /* both inline and block code */
 pre, code, tt.docutils.literal {
-  background-color: #d7dedc;
+  background-color: #e3e8e7;
+  font-family: Inconsolata, "Lucida Console", Monaco, "Courier New", Courier, monospace;
 }
 
 /* inline code */
 code,
-.literal-block,
 tt.docutils.literal {
   padding: 2px 4px;
+  font-size: 1rem;
 }
 
 /* blocks of code */
-pre {
+pre, .literal-block, .code {
   margin: 0.5em 0rem 0.5em 0rem;
-  overflow: auto;
+  overflow-x: auto;
   overflow-y: hidden;
-  font-family: "Inconsolata", monospace;
-  word-wrap: normal;
-  white-space: pre-wrap;
-  max-width: 60ch;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  max-width: 81ch;
   padding: 1em;
-  border-bottom: 1px solid #cccecd;
-  border-left: 2px solid #879e97;
+  border-bottom: 1px solid #cacfcf;
+  border-left: 2px solid #8fa39f;
 }
 
 a {
@@ -294,4 +297,48 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+
+/************************************
+ * Simple Markdown-Generated Tables *
+ ************************************/
+table, td, th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+tr:nth-child(odd) {
+  background-color: #e3e8e7;
+}
+
+tr:nth-child(even) pre,
+tr:nth-child(even) code,
+tr:nth-child(even) tt.docutils.literal {
+  background-color: rgb(241, 241, 241);
+}
+
+th {
+  background-color: hsl(162, 11%, 30%);
+  color: rgb(241, 241, 241);
+}
+
+th, td {
+  padding: 0.25em 0.5em;
+}
+
+/*****************************************************************************
+ * reST Admonitions. The list of defined admonitions is: attention, caution, *
+ *danger, error, hint, important, note, tip, and warning.                    *
+ *****************************************************************************/
+.admonition-title {
+  background-color: hsl(162, 25%, 27%);
+  color: rgb(241, 241, 241);
+}
+
+.admonition {
+  padding: 12px;
+  line-height: 24px;
+  margin-bottom: 24px;
+  background: hsl(163, 10%, 86%);
 }

@@ -32,4 +32,4 @@ Pages are specific instances of templates. Here, placeholder content is replaced
 - [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
 - [Element Collages](http://v3.danielmall.com/articles/rif-element-collages/)
 - [How to Section Your HTML](https://css-tricks.com/how-to-section-your-html/)
-- [Mocup Page Layout for Sectioning Your HTML](https://codepen.io/aardrian/pen/BgQqrQ)
+- [Mock up Page Layout for Sectioning Your HTML](https://codepen.io/aardrian/pen/BgQqrQ)
