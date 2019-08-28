@@ -113,7 +113,7 @@ In each round of the Monte Carlo simulation, you'll have to convert the hourly d
 Simple Time Tracking
 ********************
 
-You don't have to track each interruption. It turns out you can keep the clock running on whatever task you were doing when the interruption occurred. The velocities for each task (:math:`E/A`) will compensate for the interruptions.
+You don't have to track each interruption. It turns out you can keep the clock running on whatever task you were doing when the interruption occurred. The velocities for each task (:math:`T_E/T_A`) will compensate for the interruptions.
 
 *****************************
 Actively Manage Your Projects
@@ -182,7 +182,7 @@ Other Guidelines
 Estimated vs Actual Story Points
 ################################
 
-I'd like to apply EBS to story points. I'm not sure what that means in its entirety. At the very least, I think it means we have to decide what the *actual* story points were. Todd Sedano's article, `Estimated vs Actual Story Points`_ provides some guidance on how to do that.
+I'd like to apply EBS to story points. I'm not sure how to define velocity in terms of story points. I think it means we have to decide what the *actual* story points were. Todd Sedano's article, `Estimated vs Actual Story Points`_ provides some guidance on how to do that.
 
 When assigning points to tasks, all developers voted. They went with the majority point value. If there were significant splits in the voting, the team would have a discussion. This results in the *estimated story points* (:math:`T_E`).
 
@@ -196,13 +196,9 @@ I suppose we could adjust the estimated story points up or down depending on the
 
 Developers could assign actual story points after they've passed QA test. QA could reassign the ticket to the original developer, who assigns actual story points and then sets the status to `Done`.
 
-Does that step need to be done? Each sprint we estimate the number of story points we think we can accomplish (:math:`S_E`). At the end of our sprint, Jira records total points completed (:math:`S_C`). The velocity chart stinks. It just shows those two values. I'd like to see their ratio plotted over time, say :math:`V_A = S_C/S_E`, where :math:`V_A` is the actual velocity:
+Does that step need to be done? Each sprint we estimate the number of story points we think we can accomplish (:math:`S_E`). At the end of our sprint, Jira records total points completed, which amounts to **actual story points** for the team (:math:`S_A`). The velocity chart stinks. It just shows those two values. I'd like to see their ratio plotted over time, say :math:`V = S_A/S_E`.
 
-.. math::
-
-    V_A = S_C / S_E
-
-Now we can simulate the future. We can calculate a probable number of completed story points (:math:`S_P`) for future sprints as the number of estimated story points (:math:`S_E`) timex a velocity randomly selected from the history of velocities (:math:`V_R`):
+Now we can simulate the future. We can calculate a probable number of completed story points (:math:`S_P`) for future sprints as the number of estimated story points (:math:`S_E`) times a velocity randomly selected from the history of velocities (:math:`V_R`):
 
 .. math::
 
@@ -239,8 +235,7 @@ Array formulas enable us to skip this step and get the answer all at once. In th
 
 .. note::
 
-  This calculation could also be done with the SUMPRODUCT formula, which takes array values as inputs, multiplies them and adds them together: :math:`=SUMPRODUCT(B2:B5 , C2:C5)`.
-
+  This calculation could also be done with the ``SUMPRODUCT`` formula, which takes array values as inputs, multiplies them and adds them together: :math:`=\text{SUMPRODUCT}(B2:B5 , C2:C5)`.
 
 #########
 Resources

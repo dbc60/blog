@@ -34,6 +34,12 @@ See [ringwoodite](https://en.wikipedia.org/wiki/Ringwoodite) at Wikipedia.
 
 > A man wearing khakis with lots of pockets, pulling a wheelie cart with handle, breezes through security of whichever airport he is in. He's a machinist. He encouters locks and opens them in moments. He's followed by another man wearing a pith helmet, sporting a handlebar moustache. The second man carries a large gun normally reserved for hunting elephants in the plains of Africa.
 
+### Dystopian Story Topics
+
+The lead in is at work, Mark accidentally left the wrapper on their PopTart when they put it in the microwave to warm it. Fireworks ensue. Laura commented that she believed the instructions on the box warns against leaving the wrapper on. Hillary quipped "that assumes anyone in the history of time has ever read the instruction on a box of pop tarts." Finally, Lucas wondered about how many Terms & Conditions he agreed to because he didn't read the toaster pastry boxes.
+
+I had images of toaster pastries, meat pies, and Sweeney Todd running through my head after that exchange. That led me to think of a very dystopian society where the toaster pastry box obligates you to do something undesirable. Perhaps leaving your body or first born to the toaster pastry industry.
+
 ## Philosophy about Time
 
 ```
