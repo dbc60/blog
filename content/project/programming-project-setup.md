@@ -2954,7 +2954,7 @@ Next, [[http://wiki.nginx.org/Configuration][read about configuring nginx]] and 
 - Using If. There is a little page about using if statements. It's called [[http://wiki.nginx.org/IfIsEvil][If Is Evil]] and you really should check it out.
 ** Programming Languages to Consider
 - Consider Go for client code. It is winning over Python and Ruby developers, because it is so much faster. It also has some good tools built in.
-- Consider Erlang for complex backends that need to be fault-tolerant.
+- Consider Erlang for complex back ends that need to be fault-tolerant.
 - Consider C, C++, C#, Java, Python, Ruby, Haskell, Scala, and Clojure for employment (as well as Go and Erlang).
 - Consider Lua for embedded scripting.
 - Consider Julia for technical computing. Look at [[https://github.com/JuliaLang/IJulia.jl][IJulia]] for a browse-based graphical notebook and compare it to [[http://ipython.org/][IPython]].
@@ -2962,7 +2962,7 @@ Next, [[http://wiki.nginx.org/Configuration][read about configuring nginx]] and 
 - [[http://blog.erlware.org/2014/04/27/some-thoughts-on-go-and-erlang/][Some thoughts on Go and Erlang]]
 - A question on [[http://stackoverflow.com][StackOverflow]] ([[http://stackoverflow.com/questions/8130501/nginxs-speed-and-how-to-replicate-it][Nginx's Speed, and How to Replicate it]]) compares nginx to a simple Erlang server that simply spawned a new process for each request, uses that process to read the file to a socket, then closes the file and kills the thread (process?). Once the author of the question told his Erlang server to read the files in binary mode, it was quite competitive with nginx. If that's the case, why bother with nginx - except maybe for load balancing?
 - Consider [[http://redis.io][Redis]] for an in-memory cache. It's incredibly fast.
-- According to [[http://code.mixpanel.com/2011/08/05/how-and-why-we-switched-from-erlang-to-python/][How and Why we Switched from Erlang to Python]] it's possible to get great performance from a Python-based backend using [[http://eventlet.net/][Eventlet]], a concurrent networking library for Python. It uses kqueue or libevent for highly scalable non-blocking I/O.
+- According to [[http://code.mixpanel.com/2011/08/05/how-and-why-we-switched-from-erlang-to-python/][How and Why we Switched from Erlang to Python]] it's possible to get great performance from a Python-based back end using [[http://eventlet.net/][Eventlet]], a concurrent networking library for Python. It uses kqueue or libevent for highly scalable non-blocking I/O.
 
 ** Create a Walking Skeleton
 [[file:~/org/goos.org][Growing Object-Oriented Software, Guided By Tests]] recommends starting a development project by building a "walking skeleton" - an implementation of an acceptance test which runs end-to-end. It means we must have implemented a whole automated build, deploy, and test cycle. That's a whole lot of work. However, it means we will have the scaffolding to support the rest of the project.

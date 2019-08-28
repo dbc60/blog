@@ -28,3 +28,9 @@ I thought I'd try to get some projects organized this morning before waking Adel
 The next time I get to sit down and think about projects, I want to reflect on two of them; creating a restructuredText parser in Go and integrating that into Hugo, and Evidence Based Software Engineering so I can see if there's a better way to predict how likely the team will meet its deadline for any particular release.
 
 I also want to make project on the home office, we need fresh insulation for the house, and I'd like to finish fixing the grill. There are so many things that need my attention.
+
+*************
+Hugo RSS Feed
+*************
+
+In an article by `Flameeyes <https://flameeyes.blog/>`_ , I found out the RSS feed Hugo generates `supplies only summaries <https://flameeyes.blog/2017/07/12/why-i-do-not-like-hugo/>`_ - not the full content. He made a good point that RSS feeds carrying only summaries, are there to *drive traffic to a site*, whereas RSS feeds that have full article content, are feeds for blogs that want to be read. Fortunately there `an easy solution <https://randomgeekery.org/2017/09/15/full-content-hugo-feeds/>`_.

@@ -11,7 +11,7 @@ I was just thinking this morning of a project to display what I can do on Window
 
 In this case, the sampler would consists of working code examples to demonstrate I/O, graphics and sound on computer, web and handheld mobile devices. The samples would have to work on several operating systems where possible. I should aim for Windows, FreeBSD, Linux and Mac OSX for desktop and server samples. For client-side samples, I should include Android and IOS.
 
-I want to display I/O using graphic and sound APIs native to the particular OS, as well as through the web. To demonstrate backend code, I should strive to have servers running Windows, FreeBSD and Linux. Keep common code common to the greatest extent possible.
+I want to display I/O using graphic and sound APIs native to the particular OS, as well as through the web. To demonstrate back-end code, I should strive to have servers running Windows, FreeBSD and Linux. Keep common code common to the greatest extent possible.
 
 Demonstrate various designs for web applications. Some will present static web sites and others will use databases. Contrast PostgreSQL and some distributed data store, like (possibly) RethinkDB, or some [combination of a database, caching and a document store](http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/comment-page-1/). Maybe PostgresQL is enough to start with. It has a fast key/value store called [hstore](https://www.postgresql.org/docs/9.0/static/hstore.html), and there's a [tutorial](http://www.postgresqltutorial.com/postgresql-hstore/) for it.
 
