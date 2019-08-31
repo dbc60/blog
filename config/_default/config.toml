@@ -52,20 +52,10 @@ pygmentsCodefencesGuessSyntax=true
     url = "/now/"
     weight = 3
   [[menu.nav]]
-    name = "Tags"
-    #pre = "tag"
-    url = "/tags/"
-    weight = 4
-  [[menu.nav]]
-    name = "Categories"
-    #pre = "bookmark"
-    url = "/categories"
-    weight = 5
-  [[menu.nav]]
     name = "RSS"
     #pre = "rss"
     url = "/index.xml"
-    weight = 6
+    weight = 4
 
 # Hugo default privacy settings that work with its internal templates
 # (See https://gohugo.io/templates/internal/).
