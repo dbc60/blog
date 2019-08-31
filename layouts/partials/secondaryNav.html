@@ -7,9 +7,16 @@
   {{ "<!-- END social icons in layouts/partials/secondaryNav.html -->" | safeHTML }}
 
   <ul>
-  {{ range $index, $element := .sections }}
-  <li><a class="secondary-nav__link" href="{{ $element.Permalink }}">{{ $element.Title }}</a></li>
-  {{ end }}
-</ul>
-</nav>
+    {{ range $idx, $pages := sort (.sections.GroupBy "Title") }}
+      {{ range $index, $element := $pages.Pages }}
+    <li><a class="secondary-nav__link" href="{{ $element.Permalink }}">{{ $element.Title }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+  <ul>
+    {{ range $taxonomyName, $taxonomy := .context.Site.Taxonomies }}
+    <li><a class="secondary-nav__link" href="{{ .context.URL }}/{{ $taxonomyName }}/">{{ title $taxonomyName }}</a></li>
+    {{ end }}
+  </ul>
+  </nav>
 {{- "<!-- END layouts/partials/secondaryNav.html -->" | safeHTML -}}
