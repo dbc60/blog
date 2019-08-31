@@ -18,11 +18,13 @@
       {{ $name := .Name }}
       {{ $count := $value.Count }}
       {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+      {{ "<!-- BEGIN Term from layouts/_default/terms.html-->" | safeHTML }}
       <p>
         <a href="{{ .Permalink }}">
           <span>{{ $count }}</span> {{ $name }}
         </a>
       </p>
+      {{ "<!-- END Term -->" | safeHTML }}
       {{ end }}
     {{ end }}
   </section>
