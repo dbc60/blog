@@ -146,7 +146,7 @@ body {
 
   .secondary-nav {
     align-self: flex-start;
-    flex-basis: 25%;
+    flex-basis: 33%;
   }
 
   .content {
@@ -342,3 +342,100 @@ th, td {
   margin-bottom: 24px;
   background: hsl(163, 10%, 86%);
 }
+
+/************************
+ * social network links *
+ ************************/
+ /* $cloud: #ecf0f1; */
+
+ .share .icon, .follow .icon {
+  padding-left: 1em;
+  font-size: 1em;
+  padding-right: .5em;
+}
+
+.share {
+  display: block;
+  line-height: 1.3em;
+}
+
+.share-wrap, .follow-wrap {
+  background: rgb(155, 190, 183);
+  border-radius: 10px;
+}
+
+.social-wrap > .share-wrap, .social-wrap > .follow-wrap {
+  margin-top: 1em;
+  margin-bottom: .35em;
+}
+
+.social {
+  width: 100%;
+  padding: 0;
+  background: rgb(227, 232, 231);
+  padding: .3em 0 .3em 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.social li {
+  display: inline-block;
+}
+
+.social-wrap > .share-wrap > span, .social-wrap > .follow-wrap > span {
+  font-size: 1em;
+  text-transform: uppercase;
+  padding-bottom: .2em;
+}
+
+.social-wrap > .share-wrap > span, .social-wrap > .follow-wrap > span, .subcount {
+  padding-left: 10px;
+}
+
+.social-wrap-header li {
+  display: inline-block;
+  list-style: none outside none;
+  padding-bottom: 1em;
+  width:80%;
+}
+
+.social-wrap a {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+}
+
+.social > li > a {
+  text-align: left;
+  background: rgb(241, 241, 241);
+  font-size: 80%;
+  line-height: 0.75em;
+}
+
+/*
+$rss: #ffaa31;
+$twitter:#07beed;
+$facebook: #314d91;
+$github: #2d2d2d;
+$linkedin: #0dc5ef;
+$subscribemail: #ffaa31;
+$reddit: #cee3f8;
+*/
+
+a.rss { color: #ffaa31; background: rgb(241, 241, 241);}
+a.twitter { color: #07beed; background: rgb(241, 241, 241);}
+a.facebook { color: #314d91; background: rgb(241, 241, 241);}
+a.github { color: #2d2d2d; background: rgb(241, 241, 241);}
+a.stackoverflow { color: #2d2d2d; background: rgb(241, 241, 241);}
+a.linkedin { color:#07beed; background: rgb(241, 241, 241);}
+a.subscribemail { color: #e3e8e7;background: rgb(241, 241, 241);}
+a.reddit { color: #cee3f8; background: rgb(241, 241, 241);}
+
+a.rss:hover { background: #ffaa31; color:rgb(241, 241, 241);}
+a.twitter:hover { background: #07beed; color:rgb(241, 241, 241);}
+a.facebook:hover { background: #314d91; color:rgb(241, 241, 241);}
+a.github:hover { background: #2d2d2d; color:rgb(241, 241, 241);}
+a.stackoverflow:hover { background: #2d2d2d; color:rgb(241, 241, 241);}
+a.linkedin:hover { background: #07beed; color: rgb(241, 241, 241);}
+a.subscribemail:hover { background: #e3e8e7;color:rgb(241, 241, 241);}
+a.reddit:hover { background: #cee3f8; color: rgb(241, 241, 241);}

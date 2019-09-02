@@ -1024,6 +1024,12 @@ which is much easier to reason about, and I can define my own styling rules. It 
 
 Hugo's opinions about HTML output may be too strong. I would prefer having more control over style and syntax highlighting. On the other hand, I may just be ignorant of the correct tuning knobs.
 
+##################
+Social Media Links
+##################
+
+I like the sidebar social media links at `spf13 <https://spf13.com/>`_. His site is powered by Hugo and `on GitHub <https://github.com/spf13/spf13.com>`_. Look there to see how he created and styled those links.
+
 #########
 Resources
 #########
