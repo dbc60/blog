@@ -1,26 +1,41 @@
 {{ "<!-- BEGIN layouts/partials/secondaryNav.html -->" | safeHTML }}
 <nav class="secondary-nav" aria-label="Secondary">
-  {{ "<!-- BEGIN social icons inlayouts/partials/secondaryNav.html -->" | safeHTML }}
-  {{- range .context.Site.Params.links }}
-    <a href="{{ .url }}" title="{{ .title }}"> <span class="social-link {{ .iconset | default "fab" }} fa-{{ .icon }}"></span> </a>
-  {{- end }}
-  {{ "<!-- END social icons in layouts/partials/secondaryNav.html -->" | safeHTML }}
+  <ul class="social-wrap">
+    <!-- Don't include contents if "Posts" is the only section -->
+    {{ if gt (len .sections) 1 }}
+    <li class="social-wrap-item">
+      <span class="social-wrap-detail icon icon-books"> </span>
+      <span class="social-wrap-detail title">contents</span>
+      <ul class="social-items">
+        {{ range $idx, $pages := sort (.sections.GroupBy "Title") }}
+        {{ range $index, $element := $pages.Pages }}
+        <!-- Posts is Home, so don't list it in the sidebar -->
+        {{ if ne $element.Title "Posts" }}
+        <li class="contents"><a class="secondary-nav__link" href="{{ $element.Permalink }}">{{ $element.Title }}</a>
+        </li>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+      </ul>
+      <span class="social-wrap-detail icon icon-books"> </span>
+    </li>
+    {{ end }}
+    <li class="social-wrap-item">
+      <span class="social-wrap-detail icon icon-folder-open"> </span>
+      <span class="social-wrap-detail title">Lists</span>
+      <ul class="social-items">
+        {{ range $taxonomyName, $taxonomy := .context.Site.Taxonomies }}
+        <li class="contents"><a class="secondary-nav__link" href="{{ .context.URL }}/{{ $taxonomyName }}/">{{ title $taxonomyName }}</a>
+        </li>
+        {{ end }}
+      </ul>
+      <span class="social-wrap-detail icon icon-folder-open"> </span>
+    </li>
+  </ul>
 
   <div id="social-header">
-  {{ partial "social.html" . }}
-  </div>
+      {{ partial "social.html" . }}
+    </div>
 
-  <ul>
-    {{ range $idx, $pages := sort (.sections.GroupBy "Title") }}
-      {{ range $index, $element := $pages.Pages }}
-    <li><a class="secondary-nav__link" href="{{ $element.Permalink }}">{{ $element.Title }}</a></li>
-      {{ end }}
-    {{ end }}
-  </ul>
-  <ul>
-    {{ range $taxonomyName, $taxonomy := .context.Site.Taxonomies }}
-    <li><a class="secondary-nav__link" href="{{ .context.URL }}/{{ $taxonomyName }}/">{{ title $taxonomyName }}</a></li>
-    {{ end }}
-  </ul>
   </nav>
 {{- "<!-- END layouts/partials/secondaryNav.html -->" | safeHTML -}}

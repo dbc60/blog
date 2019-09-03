@@ -9,10 +9,6 @@ canonifyURLs = true
 footnoteReturnLinkContents = "↩"
 enableGitInfo = true
 
-# Name of Academic theme folder in `themes/`.
-# theme = "academic"
-#theme = "vanilla"
-
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
 

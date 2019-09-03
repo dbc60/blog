@@ -348,51 +348,49 @@ th, td {
  ************************/
  /* $cloud: #ecf0f1; */
 
- .share .icon, .follow .icon {
+ .social .icon, .follow .icon {
   padding-left: 1em;
   font-size: 1em;
   padding-right: .5em;
 }
 
-.share {
+.social {
   display: block;
   line-height: 1.3em;
 }
 
-.share-wrap, .follow-wrap {
-  background: rgb(155, 190, 183);
+.social-wrap-item {
+  background-color: hsla(162,25%,25%,1);
   border-radius: 10px;
+  margin-bottom: 1em;
+  margin-right: 1.5em;
 }
 
-.social-wrap > .share-wrap, .social-wrap > .follow-wrap {
-  margin-top: 1em;
-  margin-bottom: .35em;
-}
-
-.social {
+.social-items {
   width: 100%;
-  padding: 0;
   background: rgb(227, 232, 231);
-  padding: .3em 0 .3em 0;
+  padding: .3em 0.3em .3em 0;
   text-align: left;
   display: inline-block;
 }
 
-.social li {
+.social-item {
   display: inline-block;
 }
 
-.social-wrap > .share-wrap > span, .social-wrap > .follow-wrap > span {
-  font-size: 1em;
-  text-transform: uppercase;
-  padding-bottom: .2em;
+.social-wrap-detail {
+  font-size: 0.8em;
+  padding-left: 3em;
+  padding-bottom: 0.2em;
+  color: rgb(241, 241, 241);
 }
 
-.social-wrap > .share-wrap > span, .social-wrap > .follow-wrap > span, .subcount {
+.social-wrap-detail.title, .social-wrap-detail.icon {
   padding-left: 10px;
+  text-transform: capitalize;
 }
 
-.social-wrap-header li {
+.social-header li {
   display: inline-block;
   list-style: none outside none;
   padding-bottom: 1em;
@@ -405,37 +403,42 @@ th, td {
   width: 100%;
 }
 
-.social > li > a {
+.social-items > li > a {
   text-align: left;
-  background: rgb(241, 241, 241);
   font-size: 80%;
   line-height: 0.75em;
 }
 
-/*
-$rss: #ffaa31;
-$twitter:#07beed;
-$facebook: #314d91;
-$github: #2d2d2d;
-$linkedin: #0dc5ef;
-$subscribemail: #ffaa31;
-$reddit: #cee3f8;
-*/
+.contents {
+  padding: .4em 0;
+}
 
-a.rss { color: #ffaa31; background: rgb(241, 241, 241);}
-a.twitter { color: #07beed; background: rgb(241, 241, 241);}
-a.facebook { color: #314d91; background: rgb(241, 241, 241);}
-a.github { color: #2d2d2d; background: rgb(241, 241, 241);}
-a.stackoverflow { color: #2d2d2d; background: rgb(241, 241, 241);}
-a.linkedin { color:#07beed; background: rgb(241, 241, 241);}
-a.subscribemail { color: #e3e8e7;background: rgb(241, 241, 241);}
-a.reddit { color: #cee3f8; background: rgb(241, 241, 241);}
+a.email { color: hsla(162,25%,25%,1); background: rgb(227, 232, 231);}
+a.facebook { color: #3B5998; background: rgb(227, 232, 231);}
+a.github { color: black; background: rgb(227, 232, 231);}
+a.hackernews { color: #ff6600; background: rgb(227, 232, 231);}
+a.instagram { color: #2d2d2d; background: rgb(227, 232, 231);}
+a.linkedin { color:#4875B4; background: rgb(227, 232, 231);}
+a.pinterest { color:#c8232c; background: rgb(227, 232, 231);}
+a.reddit { color: #41700f; background: rgb(227, 232, 231);}
+a.rss { color: hsla(162,25%,25%,1); background: rgb(227, 232, 231);}
+a.stackoverflow { color: #2d2d2d; background: rgb(227, 232, 231);}
+a.subscribemail { color: #e3e8e7;background: rgb(227, 232, 231);}
+a.tumblr { color: #2B4964; background: rgb(227, 232, 231);}
+a.twitter { color: #33ccff; background: rgb(227, 232, 231);}
+a.youtube { color: #FF3333; background: rgb(227, 232, 231);}
 
-a.rss:hover { background: #ffaa31; color:rgb(241, 241, 241);}
-a.twitter:hover { background: #07beed; color:rgb(241, 241, 241);}
-a.facebook:hover { background: #314d91; color:rgb(241, 241, 241);}
-a.github:hover { background: #2d2d2d; color:rgb(241, 241, 241);}
-a.stackoverflow:hover { background: #2d2d2d; color:rgb(241, 241, 241);}
-a.linkedin:hover { background: #07beed; color: rgb(241, 241, 241);}
-a.subscribemail:hover { background: #e3e8e7;color:rgb(241, 241, 241);}
-a.reddit:hover { background: #cee3f8; color: rgb(241, 241, 241);}
+a.email:hover { background: hsla(162,25%,25%,1); color:rgb(227, 232, 231);}
+a.facebook:hover { background: #3B5998; color:rgb(227, 232, 231);}
+a.github:hover { background: black; color:rgb(227, 232, 231);}
+a.hackernews:hover { background: #ff6600; color: rgb(227, 232, 231);}
+a.instagram:hover { background: #2d2d2d; color:rgb(227, 232, 231);}
+a.linkedin:hover { background: #4875B4; color: rgb(227, 232, 231);}
+a.pinterest:hover { background: #c8232c; color: rgb(227, 232, 231);}
+a.reddit:hover { background: #41700f; color: rgb(227, 232, 231);}
+a.rss:hover { background: hsla(162,25%,25%,1); color:rgb(227, 232, 231);}
+a.stackoverflow:hover { background: #2d2d2d; color:rgb(227, 232, 231);}
+a.subscribemail:hover { background: #e3e8e7;color:rgb(227, 232, 231);}
+a.tumblr:hover { background: #2B4964; color:rgb(227, 232, 231);}
+a.twitter:hover { background: #33ccff; color:rgb(227, 232, 231);}
+a.youtube:hover { background: #FF3333; color:rgb(227, 232, 231);}
