@@ -1,0 +1,12 @@
+{{ define "breadcrumb" }}
+ {{ if .currentPage.Parent }}
+ {{ if ne .currentPage.Parent .IsHome }}
+    {{ template "breadcrumb" dict "currentPage" .currentPage.Parent }}
+  {{ end }}
+    {{ if eq .id .currentPage.UniqueID }}
+      {{ .currentPage.Title }}
+    {{ else }}
+    <li class="breadcrumb__item"><a class="breadcrumbs_link" href="{{ .currentPage.Permalink }}">crumb: {{ .currentPage.Title }}</a> ></li>
+    {{ end }}
+{{ end }}
+{{ end }}

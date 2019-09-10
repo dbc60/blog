@@ -1,13 +1,5 @@
 {{- define "main" -}}
 {{ "<!-- BEGIN main layouts/taxonomy/section.html -->" | safeHTML }}
-
-{{ $sections := (.Site.GetPage "/").Sections }}
-{{ $context := (dict "context" . "sections"  $sections) }}
-
-{{ block "secondary_nav" $context }}
-{{ partial "secondaryNav.html" . }}
-{{ end }}
-
 <article class="content">
 <h2 class="title">Taxonomy: {{ .Title | title }}</h2>
       {{- .Content -}}

@@ -1,0 +1,14 @@
+{{ "<!-- BEGIN layouts/partials/year.html -->" | safeHTML }}
+{{ $currentSection := .context.Section }}
+<p>Current Section: "{{ $currentSection }}"</p>
+<p>Context Current Section: "{{ .currentSection }}"</p>
+{{ $postsAll := where .context.Site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections }}
+{{ $scratch := newScratch }}
+<ul class="social-items this-years-posts">
+{{ range $idx, $page := $postsAll }} <!-- for post in postsArray -->
+  {{ if eq (.Date.Format "2006") $currentSection }}
+  <li class="side-list-item"><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>
+  {{ end }}
+{{ end }} <!-- range $idx, $page := $postsAll -->
+</ul> <!-- class="social-items" -->
+{{- "<!-- END layouts/partials/year.html -->" | safeHTML -}}

@@ -1,17 +1,5 @@
 {{ define "main" }}
-{{- "<!-- BEGIN layouts/post/single.html -->" | safeHTML -}}
-
-{{ $sections := (.Site.GetPage .Section).Sections }}
-{{ $rootSections := (.Site.GetPage "/").Sections }}
-{{ if eq 0 (len $sections) }}
-{{ $sections = $rootSections }}
-{{ end }}
-{{ $context := (dict "context" . "sections"  $sections) }}
-
-{{ block "secondary_nav" $context }}
-{{ partial "secondaryNav.html" . }}
-{{ end }}
-
+{{- "<!-- BEGIN main layouts/post/single.html -->" | safeHTML -}}
 <div class="content">
   <section>
     <h2 class="title-article">{{- .Title -}}</h2>

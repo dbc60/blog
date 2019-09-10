@@ -1,13 +1,5 @@
 {{ define "main" }}
 {{ "<!-- BEGIN main layouts/_default/terms.html -->" | safeHTML }}
-
-{{ $sections := (.Site.GetPage "/").Sections }}
-{{ $context := (dict "context" . "sections"  $sections) }}
-
-{{ block "secondary_nav" $context }}
-{{ partial "secondaryNav.html" . }}
-{{ end }}
-
 <!-- See https://bwaycer.github.io/hugo_tutorial.hugo/templates/terms/ -->
 <div class="content">
   <section>

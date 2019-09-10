@@ -55,7 +55,7 @@ body {
 
 /* This is a magic number to keep the secondary nav and the first article in a
    list of articles aligned. */
-.secondary-nav {
+.sidebar {
   margin-top: 20.6px;
 }
 
@@ -63,7 +63,7 @@ body {
  * Debug Border and Fill *
  *************************/
 /*****************************
-.wrapper > * {
+.wrapper-content > * {
   border: 2px solid #f08c00;
   background-color: #ffec99;
   border-radius: 5px;
@@ -82,11 +82,6 @@ body {
 /******************
  * Flexbox Layout *
  ******************/
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-}
 
 .main-nav {
   display: flex;
@@ -122,39 +117,20 @@ body {
 }
 
 @media (min-width: 96ch) {
-  .wrapper {
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-
   .main-head {
     width: 100%;
   }
 
-  .main-nav {
-    flex-basis: 100%;
+  .wrapper-content {
+    display: flex;
   }
 
-  .breadcrumb {
-    flex-basis: 80%;
+    .sidebar-content {
+    flex: 1;
   }
 
   .main-content {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .secondary-nav {
-    align-self: flex-start;
-    flex-basis: 33%;
-  }
-
-  .content {
-    flex-basis: 80%;
-  }
-
-  .main-footer {
-    flex-basis: 100%;
+    flex: 2;
   }
 }
 
@@ -348,59 +324,66 @@ th, td {
  ************************/
  /* $cloud: #ecf0f1; */
 
- .social .icon, .follow .icon {
+ .social {
+  display: block;
+  line-height: 1.3em;
+}
+
+ .social .icon {
   padding-left: 1em;
   font-size: 1em;
   padding-right: .5em;
 }
 
-.social {
-  display: block;
-  line-height: 1.3em;
-}
-
-.social-wrap-item {
-  background-color: hsla(162,25%,25%,1);
-  border-radius: 10px;
-  margin-bottom: 1em;
-  margin-right: 1.5em;
-}
-
+/* This is a list of social media links and icons */
 .social-items {
   width: 100%;
   background: rgb(227, 232, 231);
   padding: .3em 0.3em .3em 0;
   text-align: left;
   display: inline-block;
+  list-style-type: none;
 }
 
 .social-item {
   display: inline-block;
 }
 
-.social-wrap-detail {
+/* This is a list of sections of social media icons and links */
+.wrapper-social-sections {
+  list-style-type: none;
+}
+
+.wrapper-social-sections a {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* A list item in a wrapper-social-sections list that contains a list of
+   social media icons and links */
+.wrapper-social-items {
+  background-color: hsla(162,25%,25%,1);
+  border-radius: 10px;
+  margin-bottom: 1em;
+  margin-right: 1.5em;
+}
+
+/* The border around a list of social media links */
+.wrapper-social-border {
   font-size: 0.8em;
   padding-left: 3em;
   padding-bottom: 0.2em;
   color: rgb(241, 241, 241);
 }
 
-.social-wrap-detail.title, .social-wrap-detail.icon {
+.wrapper-social-border.icon {
   padding-left: 10px;
+}
+
+.wrapper-social-border.title {
+  padding-left: 0.5em;
   text-transform: capitalize;
-}
-
-.social-header li {
-  display: inline-block;
-  list-style: none outside none;
-  padding-bottom: 1em;
-  width:80%;
-}
-
-.social-wrap a {
-  display: block;
-  text-decoration: none;
-  width: 100%;
 }
 
 .social-items > li > a {

@@ -1,0 +1,30 @@
+{{ $articleLink   := .context.Permalink | urlize | title }}
+{{ $articleTitle  := .context.Title | urlize | title }}
+{{ $blogTitle     := .context.Site.Title | urlize | title }}
+
+<ul class="social-items">
+  <li class="social-item">
+    <a href="https://www.facebook.com/sharer.php?u={{ $articleLink }}" target="_blank" rel="noopener noreferrer" title="Share this article on Facebook" class="facebook">
+      <span class="icon icon-facebook"></span>
+      Facebook
+    </a>
+  </li>
+  <li class="social-item">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ $articleLink }}&title={{ $articleTitle }}&summary={{ $articleTitle }}&source={{ $blogTitle }}" rel="noopener noreferrer" target="_blank" title="Share this article on LinkedIn" class="linkedin">
+      <span class="icon icon-linkedin-square1"></span>
+      LinkedIn
+    </a>
+  </li>
+  <li class="social-item">
+    <a href="http://www.reddit.com/submit?url={{ $articleLink }}&title={{ $articleTitle }}" target="_blank" rel="noopener noreferrer" title="Share this article on Reddit" class="reddit">
+      <span class="icon icon-twitter2"></span>
+      Reddit
+    </a>
+  </li>
+  <li class="social-item">
+    <a href="https://twitter.com/intent/tweet?status={{ $articleTitle }}-{{ $articleLink }}" target="_blank" rel="noopener noreferrer" title="Share this article on Twitter" class="twitter">
+      <span class="icon icon-twitter2"></span>
+      Twitter
+    </a>
+  </li>
+</ul>

@@ -1,13 +1,5 @@
 {{ define "main" }}
   {{- "<!-- BEGIN main layouts/_default/single.html -->" | safeHTML -}}
-
-  {{ $sections := (.Site.GetPage .Section).Sections }}
-  {{ $context := (dict "context" . "sections"  $sections) }}
-
-  {{ block "secondary_nav" $context }}
-  {{ partial "secondaryNav.html" . }}
-  {{ end }}
-
   <div class="content">
     <section>
     <h2 class="title-article">{{- .Title -}}</h2>

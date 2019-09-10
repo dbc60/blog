@@ -1,13 +1,5 @@
 {{- define "main" -}}
   {{ "<!-- BEGIN main layouts/taxonomy/tag.html -->" | safeHTML }}
-
-  {{ $sections := (.Site.GetPage "/").Sections }}
-  {{ $context := (dict "context" . "sections"  $sections) }}
-
-  {{ block "secondary_nav" $context }}
-  {{ partial "secondaryNav.html" . }}
-  {{ end }}
-
     <div class="content">
     {{- $paginator := .Paginate (where .Pages "Type" "in" (slice "post" "note" "project")) -}}
     {{- range $paginator.Pages -}}

@@ -8,10 +8,6 @@
   {{ end }}
     {{ $context := (dict "context" . "sections"  $sections) }}
 
-  {{ block "secondary_nav" $context }}
-  {{ partial "secondaryNav.html" . }}
-  {{ end }}
-
   {{- $paginator := .Paginate (where .Pages "Section" .Section) -}}
   <div class="content">
     {{- range $paginator.Pages -}}

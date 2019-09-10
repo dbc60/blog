@@ -1,11 +1,10 @@
 {{ "<!-- BEGIN layouts/partials/secondaryNav.html -->" | safeHTML }}
-<nav class="secondary-nav" aria-label="Secondary">
-  <ul class="social-wrap">
+  <ul class="wrapper-social-sections">
     <!-- Don't include contents if "Posts" is the only section -->
     {{ if gt (len .sections) 1 }}
-    <li class="social-wrap-item">
-      <span class="social-wrap-detail icon icon-books"> </span>
-      <span class="social-wrap-detail title">contents</span>
+    <li class="wrapper-social-items">
+      <span class="wrapper-social-border icon icon-books"> </span>
+      <span class="wrapper-social-border title">contents</span>
       <ul class="social-items">
         {{ range $idx, $pages := sort (.sections.GroupBy "Title") }}
         {{ range $index, $element := $pages.Pages }}
@@ -17,25 +16,20 @@
         {{ end }}
         {{ end }}
       </ul>
-      <span class="social-wrap-detail icon icon-books"> </span>
+      <span class="wrapper-social-border icon icon-books"> </span>
     </li>
     {{ end }}
-    <li class="social-wrap-item">
-      <span class="social-wrap-detail icon icon-folder-open"> </span>
-      <span class="social-wrap-detail title">Lists</span>
+    <li class="wrapper-social-items">
+      <span class="wrapper-social-border icon icon-folder-open"> </span>
+      <span class="wrapper-social-border title">Lists</span>
       <ul class="social-items">
         {{ range $taxonomyName, $taxonomy := .context.Site.Taxonomies }}
         <li class="contents"><a class="secondary-nav__link" href="{{ .context.URL }}/{{ $taxonomyName }}/">{{ title $taxonomyName }}</a>
         </li>
         {{ end }}
       </ul>
-      <span class="social-wrap-detail icon icon-folder-open"> </span>
+      <span class="wrapper-social-border icon icon-folder-open"> </span>
     </li>
+    {{ partial "social.html" . }}
   </ul>
-
-  <div id="social-header">
-      {{ partial "social.html" . }}
-    </div>
-
-  </nav>
 {{- "<!-- END layouts/partials/secondaryNav.html -->" | safeHTML -}}
