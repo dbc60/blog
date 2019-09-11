@@ -6,9 +6,7 @@
   {{- range $paginator.Pages }}
   <section>
     <h2 class="title-article-post"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    {{ block "articleMetaDataHeader" . -}}
     {{- partial "date-and-tags.html" . -}}
-    {{- end -}}
     {{- .Render "summary" }}
   </section>
   {{ end -}}

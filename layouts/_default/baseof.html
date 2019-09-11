@@ -19,23 +19,47 @@
       {{- partial "nav__breadcrumbs.html" . -}}
     {{ end }}
 
+    {{ "<!-- BEGIN Test Breadcrumb-->" | safeHTML }}
+    {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+    {{ $.Scratch.Add "path" .Site.BaseURL }}
+    <ul class="breadcrumb">
+      <li class="breadcrumb__item"><a href="/">home</a></li>
+      {{ range $index, $element := split $url "/" }}
+        {{ $.Scratch.Add "path" $element }}
+        {{ if ne $element "" }}
+          {{ block "breadcrumb" . }}
+            {{- partial "breadcrumb.html" . -}}
+          {{ end }}
+          {{ $.Scratch.Add "path" "/" }}
+        {{ end }}
+      {{ end }}
+    </ul>
+    {{ "<!-- END Test Breadcrumb-->" | safeHTML }}
+
+    {{ "<!-- BEGIN Test Test wrapper-content -->" | safeHTML }}
     <div class="wrapper-content">
       {{ $sections := (.Site.GetPage .Section).Sections }}
       {{ $rootSections := (.Site.GetPage "/").Sections }}
       {{ if eq 0 (len $sections) }}
-      {{ $sections = $rootSections }}
+        {{ "<!--GETTING ROOT SECTIONS-->" | safeHTML }}
+        {{ $sections = $rootSections }}
+      {{ else }}
+        {{ "<!--sections is (.Site.GetPage '/').Sections-->" | safeHTML }}
       {{ end }}
       {{ $context := (dict "context" . "sections"  $sections) }}
       <div class="sidebar-content">
-      {{ block "secondary_nav" $context }}
-      {{ partial "secondaryNav.html" . }}
-      {{ end }}
+        {{ block "secondary_nav" $context }}
+          {{ partial "secondaryNav.html" . }}
+        {{ end }}
       </div>
 
       <main class="main-content">
-        {{- block "main" . -}}{{- end }}
+        {{- block "main" . -}}
+          <main>Default Main</main>
+        {{- end }}
       </main>
     </div> {{ "<!-- class wrapper-content -->" | safeHTML }}
+    {{ "<!-- END Test Test wrapper-content -->" | safeHTML }}
 
     {{ "<!-- I might want to wrap footer and script in blocks -->" | safeHTML }}
     <footer class="main-footer">

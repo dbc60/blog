@@ -6,10 +6,8 @@
         {{- range $paginator.Pages -}}
         <section>
         <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        {{ block "articleMetaDataHeader" . -}}
-          {{ partial "date-and-tags.html" . -}}
-        {{- end -}}
-            {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
+        {{- partial "date-and-tags.html" . -}}
+        {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
             {{- .Render "summary" }}
         </section>
         {{ end -}}

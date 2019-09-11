@@ -32,19 +32,11 @@
     -->
     {{ $context := (dict "context" . "titleSite" $titleDefault "styles" $styles) }}
 
-    {{ block "head__meta" $context }}
-    {{ partial "head__meta.html" . }}
-    {{ end }}
+    {{ partial "head__meta.html" $context }}
 
-    {{ block "head__styles" $context }}
-    {{ partial "head__styles.html" . }}
-    {{ end }}
+    {{ partial "head__styles.html" $context }}
 
-    {{ block "head__title" $context }}
-    {{ partial "head__title.html" . }}
-    {{ end }}
+    {{ partial "head__title.html" $context }}
 
-    {{ block "head__scripts" $context }}
-    {{ partial "head__scripts.html" . }}
-    {{ end }}
+    {{ partial "head__scripts.html" $context }}
   </head>

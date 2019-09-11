@@ -3,9 +3,7 @@
   <div class="content">
     <section>
     <h2 class="title-article">{{- .Title -}}</h2>
-    {{ block "articleMetaDataHeader" . -}}
     {{- partial "date-and-tags.html" . -}}
-    {{ end }}
 
     {{- partial "drop-caps.html" . }}
   </section>

@@ -6,22 +6,40 @@
   {{ if eq 0 (len $sections) }}
   {{ $sections = $rootSections }}
   {{ end }}
-    {{ $context := (dict "context" . "sections"  $sections) }}
 
-  {{- $paginator := .Paginate (where .Pages "Section" .Section) -}}
+  {{ $context := (dict "context" . "sections"  $sections) }}
+  {{ $scratch := newScratch }}
+  {{ $pag := .Paginate (where .Pages "Section" .Section) }}
+
+  {{ if ne 0 (len $pag.Pages) }}
+    {{ "<!-- Range over 'normal' sections with content and _index.md files -->" | safeHTML }}
+    {{ $scratch.Set "paginator" $pag }}
+    {{ $postAll := where .Pages "Section" .Section }}
+    <p>Total site pages: {{ len $postAll }}</p>
+    <p>Total paginator pages: {{ ($scratch.Get "paginator").TotalPages }}</p>
+    <p>Section: {{ .Section }}</p>
+    <p>Count: {{ len ($scratch.Get "paginator").Pages }}</p>
+  {{ else }}
+    {{ "<!-- Handle sections with only an _index.md file -->" | safeHTML }}
+    {{ $currentSection := .CurrentSection }}
+    {{ $ctx := (dict "context" . "currentSection" $currentSection) }}
+    {{ partial "year.html" $ctx }}
+  {{ end }}
+
   <div class="content">
-    {{- range $paginator.Pages -}}
+    {{ "<!-- BEGIN range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
+    <p>_default/section.html ranging over paginator</p>
+    {{- range ($scratch.Get "paginator").Pages -}}
       <!-- NOTE: <section> is important. It shrinks the size of the <h2> element-->
       <section>
       <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-      {{ block "articleMetaDataHeader" . -}}
-        {{- partial "date-and-tags.html" . -}}
-      {{ end }}
+      {{- partial "date-and-tags.html" . -}}
       {{ .Render "summary" }}
       </section>
     {{ end }}
+    {{ "<!-- END range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
     {{- template "_internal/pagination.html" . }}
-    </div>
+  </div>
 
   {{ "<!-- END main in layouts/_default/section.html -->" | safeHTML }}
 {{ end }}

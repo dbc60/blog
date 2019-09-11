@@ -26,7 +26,12 @@ pygmentsCodefencesGuessSyntax=true
 #pygmentsStyle = "pygments"
 
 [permalinks]
-  post = "/:filename/"
+#  post = "/:filename/"
+  css = "/:year/:month/:slug/"
+  journal = "/:year/:month/:slug/"
+  note = "/:year/:month/:slug/"
+  post = "/:year/:month/:slug/"
+  project = "/:year/:month/:slug/"
 
 # See https://feathericons.com/
 # The value of pre is the icon name. I had code in nav.html to render feather
@@ -53,29 +58,33 @@ pygmentsCodefencesGuessSyntax=true
     url = "/index.xml"
     weight = 4
 
-# Hugo default privacy settings that work with its internal templates
+# More details about GDPR and Hugo privacy settings are at
+# https://gohugo.io/about/hugo-and-gdpr/
+# These settings disable the internal templates and shortcodes.
+
+# Hugo privacy settings that work with its internal templates
 # (See https://gohugo.io/templates/internal/).
 [privacy]
   [privacy.disqus]
-    disable = false
+    disable = true
   [privacy.googleAnalytics]
     anonymizeIP = false
-    disable = false
+    disable = true
     respectDoNotTrack = false
     useSessionStorage = false
   [privacy.instagram]
-    disable = false
+    disable = true
     simple = false
   [privacy.twitter]
-    disable = false
+    disable = true
     enableDNT = false
     simple = false
   [privacy.vimeo]
-    disable = false
+    disable = true
     simple = false
   [privacy.youtube]
-    disable = false
-    privacyEnhanced = false
+    disable = true
+    privacyEnhanced = true
 
 # A better RSS Feed
 copyright = "(c) 2019 Douglas Cuthbertson. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0, International License"

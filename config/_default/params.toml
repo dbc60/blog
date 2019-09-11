@@ -12,3 +12,4 @@ background_color = "rgb(241, 241, 241)"
 site_width = "100ch"
 
 componentDropCaps = "drop-caps__goudy"
+mainSections = ["post", "css", "journal", "note", "project"]
