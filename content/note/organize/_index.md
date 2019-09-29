@@ -1,4 +1,0 @@
----
-title: Organizing
-draft: true
----

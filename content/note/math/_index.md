@@ -1,4 +1,0 @@
----
-title: Math
-draft: true
----

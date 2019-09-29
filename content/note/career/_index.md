@@ -1,4 +1,0 @@
----
-title: Career
-draft: true
----
