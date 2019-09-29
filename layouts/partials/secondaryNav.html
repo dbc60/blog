@@ -6,7 +6,8 @@
       /2018/10/, or simply /2019/).
     -->
     {{ $selectSections := (where .sections "Type" "in" site.Params.mainSections) }}
-    {{ if ne 0 (len $selectSections) }}
+    <!-- exclude the "Posts" section, because it is "home" -->
+    {{ if gt (len $selectSections) 1 }}
     <li class="wrapper-social-items">
       <span class="wrapper-social-border icon icon-books"> </span>
       <span class="wrapper-social-border title">contents</span>
