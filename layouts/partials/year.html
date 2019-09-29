@@ -1,14 +1,26 @@
 {{ "<!-- BEGIN layouts/partials/year.html -->" | safeHTML }}
+
+<!-- .Section is always the top-level location -->
 {{ $currentSection := .context.Section }}
-<p>Current Section: "{{ $currentSection }}"</p>
-<p>Context Current Section: "{{ .currentSection }}"</p>
 {{ $postsAll := where .context.Site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections }}
-{{ $scratch := newScratch }}
+
+<!-- Get the relative URL of the current page (section/subsection) -->
+{{ $url := replace .context.Permalink ( printf "%s" .context.Site.BaseURL) "" }}
+{{ $firstItem := index $postsAll 0 }}
+
+{{ $subpaths := split $url "/" }}
 <ul class="social-items this-years-posts">
-{{ range $idx, $page := $postsAll }} <!-- for post in postsArray -->
-  {{ if eq (.Date.Format "2006") $currentSection }}
-  <li class="side-list-item"><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>
+  {{ range $idxPost, $post := $postsAll }}
+    <!-- the last subpath is empty, so 3 will have year, month and empty string -->
+    {{ if eq 3 (len $subpaths) }}
+      {{ if and (eq (.Date.Format "2006") (index $subpaths 0)) (eq (.Date.Format "01") (index $subpaths 1)) }}
+      <li class="side-list-item"><a href="{{ $post.Permalink }}">{{ $post.Title }}</a></li>
+      {{ end }}
+    {{ else }}
+      {{ if eq (.Date.Format "2006") (index $subpaths 0) }}
+      <li class="side-list-item"><a href="{{ $post.Permalink }}">{{ $post.Title }}</a></li>
+      {{ end }}
+    {{ end }}
   {{ end }}
-{{ end }} <!-- range $idx, $page := $postsAll -->
-</ul> <!-- class="social-items" -->
+</ul> <!-- class="social-items this-years-posts" -->
 {{- "<!-- END layouts/partials/year.html -->" | safeHTML -}}

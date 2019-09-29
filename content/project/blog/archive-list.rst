@@ -138,3 +138,66 @@ So the real loop resembles::
       {{ end }}
 
 The next part sorts all the posts in ``postsArray`` ensuring they are unique and reverse-sorted by date (newest ones in front). Once the posts are sorted, loop through ``postsArray`` creating one header for the current year and a list of posts under it, and another header for each previous year, with a list of posts under those headers.
+
+######################
+Defaults and Structure
+######################
+
+The two lowest level default base templates are located at ``/themes/<THEME>/layouts/_default/baseof.html`` and ``/layouts/_default/baseof.html``. The entire heirarchy of directory paths that Hugo searches for a base template is this, from highest to lowest priority:
+
+#. ``/layouts/section/<TYPE>-baseof.html``
+#. ``/themes/<THEME>/layouts/section/<TYPE>-baseof.html``
+#. ``/layouts/<TYPE>/baseof.html``
+#. ``/themes/<THEME>/layouts/<TYPE>/baseof.html``
+#. ``/layouts/section/baseof.html``
+#. ``/themes/<THEME>/layouts/section/baseof.html``
+#. ``/layouts/_default/<TYPE>-baseof.html``
+#. ``/themes/<THEME>/layouts/_default/<TYPE>-baseof.html``
+#. ``/layouts/_default/baseof.html``
+#. ``/themes/<THEME>/layouts/_default/baseof.html``
+
+Hugo's default behavior is to have ``<TYPE>`` inherit from ``section`` unless otherwise specified.
+
+If, for example, you are using a theme called "mytheme" and Hugo picks ``layouts/section/posts.html`` to render this ``posts`` section, any ``{{define}}`` block in it tells Hugo that this template is an extension of a base template.
+
+The template lookup order for the ``posts`` template is:
+
+#. ``/layouts/section/posts-baseof.html``
+#. ``/themes/mytheme/layouts/section/posts-baseof.html``
+#. ``/layouts/posts/baseof.html``
+#. ``/themes/mytheme/layouts/posts/baseof.html``
+#. ``/layouts/section/baseof.html``
+#. ``/themes/mytheme/layouts/section/baseof.html``
+#. ``/layouts/_default/posts-baseof.html``
+#. ``/themes/mytheme/layouts/_default/posts-baseof.html``
+#. ``/layouts/_default/baseof.html``
+#. ``/themes/mytheme/layouts/_default/baseof.html``
+
+`Section page templates`_  are lists, so have all the variables and methods available to `list pages`_. List templates are used to render your site homepage, section page, taxonomy list, or taxonomy terms list. Hugo uses the term list in its truest sense; i.e., a sequential arrangement of material, especially in alphabetical or numerical order. Hugo uses list templates on any output HTML page where content is traditionally listed. This kind of page includes pages for taxonomy terms (like all posts in a given category), taxonomies (like a page listing all categories or another listing all tags), pages of section lists, or RSS pages.
+
+************
+Page Concept
+************
+
+Everything in Hugo is a page. This means list pages and the homepage can have associated content files (i.e., _index.md) that contain page metadata (i.e., front matter) and content. This model allows you to include list-specific front matter via ``.Params`` and also means that list templates (e.g., ``layouts/_default/list.html``) have access to all `page variables`_.
+
+.. note::
+
+  It is important to note that all ``_index.md`` content files will render according to a list template and not according to a `single page template`_.
+
+A content's ``section`` is defined by the name of the directory in the ``content`` directory that includes the content's file. For example, if a content file is ``/content/posts/foo/bar/interesting-post.md``, then it's section is ``posts``. The rest of the path does *not* affect the section to which the content belongs.
+
+##########
+References
+##########
+
+* Hugo's `Content Organization`_
+* `Section Page Templates`_.
+* `Template Lookup Order`_ determines the search-order for section templates.
+
+.. _content organization: https://gohugo.io/content-management/organization/
+.. _section page templates: https://gohugo.io/templates/section-templates/
+.. _template lookup order: https://gohugo.io/templates/lookup-order/
+.. _list pages: https://gohugo.io/templates/lists
+.. _page variables: https://gohugo.io/variables/page/
+.. _single page template: https://gohugo.io/templates/single-page-templates/

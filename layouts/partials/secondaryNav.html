@@ -41,6 +41,35 @@
       </ul>
       <span class="wrapper-social-border icon icon-folder-open"> </span>
     </li>
+    <li class="wrapper-social-items">
+      <span class="wrapper-social-border icon icon-folder-open"> </span>
+      <span class="wrapper-social-border title">Archive</span>
+      {{ $currentSection := .context.Section }}
+      {{ $homeLink := .context.Site.BaseURL }}
+      {{ $postsAll := where .context.Site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections }}
+      {{ $scratch := newScratch }}
+      <ul class="social-items">
+        {{ range $idx, $page := $postsAll }}
+          {{ if eq $idx 0 }}
+            {{ $scratch.Set "currentYear" ($page.Date.Format "2006") }}
+            {{ $scratch.Set "currentYear" ($page.Date.Format "2006") }}
+          {{ else }}
+            {{ $scratch.Set "previousYear" ($page.Date.Format "2006") }}
+          {{ end }}
+          {{ $cy := $scratch.Get "currentYear" }}
+          {{ $py := $scratch.Get "previousYear" }}
+          {{ if ne $cy $py }}
+          <li class="contents">
+          <a class="secondary-nav__link" href="{{ $homeLink }}/{{ $py }}/">
+            {{ $py }}
+          </a>
+          </li>
+          {{ $scratch.Set "currentYear" $py }}
+          {{ end }}
+        {{ end }}
+      </ul>
+      <span class="wrapper-social-border icon icon-folder-open"> </span>
+    </li>
     {{ partial "social.html" . }}
   </ul>
 {{- "<!-- END layouts/partials/secondaryNav.html -->" | safeHTML -}}

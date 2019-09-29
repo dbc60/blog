@@ -2,7 +2,6 @@
 {{- "<!-- BEGIN main layouts/archive/single.html -->" | safeHTML -}}
 
 {{ $postsAll := where .Site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections }}
-{{ $postsCount := len $postsAll }}
 {{ $scratch := newScratch }}
 {{ range $idx, $page := $postsAll }} <!-- for post in postsArray -->
   {{ if eq $idx 0 }} <!-- first iteration sets up current year -->

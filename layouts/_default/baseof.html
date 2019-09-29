@@ -19,23 +19,6 @@
       {{- partial "nav__breadcrumbs.html" . -}}
     {{ end }}
 
-    {{ "<!-- BEGIN Test Breadcrumb-->" | safeHTML }}
-    {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-    {{ $.Scratch.Add "path" .Site.BaseURL }}
-    <ul class="breadcrumb">
-      <li class="breadcrumb__item"><a href="/">home</a></li>
-      {{ range $index, $element := split $url "/" }}
-        {{ $.Scratch.Add "path" $element }}
-        {{ if ne $element "" }}
-          {{ block "breadcrumb" . }}
-            {{- partial "breadcrumb.html" . -}}
-          {{ end }}
-          {{ $.Scratch.Add "path" "/" }}
-        {{ end }}
-      {{ end }}
-    </ul>
-    {{ "<!-- END Test Breadcrumb-->" | safeHTML }}
-
     {{ "<!-- BEGIN Test Test wrapper-content -->" | safeHTML }}
     <div class="wrapper-content">
       {{ $sections := (.Site.GetPage .Section).Sections }}
