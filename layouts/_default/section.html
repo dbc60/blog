@@ -24,10 +24,14 @@
 
   <div class="content">
     {{ "<!-- BEGIN range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
-    {{- range ($scratch.Get "paginator").Pages -}}
+    {{- range $idxPage, $_ := ($scratch.Get "paginator").Pages -}}
       <!-- NOTE: <section> is important. It shrinks the size of the <h2> element-->
       <section>
+      {{ if eq $idxPage 0 }}
+      <h2 class="title-article-item-first"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      {{ else }}
       <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      {{ end }}
       {{- partial "date-and-tags.html" . -}}
       {{ .Render "summary" }}
       </section>

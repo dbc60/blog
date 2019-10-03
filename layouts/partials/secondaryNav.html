@@ -6,9 +6,10 @@
       /2018/10/, or simply /2019/).
     -->
     {{ $selectSections := (where .sections "Type" "in" site.Params.mainSections) }}
-    <!-- exclude the "Posts" section, because it is "home" -->
-    {{ $ss := index $selectSections 0 }}
-    <p>{{ $ss.Title }}</p>
+    <!--
+      exclude the "Posts" section, because it is "home", but display the
+      contents block for other sections that have at least one subsection.
+    -->
     {{ if and (gt (len $selectSections) 0) (ne (index $selectSections 0).Title "Posts") }}
     <li class="wrapper-social-items">
       <span class="wrapper-social-border icon icon-books"> </span>

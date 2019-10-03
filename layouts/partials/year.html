@@ -9,18 +9,37 @@
 {{ $firstItem := index $postsAll 0 }}
 
 {{ $subpaths := split $url "/" }}
-<ul class="social-items this-years-posts">
+<section>
+  {{ $first := true }}
   {{ range $idxPost, $post := $postsAll }}
     <!-- the last subpath is empty, so 3 will have year, month and empty string -->
     {{ if eq 3 (len $subpaths) }}
+    {{ "<!--These are the year/month posts -->" | safeHTML }}
       {{ if and (eq (.Date.Format "2006") (index $subpaths 0)) (eq (.Date.Format "01") (index $subpaths 1)) }}
-      <li class="side-list-item"><a href="{{ $post.Permalink }}">{{ $post.Title }}</a></li>
+      {{ if $first }}
+      {{ $first = false }}
+      <h2 class="title-article-item-first"><a href="{{ $post.Permalink }}">{{ .Title }}</a></h2>
+      {{ else }}
+        <h2 class="title-article-item"><a href="{{ $post.Permalink }}">{{ .Title }}</a></h2>
+      {{ end }}
+      {{- partial "date-and-tags.html" . -}}
+      {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
+          {{- .Render "summary" }}
       {{ end }}
     {{ else }}
+    {{ "<!--These are the year-only posts -->" | safeHTML }}
       {{ if eq (.Date.Format "2006") (index $subpaths 0) }}
-      <li class="side-list-item"><a href="{{ $post.Permalink }}">{{ $post.Title }}</a></li>
+      {{ if $first }}
+      {{ $first = false }}
+      <h2 class="title-article-item-first"><a href="{{ $post.Permalink }}">{{ .Title }}</a></h2>
+      {{ else }}
+        <h2 class="title-article-item"><a href="{{ $post.Permalink }}">{{ .Title }}</a></h2>
+      {{ end }}
+      {{- partial "date-and-tags.html" . -}}
+      {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
+          {{- .Render "summary" }}
       {{ end }}
     {{ end }}
   {{ end }}
-</ul> <!-- class="social-items this-years-posts" -->
+</section> <!-- class="social-items this-years-posts" -->
 {{- "<!-- END layouts/partials/year.html -->" | safeHTML -}}
