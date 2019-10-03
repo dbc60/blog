@@ -9,37 +9,28 @@
 {{ $firstItem := index $postsAll 0 }}
 
 {{ $subpaths := split $url "/" }}
-<section>
-  {{ $first := true }}
   {{ range $idxPost, $post := $postsAll }}
     <!-- the last subpath is empty, so 3 will have year, month and empty string -->
     {{ if eq 3 (len $subpaths) }}
-    {{ "<!--These are the year/month posts -->" | safeHTML }}
+      <!--These are the year/month posts -->
       {{ if and (eq (.Date.Format "2006") (index $subpaths 0)) (eq (.Date.Format "01") (index $subpaths 1)) }}
-      {{ if $first }}
-      {{ $first = false }}
-      <h2 class="title-article-item-first"><a href="{{ $post.Permalink }}">{{ .Title }}</a></h2>
-      {{ else }}
+      <section class="page-summary">
         <h2 class="title-article-item"><a href="{{ $post.Permalink }}">{{ .Title }}</a></h2>
-      {{ end }}
       {{- partial "date-and-tags.html" . -}}
       {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
           {{- .Render "summary" }}
       {{ end }}
+        </section> <!-- class="social-items this-years-posts" -->
     {{ else }}
-    {{ "<!--These are the year-only posts -->" | safeHTML }}
+      <!--These are the year-only posts -->
       {{ if eq (.Date.Format "2006") (index $subpaths 0) }}
-      {{ if $first }}
-      {{ $first = false }}
-      <h2 class="title-article-item-first"><a href="{{ $post.Permalink }}">{{ .Title }}</a></h2>
-      {{ else }}
+      <section class="page-summary">
         <h2 class="title-article-item"><a href="{{ $post.Permalink }}">{{ .Title }}</a></h2>
-      {{ end }}
       {{- partial "date-and-tags.html" . -}}
       {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
           {{- .Render "summary" }}
       {{ end }}
+        </section> <!-- class="social-items this-years-posts" -->
     {{ end }}
   {{ end }}
-</section> <!-- class="social-items this-years-posts" -->
 {{- "<!-- END layouts/partials/year.html -->" | safeHTML -}}

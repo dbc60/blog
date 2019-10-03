@@ -4,12 +4,8 @@
         {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
         {{ $paginator := .Paginate (where .Pages "Type" "post") -}}
         {{- range $idxPage, $_ := $paginator.Pages -}}
-        <section>
-        {{ if eq $idxPage 0 }}
-        <h2 class="title-article-item-first"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        {{ else }}
+        <section class="page-summary">
         <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        {{ end }}
         {{- partial "date-and-tags.html" . -}}
         {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
             {{- .Render "summary" }}

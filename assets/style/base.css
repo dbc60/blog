@@ -207,17 +207,22 @@ strong {
   color: black;
 }
 
-.title-article-item-first {
+.title-article, .title-article-item {
   margin-top: 0.667em;
-}
-
-.title-article-item {
-  margin: 1.2em 0 0.333em 0;
+  margin-bottom: 0.333em;
 }
 
 .post-metadata {
   font-size: smaller;
-  line-height: 1em;
+  line-height: 1.2em;
+}
+
+.page-summary {
+  margin-bottom: 1.4em;
+}
+
+p {
+  margin: 0.667em 0;
 }
 
 /* both inline and block code */
