@@ -3,7 +3,7 @@
  *
  * The purpose of this styles sheet is to set default styles for common browsers and address common issues (missing scrollbar, extended buttons in IE, gap below images, etc.)
  *
- * See: http://thinkvitamin.com/design/setting-rather-than-resetting-default-styling/
+ * See: https://thinkvitamin.com/design/setting-rather-than-resetting-default-styling/
  *
  * Changes in  v0.6 (04252011):
  *    - swaped text-bottom for bottom and vice-versa for checkboxes and radio buttons (duh!)
@@ -165,7 +165,7 @@ th {text-align: center;}
 tbody th {text-align: left;}
 
 /* See Eric Meyer's article about Fixed Monospace Sizing
- * http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
+ * https://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
  */
 code {color: #06f;}
 code, pre {font-family: "Courier New", monospace, serif; font-size: 1em;}

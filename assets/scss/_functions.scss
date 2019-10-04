@@ -1,7 +1,7 @@
 // Greatest Common Divisor (gcd) in pure scss from
 //  https://gist.github.com/voxpelli/6304812
 @function gcd($a, $b) {
-  // From: http://rosettacode.org/wiki/Greatest_common_divisor#JavaScript
+  // From: https://rosettacode.org/wiki/Greatest_common_divisor#JavaScript
   @if ($b != 0) {
     @return gcd($b, $a % $b);
   } @else {
@@ -233,7 +233,7 @@ $ln_2: 0.693147180559945309417232121458;
  */
 @function color_luminance($color) {
   // Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
-  // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+  // Formula: https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
   $rgba: red($color), green($color), blue($color);
   $rgba2: ();
 
@@ -252,7 +252,7 @@ $ln_2: 0.693147180559945309417232121458;
 @function contrast_ratio($color1, $color2) {
   // Adapted from:
   // https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
-  // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
+  // Formula: https://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
   $luminance1: color_luminance($color1) + .05;
   $luminance2: color_luminance($color2) + .05;
   $ratio: $luminance1 / $luminance2;
