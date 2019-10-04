@@ -1,5 +1,5 @@
 title = "Doug's Blog"
-baseurl = "https://douglascuthbertson.com/"
+baseurl = "http://douglascuthbertson.com/"
 languageCode = "en-us"
 disqusShortname = "cuthbertson"
 enableRobotsTXT = true
