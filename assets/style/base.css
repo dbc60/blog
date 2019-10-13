@@ -208,8 +208,9 @@ strong {
 }
 
 .title-article, .title-article-item {
-  margin-top: 0.667em;
-  margin-bottom: 0.333em;
+  line-height: 1.2em;
+  margin-block-start: 0.5em;
+  margin-block-end: 0;
 }
 
 .post-metadata {

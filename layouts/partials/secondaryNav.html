@@ -10,7 +10,7 @@
       exclude the "Posts" section, because it is "home", but display the
       contents block for other sections that have at least one subsection.
     -->
-    {{ if and (gt (len $selectSections) 0) (ne (index $selectSections 0).Title "Posts") }}
+    {{ if and (gt (len $selectSections) 0) }}
     <li class="wrapper-social-items">
       <span class="wrapper-social-border icon icon-books"> </span>
       <span class="wrapper-social-border title">contents</span>
