@@ -1,0 +1,18 @@
+{{- define "main" -}}
+{{ "<!--BEGIN main layouts/taxonomy/2016.html -->" | safeHTML }}
+<div class="content">
+    {{- $paginator := .Paginate (where .Pages "Type" "in" site.Params.mainSections) -}}
+    {{- range $paginator.Pages -}}
+      {{ $page := .Page }}
+      <section>
+      <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      {{- partial "date-and-tags.html" . -}}
+        <!-- this renders based on layouts/_default/summary.html (either the
+        local one, or the one in a theme -->
+        {{ .Render "summary" }}
+        </section>
+    {{- end -}}
+    {{- template "_internal/pagination.html" . }}
+      </div>
+  {{ "<!-- ENG main layouts/taxomony/2016.html -->" | safeHTML }}
+{{- end -}}

@@ -1,0 +1,34 @@
+{{- define "main" -}}
+{{ "<!--BEGIN main layouts/taxonomy/terms.html -->" | safeHTML }}
+<div class="content">
+  {{ $sections := (.Site.GetPage .Section).Sections }}
+  {{ $rootSections := (.Site.GetPage "/").Sections }}
+  {{ if eq 0 (len $sections) }}
+  {{ $sections = $rootSections }}
+  {{ end }}
+
+  {{ $context := (dict "context" . "sections"  $sections) }}
+  {{ $scratch := newScratch }}
+  {{ $sections := where .Pages "Section" .Section }}
+
+  {{- range $_, $section := $sections -}}
+    {{- range $_, $page := $section.Pages -}}
+      {{ $scratch.Add "pages" (slice $page) }}
+    {{ end }}
+  {{ end }}
+
+  <div class="content">
+    {{- range (.Paginate ($scratch.Get "pages")).Pages -}}
+    <section class="page-summary">
+      <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      {{- partial "date-and-tags.html" . -}}
+      <!-- this renders based on layouts/_default/summary.html (either the
+      local one, or the one in a theme -->
+      {{ .Render "summary" }}
+    </section>
+    {{- end -}}
+    {{- template "_internal/pagination.html" . }}
+  </div>
+</div>
+  {{ "<!-- ENG main layouts/taxomony/terms.html -->" | safeHTML }}
+{{- end -}}

@@ -1,0 +1,9 @@
+<ul class="social-items">
+{{ range $idx, $section := where .sections.ByTitle "Type" "in" site.Params.mainSections }}
+  <li class="contents">
+    <a class="secondary-nav__link" href="{{ $section.Permalink }}">
+      {{ $section.Title }}
+    </a>
+  </li>
+{{ end }}
+</ul> {{ "<!-- end <ul class='social-items'> -->" | safeHTML }}

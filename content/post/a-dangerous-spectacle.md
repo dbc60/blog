@@ -1,6 +1,7 @@
 ---
 title: A Dangerous Spectacle
 date: 2016-11-09
+2016: ["11"]
 categories: blog
 tags: [politics]
 ---

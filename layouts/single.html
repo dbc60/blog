@@ -1,8 +1,8 @@
 {{ $archMonth := .Date.Format "January" }}
 
-<h2>Archive for{{ $archMonth }} in All Years</h2>
+<h2>(layouts/single.html) Archive for{{ $archMonth }} in All Years</h2>
 
-{{ range where .Site.Pages "Section" "posts" }}
+{{ range .Site.Pages }}
     {{ if eq (.Date.Format "January") $archMonth }}
         {{ partial "post/archive" . }}
     {{ end }}

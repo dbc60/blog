@@ -1,6 +1,6 @@
-{{ $articleLink   := .context.Permalink | urlize | title }}
-{{ $articleTitle  := .context.Title | urlize | title }}
-{{ $blogTitle     := .context.Site.Title | urlize | title }}
+{{ $articleLink   := .Permalink | urlize | title }}
+{{ $articleTitle  := .Title | urlize | title }}
+{{ $blogTitle     := .Site.Title | urlize | title }}
 
 <ul class="social-items">
   <li class="social-item">

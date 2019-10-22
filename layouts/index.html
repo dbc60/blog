@@ -2,7 +2,7 @@
     {{ "<!-- BEGIN main in layouts/index.html -->" | safeHTML }}
       <div class="content">
         {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
-        {{ $paginator := .Paginate (where .Pages "Type" "post") -}}
+        {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections) -}}
         {{- range $idxPage, $_ := $paginator.Pages -}}
         <section class="page-summary">
         <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>

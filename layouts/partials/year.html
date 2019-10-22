@@ -1,36 +1,36 @@
-{{ "<!-- BEGIN layouts/partials/year.html -->" | safeHTML }}
+{{ "<!-- BEGIN layouts/partials/year.html -->" | safeHTML -}}
 
 <!-- .Section is always the top-level location -->
-{{ $currentSection := .context.Section }}
-{{ $postsAll := where .context.Site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections }}
+{{- $postsAll := .context.Site.RegularPages.ByDate.Reverse -}}
 
 <!-- Get the relative URL of the current page (section/subsection) -->
-{{ $url := replace .context.Permalink ( printf "%s" .context.Site.BaseURL) "" }}
-{{ $firstItem := index $postsAll 0 }}
+{{- $url := replace .context.Permalink ( printf "%s" .context.Site.BaseURL) "" -}}
 
-{{ $subpaths := split $url "/" }}
-  {{ range $idxPost, $post := $postsAll }}
+{{- $subpaths := split $url "/" -}}
+{{- if eq 3 (len $subpaths) -}}
+  {{- "<!--These are the year/month posts -->" | safeHTML -}}
+  {{- range $idxPost, $post := $postsAll -}}
     <!-- the last subpath is empty, so 3 will have year, month and empty string -->
-    {{ if eq 3 (len $subpaths) }}
-      <!--These are the year/month posts -->
-      {{ if and (eq (.Date.Format "2006") (index $subpaths 0)) (eq (.Date.Format "01") (index $subpaths 1)) }}
+    {{- if and (eq (.Date.Format "2006") (index $subpaths 0)) (eq (.Date.Format "01") (index $subpaths 1)) -}}
       <section class="page-summary">
         <h2 class="title-article-item"><a href="{{ $post.Permalink }}">{{ .Title }}</a></h2>
       {{- partial "date-and-tags.html" . -}}
-      {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
-          {{- .Render "summary" }}
-      {{ end }}
-        </section> <!-- class="social-items this-years-posts" -->
-    {{ else }}
-      <!--These are the year-only posts -->
-      {{ if eq (.Date.Format "2006") (index $subpaths 0) }}
+      {{- "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML -}}
+      {{- .Render "summary" -}}
+    </section> {{ "<!-- class=page-summary -->" | safeHTML }}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- "<!--These are the year-only posts -->" | safeHTML -}}
+  {{- range $idxPost, $post := $postsAll -}}
+    {{- if eq (.Date.Format "2006") (index $subpaths 0) -}}
       <section class="page-summary">
         <h2 class="title-article-item"><a href="{{ $post.Permalink }}">{{ .Title }}</a></h2>
       {{- partial "date-and-tags.html" . -}}
-      {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
-          {{- .Render "summary" }}
-      {{ end }}
-        </section> <!-- class="social-items this-years-posts" -->
-    {{ end }}
-  {{ end }}
+      {{- "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML -}}
+      {{- .Render "summary" -}}
+    </section> {{- "<!-- class=page-summary -->" | safeHTML -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 {{- "<!-- END layouts/partials/year.html -->" | safeHTML -}}

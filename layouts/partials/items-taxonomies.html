@@ -1,0 +1,9 @@
+<ul class="social-items">
+  {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
+  <li class="contents">
+    <a class="secondary-nav__link" href="{{ .context.URL }}/{{ $taxonomyName }}/">
+      {{ title $taxonomyName }}
+    </a>
+  </li>
+  {{ end }}
+</ul>

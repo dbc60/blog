@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 {{ $lang := .Site.Language.Lang | default "en" }}
 <html lang="{{ $lang }}">
+  <head>
   {{- block "head" . -}}
   {{- partial "head.html" . -}}
   {{- end -}}
+  </head>
   <body>
+    <header class="main-head">
     {{- block "header" . -}}
         {{- partial "siteHeader.html" . -}}
     {{- end -}}
+    </header>
 
     <nav class="main-nav">
     {{- block "nav" . -}}
@@ -15,11 +19,12 @@
     {{- end }}
     </nav>
 
+    <ul class="breadcrumb">
     {{ block "breadcrumbs" . }}
       {{- partial "nav__breadcrumbs.html" . -}}
     {{ end }}
+    </ul>
 
-    {{ "<!-- BEGIN Test Test wrapper-content -->" | safeHTML }}
     <div class="wrapper-content">
       {{ $sections := (.Site.GetPage .Section).Sections }}
       {{ $rootSections := (.Site.GetPage "/").Sections }}
@@ -29,20 +34,55 @@
       {{ else }}
         {{ "<!--sections is (.Site.GetPage '/').Sections-->" | safeHTML }}
       {{ end }}
-      {{ $context := (dict "context" . "sections"  $sections) }}
       <div class="sidebar-content">
-        {{ block "secondary_nav" $context }}
-          {{ partial "secondaryNav.html" . }}
+        <ul class="wrapper-social-sections">
+          <li class="wrapper-social-items">
+            <span class="wrapper-social-border icon icon-books"> </span>
+            <span class="wrapper-social-border title">Contents</span>
+            {{ block "contents" (dict "context" . "sections"  $sections) }}
+            {{ partial "items-contents.html" . }}
+            {{ end }}
+            <span class="wrapper-social-border icon icon-books"> </span>
+          </li>
+
+          <li class="wrapper-social-items">
+            <span class="wrapper-social-border icon icon-folder-open"> </span>
+            <span class="wrapper-social-border title">Collections</span>
+            {{ block "lists" . }}
+            {{ partial "items-taxonomies.html" . }}
+            {{ end }}
+            <span class="wrapper-social-border icon icon-folder-open"> </span>
+          </li>
+
+          <li class="wrapper-social-items">
+            <span class="wrapper-social-border icon icon-snowflake-o"> </span>
+            <span class="wrapper-social-border title">Share</span>
+            <div class="social">
+              {{ block "share" . }}
+              {{ partial "social-share.html" . }}
         {{ end }}
       </div>
+            <span class="wrapper-social-border icon icon-snowflake-o"> </span>
+          </li>
 
+          <li class="wrapper-social-items">
+            <span class="wrapper-social-border icon icon-compass"> </span>
+            <span class="wrapper-social-border title">Follow</span>
+            <div class="social">
+              {{ block "follow" . }}
+              {{ partial "social-follow.html" . }}
+              {{ end }}
+            </div>
+            <span class="wrapper-social-border icon icon-compass"> </span>
+          </li>
+        </ul>
+      </div>
       <main class="main-content">
         {{- block "main" . -}}
-          <main>Default Main</main>
+          <h2>Default Main (Should Never Appear)</h2>
         {{- end }}
       </main>
     </div> {{ "<!-- class wrapper-content -->" | safeHTML }}
-    {{ "<!-- END Test Test wrapper-content -->" | safeHTML }}
 
     {{ "<!-- I might want to wrap footer and script in blocks -->" | safeHTML }}
     <footer class="main-footer">

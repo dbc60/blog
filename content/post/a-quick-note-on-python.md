@@ -1,6 +1,7 @@
 ---
 title: A Quick Note on Python
 date: 2016-01-04
+2016: ["01"]
 categories: blog
 tags: [python, programming]
 ---
