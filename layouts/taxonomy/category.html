@@ -1,5 +1,5 @@
 {{- define "main" -}}
-{{ "<!--BEGIN main layouts/taxonomy/2017.html -->" | safeHTML }}
+{{ "<!--BEGIN main layouts/taxonomy/category.html -->" | safeHTML }}
 <div class="content">
     {{- $paginator := .Paginate (where .Pages "Type" "in" site.Params.mainSections) -}}
     {{- range $paginator.Pages -}}
@@ -14,5 +14,5 @@
     {{- end -}}
     {{- template "_internal/pagination.html" . }}
       </div>
-  {{ "<!-- ENG main layouts/taxomony/2017.html -->" | safeHTML }}
+  {{ "<!-- ENG main layouts/taxomony/category.html -->" | safeHTML }}
 {{- end -}}

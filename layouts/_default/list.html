@@ -1,7 +1,7 @@
 {{- define "main" -}}
   {{ "<!-- BEGIN main layouts/_default/list.html-->" | safeHTML }}
     <h1>All Posts Layout Default Lists</h1>
-    <p>If this shows up, _index.md is missing from a folder somewhere.</p>
+    <p>If this shows up, _index.md is missing from section "{{ .Section }}".</p>
       <!-- "{.Content}" pulls from the markdown content of the corresponding _index.md -->
       {{- .Content -}}
     {{- $paginator := .Paginate (where .Pages "Section" .Section) -}}
