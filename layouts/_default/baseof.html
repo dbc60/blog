@@ -31,8 +31,6 @@
       {{ if eq 0 (len $sections) }}
         {{ "<!--GETTING ROOT SECTIONS-->" | safeHTML }}
         {{ $sections = $rootSections }}
-      {{ else }}
-        {{ "<!--sections is (.Site.GetPage '/').Sections-->" | safeHTML }}
       {{ end }}
       <div class="sidebar-content">
         <ul class="wrapper-social-sections">

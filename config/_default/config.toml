@@ -28,7 +28,7 @@ pygmentsCodefencesGuessSyntax=true
 [permalinks]
 #  post = "/:filename/"
   css = "/:year/:month/:slug/"
-  journal = "/:year/:month/:slug/"
+  journal = "/:sections/:slug/"
   note = "/:year/:month/:slug/"
   post = "/:year/:month/:slug/"
   project = "/:year/:month/:slug/"

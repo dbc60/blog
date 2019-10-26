@@ -13,7 +13,7 @@
             <div class="post-metadata">
             <time class="post-metadata__timestamp" datetime="{{ $dateTime }}">{{- .PublishDate.Format $dateFormat -}}</time>
               - {{ .ReadingTime}} min read - {{ .WordCount }} words.
-            <time class="post-metadata__timestamp" datetime="{{ .Lastmod.Format $dateTimeFormatLong }}"></time><div><time>Last updated: {{ .Lastmod.Format $dateFormatExtended }}</time></div>
+            <time class="post-metadata__timestamp" datetime="{{ .Lastmod.Format $dateTimeFormatLong }}"></time><div>Last updated: <span>{{ .Lastmod.Format $dateFormatExtended }}</span></div>
             {{ with .Params.tags -}}
             <div class="tag-list">
             {{- range . -}}
