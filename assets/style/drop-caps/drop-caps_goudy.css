@@ -12,8 +12,8 @@
   .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
     font-family: Goudy Initialen;
     font-size: 7em;
-    line-height: 1;
-    margin: 0 0.02em -0.25em 0;
+    font-weight: normal;
+    line-height: 1em;
   }
 }
 

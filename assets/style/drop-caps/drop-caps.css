@@ -24,7 +24,8 @@
   */
   .c-drop-caps > .document > p:first-of-type::first-letter {
     font-style: normal;
-      font-weight: normal;
-      float: left;
+    font-weight: normal;
+    float: left;
+    margin: 0 .1em 0 0;
   }
 }

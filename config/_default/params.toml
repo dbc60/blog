@@ -11,5 +11,5 @@ hideFooter = false
 background_color = "rgb(241, 241, 241)"
 site_width = "100ch"
 
-componentDropCaps = "drop-caps__goudy"
+componentDropCaps = "drop-caps_goudy"
 mainSections = ["post", "css", "note", "project"]

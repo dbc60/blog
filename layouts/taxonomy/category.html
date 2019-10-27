@@ -1,7 +1,7 @@
 {{- define "main" -}}
 {{ "<!--BEGIN main layouts/taxonomy/category.html -->" | safeHTML }}
 <div class="content">
-    {{- $paginator := .Paginate (where .Pages "Type" "in" site.Params.mainSections) -}}
+    {{- $paginator := .Paginate .Pages -}}
     {{- range $paginator.Pages -}}
       {{ $page := .Page }}
       <section>
