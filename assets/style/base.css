@@ -41,17 +41,12 @@
 
 body {
   max-width: {{ $siteWidth }};
-  margin: 0 auto;
+  overflow: auto;
+  margin-left: 0;
 }
 
 .main-footer {
   margin-top: 1em;
-}
-
-/* This is a magic number to keep the secondary nav and the first article in a
-   list of articles aligned. */
-.sidebar {
-  margin-top: 20.6px;
 }
 
 /*************************
@@ -111,7 +106,7 @@ body {
   margin: 0;
 }
 
-@media (min-width: 116ch) {
+@media (min-width: 110ch) {
   .main-head {
     width: 100%;
   }
@@ -179,7 +174,6 @@ body {
   padding: 4em 1em;
   background-color: rgb(241, 241, 241);
   color: black;
-  float: left;
 }
 
 /* Feather icons */

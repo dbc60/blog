@@ -9,12 +9,12 @@
 
   {{ $context := (dict "context" . "sections"  $sections) }}
   {{ $scratch := newScratch }}
-  {{ $pag := .Paginate (where .Pages "Section" .Section) }}
+  {{ $pag := .Paginate (where .RegularPages "Section" .Section) }}
 
   {{ if ne 0 (len $pag.Pages) }}
     {{ "<!-- Range over 'normal' sections with content and _index.md files -->" | safeHTML }}
     {{ $scratch.Set "paginator" $pag }}
-    {{ $postAll := where .Pages "Section" .Section }}
+    {{ $postAll := where .RegularPages "Section" .Section }}
   {{ else }}
     {{ "<!-- Handle sections with only an _index.md file -->" | safeHTML }}
     {{ $currentSection := .CurrentSection }}

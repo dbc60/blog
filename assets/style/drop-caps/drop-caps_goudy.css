@@ -11,9 +11,9 @@
   .drop-caps_goudy > .document > .epigraph:first-child + p::first-letter,
   .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
     font-family: Goudy Initialen;
-    font-size: 7em;
+    font-size: 6.5em;
     font-weight: normal;
-    line-height: 1em;
+    line-height: 0.9em;
   }
 }
 
@@ -28,14 +28,14 @@
     .drop-caps_goudy .document > blockquote:first-child + p::first-letter,
     .drop-caps_goudy .document > .epigraph:first-child + p::first-letter,
     .document > .drop-caps_goudy::first-letter {
-        font-size: 6.875em;
+        font-size: 6.25em;
     }
   }
 }
 
 @media only screen and (min-width: 65ch) {
   /*  Compensating for responsive line-height reduction. */
-  @media only screen and (max-width: 100ch) {
+  @media only screen and (max-width: 110ch) {
     .drop-caps_goudy > p:first-child::first-letter,
     .drop-caps_goudy > blockquote:first-child + p::first-letter,
     .drop-caps_goudy > .epigraph:first-child + p::first-letter,
@@ -44,7 +44,7 @@
     .drop-caps_goudy .document > blockquote:first-child + p::first-letter,
     .drop-caps_goudy .document > .epigraph:first-child + p::first-letter,
     .document > .drop-caps_goudy::first-letter {
-      font-size: 6.625em;
+      font-size: 5.375em;
     }
   }
 }
