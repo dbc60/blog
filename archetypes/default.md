@@ -1,6 +1,10 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-draft: true
+{{ dateFormat "2006: [\"01\"]" .Date }}
+categories: []
+tags: []
 ---
 
+Place excerpt here.
+<!--more-->

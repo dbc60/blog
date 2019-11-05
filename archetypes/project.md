@@ -1,10 +1,12 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-draft: true
+{{ dateFormat "2006: [\"01\"]" .Date }}
+categories: [project]
+tags: []
 ---
 
-**Insert Lead paragraph here.**
+Place excerpt here.
 <!--more-->
 
 ## New Posts
