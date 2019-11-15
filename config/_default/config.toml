@@ -8,6 +8,7 @@ enableRobotsTXT = true
 canonifyURLs = true
 footnoteReturnLinkContents = "↩"
 enableGitInfo = true
+enableEmoji = true
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""

@@ -446,3 +446,59 @@ a.subscribemail:hover { background: #e3e8e7;color:rgb(227, 232, 231);}
 a.tumblr:hover { background: #2B4964; color:rgb(227, 232, 231);}
 a.twitter:hover { background: #33ccff; color:rgb(227, 232, 231);}
 a.youtube:hover { background: #FF3333; color:rgb(227, 232, 231);}
+
+
+/* todo list */
+.draft-warning {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  z-index: 1;
+  float: right;
+  display: block;
+
+  margin: 0px 0px;
+  padding: 1rem;
+  background-color:rgba(255, 0, 0, 0.3);
+  border: 0.1rem solid black;
+  color: black;
+  font-size: 80%;
+}
+
+.term, .task, .task-work, .task-complete, .task-migrated, .task-cancelled, .event, .event-complete {
+  margin-bottom: 0.5em;
+}
+
+.term-member {
+  margin-left: 1em;
+}
+
+.task::first-letter, .task-work::first-letter {
+  color: black;
+}
+
+.task-migrated::first-letter {
+  color: darkgreen;
+}
+
+.task-complete::first-letter {
+  color: blue;
+}
+
+.event::first-letter {
+  color: darkseagreen;
+}
+
+.event-complete::first-letter {
+  color: blue;
+}
+
+.event-cancelled, .task-cancelled {
+  color: firebrick;
+  text-decoration: line-through;
+}

@@ -1,30 +1,9 @@
 {{- define "main" }}
   {{ "<!-- BEGIN main in layouts/_default/section.html -->" | safeHTML }}
-
-  {{ $sections := (.Site.GetPage .Section).Sections }}
-  {{ $rootSections := (.Site.GetPage "/").Sections }}
-  {{ if eq 0 (len $sections) }}
-  {{ $sections = $rootSections }}
-  {{ end }}
-
-  {{ $context := (dict "context" . "sections"  $sections) }}
-  {{ $scratch := newScratch }}
   {{ $pag := .Paginate (where .RegularPages "Section" .Section) }}
-
-  {{ if ne 0 (len $pag.Pages) }}
-    {{ "<!-- Range over 'normal' sections with content and _index.md files -->" | safeHTML }}
-    {{ $scratch.Set "paginator" $pag }}
-    {{ $postAll := where .RegularPages "Section" .Section }}
-  {{ else }}
-    {{ "<!-- Handle sections with only an _index.md file -->" | safeHTML }}
-    {{ $currentSection := .CurrentSection }}
-    {{ $ctx := (dict "context" . "currentSection" $currentSection) }}
-    {{ partial "year.html" $ctx }}
-  {{ end }}
-
   <div class="content">
     {{ "<!-- BEGIN range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
-    {{- range $idxPage, $_ := ($scratch.Get "paginator").Pages -}}
+    {{- range $pag.Pages -}}
       <!-- NOTE: <section> is important. It shrinks the size of the <h2> element-->
       <section class="page-summary">
       <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
@@ -35,6 +14,5 @@
     {{ "<!-- END range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
     {{- template "_internal/pagination.html" . }}
   </div>
-
   {{ "<!-- END main in layouts/_default/section.html -->" | safeHTML }}
 {{ end }}

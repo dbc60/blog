@@ -17,3 +17,6 @@ $RECYCLE.BIN/
 
 # WinMerge
 *.bak
+
+# Static files I don't want put under version control
+/static/data/

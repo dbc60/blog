@@ -1,6 +1,5 @@
 {{- define "main" -}}
 {{ "<!--BEGIN main layouts/taxonomy/terms.html -->" | safeHTML }}
-<div class="content">
   {{ $sections := (.Site.GetPage .Section).Sections }}
   {{ $rootSections := (.Site.GetPage "/").Sections }}
   {{ if eq 0 (len $sections) }}
@@ -29,6 +28,5 @@
     {{- end -}}
     {{- template "_internal/pagination.html" . }}
   </div>
-</div>
   {{ "<!-- ENG main layouts/taxomony/terms.html -->" | safeHTML }}
 {{- end -}}

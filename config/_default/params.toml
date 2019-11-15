@@ -13,3 +13,12 @@ site_width = "100ch"
 
 componentDropCaps = "drop-caps_goudy"
 mainSections = ["post", "css", "note", "project"]
+listTodo = true
+task_work = "\u2022"
+task = "\u204D"
+task_complete = "\u2713"
+task_migrated = "\u2192"
+task_cancelled = "-"
+event = "\u29BE"
+event_complete = "\u29BF"
+event_cancelled = "\u29BE"
