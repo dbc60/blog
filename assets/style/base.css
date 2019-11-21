@@ -216,10 +216,6 @@ strong {
   margin-bottom: 1.4em;
 }
 
-p {
-  margin: 0.667em 0;
-}
-
 /* both inline and block code */
 pre, code, tt.docutils.literal {
   background-color: #e3e8e7;
@@ -278,7 +274,7 @@ a:hover {
   margin-right: 0.5ch;
 }
 
-nav ul {
+nav ul, ul.term-group {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -475,7 +471,8 @@ a.youtube:hover { background: #FF3333; color:rgb(227, 232, 231);}
 }
 
 .term-member {
-  margin-left: 1em;
+  padding-left: 1em;
+  text-indent: -0.7em;
 }
 
 .task::first-letter, .task-work::first-letter {

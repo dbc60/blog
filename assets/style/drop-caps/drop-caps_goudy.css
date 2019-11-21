@@ -1,34 +1,31 @@
 /* Goudy */
 @media only screen and (min-width: 65ch) {
-  /*  All of these numbers are magic.
-      */
-  .drop-caps_goudy > p:first-child::first-letter,
-  .drop-caps_goudy > blockquote:first-child + p::first-letter,
+  /*  All of these numbers are magic. */
+  .drop-caps_goudy > p:first-of-type::first-letter,
+  .drop-caps_goudy > blockquote:first-of-type + p::first-letter,
   .drop-caps_goudy > .epigraph:first-child + p::first-letter,
   .drop-caps_goudy::first-letter,
-  .drop-caps_goudy > .document > p:first-child::first-letter,
-  .drop-caps_goudy > .document > blockquote:first-child + p::first-letter,
+  .drop-caps_goudy > .document > p:first-of-type::first-letter,
+  .drop-caps_goudy > .document > blockquote:first-of-type + p::first-letter,
   .drop-caps_goudy > .document > .epigraph:first-child + p::first-letter,
   .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
     font-family: Goudy Initialen;
-    font-size: 6.5em;
-    font-weight: normal;
-    line-height: 0.9em;
+    font-size: 7em;
   }
 }
 
 @media only screen and (min-width: 65ch) {
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 120ch) {
-    .drop-caps_goudy > p:first-child::first-letter,
-    .drop-caps_goudy > blockquote:first-child + p::first-letter,
+    .drop-caps_goudy > p:first-of-type::first-letter,
+    .drop-caps_goudy > blockquote:first-of-type + p::first-letter,
     .drop-caps_goudy > .epigraph:first-child + p::first-letter,
     .drop-caps_goudy::first-letter,
-    .drop-caps_goudy .document > p:first-child::first-letter,
-    .drop-caps_goudy .document > blockquote:first-child + p::first-letter,
+    .drop-caps_goudy .document > p:first-of-type::first-letter,
+    .drop-caps_goudy .document > blockquote:first-of-type + p::first-letter,
     .drop-caps_goudy .document > .epigraph:first-child + p::first-letter,
     .document > .drop-caps_goudy::first-letter {
-        font-size: 6.25em;
+        font-size: 5.7em;
     }
   }
 }
@@ -36,15 +33,15 @@
 @media only screen and (min-width: 65ch) {
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 110ch) {
-    .drop-caps_goudy > p:first-child::first-letter,
-    .drop-caps_goudy > blockquote:first-child + p::first-letter,
+    .drop-caps_goudy > p:first-of-type::first-letter,
+    .drop-caps_goudy > blockquote:first-of-type + p::first-letter,
     .drop-caps_goudy > .epigraph:first-child + p::first-letter,
     .drop-caps_goudy::first-letter,
-    .drop-caps_goudy .document > p:first-child::first-letter,
-    .drop-caps_goudy .document > blockquote:first-child + p::first-letter,
+    .drop-caps_goudy .document > p:first-of-type::first-letter,
+    .drop-caps_goudy .document > blockquote:first-of-type + p::first-letter,
     .drop-caps_goudy .document > .epigraph:first-child + p::first-letter,
     .document > .drop-caps_goudy::first-letter {
-      font-size: 5.375em;
+      font-size: 4.2em;
     }
   }
 }

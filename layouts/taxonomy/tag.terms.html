@@ -2,22 +2,20 @@
 {{ "<!-- BEGIN main layouts/taxonomy/tag.terms.html -->" | safeHTML }}
 <!-- See https://bwaycer.github.io/hugo_tutorial.hugo/templates/terms/ -->
 <div class="content">
-  <section>
     <h2 class="title-article-item">{{ .Title }}</h2>
 
     {{ $type := .Type }}
     {{ range .Data.Terms.Alphabetical }}
       {{ $name := .Name }}
       {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-      <div class="term">
-        <a href="{{ .Permalink }}">{{ $name }}</a>
+    <h3><a href="{{ .Permalink }}">{{ $name }}</a></h3>
+    <ul class="term-tags">
         {{ range .Pages }}
-         <div class="term-member"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+      <li class="term-member-tag"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
         {{ end }}
-      </div>
+    </ul>
       {{ end }}
     {{ end }}
-  </section>
 </div>
 {{ "<!-- END main layouts/taxonomy/tag.terms.html -->" | safeHTML }}
 {{ end }}
