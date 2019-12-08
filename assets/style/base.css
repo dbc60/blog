@@ -46,7 +46,9 @@ body {
 }
 
 .main-footer {
-  margin-top: 1em;
+  border-top: solid;
+  margin-top: 1.2em;
+  font-size: 80%;
 }
 
 /*************************
