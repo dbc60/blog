@@ -3,12 +3,12 @@
   /*  All of these numbers are magic.
       */
   .drop-caps_de-zs > p:first-child::first-letter,
-  .drop-caps_de-zs > blockquote:first-child + p::first-letter,
-  .drop-caps_de-zs > .epigraph:first-child + p::first-letter,
+  .drop-caps_de-zs > blockquote:first-child > p::first-letter,
+  .drop-caps_de-zs > .epigraph:first-child > p::first-letter,
   .drop-caps_de-zs::first-letter,
   .drop-caps_de-zs > .document > p:first-child::first-letter,
-  .drop-caps_de-zs > .document > blockquote:first-child + p::first-letter,
-  .drop-caps_de-zs > .document > .epigraph:first-child + p::first-letter,
+  .drop-caps_de-zs > .document > blockquote:first-child > p::first-letter,
+  .drop-caps_de-zs > .document > .epigraph:first-child > p::first-letter,
   .drop-caps_de-zs > .document .drop-caps_de-zs::first-letter {
     font-family: Deutsche Zierschrift;
     font-size: 6.5em;
@@ -26,12 +26,12 @@
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 120ch) {
     .drop-caps_de-zs > p:first-child::first-letter,
-    .drop-caps_de-zs > blockquote:first-child + p::first-letter,
-    .drop-caps_de-zs > .epigraph:first-child + p::first-letter,
+    .drop-caps_de-zs > blockquote:first-child > p::first-letter,
+    .drop-caps_de-zs > .epigraph:first-child > p::first-letter,
     .drop-caps_de-zs::first-letter,
     .drop-caps_de-zs .document > p:first-child::first-letter,
-    .drop-caps_de-zs .document > blockquote:first-child + p::first-letter,
-    .drop-caps_de-zs .document > .epigraph:first-child + p::first-letter,
+    .drop-caps_de-zs .document > blockquote:first-child > p::first-letter,
+    .drop-caps_de-zs .document > .epigraph:first-child > p::first-letter,
     .document > .drop-caps_de-zs::first-letter {
         font-size: 6.375em;
     }
@@ -42,12 +42,12 @@
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 100ch) {
     .drop-caps_de-zs > p:first-child::first-letter,
-    .drop-caps_de-zs > blockquote:first-child + p::first-letter,
-    .drop-caps_de-zs > .epigraph:first-child + p::first-letter,
+    .drop-caps_de-zs > blockquote:first-child > p::first-letter,
+    .drop-caps_de-zs > .epigraph:first-child > p::first-letter,
     .drop-caps_de-zs::first-letter,
     .drop-caps_de-zs .document > p:first-child::first-letter,
-    .drop-caps_de-zs .document > blockquote:first-child + p::first-letter,
-    .drop-caps_de-zs .document > .epigraph:first-child + p::first-letter,
+    .drop-caps_de-zs .document > blockquote:first-child > p::first-letter,
+    .drop-caps_de-zs .document > .epigraph:first-child > p::first-letter,
     .document > .drop-caps_de-zs::first-letter {
       font-size: 6.125em;
     }

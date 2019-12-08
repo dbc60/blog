@@ -3,12 +3,12 @@
   /*  All of these numbers are magic.
       */
   .drop-caps_yinit > p:first-of-type::first-letter,
-  .drop-caps_yinit > blockquote:first-of-type + p::first-letter,
-  .drop-caps_yinit > .epigraph:first-child + p::first-letter,
+  .drop-caps_yinit > blockquote:first-of-type > p::first-letter,
+  .drop-caps_yinit > .epigraph:first-child > p::first-letter,
   .drop-caps_yinit::first-letter,
   .drop-caps_yinit > .document > p:first-of-type::first-letter,
-  .drop-caps_yinit > .document > blockquote:first-of-type + p::first-letter,
-  .drop-caps_yinit > .document > .epigraph:first-child + p::first-letter,
+  .drop-caps_yinit > .document > blockquote:first-of-type > p::first-letter,
+  .drop-caps_yinit > .document > .epigraph:first-child > p::first-letter,
   .drop-caps_yinit > .document .drop-caps_yinit::first-letter {
     font-family: Yinit;
     font-size: 5.625em;
@@ -22,12 +22,12 @@
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 120ch) {
     .drop-caps_yinit > p:first-of-type::first-letter,
-    .drop-caps_yinit > blockquote:first-of-type + p::first-letter,
-    .drop-caps_yinit > .epigraph:first-child + p::first-letter,
+    .drop-caps_yinit > blockquote:first-of-type > p::first-letter,
+    .drop-caps_yinit > .epigraph:first-child > p::first-letter,
     .drop-caps_yinit::first-letter,
     .drop-caps_yinit .document > p:first-of-type::first-letter,
-    .drop-caps_yinit .document > blockquote:first-of-type + p::first-letter,
-    .drop-caps_yinit .document > .epigraph:first-child + p::first-letter,
+    .drop-caps_yinit .document > blockquote:first-of-type > p::first-letter,
+    .drop-caps_yinit .document > .epigraph:first-child > p::first-letter,
     .document > .drop-caps_yinit::first-letter {
       font-size: 4.58em;
       line-height: 1.4;
@@ -39,12 +39,12 @@
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 110ch) {
     .drop-caps_yinit > p:first-of-type::first-letter,
-    .drop-caps_yinit > blockquote:first-of-type + p::first-letter,
-    .drop-caps_yinit > .epigraph:first-child + p::first-letter,
+    .drop-caps_yinit > blockquote:first-of-type > p::first-letter,
+    .drop-caps_yinit > .epigraph:first-child > p::first-letter,
     .drop-caps_yinit::first-letter,
     .drop-caps_yinit .document > p:first-of-type::first-letter,
-    .drop-caps_yinit .document > blockquote:first-of-type + p::first-letter,
-    .drop-caps_yinit .document > .epigraph:first-child + p::first-letter,
+    .drop-caps_yinit .document > blockquote:first-of-type > p::first-letter,
+    .drop-caps_yinit .document > .epigraph:first-child > p::first-letter,
     .document > .drop-caps_yinit::first-letter {
         font-size: 3.375em;
         line-height: 1.45;

@@ -466,36 +466,44 @@ a.youtube:hover { background: #FF3333; color:rgb(227, 232, 231);}
   font-size: 80%;
 }
 
-.term, .task, .task-work, .task-complete, .task-migrated, .task-cancelled, .event, .event-complete {
-  margin-bottom: 0.5em;
+.event, .event-canceled, .event-completed, .event-migrated, .task, .task-canceled, .task-completed, .task-migrated, .task-waiting, .task-work, .task-work-canceled, .task-work-completed, .task-work-migrated, .task-work-waiting, .term {
+  margin-bottom: 0.25em;
+}
+
+.event {
+  color: darkgreen;
+}
+
+.task, .task-work {
+  color: #5C5CDF;
+}
+
+.task-waiting, .task-work-waiting {
+  color: #718F93;
+}
+
+.event-canceled, .task-canceled, .task-work-canceled {
+  color: firebrick;
+  text-decoration: line-through;
+}
+
+.event-migrated {
+  color: mediumseagreen;
+}
+
+.event-completed {
+  color: lightseagreen;
+}
+
+.task-migrated, .task-work-migrated {
+  color: steelblue;
+}
+
+.task-completed, .task-work-completed {
+  color: skyblue;
 }
 
 .term-member {
   padding-left: 1em;
   text-indent: -0.7em;
-}
-
-.task::first-letter, .task-work::first-letter {
-  color: black;
-}
-
-.task-migrated::first-letter {
-  color: darkgreen;
-}
-
-.task-complete::first-letter {
-  color: blue;
-}
-
-.event::first-letter {
-  color: darkseagreen;
-}
-
-.event-complete::first-letter {
-  color: blue;
-}
-
-.event-cancelled, .task-cancelled {
-  color: firebrick;
-  text-decoration: line-through;
 }

@@ -1,5 +1,5 @@
 {{- if not .Site.Params.hideFooter -}}
   <div class="container">
-    {{- .Site.Params.footerText | markdownify -}}
+    {{- .Site.Params.footerText | printf "%s. %s." .Site.Params.copyright | markdownify -}}
   </div>
 {{- end -}}

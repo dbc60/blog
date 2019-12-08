@@ -80,7 +80,6 @@ pygmentsCodefencesGuessSyntax=true
     privacyEnhanced = true
 
 # A better RSS Feed
-copyright = "(c) 2019 Douglas Cuthbertson. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0, International License"
 rssLimit = 20
 [author]
   name = "Douglas Cuthbertson"
@@ -94,8 +93,8 @@ rssLimit = 20
 
 [permalinks]
 #  post = "/:filename/"
-  css = "/:year/:month/:slug/"
+  contact = "/:sections/:slug/"
   journal = "/:sections/:slug/"
-  note = "/:year/:month/:slug/"
+  note = "/:sections/:slug/"
   post = "/:year/:month/:slug/"
-  project = "/:year/:month/:slug/"
+  project = "/:sections/:slug/"
