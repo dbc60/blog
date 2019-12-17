@@ -2,19 +2,19 @@
 {{ "<!-- BEGIN main layouts/taxonomy/category.terms.html -->" | safeHTML }}
 <!-- See https://bwaycer.github.io/hugo_tutorial.hugo/templates/terms/ -->
 <div class="content">
-    <h2 class="title-article-item">{{ .Title }}</h2>
+  <h2 class="title-article-item">{{ .Title }}</h2>
 
-    {{ $type := .Type }}
-    {{ range .Data.Terms.Alphabetical }}
-      {{ with $.Site.GetPage (printf "/%s/%s" $type .Name) }}
+  {{ $type := .Type }}
+  {{ range .Data.Terms.Alphabetical }}
+    {{ with $.Site.GetPage (printf "/%s/%s" $type .Name) }}
     <h3><a href="{{ .Permalink }}">{{ .Name }}</a></h3>
     <ul class="term-categories">
-        {{ range .Pages }}
+      {{ range .Pages }}
       <li class="term-member-category"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
-    </ul>
       {{ end }}
+    </ul>
     {{ end }}
+  {{ end }}
 </div>
 {{ "<!-- END main layouts/taxonomy/category.terms.html -->" | safeHTML }}
 {{ end }}
