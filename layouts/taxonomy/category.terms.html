@@ -2,7 +2,7 @@
 {{ "<!-- BEGIN main layouts/taxonomy/category.terms.html -->" | safeHTML }}
 <!-- See https://bwaycer.github.io/hugo_tutorial.hugo/templates/terms/ -->
 <div class="content">
-  <h2 class="title-article-item">{{ .Title }}</h2>
+  <h2 class="title-article">{{ .Title }}</h2>
 
   {{ $type := .Type }}
   {{ range .Data.Terms.Alphabetical }}

@@ -173,7 +173,7 @@ body {
   font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.2em;
   line-height: 1.2em;
-  padding: 4em 1em;
+  padding: 0 1em;
   background-color: rgb(241, 241, 241);
   color: black;
 }
@@ -197,16 +197,11 @@ body,
   overflow-wrap: break-word;
 }
 
-h1,
-h2,
-strong {
-  color: black;
-}
-
 .title-article, .title-article-item {
-  line-height: 1.2em;
-  margin-block-start: 0.5em;
-  margin-block-end: 0;
+  display: inline;
+  line-height: 1.1em;
+  margin-block-start: 0.6em;
+  margin-block-end: 0.3em;
 }
 
 .post-metadata {
@@ -253,11 +248,43 @@ a:hover {
 }
 .siteTitle {
   width: 100%;
-  font-size: 1.5em;
+  font-size: 2.5em;
   line-height: 1.5em;
+  /*
+    Make the title color the background color so it looks like it's showing
+    through the image.
+  */
   {{ if .Site.Params.featured_image -}}
   color: rgb(241, 241, 241);
   {{ end }}
+}
+
+.content {
+  margin-top: 0.6em;
+}
+
+h1 {
+  font-size: 2.3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 1em;
 }
 
 .pagination {

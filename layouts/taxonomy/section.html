@@ -1,7 +1,7 @@
 {{- define "main" -}}
 {{ "<!-- BEGIN main layouts/taxonomy/section.html -->" | safeHTML }}
 <article class="content">
-<h2 class="title">Taxonomy: {{ .Title | title }}</h2>
+<h2 class="title-article">Taxonomy: {{ .Title | title }}</h2>
       {{- .Content -}}
     {{- $paginator := .Paginate (where .Pages "Type" "note") -}}
     {{- range $paginator.Pages -}}
