@@ -3,12 +3,8 @@
   /*  All of these numbers are magic.
       */
   .drop-caps_kanzlei > p:first-of-type::first-letter,
-  .drop-caps_kanzlei > blockquote:first-of-type > p::first-letter,
-  .drop-caps_kanzlei > .epigraph:first-child > p::first-letter,
   .drop-caps_kanzlei::first-letter,
   .drop-caps_kanzlei > .document > p:first-of-type::first-letter,
-  .drop-caps_kanzlei > .document > blockquote:first-of-type > p::first-letter,
-  .drop-caps_kanzlei > .document > .epigraph:first-child > p::first-letter,
   .drop-caps_kanzlei > .document .drop-caps_kanzlei::first-letter {
     font-family: Kanzlei Initialen;
     font-size: 7em;
@@ -21,12 +17,8 @@
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 120ch) {
     .drop-caps_kanzlei > p:first-of-type::first-letter,
-    .drop-caps_kanzlei > blockquote:first-of-type > p::first-letter,
-    .drop-caps_kanzlei > .epigraph:first-child > p::first-letter,
     .drop-caps_kanzlei::first-letter,
     .drop-caps_kanzlei .document > p:first-of-type::first-letter,
-    .drop-caps_kanzlei .document > blockquote:first-of-type > p::first-letter,
-    .drop-caps_kanzlei .document > .epigraph:first-child > p::first-letter,
     .document > .drop-caps_kanzlei::first-letter {
         font-size: 5.7em;
         margin-top: 0.07em;
@@ -38,12 +30,8 @@
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 110ch) {
     .drop-caps_kanzlei > p:first-of-type::first-letter,
-    .drop-caps_kanzlei > blockquote:first-of-type > p::first-letter,
-    .drop-caps_kanzlei > .epigraph:first-child > p::first-letter,
     .drop-caps_kanzlei::first-letter,
     .drop-caps_kanzlei .document > p:first-of-type::first-letter,
-    .drop-caps_kanzlei .document > blockquote:first-of-type > p::first-letter,
-    .drop-caps_kanzlei .document > .epigraph:first-child > p::first-letter,
     .document > .drop-caps_kanzlei::first-letter {
       font-size: 4.2em;
       margin-top: 0.09em;

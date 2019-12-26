@@ -11,11 +11,11 @@
 }
 
 .breadcrumb li a {
-  color: rgb(241, 241, 241);
+  color: var(--gray100);
   text-decoration: none;
   padding: 10px 0 10px 65px;
-  background: black; /* fallback color */
-  background: hsla(162,25%,27%,1);
+  background-color: hsla(162,25%,27%,1); /* fallback color */
+  background-color: var(--color900);
   position: relative;
   display: block;
   float: left;
@@ -30,7 +30,7 @@
   height: 0;
   border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
   border-bottom: 50px solid transparent;
-  border-left: 30px solid hsla(162,25%,27%,1);
+  border-left: 30px solid var(--color900);
   position: absolute;
   top: 50%;
   margin-top: -50px;
@@ -47,7 +47,7 @@
   height: 0;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-left: 30px solid rgb(241, 241, 241); /* must be same as background */
+  border-left: 30px solid var(--gray100); /* must be same as background */
   /*border-left: 30px solid green;  */
   position: absolute;
   top: 50%;
@@ -74,20 +74,20 @@
 }
 
 
-.breadcrumb li:nth-child(2) a       { background:        hsla(162,25%,32%,1); }
-.breadcrumb li:nth-child(2) a:after { border-left-color: hsla(162,25%,32%,1); }
-.breadcrumb li:nth-child(3) a       { background:        hsla(162,25%,37%,1); }
-.breadcrumb li:nth-child(3) a:after { border-left-color: hsla(162,25%,37%,1); }
-.breadcrumb li:nth-child(4) a       { background:        hsla(162,25%,42%,1); }
-.breadcrumb li:nth-child(4) a:after { border-left-color: hsla(162,25%,42%,1); }
-.breadcrumb li:nth-child(5) a       { background:        hsla(162,25%,47%,1); }
-.breadcrumb li:nth-child(5) a:after { border-left-color: hsla(162,25%,47%,1); }
+.breadcrumb li:nth-child(2) a       { background-color:  var(--color800); }
+.breadcrumb li:nth-child(2) a:after { border-left-color: var(--color800); }
+.breadcrumb li:nth-child(3) a       { background:        var(--color700); }
+.breadcrumb li:nth-child(3) a:after { border-left-color: var(--color700); }
+.breadcrumb li:nth-child(4) a       { background:        var(--color600); }
+.breadcrumb li:nth-child(4) a:after { border-left-color: var(--color600); }
+.breadcrumb li:nth-child(5) a       { background:        var(--color500); }
+.breadcrumb li:nth-child(5) a:after { border-left-color: var(--color500); }
 
 /* hover */
 /* https://css-tricks.com/triangle-breadcrumbs/ */
 .breadcrumb li a:hover {
-  background: hsla(120,100%,25%,1);
+  background: var(--color500-complement);
 }
 .breadcrumb li a:hover:after {
-  border-left-color: hsla(120,100%,25%,1);
+  border-left-color: var(--color500-complement);
 }

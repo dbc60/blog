@@ -22,6 +22,34 @@
  More details are at: https://aykevl.nl/2014/09/fix-jumping-scrollbar
 */
 
+/* The color palette using CSS Custom Properties */
+:root {
+  --color100: #f5fffa;
+  --color200: #7cffbb;
+  --color300: #00eb75;
+  --color400: #00c663;
+  --color500: #00a151;
+  --color600: #007c3e;
+  --color700: #00572c;
+  --color800: #003219;
+  --color900: #000b05;
+  --gray100: #fcfcfc;
+  --gray200: #dedede;
+  --gray300: #bfbfbf;
+  --gray400: #a1a1a1;
+  --gray500: #828282;
+  --gray600: #636363;
+  --gray700: #454545;
+  --gray800: #262626;
+  --gray900: #080808; /* text */
+  --color500-complement: #a30052; /* anchor hover */
+  --color500-adjacent: #0062a3; /* drop-caps */
+  --color500-adjacent-complement: #a34100; /* reserved */
+  --color700-complement: #00572b;
+  --color700-adjacent: #003457;
+  --color700-adjacent-complement: #572300;
+}
+
 /******************
  * General Layout *
  ******************/
@@ -87,7 +115,6 @@ body {
 
 .main-head {
   display: flex;
-  background-color: rgb(241, 241, 241);
   {{ $featured_image := .Site.Params.featured_image -}}
   {{- if .Site.Params.featured_image -}}
   {{- $header_image := (trim $featured_image "/") | relURL -}}
@@ -174,8 +201,8 @@ body {
   font-size: 1.2em;
   line-height: 1.2em;
   padding: 0 1em;
-  background-color: rgb(241, 241, 241);
-  color: black;
+  background-color: var(--gray100);
+  color: var(--gray900);
 }
 
 /* Feather icons */
@@ -243,9 +270,10 @@ a {
   color: hsla(162,25%,25%,1);
 }
 
-a:hover {
-  color: hsla(120,100%,25%,1);
+a:hover, a:active {
+  color: var(--color500-complement);
 }
+
 .siteTitle {
   width: 100%;
   font-size: 2.5em;
@@ -342,15 +370,39 @@ th, td {
  *danger, error, hint, important, note, tip, and warning.                    *
  *****************************************************************************/
 .admonition-title {
-  background-color: hsl(162, 25%, 27%);
-  color: rgb(241, 241, 241);
+  background-color: var(--color700);
+  color: var(--gray100);
 }
 
 .admonition {
   padding: 12px;
   line-height: 24px;
   margin-bottom: 24px;
-  background: hsl(163, 10%, 86%);
+  background-color: var(--color100);
+}
+
+.error > .admonition-title, .attention > .admonition-title {
+  background-color: darkred;
+}
+
+.warning > .admonition-title, .caution > .admonition-title {
+  background-color: darkkhaki;
+}
+
+.danger > .admonition-title {
+  background-color: firebrick;
+}
+
+.hint > .admonition-title {
+  background-color: steelblue;
+}
+
+.important > .admonition-title {
+  background-color: brown;
+}
+
+.tip > .admonition-title {
+  background-color: green;
 }
 
 /************************
@@ -372,7 +424,7 @@ th, td {
 /* This is a list of social media links and icons */
 .social-items {
   width: 100%;
-  background: rgb(227, 232, 231);
+  background-color: mintcream;
   padding: 0 0.3em 0.3em 0;
   text-align: left;
   display: inline-block;
@@ -442,35 +494,35 @@ th, td {
 }
 
 
-a.email { color: hsla(162,25%,25%,1); background: rgb(227, 232, 231);}
-a.facebook { color: #3B5998; background: rgb(227, 232, 231);}
-a.github { color: black; background: rgb(227, 232, 231);}
-a.hackernews { color: #ff6600; background: rgb(227, 232, 231);}
-a.instagram { color: #2d2d2d; background: rgb(227, 232, 231);}
-a.linkedin { color:#4875B4; background: rgb(227, 232, 231);}
-a.pinterest { color:#c8232c; background: rgb(227, 232, 231);}
-a.reddit { color: #41700f; background: rgb(227, 232, 231);}
-a.rss { color: hsla(162,25%,25%,1); background: rgb(227, 232, 231);}
-a.stackoverflow { color: #2d2d2d; background: rgb(227, 232, 231);}
-a.subscribemail { color: #e3e8e7;background: rgb(227, 232, 231);}
-a.tumblr { color: #2B4964; background: rgb(227, 232, 231);}
-a.twitter { color: #33ccff; background: rgb(227, 232, 231);}
-a.youtube { color: #FF3333; background: rgb(227, 232, 231);}
+a.email { color: hsla(162,25%,25%,1); background-color: var(--color100)}
+a.facebook { color: #3B5998; background-color: var(--color100)}
+a.github { color: black; background-color: var(--color100)}
+a.hackernews { color: #ff6600; background-color: var(--color100)}
+a.instagram { color: #2d2d2d; background-color: var(--color100)}
+a.linkedin { color:#4875B4; background-color: var(--color100)}
+a.pinterest { color:#c8232c; background-color: var(--color100)}
+a.reddit { color: #41700f; background-color: var(--color100)}
+a.rss { color: hsla(162,25%,25%,1); background-color: var(--color100)}
+a.stackoverflow { color: #2d2d2d; background-color: var(--color100)}
+a.subscribemail { color: #e3e8e7;background-color: var(--color100)}
+a.tumblr { color: #2B4964; background-color: var(--color100)}
+a.twitter { color: #33ccff; background-color: var(--color100)}
+a.youtube { color: #FF3333; background-color: var(--color100)}
 
-a.email:hover { background: hsla(162,25%,25%,1); color:rgb(227, 232, 231);}
-a.facebook:hover { background: #3B5998; color:rgb(227, 232, 231);}
-a.github:hover { background: black; color:rgb(227, 232, 231);}
-a.hackernews:hover { background: #ff6600; color: rgb(227, 232, 231);}
-a.instagram:hover { background: #2d2d2d; color:rgb(227, 232, 231);}
-a.linkedin:hover { background: #4875B4; color: rgb(227, 232, 231);}
-a.pinterest:hover { background: #c8232c; color: rgb(227, 232, 231);}
-a.reddit:hover { background: #41700f; color: rgb(227, 232, 231);}
-a.rss:hover { background: hsla(162,25%,25%,1); color:rgb(227, 232, 231);}
-a.stackoverflow:hover { background: #2d2d2d; color:rgb(227, 232, 231);}
-a.subscribemail:hover { background: #e3e8e7;color:rgb(227, 232, 231);}
-a.tumblr:hover { background: #2B4964; color:rgb(227, 232, 231);}
-a.twitter:hover { background: #33ccff; color:rgb(227, 232, 231);}
-a.youtube:hover { background: #FF3333; color:rgb(227, 232, 231);}
+a.email:hover { background-color: hsla(162,25%,25%,1); color:var(--color100)}
+a.facebook:hover { background-color: #3B5998; color:var(--color100)}
+a.github:hover { background-color: black; color:var(--color100)}
+a.hackernews:hover { background-color: #ff6600; color: var(--color100)}
+a.instagram:hover { background-color: #2d2d2d; color:var(--color100)}
+a.linkedin:hover { background-color: #4875B4; color: var(--color100)}
+a.pinterest:hover { background-color: #c8232c; color: var(--color100)}
+a.reddit:hover { background-color: #41700f; color: var(--color100)}
+a.rss:hover { background-color: hsla(162,25%,25%,1); color:var(--color100)}
+a.stackoverflow:hover { background-color: #2d2d2d; color:var(--color100)}
+a.subscribemail:hover { background-color: #e3e8e7;color:var(--color100)}
+a.tumblr:hover { background-color: #2B4964; color:var(--color100)}
+a.twitter:hover { background-color: #33ccff; color:var(--color100)}
+a.youtube:hover { background-color: #FF3333; color:var(--color100)}
 
 
 .event, .event-canceled, .event-completed, .event-migrated, .event-migrated-completed, .task, .task-canceled, .task-completed, .task-migrated, .task-migrated-completed, .task-waiting, .task-work, .task-work-canceled, .task-work-completed, .task-work-migrated, .task-work-migrated-completed, .task-work-waiting, .task-experimental {

@@ -42,5 +42,6 @@
     font-style: normal;
     font-weight: normal;
     line-height: 1em; /* needed for chrome */
+    color: var(--color500-adjacent);
   }
 }
