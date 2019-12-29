@@ -5,7 +5,7 @@ date: 2016-11-09
 categories: [blog]
 ---
 
-I'm truly saddened by the outcome of the 2016 presidential election.
+I am truly saddened by the outcome of the 2016 presidential election.
 <!--more-->
 
 I woke up this morning to find that Donald Trump is our president elect. I feel really awful about it.

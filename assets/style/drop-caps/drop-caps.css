@@ -37,11 +37,19 @@
   .c-drop-caps > p:first-child:first-letter,
   .c-drop-caps > .document > p:first-child:first-letter {
     float: left;
-    /*border-radius: 5px;*/ /* - debug */
-    /*background-color: #1098ad;*/ /* - debug */
+    /* border-radius: 5px; - debug */
+    /* background-color: #1098ad; - debug */
     font-style: normal;
     font-weight: normal;
     line-height: 1em; /* needed for chrome */
     color: var(--color500-adjacent);
+  }
+
+  .c-drop-caps > p:first-child,
+  .c-drop-caps > .document > p:first-child {
+    display: inline-block;  /* can't use "inline flow-root" for chrome */
+    margin-bottom: 0;
+    /* border-radius: 5px; debug */
+    /* background-color: paleturquoise; debug */
   }
 }

@@ -82,6 +82,8 @@
 .breadcrumb li:nth-child(4) a:after { border-left-color: var(--color600); }
 .breadcrumb li:nth-child(5) a       { background:        var(--color500); }
 .breadcrumb li:nth-child(5) a:after { border-left-color: var(--color500); }
+.breadcrumb li:nth-child(6) a       { background:        var(--color400); }
+.breadcrumb li:nth-child(6) a:after { border-left-color: var(--color400); }
 
 /* hover */
 /* https://css-tricks.com/triangle-breadcrumbs/ */
