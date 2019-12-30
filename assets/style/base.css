@@ -199,7 +199,7 @@ body {
 body {
   font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.2em;
-  line-height: 1.2em;
+  line-height: 1.3;
   padding: 0 1em;
   background-color: var(--gray100);
   color: var(--gray900);
@@ -227,13 +227,10 @@ body,
 .title-article, .title-article-item {
   display: inline;
   line-height: 1.1em;
-  margin-block-start: 0.6em;
-  margin-block-end: 0.3em;
 }
 
 .post-metadata {
   font-size: smaller;
-  line-height: 1.2em;
 }
 
 .page-summary {
@@ -259,7 +256,6 @@ pre, .literal-block, .code {
   overflow-x: auto;
   overflow-y: hidden;
   font-size: 1.1rem;
-  line-height: 1.5rem;
   max-width: 74ch;
   padding: 0.5em 0 0.5em 1em;
   border-bottom: 1px solid #cacfcf;
@@ -277,7 +273,6 @@ a:hover, a:active {
 .siteTitle {
   width: 100%;
   font-size: 2.5em;
-  line-height: 1.5em;
   /*
     Make the title color the background color so it looks like it's showing
     through the image.
@@ -376,7 +371,6 @@ th, td {
 
 .admonition {
   padding: 12px;
-  line-height: 24px;
   margin-bottom: 24px;
   background-color: var(--color100);
 }
@@ -412,7 +406,6 @@ th, td {
 
  .social {
   display: block;
-  line-height: 1.3em;
 }
 
  .social .icon {

@@ -6,7 +6,7 @@
   .drop-caps_goudy > .document > p:first-of-type::first-letter,
   .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
     font-family: Goudy Initialen;
-    font-size: 7em;
+    font-size: 6.5em;
   }
 }
 
@@ -17,7 +17,7 @@
     .drop-caps_goudy::first-letter,
     .drop-caps_goudy .document > p:first-of-type::first-letter,
     .document > .drop-caps_goudy::first-letter {
-        font-size: 5.7em;
+        font-size: 4.7em;
     }
   }
 }
@@ -29,7 +29,7 @@
     .drop-caps_goudy::first-letter,
     .drop-caps_goudy .document > p:first-of-type::first-letter,
     .document > .drop-caps_goudy::first-letter {
-      font-size: 4.2em;
+      font-size: 3em;
     }
   }
 }
