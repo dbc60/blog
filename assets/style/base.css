@@ -144,11 +144,24 @@ body {
     display: flex;
   }
 
+  /*
+    Set min-width to zero in both .sidebar-content and .main-content to tell
+    the browser that this element has no right to take up any minimum width,
+    and now it will be rendered properly, taking up only as much width as is
+    available. It enables "overflow-wrap: break-word;" to break long words
+    instead of allowing the main content to stretch beyond the desired screen
+    width.
+
+    For details, see:
+      https://makandracards.com/makandra/66994-css-flex-and-min-width
+  */
   .sidebar-content {
+    min-width: 0;
     flex: 1;
   }
 
   .main-content {
+    min-width: 0;
     flex: 2;
   }
 }
@@ -641,4 +654,9 @@ a.youtube:hover { background-color: #FF3333; color:var(--color100)}
 .term-member {
   padding-left: 1em;
   text-indent: -0.7em;
+}
+
+/* The strike role */
+.strike {
+  text-decoration: line-through;
 }
