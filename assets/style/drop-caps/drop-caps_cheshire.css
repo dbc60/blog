@@ -12,12 +12,20 @@
   .drop-caps_cheshire > .document .drop-caps_cheshire::first-letter {
     font-family: Cheshire Initials;
     font-size: 6.75em;
-    line-height: 1;
     opacity: 0.9;
+    margin: 0.06em 0.04em 0 0.01em;
   }
-}
 
-@media only screen and (min-width: 65ch) {
+  @supports not (-moz-user-focus: normal) {
+    /*  All of these numbers are magic. */
+    .drop-caps_cheshire > p:first-of-type::first-letter,
+    .drop-caps_cheshire::first-letter,
+    .drop-caps_cheshire > .document > p:first-of-type::first-letter,
+    .drop-caps_cheshire > .document .drop-caps_cheshire::first-letter {
+      margin: 0.04em 0.04em -0.09em 0.01em;
+    }
+  }
+
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 120ch) {
     .drop-caps_cheshire > p:first-child::first-letter,
@@ -31,9 +39,7 @@
         font-size: 6.25em;
     }
   }
-}
 
-@media only screen and (min-width: 65ch) {
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 100ch) {
     .drop-caps_cheshire > p:first-child::first-letter,

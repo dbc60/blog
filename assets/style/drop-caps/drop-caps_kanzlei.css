@@ -8,12 +8,19 @@
   .drop-caps_kanzlei > .document .drop-caps_kanzlei::first-letter {
     font-family: Kanzlei Initialen;
     font-size: 7em;
-    line-height: 0.95;
-    margin-top: 0.05em;
-}
-}
+    margin: 0.05em 0.02em 0 -0.04em;
+  }
 
-@media only screen and (min-width: 65ch) {
+  @supports not (-moz-user-focus: normal) {
+    /*  All of these numbers are magic. */
+    .drop-caps_kanzlei > p:first-of-type::first-letter,
+    .drop-caps_kanzlei::first-letter,
+    .drop-caps_kanzlei > .document > p:first-of-type::first-letter,
+    .drop-caps_kanzlei > .document .drop-caps_kanzlei::first-letter {
+      line-height: 0.87;
+    }
+  }
+
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 120ch) {
     .drop-caps_kanzlei > p:first-of-type::first-letter,
@@ -24,9 +31,7 @@
         margin-top: 0.07em;
     }
   }
-}
 
-@media only screen and (min-width: 65ch) {
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 110ch) {
     .drop-caps_kanzlei > p:first-of-type::first-letter,

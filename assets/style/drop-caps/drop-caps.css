@@ -39,10 +39,17 @@
     float: left;
     font-style: normal;
     font-weight: normal;
-    line-height: 1; /* needed for chrome */
     color: var(--color500-adjacent);
     /* border-radius: 5px; */
     /* background-color: #1098ad; */
+  }
+
+
+  @supports not (-moz-user-focus: normal) {
+    .c-drop-caps > p:first-child:first-letter,
+    .c-drop-caps > .document > p:first-child:first-letter {
+      line-height: 1; /* needed for chrome */
+    }
   }
 
   .c-drop-caps > p:first-child,
@@ -52,19 +59,19 @@
     /* background-color: paleturquoise; */
   }
 
-  /* .c-drop-caps > p:first-child + p, */
-  /* .c-drop-caps > .document > p:first-child + p */
-  /* { */
-    /* border-radius: 5px; */
-    /* background-color: palegreen; */
-  /* } */
+ /* .c-drop-caps > p:first-child + p, */
+ /* .c-drop-caps > .document > p:first-child + p */
+ /* { */
+ /*   border-radius: 5px; */
+ /*   background-color: palegreen; */
+ /* } */
 
-  /* .c-drop-caps > p:first-child + ul:first-of-type, */
-  /* .c-drop-caps > .document > p:first-child + ul:first-of-type, */
-  /* .c-drop-caps > p:first-child + h2:first-of-type, */
-  /* .c-drop-caps > .document > p:first-child + h2:first-of-type */
-  /* { */
-    /* border-radius: 5px; */
-    /* background-color: palegoldenrod; */
-  /* } */
+/*  .c-drop-caps > p:first-child + ul:first-of-type, */
+/*  .c-drop-caps > .document > p:first-child + ul:first-of-type, */
+/*  .c-drop-caps > p:first-child + h2:first-of-type, */
+/*  .c-drop-caps > .document > p:first-child + h2:first-of-type */
+/*  { */
+/*    border-radius: 5px; */
+/*    background-color: palegoldenrod; */
+/*  } */
 }

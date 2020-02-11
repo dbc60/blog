@@ -21,6 +21,11 @@
 
  More details are at: https://aykevl.nl/2014/09/fix-jumping-scrollbar
 */
+html {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+}
+
 
 /* The color palette using CSS Custom Properties */
 :root {
@@ -339,13 +344,6 @@ h6 {
   margin-right: 0.5ch;
 }
 
-nav ul, ul.term-group {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-
 /************************************
  * Simple Markdown-Generated Tables *
  ************************************/
@@ -659,4 +657,10 @@ a.youtube:hover { background-color: #FF3333; color:var(--color100)}
 /* The strike role */
 .strike {
   text-decoration: line-through;
+}
+
+.post-image {
+  border: 2px solid #8fa39f;
+  border-radius: 5px;
+  padding: 2px;
 }

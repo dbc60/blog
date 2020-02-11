@@ -12,9 +12,17 @@
     text-shadow: 0 0 0 #777;
     opacity: 0.95;
   }
-}
 
-@media only screen and (min-width: 65ch) {
+  @supports not (-moz-user-focus: normal) {
+    /*  All of these numbers are magic. */
+    .drop-caps_yinit > p:first-of-type::first-letter,
+    .drop-caps_yinit::first-letter,
+    .drop-caps_yinit > .document > p:first-of-type::first-letter,
+    .drop-caps_yinit > .document .drop-caps_yinit::first-letter {
+      margin: 0.02em 0.04em -0.3em 0.01em;
+    }
+  }
+
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 120ch) {
     .drop-caps_yinit > p:first-of-type::first-letter,
@@ -25,9 +33,7 @@
       line-height: 1.4;
     }
   }
-}
 
-@media only screen and (min-width: 65ch) {
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 110ch) {
     .drop-caps_yinit > p:first-of-type::first-letter,

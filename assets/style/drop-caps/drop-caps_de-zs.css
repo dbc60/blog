@@ -12,17 +12,14 @@
   .drop-caps_de-zs > .document .drop-caps_de-zs::first-letter {
     font-family: Deutsche Zierschrift;
     font-size: 6.5em;
-    line-height: 1.1;
     text-shadow:
-       0px 2.5px 0 #fff,
-      -4px   4px 0 #fff,
-       4px   4px 0 #fff;
-    color: #191919;
+       0px 2.5px 0 var(--gray100),
+      -4px   4px 0 var(--gray100),
+       4px   4px 0 var(--gray100);
     opacity: 0.99;
+    margin: 0.06em 0.04em -0.069em 0;
   }
-}
 
-@media only screen and (min-width: 65ch) {
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 120ch) {
     .drop-caps_de-zs > p:first-child::first-letter,
@@ -36,9 +33,7 @@
         font-size: 6.375em;
     }
   }
-}
 
-@media only screen and (min-width: 65ch) {
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 100ch) {
     .drop-caps_de-zs > p:first-child::first-letter,

@@ -17,6 +17,36 @@ googleAnalytics = ""
   plainIDAnchors = true
   footnoteAnchorPrefix = "footnote"
 
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    style = "monokai"
+    tabWidth = 4
+  # These are the defaults for the new Goldmark Markdown processor.
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true # changed from false to allow embedded D3 scripts to run.
+      xHTML = false
+
 # Uncomment below to enable syntax highlighting
 pygmentsCodefences=true
 pygmentsCodefencesGuessSyntax=true
@@ -90,6 +120,7 @@ rssLimit = 20
   tag = "tags"
   2015 = "2015"
   2016 = "2016"
+  2020 = "2020"
 
 [permalinks]
 #  post = "/:filename/"

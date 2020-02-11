@@ -1,5 +1,4 @@
-
-    {{ "<!-- BEGIN head-scripts.html -->" | safeHTML }}
+    {{ "<!-- BEGIN head__scripts.html -->" | safeHTML }}
     {{- if or .context.Params.d3 .context.Site.Params.d3 -}}
       <!--
         The defer property doesn't work for d3, nor can its script be loaded at the
@@ -16,4 +15,4 @@
       <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
       <script>window.d3 || document.write('<script type="text/javascript" src="{{ "scripts/d3-v5.9.1.min.js" | relURL }}">\x3C/script>')</script>
     {{- end }}
-    {{ "<!-- END head-scripts.html -->" | safeHTML }}
+    {{ "<!-- END head__scripts.html -->" | safeHTML }}
