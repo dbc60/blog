@@ -1,5 +1,6 @@
 <ul class="social-items">
-{{ $scratch := newScratch }}
+  {{ "<!--BEGIN layouts/partials/items-contents.html -->" | safeHTML }}
+  {{ $scratch := newScratch }}
 {{ if eq (len .context.Sections) 0 }}
   {{ with .context.Parent }}
     {{ $scratch.Set "sections" .Sections }}
@@ -22,4 +23,5 @@
     </a>
   </li>
 {{ end }}
-</ul> {{ "<!-- end <ul class='social-items'> -->" | safeHTML }}
+{{ "<!--END layouts/partials/items-contents.html -->" | safeHTML }}
+</ul>

@@ -1,17 +1,18 @@
-{{- define "main" -}}
+{{- define "main" }}
 {{ "<!--BEGIN main layouts/taxonomy/category.html -->" | safeHTML }}
+{{- $paginator := .Paginate .Pages -}}
 <div class="content">
-    {{- $paginator := .Paginate .Pages -}}
-    {{- range $paginator.Pages -}}
-      <section>
+  {{ "<!-- BEGIN range over paginator pages in layouts/taxonomy/category.html-->" | safeHTML }}
+  {{- range $paginator.Pages -}}
+      <!-- NOTE: <section> is important. It shrinks the size of the <h2> element-->
+      <section class="page-summary">
       <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       {{- partial "date-and-tags.html" . -}}
-        <!-- this renders based on layouts/_default/summary.html (either the
-        local one, or the one in a theme -->
-        {{ .Render "summary" }}
-        </section>
+      {{ .Render "summary" }}
+      </section>
     {{- end -}}
+    {{ "<!-- END range over paginator pages in layouts/taxonomy/category.html-->" | safeHTML }}
     {{- template "_internal/pagination.html" . }}
-      </div>
+  </div>
   {{ "<!-- ENG main layouts/taxomony/category.html -->" | safeHTML }}
 {{- end -}}

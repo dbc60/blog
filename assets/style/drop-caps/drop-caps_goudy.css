@@ -6,7 +6,8 @@
   .drop-caps_goudy > .document > p:first-of-type::first-letter,
   .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
     font-family: Goudy Initialen;
-    font-size: 6.5em;
+    font-size: 5.6em;
+    margin-top: 0.09em;
   }
 
   @supports not (-moz-user-focus: normal) {
@@ -15,7 +16,7 @@
     .drop-caps_goudy::first-letter,
     .drop-caps_goudy > .document > p:first-of-type::first-letter,
     .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
-      margin: 0 0.02em -0.25em 0;
+      margin: 0.05em 0.02em -0.25em 0;
     }
   }
 
@@ -25,10 +26,19 @@
     .drop-caps_goudy::first-letter,
     .drop-caps_goudy .document > p:first-of-type::first-letter,
     .document > .drop-caps_goudy::first-letter {
-        font-size: 4.7em;
+        font-size: 4.3em;
         text-shadow: 0 0 0 #777;
     }
-  }
+
+    @supports not (-moz-user-focus: normal) {
+      /*  All of these numbers are magic. */
+      .drop-caps_goudy > p:first-of-type::first-letter,
+      .drop-caps_goudy::first-letter,
+      .drop-caps_goudy > .document > p:first-of-type::first-letter,
+      .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
+        margin: 0.05em 0.02em -0.25em 0;
+      }
+    }
 
   /*  Compensating for responsive line-height reduction. */
   @media only screen and (max-width: 110ch) {
@@ -36,13 +46,23 @@
     .drop-caps_goudy::first-letter,
     .drop-caps_goudy .document > p:first-of-type::first-letter,
     .document > .drop-caps_goudy::first-letter {
-      font-size: 3em;
-      line-height: 1.1;
-      margin: 0.01em 0.03em -0.25em 0;
+      font-size: 2.6em;
+      margin: 0.15em 0.03em -0.25em 0;
       text-shadow:
           0px 2.5px 0 var(--gray100),
           -4px   4px 0 var(--gray100),
           4px   4px 0 var(--gray100);
+    }
+  }
+
+  @supports not (-moz-user-focus: normal) {
+    /*  All of these numbers are magic. */
+    .drop-caps_goudy > p:first-of-type::first-letter,
+    .drop-caps_goudy::first-letter,
+    .drop-caps_goudy > .document > p:first-of-type::first-letter,
+    .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
+      line-height: 1.1;
+      margin: 0.07em 0.03em -0.25em 0;
     }
   }
 }

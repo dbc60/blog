@@ -1,4 +1,5 @@
 {{ $currentSection := .Section }}
+{{ "<!--BEGIN layouts/partials/items-archive.html -->" | safeHTML }}
 {{ $homeLink := .Site.BaseURL }}
 <!-- all posts in reverse chronological order -->
 {{ $postsAll := where .Site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections }}
@@ -24,4 +25,5 @@
     {{ $scratch.Set "currentYear" $py }}
   {{ end }}
 {{ end }}
+{{ "<!--END layouts/partials/items-archive.html -->" | safeHTML }}
 </ul>

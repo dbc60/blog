@@ -1,6 +1,6 @@
 {{- define "main" }}
   {{ "<!-- BEGIN main in layouts/_default/section.html -->" | safeHTML }}
-  {{ $pag := .Paginate (where .RegularPages "Section" .Section) }}
+  {{- $pag := .Paginate (where .RegularPages "Section" .Section) -}}
   <div class="content">
     {{ "<!-- BEGIN range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
     {{- range $pag.Pages -}}
@@ -10,9 +10,9 @@
       {{- partial "date-and-tags.html" . -}}
       {{ .Render "summary" }}
       </section>
-    {{ end }}
+    {{- end -}}
     {{ "<!-- END range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
     {{- template "_internal/pagination.html" . }}
   </div>
   {{ "<!-- END main in layouts/_default/section.html -->" | safeHTML }}
-{{ end }}
+{{- end -}}

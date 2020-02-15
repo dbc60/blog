@@ -16,8 +16,9 @@
     {{ $cssDropCapsFontYinit := resources.Get "style/drop-caps/drop-caps_yinit.css" }}
     {{ $cssBreadcrumb := resources.Get "style/breadcrumbs/breadcrumb.css" }}
     {{ $cssFonts := resources.Get "style/fonts.css" }}
+    {{ $cssSyntaxHighlights := resources.Get "style/syntax-highlighting/tango.css" }}
     {{ $cssEntities := resources.Get "style/entities.css" }}
-    {{ $styles := slice $cssBase $cssDropCaps $cssDropCapsFontGoudy $cssDropCapsFontKanzlei $cssDropCapsFontYinit $cssBreadcrumb $cssFonts $cssEntities | resources.Concat "style/style.css" }}
+    {{ $styles := slice $cssBase $cssDropCaps $cssDropCapsFontGoudy $cssDropCapsFontKanzlei $cssDropCapsFontYinit $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssEntities | resources.Concat "style/style.css" }}
 
     <!-- minify and fingerprint only if not running locally -->
     {{ if not (in (print .Site.BaseURL) "localhost") }}

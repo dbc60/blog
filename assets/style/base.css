@@ -84,6 +84,15 @@ body {
   font-size: 80%;
 }
 
+.article-meta-data {
+  margin-bottom: -0.5em;
+}
+
+footer.read-more {
+  margin-top: -1em;
+  margin-bottom: 2em;
+}
+
 /*************************
  * Debug Border and Fill *
  *************************/
@@ -529,7 +538,7 @@ a.twitter:hover { background-color: #33ccff; color:var(--color100)}
 a.youtube:hover { background-color: #FF3333; color:var(--color100)}
 
 
-.event, .event-canceled, .event-completed, .event-migrated, .event-migrated-completed, .task, .task-canceled, .task-completed, .task-migrated, .task-migrated-completed, .task-waiting, .task-work, .task-work-canceled, .task-work-completed, .task-work-migrated, .task-work-migrated-completed, .task-work-waiting, .task-experimental {
+.event, .event-canceled, .event-completed, .event-migrated, .event-migrated-completed, .goal, .goal-completed, .goal-work, .goal-work-completed, .task, .task-canceled, .task-completed, .task-migrated, .task-migrated-completed, .task-waiting, .task-work, .task-work-canceled, .task-work-completed, .task-work-migrated, .task-work-migrated-completed, .task-work-waiting, .task-experimental {
   margin-bottom: 0.25em;
 }
 
@@ -544,12 +553,21 @@ a.youtube:hover { background-color: #FF3333; color:var(--color100)}
 }
 
 .bullet::before {
-  padding: 0 0.25em 0 1em;
+  display: inline-block;
+  padding-left: 2em;
 }
 
 .bullet {
   padding-left: 2em;
   text-indent: -2em;
+}
+
+.birthday::before {
+  content: "\1F382";
+}
+
+.anniversary::before {
+  content: "\1F382";
 }
 
 .task-experimental::before {
@@ -576,6 +594,14 @@ a.youtube:hover { background-color: #FF3333; color:var(--color100)}
   content: "\23F3";
 }
 
+.goal::before {
+  content: "\1F945";
+}
+
+.goal-completed::before {
+  content: "\1F947";
+}
+
 .task-work::before {
   content: "\2606";
 }
@@ -594,6 +620,14 @@ a.youtube:hover { background-color: #FF3333; color:var(--color100)}
 
 .task-work-waiting::before {
   content: "\231B";
+}
+
+.goal-work::before {
+  content: "\1F4CB";
+}
+
+.goal-work-completed::before {
+  content: "\1F3AF";
 }
 
 .event::before {
