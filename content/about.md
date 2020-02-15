@@ -6,6 +6,7 @@ categories: [about]
 ---
 
 I am Doug Cuthbertson, a professional software engineer living in Massachusetts. Mostly, I develop applications and kernel drivers on Microsoft Windows. Lately, I've been writing software in [Go](https://golang.org/) for both Linux and Windows (it's my new favorite programming language).
+<!--more-->
 
 I tend to read too much about software development and not write enough code, so my intent is to use this blog to explore some of the aspects of coding and engineering I've enjoyed reading about and put them into practice. Some of the subjects I intend to explore are basic things like organizing development environments for new projects, as well as using design patterns, algorithms and data structures I find interesting.
 

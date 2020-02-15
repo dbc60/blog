@@ -2,11 +2,11 @@
 title: "Restart"
 date: 2020-02-11T05:48:36-05:00
 2020: ["02"]
-categories: [blog]
+categories: [post]
 publishDate: 2020-02-15
 ---
 
-Creating a blog is hard. I admire those who are able to design their own and write regular posts, so much so that I'm trying again to create my own blog. I started this blog late in 2015. After writing a few posts, I became discouraged. I didn't like the way it looked, the tools would often break, and I didn't have a clear idea of why I was writing.
+Creating a blog is hard. I admire those who are able to design their own and write regular posts, so much so that I'm trying again to create my own blog. I started this blog late in 2015. After writing a few posts, I became discouraged. I didn't like the way it looked, the tools often broke, and I didn't have a clear idea of what I wanted to write, or why I was blogging.
 <!--more-->
 
 Recently I was inspired by a post by Mattias Ott from May 12, 2019, `Into the Personal-Website-Verse <personal website verse_>`_. He encouraged people to create their own personal website to write, create, share what you like, and to tinker with new technologies.
