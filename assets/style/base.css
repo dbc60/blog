@@ -67,15 +67,172 @@ html {
   box-sizing: border-box;
 }
 
-{{ $siteWidth := .Site.Params.site_width }}
-{{ if not .Site.Params.site_width }}
-{{ $siteWidth = "780px" }}
-{{ end }}
+/* Reset all "block-level" elements so we have a consistent base from which
+   I can style the site. Today, there is a display property (for details see https://developer.mozilla.org/en-US/docs/Web/CSS/display) that can change traditional block-level elements to display like inline elements and vice versa.
 
+   Note: See https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements for more information on block-level elements.
+
+   See https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements for more information on inline-level elements.
+
+    address, article, aside, blockquote, details, dialog, dd, div, dl, dt,
+    fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header,
+    hgroup, hr, li, main, nav, ol, p, pre, section, table, ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    I'm removing elements from the reset list that I don't want to style or that I've already styled with margins and padding.
+*/
+address, article, aside, blockquote, details, dialog, div, dl, fieldset,
+figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, main, nav, ol, section, table, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset a few additional elements for styling */
+th, td {
+	margin:0;
+	padding:0;
+}
+
+body,
+.document {
+  /*  Try to avoid scrollbars on paragraphs: prevents long unbroken
+      un-hyphenatable lines from causing H-scrolling
+      */
+  overflow-wrap: break-word;
+}
+
+/* I'm trying to set up a vertical rhythm on all pages where lines are comfortably and evenly spaced, the spacing between paragraphs are comfortable, headings are in proximity to the sections they head.
+
+  Consistency
+  Repetition
+  Alignment
+  Proximity
+
+  I learned that Chrome & Firefox default to a line height of 16px. That is a   little small for my taste, so I'm bumping it up to 18px (16px * 1.125em). A   line height of 1.5em is 27px (18px * 1.5em), so that sets the unit of the vertical rhythm to 27px, or 1.5em.
+
+  Setting the font size to 1.125em (18px) seems to affect the meaning of 1em for all elements in the body. For example, setting the font size for the class siteTitle to 2.5em makes the text 45px.
+*/
 body {
-  max-width: {{ $siteWidth }};
+  max-width: 104ch;
   overflow: auto;
-  margin-left: 0;
+  font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  background-color: var(--gray100);
+  color: var(--gray900);
+  margin: 0;
+  padding: 1em;
+}
+
+/* Vertical Rhythm: If the rhythm of the page is to be maintained, the spacing of paragraphs should be related to the basic line height unit. This is achieved simply by setting top and bottom margins equal to the line height. */
+li, p {
+  line-height: 1.5;
+}
+
+ol, ul {
+  list-style-position: inside;
+}
+
+/* Description List styles */
+dd, dt {
+  line-height: 1.5;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 1.5rem;
+}
+
+/*
+  There is more fun that can be had with lists. For example, there is a neat
+  timeline list at https://speckyboy.com/html-lists-style/
+*/
+
+/*
+  When there is a change in text size, perhaps with a heading or sidenotes, the differing text should also take up a multiple of the basic leading. Each time you define the font-size for an element, you must also define the line-height to be a multiple of the leading, 27px.
+
+  Here, 1em is 18px. So, if we want the site title to be 45px, or 2.5em, we must set the line height to 54px, which is 54/45 = 1.2em.
+*/
+
+.siteTitle {
+  width: 100%;
+  font-size: 2.5em;
+  line-height: 1.5em;
+}
+
+/*
+  Here I try to align the two columns, .sidebar-content on the left and .main-content on the right. They are both wrapped in .wrapper-content. First, I add a top margin to .wrapper-content to separate it from the breadcrump navigation bar.
+*/
+.wrapper-content {
+  margin-top: 0.6em;
+}
+
+/*
+  At this point, both columns are aligned on top, but the sidebar has a graphic that extends to its top, while the main content has text. They end up looking misalined. I add some top margin to the sidebar so push down the graphic and make it look like it's more aligned with any heading that appears in the main content.
+*/
+.sidebar-content {
+  margin-top: 0.7em;
+}
+
+/* font-size: 36px=(18px * 2em), and a line-height of 54px=(36px * 1.5em) */
+.title-article {
+  font-size: 2em;
+}
+
+/*
+  I don't think an h1 element should appear outside of the site title, which is styled via its ".siteTitle" class to make it more specific. In case it does I'll make it stand out.
+*/
+h1 {
+  font-size: 12em;
+  line-height: 12em;
+}
+
+/*
+  The max font size is the site title at 45px (2.5em) and line-hieght of 54px (1.2em of the font-size).
+
+  - Each title-article has a font-size of 36px (2em) and a line-height of 54px (1.5em of the font-size).
+  - The font-size of each paragraph is 18px (1em) with a line-height of 27px (1.5em)
+
+  With the above constraints, the headings h2 through h6 should be set betweeen 36px and 18px with line-heights of either 54px or 27px. I think that fits the guidelines for good vertical rhythm.
+
+  - h2: font-size: 33px => 33/18 = 1.833em; line-height: 54px => 54/33 = 1.636em
+  - h3: font-size: 30px => 30/18 = 1.667em; line-height: 54px => 54/30 = 1.8em
+  - h4: font-size: 27px => 27/18 = 1.5em; line-height: 27px => 27/27 = 1em
+  - h5: font-size: 24px => 24/18 = 1.333em; line-height: 27px => 27/24 = 1.125em
+  - h6: font-size: 21px => 21/18 = 1.167em; line-height: 27px => 27/21 = 1.286em
+*/
+h2 {
+	font-size: 1.833em;
+	margin-top: 1.636em;
+	margin-bottom: 0;
+}
+
+h3 {
+  font-size: 1.667em;
+  margin-top: 1.8em;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+h5 {
+  font-size: 1.333em;
+  margin-top: 1.125em;
+  margin-bottom: 0;
+}
+
+h6 {
+  font-size: 1.167em;
+  margin-top: 1.286em;
+  margin-bottom: 0;
 }
 
 .main-footer {
@@ -84,13 +241,13 @@ body {
   font-size: 80%;
 }
 
-.article-meta-data {
-  margin-bottom: -0.5em;
-}
-
 footer.read-more {
   margin-top: -1em;
   margin-bottom: 2em;
+}
+
+.article-meta-data {
+  margin-bottom: 1em;
 }
 
 /*************************
@@ -129,20 +286,6 @@ footer.read-more {
 
 .main-head {
   display: flex;
-  {{ $featured_image := .Site.Params.featured_image -}}
-  {{- if .Site.Params.featured_image -}}
-  {{- $header_image := (trim $featured_image "/") | relURL -}}
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('{{ $header_image }}');
-  background-origin: border-box;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 25vh;
-  {{ end }}
 }
 
 .main-head h1 {
@@ -223,15 +366,6 @@ footer.read-more {
       CMYK: 2% 0% 0% 19%
 */
 
-body {
-  font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.2em;
-  line-height: 1.3;
-  padding: 0 1em;
-  background-color: var(--gray100);
-  color: var(--gray900);
-}
-
 /* Feather icons */
 .feather {
   width: 24px;
@@ -243,21 +377,14 @@ body {
   fill: none;
 }
 
-body,
-.document {
-  /*  Try to avoid scrollbars on paragraphs: prevents long unbroken
-      un-hyphenatable lines from causing H-scrolling
-      */
-  overflow-wrap: break-word;
-}
-
 .title-article, .title-article-item {
   display: inline;
-  line-height: 1.1em;
+  line-height: 1.5em;
 }
 
 .post-metadata {
-  font-size: smaller;
+  font-size: 0.889em;
+  line-height: 1.3em;
 }
 
 .page-summary {
@@ -297,50 +424,8 @@ a:hover, a:active {
   color: var(--color500-complement);
 }
 
-.siteTitle {
-  width: 100%;
-  font-size: 2.5em;
-  /*
-    Make the title color the background color so it looks like it's showing
-    through the image.
-  */
-  {{ if .Site.Params.featured_image -}}
-  color: rgb(241, 241, 241);
-  {{ end }}
-}
-
-.content {
-  margin-top: 0.6em;
-}
-
-h1 {
-  font-size: 2.3em;
-}
-
-h2 {
-  font-size: 2em;
-}
-
-h3 {
-  font-size: 1.6em;
-}
-
-h4 {
-  font-size: 1.2em;
-}
-
-h5 {
-  font-size: 1.1em;
-}
-
-h6 {
-  font-size: 1em;
-}
-
 .pagination {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
 }
 
@@ -451,8 +536,6 @@ th, td {
 /* This is a list of sections of social media icons and links */
 .wrapper-social-sections {
   list-style-type: none;
-  /* overrides browser's default left padding which screws w/alignment */
-  padding: 0;
 }
 
 .wrapper-social-sections a {

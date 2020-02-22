@@ -1,10 +1,14 @@
-{{ $articleLink   := .Permalink | urlize | title }}
+{{ $articleLink   := .Permalink }}
 {{ $articleTitle  := .Title | urlize | title }}
 {{ $blogTitle     := .Site.Title | urlize | title }}
 
 <ul class="social-items">
   <li class="social-item">
-    <a href="https://www.facebook.com/sharer.php?u={{ $articleLink }}" target="_blank" rel="noopener noreferrer" title="Share this article on Facebook" class="facebook">
+    <a href="https://www.facebook.com/sharer.php?u={{ $articleLink }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Share this article on Facebook"
+       class="facebook">
       <span class="icon icon-facebook"></span>
       Facebook
     </a>
@@ -22,7 +26,7 @@
     </a>
   </li>
   <li class="social-item">
-    <a href="https://twitter.com/intent/tweet?status={{ $articleTitle }}-{{ $articleLink }}" target="_blank" rel="noopener noreferrer" title="Share this article on Twitter" class="twitter">
+    <a href="https://twitter.com/intent/tweet?url={{ $articleLink }}&text={{ $articleTitle }}" target="_blank" rel="noopener noreferrer" title="Share this article on Twitter" class="twitter">
       <span class="icon icon-twitter2"></span>
       Twitter
     </a>

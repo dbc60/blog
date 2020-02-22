@@ -7,10 +7,8 @@
   .drop-caps_yinit > .document > p:first-of-type::first-letter,
   .drop-caps_yinit > .document .drop-caps_yinit::first-letter {
     font-family: Yinit;
-    font-size: 5.625em;
-    line-height: 1.35;
-    text-shadow: 0 0 0 #777;
-    opacity: 0.95;
+    font-size: 5.5em;
+    margin: 0.05em 0.04em 0 0;
   }
 
   @supports not (-moz-user-focus: normal) {
@@ -19,7 +17,7 @@
     .drop-caps_yinit::first-letter,
     .drop-caps_yinit > .document > p:first-of-type::first-letter,
     .drop-caps_yinit > .document .drop-caps_yinit::first-letter {
-      margin: 0.02em 0.04em -0.3em 0.01em;
+      margin: 0.2em 0.04em -0.3em 0.01em;
     }
   }
 
@@ -29,8 +27,18 @@
     .drop-caps_yinit::first-letter,
     .drop-caps_yinit .document > p:first-of-type::first-letter,
     .document > .drop-caps_yinit::first-letter {
-      font-size: 4.58em;
-      line-height: 1.4;
+      font-size: 3.8em;
+      margin: 0.1em 0.05em;
+    }
+
+    @supports not (-moz-user-focus: normal) {
+      /*  All of these numbers are magic. */
+      .drop-caps_yinit > p:first-of-type::first-letter,
+      .drop-caps_yinit::first-letter,
+      .drop-caps_yinit > .document > p:first-of-type::first-letter,
+      .drop-caps_yinit > .document .drop-caps_yinit::first-letter {
+        margin: 0.25em 0.04em -0.3em 0.01em;
+      }
     }
   }
 
@@ -40,8 +48,18 @@
     .drop-caps_yinit::first-letter,
     .drop-caps_yinit .document > p:first-of-type::first-letter,
     .document > .drop-caps_yinit::first-letter {
-        font-size: 3.375em;
-        line-height: 1.45;
+        font-size: 2.3em;
+        margin: 0.2em 0.06em 0 0;
+    }
+
+    @supports not (-moz-user-focus: normal) {
+      /*  All of these numbers are magic. */
+      .drop-caps_yinit > p:first-of-type::first-letter,
+      .drop-caps_yinit::first-letter,
+      .drop-caps_yinit > .document > p:first-of-type::first-letter,
+      .drop-caps_yinit > .document .drop-caps_yinit::first-letter {
+        margin: 0.35em 0.04em -0.3em 0.01em;
+      }
     }
   }
 }

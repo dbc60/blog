@@ -9,7 +9,7 @@
       https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
       and https://gohugo.io/hugo-pipes/
     -->
-    {{ $cssBase := resources.Get "style/base.css" | resources.ExecuteAsTemplate "style.base.css" . }}
+    {{ $cssBase := resources.Get "style/base.css" }}
     {{ $cssDropCaps := resources.Get "style/drop-caps/drop-caps.css" }}
     {{ $cssDropCapsFontGoudy := resources.Get "style/drop-caps/drop-caps_goudy.css" }}
     {{ $cssDropCapsFontKanzlei := resources.Get "style/drop-caps/drop-caps_kanzlei.css" }}
