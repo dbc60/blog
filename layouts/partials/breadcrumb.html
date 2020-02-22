@@ -1,4 +1,6 @@
 {{ define "breadcrumb" }}
+{{ "<!-- BEGIN layouts/partials/breadcrumb.html -->" | safeHTML }}
+
  {{ if .currentPage.Parent }}
  {{ if ne .currentPage.Parent .IsHome }}
     {{ template "breadcrumb" dict "currentPage" .currentPage.Parent }}
@@ -10,3 +12,4 @@
     {{ end }}
 {{ end }}
 {{ end }}
+{{ "<!-- END layouts/partials/breadcrumb.html -->" | safeHTML }}

@@ -1,5 +1,7 @@
+{{ "<!-- BEGIN layouts/partials/nav__breadcrumbs.html -->" | safeHTML }}
 {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
 {{ $.Scratch.Set "path" .Site.BaseURL }}
+{{ $.Scratch.Add "path" "/" }}
   <li class="breadcrumb__item"><a href="/">home</a></li>
   {{ range $_, $element := split $url "/" }}
     {{ $.Scratch.Add "path" $element }}
@@ -8,3 +10,4 @@
       {{ $.Scratch.Add "path" "/" }}
       {{ end }}
   {{ end }}
+  {{ "<!-- END layouts/partials/nav__breadcrumbs.html -->" | safeHTML }}
