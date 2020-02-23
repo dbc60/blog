@@ -13,7 +13,7 @@
 .breadcrumb li a {
   color: var(--gray100);
   text-decoration: none;
-  padding: 10px 0 10px 65px;
+  padding: 5px 0 5px 45px;
   background-color: hsla(162,25%,27%,1); /* fallback color */
   background-color: var(--color900);
   position: relative;
