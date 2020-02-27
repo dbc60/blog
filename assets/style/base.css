@@ -3,31 +3,8 @@
  */
 
 /*****************************************************************************/
-/* Some basic settings                                                       */
-
-/*
- Fix jumping scrollbar. Taken from
- https://css-tricks.com/elegant-fix-jumping-scrollbar-issue/
-
- The text is:
-  If you move from one page of a site without a scrollbar to another with a scrollbar,
-  you'll see a slight layout shift as things squeeze inward a bit to make room for the
-  scrollbar.
-
-  A classic fix was html { overflow-y: scroll; } to force the scrollbar all the time.
-  Ayke van Laëthem has found a more elegant solution in html { margin-left: calc(100vw
-  - 100%); } which works because vw accounts for the scrollbar and % doesn't, and...
-  just read it as there are a few more things you'll need to be aware of anyway.
-
- More details are at: https://aykevl.nl/2014/09/fix-jumping-scrollbar
-*/
-html {
-  margin-left: calc(100vw - 100%);
-  margin-right: 0;
-}
-
-
-/* The color palette using CSS Custom Properties */
+/* Some basic settings
+   The color palette using CSS Custom Properties */
 :root {
   --color100: #f5fffa;
   --color200: #7cffbb;
@@ -132,6 +109,8 @@ li, p {
 
 ol, ul {
   list-style-position: inside;
+  margin-left: 0;
+  padding-left: 1em;
 }
 
 /* Description List styles */
@@ -514,15 +493,15 @@ th, td {
 }
 
  .social .icon {
-  padding-left: 1em;
   font-size: 1em;
-  padding-right: .5em;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* This is a list of social media links and icons */
 .social-items {
   width: 100%;
-  background-color: mintcream;
+  background-color: var(--color100);
   padding: 0 0.3em 0.3em 0;
   text-align: left;
   display: inline-block;
@@ -536,6 +515,7 @@ th, td {
 /* This is a list of sections of social media icons and links */
 .wrapper-social-sections {
   list-style-type: none;
+  padding-left: 0;
 }
 
 .wrapper-social-sections a {
