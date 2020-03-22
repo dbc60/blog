@@ -1,4 +1,8 @@
-/* Goudy */
+/*
+  Goudy
+
+  NOTE: I think it's best to set the font-size and margin so the top of a drop cap letter aligns with the top of a capital letter 'I' or the top of a lowercase letter 'h', and the bottom aligns with the baseline of a row of word-wrapped text.
+*/
 @media only screen and (min-width: 65ch) {
   /*  All of these numbers are magic. */
   .drop-caps_goudy > p:first-of-type::first-letter,
@@ -6,8 +10,8 @@
   .drop-caps_goudy > .document > p:first-of-type::first-letter,
   .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
     font-family: Goudy Initialen;
-    font-size: 6.3em;
-    margin: 0.09em 0.02em 0 0;
+    font-size: 6.6em;
+    margin: 0.06em 0.02em 0 0;
   }
 
   @supports not (-moz-user-focus: normal) {
@@ -16,7 +20,7 @@
     .drop-caps_goudy::first-letter,
     .drop-caps_goudy > .document > p:first-of-type::first-letter,
     .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
-      margin: 0.05em 0.02em -0.25em 0;
+      margin: 0.02em 0.02em -0.25em 0;
     }
   }
 
@@ -26,9 +30,9 @@
     .drop-caps_goudy::first-letter,
     .drop-caps_goudy .document > p:first-of-type::first-letter,
     .document > .drop-caps_goudy::first-letter {
-      font-size: 4.4em;
+      font-size: 4.9em;
       text-shadow: 0 0 0 #777;
-      margin: 0.15em 0.02em 0 0;
+      margin: 0.07em 0.02em 0 0;
     }
 
     @supports not (-moz-user-focus: normal) {
@@ -37,7 +41,7 @@
       .drop-caps_goudy::first-letter,
       .drop-caps_goudy > .document > p:first-of-type::first-letter,
       .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
-        margin: 0.1em 0.02em -0.25em 0;
+        margin: 0.02em 0.02em -0.25em 0;
       }
     }
   }
@@ -48,8 +52,8 @@
     .drop-caps_goudy::first-letter,
     .drop-caps_goudy .document > p:first-of-type::first-letter,
     .document > .drop-caps_goudy::first-letter {
-      font-size: 2.7em;
-      margin: 0.19em 0.06em -0.25em 0;
+      font-size: 2.85em;
+      margin: 0.12em 0.04em -0.25em 0;
       text-shadow:
           0px 2.5px 0 var(--gray100),
           -4px   4px 0 var(--gray100),
@@ -63,7 +67,7 @@
       .drop-caps_goudy > .document > p:first-of-type::first-letter,
       .drop-caps_goudy > .document .drop-caps_goudy::first-letter {
         line-height: 1.1;
-        margin: 0.12em 0.06em -0.25em 0;
+        margin: 0.04em 0.04em -0.25em 0;
       }
     }
   }

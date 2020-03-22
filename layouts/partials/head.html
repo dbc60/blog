@@ -16,7 +16,7 @@
     {{ $cssDropCapsFontYinit := resources.Get "style/drop-caps/drop-caps_yinit.css" }}
     {{ $cssBreadcrumb := resources.Get "style/breadcrumbs/breadcrumb.css" }}
     {{ $cssFonts := resources.Get "style/fonts.css" }}
-    {{ $cssSyntaxHighlights := resources.Get "style/syntax-highlighting/tango.css" }}
+    {{ $cssSyntaxHighlights := resources.Get "style/syntax-highlighting/monokai.css" }}
     {{ $cssEntities := resources.Get "style/entities.css" }}
     {{ $styles := slice $cssBase $cssDropCaps $cssDropCapsFontGoudy $cssDropCapsFontKanzlei $cssDropCapsFontYinit $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssEntities | resources.Concat "style/style.css" }}
 

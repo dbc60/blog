@@ -87,12 +87,38 @@ body,
   Alignment
   Proximity
 
-  I learned that Chrome & Firefox default to a line height of 16px. That is a   little small for my taste, so I'm bumping it up to 18px (16px * 1.125em). A   line height of 1.5em is 27px (18px * 1.5em), so that sets the unit of the vertical rhythm to 27px, or 1.5em.
+  I learned that Chrome & Firefox default to a line height of 16px. That is a   little small for my taste, so I'm bumping it up to 18px (16px * 1.125em). A line height of 1.5em is 27px (18px * 1.5em), so that sets the unit of the vertical rhythm to 27px, or 1.5em.
 
   Setting the font size to 1.125em (18px) seems to affect the meaning of 1em for all elements in the body. For example, setting the font size for the class siteTitle to 2.5em makes the text 45px.
+
+  If I want to go back to 16px (I have new glasses now), then the line height should be (16px * 1.5em) = 24px. This is the vertical rhythm.
+
+  I set the max-width to 120ch. In combination with ".sidebar-content" having
+  "max-width: 16em;", the result is the main content has a width of about 95
+  characters. This is fine. There are lots of studies about ideal line lengths.
+  Some recommend a width of 45-80 characters, but that's for text on paper.
+  For electronic test there are various studies that try to balance reading
+  comprehension, glare, flicker, and scrolling/paging. From the Wikipedia
+  page on line length (https://en.wikipedia.org/wiki/Line_length):
+
+    Researchers have suggested that longer lines are better for quick scanning,
+    while shorter lines are better for accuracy. Longer lines would then be
+    better suited for cases when the information will likely be scanned, while
+    shorter lines would be appropriate when the information is meant to be read
+    thoroughly. One proposal advanced that, in order for on-screen text to have
+    the best compromise between reading speed and comprehension, about 55 cpl
+    should be used. On the other hand, there have been studies indicating that
+    digital text at 100 cpl can be read faster than text with lines of 25
+    characters, while retaining the same level of comprehension.
+
+  There are too many choices and factors. I don't care anymore. I'm setting the
+  width of the main content to 120ch, the max-width of the sidebar-content to
+  32ch, and the width of "pre, .literal-block, .code" blocks to 83ch. These
+  values provide a fine width for the sidebar, the main content, and code
+  blocks embedded in the main content.
 */
 body {
-  max-width: 104ch;
+  max-width: 120ch;
   overflow: auto;
   font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
@@ -293,6 +319,7 @@ footer.read-more {
   */
   .sidebar-content {
     min-width: 0;
+    max-width: 32ch;
     flex: 1;
   }
 
@@ -383,13 +410,18 @@ tt.docutils.literal {
   font-size: 1rem;
 }
 
-/* blocks of code */
+/*
+  Blocks of code. Use "display: inline-block;" and "width: 83ch;" so these
+  blocks can be display about 80 characters of a fixed-width font regardless of
+  the width of the surrounding text. Any code wider than that will get a
+  horizontal scrollbar.
+*/
 pre, .literal-block, .code {
+  display: inline-block;
+  width: 83ch;
   margin: 0.5em 0rem 0.5em 0rem;
   overflow-x: auto;
   overflow-y: hidden;
-  font-size: 1.1rem;
-  max-width: 74ch;
   padding: 0.5em 0 0.5em 1em;
   border-bottom: 1px solid #cacfcf;
   border-left: 2px solid #8fa39f;
