@@ -241,8 +241,8 @@ I had added lots of notes and the layout was still sprinkled with distracting ic
 
   {{ end }}
 
-.. image:: /project/blog/history/006-2019.04.08-red-green.png
-  :target: /project/blog/history/006-2019.04.08-red-green.png
+.. image:: /images/history/006-2019.04.08-red-green.png
+  :target: /images/history/006-2019.04.08-red-green.png
   :width: 600px
   :align: left
   :alt: Pagination, redish theme, and green accents
@@ -289,8 +289,8 @@ My new goal was to really understand the structure of my site, so I know where t
 
 In the middle of April, I ripped out Vanilla Bootstrap and started over.
 
-.. image:: /project/blog/history/007-2019.04.13-back-to-basics.png
-  :target: /project/blog/history/007-2019.04.13-back-to-basics.png
+.. image:: /images/history/007-2019.04.13-back-to-basics.png
+  :target: /images/history/007-2019.04.13-back-to-basics.png
   :width: 600px
   :scale: 50%
   :align: left
@@ -352,8 +352,8 @@ The CSS for this section consists of class definitions for ``main-nav`` and ``ma
 
 Unwrapping them changed navigation from:
 
-.. image:: /project/blog/history/008-2019.04.18-unstyled-navigation-list.png
-  :target: /project/blog/history/008-2019.04.18-unstyled-navigation-list.png
+.. image:: /images/history/008-2019.04.18-unstyled-navigation-list.png
+  :target: /images/history/008-2019.04.18-unstyled-navigation-list.png
   :width: 600px
   :scale: 50%
   :align: left
@@ -362,8 +362,8 @@ Unwrapping them changed navigation from:
 
 to this:
 
-.. image:: /project/blog/history/009-2019.04.19-plain-navigation.png
-  :target: /project/blog/history/008-2019.04.19-plain-navigation.png
+.. image:: /images/history/009-2019.04.19-plain-navigation.png
+  :target: /images/history/008-2019.04.19-plain-navigation.png
   :width: 600px
   :scale: 80%
   :align: left
@@ -493,8 +493,8 @@ One thing I particularly liked was how nice drop caps looked on `Gwern <gwern.ne
 
 By the end of June I removed most of the feather icons and simplified the layout. It looked better.
 
-.. image:: /project/blog/history/010-2019.06.27-simple.png
-  :target: /project/blog/history/010-2019.06.27-simple.png
+.. image:: /images/history/010-2019.06.27-simple.png
+  :target: /images/history/010-2019.06.27-simple.png
   :width: 600px
   :align: left
   :alt: June 2019. A more simple presentation.
@@ -517,8 +517,8 @@ A simple trick to help debug layouts is to put a high-contrast border and backgr
 
 A little thing like that helped me make a two column layout.
 
-.. image:: /project/blog/history/011-2019.08.04-two-column.png
-  :target: /project/blog/history/011-2019.08.04-two-column.png
+.. image:: /images/history/011-2019.08.04-two-column.png
+  :target: /images/history/011-2019.08.04-two-column.png
   :width: 600px
   :align: left
   :alt: Two Column Layout
@@ -526,8 +526,8 @@ A little thing like that helped me make a two column layout.
 
 By the end of September last year, I had restructured a lot of the blog. It has a stronger two-column layout and a splash of color.
 
-.. image:: /project/blog/history/012-2019.09.30-no-notes-breadcrumbs.png
-  :target: /project/blog/history/012-2019.09.30-no-notes-breadcrumbs.png
+.. image:: /images/history/012-2019.09.30-no-notes-breadcrumbs.png
+  :target: /images/history/012-2019.09.30-no-notes-breadcrumbs.png
   :width: 600px
   :align: left
   :alt: A Splash of Color
