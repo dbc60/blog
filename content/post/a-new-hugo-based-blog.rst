@@ -283,7 +283,7 @@ The ``main.scss`` file lived in ``assets/scss/`` at the root of the repository.
 Sorry Vanilla. You have to Go
 #############################
 
-One aspect of design I didn't enjoy trying to figure out the correct CSS classes to apply to a given situation. For example, the body element is ``<body class="d-flex flex-column h-100">``. I have no idea what those classes mean and why I need them, so I started learning more about HTML and CSS.
+One aspect of design I didn't enjoy was trying to figure out the correct CSS classes to apply to a given situation. For example, the body element is ``<body class="d-flex flex-column h-100">``. I have no idea what those classes mean and why I need them, so I started learning more about HTML and CSS.
 
 My new goal was to really understand the structure of my site, so I know where things are, what needs to be modified as I build it to look the way I want it to, and know the elements and classes defined in the layout so they can be styled correctly. Vanilla Bootstrap was a nice place to start, but I don't understand the choices made for structure and styling. Its use of Bootstrap added another layer of complexity to learning how changes to CSS will affect the site.
 
