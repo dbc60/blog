@@ -80,6 +80,13 @@ body,
   overflow-wrap: break-word;
 }
 
+/* bring the ".read-more" footer into closer proximity of the last ".document"
+   paragraph .
+*/
+.document > p:last-child {
+  margin-bottom: 0;
+}
+
 /* I'm trying to set up a vertical rhythm on all pages where lines are comfortably and evenly spaced, the spacing between paragraphs are comfortable, headings are in proximity to the sections they head.
 
   Consistency
@@ -247,7 +254,6 @@ h6 {
 }
 
 footer.read-more {
-  margin-top: -1em;
   margin-bottom: 2em;
 }
 
@@ -393,9 +399,43 @@ footer.read-more {
   line-height: 1.3em;
 }
 
-.page-summary {
-  margin-bottom: 1.4em;
+.page-summary > p:last-child {
+  margin-bottom: 0;
 }
+
+/* blockquotes for blocks of quotes. Specifically, not blocks of code */
+q, blockquote {
+  background-color: #e3e8e7;
+  border-bottom: 1px solid #cacfcf;
+  border-left: 2px solid #8fa39f;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+q:before, blockquote:before {
+  content: open-quote;
+  color: var(--gray300);
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+q:after, blockquote:after {
+  content: close-quote;
+  color: var(--gray300);
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-left: 0.25em;
+  vertical-align: -0.4em;
+}
+
+q p:first-child, q p:last-child,
+blockquote p:first-child, blockquote p:last-child {
+  display: inline;
+}
+
 
 /* both inline and block code */
 pre, code, tt.docutils.literal {

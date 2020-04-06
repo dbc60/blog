@@ -2,22 +2,20 @@
 {{ "<!-- BEGIN main layouts/_default/terms.html -->" | safeHTML }}
 <!-- See https://bwaycer.github.io/hugo_tutorial.hugo/templates/terms/ -->
 <div class="content">
-  <section>
-    <h2 class="title-article">{{ .Title }}</h2>
+  <h2 class="title-article">{{ .Title }}</h2>
 
-    {{ $type := .Type }}
-    {{ range $key, $value := .Data.Terms.Alphabetical }}
-      {{ $name := .Name }}
-      {{ $count := $value.Count }}
-      {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-      <p>
-        <a href="{{ .Permalink }}">
-          <span>{{ $count }}</span> {{ $name }}
-        </a>
-      </p>
-      {{ end }}
+  {{ $type := .Type }}
+  {{ range $key, $value := .Data.Terms.Alphabetical }}
+    {{ $name := .Name }}
+    {{ $count := $value.Count }}
+    {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
+    <p>
+      <a href="{{ .Permalink }}">
+        <span>{{ $count }}</span> {{ $name }}
+      </a>
+    </p>
     {{ end }}
-  </section>
+  {{ end }}
 </div>
 {{ "<!-- END main layouts/_default/terms.html -->" | safeHTML }}
 {{ end }}

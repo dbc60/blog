@@ -6,27 +6,31 @@
 {{ $sections = $rootSections }}
 {{ end }}
 
-{{ $context := (dict "context" . "sections"  $sections) }}
-{{ $scratch := newScratch }}
-{{ $sections := where .Pages "Section" .Section }}
-
-{{- range $_, $section := $sections -}}
-  {{- range $_, $page := $section.Pages -}}
-    {{ $scratch.Add "pages" (slice $page) }}
-  {{ end }}
-{{ end }}
-
+{{ $here := .Section }}
 <div class="content">
-  {{- range (.Paginate ($scratch.Get "pages")).Pages -}}
-  <section class="page-summary">
-    <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+  {{ $scratch := newScratch }}
+  {{ $scratch.Set "pages" slice }}
+  <!-- Gather all the non-index pages in the list of main sections -->
+  {{ $allMainPages := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
+  <!-- month, day, hour, minute, second, year ==> 01, 02, 03, 04, 05, 2006 -->
+  {{ range $allMainPages.GroupByDate "2006.01.02.03.04.05" }}
+    {{ range $_, $page := .Pages.ByDate.Reverse }}
+      {{ if eq ($page.Date.Format "2006") $here }}
+          {{ $scratch.Add "pages" $page }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{- $paginator := .Paginate ($scratch.Get "pages") -}}
+  {{- range $paginator.Pages.ByDate.Reverse -}}
+  <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
     {{- partial "date-and-tags.html" . -}}
     <!-- this renders based on layouts/_default/summary.html (either the
     local one, or the one in a theme -->
     {{ .Render "summary" }}
-  </section>
   {{- end -}}
   {{- template "_internal/pagination.html" . }}
 </div>
-{{ "<!-- ENG main layouts/taxomony/terms.html -->" | safeHTML }}
+
+{{ "<!-- END main layouts/taxomony/terms.html -->" | safeHTML }}
 {{- end -}}

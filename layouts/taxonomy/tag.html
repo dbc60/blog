@@ -1,17 +1,15 @@
 {{- define "main" -}}
-  {{ "<!-- BEGIN main layouts/taxonomy/tag.html -->" | safeHTML }}
-    <div class="content">
-    {{- $paginator := .Paginate .Pages -}}
-    {{- range $paginator.Pages -}}
-      <section>
-      <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-      {{- partial "date-and-tags.html" . -}}
-      <!-- this renders based on layouts/_default/summary.html (either the
-        local one, or the one in a theme -->
-      {{ .Render "summary" }}
-      </section>
-    {{- end -}}
-    {{- template "_internal/pagination.html" . }}
-    </div>
-  {{ "<!-- END main layouts/taxonomy/tag.html -->" | safeHTML }}
+{{ "<!-- BEGIN main layouts/taxonomy/tag.html -->" | safeHTML }}
+<div class="content">
+  {{- $paginator := .Paginate .Pages -}}
+  {{- range $paginator.Pages -}}
+  <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+  {{- partial "date-and-tags.html" . -}}
+  <!-- this renders based on layouts/_default/summary.html (either the
+    local one, or the one in a theme -->
+  {{ .Render "summary" }}
+  {{- end -}}
+  {{- template "_internal/pagination.html" . }}
+</div>
+{{ "<!-- END main layouts/taxonomy/tag.html -->" | safeHTML }}
 {{- end -}}

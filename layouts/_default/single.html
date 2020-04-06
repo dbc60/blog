@@ -1,7 +1,6 @@
 {{ define "main" }}
   {{- "<!-- BEGIN main layouts/_default/single.html -->" | safeHTML -}}
   <div class="content">
-    <section>
     <h2 class="title-article">{{- .Title -}}</h2>
     {{- partial "date-and-tags.html" . -}}
 
@@ -10,7 +9,6 @@
     {{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments     .Params.disable_comments)) }}
     <section class="comments">
       {{ template "_internal/disqus.html" . }}
-    </section>
     {{ end }}
   </div>
 {{- "<!-- END main layouts/_default/single.html -->" | safeHTML -}}

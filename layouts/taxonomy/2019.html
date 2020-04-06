@@ -1,18 +1,15 @@
 {{- define "main" -}}
 {{ "<!--BEGIN main layouts/taxonomy/2019.html -->" | safeHTML }}
-{{ "<!--lists the posts for a year/month probably making this a taxonomy terms list -->" | safeHTML }}
 <div class="content">
   {{- $paginator := .Paginate (where .Pages "Type" "in" site.Params.mainSections) -}}
   {{- range $paginator.Pages -}}
-    <section>
-    <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    {{- partial "date-and-tags.html" . -}}
-      <!-- this renders based on layouts/_default/summary.html (either the
-      local one, or the one in a theme -->
-      {{ .Render "summary" }}
-    </section>
+  <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+  {{- partial "date-and-tags.html" . -}}
+    <!-- this renders based on layouts/_default/summary.html (either the
+    local one, or the one in a theme -->
+    {{ .Render "summary" }}
   {{- end -}}
   {{- template "_internal/pagination.html" . }}
 </div>
-{{ "<!-- ENG main layouts/taxomony/2019.html -->" | safeHTML }}
+{{ "<!-- END main layouts/taxomony/2019.html -->" | safeHTML }}
 {{- end -}}

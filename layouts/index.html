@@ -1,7 +1,7 @@
     {{- define "main" }}
     {{ "<!-- BEGIN main in layouts/index.html -->" | safeHTML }}
       <div class="content">
-        {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
+            {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
         {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Section" "post") -}}
         {{- range $idxPage, $_ := $paginator.Pages -}}
         <section class="page-summary">
