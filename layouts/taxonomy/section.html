@@ -5,7 +5,7 @@
       {{- .Content -}}
     {{- $paginator := .Paginate (where .Pages "Type" "note") -}}
     {{- range $paginator.Pages -}}
-    <section>
+    <section class="page-summary">
       <h3 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       {{- partial "date-and-tags.html" . -}}
         <!-- this renders based on layouts/_default/summary.html (either the

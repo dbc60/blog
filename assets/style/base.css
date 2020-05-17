@@ -253,10 +253,6 @@ h6 {
   font-size: 80%;
 }
 
-footer.read-more {
-  margin-bottom: 2em;
-}
-
 .article-meta-data {
   margin-bottom: 1em;
 }
@@ -399,7 +395,11 @@ footer.read-more {
   line-height: 1.3em;
 }
 
-.page-summary > p:last-child {
+.page-summary {
+  margin-bottom: 1.5em;
+}
+
+.page-summary p:last-of-type {
   margin-bottom: 0;
 }
 

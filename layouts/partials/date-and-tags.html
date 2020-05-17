@@ -1,6 +1,6 @@
-          {{- $dateTimeFormatShort := "2006-01-02" -}}
+          {{- $dateTimeFormatShort := "2006-01-02" }}
           {{ "<!--BEGIN layouts/partials/date-and-tags.html -->" | safeHTML }}
-          {{- $dateTimeFormatLong := "2006-01-02T15:04" -}}
+          {{ $dateTimeFormatLong := "2006-01-02T15:04" -}}
           {{- $dateTime := .PublishDate.Format $dateTimeFormatShort -}}
           {{- $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
           {{- $dateFormatExtended := .Site.Params.dateFormatExtended | default "Jan 2, 2006 15:04" -}}

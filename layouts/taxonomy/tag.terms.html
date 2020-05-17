@@ -6,14 +6,15 @@
 
   {{ $type := .Type }}
   {{ range .Data.Terms.Alphabetical }}
-    {{ $name := .Name }}
-    {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
-    <h3><a href="{{ .Permalink }}">{{ $name }}</a></h3>
+    {{ with $.Site.GetPage (printf "/%s/%s" $type .Name) }}
+    <section class="page-summary">
+      <h3 class="title-article-item"><a href="{{ .Permalink }}">{{ .Name }}</a></h3>
     <ul class="term-tags">
       {{ range .Pages }}
-      <li class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        <li class="term-member"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
+    </section>
     {{ end }}
   {{ end }}
 </div>

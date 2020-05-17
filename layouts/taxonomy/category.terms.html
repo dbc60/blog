@@ -7,12 +7,14 @@
   {{ $type := .Type }}
   {{ range .Data.Terms.Alphabetical }}
     {{ with $.Site.GetPage (printf "/%s/%s" $type .Name) }}
-    <h3><a href="{{ .Permalink }}">{{ .Name }}</a></h3>
+    <section class="page-summary">
+      <h3 class="title-article-item"><a href="{{ .Permalink }}">{{ .Name }}</a></h3>
     <ul class="term-categories">
       {{ range .Pages }}
-      <li class="term-member-category"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        <li class="term-member"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
+    </section>
     {{ end }}
   {{ end }}
 </div>
