@@ -9,11 +9,11 @@
     {{ with $.Site.GetPage (printf "/%s/%s" $type .Name) }}
     <section class="page-summary">
       <h3 class="title-article-item"><a href="{{ .Permalink }}">{{ .Name }}</a></h3>
-    <ul class="term-categories">
-      {{ range .Pages }}
+      <ul class="term-categories">
+        {{ range .Pages }}
         <li class="term-member"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-      {{ end }}
-    </ul>
+        {{ end }}
+      </ul>
     </section>
     {{ end }}
   {{ end }}
