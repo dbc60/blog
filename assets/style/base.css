@@ -6,30 +6,39 @@
 /* Some basic settings
    The color palette using CSS Custom Properties */
 :root {
-  --color100: #f5fffa;
-  --color200: #7cffbb;
-  --color300: #00eb75;
-  --color400: #00c663;
-  --color500: #00a151;
-  --color600: #007c3e;
-  --color700: #00572c;
-  --color800: #003219;
-  --color900: #000b05;
-  --gray100: #fcfcfc;
-  --gray200: #dedede;
-  --gray300: #bfbfbf;
-  --gray400: #a1a1a1;
-  --gray500: #828282;
-  --gray600: #636363;
-  --gray700: #454545;
-  --gray800: #262626;
-  --gray900: #080808; /* text */
-  --color500-complement: #a30052; /* anchor hover */
-  --color500-adjacent: #0062a3; /* drop-caps */
-  --color500-adjacent-complement: #a34100; /* reserved */
-  --color700-complement: #00572b;
-  --color700-adjacent: #003457;
+  --color100                    : #f5fffa;
+  --color200                    : #7cffbb;
+  --color300                    : #00eb75;
+  --color400                    : #00c663;
+  --color500                    : #00a151;
+  --color600                    : #007c3e;
+  --color700                    : #00572c;
+  --color800                    : #003219;
+  --color900                    : #000b05;
+  --gray100                     : #fcfcfc;
+  --gray200                     : #dedede;
+  --gray300                     : #bfbfbf;
+  --gray400                     : #a1a1a1;
+  --gray500                     : #828282;
+  --gray600                     : #636363;
+  --gray700                     : #454545;
+  --gray800                     : #262626;
+  --gray900                     : #080808;
+  /* text */
+  --color500-complement         : #a30052;
+  /* anchor hover */
+  --color500-adjacent           : #0062a3;
+  /* drop-caps */
+  --color500-adjacent-complement: #a34100;
+  /* reserved */
+  --color700-complement         : #00572b;
+  --color700-adjacent           : #003457;
   --color700-adjacent-complement: #572300;
+  --color-border-left           : #8fa39f;
+  --color-code-background: #e3e8e7;
+  --color-code-border-bottom: #cacfcf;
+  --color-caution: #999900;
+  --color-caution-background: lightgoldenrodyellow
 }
 
 /******************
@@ -40,7 +49,9 @@
    makes dealing with the sizes of elements much easier, and generally
    eliminates a number of pitfalls you can stumble on while laying out your
    content.*/
-* {
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
 
@@ -60,16 +71,43 @@
 
     I'm removing elements from the reset list that I don't want to style or that I've already styled with margins and padding.
 */
-address, article, aside, blockquote, details, dialog, div, dl, fieldset,
-figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, main, nav, ol, section, table, ul {
-  margin: 0;
+address,
+article,
+aside,
+blockquote,
+details,
+dialog,
+div,
+dl,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+main,
+nav,
+ol,
+section,
+table,
+ul {
+  margin : 0;
   padding: 0;
 }
 
 /* Reset a few additional elements for styling */
-th, td {
-	margin:0;
-	padding:0;
+th,
+td {
+  margin : 0;
+  padding: 0;
 }
 
 body,
@@ -80,10 +118,30 @@ body,
   overflow-wrap: break-word;
 }
 
+
+/*
+ * The next three rules not only set the style for figure captions, but add an
+ * automatic counter to the figures.
+ */
+.content {
+  counter-reset: figures;
+}
+
+figure {
+  text-align: left;
+  font-variant: small-caps;
+  font-weight: bold;
+  counter-increment: figures;
+}
+
+figcaption:before {
+  content: 'Fig. ' counter(figures) ' - ';
+}
+
 /* bring the ".read-more" footer into closer proximity of the last ".document"
    paragraph .
 */
-.document > p:last-child {
+.document>p:last-child {
   margin-bottom: 0;
 }
 
@@ -125,29 +183,31 @@ body,
   blocks embedded in the main content.
 */
 body {
-  max-width: 120ch;
-  overflow: auto;
-  font-family: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  max-width       : 120ch;
+  overflow        : auto;
+  font-family     : "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size       : 18px;
   background-color: var(--gray100);
-  color: var(--gray900);
-  margin: 0;
-  padding: 1em;
+  color           : var(--gray900);
+  margin          : 0;
+  padding         : 1em;
 }
 
 /* Vertical Rhythm: If the rhythm of the page is to be maintained, the spacing of paragraphs should be related to the basic line height unit. This is achieved simply by setting top and bottom margins equal to the line height. */
-li, p {
+li,
+p {
   line-height: 1.5;
 }
 
-ol, ul {
-  list-style-position: inside;
-  margin-left: 0;
+ol,
+ul {
+  margin-left : 0;
   padding-left: 1em;
 }
 
 /* Description List styles */
-dd, dt {
+dd,
+dt {
   line-height: 1.5;
 }
 
@@ -171,8 +231,8 @@ dd {
 */
 
 .siteTitle {
-  width: 100%;
-  font-size: 2.5em;
+  width      : 100%;
+  font-size  : 2.5em;
   line-height: 1.5em;
 }
 
@@ -199,7 +259,7 @@ dd {
   I don't think an h1 element should appear outside of the site title, which is styled via its ".siteTitle" class to make it more specific. In case it does I'll make it stand out.
 */
 h1 {
-  font-size: 12em;
+  font-size  : 12em;
   line-height: 12em;
 }
 
@@ -218,43 +278,51 @@ h1 {
   - h6: font-size: 21px => 21/18 = 1.167em; line-height: 27px => 27/21 = 1.286em
 */
 h2 {
-	font-size: 1.833em;
-	margin-top: 1.636em;
-	margin-bottom: 0;
+  font-size    : 1.833em;
+  margin-top   : 1.636em;
+  margin-bottom: 0;
 }
 
 h3 {
-  font-size: 1.667em;
-  margin-top: 1.8em;
+  font-size    : 1.667em;
+  margin-top   : 1.8em;
   margin-bottom: 0;
 }
 
 h4 {
-  font-size: 1.5em;
-  margin-top: 1em;
+  font-size    : 1.5em;
+  margin-top   : 1em;
   margin-bottom: 0;
 }
 
 h5 {
-  font-size: 1.333em;
-  margin-top: 1.125em;
+  font-size    : 1.333em;
+  margin-top   : 1.125em;
   margin-bottom: 0;
 }
 
 h6 {
-  font-size: 1.167em;
-  margin-top: 1.286em;
+  font-size    : 1.167em;
+  margin-top   : 1.286em;
   margin-bottom: 0;
 }
 
 .main-footer {
   border-top: solid;
   margin-top: 1.2em;
-  font-size: 80%;
+  font-size : 80%;
 }
 
-.article-meta-data {
-  margin-bottom: 1em;
+/* Add some space between the article meta data and the doc that follows it */
+.article-meta-data+div.document {
+  margin-top: 1em;
+}
+
+/* If the document is empty, as can happen with no summary between the source
+ * front matter and the <!--more--> separator, then remove the extra space
+ */
+.article-meta-data+div.document:empty {
+  margin-top: 0;
 }
 
 /*************************
@@ -282,12 +350,12 @@ h6 {
  ******************/
 
 .main-nav {
-  display: flex;
+  display        : flex;
   justify-content: flex-start;
 }
 
 .main-nav__items a {
-  font-size: 1.1em;
+  font-size   : 1.1em;
   margin-right: 1ch;
 }
 
@@ -322,12 +390,12 @@ h6 {
   .sidebar-content {
     min-width: 0;
     max-width: 32ch;
-    flex: 1;
+    flex     : 1;
   }
 
   .main-content {
     min-width: 0;
-    flex: 2;
+    flex     : 2;
   }
 }
 
@@ -376,22 +444,23 @@ h6 {
 
 /* Feather icons */
 .feather {
-  width: 24px;
-  height: 24px;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
+  width          : 24px;
+  height         : 24px;
+  stroke         : currentColor;
+  stroke-width   : 2;
+  stroke-linecap : round;
   stroke-linejoin: round;
-  fill: none;
+  fill           : none;
 }
 
-.title-article, .title-article-item {
-  display: inline;
+.title-article,
+.title-article-item {
+  display    : inline;
   line-height: 1.5em;
 }
 
 .post-metadata {
-  font-size: 0.889em;
+  font-size  : 0.889em;
   line-height: 1.3em;
 }
 
@@ -404,49 +473,56 @@ h6 {
 }
 
 /* blockquotes for blocks of quotes. Specifically, not blocks of code */
-q, blockquote {
-  background-color: #e3e8e7;
-  border-bottom: 1px solid #cacfcf;
-  border-left: 2px solid #8fa39f;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C" "\201D" "\2018" "\2019";
+q,
+blockquote {
+  background-color: --color-code-background;
+  border-bottom   : 1px solid var(--color-code-border-bottom);
+  border-left     : 2px solid var(--color-border-left);
+  margin          : 1.5em 10px;
+  padding         : 0.5em 10px;
+  quotes          : "\201C""\201D""\2018""\2019";
 }
 
-q:before, blockquote:before {
-  content: open-quote;
-  color: var(--gray300);
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
+q:before,
+blockquote:before {
+  content       : open-quote;
+  color         : var(--gray300);
+  font-size     : 4em;
+  line-height   : 0.1em;
+  margin-right  : 0.25em;
   vertical-align: -0.4em;
 }
 
-q:after, blockquote:after {
-  content: close-quote;
-  color: var(--gray300);
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-left: 0.25em;
+q:after,
+blockquote:after {
+  content       : close-quote;
+  color         : var(--gray300);
+  font-size     : 4em;
+  line-height   : 0.1em;
+  margin-left   : 0.25em;
   vertical-align: -0.4em;
 }
 
-q p:first-child, q p:last-child,
-blockquote p:first-child, blockquote p:last-child {
+q p:first-child,
+q p:last-child,
+blockquote p:first-child,
+blockquote p:last-child {
   display: inline;
 }
 
 
 /* both inline and block code */
-pre, code, tt.docutils.literal {
-  background-color: #e3e8e7;
-  font-family: Inconsolata, "Lucida Console", Monaco, "Courier New", Courier, monospace;
+pre,
+code,
+tt.docutils.literal {
+  background-color: --color-code-background;
+  font-family     : Inconsolata, "Lucida Console", Monaco, "Courier New", Courier, monospace;
 }
 
 /* inline code */
 code,
 tt.docutils.literal {
-  padding: 2px 4px;
+  padding  : 2px 4px;
   font-size: 1rem;
 }
 
@@ -456,31 +532,34 @@ tt.docutils.literal {
   the width of the surrounding text. Any code wider than that will get a
   horizontal scrollbar.
 */
-pre, .literal-block, .code {
-  max-width: 83ch;
-  overflow-x: auto;
-  overflow-y: hidden;
-  margin: 0.5em 0rem 0.5em 0rem;
-  padding: 0.5em 0 0.5em 1em;
-  border-bottom: 1px solid #cacfcf;
-  border-left: 2px solid #8fa39f;
+pre,
+.literal-block,
+.code {
+  max-width    : 83ch;
+  overflow-x   : auto;
+  overflow-y   : hidden;
+  margin       : 0.5em 0rem 0.5em 0rem;
+  padding      : 0.5em 0 0.5em 1em;
+  border-bottom: 1px solid var(--color-code-border-bottom);
+  border-left  : 2px solid var(--color-border-left);
 }
 
 a {
-  color: hsla(162,25%,25%,1);
+  color: hsla(162, 25%, 25%, 1);
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   color: var(--color500-complement);
 }
 
 .pagination {
   list-style-type: none;
-  overflow: hidden;
+  overflow       : hidden;
 }
 
 .page-item {
-  float: left;
+  float       : left;
   margin-right: 1ch;
 }
 
@@ -491,13 +570,15 @@ a:hover, a:active {
 /************************************
  * Simple Markdown-Generated Tables *
  ************************************/
-table, td, th {
-  border: 1px solid black;
+table,
+td,
+th {
+  border         : 1px solid black;
   border-collapse: collapse;
 }
 
 tr:nth-child(odd) {
-  background-color: #e3e8e7;
+  background-color: --color-code-background;
 }
 
 tr:nth-child(even) pre,
@@ -508,75 +589,147 @@ tr:nth-child(even) tt.docutils.literal {
 
 th {
   background-color: hsl(162, 11%, 30%);
-  color: rgb(241, 241, 241);
+  color           : rgb(241, 241, 241);
 }
 
-th, td {
+th,
+td {
   padding: 0.25em 0.5em;
 }
 
 /*****************************************************************************
  * reST Admonitions. The list of defined admonitions is: attention, caution, *
- *danger, error, hint, important, note, tip, and warning.                    *
+ * danger, error, hint, important, note, tip, and warning.                    *
  *****************************************************************************/
 .admonition-title {
   background-color: var(--color700);
-  color: var(--gray100);
+  color           : var(--gray100);
+  padding-left    : 0.25em;
+}
+
+.admonition .content {
+  padding-left: 0.25em;
 }
 
 .admonition {
-  padding: 12px;
-  margin-bottom: 24px;
+  padding-bottom: 0.5em;
+  margin-top    : 1em;
+  margin-bottom : 0.5em;
+}
+
+.admonition>.any {
+  background-color: var(--color-code-background);
+  border-left     : 2px solid var(--color600);
+}
+
+.admonition>.any>.admonition-title {
+  background-color: var(--color600);
+}
+
+.admonition>.attention {
   background-color: var(--color100);
+  border-left     : 2px solid var(--color600);
 }
 
-.error > .admonition-title, .attention > .admonition-title {
-  background-color: darkred;
+.admonition>.attention>.admonition-title {
+  background-color: var(--color600);
 }
 
-.warning > .admonition-title, .caution > .admonition-title {
-  background-color: darkkhaki;
+.admonition>.caution {
+  background-color: var(--color-caution-background);
+  border-left     : 2px solid var(--color-caution);
 }
 
-.danger > .admonition-title {
+.admonition>.caution>.admonition-title {
+  background-color: var(--color-caution);
+}
+
+.admonition>.danger {
+  background-color: var(--color100);
+  border-left     : 2px solid firebrick;
+}
+
+.admonition>.danger>.admonition-title {
   background-color: firebrick;
 }
 
-.hint > .admonition-title {
+.admonition>.error {
+  background-color: var(--color100);
+  border-left     : 2px solid darkred;
+}
+
+.admonition>.error>.admonition-title {
+  background-color: darkred;
+}
+
+.admonition>.hint {
+  background-color: var(--color100);
+  border-left     : 2px solid steelblue;
+}
+
+.admonition>.hint>.admonition-title {
   background-color: steelblue;
 }
 
-.important > .admonition-title {
+.admonition>.important {
+  background-color: var(--color100);
+  border-left     : 2px solid brown;
+}
+
+.admonition>.important>.admonition-title {
   background-color: brown;
 }
 
-.tip > .admonition-title {
-  background-color: green;
+.admonition>.note {
+  background-color: var(--color100);
+  border-left     : 2px solid var(--color600);
+}
+
+.admonition>.note>.admonition-title {
+  background-color: var(--color600);
+}
+
+.admonition>.tip {
+  background-color: var(--color100);
+  border-left     : 2px solid var(--color500-adjacent);
+}
+
+.admonition>.tip>.admonition-title {
+  background-color: var(--color500-adjacent);
+}
+
+.admonition>.warning {
+  background-color: var(--color-caution-background);
+  border-left     : 2px solid var(--color-caution);
+}
+
+.admonition>.warning>.admonition-title {
+  background-color: var(--color-caution);
 }
 
 /************************
  * social network links *
  ************************/
- /* $cloud: #ecf0f1; */
+/* $cloud: #ecf0f1; */
 
- .social {
+.social {
   display: block;
 }
 
- .social .icon {
-  font-size: 1em;
-  padding-left: 0;
+.social .icon {
+  font-size    : 1em;
+  padding-left : 0;
   padding-right: 0;
 }
 
 /* This is a list of social media links and icons */
 .social-items {
-  width: 100%;
+  width           : 100%;
   background-color: var(--color100);
-  padding: 0 0.3em 0.3em 0;
-  text-align: left;
-  display: inline-block;
-  list-style-type: none;
+  padding         : 0 0.3em 0.3em 0;
+  text-align      : left;
+  display         : inline-block;
+  list-style-type : none;
 }
 
 .social-item {
@@ -586,30 +739,30 @@ th, td {
 /* This is a list of sections of social media icons and links */
 .wrapper-social-sections {
   list-style-type: none;
-  padding-left: 0;
+  padding-left   : 0;
 }
 
 .wrapper-social-sections a {
-  display: block;
+  display        : block;
   text-decoration: none;
-  width: 100%;
+  width          : 100%;
 }
 
 /* A list item in a wrapper-social-sections list that contains a list of
    social media icons and links */
 .wrapper-social-items {
-  background-color: hsla(162,25%,25%,1);
-  border-radius: 10px;
-  margin-bottom: 1em;
-  margin-right: 1.5em;
+  background-color: hsla(162, 25%, 25%, 1);
+  border-radius   : 10px;
+  margin-bottom   : 1em;
+  margin-right    : 1.5em;
 }
 
 /* The border around a list of social media links */
 .wrapper-social-border {
-  font-size: 0.8em;
-  padding-left: 3em;
+  font-size     : 0.8em;
+  padding-left  : 3em;
   padding-bottom: 0.2em;
-  color: rgb(241, 241, 241);
+  color         : rgb(241, 241, 241);
 }
 
 .wrapper-social-border.icon {
@@ -617,13 +770,13 @@ th, td {
 }
 
 .wrapper-social-border.title {
-  padding-left: 0.5em;
+  padding-left  : 0.5em;
   text-transform: capitalize;
 }
 
-.social-items > li > a {
-  text-align: left;
-  font-size: 80%;
+.social-items>li>a {
+  text-align : left;
+  font-size  : 80%;
   line-height: 0.75em;
 }
 
@@ -633,7 +786,7 @@ th, td {
 
 .header-archive-date {
   font-weight: bolder;
-  padding: 0.3em 0.3em 0 0;
+  padding    : 0.3em 0.3em 0 0;
 }
 
 .side-list-item {
@@ -641,59 +794,197 @@ th, td {
 }
 
 
-a.email { color: hsla(162,25%,25%,1); background-color: var(--color100)}
-a.facebook { color: #3B5998; background-color: var(--color100)}
-a.github { color: black; background-color: var(--color100)}
-a.hackernews { color: #ff6600; background-color: var(--color100)}
-a.instagram { color: #2d2d2d; background-color: var(--color100)}
-a.linkedin { color:#4875B4; background-color: var(--color100)}
-a.pinterest { color:#c8232c; background-color: var(--color100)}
-a.reddit { color: #41700f; background-color: var(--color100)}
-a.rss { color: hsla(162,25%,25%,1); background-color: var(--color100)}
-a.stackoverflow { color: #2d2d2d; background-color: var(--color100)}
-a.subscribemail { color: #e3e8e7;background-color: var(--color100)}
-a.tumblr { color: #2B4964; background-color: var(--color100)}
-a.twitter { color: #33ccff; background-color: var(--color100)}
-a.youtube { color: #FF3333; background-color: var(--color100)}
+a.email {
+  color           : hsla(162, 25%, 25%, 1);
+  background-color: var(--color100)
+}
 
-a.email:hover { background-color: hsla(162,25%,25%,1); color:var(--color100)}
-a.facebook:hover { background-color: #3B5998; color:var(--color100)}
-a.github:hover { background-color: black; color:var(--color100)}
-a.hackernews:hover { background-color: #ff6600; color: var(--color100)}
-a.instagram:hover { background-color: #2d2d2d; color:var(--color100)}
-a.linkedin:hover { background-color: #4875B4; color: var(--color100)}
-a.pinterest:hover { background-color: #c8232c; color: var(--color100)}
-a.reddit:hover { background-color: #41700f; color: var(--color100)}
-a.rss:hover { background-color: hsla(162,25%,25%,1); color:var(--color100)}
-a.stackoverflow:hover { background-color: #2d2d2d; color:var(--color100)}
-a.subscribemail:hover { background-color: #e3e8e7;color:var(--color100)}
-a.tumblr:hover { background-color: #2B4964; color:var(--color100)}
-a.twitter:hover { background-color: #33ccff; color:var(--color100)}
-a.youtube:hover { background-color: #FF3333; color:var(--color100)}
+a.facebook {
+  color           : #3B5998;
+  background-color: var(--color100)
+}
+
+a.github {
+  color           : black;
+  background-color: var(--color100)
+}
+
+a.hackernews {
+  color           : #ff6600;
+  background-color: var(--color100)
+}
+
+a.instagram {
+  color           : #2d2d2d;
+  background-color: var(--color100)
+}
+
+a.linkedin {
+  color           : #4875B4;
+  background-color: var(--color100)
+}
+
+a.pinterest {
+  color           : #c8232c;
+  background-color: var(--color100)
+}
+
+a.reddit {
+  color           : #41700f;
+  background-color: var(--color100)
+}
+
+a.rss {
+  color           : hsla(162, 25%, 25%, 1);
+  background-color: var(--color100)
+}
+
+a.stackoverflow {
+  color           : #2d2d2d;
+  background-color: var(--color100)
+}
+
+a.subscribemail {
+  color           : --color-code-background;
+  background-color: var(--color100)
+}
+
+a.tumblr {
+  color           : #2B4964;
+  background-color: var(--color100)
+}
+
+a.twitter {
+  color           : #33ccff;
+  background-color: var(--color100)
+}
+
+a.youtube {
+  color           : #FF3333;
+  background-color: var(--color100)
+}
+
+a.email:hover {
+  background-color: hsla(162, 25%, 25%, 1);
+  color           : var(--color100)
+}
+
+a.facebook:hover {
+  background-color: #3B5998;
+  color           : var(--color100)
+}
+
+a.github:hover {
+  background-color: black;
+  color           : var(--color100)
+}
+
+a.hackernews:hover {
+  background-color: #ff6600;
+  color           : var(--color100)
+}
+
+a.instagram:hover {
+  background-color: #2d2d2d;
+  color           : var(--color100)
+}
+
+a.linkedin:hover {
+  background-color: #4875B4;
+  color           : var(--color100)
+}
+
+a.pinterest:hover {
+  background-color: #c8232c;
+  color           : var(--color100)
+}
+
+a.reddit:hover {
+  background-color: #41700f;
+  color           : var(--color100)
+}
+
+a.rss:hover {
+  background-color: hsla(162, 25%, 25%, 1);
+  color           : var(--color100)
+}
+
+a.stackoverflow:hover {
+  background-color: #2d2d2d;
+  color           : var(--color100)
+}
+
+a.subscribemail:hover {
+  background-color: --color-code-background;
+  color           : var(--color100)
+}
+
+a.tumblr:hover {
+  background-color: #2B4964;
+  color           : var(--color100)
+}
+
+a.twitter:hover {
+  background-color: #33ccff;
+  color           : var(--color100)
+}
+
+a.youtube:hover {
+  background-color: #FF3333;
+  color           : var(--color100)
+}
 
 
-.event, .event-canceled, .event-completed, .event-migrated, .event-migrated-completed, .goal, .goal-completed, .goal-work, .goal-work-completed, .task, .task-canceled, .task-completed, .task-migrated, .task-migrated-completed, .task-waiting, .task-work, .task-work-canceled, .task-work-completed, .task-work-migrated, .task-work-migrated-completed, .task-work-waiting, .task-experimental {
+.event,
+.event-canceled,
+.event-completed,
+.event-migrated,
+.event-migrated-completed,
+.goal,
+.goal-completed,
+.goal-work,
+.goal-work-completed,
+.holiday,
+.task,
+.task-canceled,
+.task-completed,
+.task-migrated,
+.task-migrated-completed,
+.task-waiting,
+.task-work,
+.task-work-canceled,
+.task-work-completed,
+.task-work-migrated,
+.task-work-migrated-completed,
+.task-work-waiting,
+.task-experimental {
   margin-bottom: 0.25em;
 }
 
 .task-event-list {
-  margin-top: 0.5em;
+  margin-top  : 0.5em;
   padding-left: 0;
-  list-style: none;
+  list-style  : none;
 }
 
 .task-experimental {
   margin: 0;
 }
 
+.holiday-list {
+  margin-top  : 0.5em;
+  padding-left: 0;
+  list-style  : none;
+}
+
 .bullet::before {
-  display: inline-block;
+  display     : inline-block;
   padding-left: 2em;
 }
 
 .bullet {
   padding-left: 2em;
-  text-indent: -2em;
+  text-indent : -2em;
 }
 
 .birthday::before {
@@ -716,11 +1007,13 @@ a.youtube:hover { background-color: #FF3333; color:var(--color100)}
   content: "\2012";
 }
 
-.task-completed::before, .task-migrated-completed::before {
+.task-completed::before,
+.task-migrated-completed::before {
   content: "\2713";
 }
 
-.task-migrated::before, .task-migrated-canceled::before {
+.task-migrated::before,
+.task-migrated-canceled::before {
   content: "\2192";
 }
 
@@ -744,11 +1037,13 @@ a.youtube:hover { background-color: #FF3333; color:var(--color100)}
   content: "\2014";
 }
 
-.task-work-completed::before, .task-work-migrated-completed::before {
+.task-work-completed::before,
+.task-work-migrated-completed::before {
   content: "\2714";
 }
 
-.task-work-migrated::before, .task-work-migrated-canceled::before {
+.task-work-migrated::before,
+.task-work-migrated-canceled::before {
   content: "\21A6";
 }
 
@@ -764,8 +1059,13 @@ a.youtube:hover { background-color: #FF3333; color:var(--color100)}
   content: "\1F3AF";
 }
 
+.holiday::before {
+  content: "\1F389";
+}
+
 .event::before {
-  content: "\29BE";}
+  content: "\29BE";
+}
 
 .event-canceled::before {
   content: "\2296";
@@ -787,17 +1087,22 @@ a.youtube:hover { background-color: #FF3333; color:var(--color100)}
   color: goldenrod;
 }
 
-.task, .task-work {
+.task,
+.task-work {
   color: #5C5CDF;
 }
 
-.task-waiting, .task-work-waiting {
+.task-waiting,
+.task-work-waiting {
   color: #718F93;
 }
 
-.event-canceled, .task-canceled, .task-work-canceled, .task-migrated-canceled,
+.event-canceled,
+.task-canceled,
+.task-work-canceled,
+.task-migrated-canceled,
 .task-work-migrated-canceled {
-  color: firebrick;
+  color          : firebrick;
   text-decoration: line-through;
 }
 
@@ -809,17 +1114,14 @@ a.youtube:hover { background-color: #FF3333; color:var(--color100)}
   color: lightseagreen;
 }
 
-.task-migrated, .task-work-migrated {
+.task-migrated,
+.task-work-migrated {
   color: steelblue;
 }
 
-.task-completed, .task-work-completed {
+.task-completed,
+.task-work-completed {
   color: skyblue;
-}
-
-.term-member {
-  padding-left: 1em;
-  text-indent: -0.7em;
 }
 
 /* The strike role */
@@ -828,7 +1130,7 @@ a.youtube:hover { background-color: #FF3333; color:var(--color100)}
 }
 
 .post-image {
-  border: 2px solid #8fa39f;
+  border       : 2px solid var(--color-border-left);
   border-radius: 5px;
-  padding: 2px;
+  padding      : 2px;
 }

@@ -1,0 +1,6 @@
+<div class="admonition">
+  <div class="any">
+    <div class="admonition-title">{{ .Get "title" }}</div>
+    <div class="content last">{{ printf "%s" .Inner | markdownify }}</div>
+  </div>
+</div>
