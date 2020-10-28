@@ -253,7 +253,16 @@ dd {
 .siteTitle {
   width      : 100%;
   font-size  : 2.5em;
-  line-height: 1.5;
+}
+
+.siteSubTitle {
+  width      : 100%;
+  font-size  : 1.5em;
+  line-height: 1;
+}
+
+.title-content {
+  margin-bottom: 1em;
 }
 
 /*

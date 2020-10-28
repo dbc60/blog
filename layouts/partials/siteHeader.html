@@ -1,5 +1,7 @@
 
+<div class="title-content">
   {{ "<!-- BEGIN layouts/partials/siteHeader.html -->" | safeHTML }}
     <h1 class="siteTitle">{{ .Site.Title }}</h1>
-    <!--<p class="siteSubtitle">{{- .Site.Params.homeText | markdownify -}}</p>-->
+    <h1 class="siteSubTitle">{{- .Site.Params.homeText -}}</h1>
   {{ "<!-- END layouts/partials/siteHeader.html -->" | safeHTML }}
+</div>
