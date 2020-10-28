@@ -9,7 +9,7 @@ publishDate: 2020-02-15
 Creating a blog is hard. I admire those who are able to design their own and write regular posts, so much so that I'm trying again to create my own blog. I started this blog late in 2015. After writing a few posts, I became discouraged. I didn't like the way it looked, the tools often broke, and I didn't have a clear idea of what I wanted to write, or why I was blogging.
 <!--more-->
 
-Recently I was inspired by a post by Mattias Ott from May 12, 2019, [Into the Personal-Website-Verse](personal website verse_]. He encouraged people to create their own personal website to write, create, share what you like, and to tinker with new technologies.
+Recently I was inspired by a post by Mattias Ott from May 12, 2019, [Into the Personal-Website-Verse][personal website verse]. He encouraged people to create their own personal website to write, create, share what you like, and to tinker with new technologies.
 
 Your own blog is supposed to be a place where you can make mistakes and learn without pressure. With that in mind, I'm declaring this blog as my soapbox. My space to say what ever I want. My laboratory for experiments in web technologies. My window into my own experience from which I can reflect upon my past, figure out what's of interest now and navigate to a better future. If I'm lucky, I might engage someone who wishes to share their own thoughts and experiences, and I'll learn something new.
 
@@ -66,7 +66,7 @@ The possibilities just wowed me. I ported all my old notes from Markdown to rST 
 
 My success with Sphinx for notes left me with a desire to blog again. I was probably suffering from myopia, but at the time I didn't realize that Jekyll is not necessary to build GitHub pages, and I didn't know how or if Sphinx could be configured to work with GitHub pages.
 
-Well, I spent a lot of time in 2018 learning [Go](golang_] for a new project at work. It's a very nice programming language. Late in 2018, I came across [Hugo]. It looked interesting, and what do you know, it's written in Go! I had to give it a try. I figured even if it's not to my liking, I can look at the source code, and learn something more about Go.
+Well, I spent a lot of time in 2018 learning [Go][golang] for a new project at work. It's a very nice programming language. Late in 2018, I came across [Hugo]. It looked interesting, and what do you know, it's written in Go! I had to give it a try. I figured even if it's not to my liking, I can look at the source code, and learn something more about Go.
 
 It turns out that not only is Hugo useful, it is fast, not too hard to integrate MathJax for nice looking equations, has a powerful template language, and it is even possible to write pages in rST - though it requires integration with the Python script [rst2html5].
 

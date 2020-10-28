@@ -34,9 +34,12 @@
   --color700-complement         : #00572b;
   --color700-adjacent           : #003457;
   --color700-adjacent-complement: #572300;
-  --color-border-left           : #8fa39f;
-  --color-code-background: #e3e8e7;
-  --color-code-border-bottom: #cacfcf;
+  --color-border-left           : #c4baad;
+  /* variations on #edeae6 from https://www.colorhexa.com/edeae6 */
+  --color-code-background: #edeae6;
+  --color-code-border-bottom: #ddd7cf;
+  --color-table-background-odd: #ddd7cf;
+  --color-table-background-even: #fdfdfd;
   --color-caution: #999900;
   --color-caution-background: lightgoldenrodyellow
 }
@@ -118,6 +121,10 @@ body,
   overflow-wrap: break-word;
 }
 
+pre.chroma {
+  background-color: var(--color-code-background);
+  width: 100%;
+}
 
 /*
  * The next three rules not only set the style for figure captions, but add an
@@ -136,6 +143,19 @@ figure {
 
 figcaption:before {
   content: 'Fig. ' counter(figures) ' - ';
+}
+
+/* any "img" descendent of a figure.post-image */
+figure.post-image img {
+  display: block;
+  width: 100%;
+}
+
+/* all images created with the "figure" shortcode
+.post-image {
+  border       : 0.1rem solid var(--color-border-left);
+  border-radius: 0.5em;
+  padding      : 0.1em;
 }
 
 /* bring the ".read-more" footer into closer proximity of the last ".document"
@@ -186,7 +206,7 @@ body {
   max-width       : 120ch;
   overflow        : auto;
   font-family     : "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size       : 18px;
+  font-size       : 1.125em;
   background-color: var(--gray100);
   color           : var(--gray900);
   margin          : 0;
@@ -233,7 +253,7 @@ dd {
 .siteTitle {
   width      : 100%;
   font-size  : 2.5em;
-  line-height: 1.5em;
+  line-height: 1.5;
 }
 
 /*
@@ -260,7 +280,6 @@ dd {
 */
 h1 {
   font-size  : 12em;
-  line-height: 12em;
 }
 
 /*
@@ -276,6 +295,8 @@ h1 {
   - h4: font-size: 27px => 27/18 = 1.5em; line-height: 27px => 27/27 = 1em
   - h5: font-size: 24px => 24/18 = 1.333em; line-height: 27px => 27/24 = 1.125em
   - h6: font-size: 21px => 21/18 = 1.167em; line-height: 27px => 27/21 = 1.286em
+
+  N.B.: MDN documentation on line-height (https://developer.mozilla.org/en-US/docs/Web/CSS/line-height) says that specifying it in terms of "em" may produce unexpected results. It is better to specify it with a unitless <number> which is then multiplied by the element's own font size. The computed value is the same as the specified <number>. In most cases, this is the preferred way to set line-height and avoid unexpected results due to inheritance.
 */
 h2 {
   font-size    : 1.833em;
@@ -456,12 +477,12 @@ h6 {
 .title-article,
 .title-article-item {
   display    : inline;
-  line-height: 1.5em;
+  line-height: 1.5;
 }
 
 .post-metadata {
   font-size  : 0.889em;
-  line-height: 1.3em;
+  line-height: 1.3;
 }
 
 .page-summary {
@@ -476,10 +497,11 @@ h6 {
 q,
 blockquote {
   background-color: --color-code-background;
-  border-bottom   : 1px solid var(--color-code-border-bottom);
-  border-left     : 2px solid var(--color-border-left);
-  margin          : 1.5em 10px;
-  padding         : 0.5em 10px;
+  border-bottom   : 0.1em solid var(--color-code-border-bottom);
+  border-left     : 0.1em solid var(--color-border-left);
+  border-bottom-left-radius: 0.5em;
+  margin          : 0.5em 0rem 0.5em 0rem;
+  padding         : 0.5em 0.5em;
   quotes          : "\201C""\201D""\2018""\2019";
 }
 
@@ -488,9 +510,8 @@ blockquote:before {
   content       : open-quote;
   color         : var(--gray300);
   font-size     : 4em;
-  line-height   : 0.1em;
-  margin-right  : 0.25em;
-  vertical-align: -0.4em;
+  line-height   : 0;
+  vertical-align: bottom;
 }
 
 q:after,
@@ -498,9 +519,19 @@ blockquote:after {
   content       : close-quote;
   color         : var(--gray300);
   font-size     : 4em;
-  line-height   : 0.1em;
-  margin-left   : 0.25em;
-  vertical-align: -0.4em;
+  line-height   : 0;
+  vertical-align: bottom;
+}
+
+blockquote > ul > li:last-child::after,
+blockquote > ol > li:last-child::after,
+q > ul > li:last-child::after,
+q > ol > li:last-child::after {
+  content       : close-quote;
+  color         : var(--gray300);
+  font-size     : 4em;
+  line-height   : 0;
+  vertical-align: bottom;
 }
 
 q p:first-child,
@@ -522,7 +553,6 @@ tt.docutils.literal {
 /* inline code */
 code,
 tt.docutils.literal {
-  padding  : 2px 4px;
   font-size: 1rem;
 }
 
@@ -539,9 +569,10 @@ pre,
   overflow-x   : auto;
   overflow-y   : hidden;
   margin       : 0.5em 0rem 0.5em 0rem;
-  padding      : 0.5em 0 0.5em 1em;
-  border-bottom: 1px solid var(--color-code-border-bottom);
-  border-left  : 2px solid var(--color-border-left);
+  padding      : 0.5em 0.5em;
+  border-bottom: 0.1em solid var(--color-code-border-bottom);
+  border-left  : 0.1em solid var(--color-border-left);
+  display: inline-block;
 }
 
 a {
@@ -573,12 +604,32 @@ a:active {
 table,
 td,
 th {
-  border         : 1px solid black;
+  border         : 0.1em solid black;
   border-collapse: collapse;
 }
 
-tr:nth-child(odd) {
-  background-color: --color-code-background;
+table.table tr.multi-row > th,
+table.table tr.multi-row > td {
+  border-top: none;
+  border-bottom: none;
+}
+
+table.table tr.multi-row:first-child,
+table.table tr.multi-row:first-child {
+  border-top: 0.1em solid black;
+}
+
+table.table tr.multi-row:last-child,
+table.table tr.multi-row:last-child {
+  border-bottom: 0.1em solid black;
+}
+
+table.table tbody:nth-child(odd) {
+  background-color: var(--color-table-background-odd);
+}
+
+table.table tbody:nth-child(even) {
+  background-color: var(--color-table-background-even);
 }
 
 tr:nth-child(even) pre,
@@ -587,7 +638,7 @@ tr:nth-child(even) tt.docutils.literal {
   background-color: rgb(241, 241, 241);
 }
 
-th {
+thead {
   background-color: hsl(162, 11%, 30%);
   color           : rgb(241, 241, 241);
 }
@@ -619,7 +670,7 @@ td {
 
 .admonition>.any {
   background-color: var(--color-code-background);
-  border-left     : 2px solid var(--color600);
+  border-left     : 0.1rem solid var(--color600);
 }
 
 .admonition>.any>.admonition-title {
@@ -628,7 +679,7 @@ td {
 
 .admonition>.attention {
   background-color: var(--color100);
-  border-left     : 2px solid var(--color600);
+  border-left     : 0.1rem solid var(--color600);
 }
 
 .admonition>.attention>.admonition-title {
@@ -637,7 +688,7 @@ td {
 
 .admonition>.caution {
   background-color: var(--color-caution-background);
-  border-left     : 2px solid var(--color-caution);
+  border-left     : 0.1rem solid var(--color-caution);
 }
 
 .admonition>.caution>.admonition-title {
@@ -646,7 +697,7 @@ td {
 
 .admonition>.danger {
   background-color: var(--color100);
-  border-left     : 2px solid firebrick;
+  border-left     : 0.1rem solid firebrick;
 }
 
 .admonition>.danger>.admonition-title {
@@ -655,7 +706,7 @@ td {
 
 .admonition>.error {
   background-color: var(--color100);
-  border-left     : 2px solid darkred;
+  border-left     : 0.1rem solid darkred;
 }
 
 .admonition>.error>.admonition-title {
@@ -664,7 +715,7 @@ td {
 
 .admonition>.hint {
   background-color: var(--color100);
-  border-left     : 2px solid steelblue;
+  border-left     : 0.1rem solid steelblue;
 }
 
 .admonition>.hint>.admonition-title {
@@ -673,7 +724,7 @@ td {
 
 .admonition>.important {
   background-color: var(--color100);
-  border-left     : 2px solid brown;
+  border-left     : 0.1rem solid brown;
 }
 
 .admonition>.important>.admonition-title {
@@ -682,7 +733,7 @@ td {
 
 .admonition>.note {
   background-color: var(--color100);
-  border-left     : 2px solid var(--color600);
+  border-left     : 0.1rem solid var(--color600);
 }
 
 .admonition>.note>.admonition-title {
@@ -691,7 +742,7 @@ td {
 
 .admonition>.tip {
   background-color: var(--color100);
-  border-left     : 2px solid var(--color500-adjacent);
+  border-left     : 0.1rem solid var(--color500-adjacent);
 }
 
 .admonition>.tip>.admonition-title {
@@ -700,7 +751,7 @@ td {
 
 .admonition>.warning {
   background-color: var(--color-caution-background);
-  border-left     : 2px solid var(--color-caution);
+  border-left     : 0.1rem solid var(--color-caution);
 }
 
 .admonition>.warning>.admonition-title {
@@ -725,7 +776,8 @@ td {
 /* This is a list of social media links and icons */
 .social-items {
   width           : 100%;
-  background-color: var(--color100);
+  /*background-color: var(--color100);*/
+  background-color: var(--color-code-background);
   padding         : 0 0.3em 0.3em 0;
   text-align      : left;
   display         : inline-block;
@@ -752,7 +804,7 @@ td {
    social media icons and links */
 .wrapper-social-items {
   background-color: hsla(162, 25%, 25%, 1);
-  border-radius   : 10px;
+  border-radius   : 0.5em;
   margin-bottom   : 1em;
   margin-right    : 1.5em;
 }
@@ -766,7 +818,7 @@ td {
 }
 
 .wrapper-social-border.icon {
-  padding-left: 10px;
+  padding-left: 0.5em;
 }
 
 .wrapper-social-border.title {
@@ -776,12 +828,11 @@ td {
 
 .social-items>li>a {
   text-align : left;
-  font-size  : 80%;
-  line-height: 0.75em;
 }
 
-.contents {
-  padding: .4em 0;
+.social-items>li.contents {
+  margin: 0.5em auto;
+  line-height: 1;
 }
 
 .header-archive-date {
@@ -1129,8 +1180,24 @@ a.youtube:hover {
   text-decoration: line-through;
 }
 
-.post-image {
-  border       : 2px solid var(--color-border-left);
-  border-radius: 5px;
-  padding      : 2px;
+/* Styling checkboxes formed from "[ ]" and "[x]" in markdown */
+input[type=checkbox]:checked {
+    position: relative;
+}
+input[type=checkbox]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1.1rem;
+    height: 1.1rem;
+    background-color: var(--gray100);
+    border: 0.1rem solid var(--color500-adjacent);
+    border-radius: 0.2em;
+}
+input[type=checkbox]:checked:after {
+    content: "\2714";
+    display: block;
+    position: absolute;
+    left: 0.3em;
+    color: var(--color500);
 }

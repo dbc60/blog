@@ -21,7 +21,6 @@ As I have a tendency to do with new tools, I dove in too deep, too fast. Hugo ha
 {{< figure
   src="/images/history/001-2019.02.03.01-initial-commit.png"
   link="/images/history/001-2019.02.03.01-initial-commit.png"
-  width="600px"
   title="First Try with Vanilla Bootstrap"
   alt="First Rendition using Vanilla Bootstrap Theme"
 >}}
@@ -31,7 +30,6 @@ I tried a few small configuration changes to see how I liked it. My hope was onl
 {{< figure
   src="/images/history/002-2019.02.03.02-title.and.footer.png"
   link="/images/history/002-2019.02.03.02-title.and.footer.png"
-  width="600px"
   title="My First Time Using the Academic Theme"
   alt="My First Time Using the Academic Theme"
 >}}
@@ -45,7 +43,6 @@ Too new to how Hugo workds and the complexities of a website builder, I looked f
 {{< figure
   src="/images/history/003-2019.02.09-vanilla-theme-simplification.png"
   link="/images/history/003-2019.02.09-vanilla-theme-simplification.png"
-  width="600px"
   title="First Try with Vanilla Bootstrap"
   alt="First Rendition using Vanilla Bootstrap Theme"
 >}}
@@ -119,10 +116,8 @@ I created a simple 404 page, and a big "jumbotron" area for all the index pages.
 {{< figure
   src="/images/history/004-2019.02.10-jumbotron.png"
   link="/images/history/004-2019.02.10-jumbotron.png"
-  width="650px"
   title="Jumbotron"
   alt="Jumbotron"
-  class="post-image"
 >}}
 
 The note is dated April 8, 2019 because that was my goal for publishing the site. It took a little longer than I expected. Mostly, I was unsure about putting up my notes in public, the design was poor, and I thought I should do better.
@@ -138,10 +133,8 @@ I added a picture of Motif No. 1 I took in Rockport, Massachusetts to fill the j
 {{< figure
   src="/images/history/005-2019.02.11-wide.png"
   link="/images/history/005-2019.02.11-wide.png"
-  width="650px"
   title="Wide Menu Day"
   alt="Wide Menu Day"
-  class="post-image"
 >}}
 
 #### MathJax
@@ -244,10 +237,8 @@ I had added lots of notes and the layout was still sprinkled with distracting ic
 {{< figure
   src="/images/history/006-2019.04.08-red-green.png"
   link="/images/history/006-2019.04.08-red-green.png"
-  width="600px"
   title="Pagination, Redish Theme, and Green Accents"
   alt="Pagination, Redish Theme, and Green Accents"
-  class="post-image"
 >}}
 
 #### Scrollbar Jumping
@@ -290,10 +281,8 @@ In the middle of April, I ripped out Vanilla Bootstrap and started over.
 {{< figure
   src="/images/history/007-2019.04.13-back-to-basics.png"
   link="/images/history/007-2019.04.13-back-to-basics.png"
-  width="451px"
   title="Back to Basics"
   alt="Bacl to Basics"
-  class="post-image"
 >}}
 
 Weird. I started off the year with a sophisticated theme, because I thought it would help me get to a nice looking website fast. I found the large array of options in Academic to be overwhelming.
@@ -352,10 +341,8 @@ Unwrapping them changed navigation from:
 {{< figure
   src="/images/history/008-2019.04.18-unstyled-navigation-list.png"
   link="/images/history/008-2019.04.18-unstyled-navigation-list.png"
-  width="311px"
   title="Unstyled Navigation List"
   alt="Unstyled Navigation List"
-  class="post-image"
 >}}
 
 to this:
@@ -363,10 +350,8 @@ to this:
 {{< figure
   src="/images/history/009-2019.04.19-plain-navigation.png"
   link="/images/history/009-2019.04.19-plain-navigation.png"
-  width="600px"
   title="Plain Navigation"
   alt="Plain Navigation"
-  class="post-image"
 >}}
 
 
@@ -490,10 +475,8 @@ By the end of June I removed most of the feather icons and simplified the layout
 {{< figure
   src="/images/history/010-2019.06.27-simple.png"
   link="/images/history/010-2019.06.27-simple.png"
-  width="600px"
   title="June 2019. A More Simple Presentation"
   alt="June 2019. A more simple presentation"
-  class="post-image"
 >}}
 
 
@@ -515,10 +498,8 @@ A little thing like that helped me make a two column layout.
 {{< figure
   src="/images/history/011-2019.08.04-two-column.png"
   link="/images/history/011-2019.08.04-two-column.png"
-  width="600px"
   title="Two Column Layout"
   alt="Two Column Layout"
-  class="post-image"
 >}}
 
 By the end of September last year, I had restructured a lot of the blog. It has a stronger two-column layout and a splash of color.
@@ -526,10 +507,8 @@ By the end of September last year, I had restructured a lot of the blog. It has 
 {{< figure
   src="/images/history/012-2019.09.30-no-notes-breadcrumbs.png"
   link="/images/history/012-2019.09.30-no-notes-breadcrumbs.png"
-  width="600px"
   title="A Splash of Color"
   alt="A Splash of Color"
-  class="post-image"
 >}}
 
 Since then, I've been periodically iterating on the design. It is pretty much complete and I'm generally happy with the way it has turned out. I'll continue to fiddle with it here and there, but I plan to write about things with which I'm more familiar.

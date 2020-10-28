@@ -18,7 +18,10 @@
     {{ $cssFonts := resources.Get "style/fonts.css" }}
     {{ $cssSyntaxHighlights := resources.Get "style/syntax-highlighting/monokai.css" }}
     {{ $cssEntities := resources.Get "style/entities.css" }}
-    {{ $styles := slice $cssBase $cssDropCaps $cssDropCapsFontGoudy $cssDropCapsFontKanzlei $cssDropCapsFontYinit $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssEntities | resources.Concat "style/style.css" }}
+    <!-- ensure cssBase is the last CSS source file so it can override any
+      selectors from the other files.
+    -->
+    {{ $styles := slice $cssDropCaps $cssDropCapsFontGoudy $cssDropCapsFontKanzlei $cssDropCapsFontYinit $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssEntities $cssBase | resources.Concat "style/style.css" }}
 
     <!-- minify and fingerprint only if not running locally -->
     {{ if not (in (print .Site.BaseURL) "localhost") }}

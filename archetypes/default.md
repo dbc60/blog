@@ -5,5 +5,4 @@ date: {{ .Date }}
 categories: [uncategorized]
 ---
 
-Place excerpt here.
 <!--more-->

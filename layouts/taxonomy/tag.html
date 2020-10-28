@@ -4,11 +4,11 @@
   {{- $paginator := .Paginate .Pages -}}
   {{- range $paginator.Pages -}}
   <section class="page-summary">
-  <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-  {{- partial "date-and-tags.html" . -}}
-  <!-- this renders based on layouts/_default/summary.html (either the
-    local one, or the one in a theme -->
-  {{ .Render "summary" }}
+    <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{- partial "date-and-tags.html" . -}}
+    <!-- this renders based on layouts/_default/summary.html (either the
+      local one, or the one in a theme -->
+    {{ .Render "summary" }}
   </section>
   {{- end -}}
   {{- template "_internal/pagination.html" . }}
