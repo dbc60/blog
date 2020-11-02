@@ -16,6 +16,9 @@
   --color800                    : #003219;
   --color900                    : #000b05;
   --gray100                     : #fcfcfc;
+  --gray125                     : #efefef;
+  --gray150                     : #e3e3e3;
+  --gray175                     : #d6d6d6;
   --gray200                     : #dedede;
   --gray300                     : #bfbfbf;
   --gray400                     : #a1a1a1;
@@ -36,12 +39,15 @@
   --color700-adjacent-complement: #572300;
   --color-border-left           : #c4baad;
   /* variations on #edeae6 from https://www.colorhexa.com/edeae6 */
-  --color-code-background: #edeae6;
-  --color-code-border-bottom: #ddd7cf;
-  --color-table-background-odd: #ddd7cf;
-  --color-table-background-even: #fdfdfd;
+  --color-background-main: var(--gray125);
+  --color-background-contrast: #edeae6;
+  --color-background-code: var(--color-background-contrast);
+  --color-background-table-odd: #ddd7cf;
+  --color-background-table-even: #fdfdfd;
+  --color-background-sidebar: var(--color-background-code);
+  --color-background-caution: lightgoldenrodyellow;
   --color-caution: #999900;
-  --color-caution-background: lightgoldenrodyellow
+  --color-border-bottom-code: #ddd7cf;
 }
 
 /******************
@@ -122,7 +128,7 @@ body,
 }
 
 pre.chroma {
-  background-color: var(--color-code-background);
+  background-color: var(--color-background-code);
   width: 100%;
 }
 
@@ -207,7 +213,7 @@ body {
   overflow        : auto;
   font-family     : "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size       : 1.125em;
-  background-color: var(--gray100);
+  background-color: var(--color-background-main);
   color           : var(--gray900);
   margin          : 0;
   padding         : 1em;
@@ -505,8 +511,8 @@ h6 {
 /* blockquotes for blocks of quotes. Specifically, not blocks of code */
 q,
 blockquote {
-  background-color: --color-code-background;
-  border-bottom   : 0.1em solid var(--color-code-border-bottom);
+  background-color: --color-background-code;
+  border-bottom   : 0.1em solid var(--color-border-bottom-code);
   border-left     : 0.1em solid var(--color-border-left);
   border-bottom-left-radius: 0.5em;
   margin          : 0.5em 0rem 0.5em 0rem;
@@ -555,7 +561,7 @@ blockquote p:last-child {
 pre,
 code,
 tt.docutils.literal {
-  background-color: --color-code-background;
+  background-color: --color-background-code;
   font-family     : Inconsolata, "Lucida Console", Monaco, "Courier New", Courier, monospace;
 }
 
@@ -579,7 +585,7 @@ pre,
   overflow-y   : hidden;
   margin       : 0.5em 0rem 0.5em 0rem;
   padding      : 0.5em 0.5em;
-  border-bottom: 0.1em solid var(--color-code-border-bottom);
+  border-bottom: 0.1em solid var(--color-border-bottom-code);
   border-left  : 0.1em solid var(--color-border-left);
   display: inline-block;
 }
@@ -634,11 +640,11 @@ table.table tr.multi-row:last-child {
 }
 
 table.table tbody:nth-child(odd) {
-  background-color: var(--color-table-background-odd);
+  background-color: var(--color-background-table-odd);
 }
 
 table.table tbody:nth-child(even) {
-  background-color: var(--color-table-background-even);
+  background-color: var(--color-background-table-even);
 }
 
 tr:nth-child(even) pre,
@@ -663,7 +669,7 @@ td {
  *****************************************************************************/
 .admonition-title {
   background-color: var(--color700);
-  color           : var(--gray100);
+  color           : var(--color-background-main);
   padding-left    : 0.25em;
 }
 
@@ -678,7 +684,7 @@ td {
 }
 
 .admonition>.any {
-  background-color: var(--color-code-background);
+  background-color: var(--color-background-code);
   border-left     : 0.1rem solid var(--color600);
 }
 
@@ -687,7 +693,7 @@ td {
 }
 
 .admonition>.attention {
-  background-color: var(--color100);
+  background-color: var(--color-background-main);
   border-left     : 0.1rem solid var(--color600);
 }
 
@@ -696,7 +702,7 @@ td {
 }
 
 .admonition>.caution {
-  background-color: var(--color-caution-background);
+  background-color: var(--color-background-caution);
   border-left     : 0.1rem solid var(--color-caution);
 }
 
@@ -705,7 +711,7 @@ td {
 }
 
 .admonition>.danger {
-  background-color: var(--color100);
+  background-color: var(--color-background-main);
   border-left     : 0.1rem solid firebrick;
 }
 
@@ -714,7 +720,7 @@ td {
 }
 
 .admonition>.error {
-  background-color: var(--color100);
+  background-color: var(--color-background-main);
   border-left     : 0.1rem solid darkred;
 }
 
@@ -723,7 +729,7 @@ td {
 }
 
 .admonition>.hint {
-  background-color: var(--color100);
+  background-color: var(--color-background-main);
   border-left     : 0.1rem solid steelblue;
 }
 
@@ -732,7 +738,7 @@ td {
 }
 
 .admonition>.important {
-  background-color: var(--color100);
+  background-color: var(--color-background-main);
   border-left     : 0.1rem solid brown;
 }
 
@@ -741,7 +747,7 @@ td {
 }
 
 .admonition>.note {
-  background-color: var(--color100);
+  background-color: var(--color-background-main);
   border-left     : 0.1rem solid var(--color600);
 }
 
@@ -750,7 +756,7 @@ td {
 }
 
 .admonition>.tip {
-  background-color: var(--color100);
+  background-color: var(--color-background-main);
   border-left     : 0.1rem solid var(--color500-adjacent);
 }
 
@@ -759,7 +765,7 @@ td {
 }
 
 .admonition>.warning {
-  background-color: var(--color-caution-background);
+  background-color: var(--color-background-caution);
   border-left     : 0.1rem solid var(--color-caution);
 }
 
@@ -785,8 +791,7 @@ td {
 /* This is a list of social media links and icons */
 .social-items {
   width           : 100%;
-  /*background-color: var(--color100);*/
-  background-color: var(--color-code-background);
+  background-color: var(--color-background-sidebar);
   padding         : 0 0.3em 0.3em 0;
   text-align      : left;
   display         : inline-block;
@@ -856,142 +861,142 @@ td {
 
 a.email {
   color           : hsla(162, 25%, 25%, 1);
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.facebook {
   color           : #3B5998;
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.github {
   color           : black;
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.hackernews {
   color           : #ff6600;
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.instagram {
   color           : #2d2d2d;
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.linkedin {
   color           : #4875B4;
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.pinterest {
   color           : #c8232c;
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.reddit {
   color           : #41700f;
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.rss {
   color           : hsla(162, 25%, 25%, 1);
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.stackoverflow {
   color           : #2d2d2d;
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.subscribemail {
-  color           : --color-code-background;
-  background-color: var(--color100)
+  color           : --color-background-code;
+  background-color: var(--color-background-sidebar)
 }
 
 a.tumblr {
   color           : #2B4964;
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.twitter {
   color           : #33ccff;
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.youtube {
   color           : #FF3333;
-  background-color: var(--color100)
+  background-color: var(--color-background-sidebar)
 }
 
 a.email:hover {
   background-color: hsla(162, 25%, 25%, 1);
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 a.facebook:hover {
   background-color: #3B5998;
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 a.github:hover {
   background-color: black;
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 a.hackernews:hover {
   background-color: #ff6600;
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 a.instagram:hover {
   background-color: #2d2d2d;
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 a.linkedin:hover {
   background-color: #4875B4;
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 a.pinterest:hover {
   background-color: #c8232c;
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 a.reddit:hover {
   background-color: #41700f;
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 a.rss:hover {
   background-color: hsla(162, 25%, 25%, 1);
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 a.stackoverflow:hover {
   background-color: #2d2d2d;
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 a.subscribemail:hover {
-  background-color: --color-code-background;
-  color           : var(--color100)
+  background-color: --color-background-code;
+  color           : var(--color-background-sidebar)
 }
 
 a.tumblr:hover {
   background-color: #2B4964;
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 a.twitter:hover {
   background-color: #33ccff;
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 a.youtube:hover {
   background-color: #FF3333;
-  color           : var(--color100)
+  color           : var(--color-background-sidebar)
 }
 
 
@@ -1199,7 +1204,7 @@ input[type=checkbox]:before {
     position: absolute;
     width: 1.1rem;
     height: 1.1rem;
-    background-color: var(--gray100);
+    background-color: var(--color-background-main);
     border: 0.1rem solid var(--color500-adjacent);
     border-radius: 0.2em;
 }

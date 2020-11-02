@@ -16,12 +16,14 @@
   {{ end }}
 {{ end }}
 {{ $sections := $scratch.Get "sections" }}
-{{ range $_, $section := $sections.ByTitle }}
-  <li class="contents">
-    <a class="secondary-nav__link" href="{{ $section.Permalink }}">
-      {{ $section.Title }}
-    </a>
-  </li>
+{{ range $sections.GroupBy "Weight" }}
+  {{ range .Pages.ByTitle }}
+    <li class="contents">
+      <a class="secondary-nav__link" href="{{ .Permalink }}">
+        {{ .Title }}
+      </a>
+    </li>
+  {{ end }}
 {{ end }}
 {{ "<!--END layouts/partials/items-contents.html -->" | safeHTML }}
 </ul>

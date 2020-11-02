@@ -1,13 +1,15 @@
 {{ "<!-- BEGIN layouts/partials/nav__breadcrumbs.html -->" | safeHTML }}
-{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-{{ $.Scratch.Set "path" .Site.BaseURL }}
-{{ $.Scratch.Add "path" "/" }}
-  <li class="breadcrumb__item"><a href="/">Home</a></li>
-  {{ range $_, $element := split $url "/" }}
-    {{ $.Scratch.Add "path" $element }}
-      {{ if ne $element "" }}
-      <li class="breadcrumb__item"><a class="breadcrumbs_link" href='{{ $.Scratch.Get "path" }}'>{{ (replace . "-" " ") | title }}</a></li>
-      {{ $.Scratch.Add "path" "/" }}
-      {{ end }}
+<li class="breadcrumb__item"><a href="/">Home</a></li>
+{{ template "breadcrumb" dict "currentPage" .Page }}
+
+<!-- templates -->
+{{ define "breadcrumb" }}
+  {{ if .currentPage.Parent }}
+    {{ if ne .currentPage.Parent .IsHome }}
+      {{ template "breadcrumb" dict "currentPage" .currentPage.Parent }}
+    {{ end }}
+    <li class="breadcrumb__item"><a class="breadcrumbs_link" href="{{ .currentPage.Permalink }}">{{ .currentPage.Title }}</a></li>
   {{ end }}
+{{ end }}
+
   {{ "<!-- END layouts/partials/nav__breadcrumbs.html -->" | safeHTML }}
