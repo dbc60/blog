@@ -11,10 +11,9 @@
 }
 
 .breadcrumb li a {
-  color: var(--gray100);
+  color: var(--color-background-main);
   text-decoration: none;
   padding: 5px 0 5px 45px;
-  background-color: hsla(162,25%,27%,1); /* fallback color */
   background-color: var(--color900);
   position: relative;
   display: block;
@@ -47,7 +46,7 @@
   height: 0;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-left: 30px solid var(--gray100); /* must be same as background */
+  border-left: 30px solid var(--color-background-main); /* must be same as background */
   /*border-left: 30px solid green;  */
   position: absolute;
   top: 50%;
@@ -84,12 +83,18 @@
 .breadcrumb li:nth-child(5) a:after { border-left-color: var(--color500); }
 .breadcrumb li:nth-child(6) a       { background:        var(--color400); }
 .breadcrumb li:nth-child(6) a:after { border-left-color: var(--color400); }
+.breadcrumb li:nth-child(7) a       { background:        var(--color300);
+                                      color:             var(--color900); }
+.breadcrumb li:nth-child(7) a:after { border-left-color: var(--color300); }
 
+.breadcrumb {
+  --color-hover-breadcrumb-background-anchor  : var(--color500-shade1-complement);
+}
 /* hover */
 /* https://css-tricks.com/triangle-breadcrumbs/ */
 .breadcrumb li a:hover {
-  background: var(--color500-complement);
+  background: var(--color-background-anchor-hover);
 }
 .breadcrumb li a:hover:after {
-  border-left-color: var(--color500-complement);
+  border-left-color: var(--color-background-anchor-hover);
 }

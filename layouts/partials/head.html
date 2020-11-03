@@ -9,7 +9,8 @@
       https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
       and https://gohugo.io/hugo-pipes/
     -->
-    {{ $cssBase := resources.Get "style/base.css" }}
+    {{ $cssPreface := resources.Get "style/front.css"}}
+    {{ $cssOverrides := resources.Get "style/overrides.css" }}
     {{ $cssDropCaps := resources.Get "style/drop-caps/drop-caps.css" }}
     {{ $cssDropCapsFontGoudy := resources.Get "style/drop-caps/drop-caps_goudy.css" }}
     {{ $cssDropCapsFontKanzlei := resources.Get "style/drop-caps/drop-caps_kanzlei.css" }}
@@ -18,10 +19,10 @@
     {{ $cssFonts := resources.Get "style/fonts.css" }}
     {{ $cssSyntaxHighlights := resources.Get "style/syntax-highlighting/monokai.css" }}
     {{ $cssEntities := resources.Get "style/entities.css" }}
-    <!-- ensure cssBase is the last CSS source file so it can override any
+    <!-- ensure cssOverrides is the last CSS source file so it can override any
       selectors from the other files.
     -->
-    {{ $styles := slice $cssDropCaps $cssDropCapsFontGoudy $cssDropCapsFontKanzlei $cssDropCapsFontYinit $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssEntities $cssBase | resources.Concat "style/style.css" }}
+    {{ $styles := slice $cssPreface $cssDropCaps $cssDropCapsFontGoudy $cssDropCapsFontKanzlei $cssDropCapsFontYinit $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssEntities $cssOverrides | resources.Concat "style/style.css" }}
 
     <!-- minify and fingerprint only if not running locally -->
     {{ if not (in (print .Site.BaseURL) "localhost") }}

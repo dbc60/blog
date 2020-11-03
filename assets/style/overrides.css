@@ -6,15 +6,15 @@
 /* Some basic settings
    The color palette using CSS Custom Properties */
 :root {
-  --color100                    : #f5fffa;
-  --color200                    : #7cffbb;
-  --color300                    : #00eb75;
-  --color400                    : #00c663;
-  --color500                    : #00a151;
-  --color600                    : #007c3e;
-  --color700                    : #00572c;
-  --color800                    : #003219;
-  --color900                    : #000b05;
+  --color100                    : #dce8f7;
+  --color200                    : #acc9ec;
+  --color300                    : #7ca9e1;
+  --color400                    : #4c8ad6;
+  --color500                    : #2f75cc;
+  --color600                    : #24599d;
+  --color700                    : #193e6d;
+  --color800                    : #0e233d;
+  --color900                    : #03070d;
   --gray100                     : #fcfcfc;
   --gray125                     : #efefef;
   --gray150                     : #e3e3e3;
@@ -28,26 +28,43 @@
   --gray800                     : #262626;
   --gray900                     : #080808;
   /* text */
-  --color500-complement         : #a30052;
+  /*--color500-complement         : #a30052;*/
+  --color500-complement         : #cc862f;
+  /* Note: Adjacent colors are also called analogous colors */
   /* anchor hover */
-  --color500-adjacent           : #0062a3;
+  /*--color500-adjacent           : #0062a3;*/
+  --color500-adjacent           : #259ca3;
+  --color500-shade1             : #255da3;
+  --color500-shade1-complement  : #a36b25;
   /* drop-caps */
-  --color500-adjacent-complement: #a34100;
+  /*--color500-adjacent-complement: #a34100;*/
+  --color500-adjacent-complement: #cc372f;
+  --color500-shade1-adjacent-complement: #a32c25;
+
   /* reserved */
   --color700-complement         : #00572b;
   --color700-adjacent           : #003457;
   --color700-adjacent-complement: #572300;
   --color-border-left           : #c4baad;
+  --color-background-main: var(--gray200);
+
   /* variations on #edeae6 from https://www.colorhexa.com/edeae6 */
-  --color-background-main: var(--gray125);
   --color-background-contrast: #edeae6;
-  --color-background-code: var(--color-background-contrast);
+  --color-background-contrast-shade1: #e2ded7;
+  --color-background-contrast-complement: #e6e9ed;
+  --color-background-contrast-complement-shade1: #697b92;
+  --color-background-code: var(--color-background-contrast-shade1);
   --color-background-table-odd: #ddd7cf;
   --color-background-table-even: #fdfdfd;
-  --color-background-sidebar: var(--color-background-code);
+  --color-background-sidebar: var(--color-background-contrast-shade1);
+  /*--color-background-sidebar-highlight: hsla(162, 25%, 25%, 1);*/
+  --color-background-sidebar-highlight: var(--color-background-contrast-complement-shade1);
   --color-background-caution: lightgoldenrodyellow;
   --color-caution: #999900;
   --color-border-bottom-code: #ddd7cf;
+  --color-title: var(--color600);
+  --color-anchor: var(--color600);
+  --color-background-anchor-hover: var(--color500-shade1-complement);
 }
 
 /******************
@@ -259,12 +276,14 @@ dd {
 .siteTitle {
   width      : 100%;
   font-size  : 2.5em;
+  color: var(--color-title);
 }
 
 .siteSubTitle {
   width      : 100%;
   font-size  : 1.5em;
   line-height: 1;
+  color: var(--color-title);
 }
 
 .title-content {
@@ -511,7 +530,7 @@ h6 {
 /* blockquotes for blocks of quotes. Specifically, not blocks of code */
 q,
 blockquote {
-  background-color: --color-background-code;
+  background-color: var(--color-background-code);
   border-bottom   : 0.1em solid var(--color-border-bottom-code);
   border-left     : 0.1em solid var(--color-border-left);
   border-bottom-left-radius: 0.5em;
@@ -561,7 +580,7 @@ blockquote p:last-child {
 pre,
 code,
 tt.docutils.literal {
-  background-color: --color-background-code;
+  background-color: var(--color-background-code);
   font-family     : Inconsolata, "Lucida Console", Monaco, "Courier New", Courier, monospace;
 }
 
@@ -591,12 +610,12 @@ pre,
 }
 
 a {
-  color: hsla(162, 25%, 25%, 1);
+  color: var(--color-anchor);
 }
 
 a:hover,
 a:active {
-  color: var(--color500-complement);
+  color: var(--color-background-anchor-hover);
 }
 
 .pagination {
@@ -757,11 +776,11 @@ td {
 
 .admonition>.tip {
   background-color: var(--color-background-main);
-  border-left     : 0.1rem solid var(--color500-adjacent);
+  border-left     : 0.1rem solid var(--color500-shade1);
 }
 
 .admonition>.tip>.admonition-title {
-  background-color: var(--color500-adjacent);
+  background-color: var(--color500-shade1);
 }
 
 .admonition>.warning {
@@ -817,7 +836,8 @@ td {
 /* A list item in a wrapper-social-sections list that contains a list of
    social media icons and links */
 .wrapper-social-items {
-  background-color: hsla(162, 25%, 25%, 1);
+  /*background-color: hsla(162, 25%, 25%, 1);*/
+  background-color: var(--color-background-sidebar-highlight);
   border-radius   : 0.5em;
   margin-bottom   : 1em;
   margin-right    : 1.5em;
@@ -910,7 +930,7 @@ a.stackoverflow {
 }
 
 a.subscribemail {
-  color           : --color-background-code;
+  color           : var(--color-background-code);
   background-color: var(--color-background-sidebar)
 }
 
@@ -980,7 +1000,7 @@ a.stackoverflow:hover {
 }
 
 a.subscribemail:hover {
-  background-color: --color-background-code;
+  background-color: var(--color-background-code);
   color           : var(--color-background-sidebar)
 }
 
@@ -1000,6 +1020,7 @@ a.youtube:hover {
 }
 
 
+/* Various to-do-list shortcodes */
 .event,
 .event-canceled,
 .event-completed,
@@ -1144,8 +1165,9 @@ a.youtube:hover {
   content: "\21D2";
 }
 
+/* Picking arbitrary colors for various to-do-list shortcodes */
 .event {
-  color: darkgreen;
+  color: var(--color500-adjacent);
 }
 
 .task-experimental {
