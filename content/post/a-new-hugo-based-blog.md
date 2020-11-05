@@ -51,7 +51,7 @@ The change was dramatic and configuration was simplified. While Academic has two
 
 ### A New Navigation Menu
 
-It looked pretty good for a few hours of work. It was easy to define a menu at the top of the home page providing links to other pages. Most of what I needed to define the menus was contained in `config/_default/config.toml`::
+It looked pretty good for a few hours of work. It was easy to define a menu at the top of the home page providing links to other pages. Most of what I needed to define the menus was contained in `config/_default/config.toml`:
 
 ```toml
   # See https://feathericons.com/
@@ -84,7 +84,7 @@ It looked pretty good for a few hours of work. It was easy to define a menu at t
       weight = 5
 ```
 
-The theme provides the other major component in `theme/vanilla/layouts/partials/nav.html`::
+The theme provides the other major component in `theme/vanilla/layouts/partials/nav.html`:
 
 ```html
   <div id="nav-border" class="container">
@@ -282,7 +282,7 @@ In the middle of April, I ripped out Vanilla Bootstrap and started over.
   src="/images/history/007-2019.04.13-back-to-basics.png"
   link="/images/history/007-2019.04.13-back-to-basics.png"
   title="Back to Basics"
-  alt="Bacl to Basics"
+  alt="Back to Basics"
 >}}
 
 Weird. I started off the year with a sophisticated theme, because I thought it would help me get to a nice looking website fast. I found the large array of options in Academic to be overwhelming.
@@ -353,7 +353,6 @@ to this:
   title="Plain Navigation"
   alt="Plain Navigation"
 >}}
-
 
 ### General Layout
 
