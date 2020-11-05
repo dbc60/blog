@@ -46,7 +46,9 @@
   --color700-adjacent           : #003457;
   --color700-adjacent-complement: #572300;
   --color-border-left           : #c4baad;
-  --color-background-main: var(--gray200);
+
+  /* Major components */
+  --color-background-main: var(--gray150);
 
   /* variations on #edeae6 from https://www.colorhexa.com/edeae6 */
   --color-background-contrast: #edeae6;
