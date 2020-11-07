@@ -4,6 +4,7 @@ date: 2016-03-10
 2016: ["03"]
 math: true
 categories: [post]
+tags: [blog]
 ---
 What an ugly, fragile blog.
 <!--more-->

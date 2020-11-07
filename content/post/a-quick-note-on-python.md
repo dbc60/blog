@@ -3,6 +3,7 @@ title: A Quick Note on Python
 date: 2016-01-04
 2016: ["01"]
 categories: [post]
+tags: [programming, python]
 ---
 
 I saw an amusing Python tutorial.

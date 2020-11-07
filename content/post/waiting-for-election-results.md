@@ -3,9 +3,10 @@ title: "Waiting for Election Results"
 date: 2020-11-07T08:23:14-05:00
 2020: ["11"]
 categories: [post]
+tags: [politics]
 ---
 
-The election is over. All we can do is wait for the counting complete. I hope enough people who see just how terrible this failure of a human being is went to the polls and voted. The future of our country depends on it.
+The election is over. All we can do is wait for the counting complete. I hope enough people who see just how terrible this failure of a human being, Donald Trump, is went to the polls and voted. The future of our country depends on it.
 
 Nevertheless, I have to get a few things off my chest. This morning, I considered writing a post about how horrible and dangerous the actions and words of Donald Trump are and how they undermine trust in one of the most sacred aspects of American democracy, the electoral process. It is through our right to vote for our representatives in government that our democracy functions. Without trust in that process, our democracy and our country fail.
 <!--more-->
@@ -14,7 +15,7 @@ I was going to declare Trump a fascist and state that public officials who stay 
 
 I found an article by John McNeil, a professor of history at Georgetown University, [How Fascist is Donald Trump? There's Actually a Formula for That](https://www.washingtonpost.com/posteverything/wp/2016/10/21/how-fascist-is-donald-trump-theres-actually-a-formula-for-that/). McNeil measures Trump's statements and behaviors against 11 traits of fascism through the lens of the two horrible dictators who created it: Benito Mussolini and Adolf Hitler. Through this comparison, I realized just how much more brutal are _real_ fascists. Thankfully, Trump can count fascism as another of his many failures.
 
-The truth is state officials all across the country have worked very hard to ensure _all_ legal votes are counted. Most ballots are counted by machine. Both major parties have representative observing the counting process, so if for some reason the machine can't read a ballot, both parties view the ballot and try to understand the intent of the voter. Given the level of oversight and the difficulty of synchronizing fraud across multiple states, it is inconcievable that either party could throw the election.
+The truth is state officials all across the country have worked very hard to ensure _all_ legal votes are counted. Most ballots are counted by machine. Both major parties have representatives observing the counting process, so if for some reason the machine can't read a ballot, both parties view the ballot and try to understand the intent of the voter. Given the level of oversight and the difficulty of synchronizing fraud across multiple states, it is inconcievable that either party could throw the election.
 
 Trump has been, and still is, a danger to our country. He is relentlessly undermining trust in our electoral process. He makes baseless claims of illegal ballots being counted. He falsely claimed that no ballots could be legally counted after election day - at least in Pennsylvania where he was ahead. However, he wanted counting to continue in Arizona, where we was behind. He has threatened to not leave the Office of the President if he loses. He and others who should know better (like Richard Grenell, former Acting Director of National Intelligence) have claimed that illegal votes are being counted in Nevada.
 

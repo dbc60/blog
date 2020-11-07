@@ -3,6 +3,7 @@ title: Serving a Blog
 date: 2016-09-04
 2016: ["09"]
 categories: [post]
+tags: [blog]
 ---
 
 I want a blog where I control the design and layout. I want to be able to change the way it works and appears so I can experiment with various ideas, learn by attempting to replicate other designs and see what happens.
