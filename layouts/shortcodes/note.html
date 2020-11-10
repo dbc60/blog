@@ -1,6 +1,4 @@
-<div class="admonition">
-  <div class="note">
-    <div class="admonition-title">{{ .Get "title" | default "Note" }}</div>
-    <div class="content">{{ printf "%s" .Inner | partial "markdownify-block" }}</div>
-  </div>
-</div>
+<aside class="admonition note">
+  <div class="admonition-title">{{ .Get "title" | default "Note" }}</div>
+  <div class="content">{{ printf "%s" .Inner | partial "markdownify-block" }}</div>
+</aside>

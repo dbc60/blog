@@ -11,6 +11,8 @@ math: true
 In my [previous post]({{< ref "restart" >}}) I talked a little about why and how I started this blog. Here I want to present my experience with [Hugo] and what I like about it.
 <!--more-->
 
+{{< table-of-contents >}}
+
 Late in 2018  I came across [Hugo], a static site generator written in [Go][golang]. Dissatisfied with Jekyll, I needed a different static site generator, and I had been learning Go at Work. This looked like a good opportunity to try blogging again.
 
 I stumbled quite badly a few times along the way. I thought a theme would help me get my site up and running quickly, but they don't balance well with my need to twiddle with the site's layout and look and feel. The long and short of it is, I took what I learned from trying out a couple of themes, and hunkered down to learn a few things about "The Hugo Way", and the basics of HTML & CSS.

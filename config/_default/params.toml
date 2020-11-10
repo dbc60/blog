@@ -15,3 +15,4 @@ mainSections = ["note", "post", "project"]
 planck = "\u210E"
 reduced_planck = "\u210F"
 lastWeek2019 = "2019-12-23T04:00:00Z"
+disable_comments = true

@@ -1,7 +1,6 @@
 {{- define "main" }}
   {{ "<!-- BEGIN main in layouts/_default/section.html -->" | safeHTML }}
   {{- $pag := .Paginate (where .RegularPages "Section" .Section) -}}
-  <div class="content">
     {{ "<!-- BEGIN range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
     {{- if gt (len $pag.Pages) 0 -}}
       {{- range $pag.Pages -}}
@@ -13,22 +12,21 @@
         </section>
       {{- end -}}
     {{- else -}}
-    <div class="content">{{- "<!-- BEGIN content div layouts/_default/section.html -->" | safeHTML }}
+      {{- "<!-- BEGIN content div layouts/_default/section.html -->" | safeHTML }}
       <section class="page-summary">
         <h2 class="title-article">{{- .Title -}}</h2>
         {{- partial "date-and-tags.html" . -}}
-
-        {{ partial "drop-caps.html" . }}
-        {{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments     .Params.disable_comments)) }}
-        <section class="comments">{{- "<!-- BEGIN comments section layouts/_default/section.html -->" | safeHTML }}
-          {{ template "_internal/disqus.html" . }}
-        </section> {{- "<!-- END comments section layouts/_default/section.html -->" | safeHTML }}
-        {{ end }}
       </section>
-    </div>{{ "<!-- END content div layouts/_default/section.html -->" | safeHTML }}
-      {{- end -}}
+
+      {{ partial "drop-caps.html" . }}
+      {{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments     .Params.disable_comments)) }}
+      <section class="comments">{{- "<!-- BEGIN comments section layouts/_default/section.html -->" | safeHTML }}
+        {{ template "_internal/disqus.html" . }}
+      </section> {{- "<!-- END comments section layouts/_default/section.html -->" | safeHTML }}
+      {{ end }}
+      {{ "<!-- END content div layouts/_default/section.html -->" | safeHTML }}
+    {{- end -}}
     {{ "<!-- END range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
     {{- template "_internal/pagination.html" . }}
-  </div>
   {{ "<!-- END main in layouts/_default/section.html -->" | safeHTML }}
 {{- end -}}

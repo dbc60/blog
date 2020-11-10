@@ -67,6 +67,8 @@
   --color-title: var(--color600);
   --color-anchor: var(--color600);
   --color-background-anchor-hover: var(--color500-shade1-complement);
+  --color-background-toc: var(--color-background-contrast-shade1);
+  --color-border-toc: var(--gray900);
 }
 
 /******************
@@ -346,10 +348,20 @@ h3 {
   margin-bottom: 0;
 }
 
+/* close the gap on adjacent headings */
+h2 + h3 {
+  margin-top: 0;
+}
+
 h4 {
   font-size    : 1.5em;
   margin-top   : 1em;
   margin-bottom: 0;
+}
+
+/* close the gap on adjacent headings */
+h3 + h4 {
+  margin-top: 0;
 }
 
 h5 {
@@ -358,10 +370,20 @@ h5 {
   margin-bottom: 0;
 }
 
+/* close the gap on adjacent headings */
+h4 + h5 {
+  margin-top: 0;
+}
+
 h6 {
   font-size    : 1.167em;
   margin-top   : 1.286em;
   margin-bottom: 0;
+}
+
+/* close the gap on adjacent headings */
+h5 + h6 {
+  margin-top: 0;
 }
 
 .main-footer {
@@ -559,22 +581,35 @@ blockquote:after {
   vertical-align: bottom;
 }
 
-blockquote > ul > li:last-child::after,
-blockquote > ol > li:last-child::after,
-q > ul > li:last-child::after,
-q > ol > li:last-child::after {
-  content       : close-quote;
-  color         : var(--gray300);
-  font-size     : 4em;
-  line-height   : 0;
-  vertical-align: bottom;
+q > ul,
+q > ol,
+blockquote > ul ,
+blockquote > ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+q > ul:first-child,
+q > ol:first-child,
+blockquote > ul:first-child,
+blockquote > ol:first-child{
+  margin-top: 0;
+}
+
+q > ul:last-child,
+q > ol:last-child,
+blockquote > ul:last-child,
+blockquote > ol:last-child{
+  margin-bottom: 0;
 }
 
 q p:first-child,
 q p:last-child,
 blockquote p:first-child,
 blockquote p:last-child {
-  display: inline;
+  /* the initial value of display is inline, as defined here:
+  https://www.w3.org/TR/CSS2/visuren.html#display-prop */
+  display: initial;
 }
 
 
@@ -613,6 +648,7 @@ pre,
 
 a {
   color: var(--color-anchor);
+  text-decoration: none;
 }
 
 a:hover,
@@ -704,93 +740,93 @@ td {
   margin-bottom : 0.5em;
 }
 
-.admonition>.any {
+.any {
   background-color: var(--color-background-code);
   border-left     : 0.1rem solid var(--color600);
 }
 
-.admonition>.any>.admonition-title {
+.any>.admonition-title {
   background-color: var(--color600);
 }
 
-.admonition>.attention {
+.attention {
   background-color: var(--color-background-main);
   border-left     : 0.1rem solid var(--color600);
 }
 
-.admonition>.attention>.admonition-title {
+.attention>.admonition-title {
   background-color: var(--color600);
 }
 
-.admonition>.caution {
+.caution {
   background-color: var(--color-background-caution);
   border-left     : 0.1rem solid var(--color-caution);
 }
 
-.admonition>.caution>.admonition-title {
+.caution>.admonition-title {
   background-color: var(--color-caution);
 }
 
-.admonition>.danger {
+.danger {
   background-color: var(--color-background-main);
   border-left     : 0.1rem solid firebrick;
 }
 
-.admonition>.danger>.admonition-title {
+.danger>.admonition-title {
   background-color: firebrick;
 }
 
-.admonition>.error {
+.error {
   background-color: var(--color-background-main);
   border-left     : 0.1rem solid darkred;
 }
 
-.admonition>.error>.admonition-title {
+.error>.admonition-title {
   background-color: darkred;
 }
 
-.admonition>.hint {
+.hint {
   background-color: var(--color-background-main);
   border-left     : 0.1rem solid steelblue;
 }
 
-.admonition>.hint>.admonition-title {
+.hint>.admonition-title {
   background-color: steelblue;
 }
 
-.admonition>.important {
+.important {
   background-color: var(--color-background-main);
   border-left     : 0.1rem solid brown;
 }
 
-.admonition>.important>.admonition-title {
+.important>.admonition-title {
   background-color: brown;
 }
 
-.admonition>.note {
+.note {
   background-color: var(--color-background-main);
   border-left     : 0.1rem solid var(--color600);
 }
 
-.admonition>.note>.admonition-title {
+.note>.admonition-title {
   background-color: var(--color600);
 }
 
-.admonition>.tip {
+.tip {
   background-color: var(--color-background-main);
   border-left     : 0.1rem solid var(--color500-shade1);
 }
 
-.admonition>.tip>.admonition-title {
+.tip>.admonition-title {
   background-color: var(--color500-shade1);
 }
 
-.admonition>.warning {
+.warning {
   background-color: var(--color-background-caution);
   border-left     : 0.1rem solid var(--color-caution);
 }
 
-.admonition>.warning>.admonition-title {
+.warning>.admonition-title {
   background-color: var(--color-caution);
 }
 
@@ -831,7 +867,6 @@ td {
 
 .wrapper-social-sections a {
   display        : block;
-  text-decoration: none;
   width          : 100%;
 }
 
@@ -1238,4 +1273,35 @@ input[type=checkbox]:checked:after {
     position: absolute;
     left: 0.3em;
     color: var(--color500);
+}
+
+
+/* Hugo's built-in table of contents has 2 levels */
+#TableOfContents > ul > li {
+  list-style-type: none;
+  font-size: 0.9em;
+  margin-right: 1em;
+}
+
+#TableOfContents > ul > li > ul > li {
+  list-style-type: none;
+  font-size: calc(15em / 18);
+}
+
+.toc {
+  background: var(--color-background-toc) none repeat scroll 0 0;
+  border: 1px solid var(--color-border-toc);
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  margin-bottom: 0.5em;
+  float: right;
+}
+
+.toc-title {
+  text-align: left;
+  font-size: calc(24em / 18);
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 1em;
 }

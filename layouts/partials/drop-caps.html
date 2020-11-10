@@ -10,7 +10,7 @@
 {{ end }}
 
 {{ "<!--BEGIN layouts/partials/drop-caps.html -->" | safeHTML }}
-<section class="{{ $scratch.Get "componentDropCaps" }} {{ $scratch.Get "componentDropCapsFont" }}">
+<section class="content {{ $scratch.Get "componentDropCaps" }} {{ $scratch.Get "componentDropCapsFont" }}">
   {{- .Content -}}
 </section>
 {{ "<!--END layouts/partials/drop-caps.html -->" | safeHTML }}
