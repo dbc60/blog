@@ -1,4 +1,0 @@
-<aside class="admonition attention">
-  <div class="admonition-title">{{ .Get "title" | default "Attention" }}</div>
-  <div class="content">{{ printf "%s" .Inner | partial "markdownify-block" }}</div>
-</aside>

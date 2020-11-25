@@ -87,14 +87,11 @@
                                       color:             var(--color900); }
 .breadcrumb li:nth-child(7) a:after { border-left-color: var(--color300); }
 
-.breadcrumb {
-  --color-hover-breadcrumb-background-anchor  : var(--color500-shade1-complement);
-}
 /* hover */
 /* https://css-tricks.com/triangle-breadcrumbs/ */
 .breadcrumb li a:hover {
-  background: var(--color-background-anchor-hover);
+  background: var(--color-anchor-hover);
 }
 .breadcrumb li a:hover:after {
-  border-left-color: var(--color-background-anchor-hover);
+  border-left-color: var(--color-anchor-hover);
 }

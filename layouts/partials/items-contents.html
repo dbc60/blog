@@ -1,4 +1,5 @@
 <ul class="social-items">
+  {{ $byDate := false }}
   {{ "<!--BEGIN layouts/partials/items-contents.html -->" | safeHTML }}
   {{ $scratch := newScratch }}
 {{ if eq (len .context.Sections) 0 }}
@@ -9,15 +10,31 @@
   {{ $scratch.Set "sections" .context.Sections }}
 {{ end }}
 {{ if eq ($scratch.Get "sections") nil }}
-  {{ $scratch.Set "sections" .sections }}
+  {{ $scratch.Set "sections" .context.Parent.Pages }}
+  {{ "<!-- I need a better way to determine which sections are ordered by date -->" | safeHTML }}
+  {{ if or (eq .context.Section "journal") (eq .context.Section "post") }}
+    {{ $byDate = true }}
+  {{ end }}
 {{ else if eq (len ($scratch.Get "sections")) 0 }}
   {{ with .context.Parent.Parent }}
     {{ $scratch.Set "sections" .Sections }}
   {{ end }}
 {{ end }}
 {{ $sections := $scratch.Get "sections" }}
-{{ range $sections.GroupBy "Weight" }}
-  {{ range .Pages.ByTitle }}
+{{ if $byDate }}
+  {{ range $sections.ByDate.Reverse }}
+    <li class="contents">
+      <a class="secondary-nav__link" href="{{ .Permalink }}">
+        {{ .Title }}
+      </a>
+    </li>
+  {{ end }}
+{{ else }}
+  {{ $listLimit := 100 }}
+  {{ if isset .context.Site.Params "list_limit" }}
+    {{ $listLimit = .context.Site.Params.list_limit }}
+  {{ end }}
+  {{ range first $listLimit  $sections.ByTitle }}
     <li class="contents">
       <a class="secondary-nav__link" href="{{ .Permalink }}">
         {{ .Title }}

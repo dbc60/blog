@@ -2,8 +2,8 @@
 title: "A New Hugo-Based Blog"
 date: 2020-02-22T17:38:32-05:00
 2020: ["02"]
-categories: [post]
-tags: [blog]
+categories: [blog]
+tags: [hugo, themes]
 publishDate: 2020-02-22
 math: true
 ---
@@ -468,9 +468,9 @@ The contrast ratio is 19.52:1. Is that too high? One day I'll look into separate
 
 One thing I particularly liked was how nice drop caps looked on [Gwern][gwern.net]. I looked at his CSS and created a new file, `static\style\drop-caps\drop-caps.css` with a simplified version of his CSS. I dropped it in the `static/` directory instead of the `assets/` folder out of expediency, and I modified `layouts/_default/baseof.html` to pull in the drop caps definitions.
 
-{{< note title="Browser-Specific Styling">}}
+{{< admonition type="note" title="Browser-Specific Styling">}}
 For the longest time I couldn't get drop-caps to look good in both Firefox and Chrome at the same time. After looking more closely at [gwern.net] I realized `@supports (-moz-user-focus: normal) { ... }` is used as a flag to make styling adjustments specific to Firefox. Drop-caps works just fine in Firefox here, so I use `@supports not (-moz-user-focus: normal)` to wrap adjustments for all other browsers. It finally looks pretty good in both browsers.
-{{< /note >}}
+{{< /admonition >}}
 
 By the end of June I removed most of the feather icons and simplified the layout. It looked better.
 

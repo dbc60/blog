@@ -2,8 +2,8 @@
 title: A Blog on GitHub
 date: 2015-12-30
 2015: ["12"]
-categories: [post]
-tags: [blog]
+categories: [blog]
+tags: [github-user-pages]
 ---
 
 What do you really need to know to setup a blog on GitHub?

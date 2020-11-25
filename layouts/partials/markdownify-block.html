@@ -1,4 +1,4 @@
-{{/*
+{{- /*
     Jared Reisinger (https://discourse.gohugo.io/u/JaredReisinger) created this
     lovely partial. He announced it here: https://discourse.gohugo.io/t/consistent-behavior-of-markdownify-for-single-multiple-paragaphs/8728/4
 
@@ -65,3 +65,4 @@
     effect.
 */ -}}
 {{range $block }}{{ $raw }}{{ else }}<p>{{ $raw }}</p>{{ end -}}
+{{- /* This comment removes trailing newlines */ -}}

@@ -37,7 +37,7 @@
           <li class="wrapper-social-items">
             <span class="wrapper-social-border icon icon-books"> </span>
             <span class="wrapper-social-border title">Contents</span>
-            {{ block "contents" (dict "context" . "sections"  $sections) }}
+            {{ block "contents" (dict "context" . ) }}
             {{ partial "items-contents.html" . }}
             {{ end }}
             <span class="wrapper-social-border icon icon-books"> </span>
