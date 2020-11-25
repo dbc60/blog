@@ -1,61 +1,52 @@
 {{- $type := .Get "type" | default "any" -}}
 {{- $title := .Get "title" -}}
 {{- $class := "" -}}
-{{- with eq $type "any" -}}
+{{- if eq $type "any" -}}
   {{- $class = "admonition any" -}}
   {{- if eq $title "" -}}
     {{- $title = "Note" -}}
   {{- end -}}
-{{- end -}}
-{{- with eq $type "attention" -}}
+{{- else if eq $type "attention" -}}
   {{- $class = "admonition attention" -}}
   {{- if eq $title "" -}}
     {{- $title = "Attention" -}}
   {{- end -}}
-{{- end -}}
-{{- with eq $type "caution" -}}
+{{- else if eq $type "caution" -}}
   {{- $class = "admonition caution" -}}
   {{- if eq $title "" -}}
     {{- $title = "Caution" -}}
   {{- end -}}
-{{- end -}}
-{{- with eq $type "danger" -}}
+{{- else if eq $type "danger" -}}
   {{- $class = "admonition danger" -}}
   {{- if eq $title "" -}}
     {{- $title = "Danger" -}}
   {{- end -}}
-{{- end -}}
-{{- with eq $type "error" -}}
+{{- else if eq $type "error" -}}
   {{- $class = "admonition error" -}}
   {{- if eq $title "" -}}
     {{- $title = "Error" -}}
   {{- end -}}
-{{- end -}}
-{{- with eq $type "hint" -}}
+{{- else if eq $type "hint" -}}
   {{- $class = "admonition hint" -}}
   {{- if eq $title "" -}}
     {{- $title = "Hint" -}}
   {{- end -}}
-{{- end }}
-{{- with eq $type "important" -}}
+{{- else if eq $type "important" -}}
   {{- $class = "admonition important" -}}
   {{- if eq $title "" -}}
     {{- $title = "Important" -}}
   {{- end -}}
-{{- end }}
-{{- with eq $type "note" -}}
+{{- else if eq $type "note" -}}
   {{- $class = "admonition note" -}}
   {{- if eq $title "" -}}
     {{- $title = "Note" -}}
   {{- end -}}
-{{- end -}}
-{{- with eq $type "tip" -}}
+{{- else if eq $type "tip" -}}
   {{- $class = "admonition tip" -}}
   {{- if eq $title "" -}}
     {{- $title = "Tip" -}}
   {{- end -}}
-{{- end -}}
-{{- with eq $type "warning" -}}
+{{- else if eq $type "warning" -}}
   {{- $class = "admonition warning" -}}
   {{- if eq $title "" -}}
     {{- $title = "Warning" -}}
