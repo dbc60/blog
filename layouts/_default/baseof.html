@@ -44,6 +44,15 @@
           </li>
 
           <li class="wrapper-social-items">
+            <span class="wrapper-social-border icon icon-quill"> </span>
+            <span class="wrapper-social-border title">Latest</span>
+            {{ block "latest" . }}
+            {{ partial "items-latest.html" . }}
+            {{ end }}
+            <span class="wrapper-social-border icon icon-quill"> </span>
+          </li>
+
+          <li class="wrapper-social-items">
             <span class="wrapper-social-border icon icon-folder-open"> </span>
             <span class="wrapper-social-border title">Collections</span>
             {{ block "lists" . }}
@@ -53,14 +62,14 @@
           </li>
 
           <li class="wrapper-social-items">
-            <span class="wrapper-social-border icon icon-compass"> </span>
+            <span class="wrapper-social-border icon icon-info-circle"> </span>
             <span class="wrapper-social-border title">Follow</span>
             <div class="social">
               {{ block "follow" . }}
               {{ partial "social-follow.html" . }}
               {{ end }}
             </div>
-            <span class="wrapper-social-border icon icon-compass"> </span>
+            <span class="wrapper-social-border icon icon-info-circle"> </span>
           </li>
         </ul>
       </div>

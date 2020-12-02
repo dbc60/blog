@@ -7,7 +7,7 @@ enableRobotsTXT = true
 #Paginate = 8
 canonifyURLs = true
 footnoteReturnLinkContents = "↩"
-enableGitInfo = true
+#enableGitInfo = true
 enableEmoji = true
 ignoreFiles = ["\\.git", "\\.vscode"]
 
@@ -67,17 +67,17 @@ googleAnalytics = ""
     name = "About"
     #pre = "smile"
     url = "/about/"
-    weight = 200
+    weight = 900
   [[menu.nav]]
     name = "Now"
     #pre = "coffee"
     url = "/now/"
-    weight = 300
+    weight = 950
   [[menu.nav]]
     name = "RSS"
     #pre = "rss"
     url = "/index.xml"
-    weight = 400
+    weight = 1000
 
 # More details about GDPR and Hugo privacy settings are at
 # https://gohugo.io/about/hugo-and-gdpr/
@@ -121,7 +121,6 @@ rssLimit = 20
   2020 = "2020"
 
 [permalinks]
-#  post = "/:filename/"
   contact = "/:sections/:slug/"
   journal = "/:sections/:slug/"
   note = "/:sections/:slug/"

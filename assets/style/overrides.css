@@ -20,6 +20,7 @@
   --gray150: #e3e3e3;
   --gray175: #d6d6d6;
   --gray200: #dedede;
+  --gray250: #cecece;
   --gray300: #bfbfbf;
   --gray400: #a1a1a1;
   --gray500: #828282;
@@ -58,8 +59,11 @@
   --color-background-contrast-complement: #e6e9ed;
   --color-background-contrast-complement-shade1: #697b92;
   --color-background-code: var(--color-background-contrast-shade1);
-  --color-background-table-odd: #ddd7cf;
-  --color-background-table-even: #fdfdfd;
+
+  --color-background-table-head: var(--color-background-contrast-complement-shade1);
+  --color-background-table-foot: var(--color-background-contrast-complement-shade1);
+  --color-background-table-odd: var(--color100);
+  --color-background-table-even: var(--color200);
   --color-background-sidebar: var(--color-background-contrast-shade1);
   /*--color-background-sidebar-highlight: hsla(162, 25%, 25%, 1);*/
   --color-background-sidebar-highlight: var(--color-background-contrast-complement-shade1);
@@ -165,6 +169,7 @@ pre.chroma {
  */
 .content {
   counter-reset: figures;
+  counter-reset: tables;
 }
 
 figure {
@@ -175,13 +180,13 @@ figure {
 }
 
 figcaption:before {
-  content: 'Fig. ' counter(figures) ' - ';
+  content: 'Fig. ' counter(figures) '. ';
 }
 
 /* any "img" descendent of a figure.post-image */
 figure.post-image img {
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 
 /* all images created with the "figure" shortcode
@@ -560,7 +565,7 @@ blockquote {
 }
 
 q:before,
-blockquote:before {
+blockquote p:first-child:before {
   content: open-quote;
   color: var(--gray300);
   font-size: 4em;
@@ -569,12 +574,13 @@ blockquote:before {
 }
 
 q:after,
-blockquote:after {
+blockquote p:last-child:after {
   content: close-quote;
   color: var(--gray300);
   font-size: 4em;
   line-height: 0;
   vertical-align: bottom;
+  display: inline;
 }
 
 q > ul,
@@ -598,16 +604,6 @@ blockquote > ul:last-child,
 blockquote > ol:last-child{
   margin-bottom: 0;
 }
-
-q p:first-child,
-q p:last-child,
-blockquote p:first-child,
-blockquote p:last-child {
-  /* the initial value of display is inline, as defined here:
-  https://www.w3.org/TR/CSS2/visuren.html#display-prop */
-  display: initial;
-}
-
 
 /* both inline and block code */
 pre,
@@ -669,57 +665,55 @@ a:active {
 /************************************
  * Simple Markdown-Generated Tables *
  ************************************/
-table,
-td,
-th {
-  border: 0.1em solid black;
+.table {
+  table-layout: fixed;
   border-collapse: collapse;
+  border-top: 2px solid var(--gray250);
+  border-bottom: 2px solid var(--gray250);
+  text-align: left;
+  counter-increment: tables;
 }
 
-table.table tr.multi-row > th,
-table.table tr.multi-row > td {
-  border-top: none;
-  border-bottom: none;
+caption:before {
+  content: 'Table ' counter(tables) '. ';
 }
 
-table.table tr.multi-row:first-child,
-table.table tr.multi-row:first-child {
-  border-top: 0.1em solid black;
+caption {
+  padding: 10px;
+  caption-side: bottom;
+  font-weight: bold;
+  text-align: left;
 }
 
-table.table tr.multi-row:last-child,
-table.table tr.multi-row:last-child {
-  border-bottom: 0.1em solid black;
+td, th {
+  border: 1px solid var(--gray200);
+  padding: 10px 20px;
 }
 
-table.table tbody:nth-child(odd) {
-  background-color: var(--color-background-table-odd);
+th {
+  background-color: var(--color-background-table-head);
+  color: var(--gray125);
 }
 
-table.table tbody:nth-child(even) {
-  background-color: var(--color-background-table-even);
+/* Zebra stripes - alternating rows in the body have different background colors */
+tbody tr:nth-child(odd) td {
+  background-color: var(--color200);
 }
 
-tr:nth-child(even) pre,
-tr:nth-child(even) code,
-tr:nth-child(even) tt.docutils.literal {
-  background-color: rgb(241, 241, 241);
+tbody tr:nth-child(even) td {
+  background-color: var(--color300);
 }
 
-table.table thead {
-  background-color: var(--gray600);
-  color: var(--gray100);
+tbody {
+  font-size: 95%;
 }
 
-table.table > thead:first-of-type {
-  background-color: var(--gray900);
-  color: var(--gray300);
+tfoot {
+  font-weight: bold;
+  background-color: var(--color-background-table-foot);
+  color: var(--gray125);
 }
 
-th,
-td {
-  padding: 0.25em 0.5em;
-}
 
 /*****************************************************************************
  * reST Admonitions. The list of defined admonitions is: attention, caution, *
@@ -889,7 +883,7 @@ td {
   font-size: 0.8em;
   padding-left: 3em;
   padding-bottom: 0.2em;
-  color: rgb(241, 241, 241);
+  color: var(--gray125);
 }
 
 .wrapper-social-border.icon {
@@ -1336,10 +1330,6 @@ input[type=checkbox]:checked:after {
   color: #5a9d24;
 }
 ***************************************************/
-
-#TableOfContents > ul > li > a {
-  text-decoration: underline;
-}
 
 #TableOfContents > ul > li > ul {
   font-weight: normal;
