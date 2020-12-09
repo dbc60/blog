@@ -1,16 +1,15 @@
-{{ $scratch := newScratch }}
-{{ $scratch.Set "componentDropCapsFont" "" }}
-{{ $scratch.Set "componentDropCaps" "c-drop-caps" }}
+{{ $componentDropCapsFont := "" }}
+{{ $componentDropCaps := "c-drop-caps" }}
 {{ if .Params.componentDropCaps }}
-  {{ $scratch.Set "componentDropCapsFont" .Params.componentDropCaps }}
+  {{ $componentDropCapsFont = .Params.componentDropCaps }}
 {{ else if .Site.Params.componentDropCaps }}
-  {{ $scratch.Set "componentDropCapsFont" .Site.Params.componentDropCaps }}
+  {{ $componentDropCapsFont = .Site.Params.componentDropCaps }}
 {{ else }}
-  {{ $scratch.Set "componentDropCaps" "c-drop-caps__none" }}
+  {{ $componentDropCaps = "c-drop-caps__none" }}
 {{ end }}
 
 {{ "<!--BEGIN layouts/partials/drop-caps.html -->" | safeHTML }}
-<section class="content {{ $scratch.Get "componentDropCaps" }} {{ $scratch.Get "componentDropCapsFont" }}">
+<section class="content {{ $componentDropCaps }} {{ $componentDropCapsFont }}">
   {{- .Content -}}
 </section>
 {{ "<!--END layouts/partials/drop-caps.html -->" | safeHTML }}

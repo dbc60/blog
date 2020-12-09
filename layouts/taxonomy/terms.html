@@ -8,20 +8,19 @@
 
 {{ $here := .Section }}
 <div class="content">
-  {{ $scratch := newScratch }}
-  {{ $scratch.Set "pages" slice }}
+  {{ $pages := slice }}
   <!-- Gather all the non-index pages in the list of main sections -->
   {{ $allMainPages := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
   <!-- month, day, hour, minute, second, year ==> 01, 02, 03, 04, 05, 2006 -->
   {{ range $allMainPages.GroupByDate "2006.01.02.03.04.05" }}
     {{ range $_, $page := .Pages.ByDate.Reverse }}
       {{ if eq ($page.Date.Format "2006") $here }}
-          {{ $scratch.Add "pages" $page }}
+          {{ $pages = $pages | append $page }}
       {{ end }}
     {{ end }}
   {{ end }}
 
-  {{- $paginator := .Paginate ($scratch.Get "pages") -}}
+  {{- $paginator := .Paginate $pages -}}
   {{- range $paginator.Pages.ByDate.Reverse -}}
   <section class="page-summary">
     <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
