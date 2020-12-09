@@ -1078,11 +1078,12 @@ a.youtube:hover {
 .task-work-migrated,
 .task-work-migrated-completed,
 .task-work-waiting,
-.task-experimental {
+.task-experimental,
+.vacation {
   margin-bottom: 0.25em;
 }
 
-.task-event-list {
+.event-list {
   margin-top: 0.5em;
   padding-left: 0;
   list-style: none;
@@ -1184,7 +1185,7 @@ a.youtube:hover {
   content: "\1F389";
 }
 
-.event::before {
+.event::before, .vacation::before {
   content: "\29BE";
 }
 
@@ -1201,7 +1202,7 @@ a.youtube:hover {
 }
 
 /* Picking arbitrary colors for various to-do-list shortcodes */
-.event {
+.event, .vacation {
   color: var(--color500-adjacent);
 }
 
@@ -1243,7 +1244,7 @@ a.youtube:hover {
 
 .task-completed,
 .task-work-completed {
-  color: skyblue;
+  color: #365264;
 }
 
 /* The strike role */

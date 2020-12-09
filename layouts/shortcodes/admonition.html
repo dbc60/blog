@@ -1,5 +1,5 @@
 {{- $type := .Get "type" | default "any" -}}
-{{- $title := .Get "title" -}}
+{{- $title := .Get "title" | default "" -}}
 {{- $class := "" -}}
 {{- if eq $type "any" -}}
   {{- $class = "admonition any" -}}
@@ -50,6 +50,11 @@
   {{- $class = "admonition warning" -}}
   {{- if eq $title "" -}}
     {{- $title = "Warning" -}}
+  {{- end -}}
+{{- else -}}
+  {{- $class = "admonition unknown" -}}
+  {{- if eq $title "" -}}
+    {{- $title = "Unknown" -}}
   {{- end -}}
 {{- end }}
 <aside class="{{ $class }}">
