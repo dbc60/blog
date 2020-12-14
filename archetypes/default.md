@@ -6,3 +6,4 @@ categories: [uncategorized]
 ---
 
 <!--more-->
+{{< table-of-contents >}}

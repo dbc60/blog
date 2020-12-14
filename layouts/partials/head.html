@@ -1,3 +1,4 @@
+  <head>
     <!-- Variable definitions -->
     {{ $titleDefault := print .Title " | " .Site.Title -}}
     {{- if .IsHome -}}
@@ -45,3 +46,4 @@
     {{ partial "head__title.html" $context }}
 
     {{ partial "head__scripts.html" $context }}
+  </head>

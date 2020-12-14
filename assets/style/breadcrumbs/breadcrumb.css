@@ -56,7 +56,6 @@
   z-index: 1;
 }
 
-/* fade */
 /* https://css-tricks.com/triangle-breadcrumbs/ */
 .breadcrumb li:first-child a {
   padding-left: 10px;
@@ -72,7 +71,14 @@
   border-bottom: 50px solid transparent;
 }
 
+/*
+    Breadcrumb Navigation
 
+    This styling, from nth-child(2) through nth-child(7), allows for styling
+    breadcrumb navigation to a depth of 7 sections. The journal is, so far, the
+    only section that deep. The nesting is Home, Journal, Year, Quarter, Month,
+    Week, and Day.
+*/
 .breadcrumb li:nth-child(2) a       { background-color:  var(--color800); }
 .breadcrumb li:nth-child(2) a:after { border-left-color: var(--color800); }
 .breadcrumb li:nth-child(3) a       { background:        var(--color700); }
@@ -83,6 +89,8 @@
 .breadcrumb li:nth-child(5) a:after { border-left-color: var(--color500); }
 .breadcrumb li:nth-child(6) a       { background:        var(--color400); }
 .breadcrumb li:nth-child(6) a:after { border-left-color: var(--color400); }
+/* At this level, the background color is very light, so we switch the text
+   to be very dark. */
 .breadcrumb li:nth-child(7) a       { background:        var(--color300);
                                       color:             var(--color900); }
 .breadcrumb li:nth-child(7) a:after { border-left-color: var(--color300); }

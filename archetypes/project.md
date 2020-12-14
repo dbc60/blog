@@ -6,3 +6,4 @@ categories: [projects]
 ---
 
 <!--more-->
+{{< table-of-contents >}}

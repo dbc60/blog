@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 {{ $lang := .Site.Language.Lang | default "en" }}
 <html lang="{{ $lang }}">
-  <head>
   {{- block "head" . -}}
   {{- partial "head.html" . -}}
   {{- end -}}
-  </head>
   <body>
-    <header class="main-head">
     {{- block "header" . -}}
         {{- partial "siteHeader.html" . -}}
     {{- end -}}
-    </header>
 
-    <nav class="main-nav">
     {{- block "nav" . -}}
     {{- partial "nav.html" . -}}
     {{- end }}
-    </nav>
 
-    <ul class="breadcrumb">
     {{ block "breadcrumbs" . }}
       {{- partial "nav__breadcrumbs.html" . -}}
     {{ end }}
-    </ul>
 
     <div class="wrapper-content">
       {{ $sections := (.Site.GetPage .Section).Sections }}
@@ -80,12 +72,9 @@
       </main>
     </div> {{ "<!-- class wrapper-content -->" | safeHTML }}
 
-    {{ "<!-- I might want to wrap footer and script in blocks -->" | safeHTML }}
-    <footer class="main-footer">
     {{ block "footer" . }}
       {{ partial "footer.html" . -}}
     {{ end }}
-    </footer>
 
     {{ block "postScript" . }}
       {{ partial "postScript.html" . -}}

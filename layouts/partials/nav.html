@@ -1,4 +1,5 @@
-    {{- $showActiveNav := .Site.Params.showActiveNav -}}
+  <nav class="main-nav">
+  {{- $showActiveNav := .Site.Params.showActiveNav -}}
     {{- $currentPage := . -}}
     <div class="main-nav__items">
     {{- range .Site.Menus.nav -}}
@@ -13,3 +14,4 @@
       <a class="main-nav__link {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
     {{- end }}
     </div>
+  </nav>
