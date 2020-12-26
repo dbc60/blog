@@ -1,46 +1,54 @@
+{{- "<!--BEGIN layouts/partials/items-contents.html -->" | safeHTML -}}
 <ul class="social-items">
-  {{ $byDate := false }}
-  {{ "<!--BEGIN layouts/partials/items-contents.html -->" | safeHTML }}
-  {{ $scratch := newScratch }}
-{{ if eq (len .context.Sections) 0 }}
-  {{ with .context.Parent }}
-    {{ $scratch.Set "sections" .Sections }}
-  {{ end }}
-{{ else }}
-  {{ $scratch.Set "sections" .context.Sections }}
-{{ end }}
-{{ if eq ($scratch.Get "sections") nil }}
-  {{ $scratch.Set "sections" .context.Parent.Pages }}
-  {{ "<!-- I need a better way to determine which sections are ordered by date -->" | safeHTML }}
-  {{ if or (eq .context.Section "journal") (eq .context.Section "post") }}
-    {{ $byDate = true }}
-  {{ end }}
-{{ else if eq (len ($scratch.Get "sections")) 0 }}
-  {{ with .context.Parent.Parent }}
-    {{ $scratch.Set "sections" .Sections }}
-  {{ end }}
-{{ end }}
-{{ $sections := $scratch.Get "sections" }}
-{{ if $byDate }}
-  {{ range $sections.ByDate.Reverse }}
+{{- $byDate := false -}}
+{{- $byWeight := false -}}
+{{- if eq .context.Section "journal" -}}
+  {{- $byDate = true -}}
+{{- end -}}
+{{- if eq .context.Section "contact" -}}
+  {{- $byWeight = true -}}
+{{- end -}}
+{{- $sections := .context.Sections -}}
+{{- if eq $sections nil -}}
+  {{- with .context.Parent -}}
+    {{- $sections = .Sections -}}
+  {{- end -}}
+{{- end -}}
+{{- if eq $sections nil -}}
+  {{- $sections = .context.Parent.Pages -}}
+{{- end -}}
+{{- if $byDate -}}
+  {{- range $sections.ByDate.Reverse -}}
     <li class="contents">
       <a class="secondary-nav__link" href="{{ .Permalink }}">
-        {{ .Title }}
+        {{- .Title -}}
       </a>
     </li>
-  {{ end }}
-{{ else }}
-  {{ $listLimit := 100 }}
-  {{ if isset .context.Site.Params "list_limit" }}
-    {{ $listLimit = .context.Site.Params.list_limit }}
-  {{ end }}
-  {{ range first $listLimit  $sections.ByTitle }}
+  {{- end -}}
+{{- else if $byWeight -}}
+  {{- $listLimit := 100 -}}
+  {{- if isset .context.Site.Params "list_limit" -}}
+    {{- $listLimit = .context.Site.Params.list_limit -}}
+  {{- end -}}
+  {{- range first $listLimit  $sections.ByWeight -}}
     <li class="contents">
       <a class="secondary-nav__link" href="{{ .Permalink }}">
-        {{ .Title }}
+        {{- .Title -}}
       </a>
     </li>
-  {{ end }}
-{{ end }}
-{{ "<!--END layouts/partials/items-contents.html -->" | safeHTML }}
+  {{- end -}}
+{{- else -}}
+  {{- $listLimit := 100 -}}
+  {{- if isset .context.Site.Params "list_limit" -}}
+    {{- $listLimit = .context.Site.Params.list_limit -}}
+  {{- end -}}
+  {{- range first $listLimit  $sections.ByTitle -}}
+    <li class="contents">
+      <a class="secondary-nav__link" href="{{ .Permalink }}">
+        {{- .Title -}}
+      </a>
+    </li>
+  {{- end -}}
+{{- end -}}
 </ul>
+{{- "<!--END layouts/partials/items-contents.html -->" | safeHTML -}}

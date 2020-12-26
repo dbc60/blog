@@ -844,13 +844,14 @@ tfoot {
 .social-items {
   width: 100%;
   background-color: var(--color-background-sidebar);
-  padding: 0 0.3em 0.3em 0;
-  text-align: left;
+  padding-left: 0;
+  padding-right: 0.3rem;
   display: inline-block;
   list-style-type: none;
   font-size: 1rem;
   overflow-y: auto;
-  max-height: 17em; /* an arbitrary value that looks nice at the moment */
+  /* Hold 11 lines * 1.5rem == 16.5 */
+  max-height: 16.5rem;
 }
 
 .social-item {
@@ -893,15 +894,6 @@ tfoot {
 .wrapper-social-border.title {
   padding-left: 0.5em;
   text-transform: capitalize;
-}
-
-.social-items>li>a {
-  text-align: left;
-}
-
-.social-items>li.contents {
-  margin: 0.5em auto;
-  line-height: 1;
 }
 
 .header-archive-date {
@@ -1056,44 +1048,7 @@ a.youtube:hover {
 
 
 /* Various to-do-list shortcodes */
-.event,
-.event-canceled,
-.event-completed,
-.event-migrated,
-.event-migrated-completed,
-.goal,
-.goal-completed,
-.goal-work,
-.goal-work-completed,
-.holiday,
-.task,
-.task-canceled,
-.task-completed,
-.task-migrated,
-.task-migrated-completed,
-.task-waiting,
-.task-work,
-.task-work-canceled,
-.task-work-completed,
-.task-work-migrated,
-.task-work-migrated-completed,
-.task-work-waiting,
-.task-experimental,
-.vacation {
-  margin-bottom: 0.25em;
-}
-
 .event-list {
-  margin-top: 0.5em;
-  padding-left: 0;
-  list-style: none;
-}
-
-.task-experimental {
-  margin: 0;
-}
-
-.holiday-list {
   margin-top: 0.5em;
   padding-left: 0;
   list-style: none;
@@ -1109,87 +1064,58 @@ a.youtube:hover {
   text-indent: -2em;
 }
 
-.birthday::before {
+.inline.bullet::before {
+  display: none;
+}
+
+.inline {
+  padding-left: 0;
+  text-indent: 0;
+}
+
+/* These colors are garish. Someday I'll make them more harmonious */
+.appointment {
+  color: var(--color500-adjacent);
+}
+.anniversary, .birthday, .holiday, .vacation {
+  color: rgb(199, 134, 36);
+}
+.goal {
+  color: #00be00;
+}
+.event {
+  color: var(--color500-adjacent);
+}
+.task {
+  color: #5C5CDF;
+}
+.bullet.unknown {
+  color: fuchsia;
+}
+
+.bullet.anniversary::before {
   content: "\1F382";
 }
 
-.anniversary::before {
+.appointment::before {
+  content: "\1F514";
+}
+.bullet.appointment-canceled::before {
+  content: "\1F515";
+}
+.bullet.appointment-past::before {
+  content: "\1F56D";
+}
+
+.bullet.birthday::before {
   content: "\1F382";
-}
-
-.task-experimental::before {
-  content: "\2726";
-}
-
-.task::before {
-  content: "\2605";
-}
-
-.task-canceled::before {
-  content: "\2012";
-}
-
-.task-completed::before,
-.task-migrated-completed::before {
-  content: "\2713";
-}
-
-.task-migrated::before,
-.task-migrated-canceled::before {
-  content: "\2192";
-}
-
-.task-waiting::before {
-  content: "\23F3";
-}
-
-.goal::before {
-  content: "\1F945";
-}
-
-.goal-completed::before {
-  content: "\1F947";
-}
-
-.task-work::before {
-  content: "\2606";
-}
-
-.task-work-canceled::before {
-  content: "\2014";
-}
-
-.task-work-completed::before,
-.task-work-migrated-completed::before {
-  content: "\2714";
-}
-
-.task-work-migrated::before,
-.task-work-migrated-canceled::before {
-  content: "\21A6";
-}
-
-.task-work-waiting::before {
-  content: "\231B";
-}
-
-.goal-work::before {
-  content: "\1F4CB";
-}
-
-.goal-work-completed::before {
-  content: "\1F3AF";
-}
-
-.holiday::before {
-  content: "\1F389";
 }
 
 .event::before, .vacation::before {
   content: "\29BE";
 }
 
-.event-canceled::before {
+.bullet.event-canceled::before {
   content: "\2296";
 }
 
@@ -1200,51 +1126,54 @@ a.youtube:hover {
 .event-migrated::before {
   content: "\21D2";
 }
-
-/* Picking arbitrary colors for various to-do-list shortcodes */
-.event, .vacation {
-  color: var(--color500-adjacent);
+.bullet.goal::before {
+  content: "\1F945";
+}
+.bullet.goal-completed::before {
+  content: "\1F947";
+}
+.bullet.goal-work::before {
+  content: "\1F4CB";
+}
+.bullet.goal-work-completed::before {
+  content: "\1F3AF";
 }
 
-.task-experimental {
-  color: goldenrod;
+.holiday::before {
+  content: "\1F389";
 }
 
-.task,
-.task-work {
-  color: #5C5CDF;
+.bullet.task::before, .bullet.task-canceled::before {
+  content: "\2605";
+}
+.bullet.task-completed::before,
+.bullet.task-migrated-completed::before {
+  content: "\2713";
+}
+.bullet.task-migrated::before,
+.bullet.task-migrated-canceled::before {
+  content: "\2192";
+}
+.bullet.task-waiting::before {
+  content: "\23F3";
+}
+.bullet.task-work::before, .bullet.task-work-canceled::before {
+  content: "\2606";
+}
+.bullet.task-work-completed::before,
+.bullet.task-work-migrated-completed::before {
+  content: "\2714";
+}
+.bullet.task-work-migrated::before,
+.bullet.task-work-migrated-canceled::before {
+  content: "\21A6";
+}
+.bullet.task-work-waiting::before {
+  content: "\231B";
 }
 
-.task-waiting,
-.task-work-waiting {
-  color: #718F93;
-}
-
-.event-canceled,
-.task-canceled,
-.task-work-canceled,
-.task-migrated-canceled,
-.task-work-migrated-canceled {
-  color: firebrick;
-  text-decoration: line-through;
-}
-
-.event-migrated {
-  color: mediumseagreen;
-}
-
-.event-completed {
-  color: lightseagreen;
-}
-
-.task-migrated,
-.task-work-migrated {
-  color: steelblue;
-}
-
-.task-completed,
-.task-work-completed {
-  color: #365264;
+.bullet.unknown::before {
+  content: "\2753";
 }
 
 /* The strike role */
