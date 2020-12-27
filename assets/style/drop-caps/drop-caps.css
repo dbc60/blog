@@ -2,74 +2,64 @@
 /* DROP CAPS */
 /*************/
 /*
-  "drop caps"/"initials" (https://en.wikipedia.org/wiki/Initial
-  https://wiki.obormot.net/Reference/DropCapsDemo) are large fancy
-  block letters used to start a page/section. We skip them on mobile because
-  they use up 8-12KB each (even after @font-face subset optimization to load
-  only 1 letter at a time), and take up a lot of screen space.
-  (Mobile users can't have nice things.) To implement them, each Markdown
-  page has a custom metadata field like "css: drop-caps_de-zs" which is
-  substituted into the compiled HTML like
-  '<body class="pagename drop-caps_de-zs">', allowing defining of multiple
-  drop-caps and customized per page. The 3 drop-caps right now are Goudy
-  ('drop-caps_de-zs'), yinit ('drop-caps_yinit'), and
-  De-Zs/Deutsche Zierschrift ('drop-caps_de-zs'). Goudy is for
-  literary/historical/humanities pages, yinit is for technical/scientific
-  pages, and De-Zs is for everything else.
-
-  Chrome seems to need
-
-    margin: 0.41em 0.03em 0.165em 0;
-
-  but that messes up Firefox.
+  "drop caps"/"initials". See: https://en.wikipedia.org/wiki/Initial and
+  https://wiki.obormot.net/Reference/DropCapsDemo,
+  are large fancy block letters used to start a page/section. We skip them on
+  mobile because they use up 8-12KB each (even after @font-face subset
+  optimization to load only 1 letter at a time), and take up a lot of screen
+  space. (Mobile users can't have nice things.) To implement them, each
+  Markdown page has a custom metadata field like 'componentDropCaps:
+  "drop-caps_kanzlei"' which is substituted into the compiled HTML like '<body
+  class="pagename drop-caps_de-zs">', allowing defining of multiple drop-caps
+  and customized per page. The only one I use right now is Goudy, so I've
+  commented out all the others from the "head.html" partial. Gwern had distinct uses for each font. He used Goudy literary/historical/humanities pages, yinit
+  for technical/scientific pages, and De-Zs is for everything else.
   */
   /*
     rst2html5 adds a section with a .document class, so all posts/notes
-    generated from reStructuredText files need this.
+    generated from reStructuredText files need this. Note: I gave up on
+    rst2html5, so I've removed lines like
+    ".c-drop-caps > .document > p:first-child:first-letter"
   */
 @media only screen and (min-width: 65ch) {
+  /* uncomment for debugging */
   /* .c-drop-caps, .c-drop-caps > .document { */
     /* border: 2px solid #3bc9db; */
     /* border-radius: 5px; */
     /* background-color: #e3fafc; */
   /* } */
 
-  .c-drop-caps > p:first-child:first-letter,
-  .c-drop-caps > .document > p:first-child:first-letter {
+  .c-drop-caps > p:first-child:first-letter {
     float: left;
     font-style: normal;
     font-weight: normal;
     color: var(--color600);
+    /* uncomment for debugging */
     /* border-radius: 5px; */
     /* background-color: #1098ad; */
   }
 
 
   @supports not (-moz-user-focus: normal) {
-    .c-drop-caps > p:first-child:first-letter,
-    .c-drop-caps > .document > p:first-child:first-letter {
+    .c-drop-caps > p:first-child:first-letter {
       line-height: 1; /* needed for chrome */
     }
   }
 
-  .c-drop-caps > p:first-child,
-  .c-drop-caps > .document > p:first-child {
+  .c-drop-caps > p:first-child {
     display: flow-root;
     /* border-radius: 5px; */
     /* background-color: paleturquoise; */
   }
 
- /* .c-drop-caps > p:first-child + p, */
- /* .c-drop-caps > .document > p:first-child + p */
+ /* .c-drop-caps > p:first-child + p */
  /* { */
  /*   border-radius: 5px; */
  /*   background-color: palegreen; */
  /* } */
 
 /*  .c-drop-caps > p:first-child + ul:first-of-type, */
-/*  .c-drop-caps > .document > p:first-child + ul:first-of-type, */
-/*  .c-drop-caps > p:first-child + h2:first-of-type, */
-/*  .c-drop-caps > .document > p:first-child + h2:first-of-type */
+/*  .c-drop-caps > p:first-child + h2:first-of-type */
 /*  { */
 /*    border-radius: 5px; */
 /*    background-color: palegoldenrod; */

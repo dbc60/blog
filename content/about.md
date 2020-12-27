@@ -1,7 +1,6 @@
 ---
 title: About
 date: 2016-04-20T00:00:00
-componentDropCaps: "drop-caps_kanzlei"
 ---
 
 Good day! I'm Doug Cuthbertson, a professional software engineer living in Massachusetts. Mostly, I develop applications and kernel drivers on Microsoft Windows. Lately, I've been writing software in [Go](https://golang.org/) for both Linux and Windows (it's my new favorite programming language).

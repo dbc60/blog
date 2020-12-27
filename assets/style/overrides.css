@@ -607,15 +607,13 @@ blockquote > ol:last-child{
 
 /* both inline and block code */
 pre,
-code,
-tt.docutils.literal {
+code {
   background-color: var(--color-background-code);
-  font-family: Inconsolata, "Lucida Console", Monaco, "Courier New", Courier, monospace;
+  font-family: monospace;
 }
 
 /* inline code */
-code,
-tt.docutils.literal {
+code {
   font-size: 1rem;
 }
 

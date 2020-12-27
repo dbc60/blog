@@ -1,7 +1,6 @@
 ---
 title: What I'm Doing Now
 date: 2019-02-10
-componentDropCaps: "drop-caps_yinit"
 ---
 
 I am a member of the Agent Team at [Threat Stack, Inc](https://www.threatstack.com/) in Boston, Massachusetts. I am the primary developer for the Windows Agent, and I have been a significant contributor to the Linux, containerized, and Fargate agents. I am having a great time working there. My coworkers are very creative and a joy to work with.
