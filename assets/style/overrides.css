@@ -150,8 +150,7 @@ td {
   padding: 0;
 }
 
-body,
-.document {
+body {
   /*  Try to avoid scrollbars on paragraphs: prevents long unbroken
       un-hyphenatable lines from causing H-scrolling
       */
@@ -196,13 +195,6 @@ figure.post-image img {
   padding: 0.1em;
 }
 
-/* bring the ".read-more" footer into closer proximity of the last ".document"
-   paragraph .
-*/
-.document>p:last-child {
-  margin-bottom: 0;
-}
-
 /* I'm trying to set up a vertical rhythm on all pages where lines are comfortably and evenly spaced, the spacing between paragraphs are comfortable, headings are in proximity to the sections they head.
 
   Consistency
@@ -236,9 +228,9 @@ figure.post-image img {
 
   There are too many choices and factors. I don't care anymore. I'm setting the
   width of the main content to 120ch, the max-width of the sidebar-content to
-  32ch, and the width of "pre, .literal-block, .code" blocks to 83ch. These
-  values provide a fine width for the sidebar, the main content, and code
-  blocks embedded in the main content.
+  32ch, and the width of "pre, code" blocks to 83ch. These values provide a
+  fine width for the sidebar, the main content, and code blocks embedded in the
+  main content.
 */
 body {
   max-width: 120ch;
@@ -394,18 +386,6 @@ h5 + h6 {
   font-size: 80%;
 }
 
-/* Add some space between the article meta data and the doc that follows it */
-.article-meta-data+div.document {
-  margin-top: 1em;
-}
-
-/* If the document is empty, as can happen with no summary between the source
- * front matter and the <!--more--> separator, then remove the extra space
- */
-.article-meta-data+div.document:empty {
-  margin-top: 0;
-}
-
 /*************************
  * Debug Border and Fill *
  *************************/
@@ -523,17 +503,6 @@ h5 + h6 {
       CMYK: 2% 0% 0% 19%
 */
 
-/* Feather icons */
-.feather {
-  width: 24px;
-  height: 24px;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-}
-
 .title-article,
 .title-article-item {
   display: inline;
@@ -553,7 +522,6 @@ h5 + h6 {
 }
 
 /* blockquotes for blocks of quotes. Specifically, not blocks of code */
-q,
 blockquote {
   background-color: var(--color-background-code);
   border-bottom: 0.1em solid var(--color-border-bottom-code);
@@ -564,7 +532,6 @@ blockquote {
   quotes: "\201C""\201D""\2018""\2019";
 }
 
-q:before,
 blockquote p:first-child:before {
   content: open-quote;
   color: var(--gray300);
@@ -573,7 +540,6 @@ blockquote p:first-child:before {
   vertical-align: bottom;
 }
 
-q:after,
 blockquote p:last-child:after {
   content: close-quote;
   color: var(--gray300);
@@ -583,49 +549,35 @@ blockquote p:last-child:after {
   display: inline;
 }
 
-q > ul,
-q > ol,
 blockquote > ul ,
 blockquote > ol {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-q > ul:first-child,
-q > ol:first-child,
 blockquote > ul:first-child,
 blockquote > ol:first-child{
   margin-top: 0;
 }
 
-q > ul:last-child,
-q > ol:last-child,
 blockquote > ul:last-child,
 blockquote > ol:last-child{
   margin-bottom: 0;
 }
 
 /* both inline and block code */
-pre,
-code {
+pre, code {
   background-color: var(--color-background-code);
   font-family: monospace;
 }
 
-/* inline code */
-code {
-  font-size: 1rem;
-}
-
 /*
   Blocks of code. Use "display: inline-block;" and "width: 83ch;" so these
-  blocks can be display about 80 characters of a fixed-width font regardless of
+  blocks can display about 80 characters of a fixed-width font regardless of
   the width of the surrounding text. Any code wider than that will get a
   horizontal scrollbar.
 */
-pre,
-.literal-block,
-.code {
+pre {
   max-width: 83ch;
   overflow-x: auto;
   overflow-y: hidden;
@@ -714,8 +666,9 @@ tfoot {
 
 
 /*****************************************************************************
- * reST Admonitions. The list of defined admonitions is: attention, caution, *
- * danger, error, hint, important, note, tip, and warning.                    *
+ * reST Admonitions in Markdown. The list of defined admonitions is:         *
+ * attention, caution, danger, error, hint, important, note, tip, and        *
+ * warning.                                                                  *
  *****************************************************************************/
 .admonition-title {
   background-color: var(--color700);
@@ -848,7 +801,7 @@ tfoot {
   list-style-type: none;
   font-size: 1rem;
   overflow-y: auto;
-  /* Hold 11 lines * 1.5rem == 16.5 */
+  /* Hold 13 lines * 1.5rem == 16.5 */
   max-height: 16.5rem;
 }
 
@@ -951,11 +904,6 @@ a.rss {
 
 a.stackoverflow {
   color: #2d2d2d;
-  background-color: var(--color-background-sidebar)
-}
-
-a.subscribemail {
-  color: var(--color-background-code);
   background-color: var(--color-background-sidebar)
 }
 
@@ -1174,11 +1122,6 @@ a.youtube:hover {
   content: "\2753";
 }
 
-/* The strike role */
-.strike {
-  text-decoration: line-through;
-}
-
 /* Styling checkboxes formed from "[ ]" and "[x]" in markdown */
 input[type=checkbox]:checked {
     position: relative;
@@ -1226,44 +1169,32 @@ input[type=checkbox]:checked:after {
 }
 
 /* First title and level ul indentation from edge of .toc container */
-.toc-title, #TableOfContents > ul {
+.toc-title, .toc ul {
   margin-left: var(--margin-toc-left);
 }
 
 /* kill left-padding (from above) for ul elements in the .toc container */
-#TableOfContents ul {
+.toc ul {
   padding-left: 0;
 }
 
 /* Hugo's built-in table of contents has 2 levels */
-#TableOfContents > ul > li {
+.toc ul > li {
   list-style-type: none;
   font-size: 0.9em;
   margin-top: var(--margin-toc-vertical);
   font-weight: 600;
 }
 
-#TableOfContents > ul > li:last-child {
+.toc ul > li:last-child {
   margin-bottom: var(--margin-toc-vertical);
 }
 
-/** an alternate color scheme for links in the ToC **
- ** I think it creates too many colors on a page.
-#TableOfContents > ul > li a {
-  color: #2b249d;
-}
-
-#TableOfContents > ul > li a:hover,
-#TableOfContents > ul > li a:active {
-  color: #5a9d24;
-}
-***************************************************/
-
-#TableOfContents > ul > li > ul {
+.toc ul > li > ul {
   font-weight: normal;
 }
 
-#TableOfContents > ul > li > ul > li {
+.toc ul > li > ul > li {
   list-style-type: none;
   font-size: 0.85em;
   margin-left: var(--margin-toc-left);

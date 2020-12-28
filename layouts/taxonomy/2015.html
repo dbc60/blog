@@ -1,5 +1,5 @@
 {{- define "main" }}
-{{ "<!--BEGIN main layouts/taxonomy/2015.html -->" | safeHTML }}
+{{ "<!-- BEGIN main layouts/taxonomy/2015.html -->" | safeHTML }}
 <div class="content">
   {{ $paginator := .Paginate (where .Pages "Type" "in" site.Params.mainSections) -}}
   {{ range $paginator.Pages }}

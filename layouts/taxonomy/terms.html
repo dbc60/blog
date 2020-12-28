@@ -1,5 +1,5 @@
 {{- define "main" -}}
-{{ "<!--BEGIN main layouts/taxonomy/terms.html -->" | safeHTML }}
+{{ "<!-- BEGIN main layouts/taxonomy/terms.html -->" | safeHTML }}
 {{ $sections := (.Site.GetPage .Section).Sections }}
 {{ $rootSections := (.Site.GetPage "/").Sections }}
 {{ if eq 0 (len $sections) }}

@@ -1,5 +1,5 @@
 <ul class="social-items">
-{{ "<!--BEGIN layouts/partials/items-latest.html -->" | safeHTML }}
+{{ "<!-- BEGIN layouts/partials/items-latest.html -->" | safeHTML }}
 {{- $postsAll := .Site.RegularPages.ByLastmod.Reverse -}}
 {{- $listLimit := 10 -}}
 {{- if isset .Site.Params "latest_limit" -}}
