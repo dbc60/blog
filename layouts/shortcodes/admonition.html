@@ -2,12 +2,12 @@
 {{- $title := .Get "title" | default "" -}}
 {{- $class := "" -}}
 {{- if eq $type "any" -}}
-  {{- $class = "admonition any" -}}
+  {{- $class = "admonition note" -}}
   {{- if eq $title "" -}}
     {{- $title = "Note" -}}
   {{- end -}}
 {{- else if eq $type "attention" -}}
-  {{- $class = "admonition attention" -}}
+  {{- $class = "admonition caution" -}}
   {{- if eq $title "" -}}
     {{- $title = "Attention" -}}
   {{- end -}}
@@ -22,17 +22,17 @@
     {{- $title = "Danger" -}}
   {{- end -}}
 {{- else if eq $type "error" -}}
-  {{- $class = "admonition error" -}}
+  {{- $class = "admonition danger" -}}
   {{- if eq $title "" -}}
     {{- $title = "Error" -}}
   {{- end -}}
 {{- else if eq $type "hint" -}}
-  {{- $class = "admonition hint" -}}
+  {{- $class = "admonition note" -}}
   {{- if eq $title "" -}}
     {{- $title = "Hint" -}}
   {{- end -}}
 {{- else if eq $type "important" -}}
-  {{- $class = "admonition important" -}}
+  {{- $class = "admonition caution" -}}
   {{- if eq $title "" -}}
     {{- $title = "Important" -}}
   {{- end -}}
@@ -42,17 +42,17 @@
     {{- $title = "Note" -}}
   {{- end -}}
 {{- else if eq $type "tip" -}}
-  {{- $class = "admonition tip" -}}
+  {{- $class = "admonition note" -}}
   {{- if eq $title "" -}}
     {{- $title = "Tip" -}}
   {{- end -}}
 {{- else if eq $type "warning" -}}
-  {{- $class = "admonition warning" -}}
+  {{- $class = "admonition caution" -}}
   {{- if eq $title "" -}}
     {{- $title = "Warning" -}}
   {{- end -}}
 {{- else -}}
-  {{- $class = "admonition unknown" -}}
+  {{- $class = "admonition note" -}}
   {{- if eq $title "" -}}
     {{- $title = "Unknown" -}}
   {{- end -}}

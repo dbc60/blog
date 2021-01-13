@@ -11,6 +11,14 @@
       and https://gohugo.io/hugo-pipes/
     -->
     {{- $cssPreface := resources.Get "style/front.css" -}}
+    {{- $cssBase := resources.Get "style/base.css" -}}
+    {{- $layoutFlexbox := resources.Get "style/layout-flexbox.css" -}}
+    {{- $layoutGrid := resources.Get "style/layout-grid.css" -}}
+    {{- $layout := $layoutFlexbox -}}
+    {{- $isGrid := false -}}
+    {{- if $isGrid -}}
+    {{- $layout = $layoutGrid -}}
+    {{- end -}}
     {{- $cssOverrides := resources.Get "style/overrides.css" -}}
     {{- $cssDropCaps := resources.Get "style/drop-caps/drop-caps.css" -}}
     {{- $cssDropCapsFontGoudy := resources.Get "style/drop-caps/drop-caps_goudy.css" -}}
@@ -18,14 +26,14 @@
     <!--{{/* $cssDropCapsFontDezs := resources.Get "style/drop-caps/drop-caps_de-zs.css" */}}-->
     <!--{{/* $cssDropCapsFontKanzlei := resources.Get "style/drop-caps/drop-caps_kanzlei.css" */}}-->
     <!--{{/* $cssDropCapsFontYinit := resources.Get "style/drop-caps/drop-caps_yinit.css" */}}-->
-    {{- $cssBreadcrumb := resources.Get "style/breadcrumbs/breadcrumb.css" -}}
+    {{- $cssBreadcrumb := resources.Get "style/breadcrumb.css" -}}
     {{- $cssFonts := resources.Get "style/fonts.css" -}}
     {{- $cssSyntaxHighlights := resources.Get "style/syntax-highlighting/monokai.css" -}}
     <!--{{/* $cssEntities := resources.Get "style/entities.css" */}}-->
     <!-- ensure cssOverrides is the last CSS source file so it can override any
       selectors from the other files.
     -->
-    {{- $styles := slice $cssPreface $cssDropCaps $cssDropCapsFontGoudy $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssOverrides | resources.Concat "style/style.css" -}}
+    {{- $styles := slice $cssPreface $cssDropCaps $cssDropCapsFontGoudy $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssBase $layout $cssOverrides | resources.Concat "style/style.css" -}}
 
     <!-- minify and fingerprint only if not running locally -->
     {{- if not (in (print .Site.BaseURL) "localhost") -}}

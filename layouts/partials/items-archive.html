@@ -6,7 +6,7 @@
 {{ $scratch := newScratch }}
 {{ $scratch.Set "currentYear" ((index $postsAll 0).Date.Format "2006") }}
 {{ $cy := $scratch.Get "currentYear" }}
-<ul class="social-items">
+<ul class="collection-items">
   <li class="contents">
     <a class="secondary-nav__link" href="{{ $homeLink }}/{{ $cy }}/">
       {{ $cy }}

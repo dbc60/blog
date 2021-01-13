@@ -1,0 +1,51 @@
+/******************
+ * Flexbox Layout *
+ ******************/
+.main-nav {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.main-nav__items a {
+  font-size: 1.1em;
+  margin-right: 1ch;
+}
+
+.main-head {
+  display: flex;
+}
+
+.main-head h1 {
+  margin: 0;
+}
+
+@media (min-width: 110ch) {
+  .main-head {
+    width: 100%;
+  }
+
+  .wrapper-content {
+    display: flex;
+  }
+  /*
+    Set min-width to zero in both .sidebar-content and .main-content to tell
+    the browser that this element has no right to take up any minimum width,
+    and now it will be rendered properly, taking up only as much width as is
+    available. It enables "overflow-wrap: break-word;" to break long words
+    instead of allowing the main content to stretch beyond the desired screen
+    width.
+
+    For details, see:
+      https://makandracards.com/makandra/66994-css-flex-and-min-width
+  */
+  .sidebar-content {
+    min-width: 0;
+    max-width: 32ch;
+    flex: 1;
+  }
+
+  .main-content {
+    min-width: 0;
+    flex: 2;
+  }
+}

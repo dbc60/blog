@@ -1,0 +1,27 @@
+
+/*************************************************************
+ * GRID LAYOUT BASED ON CSS-TRICKS'                          *
+ * "A Complete Guide to Grid" at                             *
+ * (https://css-tricks.com/snippets/css/complete-guide-grid/ *
+ *************************************************************/
+
+ .wrapper-content {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 32ch minmax(110ch, 1fr) auto;
+}
+
+.sidebar-content {
+  min-width: 0;
+  max-width: 32ch;
+}
+
+.main-content {
+  min-width: 0;
+}
+
+.main-content > nav {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+}

@@ -1,18 +1,20 @@
+{{ "<!-- BEGIN layouts/partials/postScript.html -->" | safeHTML -}}
 <!-- Include MathJaX if either the page or the site params define math=true -->
 {{- if or .Params.math .Site.Params.math -}}
-{{- if .Site.Params.mathjax -}}
-{{- partial "mathjax" . -}}
+{{- if .Site.Params.mathjax }}
+{{ partial "mathjax" . }}
 {{- end -}}
 {{- if .Site.Params.katex -}}
 {{- partial "katex2" . -}}
 {{- end -}}
 {{- end -}}
-
-<!-- Google Analytics if the site is *not* running in a local Hugo server and the
-     GoogleAnalytics tracking id is set in config.toml or params.toml
+<!--
+  Google Analytics if the site is *not* running in a local Hugo server and
+  the GoogleAnalytics tracking id is set in config.toml or params.toml
 -->
 {{- if not .Site.IsServer -}}
   {{- with .Site.GoogleAnalytics -}}
+  {{ "<!-- add Google Analytics script -->" | safeHTML }}
   <script>
   window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
   ga('create', '{{ . }}', 'auto');
@@ -21,3 +23,4 @@
   <script async src='https://www.google-analytics.com/analytics.js'></script>
   {{- end -}}
 {{- end }}
+    {{ "<!-- END layouts/partials/postScript.html -->" | safeHTML -}}

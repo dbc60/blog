@@ -1,21 +1,20 @@
-{{ "<!-- BEGIN layouts/partials/nav__breadcrumbs.html -->" | safeHTML }}
+{{- "<!-- BEGIN layouts/partials/nav__breadcrumbs.html -->" | safeHTML -}}
 <!-- set the first breadcrumb link for the home page -->
 <nav aria-label="Breadcrumb">
 <ul class="breadcrumb">
 <li class="breadcrumb__item"><a href="/">Home</a></li>
-{{ template "breadcrumb" dict "currentPage" .Page }}
-
+{{- template "breadcrumb" dict "currentPage" .Page -}}
 <!-- templates -->
-{{ define "breadcrumb" }}
-  {{ if .currentPage.Parent }}
+{{- define "breadcrumb" -}}
+  {{- if .currentPage.Parent -}}
       <!-- recursively find all parent pages up to, but not including home -->
-      {{ if ne .currentPage.Parent .IsHome }}
-      {{ template "breadcrumb" dict "currentPage" .currentPage.Parent }}
-    {{ end }}
+      {{- if ne .currentPage.Parent .IsHome -}}
+      {{- template "breadcrumb" dict "currentPage" .currentPage.Parent -}}
+    {{- end -}}
     <!-- make your breadcrumbs from beginning to end -->
     <li class="breadcrumb__item"><a class="breadcrumbs_link" href="{{ .currentPage.Permalink }}">{{ .currentPage.Title }}</a></li>
-  {{ end }}
-{{ end }}
+  {{- end -}}
+{{- end -}}
 </ul>
 </nav>
 {{ "<!-- END layouts/partials/nav__breadcrumbs.html -->" | safeHTML }}

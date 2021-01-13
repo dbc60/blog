@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{{ $lang := .Site.Language.Lang | default "en" }}
+{{- $lang := .Site.Language.Lang | default "en" -}}
 <html lang="{{ $lang }}">
   {{- block "head" . -}}
   {{- partial "head.html" . -}}
@@ -13,71 +13,55 @@
     {{- partial "nav.html" . -}}
     {{- end }}
 
-    {{ block "breadcrumbs" . }}
+    {{- block "breadcrumbs" . -}}
       {{- partial "nav__breadcrumbs.html" . -}}
-    {{ end }}
-
+    {{- end }}
     <div class="wrapper-content">
-      {{ $sections := (.Site.GetPage .Section).Sections }}
-      {{ $rootSections := (.Site.GetPage "/").Sections }}
-      {{ if eq 0 (len $sections) }}
-        {{ "<!--GETTING ROOT SECTIONS-->" | safeHTML }}
-        {{ $sections = $rootSections }}
-      {{ end }}
+      {{- $sections := (.Site.GetPage .Section).Sections -}}
+      {{- $rootSections := (.Site.GetPage "/").Sections -}}
+      {{- if eq 0 (len $sections) -}}
+        {{- "<!--GETTING ROOT SECTIONS-->" | safeHTML -}}
+        {{- $sections = $rootSections -}}
+      {{- end -}}
       <div class="sidebar-content">
-        <ul class="wrapper-social-sections">
-          <li class="wrapper-social-items">
-            <span class="wrapper-social-border icon icon-books"> </span>
-            <span class="wrapper-social-border title">Contents</span>
-            {{ block "contents" (dict "context" . ) }}
-            {{ partial "items-contents.html" . }}
-            {{ end }}
-            <span class="wrapper-social-border icon icon-books"> </span>
+        <ul class="wrapper-collections">
+          <li class="wrapper-collection-items">
+            <span class="wrapper-collection-border icon icon-books"> </span>
+            <span class="wrapper-collection-border title">Contents</span>
+{{ block "contents" (dict "context" . ) -}}
+{{- partial "items-contents.html" . -}}
+{{- end }}
+            <span class="wrapper-collection-border icon icon-books"> </span>
           </li>
-
-          <li class="wrapper-social-items">
-            <span class="wrapper-social-border icon icon-quill"> </span>
-            <span class="wrapper-social-border title">Latest</span>
-            {{ block "latest" . }}
-            {{ partial "items-latest.html" . }}
-            {{ end }}
-            <span class="wrapper-social-border icon icon-quill"> </span>
+          <li class="wrapper-collection-items">
+            <span class="wrapper-collection-border icon icon-quill"> </span>
+            <span class="wrapper-collection-border title">Latest</span>
+            {{- block "latest" . -}}
+            {{- partial "items-latest.html" . -}}
+            {{- end -}}
+            <span class="wrapper-collection-border icon icon-quill"> </span>
           </li>
-
-          <li class="wrapper-social-items">
-            <span class="wrapper-social-border icon icon-folder-open"> </span>
-            <span class="wrapper-social-border title">Collections</span>
-            {{ block "lists" . }}
-            {{ partial "items-taxonomies.html" . }}
-            {{ end }}
-            <span class="wrapper-social-border icon icon-folder-open"> </span>
-          </li>
-
-          <li class="wrapper-social-items">
-            <span class="wrapper-social-border icon icon-info-circle"> </span>
-            <span class="wrapper-social-border title">Follow</span>
-            <div class="social">
-              {{ block "follow" . }}
-              {{ partial "social-follow.html" . }}
-              {{ end }}
-            </div>
-            <span class="wrapper-social-border icon icon-info-circle"> </span>
+          <li class="wrapper-collection-items">
+            <span class="wrapper-collection-border icon icon-folder-open"> </span>
+            <span class="wrapper-collection-border title">Collections</span>
+            {{- block "lists" . -}}
+            {{- partial "items-taxonomies.html" . -}}
+            {{- end -}}
+            <span class="wrapper-collection-border icon icon-folder-open"> </span>
           </li>
         </ul>
       </div>
       <main class="main-content">
-        {{- block "main" . -}}
-          <h2>Default Main (Should Never Appear)</h2>
-        {{- end }}
+      {{ block "main" . -}}
+        <h2>Default Main (Should Never Appear)</h2>
+      {{- end }}
       </main>
     </div> {{ "<!-- class wrapper-content -->" | safeHTML }}
-
-    {{ block "footer" . }}
-      {{ partial "footer.html" . -}}
-    {{ end }}
-
-    {{ block "postScript" . }}
-      {{ partial "postScript.html" . -}}
-    {{ end }}
+    {{ block "footer" . -}}
+      {{ partial "footer.html" . }}
+    {{- end }}
+    {{ block "postScript" . -}}
+      {{ partial "postScript.html" . }}
+    {{- end }}
   </body>
 </html>
