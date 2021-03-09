@@ -6,7 +6,8 @@
 }
 
 .crumb {
-	padding: 4px 16px;
+  padding: 4px 16px;
+  margin-top: 1px;
 	position: relative;
   float: left;
   background-color: var(--color900);
