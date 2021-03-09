@@ -21,7 +21,7 @@
             {{- if $byDate -}}
               {{ "<!-- range by date -->" | safeHTML }}
               {{- range $sections.ByDate.Reverse }}
-              <li class="contents">
+              <li class="collection-item">
                 <a class="secondary-nav__link" href="{{ .Permalink }}">
                   {{- .Title -}}
                 </a>
@@ -34,7 +34,7 @@
               {{- end -}}
               {{ "<!-- range by weight -->" | safeHTML }}
               {{- range first $listLimit  $sections.ByWeight }}
-              <li class="contents">
+              <li class="collection-item">
                 <a class="secondary-nav__link" href="{{ .Permalink }}">
                   {{- .Title -}}
                 </a>
@@ -47,7 +47,7 @@
               {{- end -}}
               {{ "<!-- range by title -->" | safeHTML }}
               {{- range first $listLimit  $sections.ByTitle }}
-              <li class="contents"><a class="secondary-nav__link" href="{{ .Permalink }}">{{- .Title -}}</a></li>
+              <li class="collection-item"><a class="secondary-nav__link" href="{{ .Permalink }}">{{- .Title -}}</a></li>
               {{- end -}}
             {{- end }}
             </ul>

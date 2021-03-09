@@ -5,17 +5,11 @@
   {{- partial "head.html" . -}}
   {{- end -}}
   <body>
-    {{- block "header" . -}}
-        {{- partial "siteHeader.html" . -}}
-    {{- end -}}
-
-    {{- block "nav" . -}}
+    <div class="hero">
+    {{- partial "siteHeader.html" . -}}
     {{- partial "nav.html" . -}}
-    {{- end }}
-
-    {{- block "breadcrumbs" . -}}
-      {{- partial "nav__breadcrumbs.html" . -}}
-    {{- end }}
+    {{- partial "nav__breadcrumbs.html" . -}}
+    </div>
     <div class="wrapper-content">
       {{- $sections := (.Site.GetPage .Section).Sections -}}
       {{- $rootSections := (.Site.GetPage "/").Sections -}}
@@ -57,11 +51,13 @@
       {{- end }}
       </main>
     </div> {{ "<!-- class wrapper-content -->" | safeHTML }}
+    <div class="wrapper-footer">
     {{ block "footer" . -}}
       {{ partial "footer.html" . }}
     {{- end }}
     {{ block "postScript" . -}}
       {{ partial "postScript.html" . }}
     {{- end }}
+  </div>
   </body>
 </html>

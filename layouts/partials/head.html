@@ -12,9 +12,8 @@
     -->
     {{- $cssPreface := resources.Get "style/front.css" -}}
     {{- $cssBase := resources.Get "style/base.css" -}}
-    {{- $layoutFlexbox := resources.Get "style/layout-flexbox.css" -}}
     {{- $layoutGrid := resources.Get "style/layout-grid.css" -}}
-    {{- $layout := $layoutFlexbox -}}
+    {{- $layout := $layoutGrid -}}
     {{- $isGrid := false -}}
     {{- if $isGrid -}}
     {{- $layout = $layoutGrid -}}
@@ -26,7 +25,13 @@
     <!--{{/* $cssDropCapsFontDezs := resources.Get "style/drop-caps/drop-caps_de-zs.css" */}}-->
     <!--{{/* $cssDropCapsFontKanzlei := resources.Get "style/drop-caps/drop-caps_kanzlei.css" */}}-->
     <!--{{/* $cssDropCapsFontYinit := resources.Get "style/drop-caps/drop-caps_yinit.css" */}}-->
-    {{- $cssBreadcrumb := resources.Get "style/breadcrumb.css" -}}
+    {{- $breadcrumbs := "style/breadcrumb.css" -}}
+    {{- $useNewBreadcrumbs := false -}}
+    {{- if $useNewBreadcrumbs -}}
+    {{- $breadcrumbs = "style/breadcrumb-new.css" -}}
+    {{- end -}}
+
+    {{- $cssBreadcrumb := resources.Get $breadcrumbs -}}
     {{- $cssFonts := resources.Get "style/fonts.css" -}}
     {{- $cssSyntaxHighlights := resources.Get "style/syntax-highlighting/monokai.css" -}}
     <!--{{/* $cssEntities := resources.Get "style/entities.css" */}}-->

@@ -7,7 +7,7 @@
 {{ $scratch.Set "currentYear" ((index $postsAll 0).Date.Format "2006") }}
 {{ $cy := $scratch.Get "currentYear" }}
 <ul class="collection-items">
-  <li class="contents">
+  <li class="collection-item">
     <a class="secondary-nav__link" href="{{ $homeLink }}/{{ $cy }}/">
       {{ $cy }}
     </a>
@@ -17,7 +17,7 @@
   {{ $cy := $scratch.Get "currentYear" }}
   {{ $py := $scratch.Get "previousYear" }}
   {{ if ne $cy $py }}
-  <li class="contents">
+  <li class="collection-item">
     <a class="secondary-nav__link" href="{{ $homeLink }}/{{ $py }}/">
       {{ $py }}
     </a>

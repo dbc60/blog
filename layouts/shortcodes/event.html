@@ -1,0 +1,76 @@
+{{- $type := .Get "type" | default "event" -}}
+{{- $text := .Get "text" | default "" -}}
+{{- $inline := .Get "inline" | default "false" -}}
+{{- $class := "bullet" -}}
+{{- if eq $type "" -}}
+  {{- $class = "bullet" -}}
+{{- else if eq $type "anniversary" -}}
+  {{- $class = "bullet anniversary" -}}
+{{- else if eq $type "appointment" -}}
+  {{- $class = "bullet appointment" -}}
+{{- else if eq $type "appointment-past" -}}
+  {{- $class = "bullet appointment appointment-past" -}}
+{{- else if eq $type "appointment-canceled" -}}
+  {{- $class = "bullet appointment appointment-canceled strike" -}}
+{{- else if eq $type "birthday" -}}
+  {{- $class = "bullet birthday" -}}
+{{- else if eq $type "event" -}}
+  {{- $class = "bullet event" -}}
+{{- else if eq $type "event-canceled" -}}
+  {{- $class = "bullet event event-canceled strike" -}}
+{{- else if eq $type "event-completed" -}}
+  {{- $class = "bullet event event-completed" -}}
+{{- else if eq $type "event-migrated" -}}
+  {{- $class = "bullet event event-migrated" -}}
+{{- else if eq $type "event-migrated-completed" -}}
+  {{- $class = "bullet event event-migrated-completed" -}}
+{{- else if eq $type "goal" -}}
+  {{- $class = "bullet goal" -}}
+{{- else if eq $type "goal-completed" -}}
+  {{- $class = "bullet goal goal-completed" -}}
+{{- else if eq $type "goal-work" -}}
+  {{- $class = "bullet goal goal-work" -}}
+{{- else if eq $type "goal-work-completed" -}}
+  {{- $class = "bullet goal goal-work-completed" -}}
+{{- else if eq $type "holiday" -}}
+  {{- $class = "bullet holiday" -}}
+{{- else if eq $type "task" -}}
+  {{- $class = "bullet task" -}}
+{{- else if eq $type "task-canceled" -}}
+  {{- $class = "bullet task task-canceled strike" -}}
+{{- else if eq $type "task-completed" -}}
+  {{- $class = "bullet task task-completed" -}}
+{{- else if eq $type "task-migrated" -}}
+  {{- $class = "bullet task task-migrated" -}}
+{{- else if eq $type "task-migrated-completed" -}}
+  {{- $class = "bullet task task-migrated-completed" -}}
+{{- else if eq $type "task-waiting" -}}
+  {{- $class = "bullet task task-waiting" -}}
+{{- else if eq $type "task-work" -}}
+  {{- $class = "bullet task task-work" -}}
+{{- else if eq $type "task-work-canceled" -}}
+  {{- $class = "bullet task task-work-canceled strike" -}}
+{{- else if eq $type "task-work-completed" -}}
+  {{- $class = "bullet task task-work-completed" -}}
+{{- else if eq $type "task-work-migrated" -}}
+  {{- $class = "bullet task task-work-migrated" -}}
+{{- else if eq $type "task-work-migrated-completed" -}}
+  {{- $class = "bullet task task-work-migrated-completed" -}}
+{{- else if eq $type "task-work-waiting" -}}
+  {{- $class = "bullet task task-work-waiting" -}}
+{{- else if eq $type "vacation" -}}
+  {{- $class = "bullet vacation" -}}
+{{- else -}}
+  {{- $class = "bullet unknown" -}}
+{{- end -}}
+{{ "<!-- BEGIN layouts/shortcodes/event.html -->" | safeHTML }}
+{{- with .Parent -}}
+  <li class="{{$class}}">{{$text}} </li>
+{{- else -}}
+  {{- if eq $inline "true" -}}
+    <span class="{{$class}} inline">{{$text}}</span>
+  {{- else -}}
+    <div class="{{$class}}">{{$text}}</div>
+  {{- end -}}
+{{- end -}}
+{{- "<!--END layouts/shortcodes/event.html -->" | safeHTML -}}

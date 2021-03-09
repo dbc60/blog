@@ -69,7 +69,7 @@ blockquote {
   quotes: "\201C""\201D""\2018""\2019";
 }
 
-blockquote p:first-child:before {
+blockquote p:first-child::before {
   content: open-quote;
   color: var(--gray300);
   font-size: 4em;
@@ -77,7 +77,7 @@ blockquote p:first-child:before {
   vertical-align: bottom;
 }
 
-blockquote p:last-child:after {
+blockquote p:last-child::after {
   content: close-quote;
   color: var(--gray300);
   font-size: 4em;
@@ -115,7 +115,7 @@ pre, code {
   horizontal scrollbar.
 */
 pre {
-  max-width: 83ch;
+  max-width: 96ch;
   overflow-x: auto;
   overflow-y: hidden;
   margin: 0.5em 0rem 0.5em 0rem;
@@ -161,7 +161,7 @@ a:active {
   counter-increment: tables;
 }
 
-caption:before {
+caption::before {
   content: 'Table ' counter(tables) '. ';
 }
 
@@ -209,13 +209,24 @@ tfoot {
  *****************************************************************************/
 .admonition .content {
   padding-left: 0.25em;
+  padding-right: 0.5em;
+}
+
+.admonition p:first-child {
+  margin-top: 0.25em;
+  padding-top: 0;
+}
+
+.admonition p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .admonition {
-  padding-bottom: 0.5em;
   margin-top: 1em;
-  margin-bottom: 0.5em;
   border-left: 0.1rem solid var(--color600);
+  border-bottom: 0.1rem solid var(--gray300);
+  border-right: 0.1rem solid var(--gray300);
 }
 
 .admonition-title {
@@ -265,7 +276,6 @@ tfoot {
   padding-left: 0;
   padding-right: 0.3rem;
   display: inline-block;
-  list-style-type: none;
   font-size: 1rem;
   overflow-y: auto;
   /* Hold 13 lines * 1.5rem == 16.5 */
@@ -294,8 +304,7 @@ tfoot {
   color: var(--color-background-footer);
 }
 /* This is a list of sections of social media icons and links */
-.wrapper-collection-sections {
-  list-style-type: none;
+.wrapper-collections {
   padding-left: 0;
 }
 
@@ -307,6 +316,7 @@ tfoot {
 /* A list item in a wrapper-collection-sections list that contains a list of
    social media icons and links */
 .wrapper-collection-items {
+  list-style-type: none;
   background-color: var(--color-background-sidebar-highlight);
   border-radius: 0.5em;
   margin-bottom: 1em;
@@ -582,7 +592,7 @@ a.youtube:hover {
 input[type=checkbox]:checked {
     position: relative;
 }
-input[type=checkbox]:before {
+input[type=checkbox]::before {
     content: "";
     display: block;
     position: absolute;
@@ -592,7 +602,7 @@ input[type=checkbox]:before {
     border: 0.1rem solid var(--color500-adjacent);
     border-radius: 0.2em;
 }
-input[type=checkbox]:checked:after {
+input[type=checkbox]:checked::after {
     content: "\2714";
     display: block;
     position: absolute;
@@ -614,9 +624,13 @@ input[type=checkbox]:checked:after {
   max-width: 33%;
 }
 
-.toc h2 {
-  font-size: 100%;
+.toc-title {
+  padding-left: 0.25rem;
+  padding-right: 0.5rem;
+  font-size: calc(24em / 18);
   margin-bottom: 0;
+  margin-top: 0;
+  text-decoration: underline;
 }
 
 #TableOfContents > ul {
@@ -674,3 +688,123 @@ input[type=checkbox]:checked:after {
   font-weight: 600;
 }
 */
+
+/* Styling for examples in my notes */
+.example-purple {
+  line-height: 1.1;
+  border: solid rebeccapurple;
+}
+
+.example-red {
+  line-height: 1.1em;
+  border: solid red;
+}
+
+h1.example {
+  font-size: 30px;
+}
+
+.example-box {
+  width: 18em;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 15px;
+}
+
+/* Example 2 */
+.example-body {
+  margin:0;
+  padding:0;
+  font-family: arial, sans-serif;
+}
+
+.example-code {
+  font-family: "Courier New", mono;
+}
+
+.example-wrapper {
+  padding:18px;
+  overflow: auto;
+  height: 1%;
+}
+
+.example2 {
+  margin: 0;
+  padding: 0;
+}
+
+.example-bodytext {
+  width: 200px;
+  float: left;
+}
+
+.example-sidenote {
+  width: 126px;
+  margin-left: 216px;
+}
+
+.example-body {
+  font-size: 100%;
+  line-height: 1.125em; /* 16px * 1.125 = 18px */
+}
+
+.example-bodytext p.example2 {
+  font-size:0.875em;
+}
+
+.example-sidenote {
+  font-size:0.75em;
+}
+
+.example2-purple {
+  border: solid rebeccapurple;
+}
+
+.example2-red {
+  border: solid red;
+}
+
+/*
+ * Toggle Grid from Caleb William's Pixel-Perfect demo.
+ *
+ *  demo: https://codepen.io/calebdwilliams/pen/yLYbPMR
+ *  article: How to Tame Line-Height in CSS at
+ *    https://css-tricks.com/how-to-tame-line-height-in-css/
+ */
+.toggle {
+  background: rebeccapurple;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  line-height: 1;
+  height: 44px;
+  margin-top: 16px;
+  padding: 0 16px;
+  transition: background 0.1s ease-in;
+}
+
+.toggle:hover {
+  filter: brightness(90%);
+}
+
+.toggle:active {
+  filter: brightness(80%);
+}
+
+.grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 100%;
+  z-index: 3000000;
+  opacity: .75;
+  background-size: 4px 4px;
+  background-position: 0px 0px;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 93.749%, cyan 93.75%, cyan 100%), linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 93.749%, cyan 93.75%, cyan 100%);
+}

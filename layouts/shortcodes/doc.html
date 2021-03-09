@@ -1,0 +1,6 @@
+{{- with .Get "file" -}}
+<a target="_blank" href="/{{ . }}">
+  {{ $.Inner }}
+</a>
+{{- end -}}
+{{- /* This comment removes trailing newlines */ -}}

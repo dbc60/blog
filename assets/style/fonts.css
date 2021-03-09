@@ -1,22 +1,104 @@
 /* Font overview: loads Source Serif Pro for body, Source Sans Pro for ToC, and 5 kinds of drop caps via Yinit, Goudy, Deutsche Zierschrift, Cheshire, and Kanzlei Initialen (enabled in /static/style/drop-caps/*) */
 
+  /*
+   * I am playing with font-family sets from
+   *
+   *    https://kinsta.com/blog/web-safe-fonts/
+   *
+   * I like both of the following font-family sets. They have the advantage
+   * that neither require downloading fonts from the network. If applied to my
+   * blog, that should make the pages load a little faster.
+   *
+   * The first is No. 5, Calisto MT. It has slightly more pronounced serifs
+   * than Source Serif Pro. According to the site, Calisto MT is a serif font
+   * with slightly softer and less pronounced serifs than most similar
+   * typefaces. It's a standard Microsoft font, included with most newer
+   * versions of Windows. The macOS or iOS equivalent is the Bookman Old Style
+   * font.
+   *
+   * No. 6, Cambria. The font stack consists of only 3 fonts. The site says:
+   *
+   * Cambria is an even softer serif font, with, in many cases, barely
+   * noticeable serifs even for capital letters. This gives it a more modern
+   * feel and also maintains a high level of readability on screens.
+   *
+   * No. 15, Garamond is a serif font, inspired by typefaces made by the
+   * 16th-century Parisian engraver, Claude Garamond. It has softer, rounder
+   * edges than some of the more standard serif fonts, like Times New Roman.
+   * Modern versions of Microsoft and Apple OS include their own versions of
+   * the Garamond font.
+   *
+   *  I find Garamond to be more thin than I prefer. It makes the body text a
+   * little more difficult to read than Source Serif Pro, Calisto MT, or
+   * Cambria.
+   *
+   * CSS Tricks has some advice for using system fonts:
+   *
+   *    https://css-tricks.com/snippets/css/system-font-stack/
+   *
+   *  I'm having trouble deciding between Calisto MT and Cambria. They both
+   * look good.
+   *
+   * The stack starting with Lucida Bright has the advantage of looking good at
+   * a font-size of 100%. However, it is an old Microsoft font. I think I'll
+   * get better readability from one of the more modern fonts, and when it
+   * comes to Microsoft fonts, one from their ClearType collection:
+   *
+   *    https://docs.microsoft.com/en-us/typography/cleartype/clear-type-font-collection
+   *
+   * like Cambria:
+   *
+   *   (https://docs.microsoft.com/en-us/typography/font-list/calibri)
+   *
+   * I've moved the font-family settings over assets/style/font.css and defined
+   * a "system" font-face
+  **/
+
+/*
+ * Define the "system-stack" font family. Be careful when naming your custom
+ * font-family. I tried "system-ui" and it didn't use the "src" definition.
+ * There are some pre-defined names, "system-ui" being one of them. See the
+ * list here on MDN:
+ *
+ *    https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#syntax
+ */
+@font-face {
+  font-family: "system-stack";
+  font-style: normal;
+  font-weight: 300;
+  /*src: local("Source Serif Pro"), local("Helvetica Neue"), local(Helvetica), local(Arial), local(sans-serif);*/
+  /*src: local(Garamond), local(Baskerville), local("Baskerville Old Face"), local("Hoefler Text"), local("Times New Roman"), local(serif);*/
+  /*src: local("Lucida Bright"), local(Georgia), local(serif);*/
+  /*src: local(Georgia), local(serif);*/
+  /*src: local(Cambria), local(Georgia), local(serif);*/
+  /*src: local(Palatino), local("Palatino Linotype"), local("Palatino LT STD"), local("Book Antiqua"), local(Georgia), local(serif);*/
+  src: local("Calisto MT"), local("Bookman Old Style"), local(Bookman), local("Goudy Old Style"), local(Garamond), local("Hoefler Text"), local("Bitstream Charter"), local(Georgia), local(serif);
+}
+
+
 /********************/
 /* SOURCE SERIF PRO */
 /********************/
 /* workhorse font for the body */
-
+/* 2021.02.07: I'm commenting out Source Serif Pro. I think a font-family
+ * consisting of a stack of "local" fonts starting with either Calisto MT or
+ * Cambria will be better for the site, as they can be found on most desktops, * so don't have to be downloaded.
+*/
+/***
 @font-face {
     font-family: "Source Serif Pro";
     font-weight: 200;
     font-style: normal;
     src: url('/font/SourceSerifPro-BASIC-ExtraLight.ttf') format('truetype');
     unicode-range: U+0020-007E, U+2010, U+2013-2014, U+2018-2019, U+201C-201D;
+***/
     /*  for body text, display as soon as possible (presumably as system font Baskerville)
         and re-render with Source Serif Pro whenever it downloads:
         https://developers.google.com/web/updates/2016/02/font-display
         https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display
         https://caniuse.com/#search=font-display
         */
+/***
     font-display: swap;
 }
 @font-face {
@@ -107,7 +189,7 @@
     unicode-range: U+0020-007E, U+2010, U+2013-2014, U+2018-2019, U+201C-201D;
     font-display: swap;
 }
-
+***/
 /*******************/
 /* SOURCE SANS PRO */
 /*******************/
@@ -1064,471 +1146,471 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-books:before {
+.icon-books::before {
   content: "\e969";
 }
-.icon-facebook:before {
+.icon-facebook::before {
   content: "\f09a";
 }
-.icon-folder-open:before {
+.icon-folder-open::before {
   content: "\e91c";
 }
-.icon-github2:before {
+.icon-github2::before {
   content: "\f09b";
 }
-.icon-info2:before {
+.icon-info2::before {
   content: "\ea0c";
 }
-.icon-info-circle:before {
+.icon-info-circle::before {
   content: "\e925";
 }
-.icon-instagram:before {
+.icon-instagram::before {
   content: "\e944";
 }
-.icon-linkedin-square1:before {
+.icon-linkedin-square1::before {
   content: "\f08c";
 }
-.icon-pinterest:before {
+.icon-pinterest::before {
   content: "\e90d";
 }
-.icon-quill:before {
+.icon-quill::before {
   content: "\e966";
 }
-.icon-reddit:before {
+.icon-reddit::before {
   content: "\e90f";
 }
-.icon-send-o:before {
+.icon-send-o::before {
   content: "\e902";
 }
-.icon-stackoverflow:before {
+.icon-stackoverflow::before {
   content: "\ead0";
 }
-.icon-tumblr:before {
+.icon-tumblr::before {
   content: "\e90b";
 }
-.icon-twitter2:before {
+.icon-twitter2::before {
   content: "\e932";
 }
-.icon-youtube:before {
+.icon-youtube::before {
   content: "\e909";
 }
 
 /*
-.icon-arrow-left:before {
+.icon-arrow-left::before {
   content: "\f060";
 }
-.icon-arrow-right:before {
+.icon-arrow-right::before {
   content: "\f061";
 }
-.icon-arrow-up:before {
+.icon-arrow-up::before {
   content: "\f062";
 }
-.icon-arrow-down:before {
+.icon-arrow-down::before {
   content: "\f063";
 }
-.icon-twitter-square1:before {
+.icon-twitter-square1::before {
   content: "\f081";
 }
-.icon-facebook-square:before {
+.icon-facebook-square::before {
   content: "\f082";
 }
-.icon-twitter6:before {
+.icon-twitter6::before {
   content: "\f099";
 }
-.icon-facebook-f:before {
+.icon-facebook-f::before {
   content: "\f09a";
 }
-.icon-hand-o-right:before {
+.icon-hand-o-right::before {
   content: "\f0a4";
 }
-.icon-hand-o-left:before {
+.icon-hand-o-left::before {
   content: "\f0a5";
 }
-.icon-hand-o-up:before {
+.icon-hand-o-up::before {
   content: "\f0a6";
 }
-.icon-hand-o-down:before {
+.icon-hand-o-down::before {
   content: "\f0a7";
 }
-.icon-arrow-circle-left:before {
+.icon-arrow-circle-left::before {
   content: "\f0a8";
 }
-.icon-arrow-circle-right:before {
+.icon-arrow-circle-right::before {
   content: "\f0a9";
 }
-.icon-arrow-circle-up:before {
+.icon-arrow-circle-up::before {
   content: "\f0aa";
 }
-.icon-arrow-circle-down:before {
+.icon-arrow-circle-down::before {
   content: "\f0ab";
 }
-.icon-pinterest3:before {
+.icon-pinterest3::before {
   content: "\f0d2";
 }
-.icon-pinterest-square1:before {
+.icon-pinterest-square1::before {
   content: "\f0d3";
 }
-.icon-envelope1:before {
+.icon-envelope1::before {
   content: "\f0e0";
 }
-.icon-youtube-square1:before {
+.icon-youtube-square1::before {
   content: "\f166";
 }
-.icon-youtube3:before {
+.icon-youtube3::before {
   content: "\f167";
 }
-.icon-tumblr3:before {
+.icon-tumblr3::before {
   content: "\f173";
 }
-.icon-tumblr-square1:before {
+.icon-tumblr-square1::before {
   content: "\f174";
 }
-.icon-long-arrow-down:before {
+.icon-long-arrow-down::before {
   content: "\f175";
 }
-.icon-long-arrow-up:before {
+.icon-long-arrow-up::before {
   content: "\f176";
 }
-.icon-long-arrow-left:before {
+.icon-long-arrow-left::before {
   content: "\f177";
 }
-.icon-long-arrow-right:before {
+.icon-long-arrow-right::before {
   content: "\f178";
 }
-.icon-copyright:before {
+.icon-copyright::before {
   content: "\f1f9";
 }
-.icon-facebook-official:before {
+.icon-facebook-official::before {
   content: "\f230";
 }
-.icon-pinterest-p:before {
+.icon-pinterest-p::before {
   content: "\f231";
 }
-.icon-trademark:before {
+.icon-trademark::before {
   content: "\f25c";
 }
-.icon-registered:before {
+.icon-registered::before {
   content: "\f25d";
 }
-.icon-credit-card-alt:before {
+.icon-credit-card-alt::before {
   content: "\e900";
 }
-.icon-home:before {
+.icon-home::before {
   content: "\e901";
 }
-.icon-paper-plane-o:before {
+.icon-paper-plane-o::before {
   content: "\e902";
 }
-.icon-envelope-o:before {
+.icon-envelope-o::before {
   content: "\e903";
 }
-.icon-paper-plane:before {
+.icon-paper-plane::before {
   content: "\e904";
 }
-.icon-stack-overflow:before {
+.icon-stack-overflow::before {
   content: "\e913";
 }
-.icon-send1:before {
+.icon-send1::before {
   content: "\e904";
 }
-.icon-envelope-open:before {
+.icon-envelope-open::before {
   content: "\e905";
 }
-.icon-envelope:before {
+.icon-envelope::before {
   content: "\e906";
 }
-.icon-youtube-play:before {
+.icon-youtube-play::before {
   content: "\e907";
 }
-.icon-youtube-square:before {
+.icon-youtube-square::before {
   content: "\e908";
 }
-.icon-tumblr-square:before {
+.icon-tumblr-square::before {
   content: "\e90a";
 }
-.icon-pinterest-square:before {
+.icon-pinterest-square::before {
   content: "\e90c";
 }
-.icon-instagram1:before {
+.icon-instagram1::before {
   content: "\e90e";
 }
-.icon-twitter-square:before {
+.icon-twitter-square::before {
   content: "\e910";
 }
-.icon-twitter3:before {
+.icon-twitter3::before {
   content: "\e911";
 }
-.icon-linkedin-square:before {
+.icon-linkedin-square::before {
   content: "\e912";
 }
-.icon-github-square:before {
+.icon-github-square::before {
   content: "\e914";
 }
-.icon-github:before {
+.icon-github::before {
   content: "\e915";
 }
-.icon-compass2:before {
+.icon-compass2::before {
   content: "\e916";
 }
-.icon-compass3:before {
+.icon-compass3::before {
   content: "\e917";
 }
-.icon-globe:before {
+.icon-globe::before {
   content: "\e918";
 }
-.icon-home2:before {
+.icon-home2::before {
   content: "\e919";
 }
-.icon-calculator:before {
+.icon-calculator::before {
   content: "\e91a";
 }
-.icon-folder-open-o:before {
+.icon-folder-open-o::before {
   content: "\e91b";
 }
-.icon-folder:before {
+.icon-folder::before {
   content: "\e91d";
 }
-.icon-sticky-note-o:before {
+.icon-sticky-note-o::before {
   content: "\e91e";
 }
-.icon-sticky-note:before {
+.icon-sticky-note::before {
   content: "\e91f";
 }
-.icon-keyboard-o:before {
+.icon-keyboard-o::before {
   content: "\e920";
 }
-.icon-archive1:before {
+.icon-archive1::before {
   content: "\e921";
 }
-.icon-tags:before {
+.icon-tags::before {
   content: "\e922";
 }
-.icon-tag1:before {
+.icon-tag1::before {
   content: "\e923";
 }
-.icon-info1:before {
+.icon-info1::before {
   content: "\e924";
 }
-.icon-snowflake-o:before {
+.icon-snowflake-o::before {
   content: "\e926";
 }
-.icon-home4:before {
+.icon-home4::before {
   content: "\e927";
 }
-.icon-envelope-o1:before {
+.icon-envelope-o1::before {
   content: "\e928";
 }
-.icon-envelope2:before {
+.icon-envelope2::before {
   content: "\e929";
 }
-.icon-youtube-play1:before {
+.icon-youtube-play1::before {
   content: "\e92a";
 }
-.icon-youtube-square2:before {
+.icon-youtube-square2::before {
   content: "\e92b";
 }
-.icon-youtube4:before {
+.icon-youtube4::before {
   content: "\e92c";
 }
-.icon-tumblr-square2:before {
+.icon-tumblr-square2::before {
   content: "\e92d";
 }
-.icon-tumblr4:before {
+.icon-tumblr4::before {
   content: "\e92e";
 }
-.icon-pinterest4:before {
+.icon-pinterest4::before {
   content: "\e92f";
 }
-.icon-instagram3:before {
+.icon-instagram3::before {
   content: "\e930";
 }
-.icon-reddit2:before {
+.icon-reddit2::before {
   content: "\e931";
 }
-.icon-linkedin-square2:before {
+.icon-linkedin-square2::before {
   content: "\e933";
 }
-.icon-stack-overflow1:before {
+.icon-stack-overflow1::before {
   content: "\e934";
 }
-.icon-github3:before {
+.icon-github3::before {
   content: "\e935";
 }
-.icon-arrow-down-circle:before {
+.icon-arrow-down-circle::before {
   content: "\e936";
 }
-.icon-arrow-down-left:before {
+.icon-arrow-down-left::before {
   content: "\e937";
 }
-.icon-arrow-down-right:before {
+.icon-arrow-down-right::before {
   content: "\e938";
 }
-.icon-arrow-down1:before {
+.icon-arrow-down1::before {
   content: "\e939";
 }
-.icon-arrow-left-circle:before {
+.icon-arrow-left-circle::before {
   content: "\e93a";
 }
-.icon-arrow-left1:before {
+.icon-arrow-left1::before {
   content: "\e93b";
 }
-.icon-arrow-right-circle:before {
+.icon-arrow-right-circle::before {
   content: "\e93c";
 }
-.icon-arrow-right1:before {
+.icon-arrow-right1::before {
   content: "\e93d";
 }
-.icon-arrow-up-circle:before {
+.icon-arrow-up-circle::before {
   content: "\e93e";
 }
-.icon-arrow-up-left:before {
+.icon-arrow-up-left::before {
   content: "\e93f";
 }
-.icon-arrow-up-right:before {
+.icon-arrow-up-right::before {
   content: "\e940";
 }
-.icon-arrow-up1:before {
+.icon-arrow-up1::before {
   content: "\e941";
 }
-.icon-send:before {
+.icon-send::before {
   content: "\e942";
 }
-.icon-mail:before {
+.icon-mail::before {
   content: "\e943";
 }
-.icon-twitter:before {
+.icon-twitter::before {
   content: "\e945";
 }
-.icon-compass:before {
+.icon-compass::before {
   content: "\e946";
 }
-.icon-compass1:before {
+.icon-compass1::before {
   content: "\e947";
 }
-.icon-globe1:before {
+.icon-globe1::before {
   content: "\e948";
 }
-.icon-folder-minus:before {
+.icon-folder-minus::before {
   content: "\e949";
 }
-.icon-folder-plus:before {
+.icon-folder-plus::before {
   content: "\e94a";
 }
-.icon-folder1:before {
+.icon-folder1::before {
   content: "\e94b";
 }
-.icon-archive:before {
+.icon-archive::before {
   content: "\e94c";
 }
-.icon-tag:before {
+.icon-tag::before {
   content: "\e94d";
 }
-.icon-info:before {
+.icon-info::before {
   content: "\e94e";
 }
-.icon-mail5:before {
+.icon-mail5::before {
   content: "\e94f";
 }
-.icon-youtube5:before {
+.icon-youtube5::before {
   content: "\e950";
 }
-.icon-instagram4:before {
+.icon-instagram4::before {
   content: "\e951";
 }
-.icon-twitter5:before {
+.icon-twitter5::before {
   content: "\e952";
 }
-.icon-twitter1:before {
+.icon-twitter1::before {
   content: "\e953";
 }
-.icon-home1:before {
+.icon-home1::before {
   content: "\e964";
 }
-.icon-home3:before {
+.icon-home3::before {
   content: "\e965";
 }
-.icon-price-tag:before {
+.icon-price-tag::before {
   content: "\e96a";
 }
-.icon-price-tags:before {
+.icon-price-tags::before {
   content: "\e96b";
 }
-.icon-envelop:before {
+.icon-envelop::before {
   content: "\e96c";
 }
-.icon-compass4:before {
+.icon-compass4::before {
   content: "\e96d";
 }
-.icon-point-up:before {
+.icon-point-up::before {
   content: "\ea03";
 }
-.icon-point-right:before {
+.icon-point-right::before {
   content: "\ea04";
 }
-.icon-point-down:before {
+.icon-point-down::before {
   content: "\ea05";
 }
-.icon-point-left:before {
+.icon-point-left::before {
   content: "\ea06";
 }
-.icon-arrow-up-left2:before {
+.icon-arrow-up-left2::before {
   content: "\ea39";
 }
-.icon-arrow-up2:before {
+.icon-arrow-up2::before {
   content: "\ea3a";
 }
-.icon-arrow-up-right2:before {
+.icon-arrow-up-right2::before {
   content: "\ea3b";
 }
-.icon-arrow-right2:before {
+.icon-arrow-right2::before {
   content: "\ea3c";
 }
-.icon-arrow-down-right2:before {
+.icon-arrow-down-right2::before {
   content: "\ea3d";
 }
-.icon-arrow-down2:before {
+.icon-arrow-down2::before {
   content: "\ea3e";
 }
-.icon-arrow-down-left2:before {
+.icon-arrow-down-left2::before {
   content: "\ea3f";
 }
-.icon-arrow-left2:before {
+.icon-arrow-left2::before {
   content: "\ea40";
 }
-.icon-mail1:before {
+.icon-mail1::before {
   content: "\ea83";
 }
-.icon-mail4:before {
+.icon-mail4::before {
   content: "\ea86";
 }
-.icon-instagram2:before {
+.icon-instagram2::before {
   content: "\ea92";
 }
-.icon-twitter4:before {
+.icon-twitter4::before {
   content: "\ea96";
 }
-.icon-youtube1:before {
+.icon-youtube1::before {
   content: "\ea9d";
 }
-.icon-github1:before {
+.icon-github1::before {
   content: "\eab0";
 }
-.icon-tumblr1:before {
+.icon-tumblr1::before {
   content: "\eab9";
 }
-.icon-tumblr2:before {
+.icon-tumblr2::before {
   content: "\eaba";
 }
-.icon-reddit1:before {
+.icon-reddit1::before {
   content: "\eac6";
 }
-.icon-linkedin:before {
+.icon-linkedin::before {
   content: "\eac9";
 }
-.icon-pinterest1:before {
+.icon-pinterest1::before {
   content: "\ead1";
 }
-.icon-pinterest2:before {
+.icon-pinterest2::before {
   content: "\ead2";
 }
 */

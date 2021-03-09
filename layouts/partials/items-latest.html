@@ -6,7 +6,7 @@
   {{- $listLimit = .Site.Params.latest_limit -}}
 {{- end -}}
 {{- range first $listLimit $postsAll -}}
-    <li class="contents">
+    <li class="collection-item">
       <a class="secondary-nav__link" href="{{ .Permalink }}">
         {{ .Title }}
       </a>

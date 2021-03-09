@@ -8,6 +8,26 @@
 {{- partial "katex2" . -}}
 {{- end -}}
 {{- end -}}
+
+<!--
+  Toggle a 4px grid for development/testing. Based on Caleb William's
+  Pixel-Perfect demo: https://codepen.io/calebdwilliams/pen/yLYbPMR
+-->
+
+<!-- note the src path is relative to "<project-dir>/static" -->
+<script src="scripts/toggleGrid.js"></script>
+
+<!--
+  Here's a script that will display baselines down the page. It's from
+  https://github.com/jkeyes/baseline
+-->
+<script src="scripts/baseline.js"></script>
+<script>
+  window.onload = function() {
+      baseliner = new Baseliner({ gridColor: 'red' });
+  }
+</script>
+
 <!--
   Google Analytics if the site is *not* running in a local Hugo server and
   the GoogleAnalytics tracking id is set in config.toml or params.toml
