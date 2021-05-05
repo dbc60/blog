@@ -15,10 +15,10 @@
           <time class="post-metadata__timestamp" datetime="{{ $dateTime }}">{{- .PublishDate.Format $dateFormat -}}</time>
             - {{ .ReadingTime}} min read - {{ .WordCount }} words.
           <time class="post-metadata__timestamp" datetime="{{ .Lastmod.Format $dateTimeFormatLong }}"></time><div>Last updated: <span>{{ .Lastmod.Format $dateFormatExtended }}</span></div>
-          {{ with .Params.categories -}}
+          {{ with .Params.tags -}}
           <div class="tag-list">
           {{- range . -}}
-          {{- $href := print (relURL "categories/") (urlize .) -}}
+          {{- $href := print (relURL "tags/") (urlize .) -}}
           <a class="tag" href="{{ $href }}">{{ . }}</a>
           {{- end -}}
           </div>

@@ -2,6 +2,7 @@
             <ul class="collection-items">
             {{ $byDate := false -}}
             {{- $byWeight := false -}}
+            {{ $name := "" }}
             {{- if eq .context.Section "journal" }}
               {{ "<!-- section: journal by date -->" | safeHTML }}
               {{ $byDate = true -}}
@@ -13,9 +14,17 @@
             {{- $sections := .context.Sections -}}
             {{- if eq $sections nil }}
               {{- $sections = .context.Parent.Sections -}}
+              {{- $name = .context.Parent.Name -}}
               {{- if eq $sections nil }}
                 {{- $sections = .context.Parent.Parent.Sections -}}
+                {{- $name = .context.Parent.Parent.Name -}}
               {{- end -}}
+            {{- else -}}
+              {{- $name = .context.Name -}}
+            {{- end -}}
+            <!-- list Weekly things in reverse chronological order -->
+            {{- if in $name "Week" -}}
+              {{- $byDate = true -}}
             {{- end -}}
 
             {{- if $byDate -}}

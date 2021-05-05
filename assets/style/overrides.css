@@ -125,6 +125,22 @@ pre {
   display: inline-block;
 }
 
+
+/***************************************
+ * Hugo's Built-in Highlight Shortcode *
+ ***************************************/
+/* The simplest solution to enabling line numbers on code blocks is to use the
+ * "highlight" shorcode with its inline option (set "linenos=inline" in
+ * the shortcode). This places line numbers in <span> elements:
+ *
+ *  <span class="ln">1</span>
+ *
+ * By applying "user-select: none;" to them, only the code is selectable.
+ */
+ .ln {
+  user-select: none;
+}
+
 a {
   color: var(--color-anchor);
   text-decoration: none;  /* initial works here as well */

@@ -2,8 +2,7 @@
 title: "A New Hugo-Based Blog"
 date: 2020-02-22T17:38:32-05:00
 2020: ["02"]
-categories: [blog]
-tags: [hugo, themes]
+tags: [blog,hugo]
 publishDate: 2020-02-22
 math: true
 ---

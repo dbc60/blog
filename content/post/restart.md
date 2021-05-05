@@ -2,8 +2,7 @@
 title: "Restart"
 date: 2020-02-11T05:48:36-05:00
 2020: ["02"]
-categories: [blog]
-tags: [static-site-generator, jekyll, compass, hugo, sphinx, zettelkasten]
+tags: [blog,static-site-generator,jekyll,compass,hugo,sphinx,zettelkasten]
 publishDate: 2020-02-15
 ---
 
@@ -57,7 +56,7 @@ I wasn't comfortable at all with manually modifying gem files. I didn't know Rub
 
 My last post was in November of 2016 after the US presidential election. I don't remember exactly why I stopped, but part of the reason was that Jekyll was slow, and it felt like the Windows implementation was treated as a second-class citizen.
 
-Besides blogging, I was also using it as a notetaking system. I loved that I could write a markdown file, and Jekyll could turn my notes into a nice looking web page. However, when I had a few dozen notes it would take several seconds to see edits appear in a browser. I wasn't very good with using HTML and CSS, so I became frustrated as I tried to use my notes repository to experiment with layout and design. The feedback loop was irritatingly slow.
+Besides blogging, I was also using it as a note taking system. I loved that I could write a markdown file, and Jekyll could turn my notes into a nice looking web page. However, when I had a few dozen notes it would take several seconds to see edits appear in a browser. I wasn't very good with using HTML and CSS, so I became frustrated as I tried to use my notes repository to experiment with layout and design. The feedback loop was irritatingly slow.
 
 I spent months looking into other solutions. I read about [Luhmann's Zettelkasten](http://takingnotenow.blogspot.com/2007/12/luhmanns-zettelkasten.html) for organizing my files, and [Sphinx](http://www.sphinx-doc.org/en/stable/), the tool used by the Python programming language for generating all of their documentation.
 

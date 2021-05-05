@@ -5,23 +5,31 @@
   font: 0.75em Sans-Serif;
 }
 
+/*
+ * Start the Home crumb with a dark background and color the text with the
+ * site's background color so it shines through.
+ */
 .crumb {
-  padding: 4px 16px;
-  margin-top: 1px;
 	position: relative;
   float: left;
   background-color: var(--color900);
 }
+.crumb .crumb-link {
+  color: var(--color-background-main);
+  display: block;
+  padding: 4px 16px;
+  width: 100%;
+  height: 100%;
+}
 
 /*
-    Breadcrumb Navigation
-
-    This styling, from nth-child(2) through nth-child(7), allows for styling
-    breadcrumb navigation to .crumb-link depth of 7 sections. The journal is, so far, the
-    only section that deep. The nesting is Home, Journal, Year, Quarter, Month,
-    Week, and Day.
-*/
-.crumb .crumb-link  { color: var(--color-background-main); }
+ * Breadcrumb Navigation
+ *
+ * This styling, from nth-child(2) through nth-child(8), allows for styling
+ * breadcrumb navigation to .crumb-link depth of 8 sections. The journal is, so
+ * far, the only section that deep. The nesting is Home, Journal, Year,
+ * Quarter, Month, Week, Day, and Article Title.
+ */
 .crumb:nth-child(2) { background-color: var(--color800); }
 .crumb:nth-child(3) { background-color: var(--color700); }
 .crumb:nth-child(4) { background-color: var(--color600); }
@@ -29,8 +37,8 @@
 .crumb:nth-child(6) { background-color: var(--color400); }
 
 /*
- * At this level, the background color is very light, so we switch the text
- * to be very dark.
+ * At this level, the background color for the crumb is very light, so we
+ * switch the text to be very dark.
  */
 .crumb:nth-child(7) { background-color: var(--color300); }
 .crumb:nth-child(7) .crumb-link {  color: var(--color900); }
@@ -65,10 +73,10 @@
   border-bottom: 0.93em solid transparent;
 }
 
-/* hover */
-.crumb:hover {
+/* hover highlighting on all crumbs but the last */
+.crumb:not(:last-child):hover {
   background: var(--color-anchor-hover);
 }
-.crumb:hover::after {
+.crumb:not(:last-child):hover::after {
   border-left-color: var(--color-anchor-hover);
 }
