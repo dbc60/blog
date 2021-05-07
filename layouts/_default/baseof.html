@@ -5,7 +5,17 @@
   {{- partial "head.html" . -}}
   {{- end -}}
   <body>
-    <div class="hero">
+    {{- $featuredImage := "" -}}
+    {{- $featuredImageDescription := "" -}}
+    {{- if .Params.featuredImage -}}
+      {{- $featuredImage = .Params.featuredImage -}}
+      {{- $featuredImageDescription = .Params.featuredImageDescription -}}
+    {{- else -}}
+      {{- $featuredImage = .Site.Params.featuredImage -}}
+      {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
+    {{- end -}}
+    <img class="hero" src="{{.Site.BaseURL}}{{ $featuredImage }}" alt={{ $featuredImageDescription }}>
+    <div class="masthead">
     {{- partial "siteHeader.html" . -}}
     {{- partial "nav.html" . -}}
     {{- partial "nav__breadcrumbs.html" . -}}

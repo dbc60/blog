@@ -59,6 +59,6 @@
 {{- end }}
 <aside class="{{ $class }}">
   <div class="admonition-title">{{ $title }}</div>
-  <div class="content">{{ printf "%s" .Inner | partial "markdownify-block" }}</div>
+  <div class="content">{{ $.Inner | partial "markdownify-block" }}</div>
 </aside>
 {{- /* This comment removes trailing newlines */ -}}
