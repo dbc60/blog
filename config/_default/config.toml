@@ -118,7 +118,6 @@ rssLimit = 20
   email = "doug.cuthbertson@gmail.com"
 
 [taxonomies]
-  category = "categories"
   tag = "tags"
   2015 = "2015"
   2016 = "2016"

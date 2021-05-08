@@ -522,6 +522,13 @@ h5 + h6 {
   width: 0;
 }
 
+/* 100 Days to Offload Challenge */
+.days {
+  margin-top: 1.2em;
+  font-size: 80%;
+  background-color: var(--color-background-code);
+}
+
 /*************************
   * Debug Border and Fill *
   *************************/
