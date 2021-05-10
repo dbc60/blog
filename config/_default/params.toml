@@ -20,10 +20,11 @@ list_limit = 50
 # https://github.com/litao91/goldmark-mathjax
 mathjax = true
 katex = false
+# Enable/disable baseline.js in layouts/partials/postScript.html
+baseliner = false
 
 componentDropCaps = "drop-caps_goudy"
 mainSections = ["note", "post", "project"]
 planck = "\u210E"
 reduced_planck = "\u210F"
-lastWeek2019 = "2019-12-27T04:00:00Z"
-lastWeek2020 = "2020-12-28T04:00:00Z"
+lastWeekOfLastYear = "2020-12-28T04:00:00Z"

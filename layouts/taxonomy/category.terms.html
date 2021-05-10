@@ -7,13 +7,31 @@
   {{ $type := .Type }}
   {{ range .Data.Terms.Alphabetical }}
     {{ with $.Site.GetPage (printf "/%s/%s" $type .Name) }}
+    {{- $featuredImage := "" -}}
+    {{- $featuredImageDescription := "" -}}
+    {{- if .Params.featuredImage -}}
+      {{- $featuredImage = .Params.featuredImage -}}
+      {{- $featuredImageDescription = .Params.featuredImageDescription -}}
+    {{- else -}}
+      {{- $featuredImage = .Site.Params.featuredImage -}}
+      {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
+    {{- end -}}
     <section class="page-summary">
-      <h3 class="title-article-item"><a href="{{ .Permalink }}">{{ .Name }}</a></h3>
-      <ul class="term-categories">
-        {{ range .Pages }}
-        <li class="term-member"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
-      </ul>
+      <div class="flex-row">
+        <div class="pl3-ns">
+          <a href="{{ .Permalink }}" class="db grow">
+            <img src="{{.Site.BaseURL}}{{ $featuredImage }}" alt={{ $featuredImageDescription }}>
+          </a>
+        </div>
+        <div class="pr3-ns">
+          <h3 class="title-article-item"><a href="{{ .Permalink }}">{{ .Name }}</a></h3>
+          <ul class="term-categories">
+            {{ range .Pages }}
+            <li class="term-member"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+            </div>
+      </div>
     </section>
     {{ end }}
   {{ end }}

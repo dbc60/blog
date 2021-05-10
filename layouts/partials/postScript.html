@@ -9,6 +9,7 @@
 {{- end -}}
 {{- end -}}
 
+{{- if or .Params.baseliner .Site.Params.baseliner -}}
 <!--
   Toggle a 4px grid for development/testing. Based on Caleb William's
   Pixel-Perfect demo: https://codepen.io/calebdwilliams/pen/yLYbPMR
@@ -27,6 +28,7 @@
       baseliner = new Baseliner({ gridColor: 'red' });
   }
 </script>
+{{- end -}}
 
 <!--
   Google Analytics if the site is *not* running in a local Hugo server and

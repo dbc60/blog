@@ -5,6 +5,8 @@ date: 2020-02-22T17:38:32-05:00
 tags: [blog,hugo]
 publishDate: 2020-02-22
 math: true
+featuredImage: "/images/banners/hugo-banner.jpg"
+featuredImageDescription: "Hugo logo"
 ---
 
 In my [previous post]({{< ref "restart" >}}) I talked a little about why and how I started this blog. Here I want to present my experience with [Hugo] and what I like about it.

@@ -54,6 +54,36 @@
   margin-bottom: 1.5em;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.pr3-ns {
+  padding-left: 1rem;
+}
+
+.pl3-ns {
+  padding-right: 1rem;
+  max-width: 10em;
+  margin-top: 0.7rem;
+}
+
+.grow {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform .25s ease-out;
+}
+
+.db {
+  display: block;
+}
+
+.pt-1em {
+  display: inline-block;
+  vertical-align: top;
+}
+
 .page-summary p:last-of-type {
   margin-bottom: 0;
 }
