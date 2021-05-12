@@ -84,6 +84,9 @@
   --color-caution: #fafacc;
   --color-danger: #f30000;
   --line-height-default: 1.5;
+
+  /* space between hero image, masthead, wrapper-content, and wrapper-footer */
+  --section-spacer: 0.6em;
 }
 
 /******************
@@ -411,20 +414,6 @@ dd {
   margin-bottom: 1em;
 }
 
-/*
-  Here I try to align the two columns, sidebar-content on the left and main-content on the right. They are both wrapped in .wrapper-content. First, I add a top margin to .wrapper-content to separate it from the breadcrump navigation bar.
-*/
-.wrapper-content {
-  margin-top: 0.6em;
-}
-
-/*
-  At this point, both columns are aligned on top, but the sidebar has a graphic that extends to its top, while the main content has text. They end up looking misalined. I add some top margin to the sidebar so push down the graphic and make it look like it's more aligned with any heading that appears in the main content.
-*/
-.sidebar-content {
-  margin-top: 0.7em;
-}
-
 /* font-size: 36px=(18px * 2em), and a line-height of 54px=(36px * 1.5em) */
 .title-article {
   font-size: 2em;
@@ -500,7 +489,6 @@ h5 + h6 {
 
 .main-footer {
   border-top: solid;
-  margin-top: 1.2em;
   font-size: 80%;
   clear: both;
   background-color: var(--color-background-footer);
@@ -515,18 +503,23 @@ h5 + h6 {
   background-color: var(--gray900);
 }
 
-.content.c-drop-caps::after {
+/* this actually affects after the content section. It has no effect on the drop-caps letter itself */
+/* .content.c-drop-caps::after {
   content: '';
   display: inline-block;
   height: 100%;
   width: 0;
-}
+} */
 
 /* 100 Days to Offload Challenge */
 .days {
-  margin-top: 1.2em;
+  margin-top: var(--section-spacer);
   font-size: 80%;
   background-color: var(--color-background-code);
+}
+
+.featured-copyright {
+  font-size: 80%;
 }
 
 /*************************

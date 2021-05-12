@@ -14,6 +14,10 @@ featuredImageDescription = "Motif No. 1"
 disable_comments = true
 list_limit = 50
 
+# Uncomment to include mathjax/katex everywhere. Normally math is set in front
+# matter only where it's needed.
+#math = true
+
 # Set one of these to true to enable LaTeX processing.
 # Note: only mathjax works; katex isn't quite compatible with the Goldmark
 # markdown processor. It needs an extension similar to the one here:

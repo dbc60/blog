@@ -253,7 +253,7 @@ tfoot {
  * attention, caution, danger, error, hint, important, note, tip, and        *
  * warning.                                                                  *
  *****************************************************************************/
-.admonition .content {
+.content-admonition {
   padding-left: 0.25em;
   padding-right: 0.5em;
 }

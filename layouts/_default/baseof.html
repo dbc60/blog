@@ -6,15 +6,14 @@
   {{- end -}}
   <body>
     {{- $featuredImage := "" -}}
-    {{- $featuredImageDescription := "" -}}
+    {{- $featuredDescription := "" -}}
     {{- if .Params.featuredImage -}}
       {{- $featuredImage = .Params.featuredImage -}}
-      {{- $featuredImageDescription = .Params.featuredImageDescription -}}
+      {{- $featuredDescription = .Params.featuredDescription -}}
     {{- else -}}
       {{- $featuredImage = .Site.Params.featuredImage -}}
-      {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
+      {{- $featuredDescription = .Site.Params.featuredDescription -}}
     {{- end -}}
-    <img class="hero" src="{{.Site.BaseURL}}{{ $featuredImage }}" alt={{ $featuredImageDescription }}>
     <div class="masthead">
     {{- partial "siteHeader.html" . -}}
     {{- partial "nav.html" . -}}
@@ -56,6 +55,7 @@
         </ul>
       </div>
       <main class="main-content">
+        <img class="featured-image" src="{{.Site.BaseURL}}{{ $featuredImage }}" alt={{ $featuredDescription }}>
       {{ block "main" . -}}
         <h2>Default Main (Should Never Appear)</h2>
       {{- end }}

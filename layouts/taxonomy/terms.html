@@ -23,19 +23,19 @@
   {{- $paginator := .Paginate $pages -}}
   {{- range $paginator.Pages.ByDate.Reverse }}
   {{- $featuredImage := "" -}}
-  {{- $featuredImageDescription := "" -}}
+  {{- $featuredDescription := "" -}}
   {{- if .Params.featuredImage -}}
     {{- $featuredImage = .Params.featuredImage -}}
-    {{- $featuredImageDescription = .Params.featuredImageDescription -}}
+    {{- $featuredDescription = .Params.featuredDescription -}}
   {{- else -}}
     {{- $featuredImage = .Site.Params.featuredImage -}}
-    {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
+    {{- $featuredDescription = .Site.Params.featuredDescription -}}
   {{- end -}}
   <section class="page-summary">
     <div class="flex-row">
       <div class="pl3-ns">
         <a href="{{ .Permalink }}" class="db grow">
-          <img src="{{.Site.BaseURL}}{{ $featuredImage }}" alt={{ $featuredImageDescription }}>
+          <img src="{{.Site.BaseURL}}{{ $featuredImage }}" alt={{ $featuredDescription }}>
         </a>
       </div>
       <div class="pr3-ns">
