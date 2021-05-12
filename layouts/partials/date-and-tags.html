@@ -1,28 +1,31 @@
-          {{- $dateTimeFormatShort := "2006-01-02" }}
-          {{ "<!--BEGIN layouts/partials/date-and-tags.html -->" | safeHTML }}
-          {{ $dateTimeFormatLong := "2006-01-02T15:04" -}}
-          {{- $dateTime := .PublishDate.Format $dateTimeFormatShort -}}
-          {{- $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-          {{- $dateFormatExtended := .Site.Params.dateFormatExtended | default "Jan 2, 2006 15:04" -}}
-          <header class="article-meta-data">
-              {{- /*
-              Show "reading time" and "word count" but only if one of the following are true:
-              1) A global config `params` value is set `show_reading_time = true`
-              2) A section front matter value is set `show_reading_time = true`
-              3) A page front matter value is set `show_reading_time = true`
-              */ -}}
-            <div class="post-metadata">
-            <time class="post-metadata__timestamp" datetime="{{ $dateTime }}">{{- .PublishDate.Format $dateFormat -}}</time>
-              - {{ .ReadingTime}} min read - {{ .WordCount }} words.
-            <time class="post-metadata__timestamp" datetime="{{ .Lastmod.Format $dateTimeFormatLong }}"></time><div>Last updated: <span>{{ .Lastmod.Format $dateFormatExtended }}</span></div>
-            {{ with .Params.categories -}}
-            <div class="tag-list">
-            {{- range . -}}
-            {{- $href := print (relURL "categories/") (urlize .) -}}
-            <a class="tag" href="{{ $href }}">{{ . }}</a>
-            {{- end -}}
-            </div>
-            {{ end -}}
-            </div>
-          </header>
-          {{ "<!--END layouts/partials/date-and-tags.html -->" | safeHTML }}
+        {{- $dateTimeFormatShort := "2006-01-02" }}
+        {{ "<!-- BEGIN layouts/partials/date-and-tags.html -->" | safeHTML }}
+        {{ $dateTimeFormatLong := "2006-01-02T15:04" -}}
+        {{- $dateTime := .PublishDate.Format $dateTimeFormatShort -}}
+        {{- $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+        {{- $dateFormatExtended := .Site.Params.dateFormatExtended | default "Jan 2, 2006 15:04" -}}
+        <header class="article-meta-data">
+            {{- /*
+            Show "reading time" and "word count" but only if one of the following are true:
+            1) A global config `params` value is set `show_reading_time = true`
+            2) A section front matter value is set `show_reading_time = true`
+            3) A page front matter value is set `show_reading_time = true`
+            */ -}}
+          <div class="post-metadata">
+          <time class="post-metadata__timestamp" datetime="{{ $dateTime }}">{{- .PublishDate.Format $dateFormat -}}</time>
+            - {{ .ReadingTime}} min read - {{ .WordCount }} words.
+          <time class="post-metadata__timestamp" datetime="{{ .Lastmod.Format $dateTimeFormatLong }}"></time><div>Last updated: <span>{{ .Lastmod.Format $dateFormatExtended }}</span></div>
+          {{ with .Params.tags -}}
+          <div class="tag-list">
+          {{- range . -}}
+          {{- $href := print (relURL "tags/") (urlize .) -}}
+          <a class="tag" href="{{ $href }}">{{ . }}</a>
+          {{- end -}}
+          {{- if $.Params.featuredCopyright -}}
+          <span class="featured-copyright"><em>{{ $.Params.featuredCopyright }}</em></span>
+          {{- end -}}
+          </div>
+          {{ end -}}
+          </div>
+        </header>
+        {{ "<!--END layouts/partials/date-and-tags.html -->" | safeHTML }}

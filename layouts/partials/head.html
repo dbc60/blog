@@ -1,6 +1,6 @@
   <head>
     <!-- Variable definitions -->
-    {{ $titleDefault := print .Title " | " .Site.Title -}}
+    {{- $titleDefault := print .Title " | " .Site.Title -}}
     {{- if .IsHome -}}
       {{- $titleDefault = .Site.Title }}
     {{- end -}}
@@ -10,24 +10,40 @@
       https://gohugo.io/hugo-pipes/scss-sass/, https://gohugo.io/hugo-pipes/postcss/,
       and https://gohugo.io/hugo-pipes/
     -->
-    {{ $cssPreface := resources.Get "style/front.css"}}
-    {{ $cssOverrides := resources.Get "style/overrides.css" }}
-    {{ $cssDropCaps := resources.Get "style/drop-caps/drop-caps.css" }}
-    {{ $cssDropCapsFontGoudy := resources.Get "style/drop-caps/drop-caps_goudy.css" }}
-    {{ $cssDropCapsFontKanzlei := resources.Get "style/drop-caps/drop-caps_kanzlei.css" }}
-    {{ $cssDropCapsFontYinit := resources.Get "style/drop-caps/drop-caps_yinit.css" }}
-    {{ $cssBreadcrumb := resources.Get "style/breadcrumbs/breadcrumb.css" }}
-    {{ $cssFonts := resources.Get "style/fonts.css" }}
-    {{ $cssSyntaxHighlights := resources.Get "style/syntax-highlighting/monokai.css" }}
+    {{- $cssPreface := resources.Get "style/front.css" -}}
+    {{- $cssBase := resources.Get "style/base.css" -}}
+    {{- $layoutGrid := resources.Get "style/layout-grid.css" -}}
+    {{- $layout := $layoutGrid -}}
+    {{- $isGrid := false -}}
+    {{- if $isGrid -}}
+    {{- $layout = $layoutGrid -}}
+    {{- end -}}
+    {{- $cssOverrides := resources.Get "style/overrides.css" -}}
+    {{- $cssDropCaps := resources.Get "style/drop-caps/drop-caps.css" -}}
+    {{- $cssDropCapsFontGoudy := resources.Get "style/drop-caps/drop-caps_goudy.css" -}}
+    <!--{{/* $cssDropCapsFontCheshire := resources.Get "style/drop-caps/drop-caps_cheshire.css" */}}-->
+    <!--{{/* $cssDropCapsFontDezs := resources.Get "style/drop-caps/drop-caps_de-zs.css" */}}-->
+    <!--{{/* $cssDropCapsFontKanzlei := resources.Get "style/drop-caps/drop-caps_kanzlei.css" */}}-->
+    <!--{{/* $cssDropCapsFontYinit := resources.Get "style/drop-caps/drop-caps_yinit.css" */}}-->
+    {{- $breadcrumbs := "style/breadcrumb.css" -}}
+    {{- $useNewBreadcrumbs := false -}}
+    {{- if $useNewBreadcrumbs -}}
+    {{- $breadcrumbs = "style/breadcrumb-new.css" -}}
+    {{- end -}}
+
+    {{- $cssBreadcrumb := resources.Get $breadcrumbs -}}
+    {{- $cssFonts := resources.Get "style/fonts.css" -}}
+    {{- $cssSyntaxHighlights := resources.Get "style/syntax-highlighting/monokai.css" -}}
+    <!--{{/* $cssEntities := resources.Get "style/entities.css" */}}-->
     <!-- ensure cssOverrides is the last CSS source file so it can override any
       selectors from the other files.
     -->
-    {{ $styles := slice $cssPreface $cssDropCaps $cssDropCapsFontGoudy $cssDropCapsFontKanzlei $cssDropCapsFontYinit $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssOverrides | resources.Concat "style/style.css" }}
+    {{- $styles := slice $cssPreface $cssDropCaps $cssDropCapsFontGoudy $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssBase $layout $cssOverrides | resources.Concat "style/style.css" -}}
 
     <!-- minify and fingerprint only if not running locally -->
-    {{ if not (in (print .Site.BaseURL) "localhost") }}
-    {{ $styles = $styles | minify | fingerprint }}
-    {{ end }}
+    {{- if not (in (print .Site.BaseURL) "localhost") -}}
+    {{- $styles = $styles | minify | fingerprint -}}
+    {{- end -}}
 
     <!-- map . (the current context) to "context" and $titleDefault to
       titleSite. This means that anything in the block that needs to access
@@ -36,13 +52,9 @@
       partials where I pass "$context" instead of ".", those blocks or partials
       will have to use ".context.Site.BaseURL".
     -->
-    {{ $context := (dict "context" . "titleSite" $titleDefault "styles" $styles) }}
-
-    {{ partial "head__meta.html" $context }}
-
-    {{ partial "head__styles.html" $context }}
-
-    {{ partial "head__title.html" $context }}
-
-    {{ partial "head__scripts.html" $context }}
+    {{- $context := (dict "context" . "titleSite" $titleDefault "styles" $styles) -}}
+    {{- partial "head__meta.html" $context -}}
+    {{- partial "head__styles.html" $context -}}
+    {{- partial "head__title.html" $context -}}
+    {{- partial "head__scripts.html" $context -}}
   </head>

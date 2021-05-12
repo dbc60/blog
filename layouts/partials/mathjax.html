@@ -1,37 +1,41 @@
-<!-- Configure MathJax for automatic equation numbering. See
-   https://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
-   for details.
-   Also, for tex2jax configuration see https://docs.mathjax.org/en/latest/
-   options/preprocessors/tex2jax.html
+    {{ "<!-- BEGIN layouts/partials/mathjax.html -->" | safeHTML -}}
+    <!-- Configure MathJax for automatic equation numbering. See
+      https://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering
+      for details.
+      Also, for tex2jax configuration see https://docs.mathjax.org/en/latest/
+      options/preprocessors/tex2jax.html
 
-   Note that the double-backslashes are very important. Without them ordinary
-   markdown will interpret (parenthetical statements) as inline math, and cause
-   similar problems if text is put between '[' and ']'.
--->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-            extensions: ["AMSmath.js", "AMSsymbols.js"] },
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-  });
-</script>
-
-<!--
-  Load MathJax. Note that this is one of the most general configurations.
-  See the configuration docs for others. There might be a lighter version
-  that will work for my purposes.
-  https://docs.mathjax.org/en/latest/config-files.html#common-configurations
--->
-<!-- MathJax: Fall back to local if your computer is offline and can't connect
-  to the CDN. For convenience, the configuration for the fallback deactivates
-  image fonts support (imageFont:null). This allows you to host a slim local
-  copy by deleting the PNG fonts.-->
-<script async type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-
-<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script type="text/javascript" src="{{ "scripts/MathJax-2.7.5/MathJax.js" | relURL }}?config=TeX-AMS-MML_HTMLorMML"><\/script>')</script>
+      Note that the double-backslashes are very important. Without them ordinary
+      markdown will interpret (parenthetical statements) as inline math, and cause
+      similar problems if text is put between '[' and ']'.
+    -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] },
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          displayMath: [['$$','$$'], ['\\[','\\]']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+    {{- /* This comment removes leading and trailing newlines */ -}}
+    <!--
+      Load MathJax. Note that this is one of the most general configurations.
+      See the configuration docs for others. There might be a lighter version
+      that will work for my purposes.
+      https://docs.mathjax.org/en/latest/config-files.html#common-configurations
+    -->
+    <!--
+      MathJax: Fall back to local if your computer is offline and can't connect
+      to the CDN. For convenience, the configuration for the fallback deactivates
+      image fonts support (imageFont:null). This allows you to host a slim local
+      copy by deleting the PNG fonts.
+    -->
+    {{- /* This comment removes leading and trailing newlines */ -}}
+    <script async type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script type="text/javascript" src="{{ "scripts/MathJax-2.7.5/MathJax.js" | relURL }}?config=TeX-AMS-MML_HTMLorMML"><\/script>')</script>
+    {{ "<!-- END layouts/partials/mathjax.html -->" | safeHTML -}}

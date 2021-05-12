@@ -2,7 +2,7 @@
 title: "Waiting for Election Results"
 date: 2020-11-07T08:23:14-05:00
 2020: ["11"]
-categories: [politics]
+tags: [politics]
 ---
 
 The election is over. All we can do is wait for the counting complete. I hope enough people who see just how terrible this failure of a human being, Donald Trump, is went to the polls and voted. The future of our country depends on it.

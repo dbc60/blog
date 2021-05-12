@@ -1,7 +1,0 @@
-/* https://css-tricks.com/triangle-breadcrumbs/ */
-.breadcrumb li a:hover {
-  background: hsla(34, 85%, 25%, 1);
-}
-.breadcrumb li a:hover:after {
-  border-left-color: hsla(34, 85%, 25%, 1) !important;
-}

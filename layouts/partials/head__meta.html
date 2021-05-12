@@ -1,12 +1,9 @@
-
-    {{ "<!-- BEGIN meta.html -->" | safeHTML }}
+    {{- "<!-- BEGIN layouts/partials/head__meta.html -->" | safeHTML -}}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="{{ .Site.author.name }}">
     <meta property="og:description" name="description" content="{{ .Site.Params.description }}">
-    {{ "<!-- END meta.html -->" | safeHTML }}
-
     {{ "<!-- The four required og properties are og:title, og:type, -->" | safeHTML }}
     {{ "<!-- og:url, and og:image. See Open Graph Protocol (ogp.me) -->" | safeHTML }}
     {{ "<!-- I used https://realfavicongenerator.net/ to generate the -->" | safeHTML }}
@@ -18,18 +15,13 @@
     <meta property="og:image:width" content="279">
     <meta property="og:image:height" content="279">
     <meta property="og:image" content="https://douglascuthbertson.com/images/og-image.jpg">
-
     <meta name="twitter:title" content="{{ .context.Site.Title }}">
-
-    {{ "<!-- BEGIN hugo.Generator -->" | safeHTML }}
     {{ hugo.Generator }}
-    {{ "<!-- END hugo.Generator -->" | safeHTML }}
-
     <meta name="robots" content="index, follow">
-    {{- range .context.AlternativeOutputFormats }}
+    {{- range .context.AlternativeOutputFormats -}}
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
     {{- end -}}
-
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/images/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    {{ "<!-- END layouts/partials/head__meta.html -->" | safeHTML }}

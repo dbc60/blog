@@ -1,8 +1,9 @@
 <header class="main-head">
 <div class="title-content">
   {{ "<!-- BEGIN layouts/partials/siteHeader.html -->" | safeHTML }}
-    <h1 class="siteTitle">{{ .Site.Title }}</h1>
-    <h1 class="siteSubTitle">{{- .Site.Params.homeText -}}</h1>
+    <h1 class="siteTitle"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+    <h1 class="siteSubTitle"><a href="https://blacklivesmatter.com/" target="_blank">{{- .Site.Params.homeText -}}</a></h1>
   {{ "<!-- END layouts/partials/siteHeader.html -->" | safeHTML }}
+  <!--<button class="toggle" id="toggle-grid">Toggle Grid</button>-->
 </div>
 </header>

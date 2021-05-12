@@ -1,7 +1,7 @@
-<ul class="social-items">
-  {{ "<!--BEGIN layouts/partials/items-taxonomies.html -->" | safeHTML }}
+<ul class="collection-items">
+  {{ "<!-- BEGIN layouts/partials/items-taxonomies.html -->" | safeHTML }}
   {{ range $taxonomyName, $_ := .Site.Taxonomies }}
-  <li class="contents">
+  <li class="collection-item">
     <a class="secondary-nav__link" href="{{ .context.URL }}/{{ $taxonomyName }}/">
       {{ title (replace $taxonomyName "-" " ") }}
     </a>

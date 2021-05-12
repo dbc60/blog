@@ -1,0 +1,59 @@
+/******************
+ * Grid Layout *
+ ******************/
+body {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+}
+
+.masthead {
+  grid-row: 1;
+  margin-top: var(--section-spacer);
+}
+
+.wrapper-content {
+  display: flex;
+  grid-row: 2;
+  grid-template-columns: minmax(20rem, 1fr) 9fr;
+  grid-gap: 1rem;
+  margin-top: var(--section-spacer);
+}
+
+.wrapper-footer {
+  grid-row: 3;
+  margin-top: var(--section-spacer);
+}
+
+@media (min-width: 110ch) {
+  .main-head {
+    width: 100%;
+  }
+
+  /*
+    Set min-width to zero in both .sidebar-content and .main-content to tell
+    the browser that this element has no right to take up any minimum width,
+    and now it will be rendered properly, taking up only as much width as is
+    available. It enables "overflow-wrap: break-word;" to break long words
+    instead of allowing the main content to stretch beyond the desired screen
+    width.
+
+    For details, see:
+      https://makandracards.com/makandra/66994-css-flex-and-min-width
+  */
+  .sidebar-content {
+    min-width: 0;
+    max-width: 32ch;
+    flex: 1;
+  }
+
+  .main-content {
+    min-width: 0;
+    flex: 2;
+  }
+
+  .featured-image {
+    display: block;
+    filter: drop-shadow(5px 5px 10px var(--color600));
+    object-position: top;
+  }
+}

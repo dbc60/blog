@@ -1,16 +1,34 @@
     {{- define "main" }}
     {{ "<!-- BEGIN main in layouts/index.html -->" | safeHTML }}
       <div class="content">
-            {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
+        {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
         {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Section" "post") -}}
         {{- range $idxPage, $_ := $paginator.Pages -}}
+        {{- $featuredImage := "" -}}
+        {{- $featuredDescription := "" -}}
+        {{- if .Params.featuredImage -}}
+          {{- $featuredImage = .Params.featuredImage -}}
+          {{- $featuredDescription = .Params.featuredDescription -}}
+        {{- else -}}
+          {{- $featuredImage = .Site.Params.featuredImage -}}
+          {{- $featuredDescription = .Site.Params.featuredDescription -}}
+        {{- end -}}
         <section class="page-summary">
-        <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        {{- partial "date-and-tags.html" . -}}
-        {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
-            {{- .Render "summary" }}
+          <div class="flex-row">
+            <div class="pl3-ns">
+              <a href="{{ .Permalink }}" class="db grow">
+                <img src="{{.Site.BaseURL}}{{ $featuredImage }}" alt={{ $featuredDescription }}>
+              </a>
+            </div>
+            <div class="pr3-ns">
+              <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+              {{- partial "date-and-tags.html" . -}}
+              {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
+              {{- .Render "summary" }}
+            </div>
+          </div>
         </section>
-        {{ end -}}
+        {{ end -}}  <!-- end range ... $paginator.Pages -->
         {{- template "_internal/pagination.html" . }}
       </div>
     {{ "<!-- END main in layouts/index.html -->" | safeHTML }}

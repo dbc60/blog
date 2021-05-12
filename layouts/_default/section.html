@@ -1,32 +1,75 @@
 {{- define "main" }}
-  {{ "<!-- BEGIN main in layouts/_default/section.html -->" | safeHTML }}
-  {{- $pag := .Paginate (where .RegularPages "Section" .Section) -}}
-    {{ "<!-- BEGIN range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
-    {{- if gt (len $pag.Pages) 0 -}}
-      {{- range $pag.Pages -}}
-        <!-- NOTE: <section> is important. It shrinks the size of the <h2> element-->
-        <section class="page-summary">
+{{ "<!-- BEGIN main in layouts/_default/section.html -->" | safeHTML }}
+
+{{ if gt .WordCount 0 }}
+  {{- "<!-- BEGIN content div layouts/_default/section.html -->" | safeHTML }}
+  {{- $featuredImage := "" -}}
+  {{- $featuredDescription := "" -}}
+  {{- if .Params.featuredImage -}}
+    {{- $featuredImage = .Params.featuredImage -}}
+    {{- $featuredDescription = .Params.featuredDescription -}}
+  {{- else -}}
+    {{- $featuredImage = .Site.Params.featuredImage -}}
+    {{- $featuredDescription = .Site.Params.featuredDescription -}}
+  {{- end -}}
+  <section class="page-summary">
+    <div class="flex-row">
+      <div class="pl3-ns">
+        <a href="{{ .Permalink }}" class="db grow">
+          <img src="{{.Site.BaseURL}}{{ $featuredImage }}" alt={{ $featuredDescription }}>
+        </a>
+      </div>
+      <div class="pr3-ns">
         <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         {{- partial "date-and-tags.html" . -}}
-        {{ .Render "summary" }}
-        </section>
-      {{- end -}}
-    {{- else -}}
-      {{- "<!-- BEGIN content div layouts/_default/section.html -->" | safeHTML }}
-      <section class="page-summary">
-        <h2 class="title-article">{{- .Title -}}</h2>
-        {{- partial "date-and-tags.html" . -}}
-      </section>
+        {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
+        {{- .Render "summary" }}
+      </div>
+    </div>
+  </section>
+  {{ .Content }}
+  {{ "<!-- END content div layouts/_default/section.html -->" | safeHTML }}
+{{ end }}
 
-      {{ partial "drop-caps.html" . }}
-      {{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments     .Params.disable_comments)) }}
-      <section class="comments">{{- "<!-- BEGIN comments section layouts/_default/section.html -->" | safeHTML }}
-        {{ template "_internal/disqus.html" . }}
-      </section> {{- "<!-- END comments section layouts/_default/section.html -->" | safeHTML }}
-      {{ end }}
-      {{ "<!-- END content div layouts/_default/section.html -->" | safeHTML }}
+{{- $pag := .Paginate (where .RegularPages "Section" .Section) -}}
+{{ "<!-- BEGIN range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
+{{- if gt (len $pag.Pages) 0 -}}
+  {{- range $pag.Pages -}}
+    <!-- NOTE: <section> is important. It shrinks the size of the <h2> element-->
+    {{- $featuredImage := "" -}}
+    {{- $featuredDescription := "" -}}
+    {{- if .Params.featuredImage -}}
+      {{- $featuredImage = .Params.featuredImage -}}
+      {{- $featuredDescription = .Params.featuredDescription -}}
+    {{- else -}}
+      {{- $featuredImage = .Site.Params.featuredImage -}}
+      {{- $featuredDescription = .Site.Params.featuredDescription -}}
     {{- end -}}
-    {{ "<!-- END range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
-    {{- template "_internal/pagination.html" . }}
-  {{ "<!-- END main in layouts/_default/section.html -->" | safeHTML }}
+    <section class="page-summary">
+      <div class="flex-row">
+        <div class="pl3-ns">
+          <a href="{{ .Permalink }}" class="db grow">
+            <img src="{{.Site.BaseURL}}{{ $featuredImage }}" alt={{ $featuredDescription }}>
+          </a>
+        </div>
+        <div class="pr3-ns">
+          <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+          {{- partial "date-and-tags.html" . -}}
+          {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
+          {{- .Render "summary" }}
+        </div>
+      </div>
+    </section>
+  {{- end -}}
+{{- end -}}
+{{ "<!-- END range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
+{{- template "_internal/pagination.html" . }}
+
+{{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments     .Params.disable_comments)) }}
+<section class="comments">{{- "<!-- BEGIN comments section layouts/_default/section.html -->" | safeHTML }}
+  {{ template "_internal/disqus.html" . }}
+</section> {{- "<!-- END comments section layouts/_default/section.html -->" | safeHTML }}
+{{ end }}
+
+{{ "<!-- END main in layouts/_default/section.html -->" | safeHTML }}
 {{- end -}}

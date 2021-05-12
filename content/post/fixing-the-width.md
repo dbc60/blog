@@ -3,8 +3,7 @@ title: Fixing the Width
 date: 2016-03-10
 2016: ["03"]
 math: true
-categories: [blog]
-tags: [css, js, mathjax]
+tags: [blog,css,mathjax]
 ---
 What an ugly, fragile blog.
 <!--more-->

@@ -3,8 +3,8 @@
 {{ $scratch := newScratch }}
 {{ range $idx, $page := $postsAll }} <!-- for post in postsArray -->
   {{ if eq $idx 0 }} <!-- first iteration sets up current year -->
-    <span class="social-items header-archive-date">{{ $page.Date.Format "2006"}}</span>
-    <ul class="social-items this-years-posts">
+    <span class="collection-items header-archive-date">{{ $page.Date.Format "2006"}}</span>
+    <ul class="collection-items this-years-posts">
   {{ else }}  <!-- subsequent iterations, capture data for following years -->
     {{ if eq nil ($scratch.Get "previousYear") }}
       {{ $scratch.Set "currentYear"  ($page.Date.Format "2006") }}
@@ -14,11 +14,11 @@
     {{ end }}
     {{ if ne ($scratch.Get "currentYear") ($scratch.Get "previousYear") }}
       </ul> {{ "<!-- end this-years-posts and start the previous year's posts-->" | safeHTML }}
-      <span class="social-items header-archive-date">{{ $scratch.Get "previousYear" }}</span>
-      <ul class="social-items past-posts">
+      <span class="collection-items header-archive-date">{{ $scratch.Get "previousYear" }}</span>
+      <ul class="collection-items past-posts">
       {{ $scratch.Set "currentYear" ($scratch.Get "previousYear") }}
     {{ end }} <!-- if ne $currentYear ($scratch.Get "nextYear") -->
   {{ end }} <!-- if eq $idx 0 ... else ... -->
   <li class="side-list-item"><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>
 {{ end }} <!-- range $idx, $page := $postsAll -->
-</ul> <!-- class="social-items" -->
+</ul> <!-- class="collection-items" -->

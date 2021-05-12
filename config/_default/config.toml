@@ -9,18 +9,22 @@ canonifyURLs = true
 footnoteReturnLinkContents = "↩"
 #enableGitInfo = true
 enableEmoji = true
-ignoreFiles = ["\\.git", "\\.vscode"]
+ignoreFiles = ["\\.obsidian/.*"]
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
 
 [markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
   [markup.highlight]
     codeFences = true
     guessSyntax = false
-    hl_Lines = ""
+    hl_Lines = "true"
     lineNoStart = 1
-    lineNos = false
+    lineNos = true
     lineNumbersInTable = true
     noClasses = false
     style = "monokai"
@@ -114,11 +118,11 @@ rssLimit = 20
   email = "doug.cuthbertson@gmail.com"
 
 [taxonomies]
-  category = "categories"
   tag = "tags"
   2015 = "2015"
   2016 = "2016"
   2020 = "2020"
+  2021 = "2021"
 
 [permalinks]
   contact = "/:sections/:slug/"
