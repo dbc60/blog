@@ -14,6 +14,15 @@ ignoreFiles = ["\\.git", "\\.vscode", "\\.editorconfig$", "\\.obsidian/.*"]
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
 
+# Do NOT set lineNumbersInTable to true. It really screws up how code blocks
+# are displayed when their content exceeds the available width on the page.
+# You wind up with a pair of horizontal scrollbars, one for the second column
+# of the table (the content to the right of the line numbers) and another for
+# the whole table. Both then have to be used to see the righthand edge of the
+# table's content.
+#
+# I've set "lineNos = false". If you want line numbers in a code block, use the
+# highlight shortcode and set "linenos=inline".
 [markup]
   [markup.tableOfContents]
     endLevel = 3
@@ -24,7 +33,7 @@ googleAnalytics = ""
     guessSyntax = false
     hl_Lines = "true"
     lineNoStart = 1
-    lineNos = true
+    lineNos = false
     lineNumbersInTable = false
     noClasses = false
     style = "monokai"
