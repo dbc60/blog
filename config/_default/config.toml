@@ -9,7 +9,7 @@ canonifyURLs = true
 footnoteReturnLinkContents = "↩"
 #enableGitInfo = true
 enableEmoji = true
-ignoreFiles = ["\\.obsidian/.*"]
+ignoreFiles = ["\\.git", "\\.vscode", "\\.editorconfig$", "\\.obsidian/.*"]
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
@@ -25,7 +25,7 @@ googleAnalytics = ""
     hl_Lines = "true"
     lineNoStart = 1
     lineNos = true
-    lineNumbersInTable = true
+    lineNumbersInTable = false
     noClasses = false
     style = "monokai"
     tabWidth = 4
@@ -67,6 +67,10 @@ googleAnalytics = ""
     #pre = "home"
     url = "/"
     weight = 100
+  [[menu.nav]]
+    name = "Posts"
+    url = "/post/"
+    weight = 500
   [[menu.nav]]
     name = "About"
     #pre = "smile"

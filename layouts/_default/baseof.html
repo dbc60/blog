@@ -57,7 +57,7 @@
       <main class="main-content">
         <img class="featured-image" src="{{.Site.BaseURL}}{{ $featuredImage }}" alt={{ $featuredDescription }}>
       {{ block "main" . -}}
-        <h2>Default Main (Should Never Appear)</h2>
+      <h2>Default Main (Should Never Appear)</h2>
       {{- end }}
       </main>
     </div> {{ "<!-- class wrapper-content -->" | safeHTML }}

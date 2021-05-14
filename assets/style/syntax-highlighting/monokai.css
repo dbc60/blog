@@ -1,8 +1,10 @@
 /* This is a variant of the standard monokai.css theme. It includes classes for
    what I think is an older version of pygments, and a few colors are changed so
-   they look better with the overall color scheme on my blog.
+   they look better with the overall color scheme on my blog. I also commented-
+   out "background-color: #e3e8e7;" from the ".chroma, .background" selector so
+   the background color of the page would come through.
 */
-/* Background */ .chroma, .background { color: #272822; background-color: #e3e8e7; }
+/* Background */ .chroma, .background { color: #272822; /*background-color: #e3e8e7;*/ }
 /* Error */ .chroma .err, .error { color: #960050; background-color: #e3e8e7; }
 /* LineTableTD */ .chroma .lntd, .line.table.td { vertical-align: top; padding: 0; margin: 0; border: 0; }
 /* LineTable */ .chroma .lntable, .line.table { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }

@@ -26,7 +26,7 @@ I made a few adjustments to the styling and HTML to suit my taste. One thing I w
 
 The main content area and the sidebar are both included in `div` section with the ID `boxes` (`<div id="boxes">`). All I had to do was style the `div` with `display: flex;`. Here's the code and comment from my stylesheet.
 
-```
+```txt
 /* Using display: flex; to make the sidebar column the same length as the main content.
    See: http://tutorialzine.com/2014/10/easiest-way-equal-height-sidebar/ for details.
    */

@@ -259,6 +259,7 @@ figure {
 
 figure.post-image {
   counter-increment: figures;
+  margin-bottom: var(--section-spacer);
 }
 
 figure.post-image figcaption::before {

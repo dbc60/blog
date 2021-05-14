@@ -166,8 +166,11 @@ pre {
  *  <span class="ln">1</span>
  *
  * By applying "user-select: none;" to them, only the code is selectable.
+ *
+ * Note that if config.toml has "lineNumbersInTable = true", then code blocks
+ * are rendered as tables and the class is lnt.
  */
- .ln {
+ .ln, .lnt {
   user-select: none;
 }
 
@@ -229,11 +232,11 @@ th {
 }
 
 /* Zebra stripes - alternating rows in the body have different background colors */
-tbody tr:nth-child(odd) td {
+tbody tr:nth-child(odd) td:not(.lntd) {
   background-color: var(--color200);
 }
 
-tbody tr:nth-child(even) td {
+tbody tr:nth-child(even) td:not(.lntd) {
   background-color: var(--color300);
 }
 
