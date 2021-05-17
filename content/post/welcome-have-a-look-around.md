@@ -93,5 +93,3 @@ Ignoring the boilerplate for `<!DOCTYPE html>` and `<head>`, the `<body>` sectio
 {{< /highlight >}}
 
 Continue here with something about the CSS used to style the content; particularly something about keeping the masthead, content, and footer stacked properly while enabling the sidebar and main content to lay side-by-side. Think about mentioning the featured image and how it stacks on top the main content, but leaves the sidebar alone so navigation isn't pushed down and out of reach. In fact, that was the main reason for not putting the featured image up in the masthead or the top of the content wrapper.
-
-{{< days 2 >}}

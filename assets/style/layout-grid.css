@@ -12,7 +12,6 @@ body {
 }
 
 .wrapper-content {
-  display: flex;
   grid-row: 2;
   grid-template-columns: minmax(20rem, 1fr) 9fr;
   grid-gap: 1rem;
@@ -27,6 +26,15 @@ body {
 @media (min-width: 110ch) {
   .main-head {
     width: 100%;
+  }
+
+  /*
+    display flex only for screens at least 110ch wide. For smaller widths,
+    drop back to display block (the default, I believe) so the sidebar will be
+    first and the main content will follow it.
+  */
+  .wrapper-content {
+    display: flex;
   }
 
   /*
