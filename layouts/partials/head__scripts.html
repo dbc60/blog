@@ -8,11 +8,29 @@
         and
           https://stackoverflow.com/questions/2105327/should-jquery-code-go-in-header-or-footer
 
-        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js" defer="defer"></script>
+        <script type="text/javascript" src="https://d3js.org/d3.v6.min.js" defer="defer"></script>
       -->
 
       <!-- d3js: Fall back to local if CDN offline -->
-      <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
-      <script>window.d3 || document.write('<script type="text/javascript" src="{{ "scripts/d3-v5.9.1.min.js" | relURL }}">\x3C/script>')</script>
+      <script type="text/javascript" src="https://d3js.org/d3.v6.min.js"></script>
+      <script>window.d3 || document.write('<script type="text/javascript" src="{{ "scripts/d3-v6.7.0.min.js" | relURL }}">\x3C/script>')</script>
     {{- end }}
+
+    <!-- older D3 v5 -->
+    {{- if or .context.Params.d3v5 .context.Site.Params.d3v5 -}}
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+    {{- end }}
+
+    <!-- older D3 v3 -->
+    {{- if or .context.Params.d3v3 .context.Site.Params.d3v3 -}}
+      <!-- d3js: Fall back to local if CDN offline -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    {{- end }}
+
+    <!-- plot library -->
+    <script language="javascript" type="text/javascript" src="{{ "/scripts/plot.js" | urlize | relURL }}"></script>
+
+    <!-- canvas drawing code from Matt Might -->
+    <script language="javascript" type="text/javascript" src="{{ "/scripts/canvas-graph.js" | urlize | relURL }}"></script>
+    <script language="javascript" type="text/javascript" src="{{ "/scripts/matt.might.js" | urlize | relURL }}"></script>
     {{ "<!-- END head__scripts.html -->" | safeHTML }}

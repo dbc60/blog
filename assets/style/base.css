@@ -523,6 +523,16 @@ h5 + h6 {
   font-size: 80%;
 }
 
+/* SVG for static/scripts/plot.js */
+path { stroke: black; stroke-width: 2; fill: none; }
+svg {margin: 1.5em auto; display: block;}
+svg button {position: absolute; right: 0; bottom: 0;}
+svg .plot {display: none; margin: 1em;}
+svg .plot thead {font-size: 110%; color: #888a85;}
+svg .plot em {font-variant: small-caps; font-style: normal;}
+svg .plot th {padding-right: 1em; font-style: italic;}
+
+
 /*************************
   * Debug Border and Fill *
   *************************/

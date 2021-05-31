@@ -12,7 +12,7 @@ Besides my professional work, I'm a husband, a father to two really wonderful ch
 
 Among other things, I
 
-- dream about model railroads (it was a favorite hobby of mine and I hope to get back to it one day).
+- dream about model railroads (it was a favorite hobby of mine and I hope to get back to it one day soon)
 - take photographs, and occasionally sketch and draw.
 - enjoy gardening and cooking with my wife, Adelle.
 

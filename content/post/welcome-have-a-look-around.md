@@ -2,13 +2,13 @@
 title: "Welcome! Have a Look Around"
 date: 2021-05-08T06:50:11-04:00
 2021: ["05"]
-tags: [100DaysToOffload,draft]
+tags: [draft]
 draft: true
 publishDate: 2021.06.04
 featuredImage: "images/banners/motif-number-1.jpg"
 featuredDescription: "Motif No. 1"
 ---
-This blog is a result of tinkering with HTML, CSS, and Go/Hugo templates. I have had more fun with that than actually writing about things.
+No more waiting for election results. The election turned out fine despite the insurrection on January 6, 2021. It's well past time for me and this blog to move on. This blog is a result of tinkering with HTML, CSS, and Go/Hugo templates. I have had more fun with that than actually writing about things.
 
 ## Planning
 
@@ -27,9 +27,9 @@ TBD: I'm going to need to import a picture for this post. Motif No. 1 is the def
 
 I'm going to describe the structure of this site and see if I can connect the HTML, layout templates, and CSS to be sure I understand how it really works.
 
-## A Little About This Site
+## Not a Restructuring. An Evolution
 
-It grew from a simple desire to have a corner of the web where I could write whatever I wanted. There aren't many posts here mostly because I had more fun learning HTML and CSS. Some of my previous posts show how I [tried a few platforms and site generators]({{< ref "/post/serving-a-blog" >}}) and [how I came to settle]({{< ref "/post/restart" >}}) on GitHub pages with Hugo as the static site generator.
+This site grew from a simple desire to have a corner of the web where I could write whatever I wanted. There aren't many posts here mostly because I had more fun learning HTML and CSS. Some of my previous posts show how I [tried a few platforms and site generators]({{< ref "/post/serving-a-blog" >}}) and [how I came to settle]({{< ref "/post/restart" >}}) on GitHub pages with Hugo as the static site generator. The last major step was getting used to Hugo and what could be done with it.
 
 The overall structure of a web page in a nutshell is `<!DOCTYPE html><html><head></head><body></body></html>`. What goes between those start andend tags is what matters. This site has, what I hope are, some reasonable values for a variety of `<meta>` and `<link>` tags. Unlike [Manuel Matuzovic](https://www.matuzo.at/blog/html-boilerplate/), I don't have an explanation for why I chose what's there. I just gathered it along the way while learning about HTML. Some of the info came from [How to Section Your HTML](https://css-tricks.com/how-to-section-your-html/) and similar articles. I did my best to make this site accessible and usable. It is a hobby, so there's lots more to do.
 

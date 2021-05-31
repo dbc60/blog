@@ -1,8 +1,14 @@
-/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
-/* zurb.com */
-/* humanstxt.org */
+Hello nerdly human! Welcome to a strange and poorly lit corner of my website.
 
-/* SITE */
+The Mighty Team Who Made This Website:
+
+  Douglas Cuthbertson, author and sole proprietor
+  Twitter: @DougCuthbertson
+  Location: Massachusetts, USA
+
+
+The tiniest information about this site:
+
   Standards: HTML5, CSS3
-  Components: jQuery, Orbit, Reveal
-  Software: Sublime, Git, Sass
+  Components: HTML5, CSS3, JavaScript (mostly MathJax and D3js)
+  Software: Hugo, Visual Studio Code
