@@ -3,6 +3,8 @@ title: "Table Collect Keys"
 date: 2021-09-23T14:36:45-04:00
 2021: ["09"]
 ---
+<!--more-->
+
 ```go-html-template
   <!-- collect all the keys in the map -->
   {{- range $key, $val := $table -}}

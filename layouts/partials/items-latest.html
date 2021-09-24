@@ -1,6 +1,6 @@
 <ul class="collection-items">
 {{ "<!-- BEGIN layouts/partials/items-latest.html -->" | safeHTML }}
-{{- $postsAll := where .Site.RegularPages.ByLastmod.Reverse "Section" "!=" "evergreen-notes" -}}
+{{- $postsAll := .Site.RegularPages.ByLastmod.Reverse -}}
 {{- $listLimit := 10 -}}
 {{- if isset .Site.Params "latest_limit" -}}
   {{- $listLimit = .Site.Params.latest_limit -}}

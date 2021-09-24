@@ -3,6 +3,7 @@ title: "Src File Data"
 date: 2021-09-23T14:28:43-04:00
 2021: ["09"]
 ---
+<!--more-->
 
 ```go-html-template
 <!--

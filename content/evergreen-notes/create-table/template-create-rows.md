@@ -3,6 +3,7 @@ title: "Template Create Rows"
 date: 2021-09-23T17:23:13-04:00
 2021: ["09"]
 ---
+<!--more-->
 
 ```go-html-template
 <!-- Use within <table>, <tbody>, or <tfoot> elements, but not within <thead>;
