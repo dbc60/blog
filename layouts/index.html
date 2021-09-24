@@ -17,7 +17,7 @@
           <div class="flex-row">
             <div class="pl3-ns">
               <a href="{{ .Permalink }}" class="db grow">
-                <img src="{{.Site.BaseURL}}{{ $featuredImage }}" alt={{ $featuredDescription }}>
+                <img src="{{ $featuredImage | absURL }}" alt={{ $featuredDescription }}>
               </a>
             </div>
             <div class="pr3-ns">

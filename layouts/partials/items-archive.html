@@ -1,6 +1,5 @@
 {{ $currentSection := .Section }}
 {{ "<!-- BEGIN layouts/partials/items-archive.html -->" | safeHTML }}
-{{ $homeLink := .Site.BaseURL }}
 <!-- all posts in reverse chronological order -->
 {{ $postsAll := where .Site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections }}
 {{ $scratch := newScratch }}
@@ -8,7 +7,7 @@
 {{ $cy := $scratch.Get "currentYear" }}
 <ul class="collection-items">
   <li class="collection-item">
-    <a class="secondary-nav__link" href="{{ $homeLink }}/{{ $cy }}/">
+    <a class="secondary-nav__link" href="{{ $cy | absURL }}/">
       {{ $cy }}
     </a>
   </li>
@@ -18,7 +17,7 @@
   {{ $py := $scratch.Get "previousYear" }}
   {{ if ne $cy $py }}
   <li class="collection-item">
-    <a class="secondary-nav__link" href="{{ $homeLink }}/{{ $py }}/">
+    <a class="secondary-nav__link" href="{{ $py | absURL }}/">
       {{ $py }}
     </a>
   </li>
