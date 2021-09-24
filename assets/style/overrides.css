@@ -207,8 +207,15 @@ a {
 }
 
 a:hover,
+a:focus,
 a:active {
   color: var(--color-anchor-hover);
+}
+
+.evergreen-link:hover  .highlight,
+.evergreen-link:focus  .highlight,
+.evergreen-link:active .highlight {
+  outline: 2px solid var(--color-anchor-hover);
 }
 
 .pagination {
@@ -919,9 +926,10 @@ h1.example {
 .content-collection {
   background-color: var(--background-code);
   border-left: 0.1em solid var(--color-border-left);
+  margin-top: 1rem;
 }
 
-.content-collection pre.chroma {
+.content-collection .chroma {
   border-left: none;
   margin-top: 0;
   margin-bottom: 0;
