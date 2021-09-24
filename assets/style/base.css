@@ -243,7 +243,6 @@ body {
 }
 
 pre.chroma {
-  background-color: var(--background-code);
   width: 100%;
 }
 

@@ -212,10 +212,14 @@ a:active {
   color: var(--color-anchor-hover);
 }
 
+.highlight {
+  display: inline;
+}
+
 .evergreen-link:hover  .highlight,
 .evergreen-link:focus  .highlight,
 .evergreen-link:active .highlight {
-  outline: 2px solid var(--color-anchor-hover);
+  outline: 1px solid var(--color-anchor-hover);
 }
 
 .pagination {
@@ -924,6 +928,7 @@ h1.example {
 }
 
 .content-collection {
+  display: inline-grid;
   background-color: var(--background-code);
   border-left: 0.1em solid var(--color-border-left);
   margin-top: 1rem;
