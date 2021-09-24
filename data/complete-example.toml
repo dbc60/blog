@@ -1,0 +1,35 @@
+# Table caption
+caption = "All the Features in the Create-Table Shortcode"
+
+[header]
+  hd1 = ["Header R1C1", "Header R1C2", "Header R1C3"]
+[[head]]
+  hd1 = ["Header R2C1", "Header R2C2", "Header R2C3"]
+[[head]]
+  hd1 = ["Header R3C1", "Header R3C2", "Header R3C3"]
+  hd2 = ["Header R4C1", "Header R4C2", "Header R4C3"]
+[[body]]
+  row = ["a", "b", "c"]
+[[body]]
+  row = ["d", "e", "f"]
+
+
+# Don't embed colgroup in another array. It becomes an embedded map.
+# [[head.colgroup]]
+#   span = 1
+# [[head.colgroup]]
+#   span = 2
+
+[[foot]]
+  row = ["foot1", "foot2", "foot3"]
+
+# This map is at the top-level of the table and can be used to create an HTML
+# colgroup for the table. One entry for each <col> element.
+[[colgroup]]
+  span = 1
+[[colgroup]]
+  span = 2
+  class = "odd"
+[[colgroup]]
+  span = 1
+  class = "even"

@@ -52,31 +52,34 @@
   --color-border-left: #c4baad;
 
   /* Major components */
-  --color-background-main: var(--gray150);
-  --color-background-footer: var(--gray250);
+  --background-main-default: var(--gray150);
+  --background-main-alternate-gray: var(--gray200);
+  --background-main-shadow-gray: var(--gray300);
+  --background-main-alternate-color: var(--color200);
 
   /* variations on #edeae6 from https://www.colorhexa.com/edeae6 */
-  --color-background-contrast: #edeae6;
-  --color-background-contrast-shade1: #e2ded7;
-  --color-background-contrast-complement: #e6e9ed;
-  --color-background-contrast-complement-shade1: #697b92;
-  --color-background-code: var(--color-background-contrast-shade1);
+  --background-contrast: #edeae6;
+  --background-contrast-shade1: #e2ded7;
+  --background-contrast-complement: #e6e9ed;
+  --background-contrast-complement-shade1: #697b92;
+  --background-code: var(--background-contrast-shade1);
 
-  --color-background-table-head: var(--color-background-contrast-complement-shade1);
-  --color-background-table-foot: var(--color-background-contrast-complement-shade1);
-  --color-background-table-odd: var(--color100);
-  --color-background-table-even: var(--color200);
-  --color-background-sidebar: var(--color-background-contrast-shade1);
+  --background-table-head: var(--background-contrast-complement-shade1);
+  --background-table-foot: var(--background-contrast-complement-shade1);
+  --background-table-odd: var(--color100);
+  --background-table-even: var(--color200);
+  --background-sidebar: var(--background-contrast-shade1);
+  --background-toc: var(--background-contrast-shade1);
+  --background-sidebar-highlight: var(--background-contrast-complement-shade1);
 
-  /*--color-background-sidebar-highlight: hsla(162, 25%, 25%, 1);*/
-  --color-background-sidebar-highlight: var(--color-background-contrast-complement-shade1);
-  --color-border-bottom-code: #ddd7cf;
+  /*--background-sidebar-highlight: hsla(162, 25%, 25%, 1);*/
   --color-title: var(--color600);
   --color-anchor: var(--color600);
   --color-anchor-light: #362ec6;
   --color-anchor-hover: var(--color500-shade1-complement);
-  --color-background-toc: var(--color-background-contrast-shade1);
+  --color-border-bottom-code: #ddd7cf;
   --color-border-toc: var(--gray900);
+  --color-border-admonition: var(--background-main-shadow-gray);
   --margin-toc-vertical: 1em;
   --margin-toc-left: 4%;
 
@@ -87,6 +90,8 @@
 
   /* space between hero image, masthead, wrapper-content, and wrapper-footer */
   --section-spacer: 0.6em;
+
+  --font-family-body-default: "system-stack", "Calisto MT", "Bookman Old Style", Georgia, serif;
 }
 
 /******************
@@ -229,16 +234,16 @@ body {
   max-width: 120ch;
   overflow: auto;
   /* IE 8 doesn't support local @font-face rules */
-  font-family: "system-stack", "Calisto MT", "Bookman Old Style", Georgia, serif;
+  font-family: var(--font-family-body-default);
   line-height: var(--line-height-default);
   margin: var(--body-margin-default);
   padding: 1em;
-  background-color: var(--color-background-main);
+  background-color: var(--background-main-default);
   color: var(--gray900);
 }
 
 pre.chroma {
-  background-color: var(--color-background-code);
+  background-color: var(--background-code);
   width: 100%;
 }
 
@@ -249,6 +254,7 @@ pre.chroma {
 .content {
   counter-reset: figures;
   counter-reset: tables;
+  counter-reset: videos;
 }
 
 figure {
@@ -257,18 +263,41 @@ figure {
   font-weight: bold;
 }
 
+video {
+  max-width: 100%;
+  height: auto;
+}
+
 figure.post-image {
   counter-increment: figures;
   margin-bottom: var(--section-spacer);
 }
 
-figure.post-image figcaption::before {
+.video-shortcode+figcaption {
+  counter-increment: videos;
+  margin-bottom: var(--section-spacer);
+}
+
+figure.post-image figcaption::before{
   content: 'Fig. ' counter(figures) '. ';
+}
+
+.video-shortcode+figcaption::before {
+  content: 'Video ' counter(videos) '. ';
 }
 
 /* any "img" descendent of a figure.post-image */
 figure.post-image img {
   display: block;
+}
+
+/* any "img" descendent of a .video-shortcode */
+.video-shortcode img {
+  display: block;
+}
+
+.video-unsupported {
+  color: var(--color-danger);
 }
 
 figure.video {
@@ -280,7 +309,7 @@ figure.video {
 }
 
 figure.video figcaption::before {
-  content: 'Vid. ' counter(videos) '. ';
+  content: 'Video ' counter(videos) '. ';
 }
 
 figure.video iframe {
@@ -374,6 +403,8 @@ summary:focus {
 ol,
 ul {
   margin-left: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding-left: 1em;
 }
 
@@ -492,7 +523,7 @@ h5 + h6 {
   border-top: solid;
   font-size: 80%;
   clear: both;
-  background-color: var(--color-background-footer);
+  background-color: var(--background-main-alternate-gray);
 }
 
 .main-footer > .container > a {
@@ -500,7 +531,7 @@ h5 + h6 {
 }
 
 .main-footer > .container > a:hover {
-  color: var(--color-background-footer);
+  color: var(--background-main-alternate-gray);
   background-color: var(--gray900);
 }
 
@@ -516,7 +547,7 @@ h5 + h6 {
 .days {
   margin-top: var(--section-spacer);
   font-size: 80%;
-  background-color: var(--color-background-code);
+  background-color: var(--background-code);
 }
 
 .featured-copyright {
@@ -531,7 +562,6 @@ svg .plot {display: none; margin: 1em;}
 svg .plot thead {font-size: 110%; color: #888a85;}
 svg .plot em {font-variant: small-caps; font-style: normal;}
 svg .plot th {padding-right: 1em; font-style: italic;}
-
 
 /*************************
   * Debug Border and Fill *

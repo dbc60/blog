@@ -51,6 +51,11 @@
   {{- if eq $title "" -}}
     {{- $title = "Warning" -}}
   {{- end -}}
+{{- else if eq $type "question" -}}
+  {{- $class = "admonition note" -}}
+  {{- if eq $title "" -}}
+    {{- $title = "Question" -}}
+  {{- end -}}
 {{- else -}}
   {{- $class = "admonition note" -}}
   {{- if eq $title "" -}}

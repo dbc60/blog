@@ -1,5 +1,12 @@
+---
+title: "Create Table Heading"
+date: 2021-09-23T17:59:37-04:00
+2021: ["09"]
+---
+
+```go-html-template
 {{/*
-  shortcodes/create-table.html
+  shortcodes/create=table.html
 
   Read a table in YAML, TOML, or JSON format from .Site.Data or a
   subdirectory of that directory and turn it into HTML.
@@ -35,7 +42,7 @@
 
   Example call:
 
-  {{< create-table src="table-example" >}}
+  {{</* create-table src="table-example" */>}}
 
   The overall structure of the code is inspirec by Johann Oberdorfer's article
   "Recursive Directory Listing for Hugo": http://www.johann-oberdorfer.eu/blog/2020/07/03/20-07-03_recursive_function_in_hugo/
@@ -102,180 +109,4 @@
       <td>three</td>
     </tr>
 */}}
-
-<!--
-  .Site.Data isn't a path. It's a map of all the files in the data folder,
-  its subfolders and their files, and the contents of all those files.
--->
-{{- $data := .Site.Data -}}
-
-<!--
-  src is assumed to be a path, relative to the data folder, to a TOML file whose
-  contents represent a data table with rows and columns.
--->
-{{- $src := .Get "src" -}}
-{{- $pathComponents := split $src "/" -}}
-
-<!--
-  Use the components of the src path to rummage through the map-of-maps in
-  $data to get the src table's contents.
--->
-{{- range $component := $pathComponents -}}
-  {{- if ne $data nil -}}
-    {{- $data = index $data $component -}}
-  {{- end -}}
-{{- end -}}
-
-{{- define "processMapHead" -}}
-  {{- $row := . -}}
-  {{- range $k, $v := $row -}}
-    {{- if and (not (reflect.IsMap $v)) (not (reflect.IsSlice $v)) -}}
-      <td>{{- $k -}} (map->scalar): ({{$v}})</td>
-    {{- else if reflect.IsMap $v -}}
-      <tr class="head">{{- $k -}} (map-map): {{- template "processMapHead" $v -}}</tr>
-    {{- else if reflect.IsSlice $v}}
-      <tr class="head">{{- template "createRowsHead" $v -}}</tr>
-    {{- else -}}
-      <td>{{$k}} (map-unknown): {{- $v -}}</td>
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-{{- define "processMap" -}}
-  {{- $row := . -}}
-  {{- range $k, $v := $row -}}
-    {{- if and (not (reflect.IsMap $v)) (not (reflect.IsSlice $v)) -}}
-      <td>{{- $k -}} (map->scalar): ({{$v}})</td>
-    {{- else if reflect.IsMap $v -}}
-      <tr class="body">{{- $k -}} (map-map): {{- template "processMap" $v -}}</tr>
-    {{- else if reflect.IsSlice $v}}
-      <tr class="body">{{- template "createRows" $v -}}</tr>
-    {{- else -}}
-      <td>{{$k}} (map-unknown): {{- $v -}}</td>
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-<!-- Use only within thead elements. This will generate
-   <tr><th>...</th><th>...</th>...</tr> row sequences
--->
-{{- define "createRowsHead" -}}
-  {{- $rows := . -}}
-  {{- range $idx, $row := $rows -}}
-    {{- if and (not (reflect.IsMap $row)) (not (reflect.IsSlice $row)) -}}
-      <!-- row value is a scalar -->
-      <th>{{- $row -}}</th>
-    {{- else if reflect.IsMap $row -}}
-      <!-- row value is a map -->
-      {{- template "processMapHead" $row -}}
-    {{- else if reflect.IsSlice $row}}
-      <!-- row value is a slice -->
-      {{- template "createRowsHead" $row -}}
-    {{- else -}}
-      <!-- row value type is unknown -->
-      {{- $idx -}} (head-row-unknown): {{- $row -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-<!-- Use within <table>, <tbody>, or <tfoot> elements, but not within <thead>;
-  this will generate <tr><td>...</td><td>...</td>...</tr> row sequences
--->
-{{- define "createRows" -}}
-  {{- $rows := . -}}
-  {{- range $idx, $row := $rows -}}
-    {{- if and (not (reflect.IsMap $row)) (not (reflect.IsSlice $row)) -}}
-      <!-- row value is a scalar -->
-      <td>{{- $row -}}</td>
-    {{- else if reflect.IsMap $row -}}
-      <!-- row value is a map -->
-      {{- template "processMap" $row -}}
-    {{- else if reflect.IsSlice $row}}
-      <!-- row value is a slice -->
-      {{- template "createRows" $row -}}
-    {{- else -}}
-      <!-- row value type is unknown -->
-      {{- $idx -}} (rows-unknown): {{- $row -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-{{- define "createColgroup" -}}
-  {{- $colgroup := . -}}
-  {{- range $idx, $col := $colgroup}}
-    <col{{range $attr, $val := $col}} {{$attr}}="{{$val}}" {{end}}>
-  {{- end -}}
-{{- end -}}
-
-<!-- Table data is always a map -->
-{{- define "buildTable" -}}
-  {{- $table := . -}}
-  {{- $haveHead := false -}}
-  {{- $haveBody := false -}}
-  {{- $captionValue := "" -}}
-  {{- $colGroupValue := "" -}}
-  {{- $bodyValue := "" -}}
-  {{- $headValue := "" -}}
-  {{- $footValue := "" -}}
-
-  <!-- collect all the keys in the map -->
-  {{- range $key, $val := $table -}}
-    {{- if eq $key "body" -}}
-      {{- if $haveBody -}}
-        {{- $haveBody = $haveBody | append $val -}}
-      {{- else -}}
-        {{- $haveBody = true -}}
-        {{- $bodyValue = $val}}
-      {{- end -}}
-    {{- else if eq $key "caption" -}}
-      {{- $captionValue = $val -}}
-    {{- else if eq $key "colgroup" -}}
-      {{- $colGroupValue = $val -}}
-    {{- else if eq $key "head" -}}
-      {{- $haveHead = true -}}
-      {{- $headValue = $val -}}
-    {{- else if ne $key "foot" -}}
-      {{- if $haveBody -}}
-        {{- $bodyValue = $bodyValue | append $val -}}
-      {{- else -}}
-        {{- $haveBody = true -}}
-        {{- $bodyValue = $val}}
-      {{- end -}}
-    {{- else -}}<!-- key is foot -->
-      {{- $footValue = $val -}}
-    {{- end -}}
-  {{- end -}}
-
-  {{- if ne $captionValue "" -}}
-    <caption>{{- $captionValue -}}</caption>
-  {{- end -}}
-
-  {{- if ne $colGroupValue "" -}}
-    <colgroup>
-      {{- template "createColgroup" $colGroupValue -}}
-    </colgroup>
-  {{- end -}}
-
-  {{- if ne $headValue "" -}}
-    <thead>
-      {{- template "createRowsHead" $headValue -}}
-    </thead>
-  {{- end -}}
-
-  {{- if ne $bodyValue "" -}}
-    <tbody>
-      {{- template "createRows" $bodyValue -}}
-    </tbody>
-  {{- end -}}
-
-  {{- if ne $footValue "" -}}
-    <tfoot>
-      {{- template "createRows" $footValue -}}
-    </tfoot>
-  {{- end -}}
-
-{{- end -}}
-
-<table class="table">
-{{- template "buildTable" $data -}}
-</table>
+```

@@ -103,8 +103,11 @@
                 {{- end -}}
                 {{ "<!-- range by title -->" | safeHTML }}
                 {{- range first $listLimit  $sections.ByTitle }}
-                <li class="collection-item"><a class="secondary-nav__link" href="{{ .Permalink }}">{{- .Title -}}</a></li>
-                {{- end -}}
+                <!-- filter out anything under the evergreen-notes section. -->
+                {{- if ne "evergreen-notes" .Section -}}
+                  <li class="collection-item"><a class="secondary-nav__link" href="{{ .Permalink }}">{{- .Title -}}</a></li>
+                  {{- end -}}
+                {{- end }}
               {{- end }}  <!-- end date/weight/other if-else chain -->
             {{- end -}} <!-- yearly section -->
             </ul>

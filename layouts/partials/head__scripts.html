@@ -26,11 +26,4 @@
       <!-- d3js: Fall back to local if CDN offline -->
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
     {{- end }}
-
-    <!-- plot library -->
-    <script language="javascript" type="text/javascript" src="{{ "/scripts/plot.js" | urlize | relURL }}"></script>
-
-    <!-- canvas drawing code from Matt Might -->
-    <script language="javascript" type="text/javascript" src="{{ "/scripts/canvas-graph.js" | urlize | relURL }}"></script>
-    <script language="javascript" type="text/javascript" src="{{ "/scripts/matt.might.js" | urlize | relURL }}"></script>
     {{ "<!-- END head__scripts.html -->" | safeHTML }}
