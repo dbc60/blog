@@ -239,7 +239,7 @@ a:active {
 /************************************
  * Simple Markdown-Generated Tables *
  ************************************/
-.table {
+.table, table {
   table-layout: fixed;
   border-collapse: collapse;
   text-align: left;
@@ -259,8 +259,13 @@ caption {
   text-align: left;
 }
 
+th {
+  color: var(--background-main-default);
+}
+
 td, th {
   padding: 10px 20px;
+  background-color: var(--background-table-head);
 }
 
 td + td, th + th {
@@ -272,8 +277,6 @@ tr.head:last-child {
 }
 
 thead {
-  background-color: var(--background-table-head);
-  color: var(--gray125);
   border-left: 1px solid var(--gray900);
   border-top: 1px solid var(--gray900);
   border-right: 1px solid var(--gray900);
@@ -301,7 +304,7 @@ tfoot {
   border-right: 1px solid var(--gray900);
 }
 
-.table > tbody {
+.table > tbody, table > tbody {
   border: 1px solid var(--gray900);
 }
 

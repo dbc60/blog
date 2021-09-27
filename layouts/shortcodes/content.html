@@ -1,4 +1,6 @@
 {{- $file := .Get 0}}
 {{- with .Site.GetPage $file -}}
-<a class="evergreen-link" href="{{ .Permalink }}">{{ .Content | markdownify }}</a>
+<a class="evergreen-link" href="{{ .Permalink }}">
+  {{ .Content }}
+</a>
 {{- end -}}
