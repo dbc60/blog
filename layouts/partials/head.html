@@ -20,11 +20,13 @@
     {{- end -}}
     {{- $cssOverrides := resources.Get "style/overrides.css" -}}
     {{- $cssDropCaps := resources.Get "style/drop-caps/drop-caps.css" -}}
+    {{- $cssDropCapsFontDefault := "" -}}
     {{- $cssDropCapsFontGoudy := resources.Get "style/drop-caps/drop-caps_goudy.css" -}}
     <!--{{/* $cssDropCapsFontCheshire := resources.Get "style/drop-caps/drop-caps_cheshire.css" */}}-->
     <!--{{/* $cssDropCapsFontDezs := resources.Get "style/drop-caps/drop-caps_de-zs.css" */}}-->
     <!--{{/* $cssDropCapsFontKanzlei := resources.Get "style/drop-caps/drop-caps_kanzlei.css" */}}-->
     <!--{{/* $cssDropCapsFontYinit := resources.Get "style/drop-caps/drop-caps_yinit.css" */}}-->
+    {{- $cssDropCapsFontDefault = $cssDropCapsFontGoudy -}}
     {{- $breadcrumbs := "style/breadcrumb.css" -}}
     {{- $useNewBreadcrumbs := false -}}
     {{- if $useNewBreadcrumbs -}}
@@ -32,13 +34,28 @@
     {{- end -}}
 
     {{- $cssBreadcrumb := resources.Get $breadcrumbs -}}
+    {{- $cssPrint := resources.Get "style/print.css" -}}
     {{- $cssFonts := resources.Get "style/fonts.css" -}}
+    {{- $cssFontSystemStack := resources.Get "style/font-system-stack.css" -}}
+    {{- $cssFontGoudy := resources.Get "style/font-drop-caps-goudy.css" -}}
+    <!--{{/* $cssFontCheshire := resources.Get "style/font-drop-caps-cheshire.css" */}}-->
+    <!--{{/* $cssFontDezs := resources.Get "style/font-drop-caps-de-zs.css" */}}-->
+    <!--{{/* $cssFontKanzlei := resources.Get "style/font-drop-caps-kanzlei.css" */}}-->
+    <!--{{/* $cssFontYinit := resources.Get "style/font-drop-caps-yinit.css" */}}-->
+    {{- $cssFontDefault := "" -}}
+    <!--{{/* if .Params.dropCapsFont */}}-->
+      <!--{{/* $cssFontDefault = resources.Get (.Params.dropCapsFont | printf "style/font-drop-caps-%s.css") */}}-->
+    <!--{{/* else if .Site.Params.dropCapsFont */}}-->
+      <!--{{/* $cssFontDefault = resources.Get (.Site.Params.dropCapsFont | printf "style/font-drop-caps-%s.css") */}}-->
+    <!--{{/* else */}}-->
+      {{- $cssFontDefault = $cssFontGoudy -}}
+    <!--{{/* end */}}-->
     {{- $cssSyntaxHighlights := resources.Get "style/syntax-highlighting/monokai.css" -}}
     <!--{{/* $cssEntities := resources.Get "style/entities.css" */}}-->
     <!-- ensure cssOverrides is the last CSS source file so it can override any
       selectors from the other files.
     -->
-    {{- $styles := slice $cssPreface $cssDropCaps $cssDropCapsFontGoudy $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssBase $layout $cssOverrides | resources.Concat "style/style.css" -}}
+    {{- $styles := slice $cssPreface $cssDropCaps $cssDropCapsFontDefault $cssFontDefault $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssBase $layout $cssOverrides $cssPrint | resources.Concat "style/style.css" -}}
 
     <!-- minify and fingerprint only if not running locally -->
     {{- if not (in (print .Site.BaseURL) "localhost") -}}

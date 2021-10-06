@@ -1,38 +1,52 @@
 /* Deutsche Zierschrift (de-zs) */
-@media only screen and (min-width: 65ch) {
-  /*  All of these numbers are magic.
-      */
-  .drop-caps_de-zs > p:first-child::first-letter,
-  .drop-caps_de-zs > blockquote:first-child > p::first-letter,
-  .drop-caps_de-zs > .epigraph:first-child > p::first-letter,
+@media (min-width: 65ch) {
+  /* Default for all browsers */
+  /*  All of these numbers are magic. */
   .drop-caps_de-zs::first-letter {
     font-family: Deutsche Zierschrift;
     font-size: 6.5em;
-    text-shadow:
-       0px 2.5px 0 var(--gray100),
-      -4px   4px 0 var(--gray100),
-       4px   4px 0 var(--gray100);
-    opacity: 0.99;
-    margin: 0.06em 0.04em -0.069em 0;
+    margin: 0.06em 0.04em -0.14em 0;
   }
 
-  /*  Compensating for responsive line-height reduction. */
-  @media only screen and (max-width: 120ch) {
-    .drop-caps_de-zs > p:first-child::first-letter,
-    .drop-caps_de-zs > blockquote:first-child > p::first-letter,
-    .drop-caps_de-zs > .epigraph:first-child > p::first-letter,
-    .drop-caps_de-zs::first-letter {
-        font-size: 6.375em;
+  /* Firefox only */
+  @supports (-moz-appearance:none) {
+    .drop-caps_de-zs > p:first-of-type::first-letter {
+      font-family: Deutsche Zierschrift;
+      font-size: 6.5em;
+      margin: 0.06em 0.04em 0 0;
     }
   }
 
   /*  Compensating for responsive line-height reduction. */
-  @media only screen and (max-width: 100ch) {
-    .drop-caps_de-zs > p:first-child::first-letter,
-    .drop-caps_de-zs > blockquote:first-child > p::first-letter,
-    .drop-caps_de-zs > .epigraph:first-child > p::first-letter,
+  @media (max-width: 120ch) {
+    /* Default for all browsers */
     .drop-caps_de-zs::first-letter {
-      font-size: 6.125em;
+      font-size: 4.6em;
+      margin: 0.07em 0.02em -0.25em 0;
+    }
+
+    /* Firefox only */
+    @supports (-moz-appearance:none) {
+      /*  All of these numbers are magic. */
+      .drop-caps_de-zs > p:first-of-type::first-letter {
+        font-size: 4.6em;
+        margin: 0.1em 0.02em 0 0;
+      }
+    }
+  }
+
+  /*  Compensating for responsive line-height reduction. */
+  @media (max-width: 100ch) {
+    /* Default for all browsers */
+    .drop-caps_de-zs::first-letter {
+      font-size: 2.85em;
+    }
+
+    /* Firefox only */
+    @supports (-moz-appearance:none) {
+      .drop-caps_de-zs > p:first-of-type::first-letter {
+        font-size: 2.85em;
+      }
     }
   }
 }

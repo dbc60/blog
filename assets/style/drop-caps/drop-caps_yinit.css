@@ -1,52 +1,55 @@
 /* Yinit */
-@media only screen and (min-width: 65ch) {
-  /*  All of these numbers are magic.
-      */
-  .drop-caps_yinit > p:first-of-type::first-letter,
+@media (min-width: 65ch) {
+  /* Default for all browsers */
+  /*  All of these numbers are magic. */
   .drop-caps_yinit::first-letter {
     font-family: Yinit;
-    font-size: 5.1em;
-    margin: 0.08em 0.1em 0 0;
+    font-size: 5.4em;
+    margin: 0.2em 0.02em -0.3em 0.01em;
   }
 
-  @supports not (-moz-user-focus: normal) {
+  /* Firefox only */
+  @supports (-moz-appearance:none) {
     /*  All of these numbers are magic. */
-    .drop-caps_yinit > p:first-of-type::first-letter,
-    .drop-caps_yinit::first-letter {
-      margin: 0.26em 0.1em -0.3em 0.01em;
+    .drop-caps_yinit > p:first-of-type::first-letter {
+      font-family: Yinit;
+      font-size: 5.4em;
+      margin: 0.08em 0.02em -0.1em 0;
     }
   }
 
   /*  Compensating for responsive line-height reduction. */
-  @media only screen and (max-width: 120ch) {
-    .drop-caps_yinit > p:first-of-type::first-letter,
+  @media (max-width: 120ch) {
+    /* Default for all browsers */
     .drop-caps_yinit::first-letter {
       font-size: 3.6em;
-      margin: 0.14em 0.07em 0 0;
+      margin: 0.3em 0.07em -0.3em 0.01em;
     }
 
-    @supports not (-moz-user-focus: normal) {
+    /* Firefox only */
+    @supports (-moz-appearance:none) {
       /*  All of these numbers are magic. */
-      .drop-caps_yinit > p:first-of-type::first-letter,
-      .drop-caps_yinit::first-letter {
-        margin: 0.3em 0.07em -0.3em 0.01em;
+      .drop-caps_yinit > p:first-of-type::first-letter {
+        font-size: 3.6em;
+        margin: 0.14em 0.07em 0 0;
       }
     }
   }
 
   /*  Compensating for responsive line-height reduction. */
-  @media only screen and (max-width: 110ch) {
-    .drop-caps_yinit > p:first-of-type::first-letter,
+  @media (max-width: 110ch) {
+    /* Default for all browsers */
     .drop-caps_yinit::first-letter {
         font-size: 2.3em;
-        margin: 0.15em 0.06em 0 0;
+        margin: 0.35em 0.06em -0.3em 0.01em;
     }
 
-    @supports not (-moz-user-focus: normal) {
+    /* Firefox only */
+    @supports (-moz-appearance:none) {
       /*  All of these numbers are magic. */
-      .drop-caps_yinit > p:first-of-type::first-letter,
-      .drop-caps_yinit::first-letter {
-        margin: 0.35em 0.06em -0.3em 0.01em;
+      .drop-caps_yinit > p:first-of-type::first-letter {
+        font-size: 2.3em;
+        margin: 0.15em 0.06em 0 0;
       }
     }
   }

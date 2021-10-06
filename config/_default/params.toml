@@ -28,7 +28,11 @@ katex = false
 # Enable/disable baseline.js in layouts/partials/postScript.html
 baseliner = false
 
-componentDropCaps = "drop-caps_goudy"
+#dropCapsFont = "cheshire"
+#dropCapsFont = "de-zs"
+dropCapsFont = "goudy"
+#dropCapsFont = "kanzlei"
+#dropCapsFont = "yinit"
 mainSections = ["note", "post", "project"]
 planck = "\u210E"
 reduced_planck = "\u210F"

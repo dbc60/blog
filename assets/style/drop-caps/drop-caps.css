@@ -21,7 +21,7 @@
     rst2html5, so I've removed lines like
     ".c-drop-caps > .document p:first-of-type:first-letter"
   */
-@media only screen and (min-width: 65ch) {
+@media (min-width: 65ch) {
   /* uncomment for debugging */
   /* .c-drop-caps, .c-drop-caps > .document { */
     /* border: 2px solid #3bc9db; */
@@ -52,7 +52,8 @@
     }
   }
 
-  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Select chrome */
+  @media (-webkit-min-device-pixel-ratio: 0) {
     .c-drop-caps::first-letter {
       line-height: 1; /* needed for chrome */
     }

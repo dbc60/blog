@@ -77,7 +77,6 @@ googleAnalytics = ""
 [menu]
   [[menu.nav]]
     name = "Home"
-    #pre = "home"
     url = "/"
     weight = 100
   [[menu.nav]]
@@ -86,17 +85,14 @@ googleAnalytics = ""
     weight = 500
   [[menu.nav]]
     name = "About"
-    #pre = "smile"
     url = "/about/"
     weight = 900
   [[menu.nav]]
     name = "Now"
-    #pre = "coffee"
     url = "/now/"
     weight = 950
   [[menu.nav]]
     name = "RSS"
-    #pre = "rss"
     url = "/index.xml"
     weight = 1000
 
