@@ -1,7 +1,8 @@
     {{ "<!-- BEGIN layouts/_default/summary.html-->" | safeHTML }}
-    <!-- the regex removes footnote links from the summary text -->
-    {{- .Summary | replaceRE `<sup.*footnote-ref.*><a href.*#fn:.*/a></sup>` "" | safeHTML }}
+    {{- .Summary }}
     <footer class="read-more">
+      {{- if .Truncated -}}
       <a href='{{ .Permalink }}'><span class="read-more">Read more →</span></a>
+      {{- end -}}
     </footer>
     {{ "<!-- END layouts/_default/summary.html-->" | safeHTML -}}

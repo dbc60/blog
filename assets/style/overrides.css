@@ -98,7 +98,7 @@ blockquote {
   box-shadow: 5px 5px 5px var(--background-main-shadow-gray);
 }
 
-blockquote p:first-child::before {
+blockquote p:first-of-type::before {
   content: open-quote;
   color: var(--gray500);
   font-size: 4em;
@@ -106,7 +106,7 @@ blockquote p:first-child::before {
   vertical-align: bottom;
 }
 
-blockquote p:last-child::after {
+blockquote p:last-of-type::after {
   content: close-quote;
   color: var(--gray500);
   font-size: 4em;
@@ -221,6 +221,18 @@ a:active {
 .evergreen-link:active .highlight {
   outline: 1px solid var(--color-anchor-hover);
 }
+
+/* add left arrow */
+.slip-note-section::before {
+  content: "\2B9C"
+}
+
+/* add right arrow */
+.slip-note-next::before {
+  content: "\2B9E"
+}
+
+p:empty {display:none;}
 
 .pagination {
   list-style-type: none;

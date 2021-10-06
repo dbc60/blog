@@ -1,0 +1,3 @@
+{{- $page := .Site.GetPage (.Get 0) -}}
+  {{- $page.Content -}}
+  <div class="slip-note-section"><a class="slip-note" href="{{ $page.Permalink }}">{{ $page.Title }}</a></div>

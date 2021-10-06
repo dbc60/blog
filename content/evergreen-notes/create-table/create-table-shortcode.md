@@ -14,7 +14,7 @@ date: 2021-09-23T17:48:37-04:00
 {{< content "/evergreen-notes/create-table/template-create-rows-head" >}}
 {{< content "/evergreen-notes/create-table/template-create-rows" >}}
 {{< content "/evergreen-notes/create-table/template-create-colgroup" >}}
-{{< content "evergreen-notes/create-table/begin-buildtable-template" >}}
+{{< content "/evergreen-notes/create-table/begin-buildtable-template" >}}
 {{< content "/evergreen-notes/create-table/build-table-initialization.md" >}}
 {{< content "/evergreen-notes/create-table/table-collect-keys" >}}
 {{< content "/evergreen-notes/create-table/table-capture-values" >}}

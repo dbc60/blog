@@ -80,7 +80,7 @@
   --color-border-bottom-code: #ddd7cf;
   --color-border-toc: var(--gray900);
   --color-border-admonition: var(--background-main-shadow-gray);
-  --margin-toc-vertical: 1em;
+  --margin-toc-vertical: 0.5em;
   --margin-toc-left: 4%;
 
   /* Admonitions */
@@ -407,6 +407,11 @@ ul {
   padding-left: 1em;
 }
 
+li ul, li ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /* Description List styles */
 dt {
   font-weight: bold;
@@ -561,6 +566,14 @@ svg .plot {display: none; margin: 1em;}
 svg .plot thead {font-size: 110%; color: #888a85;}
 svg .plot em {font-variant: small-caps; font-style: normal;}
 svg .plot th {padding-right: 1em; font-style: italic;}
+
+/* Place a separator between every pair of navigation links */
+.main-nav__link + .main-nav__link {
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: var(--color600);
+  padding-left: 0.25em;
+}
 
 /*************************
   * Debug Border and Fill *

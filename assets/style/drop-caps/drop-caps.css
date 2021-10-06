@@ -19,7 +19,7 @@
     rst2html5 adds a section with a .document class, so all posts/notes
     generated from reStructuredText files need this. Note: I gave up on
     rst2html5, so I've removed lines like
-    ".c-drop-caps > .document > p:first-child:first-letter"
+    ".c-drop-caps > .document p:first-of-type:first-letter"
   */
 @media only screen and (min-width: 65ch) {
   /* uncomment for debugging */
@@ -29,7 +29,7 @@
     /* background-color: #e3fafc; */
   /* } */
 
-  .c-drop-caps > p:first-child:first-letter {
+  .c-drop-caps::first-letter {
     float: left;
     font-style: normal;
     font-weight: normal;
@@ -39,27 +39,39 @@
     /* background-color: #1098ad; */
   }
 
+  /* Firefox only */
+  @supports (-moz-appearance:none) {
+    .c-drop-caps > p:first-of-type::first-letter {
+      float: left;
+      font-style: normal;
+      font-weight: normal;
+      color: var(--color600);
+      /* uncomment for debugging */
+      /* border-radius: 5px; */
+      /* background-color: #1098ad; */
+    }
+  }
 
-  @supports not (-moz-user-focus: normal) {
-    .c-drop-caps > p:first-child:first-letter {
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .c-drop-caps::first-letter {
       line-height: 1; /* needed for chrome */
     }
   }
 
-  .c-drop-caps > p:first-child {
+  .c-drop-caps::first-letter {
     display: flow-root;
     /* border-radius: 5px; */
     /* background-color: paleturquoise; */
   }
 
- /* .c-drop-caps > p:first-child + p */
+ /* .c-drop-caps p:first-of-type + p */
  /* { */
  /*   border-radius: 5px; */
  /*   background-color: palegreen; */
  /* } */
 
-/*  .c-drop-caps > p:first-child + ul:first-of-type, */
-/*  .c-drop-caps > p:first-child + h2:first-of-type */
+/*  .c-drop-caps p:first-of-type + ul:first-of-type, */
+/*  .c-drop-caps p:first-of-type + h2:first-of-type */
 /*  { */
 /*    border-radius: 5px; */
 /*    background-color: palegoldenrod; */

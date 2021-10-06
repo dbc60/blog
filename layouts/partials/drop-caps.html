@@ -7,8 +7,6 @@
           {{- $componentDropCapsFont = .Site.Params.componentDropCaps -}}
         {{- else -}}
           {{- $componentDropCaps = "c-drop-caps__none" -}}
-        {{- end }}
-        <section class="content {{ $componentDropCaps }} {{ $componentDropCapsFont }}">
-          {{ .Content }}
-        </section>
-        {{ "<!--END layouts/partials/drop-caps.html -->" | safeHTML -}}
+        {{- end -}}
+        <section class="content {{ $componentDropCaps }} {{ $componentDropCapsFont }}">{{ .Content }}</section>
+        {{- "<!--END layouts/partials/drop-caps.html -->" | safeHTML -}}
