@@ -51,15 +51,16 @@
 /* LiteralNumberOct */ .chroma .mo, .literal.number.oct { color: #945aff; }
 /* Operator */ .chroma .o, .operator { color: #f92672; }
 /* OperatorWord */ .chroma .ow, .operator.word { color: #f92672; }
-/* Comment */ .chroma .c, comment { color: #75715e; }
-/* CommentHashbang */ .chroma .ch, comment.hashbang { color: #75715e; }
-/* CommentMultiline */ .chroma .cm, comment.multiline { color: #75715e; }
-/* CommentSingle */ .chroma .c1, .comment.single { color: #75715e; }
-/* CommentSpecial */ .chroma .cs, comment.special { color: #75715e; }
-/* CommentPreproc */ .chroma .cp, comment.preproc { color: #75715e; }
-/* CommentPreprocFile */ .chroma .cpf, comment.preproc.file { color: #75715e; }
+/* Comment */ .chroma .c, comment { color: green; }
+/* CommentHashbang */ .chroma .ch, comment.hashbang { color: green; }
+/* CommentMultiline */ .chroma .cm, comment.multiline { color: green; }
+/* CommentSingle */ .chroma .c1, .comment.single { color: green; }
+/* CommentSpecial */ .chroma .cs, comment.special { color: green; }
+/* CommentPreproc */ .chroma .cp, comment.preproc { color: green; }
+/* CommentPreprocFile */ .chroma .cpf, comment.preproc.file { color: green; }
 /* GenericDeleted */ .chroma .gd, .generic.deleted { color: #f92672; }
 /* GenericEmph */ .chroma .ge, .generic.emph { font-style: italic; }
 /* GenericInserted */ .chroma .gi, .generic.inserted { color: #679a01; }
 /* GenericStrong */ .chroma .gs, .generic.strong { font-weight: bold; }
 /* GenericSubheading */ .chroma .gu, .generic.subheading { color: #75715e; }
+/* NOTE: changed all the comments from #75715e to green */

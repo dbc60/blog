@@ -3,4 +3,4 @@
 {{- with .Site.GetPage $file -}}
 <a class="evergreen-link" href="{{ .Permalink }}">{{ .Content -}}</a>
 {{- end -}}
-{{- "<!-- BEGIN content shortcode -->" | safeHTML -}}
+{{- "<!-- END content shortcode -->" | safeHTML -}}
