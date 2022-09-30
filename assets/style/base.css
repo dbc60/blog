@@ -83,6 +83,21 @@
   --margin-toc-vertical: 0.5em;
   --margin-toc-left: 4%;
 
+  /* Social Media */
+  --color-twitter: #1da1f2;
+  --color-linkedin: #0077b5;
+  --color-youtube: #ff0000;
+  --color-pinterest: #e60023;
+  --color-tumblr: #35465C;
+  --color-hackernews: #ff6600;
+  --color-instagram: #8a3ab9;
+  --color-stackoverflow: #f47f24;
+  --color-reddit: #ff4500;
+  --color-email: var(--gray900);
+  --color-rss: var(--gray800);
+  --color-facebook: #4267b2;
+  --color-github: #333;
+
   /* Admonitions */
   --color-caution: #fafacc;
   --color-danger: #f30000;

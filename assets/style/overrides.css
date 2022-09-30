@@ -474,95 +474,95 @@ tfoot {
 
 
 a.email {
-  color: var(--gray900);
+  color: var(--color-email);
 }
 
 a.facebook {
-  color: #3B5998;
+  color: var(--color-facebook);
 }
 
 a.github {
-  color: black;
+  color: var(--color-github);
 }
 
 a.hackernews {
-  color: #ff6600;
+  color: var(--color-hackernews);
 }
 
 a.instagram {
-  color: #2d2d2d;
+  color: var(--color-instagram);
 }
 
 a.linkedin {
-  color: #4875B4;
+  color: var(--color-linkedin);
 }
 
 a.pinterest {
-  color: #c8232c;
+  color: var(--color-pinterest);
 }
 
 a.reddit {
-  color: #41700f;
+  color: var(--color-reddit);
 }
 
 a.rss {
-  color: var(--gray900);
+  color: var(--color-rss);
 }
 
 a.stackoverflow {
-  color: #2d2d2d;
+  color: var(--color-stackoverflow);
 }
 
 a.tumblr {
-  color: #2B4964;
+  color: var(--color-tumblr);
 }
 
 a.twitter {
-  color: #33ccff;
+  color: var(--color-twitter);
 }
 
 a.youtube {
-  color: #FF3333;
+  color: var(--color-youtube);
 }
 
 a.email:hover {
-  background-color: var(--gray900);
+  background-color: var(--color-email);
 }
 
 a.facebook:hover {
-  background-color: #3B5998;
+  background-color: var(--color-facebook);
 }
 
 a.github:hover {
-  background-color: black;
+  background-color: var(--color-github);
 }
 
 a.hackernews:hover {
-  background-color: #ff6600;
+  background-color: var(--color-hackernews);
 }
 
 a.instagram:hover {
-  background-color: #2d2d2d;
+  background-color: var(--color-instagram);
 }
 
 a.linkedin:hover {
-  background-color: #4875B4;
+  background-color: var(--color-linkedin);
 }
 
 a.pinterest:hover {
-  background-color: #c8232c;
+  background-color: var(--color-pinterest);
 }
 
 a.reddit:hover {
-  background-color: #41700f;
+  background-color: var(--color-reddit);
 }
 
 a.rss:hover {
-  background-color: var(--gray900);
+  background-color: var(--color-rss);
 }
 
 a.stackoverflow:hover {
-  background-color: #2d2d2d;
+  background-color: var(--color-stackoverflow);
 }
 
 a.subscribemail:hover {
@@ -570,15 +570,15 @@ a.subscribemail:hover {
 }
 
 a.tumblr:hover {
-  background-color: #2B4964;
+  background-color: var(--color-tumblr);
 }
 
 a.twitter:hover {
-  background-color: #33ccff;
+  background-color: var(--color-twitter);
 }
 
 a.youtube:hover {
-  background-color: #FF3333;
+  background-color: var(--color-youtube);
 }
 
 
