@@ -2,7 +2,7 @@
 title: "A New Hugo-Based Blog"
 date: 2020-02-22T17:38:32-05:00
 2020: ["02"]
-tags: [blog,hugo]
+tags: [blog]
 publishDate: 2020-02-22
 math: true
 featuredImage: "/images/banners/hugo-banner.jpg"

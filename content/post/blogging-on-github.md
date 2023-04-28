@@ -2,7 +2,7 @@
 title: A Blog on GitHub
 date: 2015-12-30
 2015: ["12"]
-tags: [blog,github]
+tags: [blog]
 ---
 
 What do you really need to know to setup a blog on GitHub?

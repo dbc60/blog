@@ -20,3 +20,4 @@ $RECYCLE.BIN/
 
 # Static files I don't want put under version control
 /static/data/
+.hugo_build.lock

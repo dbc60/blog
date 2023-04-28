@@ -101,8 +101,8 @@
                 {{- if isset .context.Site.Params "list_limit" -}}
                   {{- $listLimit = .context.Site.Params.list_limit -}}
                 {{- end -}}
-                {{ "<!-- range by title -->" | safeHTML }}
-                {{- range first $listLimit  $sections.ByTitle }}
+                {{ "<!-- range by title, but the Includes folder is for transclusion files only -->" | safeHTML }}
+                {{- range first $listLimit (where $sections.ByTitle "Title" "!=" "Includes") }}
                 <li class="collection-item"><a class="secondary-nav__link" href="{{ .Permalink }}">{{- .Title -}}</a></li>
                 {{- end -}}
               {{- end }}  <!-- end date/weight/other if-else chain -->

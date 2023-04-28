@@ -2,7 +2,7 @@
 title: "Restart"
 date: 2020-02-11T05:48:36-05:00
 2020: ["02"]
-tags: [blog,static-site-generator,jekyll,compass,hugo,sphinx,zettelkasten]
+tags: [blog]
 publishDate: 2020-02-15
 ---
 
