@@ -7,7 +7,7 @@ enableRobotsTXT = true
 #Paginate = 8
 canonifyURLs = true
 footnoteReturnLinkContents = "↩"
-#enableGitInfo = true
+enableGitInfo = true
 enableEmoji = true
 # I think this will ignore files in this git repository, specifically, it should
 # ignore .git/, .vscode/, .obsidian/, archetypes/, assets/, static, and the
@@ -17,6 +17,12 @@ ignoreFiles = ["\\.git/.*", "\\.vscode/.*", "\\.editorconfig$", "\\.obsidian/.*"
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
+
+[frontmatter]
+  date = ['date', 'publishDate', 'lastmod']
+  lastmod = ['lastmod', ':git', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']
+  expiryDate = ['expiryDate']
 
 # Do NOT set lineNumbersInTable to true. It really screws up how code blocks
 # are displayed when their content exceeds the available width on the page.

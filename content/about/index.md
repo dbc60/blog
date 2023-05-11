@@ -1,16 +1,16 @@
 ---
 title: About
 date: 2016-04-20T00:00:00
-lastmod: 2022-11-05T08:06:31-04:00
+lastmod: 2023-04-28
 ---
 
-Good day! I'm Douglas Cuthbertson, a professional software engineer living in Massachusetts. Mostly, I develop applications and kernel drivers on Microsoft Windows. Lately, I've been writing software in [Go](https://golang.org/) for both Linux and Windows (it's my new favorite programming language).
+I am Douglas Cuthbertson, a professional software engineer living in Massachusetts. Mostly, I develop applications and kernel drivers on Microsoft Windows. Lately, I've been writing software in [Go](https://golang.org/) for both Linux and Windows (it's my new favorite programming language).
 
 <!--more-->
 
 I tend to read too much about software development and not write enough code, so my intent is to use this blog to explore some of the aspects of coding and engineering I've enjoyed reading about and put them into practice.
 
-Besides my professional work, I'm a husband, a father to two really wonderful children who have grown up and are launching careers of their own.
+Besides my professional work, I'm a husband, and a father to two really wonderful children who have grown up and are launching careers of their own.
 
 Among other things, I
 
