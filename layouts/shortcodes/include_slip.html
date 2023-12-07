@@ -1,5 +1,5 @@
-{{- "<!-- BEGIN include-slip shortcode -->" | safeHTML -}}
+{{- "<!-- BEGIN include_slip shortcode -->" | safeHTML -}}
 {{- $file := .Get 0 -}}
 {{- /* remove front matter */ -}}
 {{- $file | readFile | replaceRE "^---[\\s\\S]+?---" "" | markdownify -}}
-{{- "<!-- END include-slip shortcode -->" | safeHTML -}}
+{{- "<!-- END include_slip shortcode -->" | safeHTML -}}

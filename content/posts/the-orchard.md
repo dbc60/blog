@@ -4,7 +4,7 @@ date: 2022-11-05T08:07:31-04:00
 2022: ["11"]
 tags: [life]
 featuredImage: "images/banners/Orchard_thumb.jpg"
-featuredDescription: "The Orchard"
+featuredImageDescription: "The Orchard"
 ---
 My wife and I went to the Paramount Theater in Boston last night to see The Orchard, a variation of Anton Chekhov's play, The Cherry Orchard, starring Jessica Hecht and Mikhail Baryshnikov. It was a very avant-garde play. It used a robotic arm that was its own character, a Boston Dynamics robotic dog, and a projection ~~screen~~ curtain draped in front of the whole stage.
 <!--more-->

@@ -6,14 +6,14 @@ tags: [blog]
 publishDate: 2020-02-22
 math: true
 featuredImage: "/images/banners/hugo-banner.jpg"
-featuredDescription: "Hugo logo"
+featuredImageDescription: "Hugo logo"
 featuredCopyright: "The Hugo logo is copyright © Steve Francia 2013–2021."
 ---
 
 In my [previous post]({{< ref "restart" >}}) I talked a little about why and how I started this blog. Here I want to present my experience with [Hugo] and what I like about it.
 <!--more-->
 
-{{< table-of-contents >}}
+{{< table_of_contents >}}
 
 Late in 2018  I came across [Hugo], a static site generator written in [Go][golang]. Dissatisfied with Jekyll, I needed a different static site generator, and I had been learning Go at Work. This looked like a good opportunity to try blogging again.
 

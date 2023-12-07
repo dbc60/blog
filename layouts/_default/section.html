@@ -4,19 +4,19 @@
 {{ if gt .WordCount 0 }}
   {{- "<!-- BEGIN content div layouts/_default/section.html -->" | safeHTML }}
   {{- $featuredImage := "" -}}
-  {{- $featuredDescription := "" -}}
+  {{- $featuredImageDescription := "" -}}
   {{- if .Params.featuredImage -}}
     {{- $featuredImage = .Params.featuredImage -}}
-    {{- $featuredDescription = .Params.featuredDescription -}}
+    {{- $featuredImageDescription = .Params.featuredImageDescription -}}
   {{- else -}}
     {{- $featuredImage = .Site.Params.featuredImage -}}
-    {{- $featuredDescription = .Site.Params.featuredDescription -}}
+    {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
   {{- end -}}
   <section class="page-summary">
     <div class="flex-row">
       <div class="pl3-ns">
         <a href="{{ .Permalink }}" class="db grow">
-          <img src="{{ $featuredImage | absURL }}" alt={{ $featuredDescription }}>
+          <img src="{{ $featuredImage | absURL }}" alt={{ $featuredImageDescription }}>
         </a>
       </div>
       <div class="pr3-ns">
@@ -37,19 +37,19 @@
   {{- range $pag.Pages -}}
     <!-- NOTE: <section> is important. It shrinks the size of the <h2> element-->
     {{- $featuredImage := "" -}}
-    {{- $featuredDescription := "" -}}
+    {{- $featuredImageDescription := "" -}}
     {{- if .Params.featuredImage -}}
       {{- $featuredImage = .Params.featuredImage -}}
-      {{- $featuredDescription = .Params.featuredDescription -}}
+      {{- $featuredImageDescription = .Params.featuredImageDescription -}}
     {{- else -}}
       {{- $featuredImage = .Site.Params.featuredImage -}}
-      {{- $featuredDescription = .Site.Params.featuredDescription -}}
+      {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
     {{- end -}}
     <section class="page-summary">
       <div class="flex-row">
         <div class="pl3-ns">
           <a href="{{ .Permalink }}" class="db grow">
-            <img src="{{ $featuredImage | absURL }}" alt={{ $featuredDescription }}>
+            <img src="{{ $featuredImage | absURL }}" alt={{ $featuredImageDescription }}>
           </a>
         </div>
         <div class="pr3-ns">
@@ -65,7 +65,7 @@
 {{ "<!-- END range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
 {{- template "_internal/pagination.html" . }}
 
-{{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments     .Params.disable_comments)) }}
+{{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
 <section class="comments">{{- "<!-- BEGIN comments section layouts/_default/section.html -->" | safeHTML }}
   {{ template "_internal/disqus.html" . }}
 </section> {{- "<!-- END comments section layouts/_default/section.html -->" | safeHTML }}

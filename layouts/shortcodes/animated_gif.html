@@ -2,7 +2,7 @@
   The rule when using this shortcut is there must be a static image and an
   animated gif. The path to the static image will be passed to "src"
   (i.e., "src:<path-to-static-image"). The path to the animated GIF will be
-  passed to "link" (i.e., "link:<path-to-animated-gif>").
+  passed to "link" (i.e., "link:<path-to-animated_gif>").
 -->
 <figure{{ with .Get "class" }} class="post-image object-and-details {{ . }}" {{ else }} class="post-image object-and-details" {{ end }}>
   {{- if .Get "link" -}}

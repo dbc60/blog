@@ -4,6 +4,6 @@
 
 {{ range .Site.Pages }}
     {{ if eq (.Date.Format "January") $archMonth }}
-        {{ partial "post/archive" . }}
+        {{ partial "posts/archive" . }}
     {{ end }}
 {{ end }}

@@ -11,4 +11,4 @@ The tiniest information about this site:
 
   Standards: HTML5, CSS3
   Components: HTML5, CSS3, JavaScript (mostly MathJax and D3js)
-  Software: Hugo, Visual Studio Code
+  Software Tools: Hugo, Visual Studio Code

@@ -102,7 +102,7 @@
                   {{- $listLimit = .context.Site.Params.list_limit -}}
                 {{- end -}}
                 {{ "<!-- range by title, but the Includes folder is for transclusion files only -->" | safeHTML }}
-                {{- range first $listLimit (where $sections.ByTitle "Title" "!=" "Includes") }}
+                {{- range first $listLimit (where $sections.ByTitle "Section" "!=" "evergreen-notes") }}
                 <li class="collection-item"><a class="secondary-nav__link" href="{{ .Permalink }}">{{- .Title -}}</a></li>
                 {{- end -}}
               {{- end }}  <!-- end date/weight/other if-else chain -->

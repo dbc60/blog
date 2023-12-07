@@ -224,12 +224,12 @@ a:active {
 }
 
 /* add left arrow */
-.slip-note-section::before, .slip-note-back::before {
+.slip_note_section::before, .slip_note-back::before {
   content: "\2B9C";
 }
 
 /* add right arrow */
-.slip-note-next::before {
+.slip_note_next::before {
   content: "\2B9E";
 }
 
@@ -584,7 +584,7 @@ a.youtube:hover {
 
 
 /* Various to-do-list shortcodes */
-.event-list {
+.event_list {
   margin-top: 0.5em;
   padding-left: 0;
   list-style: none;
@@ -803,7 +803,7 @@ input[type=checkbox]:checked::after {
   display: block;
 }
 ********************************************
-.table-of-contents {
+.table_of_contents {
   background: var(--background-toc) none repeat scroll 0 0;
   border: 1px solid var(--color-border-toc);
   margin-left: 0.5em;
@@ -816,7 +816,7 @@ input[type=checkbox]:checked::after {
   padding-left: 0;
 }
 
-.table-of-contents li {
+.table_of_contents li {
   list-style-type: none;
   font-size: 0.9em;
   font-weight: 600;
@@ -943,14 +943,14 @@ h1.example {
   background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 93.749%, cyan 93.75%, cyan 100%), linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 93.749%, cyan 93.75%, cyan 100%);
 }
 
-.content-collection {
+.content_collection {
   display: inline-grid;
   background-color: var(--background-code);
   border-left: 0.1em solid var(--color-border-left);
   margin-top: 1rem;
 }
 
-.content-collection .chroma {
+.content_collection .chroma {
   border-left: none;
   margin-top: 0;
   margin-bottom: 0;

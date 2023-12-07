@@ -7,7 +7,7 @@ draft: true
 ---
 How do I test a library that matches glob patterns to file paths? Glob patterns consist of literal characters, a few wildcards, '`?`', '`[`', and '`*`', the last of which can be doubled to match paths recursively, and each of which can be escaped to match the literal character. So we have eight kinds of patterns to test: literals, four kinds of wildcards, and three escaped wildcards, which means there are $8! = 40,320$ possible permutations. Fortunately, we don't have to test all of those possibilities to ensure reasonable code coverage.
 <!--more-->
-{{< table-of-contents >}}
+{{< table_of_contents >}}
 
 
 

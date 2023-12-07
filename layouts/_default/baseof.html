@@ -6,13 +6,13 @@
   {{- end -}}
   <body>
     {{- $featuredImage := "" -}}
-    {{- $featuredDescription := "" -}}
+    {{- $featuredImageDescription := "" -}}
     {{- if .Params.featuredImage -}}
       {{- $featuredImage = .Params.featuredImage -}}
-      {{- $featuredDescription = .Params.featuredDescription -}}
+      {{- $featuredImageDescription = .Params.featuredImageDescription -}}
     {{- else -}}
       {{- $featuredImage = .Site.Params.featuredImage -}}
-      {{- $featuredDescription = .Site.Params.featuredDescription -}}
+      {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
     {{- end -}}
     <div class="masthead">
     {{- partial "siteHeader.html" . -}}
@@ -55,7 +55,7 @@
         </ul>
       </div>
       <main class="main-content">
-        <img class="featured-image" src="{{ $featuredImage | absURL }}" alt={{ $featuredDescription }}>
+        <img class="featured-image" src="{{ $featuredImage | absURL }}" alt={{ $featuredImageDescription }}>
       {{ block "main" . -}}
         <h2>Default Main (Should Never Appear)</h2>
       {{- end }}

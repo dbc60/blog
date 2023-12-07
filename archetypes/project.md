@@ -6,4 +6,4 @@ tags: [project]
 ---
 
 <!--more-->
-{{< table-of-contents >}}
+{{< table_of_contents >}}

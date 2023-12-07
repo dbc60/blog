@@ -6,4 +6,4 @@ tags: [uncategorized]
 ---
 
 <!--more-->
-{{< table-of-contents >}}
+{{< table_of_contents >}}

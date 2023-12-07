@@ -1,23 +1,23 @@
     {{- define "main" }}
     {{ "<!-- BEGIN main in layouts/index.html -->" | safeHTML }}
       <div class="content">
-        {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
-        {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Section" "post") -}}
+        {{ "<!-- Paginates through content/posts/*.md -->" | safeHTML }}
+        {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Section" "posts") -}}
         {{- range $idxPage, $_ := $paginator.Pages -}}
         {{- $featuredImage := "" -}}
-        {{- $featuredDescription := "" -}}
+        {{- $featuredImageDescription := "" -}}
         {{- if .Params.featuredImage -}}
           {{- $featuredImage = .Params.featuredImage -}}
-          {{- $featuredDescription = .Params.featuredDescription -}}
+          {{- $featuredImageDescription = .Params.featuredImageDescription -}}
         {{- else -}}
           {{- $featuredImage = .Site.Params.featuredImage -}}
-          {{- $featuredDescription = .Site.Params.featuredDescription -}}
+          {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
         {{- end -}}
         <section class="page-summary">
           <div class="flex-row">
             <div class="pl3-ns">
               <a href="{{ .Permalink }}" class="db grow">
-                <img src="{{ $featuredImage | absURL }}" alt={{ $featuredDescription }}>
+                <img src="{{ $featuredImage | absURL }}" alt={{ $featuredImageDescription }}>
               </a>
             </div>
             <div class="pr3-ns">

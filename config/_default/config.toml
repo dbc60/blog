@@ -13,7 +13,7 @@ enableEmoji = true
 # ignore .git/, .vscode/, .obsidian/, archetypes/, assets/, static, and the
 # .editorconfig file.
 #ignoreFiles = ["\\.git/.*", "\\.vscode/.*", "\\.editorconfig$", "\\.obsidian/.*"]
-ignoreFiles = ["\\.git/.*", "\\.vscode/.*", "\\.editorconfig$", "\\.obsidian/.*"]
+ignoreFiles = ["\\.git/.*", "\\.vscode/.*", "\\.editorconfig$", "\\.obsidian/.*", "admin"]
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
@@ -87,16 +87,20 @@ googleAnalytics = ""
     weight = 100
   [[menu.nav]]
     name = "Posts"
-    url = "/post/"
+    url = "/posts/"
     weight = 500
   [[menu.nav]]
     name = "About"
     url = "/about/"
-    weight = 900
+    weight = 700
   [[menu.nav]]
     name = "Now"
     url = "/now/"
-    weight = 950
+    weight = 800
+  [[menu.nav]]
+    name = "Bookmarks"
+    url = "/bookmarks/"
+    weight = 900
   [[menu.nav]]
     name = "RSS"
     url = "/index.xml"
@@ -149,5 +153,5 @@ rssLimit = 20
   contact = "/:sections/:slug/"
   journal = "/:sections/:slug/"
   note = "/:sections/:slug/"
-  post = "/:year/:month/:slug/"
+  posts = "/:year/:month/:slug/"
   project = "/:sections/:slug/"
