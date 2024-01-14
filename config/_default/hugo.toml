@@ -1,4 +1,4 @@
-baseurl = "https://douglascuthbertson.com"
+baseURL = "https://douglascuthbertson.com"
 languageCode = "en-us"
 title = "Doug's Blog"
 
