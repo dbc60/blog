@@ -2,8 +2,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="{{ .Site.author.name }}">
-    <meta property="og:description" name="description" content="{{ .Site.Params.description }}">
+    <meta name="author" content="{{ .context.Site.Params.author.name }}">
+    <meta property="og:description" name="description" content="{{ .context.Site.Params.description }}">
     {{ "<!-- The four required og properties are og:title, og:type, -->" | safeHTML }}
     {{ "<!-- og:url, and og:image. See Open Graph Protocol (ogp.me) -->" | safeHTML }}
     {{ "<!-- I used https://realfavicongenerator.net/ to generate the -->" | safeHTML }}

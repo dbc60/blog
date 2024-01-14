@@ -2,7 +2,7 @@
     <!-- Variable definitions -->
     {{- $titleDefault := print .Title " | " .Site.Title -}}
     {{- if .IsHome -}}
-      {{- $titleDefault = .Site.Title }}
+      {{- $titleDefault = .Site.Title -}}
     {{- end -}}
 
     <!-- For more info about using SCSS and this pipeline see:
@@ -32,7 +32,6 @@
     {{- if $useNewBreadcrumbs -}}
     {{- $breadcrumbs = "style/breadcrumb-new.css" -}}
     {{- end -}}
-
     {{- $cssBreadcrumb := resources.Get $breadcrumbs -}}
     {{- $cssPrint := resources.Get "style/print.css" -}}
     {{- $cssFonts := resources.Get "style/fonts.css" -}}
@@ -53,15 +52,14 @@
     {{- $cssSyntaxHighlights := resources.Get "style/syntax-highlighting/monokai.css" -}}
     <!--{{/* $cssEntities := resources.Get "style/entities.css" */}}-->
     <!-- ensure cssOverrides is the last CSS source file so it can override any
-      selectors from the other files.
+        selectors from the other files.
+        <span>last comment</span>
     -->
     {{- $styles := slice $cssPreface $cssDropCaps $cssDropCapsFontDefault $cssFontDefault $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssBase $layout $cssOverrides $cssPrint | resources.Concat "style/style.css" -}}
-
     <!-- minify and fingerprint only if not running locally -->
     {{- if not (in (print .Site.BaseURL) "localhost") -}}
     {{- $styles = $styles | minify | fingerprint -}}
     {{- end -}}
-
     <!-- map . (the current context) to "context" and $titleDefault to
       titleSite. This means that anything in the block that needs to access
       dot-variables will have to use ".context.Var" instead of ".Var". For

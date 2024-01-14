@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-{{- $lang := .Site.Language.Lang | default "en" -}}
+{{- $lang := .Site.Language.Lang | default "en" }}
 <html lang="{{ $lang }}">
-  {{- block "head" . -}}
+  {{ block "head" . -}}
   {{- partial "head.html" . -}}
   {{- end -}}
   <body>
