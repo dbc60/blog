@@ -1,0 +1,37 @@
+{{- define "main" }}
+{{ "<!-- BEGIN main layouts/projects/list.html -->" | safeHTML }}
+<div class="content">
+    {{ "<!-- Paginates through content/projects/*.md -->" | safeHTML }}
+  {{ $paginator := .Paginate (where .Pages "Type" "projects") -}}
+  {{- if gt (len $paginator.Pages) 0 }}
+    {{- range $paginator.Pages }}
+      {{- $featuredImage := "" -}}
+      {{- $featuredImageDescription := "" -}}
+      {{- if .Params.featuredImage -}}
+        {{- $featuredImage = .Params.featuredImage -}}
+        {{- $featuredImageDescription = .Params.featuredImageDescription -}}
+      {{- else -}}
+        {{- $featuredImage = .Site.Params.featuredImage -}}
+        {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
+      {{- end -}}
+      <section class="page-summary">
+        <div class="flex-row">
+          <div class="pl3-ns">
+            <a href="{{ .Permalink }}" class="db grow">
+              <img src="{{ $featuredImage | absURL }}" alt={{ $featuredImageDescription }}>
+            </a>
+          </div>
+          <div class="pr3-ns">
+            <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            {{- partial "date-and-tags.html" . -}}
+            {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
+            {{- .Render "summary" }}
+          </div>
+        </div>
+      </section>
+    {{ end -}}
+  {{- end -}}
+  {{- template "_internal/pagination.html" . }}
+</div>
+{{ "<!-- END main layouts/projects/list.html -->" | safeHTML }}
+{{- end -}}

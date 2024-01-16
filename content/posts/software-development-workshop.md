@@ -1,11 +1,9 @@
 ---
-'2023':
-  - '11'
-date: '2023-11-18T12:04:32.000Z'
-tags:
-  - swdev
-draft: true
 title: Software-Development Workshop
+'2023': ['11']
+date: '2023-11-18T12:04:32.000Z'
+tags: [swdev]
+draft: true
 ---
 
 I have recently started to consider an analogy between the process of software development and a workshop as a place where a craftsperson builds stuff. A workshop for writing software is a place where a programmer can find the various tools and resources needed for creating computer programs. The programmer can select tools from the workshop to build their own development environment, or to continue the analogy, set up their workbench for the tasks at hand.

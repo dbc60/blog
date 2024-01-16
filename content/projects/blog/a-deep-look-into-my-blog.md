@@ -4,6 +4,7 @@ date: 2024-01-14T08:24:59-05:00
 2024: ["01"]
 tags: [blog]
 draft: true
+weight: 10
 ---
 I want to separate the presentation of my blog from the content so, with any luck, I can create a theme and possibly substitute another more professional theme for the one I've hacked together. I use [Hugo](https://gohugo.io/) to generate this blog, so to have any hope of getting to that place, I need to document the layout, HTML blocks, partials, shortcodes, and CSS components in use.
 <!--more-->

@@ -1,4 +1,4 @@
-{{ $postsAll := where .context.Site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections }}
+{{ $postsAll := where .context.Site.RegularPages.ByDate.Reverse "Type" "in" .Site.Params.mainSections }}
 {{ $postsCount := len $postsAll }}
 {{ $scratch := newScratch }}
 {{ range $idx, $page := $postsAll }} <!-- for post in postsArray -->

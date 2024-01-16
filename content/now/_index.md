@@ -2,6 +2,7 @@
 title: What I Do Now
 date: 2019-02-10
 lastmod: 2023-11-18
+weight: 300
 ---
 As of June 2023, I work for [PreVeil](https://www.preveil.com/), provider of simple, encrypted email and file collaboration software. In my free time, I tend to a bunch of little projects.
 <!--more-->

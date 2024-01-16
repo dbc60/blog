@@ -1,6 +1,6 @@
 <ul class="collection-items">
 {{ "<!-- BEGIN layouts/partials/items-latest.html -->" | safeHTML }}
-{{- $postsAll := (where .Site.RegularPages "Section" "eq" "posts").ByPublishDate.Reverse -}}
+{{- $postsAll := (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) -}}
 {{- $listLimit := 10 -}}
 {{- if isset .Site.Params "latest_limit" -}}
   {{- $listLimit = .Site.Params.latest_limit -}}

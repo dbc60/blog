@@ -8,20 +8,6 @@
             {{- $byWeight := false -}}
             {{ $name := "" }}
 
-            <!-- journal entries are sorted by date-->
-            {{- if eq .context.Section "journal" }}
-              {{ "<!-- section: journal by date -->" | safeHTML }}
-              {{ $byDate = true -}}
-            {{- end -}}
-            <!--
-              sections under "contacts" have an _index.md with their weight in
-              the front matter
-            -->
-            {{- if eq .context.Section "contact" }}
-            {{ "<!-- section: contact by weight -->" | safeHTML }}
-            {{ $byWeight = true -}}
-            {{- end -}}
-
             <!--
               Yearly sections are listed by month. This will work for years
               2000-2099, which is good enough for me. Remember that Hugo uses
@@ -69,11 +55,6 @@
                 {{- $name = .context.Name -}}
               {{- end -}}
 
-              <!-- list Weekly things in reverse chronological order -->
-              {{- if in $name "Week" -}}
-                {{- $byDate = true -}}
-              {{- end -}}
-
               {{- if $byDate -}}
                 {{ "<!-- range by date -->" | safeHTML }}
                 {{- range $sections.ByDate.Reverse }}
@@ -101,10 +82,14 @@
                 {{- if isset .context.Site.Params "list_limit" -}}
                   {{- $listLimit = .context.Site.Params.list_limit -}}
                 {{- end -}}
-                {{ "<!-- range by title, but the Includes folder is for transclusion files only -->" | safeHTML }}
-                {{- range first $listLimit (where $sections.ByTitle "Title" "!=" "Evergreen Notes") }}
-                <li class="collection-item"><a class="secondary-nav__link" href="{{ .Permalink }}">{{- .Title -}}</a></li>
-                {{- end -}}
+                {{ "<!-- root: range by weight -->" | safeHTML }}
+                {{- range first $listLimit $sections.ByWeight }}
+                <li class="collection-item">
+                  <a class="secondary-nav__link" href="{{ .Permalink }}">
+                    {{- .Title -}}
+                  </a>
+                </li>
+                {{ end -}}
               {{- end }}  <!-- end date/weight/other if-else chain -->
             {{- end -}} <!-- yearly section -->
             </ul>

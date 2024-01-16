@@ -1,7 +1,7 @@
 {{ $currentSection := .Section }}
 {{ "<!-- BEGIN layouts/partials/items-archive.html -->" | safeHTML }}
 <!-- all posts in reverse chronological order -->
-{{ $postsAll := where .Site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections }}
+{{ $postsAll := where .Site.RegularPages.ByDate.Reverse "Type" "in" .Site.Params.mainSections }}
 {{ $scratch := newScratch }}
 {{ $scratch.Set "currentYear" ((index $postsAll 0).Date.Format "2006") }}
 {{ $cy := $scratch.Get "currentYear" }}

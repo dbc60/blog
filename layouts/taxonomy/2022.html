@@ -1,7 +1,7 @@
 {{- define "main" }}
 {{ "<!-- BEGIN main layouts/taxonomy/2022.html -->" | safeHTML }}
 <div class="content">
-  {{ $paginator := .Paginate (where .Pages "Type" "in" site.Params.mainSections) -}}
+  {{ $paginator := .Paginate (where .Pages "Type" "in" .Site.Params.mainSections) -}}
   {{ range $paginator.Pages }}
   {{- $featuredImage := "" -}}
   {{- $featuredImageDescription := "" -}}

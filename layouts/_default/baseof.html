@@ -7,12 +7,15 @@
   <body>
     {{- $featuredImage := "" -}}
     {{- $featuredImageDescription := "" -}}
+    {{- $featuredCopyright := "" -}}
     {{- if .Params.featuredImage -}}
       {{- $featuredImage = .Params.featuredImage -}}
       {{- $featuredImageDescription = .Params.featuredImageDescription -}}
+      {{- $featuredCopyright = .Params.featuredCopyright -}}
     {{- else -}}
       {{- $featuredImage = .Site.Params.featuredImage -}}
       {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
+      {{- $featuredCopyright = .Site.Params.featuredCopyright -}}
     {{- end -}}
     <div class="masthead">
     {{- partial "siteHeader.html" . -}}
@@ -38,7 +41,7 @@
           </li>
           <li class="wrapper-collection-items">
             <span class="wrapper-collection-border icon icon-quill"> </span>
-            <span class="wrapper-collection-border title">Latest</span>
+            <span class="wrapper-collection-border title">Latest Posts</span>
             {{- block "latest" . -}}
             {{- partial "items-latest.html" . -}}
             {{- end -}}
@@ -55,7 +58,15 @@
         </ul>
       </div>
       <main class="main-content">
-        <img class="featured-image" src="{{ $featuredImage | absURL }}" alt={{ $featuredImageDescription }}>
+        <img class="featured-image" src="{{ $featuredImage | absURL }}" alt="{{ $featuredImageDescription }}">
+        {{- if $featuredImageDescription -}}
+         <div class="featured-copyright">
+            <span class="featured-copyright">{{ $featuredImageDescription }}</span>
+            {{- if $featuredCopyright -}}
+            <span class="featured-copyright"><em>, {{ $featuredCopyright }}</em></span>
+            {{- end -}}
+        </div>
+        {{- end -}}
       {{ block "main" . -}}
         <h2>Default Main (Should Never Appear)</h2>
       {{- end }}

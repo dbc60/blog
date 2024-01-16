@@ -7,7 +7,7 @@ publishDate: 2020-02-22
 math: true
 featuredImage: "/images/banners/hugo-banner.jpg"
 featuredImageDescription: "Hugo logo"
-featuredCopyright: "The Hugo logo is copyright © Steve Francia 2013–2021."
+featuredCopyright: "copyright © Steve Francia 2013–2021."
 ---
 
 In my [previous post]({{< ref "restart" >}}) I talked a little about why and how I started this blog. Here I want to present my experience with [Hugo] and what I like about it.

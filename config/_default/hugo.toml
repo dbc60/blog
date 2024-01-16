@@ -30,6 +30,7 @@ ignoreFiles = ["\\.git/.*", "\\.vscode/.*", "\\.editorconfig$", "\\.obsidian/.*"
   #featuredImageDescription = "green gargoyle overlooking Paris"
   featuredImage = "images/banners/motif-number-1.jpg"
   featuredImageDescription = "Motif No. 1"
+  featuredCopyright = "copyright © Douglas Cuthbertson 2010"
   disable_comments = true
   list_limit = 50
 
@@ -51,25 +52,13 @@ ignoreFiles = ["\\.git/.*", "\\.vscode/.*", "\\.editorconfig$", "\\.obsidian/.*"
   dropCapsFont = "goudy"
   #dropCapsFont = "kanzlei"
   #dropCapsFont = "yinit"
-  mainSections = ["note", "posts", "project"]
+  mainSections = ["posts"]
   planck = "\u210E"
   reduced_planck = "\u210F"
-  lastWeekOfLastYear = "2020-12-28T04:00:00Z"
 
   [params.author]
     name = "Douglas Cuthbertson"
     email = "doug.cuthbertson@gmail.com"
-    image				= 'images/Google-Avatar.png'
-    links				= [
-      { minds    = "https://www.minds.com/krischik"		    },
-      { mewe     = "https://mewe.com/martinkrischik"	    },
-      { steemit  = "https://steemit.com/@krischik"		    },
-      { hive     = "https://hive.blog/@krischik"		    },
-      { blurt    = "https://blurt.blog/@krischik"		    },
-      { twitter  = "https://twitter.com/martin_krischik"	    },
-      { facebook = "https://www.facebook.com/martin.krischik"   },
-      { youtube  = "https://youtube.com/@Martin.Krischik"	    }
-    ]
   [params.contact]
     email = 'info@example.org'
     phone = '+1 202-555-1212'
@@ -119,25 +108,21 @@ ignoreFiles = ["\\.git/.*", "\\.vscode/.*", "\\.editorconfig$", "\\.obsidian/.*"
     url = "/"
     weight = 100
   [[menu.nav]]
-    name = "Posts"
-    url = "/posts/"
-    weight = 500
-  [[menu.nav]]
     name = "About"
     url = "/about/"
-    weight = 700
+    weight = 200
   [[menu.nav]]
     name = "Now"
     url = "/now/"
-    weight = 800
+    weight = 400
   [[menu.nav]]
     name = "Bookmarks"
     url = "/bookmarks/"
-    weight = 900
+    weight = 800
   [[menu.nav]]
     name = "RSS"
     url = "/index.xml"
-    weight = 1000
+    weight = 1600
 
 # More details about GDPR and Hugo privacy settings are at
 # https://gohugo.io/about/hugo-and-gdpr/
