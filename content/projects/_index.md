@@ -5,5 +5,4 @@ draft: true
 weight: 100
 featuredImage: "/images/banners/gargoyle-overlooking-paris.jpg"
 featuredImageDescription: "Gargoyle overlooking Paris"
-featuredCopyright:
 ---

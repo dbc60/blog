@@ -1,6 +1,0 @@
-{{- "<!-- BEGIN include shortcode -->" | safeHTML -}}
-{{- $file := .Get 0 -}}
-{{- with .Site.GetPage $file -}}
-<a class="evergreen-link" href="{{ .Permalink }}">{{- $file | readFile | replaceRE "^---[\\s\\S]+?---" "" | markdownify -}}</a>
-{{- end -}}
-{{- "<!-- END include shortcode -->" | safeHTML -}}

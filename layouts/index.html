@@ -5,6 +5,7 @@
       {{ $paginator := .Paginate .Sections -}}
       {{- if gt (len $paginator.Pages) 0 }}
         {{- range $paginator.Pages }}
+        {{- if not .Params.hidden -}}
           {{- $featuredImage := "" -}}
           {{- $featuredImageDescription := "" -}}
           {{- if .Params.featuredImage -}}
@@ -29,6 +30,7 @@
               </div>
             </div>
           </section>
+          {{ end }}
         {{ end -}}
       {{- end -}}
       {{- template "_internal/pagination.html" . }}

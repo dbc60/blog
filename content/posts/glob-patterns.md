@@ -6,7 +6,7 @@ tags: [swdev]
 math: true
 featuredImage: "/images/banners/zebra-rhode-island-zoo-2011.jpg"
 featuredImageDescription: "Rhode Island Zebra"
-featuredCopyright: "copyright © Douglas Cuthbertson 2011"
+featuredCopyright: "copyright © 2011 Douglas Cuthbertson"
 lastmod: 2023-11-12
 ---
 Some time in 2016 or 2017, I needed a way to match file paths with [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)). The trick was that it had to work in a filter driver running in the Windows kernel. There weren't a lot of ready-to-use libraries that were kernel-ready. In fact I couldn't find any, so I wrote my own.

@@ -5,6 +5,7 @@ date: 2021-09-23T10:59:36-04:00
 tags: [blog]
 featuredImage: "images/banners/chinese-alligator_00001.jpg"
 featuredImageDescription: "Chinese Alligator"
+featuredCopyright:  "copyright © 2011 Douglas Cuthbertson"
 ---
 I write a lot of notes in Markdown files and use Hugo to display them in a browser. It makes for easy reading and jumping among them. Several months ago, I needed to create some tables where some cells spanned mulitple rows or columns. That's not possible with Markdown tables. Creating tables in HTML with appropriate classes seemed tedious. I thought it might be less so by defining tables in [TOML](https://toml.io/en/) and use a shortcode to translate them into HTML.
 <!--more-->

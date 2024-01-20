@@ -7,7 +7,7 @@ publishDate: 2020-02-22
 math: true
 featuredImage: "/images/banners/hugo-banner.jpg"
 featuredImageDescription: "Hugo logo"
-featuredCopyright: "copyright © Steve Francia 2013–2021."
+featuredCopyright: "copyright © 2013–2021 Steve Francia"
 ---
 
 In my [previous post]({{< ref "restart" >}}) I talked a little about why and how I started this blog. Here I want to present my experience with [Hugo] and what I like about it.
@@ -205,7 +205,7 @@ In addition to being updated, it tries to load from a Cloudflare, but if it can'
     copy by deleting the PNG fonts.-->
   <script async type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
-  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script type="text/javascript" src="{{ "scripts/MathJax-2.7.5/MathJax.js" | relURL }}?config=TeX-AMS-MML_HTMLorMML"><\/script>')</script>
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script type="text/javascript" src="{{ "scripts/MathJax-2.7.5/MathJax.js" | absURL }}?config=TeX-AMS-MML_HTMLorMML"><\/script>')</script>
   {{- end -}}
 ```
 

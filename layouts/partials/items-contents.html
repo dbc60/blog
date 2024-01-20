@@ -33,11 +33,13 @@
               {{- end -}}
               {{- $months = uniq $months | sort -}}
               {{- range $m := $months -}}
+              {{- if not $.context.Params.hidden -}}
               <li class="collection-item">
                 <a class="secondary-nav__link" href="{{ $.context.Site.BaseURL }}/{{ $section }}/{{ $m }}/">
                   {{- $section }}/{{ . -}}
                 </a>
               </li>
+              {{- end -}}
               {{- end -}}
 
             {{- else -}}
@@ -58,12 +60,14 @@
               {{- if $byDate -}}
                 {{ "<!-- range by date -->" | safeHTML }}
                 {{- range $sections.ByDate.Reverse }}
+                {{- if not $.context.Params.hidden -}}
                 <li class="collection-item">
                   <a class="secondary-nav__link" href="{{ .Permalink }}">
                     {{- .Title -}}
                   </a>
                 </li>
                 {{ end -}}
+                {{ end }}
               {{- else if $byWeight -}}
                 {{- $listLimit := 100 -}}
                 {{- if isset .context.Site.Params "list_limit" -}}
@@ -71,11 +75,13 @@
                 {{- end -}}
                 {{ "<!-- range by weight -->" | safeHTML }}
                 {{- range first $listLimit  $sections.ByWeight }}
+                {{- if not $.context.Params.hidden -}}
                 <li class="collection-item">
                   <a class="secondary-nav__link" href="{{ .Permalink }}">
                     {{- .Title -}}
                   </a>
                 </li>
+                {{ end }}
                 {{ end -}}
               {{- else -}} <!-- not by date or weight -->
                 {{- $listLimit := 100 -}}
@@ -84,11 +90,13 @@
                 {{- end -}}
                 {{ "<!-- root: range by weight -->" | safeHTML }}
                 {{- range first $listLimit $sections.ByWeight }}
+                {{- if not .Params.hidden -}}
                 <li class="collection-item">
                   <a class="secondary-nav__link" href="{{ .Permalink }}">
                     {{- .Title -}}
                   </a>
                 </li>
+                {{- end -}}
                 {{ end -}}
               {{- end }}  <!-- end date/weight/other if-else chain -->
             {{- end -}} <!-- yearly section -->

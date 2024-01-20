@@ -9,8 +9,6 @@ How do I test a library that matches glob patterns to file paths? Glob patterns 
 <!--more-->
 {{< table_of_contents >}}
 
-
-
 ## Different Types of Glob Patterns
 
 A glob pattern is a string consisting of Unicode characters and possible wildcard patterns. A wildcard is one of '`?`', '`*`', or '`[`'. Also, the backslash ('`\`') is used to escape each of these characters so they are not interpreted as a wildcard pattern. For example "`\?`" will match a literal question mark instead of "any single character except a path separator."

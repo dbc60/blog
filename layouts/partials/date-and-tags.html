@@ -22,11 +22,8 @@
           {{ with .Params.tags -}}
           <div class="tag-list">
           {{- range . -}}
-          {{- $href := print (relURL "tags/") (urlize .) -}}
+          {{- $href := print (absURL "tags/") (urlize .) -}}
           <a class="tag" href="{{ $href }}">{{ . }}</a>
-          {{- end -}}
-          {{- if $.Params.featuredCopyright -}}
-          <span class="featured-copyright"><em>, {{ $.Params.featuredCopyright }}</em></span>
           {{- end -}}
           </div>
           {{ end -}}

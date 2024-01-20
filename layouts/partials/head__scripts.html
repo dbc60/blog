@@ -13,7 +13,7 @@
 
       <!-- d3js: Fall back to local if CDN offline -->
       <script type="text/javascript" src="https://d3js.org/d3.v6.min.js"></script>
-      <script>window.d3 || document.write('<script type="text/javascript" src="{{ "scripts/d3-v6.7.0.min.js" | relURL }}">\x3C/script>')</script>
+      <script>window.d3 || document.write('<script type="text/javascript" src="{{ "scripts/d3-v6.7.0.min.js" | absURL }}">\x3C/script>')</script>
     {{- end }}
 
     <!-- older D3 v5 -->

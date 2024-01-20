@@ -1,4 +1,5 @@
 baseURL = "https://douglascuthbertson.com"
+
 languageCode = "en-us"
 title = "Doug's Blog"
 
@@ -6,7 +7,6 @@ disqusShortname = "cuthbertson"
 enableRobotsTXT = true
 # Set Hugo built-in pagination
 #Paginate = 8
-canonifyURLs = true
 footnoteReturnLinkContents = "↩"
 enableGitInfo = true
 enableEmoji = true
@@ -30,7 +30,7 @@ ignoreFiles = ["\\.git/.*", "\\.vscode/.*", "\\.editorconfig$", "\\.obsidian/.*"
   #featuredImageDescription = "green gargoyle overlooking Paris"
   featuredImage = "images/banners/motif-number-1.jpg"
   featuredImageDescription = "Motif No. 1"
-  featuredCopyright = "copyright © Douglas Cuthbertson 2010"
+  featuredCopyright = "copyright © 2010 Douglas Cuthbertson"
   disable_comments = true
   list_limit = 50
 
