@@ -58,7 +58,7 @@ My last post was in November of 2016 after the US presidential election. I don't
 
 Besides blogging, I was also using it as a note taking system. I loved that I could write a markdown file, and Jekyll could turn my notes into a nice looking web page. However, when I had a few dozen notes it would take several seconds to see edits appear in a browser. I wasn't very good with using HTML and CSS, so I became frustrated as I tried to use my notes repository to experiment with layout and design. The feedback loop was irritatingly slow.
 
-I spent months looking into other solutions. I read about [Luhmann's Zettelkasten](http://takingnotenow.blogspot.com/2007/12/luhmanns-zettelkasten.html) for organizing my files, and [Sphinx](http://www.sphinx-doc.org/en/stable/), the tool used by the Python programming language for generating all of their documentation.
+I spent months looking into other solutions. I read about Luhmann's Zettelkasten (the original blog is gone, but the article is [here on the Way Back Machine](https://web.archive.org/web/20200812180657/https://takingnotenow.blogspot.com/2007/12/luhmanns-zettelkasten.html)) for organizing my files, and [Sphinx](http://www.sphinx-doc.org/en/stable/), the tool used by the Python programming language for generating all of their documentation.
 
 Sphinx turned out to be a bit of a rabbit hole, a good one. The source documents for Sphinx are written in reStructuredText (rST). I was curious why that file format was chosen over Markdown or plain text. While rST has its issues and limitations, it is a much more rich markup language than Markdown. Also, Sphinx is a programmable environment. If it doesn't have a directive you need, there's a way to define new ones.
 

@@ -21,7 +21,7 @@ I stumbled quite badly a few times along the way. I thought a theme would help m
 
 ## The Short-lived Academic Theme
 
-As I have a tendency to do with new tools, I dove in too deep, too fast. Hugo has themes, and they look like a good way to get something up and running quickly. I looked over [`]the theme gallery](https://themes.gohugo.io/) checking all the features and how they looked. [Academic](https://themes.gohugo.io/academic/) is very flexible and chock full of features. I decided to give it a whirl in February 2019. It looked like this out of the box.
+As I have a tendency to do with new tools, I dove in too deep, too fast. Hugo has themes, and they look like a good way to get something up and running quickly. I looked over [`]the theme gallery](https://themes.gohugo.io/) checking all the features and how they looked. [Academic](https://themes.gohugo.io/themes/theme-academic-cv/) is very flexible and chock full of features. I decided to give it a whirl in February 2019. It looked like this out of the box.
 
 {{< figure
   src="/images/history/001-2019.02.03.01-initial-commit.png"
