@@ -1,7 +1,7 @@
 {{- define "main" }}
 {{ "<!-- BEGIN main layouts/projects/list.html -->" | safeHTML }}
 <div class="content">
-    {{ "<!-- Paginates through content/projects/*.md -->" | safeHTML }}
+    {{ "<!-- list.html Paginates through content/projects/*.md -->" | safeHTML }}
   {{ $paginator := .Paginate (where .Pages "Type" "projects") -}}
   {{- if gt (len $paginator.Pages) 0 }}
     {{- range $paginator.Pages }}

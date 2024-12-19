@@ -241,7 +241,11 @@ img {
  * blocks embedded in the main content.
 */
 body {
-  /* Try to avoid scrollbars on paragraphs: prevents long unbroken
+  background-color: var(--background-main-default);
+}
+
+.body-content {
+      /* Try to avoid scrollbars on paragraphs: prevents long unbroken
    * un-hyphenatable lines from causing H-scrolling
    */
   overflow-wrap: break-word;
@@ -251,8 +255,7 @@ body {
   /* IE 8 doesn't support local @font-face rules */
   font-family: var(--font-family-body-default);
   line-height: var(--line-height-default);
-  margin: var(--body-margin-default);
-  padding: 1em;
+  margin: 0px auto;
   background-color: var(--background-main-default);
   color: var(--gray900);
 }

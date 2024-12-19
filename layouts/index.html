@@ -1,11 +1,11 @@
     {{- define "main" }}
     {{ "<!-- BEGIN main in layouts/index.html -->" | safeHTML }}
     <div class="content">
-        {{ "<!-- Paginates through content/projects/*.md -->" | safeHTML }}
+        {{ "<!-- index.html Paginates through content/projects/*.md -->" | safeHTML }}
       {{ $paginator := .Paginate .Sections -}}
       {{- if gt (len $paginator.Pages) 0 }}
         {{- range $paginator.Pages }}
-        {{- if not .Params.hidden -}}
+        {{- if and (not .Params.hidden) (ne .Title "Posts") -}}
           {{- $featuredImage := "" -}}
           {{- $featuredImageDescription := "" -}}
           {{- if .Params.featuredImage -}}

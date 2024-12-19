@@ -1,47 +1,25 @@
 {{ "<!-- BEGIN layouts/partials/postScript.html -->" | safeHTML -}}
 <!-- Include MathJaX if either the page or the site params define math=true -->
-{{- if or .Params.math .Site.Params.math -}}
-{{- if .Site.Params.mathjax }}
-{{ partial "mathjax" . }}
-{{- end -}}
-{{- if .Site.Params.katex -}}
-{{- partial "katex2" . -}}
-{{- end -}}
-{{- end -}}
-
-{{- if or .Params.baseliner .Site.Params.baseliner -}}
+{{- if or .Params.math .Site.Params.math -}} {{- if .Site.Params.mathjax }} {{
+partial "mathjax" . }} {{- end -}} {{- if .Site.Params.katex -}} {{- partial
+"katex2" . -}} {{- end -}} {{- end -}} {{- if or .Params.baseliner
+.Site.Params.baseliner -}}
 <!--
   Toggle a 4px grid for development/testing. Based on Caleb William's
   Pixel-Perfect demo: https://codepen.io/calebdwilliams/pen/yLYbPMR
 -->
 
 <!-- note the src path is relative to "<project-dir>/static" -->
-<script src="scripts/toggleGrid.js"></script>
+<script src="{{ .Site.BaseURL }}scripts/toggleGrid.js"></script>
 
 <!--
   Here's a script that will display baselines down the page. It's from
   https://github.com/jkeyes/baseline
 -->
-<script src="scripts/baseline.js"></script>
+<script src="{{ .Site.BaseURL }}scripts/baseline.js"></script>
 <script>
-  window.onload = function() {
-      baseliner = new Baseliner({ gridColor: 'red' });
-  }
+  window.onload = function () {
+    baseliner = new Baseliner({ gridColor: "red" });
+  };
 </script>
-{{- end -}}
-<!--
-  Google Analytics if the site is *not* running in a local Hugo server and
-  the GoogleAnalytics tracking id is set in config.toml or params.toml
--->
-{{- if not .Site.IsServer -}}
-  {{- with .Site.GoogleAnalytics -}}
-  {{ "<!-- add Google Analytics script -->" | safeHTML }}
-  <script>
-  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-  ga('create', '{{ . }}', 'auto');
-  ga('send', 'pageview');
-  </script>
-  <script async src='https://www.google-analytics.com/analytics.js'></script>
-  {{- end -}}
-{{- end }}
-    {{ "<!-- END layouts/partials/postScript.html -->" | safeHTML -}}
+{{ end -}} {{ "<!-- END layouts/partials/postScript.html -->" | safeHTML -}}

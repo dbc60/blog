@@ -16,6 +16,7 @@ body {
   grid-template-columns: minmax(20rem, 1fr) 9fr;
   grid-gap: 1rem;
   margin-top: var(--section-spacer);
+  float: left;
 }
 
 .wrapper-footer {

@@ -12,5 +12,3 @@ My wife and I went to the Paramount Theater in Boston last night to see The Orch
 The projection screen was artfully and cinematically used during various scenes to strengthen the presentation of their characters inner emotional state. It also provided atmosphere (through, for example, projecting cherry blossoms blowing in the wind), and acted as an announcer for each act of the play.
 
 The one real disappointment was that the actors didn't project their voices and enunciate their words well enough, so I found the dialogue difficult to discern through much of the play. I suspect the hope was their microphones and the speakers would be enough to pick up and amplify their voices.
-
-{{< days 1 >}}

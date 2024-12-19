@@ -1,84 +1,82 @@
 <!DOCTYPE html>
 {{- $lang := .Site.Language.Lang | default "en" }}
 <html lang="{{ $lang }}">
-  {{- block "head" . -}}
-  {{- partial "head.html" . -}}
-  {{- end -}}
+  {{- block "head" . -}} {{- partial "head.html" . -}} {{- end -}}
   <body>
-    {{- $featuredImage := "" -}}
-    {{- $featuredImageDescription := "" -}}
-    {{- $featuredCopyright := "" -}}
-    {{- if .Params.featuredImage -}}
-      {{- $featuredImage = .Params.featuredImage -}}
-      {{- $featuredImageDescription = .Params.featuredImageDescription -}}
-      {{- $featuredCopyright = .Params.featuredCopyright -}}
-    {{- else -}}
-      {{- $featuredImage = .Site.Params.featuredImage -}}
-      {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
-      {{- $featuredCopyright = .Site.Params.featuredCopyright -}}
-    {{- end -}}
-    <div class="masthead">
-    {{- partial "siteHeader.html" . -}}
-    {{- partial "nav.html" . -}}
-    {{- partial "nav__breadcrumbs.html" . -}}
-    </div>
-    <div class="wrapper-content">
-      {{- $sections := (.Site.GetPage .Section).Sections -}}
-      {{- $rootSections := (.Site.GetPage "/").Sections -}}
-      {{- if eq 0 (len $sections) -}}
-        {{- "<!--GETTING ROOT SECTIONS-->" | safeHTML -}}
-        {{- $sections = $rootSections -}}
-      {{- end -}}
-      <div class="sidebar-content">
-        <ul class="wrapper-collections">
-          <li class="wrapper-collection-items">
-            <span class="wrapper-collection-border icon icon-books"> </span>
-            <span class="wrapper-collection-border title">Contents</span>
-{{ block "contents" (dict "context" . ) -}}
-{{- partial "items-contents.html" . -}}
-{{- end }}
-            <span class="wrapper-collection-border icon icon-books"> </span>
-          </li>
-          <li class="wrapper-collection-items">
-            <span class="wrapper-collection-border icon icon-quill"> </span>
-            <span class="wrapper-collection-border title">Latest Posts</span>
-            {{- block "latest" . -}}
-            {{- partial "items-latest.html" . -}}
-            {{- end -}}
-            <span class="wrapper-collection-border icon icon-quill"> </span>
-          </li>
-          <li class="wrapper-collection-items">
-            <span class="wrapper-collection-border icon icon-folder-open"> </span>
-            <span class="wrapper-collection-border title">Collections</span>
-            {{- block "lists" . -}}
-            {{- partial "items-taxonomies.html" . -}}
-            {{- end -}}
-            <span class="wrapper-collection-border icon icon-folder-open"> </span>
-          </li>
-        </ul>
+    {{ "<!-- begin body content -->" | safeHTML }}
+    <div class="body-content">
+      {{- $featuredImage := "" -}} {{- $featuredImageDescription := "" -}} {{-
+      $featuredCopyright := "" -}} {{- if .Params.featuredImage -}} {{-
+      $featuredImage = .Params.featuredImage -}} {{- $featuredImageDescription =
+      .Params.featuredImageDescription -}} {{- $featuredCopyright =
+      .Params.featuredCopyright -}} {{- else -}} {{- $featuredImage =
+      .Site.Params.featuredImage -}} {{- $featuredImageDescription =
+      .Site.Params.featuredImageDescription -}} {{- $featuredCopyright =
+      .Site.Params.featuredCopyright -}} {{- end -}}
+      <div class="masthead">
+        {{- partial "siteHeader.html" . -}} {{- partial "nav.html" . -}}
+        {{- partial "nav__breadcrumbs.html" . -}}
       </div>
-      <main class="main-content">
-        <img class="featured-image" src="{{ $featuredImage | absURL }}" alt="{{ $featuredImageDescription }}">
-        {{- if $featuredImageDescription -}}
-         <div class="featured-copyright">
-            <span class="featured-copyright">{{ $featuredImageDescription }}</span>
-            {{- if $featuredCopyright -}}
-            <span class="featured-copyright"><em>, {{ $featuredCopyright }}</em></span>
-            {{- end -}}
+      <div class="wrapper-content">
+        {{- $sections := (.Site.GetPage .Section).Sections -}} {{- $rootSections
+        := (.Site.GetPage "/").Sections -}} {{- if eq 0 (len $sections) -}} {{-
+        "<!--GETTING ROOT SECTIONS-->" | safeHTML -}} {{- $sections =
+        $rootSections -}} {{- end -}}
+        <div class="sidebar-content">
+          <ul class="wrapper-collections">
+            <li class="wrapper-collection-items">
+              <span class="wrapper-collection-border icon icon-books"> </span>
+              <span class="wrapper-collection-border title">Contents</span>
+              {{ block "contents" (dict "context" . ) -}} {{- partial
+              "items-contents.html" . -}} {{- end }}
+              <span class="wrapper-collection-border icon icon-books"> </span>
+            </li>
+            <li class="wrapper-collection-items">
+              <span class="wrapper-collection-border icon icon-quill"> </span>
+              <span class="wrapper-collection-border title">Latest Posts</span>
+              {{- block "latest" . -}} {{- partial "items-latest.html" . -}} {{-
+              end -}}
+              <span class="wrapper-collection-border icon icon-quill"> </span>
+            </li>
+            <li class="wrapper-collection-items">
+              <span class="wrapper-collection-border icon icon-folder-open">
+              </span>
+              <span class="wrapper-collection-border title">Collections</span>
+              {{- block "lists" . -}} {{- partial "items-taxonomies.html" . -}}
+              {{- end -}}
+              <span class="wrapper-collection-border icon icon-folder-open">
+              </span>
+            </li>
+          </ul>
         </div>
-        {{- end -}}
-      {{ block "main" . -}}
-        <h2>Default Main (Should Never Appear)</h2>
-      {{- end }}
-      </main>
-    </div> {{ "<!-- class wrapper-content -->" | safeHTML }}
-    <div class="wrapper-footer">
-    {{ block "footer" . -}}
-      {{ partial "footer.html" . }}
-    {{- end }}
-    {{ block "postScript" . -}}
-      {{ partial "postScript.html" . }}
-    {{- end }}
+        <main class="main-content">
+          <img
+            class="featured-image"
+            src="{{ $featuredImage | absURL }}"
+            alt="{{ $featuredImageDescription }}"
+          />
+          {{- if $featuredImageDescription -}}
+          <div class="featured-copyright">
+            <span class="featured-copyright"
+              >{{ $featuredImageDescription }}</span
+            >
+            {{- if $featuredCopyright -}}
+            <span class="featured-copyright"
+              ><em>, {{ $featuredCopyright }}</em></span
+            >
+            {{- end -}}
+          </div>
+          {{- end -}} {{ block "main" . -}}
+          <h2>Default Main (Should Never Appear)</h2>
+          {{- end }}
+        </main>
+      </div>
+      {{ "<!-- class wrapper-content -->" | safeHTML }}
+      <div class="wrapper-footer">
+        {{ block "footer" . -}} {{ partial "footer.html" . }} {{- end }} {{
+        block "postScript" . -}} {{ partial "postScript.html" . }} {{- end }}
+      </div>
     </div>
+    {{ "<!-- end body content -->" | safeHTML }}
   </body>
 </html>
