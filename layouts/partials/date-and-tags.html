@@ -22,7 +22,7 @@
           {{ with .Params.tags -}}
           <div class="tag-list">
           {{- range . -}}
-          {{- $href := print (absURL "tags/") (urlize .) -}}
+          {{- $href := print (absURL "tags/") (urlize .) ".html#top" -}}
           <a class="tag" href="{{ $href }}">{{ . }}</a>
           {{- end -}}
           </div>

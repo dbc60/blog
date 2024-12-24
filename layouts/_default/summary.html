@@ -2,7 +2,7 @@
     {{- .Summary }}
     <footer class="read-more">
       {{- if .Truncated -}}
-      <a href='{{ .Permalink }}'><span class="read-more">Read more →</span></a>
+      <a href='{{ .Permalink }}#top'><span class="read-more">Read more →</span></a>
       {{- end -}}
     </footer>
     {{ "<!-- END layouts/_default/summary.html-->" | safeHTML -}}

@@ -16,15 +16,20 @@
         {{- $featuredImage = .Site.Params.featuredImage -}}
         {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
         {{- $featuredCopyright =.Site.Params.featuredCopyright -}}
-    {{- end }}
+    {{- end -}}
+    {{- $subLink := .Site.BaseURL -}}
+    {{- if ne .Site.Params.subtitleLink "" -}}
+        {{- $subLink = .Site.Params.subtitleLink -}}
+    {{- end -}}
+
       {{ "<!-- begin masthead -->" | safeHTML }}
       <div class="masthead">
-        {{- partial "siteHeader.html" (dict "context" . "title" .Site.Title "subtitle" .Site.Params.subtitle "titleImage" .Site.Params.titleImage "titleImageDescription" .Site.Params.titleImageDescription "titleCopyright" .Site.Params.titleCopyright "baseURL" .Site.BaseURL "subtitleLink" .Site.Params.subtitleLink) -}}
+        {{- partial "siteHeader.html" (dict "context" . "title" .Site.Title "subtitle" .Site.Params.subtitle "titleImage" .Site.Params.titleImage "titleImageDescription" .Site.Params.titleImageDescription "titleCopyright" .Site.Params.titleCopyright "baseURL" .Site.BaseURL "subtitleLink" $subLink) -}}
         {{- partial "nav.html" . -}}
         {{- partial "nav__breadcrumbs.html" . -}}
       </div>
       {{- "<!-- end masthead -->" | safeHTML }}
-      <div class="wrapper-content" id="top">
+      <div class="wrapper-content">
         {{- $sections := (.Site.GetPage .Section).Sections -}} {{- $rootSections
         := (.Site.GetPage "/").Sections -}} {{- if eq 0 (len $sections) -}} {{-
         "<!--GETTING ROOT SECTIONS-->" | safeHTML -}} {{- $sections =

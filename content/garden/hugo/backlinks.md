@@ -35,4 +35,8 @@ Many thanks to whoever wrote [Parsing Backlinks in Hugo](https://scripter.co/par
 
 I added `#top` to the `.RelPermalink` URL. Other than that, it's unchanged. They warn that this template is inefficient. I'll revisit it eventually. There's [a discussion in the Hugo forum](https://discourse.gohugo.io/t/parsing-backlinks-in-hugo/38281) about it. Perhaps there are clues to a more efficient implementation there.
 
+## Other Resources
 
+- [Implementing Internal Backlinks in Hugo](https://garrido.io/notes/hugo-backlinks/).
+- [A method to generate backlinks](https://discourse.gohugo.io/t/a-method-to-generate-backlinks/39779/1).
+- [Issue 8077](https://github.com/gohugoio/hugo/issues/8077), Add support for page backlinks (e.g. .GetBacklinks), in the Hugo repo was opened in December 19, 2020 and is still open as of Christmas Eve, 2024. There are a number of links in the discussion that I want to pursue.
