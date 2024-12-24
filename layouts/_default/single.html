@@ -8,5 +8,6 @@
           {{ template "_internal/disqus.html" . }}
         </section> {{- "<!-- END comments section layouts/_default/single.html -->" | safeHTML }}
         {{ end }}
+        {{ partial "backlinks.html" (dict "page" .) }}
         {{- "<!-- END main layouts/_default/single.html -->" | safeHTML -}}
       {{- end -}}

@@ -1,8 +1,6 @@
-{{- define "main" }}
-{{ "<!-- BEGIN main layouts/taxonomy/category.html -->" | safeHTML }}
-{{- $paginator := .Paginate .Pages -}}
 <div class="content">
-  {{- range $paginator.Pages -}}
+  {{ $paginator := .Paginate (where .Pages "Type" "in" .Site.Params.mainSections) -}}
+  {{ range $paginator.Pages }}
   {{- $featuredImage := "" -}}
   {{- $featuredImageDescription := "" -}}
   {{- if .Params.featuredImage -}}
@@ -28,8 +26,6 @@
       </div>
     </div>
   </section>
-  {{- end -}}
+  {{ end }}
   {{- template "_internal/pagination.html" . }}
 </div>
-{{ "<!-- END main layouts/taxomony/category.html -->" | safeHTML }}
-{{- end -}}

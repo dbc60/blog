@@ -24,7 +24,7 @@
         {{- partial "nav__breadcrumbs.html" . -}}
       </div>
       {{- "<!-- end masthead -->" | safeHTML }}
-      <div class="wrapper-content" id="wrapper">
+      <div class="wrapper-content" id="top">
         {{- $sections := (.Site.GetPage .Section).Sections -}} {{- $rootSections
         := (.Site.GetPage "/").Sections -}} {{- if eq 0 (len $sections) -}} {{-
         "<!--GETTING ROOT SECTIONS-->" | safeHTML -}} {{- $sections =

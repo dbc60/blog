@@ -19,15 +19,15 @@
     <section class="page-summary">
       <div class="flex-row">
         <div class="pl3-ns">
-          <a href="{{ .Permalink }}#wrapper" class="db grow">
+          <a href="{{ .Permalink }}#top" class="db grow">
             <img src="{{ $featuredImage | absURL }}" alt={{ $featuredImageDescription }}>
           </a>
         </div>
         <div class="pr3-ns">
-          <h3 class="title-article-item"><a href="{{ .Permalink }}#wrapper">{{ .Name }}</a></h3>
+          <h3 class="title-article-item"><a href="{{ .Permalink }}#top">{{ .Name }}</a></h3>
           <ul class="term-categories">
             {{ range .Pages }}
-            <li class="term-member"><a href="{{ .Permalink }}#wrapper">{{ .Title }}</a></li>
+            <li class="term-member"><a href="{{ .Permalink }}#top">{{ .Title }}</a></li>
             {{ end }}
           </ul>
             </div>

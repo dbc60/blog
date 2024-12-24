@@ -17,12 +17,12 @@
       <section class="page-summary">
         <div class="flex-row">
           <div class="pl3-ns">
-            <a href="{{ .Permalink }}#wrapper" class="db grow">
+            <a href="{{ .Permalink }}#top" class="db grow">
               <img src="{{ $featuredImage | absURL }}" alt={{ $featuredImageDescription }}>
             </a>
           </div>
           <div class="pr3-ns">
-            <h2 class="title-article-item"><a href="{{ .Permalink }}#wrapper">{{ .Title }}</a></h2>
+            <h2 class="title-article-item"><a href="{{ .Permalink }}#top">{{ .Title }}</a></h2>
             {{- partial "date-and-tags.html" . -}}
             {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
             {{- .Render "summary" }}
