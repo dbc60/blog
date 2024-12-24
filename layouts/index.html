@@ -1,11 +1,11 @@
     {{- define "main" }}
     {{ "<!-- BEGIN main in layouts/index.html -->" | safeHTML }}
     <div class="content">
-        {{ "<!-- index.html Paginates through content/projects/*.md -->" | safeHTML }}
+        {{ "<!-- index.html Paginates through content if not hidden -->" | safeHTML }}
       {{ $paginator := .Paginate .Sections -}}
       {{- if gt (len $paginator.Pages) 0 }}
         {{- range $paginator.Pages }}
-        {{- if and (not .Params.hidden) (ne .Title "Posts") -}}
+        {{- if (not .Params.hidden) -}}
           {{- $featuredImage := "" -}}
           {{- $featuredImageDescription := "" -}}
           {{- if .Params.featuredImage -}}
@@ -18,12 +18,12 @@
           <section class="page-summary">
             <div class="flex-row">
               <div class="pl3-ns">
-                <a href="{{ .Permalink }}" class="db grow">
+                <a href="{{ .Permalink }}#wrapper" class="db grow">
                   <img src="{{ $featuredImage | absURL }}" alt={{ $featuredImageDescription }}>
                 </a>
               </div>
               <div class="pr3-ns">
-                <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                <h2 class="title-article-item"><a href="{{ .Permalink }}#wrapper">{{ .Title }}</a></h2>
                 {{- partial "date-and-tags.html" . -}}
                 {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
                 {{- .Render "summary" }}

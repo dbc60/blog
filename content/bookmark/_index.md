@@ -1,7 +1,7 @@
 ---
 title: "Bookmarks"
 date: 2023-11-18T07:51:31-05:00
-weight: 400
+weight: 500
 ---
 
 The web used to be about links between sites so you could travel down rabbit holes of ideas and information. It still is to some extent. Some people happily publish links to other sites within their articles. There are a lot of these sites, but some (maybe most) of the small ones can be hard to find.

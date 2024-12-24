@@ -1,9 +1,23 @@
 <header class="main-head">
 <div class="title-content">
   {{ "<!-- BEGIN layouts/partials/siteHeader.html -->" | safeHTML }}
-    <h1 class="siteTitle"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-    <h1 class="siteSubTitle"><a href="{{ .Site.Params.homeLink }}" target="_blank">{{- .Site.Params.homeText -}}</a></h1>
+    <h1 class="siteTitle"><a href="{{ .baseURL }}">{{ .title }}</a></h1>
+    <h1 class="siteSubTitle"><a href="{{ .subtitleLink }}" target="_blank">{{- .subtitle -}}</a></h1>
   {{ "<!-- END layouts/partials/siteHeader.html -->" | safeHTML }}
-  <!--<button class="toggle" id="toggle-grid">Toggle Grid</button>-->
+</div>
+<div class="hero-image">
+    <img
+      class="featured-image"
+      src="{{ .titleImage | absURL }}"
+      alt="{{ .titleImageDescription }}"
+    />
+    <div class="featured-copyright">
+      <span class="featured-copyright"
+        >{{ .titleImageDescription }}</span
+      >
+      <span class="featured-copyright"
+        ><em>, {{ .titleCopyright }}</em></span
+      >
+    </div>
 </div>
 </header>

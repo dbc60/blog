@@ -2,7 +2,7 @@
   {{ "<!-- BEGIN layouts/partials/items-taxonomies.html -->" | safeHTML }}
   {{ range $taxonomyName, $_ := .Site.Taxonomies }}
   <li class="collection-item">
-    <a class="secondary-nav__link" href="{{ .context.URL }}/{{ $taxonomyName }}/">
+    <a class="secondary-nav__link" href="{{ .context.URL }}/{{ $taxonomyName }}.html#wrapper">
       {{ title (replace $taxonomyName "-" " ") }}
     </a>
   </li>

@@ -1,8 +1,8 @@
 {{- define "main" }}
-{{ "<!-- BEGIN main layouts/posts/list.html -->" | safeHTML }}
+{{ "<!-- BEGIN main layouts/post/list.html -->" | safeHTML }}
 <div class="content">
-    {{ "<!-- Paginates through content/posts/*.md -->" | safeHTML }}
-  {{ $paginator := .Paginate (where .Pages "Type" "posts") -}}
+    {{ "<!-- Paginates through content/post/*.md -->" | safeHTML }}
+  {{ $paginator := .Paginate (where .Pages "Type" "post") -}}
   {{- range $paginator.Pages }}
     {{- $featuredImage := "" -}}
     {{- $featuredImageDescription := "" -}}
@@ -16,12 +16,12 @@
     <section class="page-summary">
       <div class="flex-row">
         <div class="pl3-ns">
-          <a href="{{ .Permalink }}" class="db grow">
+          <a href="{{ .Permalink }}#wrapper" class="db grow">
             <img src="{{ $featuredImage | absURL }}" alt={{ $featuredImageDescription }}>
           </a>
         </div>
         <div class="pr3-ns">
-          <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+          <h2 class="title-article-item"><a href="{{ .Permalink }}#wrapper">{{ .Title }}</a></h2>
           {{- partial "date-and-tags.html" . -}}
           {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
           {{- .Render "summary" }}
@@ -31,5 +31,5 @@
   {{ end -}}
   {{- template "_internal/pagination.html" . }}
 </div>
-{{ "<!-- END main layouts/posts/list.html -->" | safeHTML }}
+{{ "<!-- END main layouts/post/list.html -->" | safeHTML }}
 {{- end -}}

@@ -1,5 +1,5 @@
 ---
-title: "A Deep Look Into My Blog"
+title: "Separating Presentation from Layout"
 date: 2024-01-14T08:24:59-05:00
 2024: ["01"]
 tags: [blog]

@@ -16,7 +16,7 @@
   for technical/scientific pages, and De-Zs is for everything else.
   */
   /*
-    rst2html5 adds a section with a .document class, so all posts/notes
+    rst2html5 adds a section with a .document class, so all post/notes
     generated from reStructuredText files need this. Note: I gave up on
     rst2html5, so I've removed lines like
     ".c-drop-caps > .document p:first-of-type:first-letter"

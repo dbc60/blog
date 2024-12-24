@@ -2,7 +2,7 @@
 title: What I Do Now
 date: 2019-02-10
 lastmod: 2023-11-18
-weight: 300
+weight: 400
 ---
 As of June 2023, I work for [PreVeil](https://www.preveil.com/), provider of simple, encrypted email and file collaboration software. In my free time, I tend to a bunch of little projects.
 <!--more-->
@@ -17,7 +17,7 @@ As of June 2023, I work for [PreVeil](https://www.preveil.com/), provider of sim
     - `<meta property="og:locale" content="en_US" />`
     - `<meta property="og:site_name" content="Douglas Cuthbertson" />`
   - Updated [Hugo] to version 0.120.4.
-  - Started a page of links, [Bookmarks]({{< ref "bookmarks" >}}), to websites I find interesting, but may be located in some small corner of the Internet.
+  - Started a page of links, [Bookmarks]({{< ref "bookmark" >}}), to websites I find interesting, but may be located in some small corner of the Internet.
 
 This page is inspired by Derek Siver's [/now page movement](https://sivers.org/nowff). You can see [lots of sites](http://nownownow.com/) which have `/now` pages.
 

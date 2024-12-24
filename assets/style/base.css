@@ -258,6 +258,7 @@ body {
   margin: 0px auto;
   background-color: var(--background-main-default);
   color: var(--gray900);
+  display: grid;
 }
 
 pre.chroma {
@@ -465,6 +466,10 @@ dd {
 }
 
 .title-content {
+  margin-bottom: 1em;
+}
+
+.hero-image {
   margin-bottom: 1em;
 }
 
