@@ -2,7 +2,7 @@
 title: "A Deep Look at a Memory Allocator"
 date: 2024-01-14T07:38:28-05:00
 2024: ["01"]
-tags: [swdev]
+tags: [sweng, draft]
 draft: true
 ---
 Doug Lea's allocator, often referred to as [dlmalloc](https://gee.cs.oswego.edu/dl/html/malloc.html), provides implementations of the standard C memory functions `malloc()`, `free()`, `realloc()`, and friends. I need a memory allocator for a personal project and Lea generously put his code in the public domain, so I thought to adapt it to my needs. Note that the latest release in 2023 relicensed it under the ["MIT No Attribution" (MIT-0) License](https://opensource.org/license/mit-0/), which is supposed to be more palatable than the public domain.

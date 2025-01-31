@@ -101,12 +101,15 @@
   /* Admonitions */
   --color-caution: #fafacc;
   --color-danger: #f30000;
+
+  /* MDN recommends a minimum of 1.5 for main paragraph content. */
   --line-height-default: 1.5;
 
   /* space between hero image, masthead, wrapper-content, and wrapper-footer */
   --section-spacer: 0.6em;
 
-  --font-family-body-default: "system-stack", "Calisto MT", "Bookman Old Style", Georgia, serif;
+  /*--font-family-body-default: "system-stack", "Calisto MT", "Bookman Old Style", Georgia, serif; */
+  --font-family-body-default: "Source Serif Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /******************
@@ -257,7 +260,7 @@ body {
   line-height: var(--line-height-default);
   margin: 0px auto;
   background-color: var(--background-main-default);
-  color: var(--gray900);
+  color: black;
   display: grid;
 }
 

@@ -2,7 +2,7 @@
 title: "A Templating Journey"
 date: 2024-05-03T04:53:08-04:00
 2024: ["05"]
-tags: [blog]
+tags: [blog, draft]
 draft: true
 ---
 It started with a desire to make templates of some `cmd` files I wrote to build C software projects. Given the tools I had at hand and the few programming languages I know, Go templates, particularly the [HTML templates](https://pkg.go.dev/html/template) seemed like a flexible and easy to use solution, and then I fell down a rabbit hole.

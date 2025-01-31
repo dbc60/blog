@@ -65,12 +65,12 @@
  @font-face {
   font-family: "system-stack";
   font-style: normal;
-  font-weight: 300;
-  /*src: local("Source Serif Pro"), local("Helvetica Neue"), local(Helvetica), local(Arial), local(sans-serif);*/
+  font-weight: 400;
+  src: local("Source Serif Pro"), local("Helvetica Neue"), local(Helvetica), local(Arial), local(sans-serif);
   /*src: local(Garamond), local(Baskerville), local("Baskerville Old Face"), local("Hoefler Text"), local("Times New Roman"), local(serif);*/
   /*src: local("Lucida Bright"), local(Georgia), local(serif);*/
   /*src: local(Georgia), local(serif);*/
   /*src: local(Cambria), local(Georgia), local(serif);*/
   /*src: local(Palatino), local("Palatino Linotype"), local("Palatino LT STD"), local("Book Antiqua"), local(Georgia), local(serif);*/
-  src: local("Calisto MT"), local("Bookman Old Style"), local(Bookman), local("Goudy Old Style"), local(Garamond), local("Hoefler Text"), local("Bitstream Charter"), local(Georgia), local(serif);
+  /*src: local("Calisto MT"), local("Bookman Old Style"), local(Bookman), local("Goudy Old Style"), local(Garamond), local("Hoefler Text"), local("Bitstream Charter"), local(Georgia), local(serif);*/
 }

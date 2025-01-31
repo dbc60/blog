@@ -1,5 +1,5 @@
 ---
-title: "Hugo: Sections"
+title: "Sections"
 date: 2024-12-24T04:48:23-05:00
 2024: ["12"]
 tags: [hugo]

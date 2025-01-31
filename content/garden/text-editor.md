@@ -4,7 +4,7 @@ date: 2024-12-24T12:33:11-05:00
 2024: ["12"]
 tags: [reference]
 ---
-A bunch of links to information about text editors
+Links to information about text editors
 <!--more-->
 {{< table_of_contents >}}
 

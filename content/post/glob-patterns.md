@@ -2,7 +2,7 @@
 title: "Glob Patterns"
 date: 2023-05-08T17:01:29-04:00
 2023: ["05"]
-tags: [swdev]
+tags: [sweng]
 math: true
 featuredImage: "/images/banners/zebra-rhode-island-zoo-2011.jpg"
 featuredImageDescription: "Rhode Island Zebra"
