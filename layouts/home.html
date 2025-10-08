@@ -33,7 +33,7 @@
           {{ end }}
         {{ end -}}
       {{- end -}}
-      {{- template "_internal/pagination.html" . }}
+      {{- partial "pagination.html" . }}
     </div>
     {{ "<!-- END main in layouts/index.html -->" | safeHTML }}
     {{- end -}}

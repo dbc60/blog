@@ -9,7 +9,7 @@
     {{ .Render "summary" }}
   </section>
   {{- end -}}
-  {{- template "_internal/pagination.html" . }}
+  {{- partial "pagination.html" . }}
 </div>
 {{ "<!-- END main layouts/taxonomy/tag.html -->" | safeHTML }}
 {{- end -}}

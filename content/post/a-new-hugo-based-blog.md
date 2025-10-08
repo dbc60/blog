@@ -232,7 +232,7 @@ I had added lots of notes and the layout was still sprinkled with distracting ic
           {{ .Render "summary" }}
         </div>
       {{ end }}
-      {{ template "_internal/pagination.html" . }}
+      {{ partial "pagination.html" . }}
       </article>
   </main>
 

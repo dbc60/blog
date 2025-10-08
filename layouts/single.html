@@ -1,9 +1,13 @@
-{{ $archMonth := .Date.Format "January" }}
-
-<h2>(layouts/single.html) Archive for{{ $archMonth }} in All Years</h2>
-
-{{ range .Site.Pages }}
-    {{ if eq (.Date.Format "January") $archMonth }}
-        {{ partial "post/archive" . }}
-    {{ end }}
-{{ end }}
+      {{- define "main" -}}
+        {{ "<!-- BEGIN main layouts/_default/single.html -->" | safeHTML }}
+        <h2 class="title-article">{{- .Title -}}</h2>
+        {{- partial "date-and-tags.html" . -}}
+        {{ partial "drop-caps.html" . }}
+        {{ if and .Site.Config.Services.Disqus.Shortname (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
+        <section class="comments">{{- "<!-- BEGIN comments section layouts/_default/single.html -->" | safeHTML }}
+          {{ partial "disqus.html" . }}
+        </section> {{- "<!-- END comments section layouts/_default/single.html -->" | safeHTML }}
+        {{ end }}
+        {{ partial "backlinks.html" (dict "page" .) }}
+        {{- "<!-- END main layouts/_default/single.html -->" | safeHTML -}}
+      {{- end -}}
