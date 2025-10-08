@@ -8,6 +8,7 @@ featuredImage: "/images/banners/zebra-rhode-island-zoo-2011.jpg"
 featuredImageDescription: "Rhode Island Zebra"
 featuredCopyright: "copyright © 2011 Douglas Cuthbertson"
 lastmod: 2023-11-12
+update: "spelling, grammar, clarify how recursive patterns are processed"
 ---
 Some time in 2016 or 2017, I needed a way to match file paths with [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)). The trick was that it had to work in a filter driver running in the Windows kernel. There weren't a lot of ready-to-use libraries that were kernel-ready. In fact I couldn't find any, so I wrote my own.
 <!--more-->
@@ -24,5 +25,3 @@ This realization, that recursive patterns are made up of simple and directory pa
 
 [glob7]: https://man7.org/linux/man-pages/man7/glob.7.html
 [dbc60/glob]: https://github.com/dbc60/glob
-
-Updated 2023-11-12: spelling, grammar and to clarify how recursive patterns are processed.

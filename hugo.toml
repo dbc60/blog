@@ -128,7 +128,7 @@ name = "Posts"
 url = "/post.html"
 weight = 100
 [[menu.nav]]
-name = "Composting"
+name = "Seedlings"
 url = "/garden.html"
 weight = 200
 [[menu.nav]]
