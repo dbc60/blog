@@ -1,0 +1,35 @@
+{{- define "main" }}
+{{ "<!-- BEGIN main layouts/taxonomy/year.html -->" | safeHTML }}
+<div class="content">
+  <h2 class="title-article">Posts from {{ .Title }}</h2>
+  
+  {{- $paginator := .Paginate .Pages -}}
+  {{- range $paginator.Pages -}}
+  {{- $featuredImage := "" -}}
+  {{- $featuredImageDescription := "" -}}
+  {{- if .Params.featuredImage -}}
+    {{- $featuredImage = .Params.featuredImage -}}
+    {{- $featuredImageDescription = .Params.featuredImageDescription -}}
+  {{- else -}}
+    {{- $featuredImage = .Site.Params.featuredImage -}}
+    {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
+  {{- end -}}
+  <section class="page-summary">
+    <div class="flex-row">
+      <div class="pl3-ns">
+        <a href="{{ .Permalink }}#top" class="db grow">
+          <img src="{{ $featuredImage | absURL }}" alt={{ $featuredImageDescription }}>
+        </a>
+      </div>
+      <div class="pr3-ns">
+        <h2 class="title-article-item"><a href="{{ .Permalink }}#top">{{ .Title }}</a></h2>
+        {{- partial "date-and-tags.html" . -}}
+        {{ .Render "summary" }}
+      </div>
+    </div>
+  </section>
+  {{- end -}}
+  {{- partial "pagination.html" . }}
+</div>
+{{ "<!-- END main layouts/taxonomy/year.html -->" | safeHTML }}
+{{- end -}}

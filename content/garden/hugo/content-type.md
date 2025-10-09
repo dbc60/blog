@@ -1,7 +1,7 @@
 ---
 title: "Content Type"
 date: 2024-12-24T04:38:35-05:00
-2024: ["12"]
+years: ["2024"]
 tags: [hugo]
 ---
 A content type is a way to organize your content. Hugo resolves the content type from either the type in front matter or, if not set, the first directory in the file path. For example, `content/blog/my-first-event.md` will be of type `blog` if no type is set.

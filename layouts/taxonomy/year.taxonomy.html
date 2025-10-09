@@ -1,9 +1,9 @@
 {{- define "main" }}
-{{ "<!-- BEGIN main layouts/taxonomy/taxonomy.html -->" | safeHTML }}
+{{ "<!-- BEGIN main layouts/taxonomy/year.taxonomy.html -->" | safeHTML }}
 <div class="content">
   <h2 class="title-article">{{ .Title }}</h2>
   
-  {{- range .Pages -}}
+  {{- range .Pages.Reverse -}}
   <section class="page-summary">
     <h3 class="title-article-item">
       <a href="{{ .RelPermalink }}#top">{{ .Title }} ({{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }})</a>
@@ -11,5 +11,5 @@
   </section>
   {{- end -}}
 </div>
-{{ "<!-- END main layouts/taxonomy/taxonomy.html -->" | safeHTML }}
+{{ "<!-- END main layouts/taxonomy/year.taxonomy.html -->" | safeHTML }}
 {{- end -}}

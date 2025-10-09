@@ -1,7 +1,7 @@
 ---
 title: A Dangerous Spectacle
 date: 2016-11-09
-2016: ["11"]
+years: ["2016"]
 tags: [politics]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "A Table Shortcode for Hugo"
 date: 2021-09-23T10:59:36-04:00
-2021: ["09"]
+years: ["2021"]
 tags: [blog]
 featuredImage: "images/banners/chinese-alligator_00001.jpg"
 featuredImageDescription: "Chinese Alligator"

@@ -1,7 +1,7 @@
 ---
 title: "A Templating Journey"
 date: 2024-05-03T04:53:08-04:00
-2024: ["05"]
+years: ["2024"]
 tags: [blog, draft]
 draft: true
 ---

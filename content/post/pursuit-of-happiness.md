@@ -1,7 +1,7 @@
 ---
 title: The Pursuit of Happiness Gels in the Imagination
 date: 2016-03-09
-2016: ["03"]
+years: ["2016"]
 tags: [life]
 lastmod: 2025-02-05
 update: "fix typos"

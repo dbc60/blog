@@ -1,7 +1,7 @@
 ---
 title: "Testing With Permutations"
 date: 2023-05-02T10:43:42-04:00
-2023: ["05"]
+years: ["2024"]
 tags: [sweng, draft]
 draft: true
 ---

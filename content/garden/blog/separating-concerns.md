@@ -1,7 +1,7 @@
 ---
 title: "Separating Presentation from Layout"
 date: 2024-01-14T08:24:59-05:00
-2024: ["01"]
+years: ["2024"]
 tags: [blog]
 weight: 10
 ---

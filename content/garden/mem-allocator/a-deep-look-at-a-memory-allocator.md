@@ -1,7 +1,7 @@
 ---
 title: "A Deep Look at a Memory Allocator"
 date: 2024-01-14T07:38:28-05:00
-2024: ["01"]
+years: ["2024"]
 tags: [sweng, draft]
 draft: true
 ---

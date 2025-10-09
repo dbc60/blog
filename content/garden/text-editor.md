@@ -1,7 +1,7 @@
 ---
 title: "Text Editor"
 date: 2024-12-24T12:33:11-05:00
-2024: ["12"]
+years: ["2024"]
 tags: [reference]
 ---
 Links to information about text editors.

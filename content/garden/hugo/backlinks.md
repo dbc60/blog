@@ -1,7 +1,7 @@
 ---
 title: "Generate Backlinks"
 date: 2024-12-24T11:45:32-05:00
-2024: ["12"]
+years: ["2024"]
 tags: [hugo]
 ---
 I think the only way to have Hugo generate backlinks to a page is to include a partial that loops over all of the content files.

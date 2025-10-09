@@ -1,7 +1,7 @@
 ---
 title: "Restart"
 date: 2020-02-11T05:48:36-05:00
-2020: ["02"]
+years: ["2020"]
 tags: [blog]
 publishDate: 2020-02-15
 ---

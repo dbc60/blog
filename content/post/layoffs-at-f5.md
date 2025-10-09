@@ -1,7 +1,7 @@
 ---
 title: "Layoffs at F5"
 date: 2023-04-25T07:43:42-04:00
-2023: ["04"]
+years: ["2024"]
 tags: ["life"]
 lastmod: 2023-11-18
 ---

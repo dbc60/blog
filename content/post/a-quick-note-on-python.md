@@ -1,7 +1,7 @@
 ---
 title: A Quick Note on Python
 date: 2016-01-04
-2016: ["01"]
+years: ["2016"]
 tags: [sweng]
 ---
 

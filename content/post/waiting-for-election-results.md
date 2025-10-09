@@ -1,7 +1,7 @@
 ---
 title: "Waiting for Election Results (2020)"
 date: 2020-11-07T08:23:14-05:00
-2020: ["11"]
+years: ["2020"]
 tags: [politics]
 ---
 
