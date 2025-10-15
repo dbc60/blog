@@ -35,7 +35,7 @@
               {{- range $m := $months -}}
               {{- if not $.context.Params.hidden -}}
               <li class="collection-item">
-                <a class="secondary-nav__link" href="{{ $.context.Site.BaseURL }}/{{ $section }}/{{ $m }}.html">
+                <a class="secondary-nav__link" href="{{ $.context.Site.BaseURL }}/{{ $section }}/{{ $m }}.html#top">
                   {{- $section }}/{{ . -}}
                 </a>
               </li>
@@ -62,7 +62,7 @@
                 {{- range $sections.ByDate.Reverse }}
                 {{- if not $.context.Params.hidden -}}
                 <li class="collection-item">
-                  <a class="secondary-nav__link" href="{{ .Permalink }}">
+                  <a class="secondary-nav__link" href="{{ .Permalink }}#top">
                     {{- .Title -}}
                   </a>
                 </li>
@@ -77,7 +77,7 @@
                 {{- range first $listLimit  $sections.ByWeight }}
                 {{- if not $.context.Params.hidden -}}
                 <li class="collection-item">
-                  <a class="secondary-nav__link" href="{{ .Permalink }}">
+                  <a class="secondary-nav__link" href="{{ .Permalink }}#top">
                     {{- .Title -}}
                   </a>
                 </li>
@@ -92,7 +92,7 @@
                 {{- range first $listLimit $sections.ByWeight }}
                 {{- if not .Params.hidden -}}
                 <li class="collection-item">
-                  <a class="secondary-nav__link" href="{{ .Permalink }}">
+                  <a class="secondary-nav__link" href="{{ .Permalink }}#top">
                     {{- .Title -}}
                   </a>
                 </li>

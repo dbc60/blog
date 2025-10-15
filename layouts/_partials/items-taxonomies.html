@@ -4,7 +4,7 @@
   {{- $taxonomyPage := $.Site.GetPage (printf "/%s" $taxonomyName) -}}
   {{- if $taxonomyPage -}}
   <li class="collection-item">
-    <a class="secondary-nav__link" href="{{ $taxonomyPage.RelPermalink }}">
+    <a class="secondary-nav__link" href="{{ $taxonomyPage.RelPermalink }}#top">
       {{ title (replace $taxonomyName "-" " ") }}
     </a>
   </li>
