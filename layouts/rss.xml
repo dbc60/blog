@@ -13,7 +13,8 @@
     {{ with .OutputFormats.Get "RSS" }}
         {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
-    {{ range .Pages }}
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ range first (default site.Config.Services.RSS.Limit 20) $pages }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
@@ -21,6 +22,7 @@
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Content | html }}</description>
+      {{ range .Params.tags }}<category>{{ . }}</category>{{ end }}
     </item>
     {{ end }}
   </channel>
