@@ -25,7 +25,7 @@ Many thanks to whoever wrote [Parsing Backlinks in Hugo](https://scripter.co/par
         <nav>
             <ul>
                 {{ range . }}
-                    <li><a href="{{ .RelPermalink }}#top">{{ .Title }}</a></li>
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
                 {{ end }}
             </ul>
         </nav>
@@ -33,7 +33,7 @@ Many thanks to whoever wrote [Parsing Backlinks in Hugo](https://scripter.co/par
 {{ end }}
 ```
 
-I added `#top` to the `.RelPermalink` URL. Other than that, it's unchanged. They warn that this template is inefficient. I'll revisit it eventually. There's [a discussion in the Hugo forum](https://discourse.gohugo.io/t/parsing-backlinks-in-hugo/38281) about it. Perhaps there are clues to a more efficient implementation there.
+~~I added `#top` to the `.RelPermalink` URL~~. Other than that, it's unchanged. They warn that this template is inefficient. I'll revisit it eventually. There's [a discussion in the Hugo forum](https://discourse.gohugo.io/t/parsing-backlinks-in-hugo/38281) about it. Perhaps there are clues to a more efficient implementation there.
 
 ## Other Resources
 

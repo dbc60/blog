@@ -21,4 +21,4 @@ Among other things, I
 
 The banner is a picture I took on a trip to Rockport, MA. with my family several years ago. The building is commonly known as [Motif No. 1](https://en.wikipedia.org/wiki/Motif_Number_1). It's a replica of an old fishing shack built in 1840. The original was destroyed during the blizzard of 1978.
 
-See my [Now](/now.html#top) page for what I've been up to lately.
+See my [Now](/now.html) page for what I've been up to lately.

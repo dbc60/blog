@@ -28,7 +28,7 @@ showActiveNav = true
 description = "This is my soapbox for thoughts on programming, project planning, sketching, drawing, kempo, and any other topic that may suit my fancy."
 dateFormat = "Monday Jan 2, 2006"
 dateFormatExtended = "Monday Jan 2, 2006 15:04"
-subtitle = "Seeds of Thought"
+subtitle = "Seeds of Thought. A Point of View."
 subtitleLink = ""
 #subtitle="Black Lives Matter"
 #subtitleLink = "https://blacklivesmatter.com/"
@@ -55,11 +55,8 @@ list_limit = 50
 #math = true
 
 # Set one of these to true to enable LaTeX processing.
-# Note: only mathjax works; katex isn't quite compatible with the Goldmark
-# markdown processor. It needs an extension similar to the one here:
-# https://github.com/litao91/goldmark-mathjax
-mathjax = true
-katex = false
+mathjax = false
+katex = true
 # Enable/disable baseline.js in layouts/partials/postScript.html
 baseliner = false
 
@@ -81,7 +78,7 @@ phone = '+1 202-555-1212'
 
 [frontmatter]
 date = ['date', 'publishDate', 'lastmod']
-lastmod = ['lastmod', ':git', 'date', 'publishDate']
+lastmod = ['lastmod', 'date', ':git', 'publishDate']
 publishDate = ['publishDate', 'date']
 expiryDate = ['expiryDate']
 
@@ -125,23 +122,23 @@ url = "/"
 weight = 50
 [[menu.nav]]
 name = "Posts"
-url = "/post.html"
+url = "/post/index.html"
 weight = 100
 [[menu.nav]]
 name = "Seedlings"
-url = "/garden.html"
+url = "/garden/index.html"
 weight = 200
 [[menu.nav]]
 name = "About"
-url = "/about.html"
+url = "/about/index.html"
 weight = 300
 [[menu.nav]]
 name = "Now"
-url = "/now.html"
+url = "/now/index.html"
 weight = 400
 [[menu.nav]]
 name = "Bookmarks"
-url = "/bookmark.html"
+url = "/bookmark/index.html"
 weight = 800
 [[menu.nav]]
 name = "RSS"
@@ -159,10 +156,6 @@ weight = 1600
 disable = true
 [privacy.instagram]
 disable = true
-simple = false
-[privacy.twitter]
-disable = true
-enableDNT = false
 simple = false
 [privacy.vimeo]
 disable = true

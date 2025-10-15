@@ -7,7 +7,7 @@
 {{ $cy := $scratch.Get "currentYear" }}
 <ul class="collection-items">
   <li class="collection-item">
-    <a class="secondary-nav__link" href="{{ $cy | absURL }}#top">
+    <a class="secondary-nav__link" href="{{ $cy | absURL }}">
       {{ $cy }}
     </a>
   </li>
@@ -17,7 +17,7 @@
   {{ $py := $scratch.Get "previousYear" }}
   {{ if ne $cy $py }}
   <li class="collection-item">
-    <a class="secondary-nav__link" href="{{ $py | absURL }}#top">
+    <a class="secondary-nav__link" href="{{ $py | absURL }}">
       {{ $py }}
     </a>
   </li>

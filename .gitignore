@@ -24,3 +24,7 @@ $RECYCLE.BIN/
 
 node_modules
 .env
+
+# Anthropic - Claude AI
+CLAUDE.md
+.claude
