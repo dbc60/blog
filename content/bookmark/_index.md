@@ -3,10 +3,10 @@ title: "Bookmarks"
 date: 2023-11-18T07:51:31-05:00
 weight: 500
 ---
-
 The web used to be about links between sites so you could travel down rabbit holes of ideas and information. It still is to some extent. Some people happily publish links to other sites within their articles. There are a lot of these sites, but some (maybe most) of the small ones can be hard to find.
 
 The [Small Website Discoverability Crisis](https://www.marginalia.nu/log/19-website-discoverability-crisis/) has a simple, but brilliant way to solve that problem. Create a list of bookmarks linking to websites you find interesting, and publish it for the world to see. You decide what constitutes "interesting".
+<!--more-->
 
 The author of that article published their own page of [bookmarks](https://www.marginalia.nu/links/bookmarks/). I want to do the same, so here are a few links to start with to sites I like:
 

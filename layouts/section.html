@@ -3,7 +3,7 @@
 
 {{ if gt .WordCount 0 }}
   {{- "<!-- BEGIN content div layouts/_default/section.html -->" | safeHTML }}
-  {{ .Content }}
+  {{ partial "drop-caps.html" . }}
   {{ "<!-- END content div layouts/_default/section.html -->" | safeHTML }}
 {{ end }}
 
