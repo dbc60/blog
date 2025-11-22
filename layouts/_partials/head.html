@@ -49,12 +49,18 @@
       {{- $cssFontDefault = $cssFontGoudy -}}
     <!--{{/* end */}}-->
     {{- $cssSyntaxHighlights := resources.Get "style/syntax-highlighting/monokai.css" -}}
+    {{- $cssVictorianMasthead := resources.Get "style/victorian-masthead.css" -}}
+    {{- $cssVictorianDividers := resources.Get "style/victorian-dividers.css" -}}
+    {{- $cssVictorianSidebar := resources.Get "style/victorian-sidebar.css" -}}
+    {{- $cssVictorianPostMetadata := resources.Get "style/victorian-post-metadata.css" -}}
+    {{- $cssVictorianFrontPage := resources.Get "style/victorian-front-page.css" -}}
+    {{- $cssVictorianColors := resources.Get "style/victorian-colors.css" -}}
     <!--{{/* $cssEntities := resources.Get "style/entities.css" */}}-->
     <!-- ensure cssOverrides is the last CSS source file so it can override any
         selectors from the other files.
         <span>last comment</span>
     -->
-    {{- $styles := slice $cssPreface $cssDropCaps $cssDropCapsFontDefault $cssFontDefault $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssBase $layout $cssOverrides $cssPrint | resources.Concat "style/style.css" -}}
+    {{- $styles := slice $cssPreface $cssDropCaps $cssDropCapsFontDefault $cssFontDefault $cssBreadcrumb $cssFonts $cssSyntaxHighlights $cssVictorianMasthead $cssVictorianDividers $cssVictorianSidebar $cssVictorianPostMetadata $cssVictorianFrontPage $cssVictorianColors $cssBase $layout $cssOverrides $cssPrint | resources.Concat "style/style.css" -}}
     <!-- minify and fingerprint only if not running locally -->
     {{- if not (in (print .Site.BaseURL) "localhost") -}}
     {{- $styles = $styles | minify | fingerprint -}}

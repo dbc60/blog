@@ -1,0 +1,33 @@
+/* Victorian Color Scheme Override
+ * Harmonized warm tones mimicking aged newsprint
+ */
+
+/* Override the default cool gray with warm cream/beige tones */
+body {
+  background-color: #ebe8e0 !important;
+}
+
+.body-content {
+  background-color: #ebe8e0 !important;
+}
+
+/* Main content area can be slightly lighter */
+.main-content {
+  background-color: #f5f5f0;
+  padding: 1.5em;
+  border: 1px solid #d5d2ca;
+}
+
+/* Ensure sidebar stays consistent */
+.sidebar-content {
+  /* Inherits body background */
+}
+
+/* Print styles - use white for printing */
+@media print {
+  body,
+  .body-content,
+  .main-content {
+    background-color: #fff !important;
+  }
+}

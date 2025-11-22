@@ -1,4 +1,4 @@
-<ul class="collection-items">
+<ul class="collection-items victorian">
 {{ "<!-- BEGIN layouts/partials/items-latest.html -->" | safeHTML }}
 {{- $postsAll := (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) -}}
 {{- $listLimit := 10 -}}
@@ -6,7 +6,7 @@
   {{- $listLimit = .Site.Params.latest_limit -}}
 {{- end -}}
 {{- range first $listLimit $postsAll  -}}
-    <li class="collection-item">
+    <li class="collection-item victorian">
       <a class="secondary-nav__link" href="{{ .Permalink }}#top">
         {{ .Title }}
       </a>

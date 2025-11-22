@@ -1,5 +1,5 @@
 {{ "<!-- BEGIN layouts/partials/items-contents.html -->" | safeHTML }}
-            <ul class="collection-items">
+            <ul class="collection-items victorian">
               <!--
                 sort by date (in reverse chronological order) or by weight
                 depending on the section name.
@@ -34,7 +34,7 @@
               {{- $months = uniq $months | sort -}}
               {{- range $m := $months -}}
               {{- if not $.context.Params.hidden -}}
-              <li class="collection-item">
+              <li class="collection-item victorian">
                 <a class="secondary-nav__link" href="{{ $.context.Site.BaseURL }}/{{ $section }}/{{ $m }}.html#top">
                   {{- $section }}/{{ . -}}
                 </a>
@@ -61,7 +61,7 @@
                 {{ "<!-- range by date -->" | safeHTML }}
                 {{- range $sections.ByDate.Reverse }}
                 {{- if not $.context.Params.hidden -}}
-                <li class="collection-item">
+                <li class="collection-item victorian">
                   <a class="secondary-nav__link" href="{{ .Permalink }}#top">
                     {{- .Title -}}
                   </a>
@@ -76,7 +76,7 @@
                 {{ "<!-- range by weight -->" | safeHTML }}
                 {{- range first $listLimit  $sections.ByWeight }}
                 {{- if not $.context.Params.hidden -}}
-                <li class="collection-item">
+                <li class="collection-item victorian">
                   <a class="secondary-nav__link" href="{{ .Permalink }}#top">
                     {{- .Title -}}
                   </a>
@@ -91,7 +91,7 @@
                 {{ "<!-- root: range by weight -->" | safeHTML }}
                 {{- range first $listLimit $sections.ByWeight }}
                 {{- if not .Params.hidden -}}
-                <li class="collection-item">
+                <li class="collection-item victorian">
                   <a class="secondary-nav__link" href="{{ .Permalink }}#top">
                     {{- .Title -}}
                   </a>
