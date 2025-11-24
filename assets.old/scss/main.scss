@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/*
+The @charset declaration above will explicitly set the character encoding of generated
+stylesheets to "utf-8". The docs on sass-lang.com say:
+
+    To explicitly specify the encoding of your stylesheet, use a @charset declaration
+    just like in CSS. Add @charset "encoding-name"; at the beginning of the stylesheet
+    (before any whitespace or comments) and Sass will interpret it as the given encoding.
+*/
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+// Import partials
+@import
+"_functions",
+"_variables",
+"_fonts",
+"_layout",
+"_base"
+;

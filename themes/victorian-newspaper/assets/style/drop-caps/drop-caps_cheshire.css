@@ -1,0 +1,55 @@
+/* Cheshire */
+@media (min-width: 65ch) {
+  /* Default for all browsers */
+  /*  All of these numbers are magic. */
+  .drop-caps_cheshire::first-letter {
+    font-family: Cheshire Initials;
+    font-size: 6.75em;
+    opacity: 0.9;
+    margin: 0.04em 0.04em -0.16em 0.01em;
+  }
+
+  @supports (-moz-appearance:none) {
+    /*  All of these numbers are magic. */
+    .drop-caps_cheshire > p:first-of-type::first-letter {
+      font-family: Cheshire Initials;
+      font-size: 6.75em;
+      opacity: 0.9;
+      margin: 0.06em 0.04em 0 0.01em;
+    }
+  }
+
+  /* Compensating for responsive line-height reduction. */
+  @media (max-width: 120ch) {
+    /* Default for all browsers */
+    .drop-caps_cheshire::first-letter {
+      font-size: 4.9em;
+    }
+
+    /* Firefox only */
+    @supports (-moz-appearance:none) {
+      /*  All of these numbers are magic. */
+      .drop-caps_cheshire > p:first-of-type::first-letter {
+        font-size: 4.9em;
+      }
+    }
+  }
+
+  /*  Compensating for responsive line-height reduction. */
+  @media (max-width: 110ch) {
+    /* Default for all browsers */
+    .drop-caps_cheshire::first-letter {
+      font-size: 3em;
+      margin-top: 0.05em;
+    }
+
+    /* Firefox only */
+    @supports (-moz-appearance:none) {
+      /*  All of these numbers are magic. */
+      .drop-caps_cheshire > p:first-of-type::first-letter {
+        font-size: 3em;
+        margin-top: 0.06em;
+      }
+    }
+  }
+}

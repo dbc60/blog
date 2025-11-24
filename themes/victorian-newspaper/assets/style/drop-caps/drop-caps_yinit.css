@@ -1,0 +1,56 @@
+/* Yinit */
+@media (min-width: 65ch) {
+  /* Default for all browsers */
+  /*  All of these numbers are magic. */
+  .drop-caps_yinit::first-letter {
+    font-family: Yinit;
+    font-size: 5.4em;
+    margin: 0.2em 0.02em -0.3em 0.01em;
+  }
+
+  /* Firefox only */
+  @supports (-moz-appearance:none) {
+    /*  All of these numbers are magic. */
+    .drop-caps_yinit > p:first-of-type::first-letter {
+      font-family: Yinit;
+      font-size: 5.4em;
+      margin: 0.08em 0.02em -0.1em 0;
+    }
+  }
+
+  /*  Compensating for responsive line-height reduction. */
+  @media (max-width: 120ch) {
+    /* Default for all browsers */
+    .drop-caps_yinit::first-letter {
+      font-size: 3.6em;
+      margin: 0.3em 0.07em -0.3em 0.01em;
+    }
+
+    /* Firefox only */
+    @supports (-moz-appearance:none) {
+      /*  All of these numbers are magic. */
+      .drop-caps_yinit > p:first-of-type::first-letter {
+        font-size: 3.6em;
+        margin: 0.14em 0.07em 0 0;
+      }
+    }
+  }
+
+  /*  Compensating for responsive line-height reduction. */
+  @media (max-width: 110ch) {
+    /* Default for all browsers */
+    .drop-caps_yinit::first-letter {
+        font-size: 2.3em;
+        margin: 0.35em 0.06em -0.3em 0.01em;
+    }
+
+    /* Firefox only */
+    @supports (-moz-appearance:none) {
+      /*  All of these numbers are magic. */
+      .drop-caps_yinit > p:first-of-type::first-letter {
+        font-size: 2.3em;
+        margin: 0.15em 0.06em 0 0;
+      }
+    }
+  }
+}

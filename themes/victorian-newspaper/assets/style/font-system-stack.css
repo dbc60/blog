@@ -1,0 +1,76 @@
+/* Font overview: loads Source Serif Pro for body, Source Sans Pro for ToC, and 5 kinds of drop caps via Yinit, Goudy, Deutsche Zierschrift, Cheshire, and Kanzlei Initialen (enabled in /static/style/drop-caps/*) */
+
+  /*
+   * I am playing with font-family sets from
+   *
+   *    https://kinsta.com/blog/web-safe-fonts/
+   *
+   * I like both of the following font-family sets. They have the advantage
+   * that neither require downloading fonts from the network. If applied to my
+   * blog, that should make the pages load a little faster.
+   *
+   * The first is No. 5, Calisto MT. It has slightly more pronounced serifs
+   * than Source Serif Pro. According to the site, Calisto MT is a serif font
+   * with slightly softer and less pronounced serifs than most similar
+   * typefaces. It's a standard Microsoft font, included with most newer
+   * versions of Windows. The macOS or iOS equivalent is the Bookman Old Style
+   * font.
+   *
+   * No. 6, Cambria. The font stack consists of only 3 fonts. The site says:
+   *
+   * Cambria is an even softer serif font, with, in many cases, barely
+   * noticeable serifs even for capital letters. This gives it a more modern
+   * feel and also maintains a high level of readability on screens.
+   *
+   * No. 15, Garamond is a serif font, inspired by typefaces made by the
+   * 16th-century Parisian engraver, Claude Garamond. It has softer, rounder
+   * edges than some of the more standard serif fonts, like Times New Roman.
+   * Modern versions of Microsoft and Apple OS include their own versions of
+   * the Garamond font.
+   *
+   *  I find Garamond to be more thin than I prefer. It makes the body text a
+   * little more difficult to read than Source Serif Pro, Calisto MT, or
+   * Cambria.
+   *
+   * CSS Tricks has some advice for using system fonts:
+   *
+   *    https://css-tricks.com/snippets/css/system-font-stack/
+   *
+   *  I'm having trouble deciding between Calisto MT and Cambria. They both
+   * look good.
+   *
+   * The stack starting with Lucida Bright has the advantage of looking good at
+   * a font-size of 100%. However, it is an old Microsoft font. I think I'll
+   * get better readability from one of the more modern fonts, and when it
+   * comes to Microsoft fonts, one from their ClearType collection:
+   *
+   *    https://docs.microsoft.com/en-us/typography/cleartype/clear-type-font-collection
+   *
+   * like Cambria:
+   *
+   *   (https://docs.microsoft.com/en-us/typography/font-list/calibri)
+   *
+   * I've moved the font-family settings over assets/style/font.css and defined
+   * a "system" font-face
+  **/
+
+/*
+ * Define the "system-stack" font family. Be careful when naming your custom
+ * font-family. I tried "system-ui" and it didn't use the "src" definition.
+ * There are some pre-defined names, "system-ui" being one of them. See the
+ * list here on MDN:
+ *
+ *    https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#syntax
+ */
+ @font-face {
+  font-family: "system-stack";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Source Serif Pro"), local("Helvetica Neue"), local(Helvetica), local(Arial), local(sans-serif);
+  /*src: local(Garamond), local(Baskerville), local("Baskerville Old Face"), local("Hoefler Text"), local("Times New Roman"), local(serif);*/
+  /*src: local("Lucida Bright"), local(Georgia), local(serif);*/
+  /*src: local(Georgia), local(serif);*/
+  /*src: local(Cambria), local(Georgia), local(serif);*/
+  /*src: local(Palatino), local("Palatino Linotype"), local("Palatino LT STD"), local("Book Antiqua"), local(Georgia), local(serif);*/
+  /*src: local("Calisto MT"), local("Bookman Old Style"), local(Bookman), local("Goudy Old Style"), local(Garamond), local("Hoefler Text"), local("Bitstream Charter"), local(Georgia), local(serif);*/
+}

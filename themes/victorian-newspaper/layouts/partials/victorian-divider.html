@@ -1,0 +1,77 @@
+{{- /*
+Victorian Decorative Divider Partial
+
+Usage:
+  {{ partial "victorian-divider.html" (dict "style" "light") }}
+  {{ partial "victorian-divider.html" (dict "style" "medium") }}
+  {{ partial "victorian-divider.html" (dict "style" "heavy") }}
+  {{ partial "victorian-divider.html" (dict "style" "ornate") }}
+  {{ partial "victorian-divider.html" (dict "style" "simple") }}
+  {{ partial "victorian-divider.html" . }} // defaults to "medium"
+
+Parameters:
+  style (string): The divider style variant
+    - "light": Minimal single line with small ornaments
+    - "medium": Standard double line with ornaments (default)
+    - "heavy": Bold multi-line with larger ornaments
+    - "ornate": Decorative with multiple ornament types
+    - "simple": Plain line, no ornaments
+    - "fleuron": Centered ornament only, no lines
+*/ -}}
+
+{{- $style := "medium" -}}
+{{- if .style -}}
+  {{- $style = .style -}}
+{{- end -}}
+
+{{- if eq $style "light" -}}
+  <div class="victorian-divider divider-light">
+    <span class="divider-ornament">✦</span>
+    <span class="divider-line"></span>
+    <span class="divider-ornament">✦</span>
+  </div>
+
+{{- else if eq $style "medium" -}}
+  <div class="victorian-divider divider-medium">
+    <span class="divider-ornament">❖</span>
+    <span class="divider-line divider-double"></span>
+    <span class="divider-ornament">❖</span>
+  </div>
+
+{{- else if eq $style "heavy" -}}
+  <div class="victorian-divider divider-heavy">
+    <span class="divider-ornament-large">❁</span>
+    <span class="divider-line divider-triple"></span>
+    <span class="divider-ornament-large">❁</span>
+  </div>
+
+{{- else if eq $style "ornate" -}}
+  <div class="victorian-divider divider-ornate">
+    <span class="divider-ornament">✠</span>
+    <span class="divider-ornament-small">❧</span>
+    <span class="divider-line divider-decorated"></span>
+    <span class="divider-center-ornament">⁂</span>
+    <span class="divider-line divider-decorated"></span>
+    <span class="divider-ornament-small">❧</span>
+    <span class="divider-ornament">✠</span>
+  </div>
+
+{{- else if eq $style "simple" -}}
+  <div class="victorian-divider divider-simple">
+    <span class="divider-line divider-plain"></span>
+  </div>
+
+{{- else if eq $style "fleuron" -}}
+  <div class="victorian-divider divider-fleuron">
+    <span class="divider-center-ornament-large">※</span>
+  </div>
+
+{{- else -}}
+  {{- /* Default to medium if unknown style */ -}}
+  <div class="victorian-divider divider-medium">
+    <span class="divider-ornament">❖</span>
+    <span class="divider-line divider-double"></span>
+    <span class="divider-ornament">❖</span>
+  </div>
+
+{{- end -}}

@@ -1,0 +1,15 @@
+{{- define "main" -}}
+{{ "<!-- BEGIN main layouts/taxonomy/tag.html -->" | safeHTML }}
+<div class="content">
+  {{- $paginator := .Paginate .Pages -}}
+  {{- range $paginator.Pages -}}
+  <section class="page-summary">
+    <h2 class="title-article-item"><a href="{{ .Permalink }}#top">{{ .Title }}</a></h2>
+    {{- partial "date-and-tags.html" . -}}
+    {{ .Render "summary" }}
+  </section>
+  {{- end -}}
+  {{- partial "pagination.html" . }}
+</div>
+{{ "<!-- END main layouts/taxonomy/tag.html -->" | safeHTML }}
+{{- end -}}

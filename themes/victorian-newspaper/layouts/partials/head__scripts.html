@@ -1,0 +1,29 @@
+    {{ "<!-- BEGIN head__scripts.html -->" | safeHTML }}
+    {{- if or .context.Params.d3 .context.Site.Params.d3 -}}
+      <!--
+        The defer property doesn't work for d3, nor can its script be loaded at the
+        end of the HTML file. There are other scripts that must be loaded in <head>
+        rather than at the end, just before the closing </body> tag. For example, see
+          https://stackoverflow.com/questions/6272702/should-modernizr-file-be-placed-in-head
+        and
+          https://stackoverflow.com/questions/2105327/should-jquery-code-go-in-header-or-footer
+
+        <script type="text/javascript" src="https://d3js.org/d3.v6.min.js" defer="defer"></script>
+      -->
+
+      <!-- d3js: Fall back to local if CDN offline -->
+      <script type="text/javascript" src="https://d3js.org/d3.v6.min.js"></script>
+      <script>window.d3 || document.write('<script type="text/javascript" src="{{ "scripts/d3-v6.7.0.min.js" | absURL }}">\x3C/script>')</script>
+    {{- end }}
+
+    <!-- older D3 v5 -->
+    {{- if or .context.Params.d3v5 .context.Site.Params.d3v5 -}}
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+    {{- end }}
+
+    <!-- older D3 v3 -->
+    {{- if or .context.Params.d3v3 .context.Site.Params.d3v3 -}}
+      <!-- d3js: Fall back to local if CDN offline -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    {{- end }}
+    {{ "<!-- END head__scripts.html -->" | safeHTML }}

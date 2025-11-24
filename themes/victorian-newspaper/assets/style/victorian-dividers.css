@@ -1,0 +1,374 @@
+/* Victorian Decorative Dividers
+ * Ornamental section separators inspired by 1860s-1910s newspapers
+ */
+
+/* ========================================
+ * Base Divider Container
+ * ======================================== */
+.victorian-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75em;
+  margin: 2em auto;
+  max-width: 100%;
+  padding: 0 1em;
+  clear: both;
+}
+
+/* Reduce spacing on smaller screens */
+@media (max-width: 768px) {
+  .victorian-divider {
+    margin: 1.5em auto;
+    gap: 0.5em;
+  }
+}
+
+/* ========================================
+ * Divider Lines - Base Styles
+ * ======================================== */
+.divider-line {
+  flex: 1;
+  position: relative;
+  max-width: 300px;
+  height: 1px;
+}
+
+/* Simple plain line */
+.divider-plain {
+  background: linear-gradient(to right,
+    transparent,
+    #666 10%,
+    #666 90%,
+    transparent);
+  height: 1px;
+}
+
+/* Single line with gradient */
+.divider-line:not(.divider-double):not(.divider-triple):not(.divider-plain):not(.divider-decorated) {
+  background: linear-gradient(to right,
+    transparent,
+    #444 15%,
+    #444 85%,
+    transparent);
+  height: 1px;
+}
+
+/* Double line */
+.divider-double {
+  height: 3px;
+  background: linear-gradient(to right,
+    transparent,
+    #333 15%,
+    #333 85%,
+    transparent);
+}
+
+.divider-double::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent,
+    #555 15%,
+    #555 85%,
+    transparent);
+}
+
+/* Triple line */
+.divider-triple {
+  height: 2px;
+  background: linear-gradient(to right,
+    transparent,
+    #222 15%,
+    #222 85%,
+    transparent);
+}
+
+.divider-triple::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent,
+    #444 15%,
+    #444 85%,
+    transparent);
+}
+
+.divider-triple::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent,
+    #444 15%,
+    #444 85%,
+    transparent);
+}
+
+/* Decorated line with dots */
+.divider-decorated {
+  background-image:
+    linear-gradient(to right, transparent, #333 15%, #333 85%, transparent),
+    repeating-linear-gradient(to right, transparent 0, transparent 8px, #666 8px, #666 9px);
+  background-size: 100% 1px, 100% 1px;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 1px;
+}
+
+/* ========================================
+ * Ornaments - Various Sizes
+ * ======================================== */
+.divider-ornament {
+  font-size: 1em;
+  color: #333;
+  line-height: 1;
+  font-weight: normal;
+  flex-shrink: 0;
+}
+
+.divider-ornament-small {
+  font-size: 0.85em;
+  color: #444;
+  line-height: 1;
+  font-weight: normal;
+  flex-shrink: 0;
+}
+
+.divider-ornament-large {
+  font-size: 1.4em;
+  color: #222;
+  line-height: 1;
+  font-weight: normal;
+  flex-shrink: 0;
+}
+
+.divider-center-ornament {
+  font-size: 1.1em;
+  color: #333;
+  line-height: 1;
+  font-weight: normal;
+  flex-shrink: 0;
+}
+
+.divider-center-ornament-large {
+  font-size: 1.6em;
+  color: #222;
+  line-height: 1;
+  font-weight: normal;
+  flex-shrink: 0;
+}
+
+/* ========================================
+ * Divider Style Variants
+ * ======================================== */
+
+/* Light: Minimal single line with small ornaments */
+.divider-light {
+  margin: 1.5em auto;
+}
+
+.divider-light .divider-ornament {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.divider-light .divider-line {
+  max-width: 250px;
+}
+
+/* Medium: Standard double line (default) */
+.divider-medium {
+  margin: 2em auto;
+}
+
+.divider-medium .divider-line {
+  max-width: 300px;
+}
+
+/* Heavy: Bold multi-line with larger ornaments */
+.divider-heavy {
+  margin: 2.5em auto;
+}
+
+.divider-heavy .divider-line {
+  max-width: 350px;
+}
+
+/* Ornate: Decorative with multiple ornaments */
+.divider-ornate {
+  margin: 2.5em auto;
+  gap: 0.5em;
+}
+
+.divider-ornate .divider-line {
+  max-width: 200px;
+}
+
+/* Simple: Plain line only */
+.divider-simple {
+  margin: 1.5em auto;
+  padding: 0 2em;
+}
+
+.divider-simple .divider-line {
+  max-width: 100%;
+}
+
+/* Fleuron: Centered ornament only */
+.divider-fleuron {
+  margin: 2em auto;
+}
+
+/* ========================================
+ * Context-Specific Styling
+ * ======================================== */
+
+/* Between articles in lists */
+article + .victorian-divider {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+/* After article metadata */
+.date-and-tags + .victorian-divider,
+.publication-metadata + .victorian-divider {
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+}
+
+/* Before comments or backlinks */
+.victorian-divider + .comments,
+.victorian-divider + .backlinks {
+  margin-top: 2em;
+}
+
+/* In sidebar */
+.sidebar-content .victorian-divider {
+  margin: 1.5em auto;
+  max-width: 200px;
+}
+
+.sidebar-content .victorian-divider .divider-line {
+  max-width: 150px;
+}
+
+/* ========================================
+ * Responsive Adjustments
+ * ======================================== */
+@media (max-width: 768px) {
+  .divider-light .divider-line,
+  .divider-medium .divider-line,
+  .divider-heavy .divider-line,
+  .divider-ornate .divider-line {
+    max-width: 200px;
+  }
+
+  .divider-ornament-large {
+    font-size: 1.2em;
+  }
+
+  .divider-center-ornament-large {
+    font-size: 1.4em;
+  }
+
+  .divider-ornate {
+    gap: 0.3em;
+  }
+
+  .divider-ornate .divider-line {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .victorian-divider {
+    gap: 0.4em;
+    padding: 0 0.5em;
+  }
+
+  .divider-light .divider-line,
+  .divider-medium .divider-line,
+  .divider-heavy .divider-line {
+    max-width: 150px;
+  }
+
+  .divider-ornate {
+    gap: 0.25em;
+  }
+
+  .divider-ornate .divider-line {
+    max-width: 80px;
+  }
+
+  .divider-ornate .divider-ornament-small {
+    display: none; /* Hide small ornaments on very small screens */
+  }
+}
+
+/* ========================================
+ * Print Styles
+ * ======================================== */
+@media print {
+  .victorian-divider {
+    page-break-inside: avoid;
+    margin: 1em auto;
+  }
+
+  .divider-line,
+  .divider-double,
+  .divider-triple,
+  .divider-plain,
+  .divider-decorated {
+    background: #000;
+  }
+
+  .divider-double::after,
+  .divider-triple::before,
+  .divider-triple::after {
+    background: #000;
+  }
+
+  .divider-ornament,
+  .divider-ornament-small,
+  .divider-ornament-large,
+  .divider-center-ornament,
+  .divider-center-ornament-large {
+    color: #000;
+  }
+
+  /* Avoid page breaks immediately after dividers */
+  .victorian-divider {
+    page-break-after: avoid;
+  }
+}
+
+/* ========================================
+ * Accessibility
+ * ======================================== */
+
+/* Ensure ornaments are treated as decorative by screen readers */
+.divider-ornament::before,
+.divider-ornament-small::before,
+.divider-ornament-large::before,
+.divider-center-ornament::before,
+.divider-center-ornament-large::before {
+  content: '';
+  speak: never;
+}
+
+/* Add semantic separator role */
+.victorian-divider[role="separator"] {
+  /* Styling already applied above */
+}

@@ -1,0 +1,51 @@
+{{- define "main" }}
+{{ "<!-- BEGIN main in layouts/_default/section.html -->" | safeHTML }}
+
+{{ if gt .WordCount 0 }}
+  {{- "<!-- BEGIN content div layouts/_default/section.html -->" | safeHTML }}
+  {{ partial "drop-caps.html" . }}
+  {{ "<!-- END content div layouts/_default/section.html -->" | safeHTML }}
+{{ end }}
+
+{{- $pag := .Paginate (where .RegularPages "Section" .Section) -}}
+{{ "<!-- BEGIN range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
+{{- if gt (len $pag.Pages) 0 -}}
+  {{- range $pag.Pages -}}
+    <!-- NOTE: <section> is important. It shrinks the size of the <h2> element-->
+    {{- $featuredImage := "" -}}
+    {{- $featuredImageDescription := "" -}}
+    {{- if .Params.featuredImage -}}
+      {{- $featuredImage = .Params.featuredImage -}}
+      {{- $featuredImageDescription = .Params.featuredImageDescription -}}
+    {{- else -}}
+      {{- $featuredImage = .Site.Params.featuredImage -}}
+      {{- $featuredImageDescription = .Site.Params.featuredImageDescription -}}
+    {{- end -}}
+    <section class="page-summary">
+      <div class="flex-row">
+        <div class="pl3-ns">
+          <a href="{{ .Permalink }}" class="db grow">
+            <img src="{{ $featuredImage | absURL }}" alt={{ $featuredImageDescription }}>
+          </a>
+        </div>
+        <div class="pr3-ns">
+          <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+          {{- partial "date-and-tags.html" . -}}
+          {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
+          {{- .Render "summary" }}
+        </div>
+      </div>
+    </section>
+  {{- end -}}
+{{- end -}}
+{{ "<!-- END range over paginator pages in layouts/_default/section.html-->" | safeHTML }}
+{{- partial "pagination.html" . }}
+
+{{ if and .Site.Config.Services.Disqus.Shortname (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
+<section class="comments">{{- "<!-- BEGIN comments section layouts/_default/section.html -->" | safeHTML }}
+  {{ partial "disqus.html" . }}
+</section> {{- "<!-- END comments section layouts/_default/section.html -->" | safeHTML }}
+{{ end }}
+
+{{ "<!-- END main in layouts/_default/section.html -->" | safeHTML }}
+{{- end -}}

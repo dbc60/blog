@@ -1,0 +1,56 @@
+        {{- $dateTimeFormatShort := "2006-01-02" }}
+        {{ "<!-- BEGIN layouts/partials/date-and-tags.html -->" | safeHTML }}
+        {{ $dateTimeFormatLong := "2006-01-02T15:04" -}}
+        {{- $dateTime := .PublishDate.Format $dateTimeFormatShort -}}
+        {{- $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+        {{- $dateFormatExtended := .Site.Params.dateFormatExtended | default "Jan 2, 2006 15:04" -}}
+        <header class="article-meta-data victorian">
+          <div class="post-metadata victorian">
+
+            {{- /* Publication Date */ -}}
+            {{- if not .PublishDate.IsZero -}}
+            <div class="victorian-dateline">
+              <span class="victorian-dateline-label">Published:</span>
+              <time class="victorian-dateline-date" datetime="{{ $dateTime }}">
+                {{- .PublishDate.Format $dateFormat -}}
+              </time>
+              <span class="victorian-dateline-ornament">❖</span>
+              <span class="victorian-reading-stats-label">Estimated Reading Time:</span>
+              <span class="victorian-dateline-date">{{ .ReadingTime}} minute{{- if ne .ReadingTime 1 -}}s{{- end -}}</span>
+              <span class="victorian-dateline-ornament">◆</span>
+              <span class="victorian-dateline-date">{{ .WordCount }} words</span>
+            </div>
+            {{- end -}}
+
+            {{- /* Last Updated */ -}}
+            {{- if and (not .Lastmod.IsZero) (ne (.PublishDate.Format $dateTimeFormatShort) (.Lastmod.Format $dateTimeFormatShort)) -}}
+            <div class="victorian-updated">
+              <span class="victorian-updated-label">Last Updated:</span>
+              <time class="victorian-updated-date" datetime="{{ .Lastmod.Format $dateTimeFormatLong }}">
+                {{ .Lastmod.Format $dateFormat }}
+                {{- if .Params.update -}}
+                  <span> ({{ .Params.update }})</span>
+                {{- end -}}
+              </time>
+            </div>
+            {{- end -}}
+
+            {{- /* Tags/Topics */ -}}
+            {{ with .Params.tags -}}
+            <div class="victorian-topics">
+              <span class="victorian-topics-label">Filed Under:</span>
+              <div class="victorian-tag-list">
+                {{- range $index, $tag := . -}}
+                  {{- if gt $index 0 -}}
+                    <span class="victorian-tag-separator">◆</span>
+                  {{- end -}}
+                  {{- $href := print (absURL "tags/") (urlize $tag) ".html" -}}
+                  <a class="victorian-tag" href="{{ $href }}">{{ $tag }}</a>
+                {{- end -}}
+              </div>
+            </div>
+            {{ end -}}
+
+          </div>
+        </header>
+        {{ "<!--END layouts/partials/date-and-tags.html -->" | safeHTML }}

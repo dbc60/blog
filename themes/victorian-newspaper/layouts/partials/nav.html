@@ -1,0 +1,17 @@
+  <nav class="main-nav" id="top">
+  {{- $showActiveNav := .Site.Params.showActiveNav -}}
+    {{- $currentPage := . -}}
+    <div class="main-nav__items">
+    {{- range .Site.Menus.nav -}}
+      {{- $active := "" -}}
+      {{- if eq $showActiveNav true -}}
+        {{- $isMenu := or ($currentPage.IsMenuCurrent "nav" .) ($currentPage.HasMenuCurrent "nav" .) -}}
+        {{- if or $isMenu (eq $currentPage.Title .Name) -}}
+          {{- $active = "navLink-active" -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $text := print .Name | safeHTML }}
+      <a class="main-nav__link {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
+    {{- end }}
+    </div>
+  </nav>

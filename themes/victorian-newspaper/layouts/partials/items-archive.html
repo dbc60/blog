@@ -1,0 +1,28 @@
+{{ $currentSection := .Section }}
+{{ "<!-- BEGIN layouts/partials/items-archive.html -->" | safeHTML }}
+<!-- all posts in reverse chronological order -->
+{{ $postsAll := where .Site.RegularPages.ByDate.Reverse "Type" "in" .Site.Params.mainSections }}
+{{ $scratch := newScratch }}
+{{ $scratch.Set "currentYear" ((index $postsAll 0).Date.Format "2006") }}
+{{ $cy := $scratch.Get "currentYear" }}
+<ul class="collection-items">
+  <li class="collection-item">
+    <a class="secondary-nav__link" href="{{ $cy | absURL }}">
+      {{ $cy }}
+    </a>
+  </li>
+{{ range $idx, $page := $postsAll }}
+  {{ $scratch.Set "previousYear" ($page.Date.Format "2006") }}
+  {{ $cy := $scratch.Get "currentYear" }}
+  {{ $py := $scratch.Get "previousYear" }}
+  {{ if ne $cy $py }}
+  <li class="collection-item">
+    <a class="secondary-nav__link" href="{{ $py | absURL }}">
+      {{ $py }}
+    </a>
+  </li>
+    {{ $scratch.Set "currentYear" $py }}
+  {{ end }}
+{{ end }}
+{{ "<!--END layouts/partials/items-archive.html -->" | safeHTML }}
+</ul>

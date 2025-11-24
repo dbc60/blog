@@ -1,0 +1,17 @@
+name = "Victorian Newspaper"
+license = "CC-BY-4.0"
+licenselink = "https://creativecommons.org/licenses/by/4.0/"
+description = "A Hugo theme inspired by Victorian-era newspaper design with elegant typography, decorative dividers, ornamental drop caps, and warm aged newsprint colors."
+homepage = "https://douglascuthbertson.com"
+tags = ["blog", "vintage", "newspaper", "victorian", "elegant", "typography", "drop-caps", "personal"]
+features = ["Drop Caps", "Decorative Dividers", "Backlinks", "Breadcrumbs", "Year Taxonomies", "Custom Shortcodes", "Print Styles", "KaTeX Math"]
+min_version = "0.151.0"
+
+[author]
+  name = "Douglas Cuthbertson"
+  homepage = "https://douglascuthbertson.com"
+
+[original]
+  name = "Douglas Cuthbertson"
+  homepage = "https://douglascuthbertson.com"
+  repo = "https://github.com/douglas-cuthbertson/blog"

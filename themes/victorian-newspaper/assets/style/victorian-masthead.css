@@ -1,0 +1,250 @@
+/* Victorian Newspaper Masthead Styling
+ * Inspired by 1860s-1910s illustrated newspapers
+ */
+
+/* ========================================
+ * Main Masthead Container
+ * ======================================== */
+.victorian-masthead {
+  background: #f5f5f0;
+  border-bottom: 3px double #333;
+  padding: 1.5em 2em 2em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+/* ========================================
+ * Decorative Rules (Top and Bottom)
+ * ======================================== */
+.masthead-rule-top,
+.masthead-rule-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin: 1em 0;
+}
+
+.masthead-rule-top {
+  margin-bottom: 0.75em;
+}
+
+.masthead-rule-bottom {
+  margin-top: 0.75em;
+  margin-bottom: 1.5em;
+}
+
+.rule-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right,
+    transparent,
+    #333 15%,
+    #333 85%,
+    transparent);
+  max-width: 600px;
+}
+
+.rule-line-double {
+  position: relative;
+  height: 4px;
+  background: linear-gradient(to right,
+    transparent,
+    #333 15%,
+    #333 85%,
+    transparent);
+}
+
+.rule-line-double::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent,
+    #666 15%,
+    #666 85%,
+    transparent);
+}
+
+.rule-ornament {
+  font-size: 1.2em;
+  color: #333;
+  font-weight: normal;
+  line-height: 1;
+}
+
+/* ========================================
+ * Publication Metadata Bar
+ * ======================================== */
+.publication-metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0.5em 0 1.5em;
+  padding: 0 1em;
+  color: #333;
+}
+
+.metadata-left,
+.metadata-right {
+  flex: 1;
+  font-weight: 600;
+}
+
+.metadata-left {
+  text-align: left;
+}
+
+.metadata-right {
+  text-align: right;
+}
+
+.metadata-center {
+  flex: 2;
+  text-align: center;
+}
+
+.metadata-label {
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+.metadata-value {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.publication-date {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.95em;
+  letter-spacing: 0.03em;
+}
+
+/* ========================================
+ * Title/Nameplate
+ * ======================================== */
+.title-content {
+  margin: 1.5em 0;
+}
+
+.siteTitle.nameplate {
+  font-family: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0.3em 0 0.2em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.siteTitle.nameplate a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.siteTitle.nameplate a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+/* ========================================
+ * Subtitle/Tagline
+ * ======================================== */
+.siteSubTitle.tagline {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0.5em 0 0;
+  color: #444;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+.siteSubTitle.tagline a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.siteSubTitle.tagline a:hover {
+  color: #666;
+}
+
+/* ========================================
+ * Responsive Design
+ * ======================================== */
+@media (max-width: 768px) {
+  .victorian-masthead {
+    padding: 1em 1em 1.5em;
+  }
+
+  .siteTitle.nameplate {
+    font-size: 2.5rem;
+  }
+
+  .siteSubTitle.tagline {
+    font-size: 0.95rem;
+  }
+
+  .publication-metadata {
+    font-size: 0.75rem;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .metadata-left,
+  .metadata-center,
+  .metadata-right {
+    text-align: center;
+  }
+
+  .rule-line {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .siteTitle.nameplate {
+    font-size: 2rem;
+    letter-spacing: 0.01em;
+  }
+
+  .siteSubTitle.tagline {
+    font-size: 0.85rem;
+  }
+
+  .publication-metadata {
+    font-size: 0.7rem;
+  }
+
+  .rule-ornament {
+    font-size: 1em;
+  }
+}
+
+/* ========================================
+ * Print Styles
+ * ======================================== */
+@media print {
+  .victorian-masthead {
+    background: #fff;
+    border-bottom: 2px solid #000;
+    page-break-after: avoid;
+  }
+
+  .rule-line,
+  .rule-line-double {
+    background: #000;
+  }
+}

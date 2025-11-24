@@ -1,0 +1,22 @@
+{{- define "main" }}
+{{ "<!-- BEGIN main layouts/taxonomy/term.html -->" | safeHTML }}
+{{- $taxonomyName := .Data.Singular -}}
+{{- if or (eq $taxonomyName "2015") (eq $taxonomyName "2016") (eq $taxonomyName "2019") (eq $taxonomyName "2020") (eq $taxonomyName "2021") (eq $taxonomyName "2022") (eq $taxonomyName "2023") (eq $taxonomyName "2024") (eq $taxonomyName "2025") -}}
+  {{- /* This is a year taxonomy, use the year partial */ -}}
+  {{ partial "year.html" . }}
+{{- else -}}
+  {{- /* This is a regular taxonomy term (like tags), show the posts */ -}}
+  <div class="content">
+    {{- $paginator := .Paginate .Pages -}}
+    {{- range $paginator.Pages -}}
+    <section class="page-summary">
+      <h2 class="title-article-item"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      {{- partial "date-and-tags.html" . -}}
+      {{ .Render "summary" }}
+    </section>
+    {{- end -}}
+    {{- partial "pagination.html" . }}
+  </div>
+{{- end -}}
+{{ "<!-- END main layouts/taxonomy/term.html -->" | safeHTML }}
+{{- end -}}
