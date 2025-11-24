@@ -1,5 +1,0 @@
-@media print {
-  footer, .masthead, .sidebar-content, video, audio, object, embed  {
-    display: none;
-  }
-}

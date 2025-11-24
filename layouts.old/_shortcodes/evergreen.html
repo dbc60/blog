@@ -1,6 +1,0 @@
-{{- "<!-- BEGIN evergreen shortcode -->" | safeHTML -}}
-{{- $file := .Get 0 -}}
-{{- with .Site.GetPage $file -}}
-<a class="evergreen-link" href="{{ .Permalink }}">{{ .Content -}}</a>
-{{- end -}}
-{{- "<!-- END evergreen shortcode -->" | safeHTML -}}
