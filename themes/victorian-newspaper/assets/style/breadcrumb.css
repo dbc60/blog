@@ -1,0 +1,124 @@
+/* ==========================================================================
+ * Victorian Breadcrumb Navigation
+ * ==========================================================================
+ * Minimal section indicator styled as Victorian newspaper metadata
+ * ========================================================================== */
+
+/* Breadcrumb Container */
+.nav-breadcrumbs {
+  background: transparent;
+  padding: 0.5em 1em 0.75em;
+  margin: 0 0 1em;
+  border-bottom: 1px dotted #ccc;
+}
+
+/* Breadcrumb Trail */
+.crumb-trail {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 0.8rem;
+  color: #666;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+}
+
+/* Add "Filed Under:" prefix before first crumb */
+.crumb-trail::before {
+  content: 'Filed Under: ';
+  font-variant: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #555;
+  margin-right: 0.35em;
+}
+
+/* Individual Crumb */
+.crumb {
+  position: relative;
+  display: inline;
+  float: none;
+  background-color: transparent;
+  color: #666;
+}
+
+/* Crumb Links */
+.crumb .crumb-link {
+  color: #666;
+  text-decoration: none;
+  display: inline;
+  padding: 0;
+  width: auto;
+  height: auto;
+  transition: color 0.2s ease;
+  font-style: italic;
+}
+
+/* Hover State for Non-Last Crumbs */
+.crumb:not(:last-child) .crumb-link:hover {
+  color: #2f75cc;
+  text-decoration: underline;
+}
+
+/* Last Crumb (Current Page) */
+.crumb:last-child .crumb-link {
+  color: #333;
+  font-weight: 600;
+  font-style: normal;
+  pointer-events: none;
+}
+
+/* Separator Between Crumbs */
+.crumb:not(:last-child)::after {
+  content: ' / ';
+  color: #999;
+  margin: 0 0.25em;
+  font-style: normal;
+}
+
+/* Remove all old arrow styling */
+.crumb > a::after,
+.crumb:not(:first-child) > .crumb-link::before {
+  display: none;
+  content: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-breadcrumbs {
+    padding: 0.4em 0.75em 0.6em;
+  }
+
+  .crumb-trail {
+    font-size: 0.75rem;
+  }
+
+  .crumb-trail::before {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-breadcrumbs {
+    padding: 0.35em 0.5em 0.5em;
+  }
+
+  .crumb-trail {
+    font-size: 0.7rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .nav-breadcrumbs {
+    border-bottom-color: #000;
+  }
+
+  .crumb-trail::before,
+  .crumb .crumb-link {
+    color: #000;
+  }
+}

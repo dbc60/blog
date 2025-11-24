@@ -3,6 +3,7 @@ baseURL = "https://douglascuthbertson.com"
 uglyURLs = true
 languageCode = "en-us"
 title = "Doug's Place"
+theme = "victorian-newspaper"
 
 disqusShortname = "cuthbertson"
 enableRobotsTXT = true

@@ -1,0 +1,25 @@
+{{- define "main" }}
+{{ "<!-- BEGIN main layouts/taxonomy/taxonomy.html -->" | safeHTML }}
+<div class="content">
+  {{- /* Victorian Index Header */ -}}
+  <div class="victorian-section-header">
+    <span class="victorian-section-ornament">❦</span>
+    <h1 class="victorian-section-title">{{ .Title }}</h1>
+    <span class="victorian-section-subtitle">Comprehensive Index</span>
+  </div>
+
+  {{- /* Victorian Index Grid */ -}}
+  <div class="victorian-index-grid">
+    {{- range .Pages -}}
+    <div class="victorian-index-item">
+      <a href="{{ .RelPermalink }}" class="victorian-index-link">
+        <span class="victorian-index-name">{{ .Title }}</span>
+        <span class="victorian-index-separator"></span>
+        <span class="victorian-index-count">{{ len .Pages }} {{ if eq (len .Pages) 1 }}Article{{ else }}Articles{{ end }}</span>
+      </a>
+    </div>
+    {{- end -}}
+  </div>
+</div>
+{{ "<!-- END main layouts/taxonomy/taxonomy.html -->" | safeHTML }}
+{{- end -}}

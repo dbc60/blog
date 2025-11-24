@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{ "<!-- BEGIN main layouts/taxonomy/tag.taxonomy.html -->" | safeHTML }}
+<!-- See https://bwaycer.github.io/hugo_tutorial.hugo/templates/terms/ -->
+<div class="content">
+  {{- /* Victorian Index Header */ -}}
+  <div class="victorian-section-header">
+    <span class="victorian-section-ornament">❦</span>
+    <h1 class="victorian-section-title">{{ .Title }}</h1>
+    <span class="victorian-section-subtitle">Comprehensive Index of Topics</span>
+  </div>
+
+  {{- /* Victorian Index Grid */ -}}
+  <div class="victorian-index-grid">
+    {{ $type := .Type }}
+    {{ range .Data.Terms.Alphabetical }}
+      {{ with $.Site.GetPage (printf "/%s/%s" $type .Name) }}
+      <div class="victorian-index-item">
+        <a href="{{ .Permalink }}" class="victorian-index-link">
+          <span class="victorian-index-name">{{ .Name }}</span>
+          <span class="victorian-index-separator"></span>
+          <span class="victorian-index-count">{{ len .Pages }} {{ if eq (len .Pages) 1 }}Article{{ else }}Articles{{ end }}</span>
+        </a>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ "<!-- END main layouts/taxonomy/tag.taxonomy.html -->" | safeHTML }}
+{{ end }}

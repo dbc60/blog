@@ -1,0 +1,1536 @@
+/* ==========================================================================
+ * Victorian Newspaper Theme
+ * ==========================================================================
+ * Unified theme file combining all Victorian newspaper styling components.
+ * Inspired by 1860s-1910s illustrated newspapers with elegant typography,
+ * decorative dividers, ornamental drop caps, and warm aged newsprint colors.
+ * ========================================================================== */
+
+/* ==========================================================================
+ * Color Palette Override
+ * ==========================================================================
+ * Override base.css color palette with warm Victorian newspaper tones.
+ * Uses CSS custom properties so no !important declarations are needed.
+ * ========================================================================== */
+:root {
+  /* Warm cream/beige tones mimicking aged newsprint */
+  --gray100: #ebe8e0;        /* Warm cream (was cool #fcfcfc) */
+  --gray150: #ebe8e0;        /* Warm cream (was cool #e3e3e3) */
+  --background-main-default: #ebe8e0;  /* Override directly */
+
+  /* Slightly lighter for main content area */
+  --background-main-content: #f5f5f0;
+}
+
+/* Apply theme colors */
+body {
+  background-color: var(--background-main-default);
+}
+
+.body-content {
+  background-color: var(--background-main-default);
+}
+
+.main-content {
+  background-color: var(--background-main-content);
+  padding: 0;
+  border: 1px solid #d5d2ca;
+}
+
+.main-content > .content {
+  margin: 1.5em;
+}
+
+/* Print styles - use white for printing */
+@media print {
+  :root {
+    --gray100: #fff;
+    --gray150: #fff;
+    --background-main-default: #fff;
+    --background-main-content: #fff;
+  }
+
+  body,
+  .body-content,
+  .main-content {
+    background-color: #fff;
+  }
+}
+
+/* ==========================================================================
+ * Victorian Masthead Component
+ * ==========================================================================
+ * Main masthead banner with decorative rules
+ * Inspired by 1860s-1910s illustrated newspapers
+ * ========================================================================== */
+
+/* Main Masthead Container */
+.victorian-masthead {
+  background: #f5f5f0;
+  border-bottom: 3px double #333;
+  padding: 1.5em 2em 2em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+/* Decorative Rules (Top and Bottom) */
+.masthead-rule-top,
+.masthead-rule-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin: 1em 0;
+}
+
+.masthead-rule-top {
+  margin-bottom: 0.75em;
+}
+
+.masthead-rule-bottom {
+  margin-top: 0.75em;
+  margin-bottom: 1.5em;
+}
+
+.rule-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right,
+    transparent,
+    #333 15%,
+    #333 85%,
+    transparent);
+  max-width: 600px;
+}
+
+.rule-line-double {
+  position: relative;
+  height: 4px;
+  background: linear-gradient(to right,
+    transparent,
+    #333 15%,
+    #333 85%,
+    transparent);
+}
+
+.rule-line-double::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent,
+    #666 15%,
+    #666 85%,
+    transparent);
+}
+
+/* Ornamental Elements */
+.rule-ornament {
+  font-size: 1.2em;
+  color: #333;
+  font-weight: normal;
+  line-height: 1;
+}
+
+/* Publication Metadata Bar */
+.publication-metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0.5em 0 1.5em;
+  padding: 0 1em;
+  color: #333;
+}
+
+.metadata-left,
+.metadata-right {
+  flex: 1;
+  font-weight: 600;
+}
+
+.metadata-left {
+  text-align: left;
+}
+
+.metadata-right {
+  text-align: right;
+}
+
+.metadata-center {
+  flex: 2;
+  text-align: center;
+}
+
+.metadata-label {
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+.metadata-value {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.publication-date {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.95em;
+  letter-spacing: 0.03em;
+}
+
+/* Title/Nameplate */
+.title-content {
+  margin: 1.5em 0;
+}
+
+.siteTitle.nameplate {
+  font-family: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0.3em 0 0.2em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.siteTitle.nameplate a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.siteTitle.nameplate a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Subtitle/Tagline */
+.siteSubTitle.tagline {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0.5em 0 0;
+  color: #444;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+.siteSubTitle.tagline a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.siteSubTitle.tagline a:hover {
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .victorian-masthead {
+    padding: 1em 1em 1.5em;
+  }
+
+  .siteTitle.nameplate {
+    font-size: 2.5rem;
+  }
+
+  .siteSubTitle.tagline {
+    font-size: 0.95rem;
+  }
+
+  .publication-metadata {
+    font-size: 0.75rem;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .metadata-left,
+  .metadata-center,
+  .metadata-right {
+    text-align: center;
+  }
+
+  .rule-line {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .siteTitle.nameplate {
+    font-size: 2rem;
+    letter-spacing: 0.01em;
+  }
+
+  .siteSubTitle.tagline {
+    font-size: 0.85rem;
+  }
+
+  .publication-metadata {
+    font-size: 0.7rem;
+  }
+
+  .rule-ornament {
+    font-size: 1em;
+  }
+}
+
+/* Print styles */
+@media print {
+  .victorian-masthead {
+    background: #fff;
+    border-bottom: 2px solid #000;
+    page-break-after: avoid;
+  }
+
+  .rule-line,
+  .rule-line-double {
+    background: #000;
+  }
+}
+
+/* ==========================================================================
+ * Victorian Decorative Dividers
+ * ==========================================================================
+ * Ornamental section separators inspired by 1860s-1910s newspapers
+ * ========================================================================== */
+
+/* Base Divider Container */
+.victorian-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75em;
+  margin: 2em auto;
+  max-width: 100%;
+  padding: 0 1em;
+  clear: both;
+}
+
+/* Reduce spacing on smaller screens */
+@media (max-width: 768px) {
+  .victorian-divider {
+    margin: 1.5em auto;
+    gap: 0.5em;
+  }
+}
+
+/* Divider Lines - Base Styles */
+.divider-line {
+  flex: 1;
+  position: relative;
+  max-width: 300px;
+  height: 1px;
+}
+
+/* Simple plain line */
+.divider-plain {
+  background: linear-gradient(to right,
+    transparent,
+    #4a4a4a 20%,
+    #4a4a4a 80%,
+    transparent);
+}
+
+/* Double line divider */
+.divider-double {
+  height: 3px;
+}
+
+.divider-double::before,
+.divider-double::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent,
+    #4a4a4a 20%,
+    #4a4a4a 80%,
+    transparent);
+}
+
+.divider-double::before {
+  top: 0;
+}
+
+.divider-double::after {
+  bottom: 0;
+}
+
+/* Ornamental centerpieces */
+.divider-ornament {
+  font-size: 1.5rem;
+  color: #4a4a4a;
+  flex-shrink: 0;
+  padding: 0 0.25em;
+}
+
+/* Smaller ornaments */
+.divider-ornament-small {
+  font-size: 1rem;
+}
+
+/* Larger ornaments */
+.divider-ornament-large {
+  font-size: 2rem;
+}
+
+/* ==========================================================================
+ * Victorian Sidebar Component
+ * ==========================================================================
+ * Newspaper column-style sidebar sections inspired by 1860s-1910s newspapers
+ * ========================================================================== */
+
+/* Victorian Section Headers */
+.victorian-sidebar-header {
+  text-align: center;
+  margin: 1.5em 0 1em;
+  padding: 0.75em 0.5em;
+  background: linear-gradient(to bottom, #f0f0eb, #f5f5f0);
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  position: relative;
+}
+
+/* Align containers using margin (not padding) for consistent visual alignment
+   Both sidebar and main content start with 1.5em margin */
+.wrapper-collections {
+  margin-top: 0;
+}
+
+/* Section headers maintain 1.5em top margin for consistency */
+.victorian-section-header {
+  margin-top: 1.5em;
+}
+
+.victorian-sidebar-header::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #666;
+}
+
+.victorian-sidebar-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #666;
+}
+
+.victorian-sidebar-header h2,
+.victorian-sidebar-header h3 {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1a1a1a;
+}
+
+/* Sidebar List Styling */
+.victorian-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.victorian-sidebar-list li {
+  border-bottom: 1px dotted #999;
+  padding: 0.5em 0;
+  margin: 0;
+}
+
+.victorian-sidebar-list li:last-child {
+  border-bottom: none;
+}
+
+.victorian-sidebar-list a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: background-color 0.2s;
+}
+
+.victorian-sidebar-list a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #000;
+}
+
+/* Date/Meta styling in sidebar */
+.victorian-sidebar-date {
+  font-size: 0.85em;
+  color: #666;
+  font-style: italic;
+  display: block;
+  margin-top: 0.25em;
+}
+
+/* Collection Items Container (Enhanced) */
+.wrapper-collection-items.victorian {
+  background-color: #f5f5f0;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  margin-bottom: 2em;
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Remove the old icon-based borders when using Victorian style */
+.wrapper-collection-items.victorian .wrapper-collection-border.icon {
+  display: none;
+}
+
+.wrapper-collection-items.victorian .wrapper-collection-border.title {
+  display: none;
+}
+
+/* Collection Items List */
+.collection-items.victorian {
+  background-color: transparent;
+  padding: 0.5em 0.75em 0.75em;
+  margin: 0;
+  max-height: none;
+  overflow-y: visible;
+}
+
+.collection-item.victorian {
+  list-style-type: none;
+  margin: 0;
+  padding: 0.4em 0;
+  border-bottom: 1px dotted #ddd;
+  position: relative;
+  padding-left: 1em;
+}
+
+.collection-item.victorian:last-child {
+  border-bottom: none;
+}
+
+/* Victorian bullet ornament before each item */
+.collection-item.victorian::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: #666;
+  font-size: 0.5em;
+  line-height: 2.4;
+}
+
+/* Link styling */
+.collection-item.victorian a {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+.collection-item.victorian a:hover {
+  color: #000;
+  padding-left: 0.3em;
+  font-weight: 600;
+}
+
+/* Specific Section Styling */
+
+/* Latest Intelligence (Latest Posts) */
+.victorian-latest .collection-item.victorian a {
+  font-style: italic;
+}
+
+.victorian-latest .collection-item.victorian::before {
+  content: '❖';
+  font-size: 0.6em;
+  line-height: 2;
+}
+
+/* Table of Contents */
+.victorian-contents .collection-item.victorian a {
+  font-weight: 500;
+}
+
+.victorian-contents .collection-item.victorian::before {
+  content: '✦';
+  font-size: 0.6em;
+  line-height: 2;
+}
+
+/* Departments (Taxonomies/Collections) */
+.victorian-departments .collection-item.victorian::before {
+  content: '◈';
+  font-size: 0.6em;
+  line-height: 2;
+}
+
+.victorian-departments .collection-item.victorian a {
+  font-variant: small-caps;
+  letter-spacing: 0.02em;
+}
+
+/* Override existing collection-items background when Victorian */
+.wrapper-collection-items.victorian .collection-items {
+  background-color: transparent;
+}
+
+/* ==========================================================================
+ * Victorian Post Metadata Component
+ * ==========================================================================
+ * Publication dateline and article information in period newspaper style
+ * ========================================================================== */
+
+/* Main Metadata Container */
+.article-meta-data.victorian {
+  background: #f5f5f0;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  font-family: 'Source Serif Pro', Georgia, serif;
+  position: relative;
+}
+
+.article-meta-data.victorian::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #666;
+}
+
+.article-meta-data.victorian::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #666;
+}
+
+/* Metadata Content Container */
+.post-metadata.victorian {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Publication Date Line */
+.victorian-dateline {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  font-weight: 600;
+  color: #222;
+}
+
+.victorian-dateline-label {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 0.85em;
+  color: #444;
+}
+
+.victorian-dateline-date {
+  font-style: italic;
+  font-weight: 400;
+  color: #333;
+}
+
+.victorian-dateline-ornament {
+  color: #666;
+  font-size: 0.7em;
+  margin: 0 0.3em;
+}
+
+/* Reading Statistics */
+.victorian-reading-stats {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  font-size: 0.85em;
+  color: #555;
+  font-style: italic;
+}
+
+.victorian-reading-stats-label {
+  font-weight: 600;
+  font-style: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  color: #444;
+}
+
+/* Last Updated */
+.victorian-updated {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  font-size: 0.85em;
+  color: #555;
+}
+
+.victorian-updated-label {
+  font-weight: 600;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  color: #444;
+}
+
+.victorian-updated-date {
+  font-style: italic;
+  color: #666;
+}
+
+/* Tags/Topics Section */
+.victorian-topics {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  margin-top: 0.25em;
+}
+
+.victorian-topics-label {
+  font-weight: 700;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-size: 0.85em;
+  color: #444;
+  flex-shrink: 0;
+}
+
+.victorian-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  align-items: baseline;
+}
+
+.victorian-tag {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  background: #e8e5dd;
+  border: 1px solid #bbb;
+  border-radius: 0;
+  font-size: 0.8em;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+.victorian-tag:hover {
+  background: #d5d2ca;
+  border-color: #999;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Tag separator ornament */
+.victorian-tag-separator {
+  color: #999;
+  font-size: 0.6em;
+  margin: 0 0.2em;
+}
+
+/* Category/Department (if used) */
+.victorian-department {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  font-weight: 600;
+}
+
+.victorian-department-label {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-size: 0.85em;
+  color: #444;
+}
+
+.victorian-department-name {
+  font-style: italic;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Legacy .victorian-categories class (for backwards compatibility) */
+.victorian-categories {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+.victorian-categories strong {
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+}
+
+.victorian-categories a {
+  color: #2f75cc;
+  text-decoration: none;
+  border-bottom: 1px dotted #2f75cc;
+  transition: all 0.2s;
+}
+
+.victorian-categories a:hover {
+  color: #193e6d;
+  border-bottom-color: #193e6d;
+}
+
+/* Responsive Adjustments for Post Metadata */
+@media (max-width: 768px) {
+  .article-meta-data.victorian {
+    padding: 0.75em 1em;
+    margin: 1em 0;
+  }
+
+  .post-metadata.victorian {
+    font-size: 0.85rem;
+    gap: 0.4em;
+  }
+
+  .victorian-dateline,
+  .victorian-topics {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3em;
+  }
+
+  .victorian-tag {
+    font-size: 0.75em;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-meta-data.victorian {
+    padding: 0.5em 0.75em;
+  }
+
+  .post-metadata.victorian {
+    font-size: 0.8rem;
+  }
+
+  .victorian-reading-stats,
+  .victorian-updated {
+    font-size: 0.8em;
+  }
+
+  .victorian-tag {
+    padding: 0.1em 0.5em;
+    font-size: 0.7em;
+  }
+}
+
+/* Print Styles for Post Metadata */
+@media print {
+  .article-meta-data.victorian {
+    background: #fff;
+    border-top-color: #000;
+    border-bottom-color: #000;
+    page-break-after: avoid;
+  }
+
+  .article-meta-data.victorian::before,
+  .article-meta-data.victorian::after {
+    background: #000;
+  }
+
+  .victorian-tag {
+    background: #fff;
+    border-color: #000;
+  }
+
+  .victorian-dateline,
+  .victorian-reading-stats,
+  .victorian-updated,
+  .victorian-topics-label,
+  .victorian-department {
+    color: #000;
+  }
+}
+
+/* ==========================================================================
+ * Victorian Index/Archive Pages
+ * ==========================================================================
+ * Taxonomy term lists styled as Victorian newspaper department indexes
+ * ========================================================================== */
+
+/* Index Grid Container */
+.victorian-index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1em;
+  margin: 2em 0;
+}
+
+/* Individual Index Item */
+.victorian-index-item {
+  background: #f5f5f0;
+  border: 1px solid #bbb;
+  padding: 0;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.victorian-index-item:hover {
+  background: #ebe8e0;
+  border-color: #999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Index Link */
+.victorian-index-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  color: #333;
+  width: 100%;
+  gap: 0.5em;
+}
+
+.victorian-index-link:hover {
+  text-decoration: none;
+}
+
+/* Index Name (Department/Tag/Year) */
+.victorian-index-name {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #222;
+  flex-shrink: 0;
+}
+
+.victorian-index-item:hover .victorian-index-name {
+  color: #000;
+}
+
+/* Dotted Separator Line */
+.victorian-index-separator {
+  flex-grow: 1;
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    transparent,
+    transparent 3px,
+    #999 3px,
+    #999 5px
+  );
+  margin: 0 0.5em;
+  position: relative;
+  top: -0.2em;
+}
+
+/* Article Count */
+.victorian-index-count {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-style: italic;
+  color: #666;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.victorian-index-item:hover .victorian-index-count {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Alternative: Single Column Layout for Smaller Lists */
+.victorian-index-grid.single-column {
+  grid-template-columns: 1fr;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .victorian-index-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75em;
+  }
+
+  .victorian-index-link {
+    padding: 0.6em 0.75em;
+  }
+
+  .victorian-index-name {
+    font-size: 0.9rem;
+  }
+
+  .victorian-index-count {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .victorian-index-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+  }
+
+  .victorian-index-link {
+    padding: 0.5em 0.6em;
+  }
+
+  .victorian-index-name {
+    font-size: 0.85rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .victorian-index-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+  }
+
+  .victorian-index-item {
+    background: #fff;
+    border-color: #000;
+    page-break-inside: avoid;
+  }
+
+  .victorian-index-separator {
+    background: repeating-linear-gradient(
+      to right,
+      transparent,
+      transparent 3px,
+      #000 3px,
+      #000 5px
+    );
+  }
+
+  .victorian-index-name,
+  .victorian-index-count {
+    color: #000;
+  }
+}
+
+/* ==========================================================================
+ * Victorian Navigation Component
+ * ==========================================================================
+ * Main navigation styled as newspaper departments/sections index
+ * ========================================================================== */
+
+/* Navigation Container */
+.main-nav {
+  background: linear-gradient(to bottom, #f5f5f0, #f0f0eb);
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  padding: 0.75em 1em;
+  margin-bottom: 1.5em;
+  position: relative;
+}
+
+.main-nav::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #666;
+}
+
+.main-nav::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #666;
+}
+
+/* Navigation Items Container */
+.main-nav__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+/* Navigation Links */
+.main-nav__link {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #2a2a2a;
+  text-decoration: none;
+  padding: 0.4em 0.9em;
+  position: relative;
+  transition: all 0.2s ease;
+  border-left: none;
+}
+
+/* Remove base.css separator and replace with Victorian ornaments */
+.main-nav__link + .main-nav__link {
+  border-left: none;
+  padding-left: 0.9em;
+}
+
+/* Add Victorian ornamental separator between links */
+.main-nav__link + .main-nav__link::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 0.5em;
+  line-height: 1;
+}
+
+/* Hover State */
+.main-nav__link:hover {
+  color: #000;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Active Link State */
+.main-nav__link.navLink-active {
+  color: #000;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.08);
+  border-bottom: 2px solid #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-nav {
+    padding: 0.5em 0.5em;
+  }
+
+  .main-nav__items {
+    gap: 0.25em 0;
+  }
+
+  .main-nav__link {
+    font-size: 0.85rem;
+    padding: 0.35em 0.7em;
+  }
+
+  .main-nav__link + .main-nav__link {
+    padding-left: 0.7em;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav__items {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .main-nav__link {
+    text-align: center;
+    padding: 0.5em;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  .main-nav__link:last-child {
+    border-bottom: none;
+  }
+
+  /* Remove ornament separator on mobile vertical layout */
+  .main-nav__link + .main-nav__link::before {
+    display: none;
+  }
+
+  .main-nav__link + .main-nav__link {
+    padding-left: 0.5em;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .main-nav {
+    background: #fff;
+    border-top-color: #000;
+    border-bottom-color: #000;
+  }
+
+  .main-nav::before,
+  .main-nav::after {
+    background: #000;
+  }
+
+  .main-nav__link {
+    color: #000;
+  }
+}
+
+/* ==========================================================================
+ * Victorian Front Page Layout
+ * ==========================================================================
+ * Homepage styling inspired by Victorian newspaper front pages
+ * ========================================================================== */
+
+/* Section Header - "Latest Intelligence" */
+.victorian-section-header {
+  text-align: center;
+  margin: 1.5em 0 2em;
+  padding: 1em 1.5em;
+  background: linear-gradient(to bottom, #f0f0eb, #f5f5f0);
+  border-top: 3px double #333;
+  border-bottom: 3px double #333;
+  position: relative;
+}
+
+.victorian-section-header::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: #666;
+}
+
+.victorian-section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: #666;
+}
+
+.victorian-section-title {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0;
+  color: #222;
+  line-height: 1.2;
+}
+
+.victorian-section-ornament {
+  display: block;
+  font-size: 1.4em;
+  color: #444;
+  margin-bottom: 0.4em;
+  line-height: 1;
+}
+
+.victorian-section-subtitle {
+  display: block;
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.05em;
+  color: #555;
+  margin-top: 0.5em;
+  line-height: 1.3;
+}
+
+/* Featured Article (First Post) */
+.page-summary.featured {
+  background: #f5f5f0;
+  border: 2px solid #333;
+  padding: 2em;
+  margin-bottom: 3em;
+  position: relative;
+}
+
+.page-summary.featured::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid #666;
+  pointer-events: none;
+}
+
+/* Featured article title */
+.page-summary.featured .title-article-item {
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #000;
+}
+
+.page-summary.featured .title-article-item a {
+  color: #000;
+  text-decoration: none;
+}
+
+.page-summary.featured .title-article-item a:hover {
+  color: #333;
+}
+
+/* Featured article image */
+.page-summary.featured .featured-image-container {
+  margin: 1.5em 0;
+  border: 1px solid #999;
+  padding: 0.5em;
+  background: #fff;
+}
+
+.page-summary.featured img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Victorian Date Badge */
+.victorian-date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.4em 0.8em;
+  background: #e8e5dd;
+  border: 2px solid #666;
+  border-radius: 0;
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #333;
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.victorian-date-badge::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid #999;
+}
+
+.victorian-date-badge-ornament {
+  font-size: 1.1em;
+  color: #666;
+  line-height: 1;
+}
+
+.victorian-date-badge time {
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Regular Article Styling (Non-Featured) */
+.page-summary:not(.featured) {
+  margin-bottom: 2em;
+}
+
+.page-summary:not(.featured) .title-article-item {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+}
+
+.page-summary:not(.featured) .title-article-item a {
+  color: #222;
+  text-decoration: none;
+}
+
+.page-summary:not(.featured) .title-article-item a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* Article Metadata on Front Page */
+.page-summary .article-meta-data {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0.5em 0 1em;
+}
+
+.page-summary .article-meta-data::before,
+.page-summary .article-meta-data::after {
+  display: none;
+}
+
+.page-summary .post-metadata {
+  font-size: 0.85rem;
+}
+
+/* Flex Layout Adjustments */
+.page-summary .flex-row {
+  display: flex;
+  gap: 1.5em;
+  align-items: flex-start;
+}
+
+.page-summary.featured .flex-row {
+  flex-direction: column;
+}
+
+.page-summary:not(.featured) .flex-row {
+  flex-direction: row;
+}
+
+.page-summary .pl3-ns {
+  flex: 0 0 auto;
+  max-width: 300px;
+}
+
+.page-summary.featured .pl3-ns {
+  max-width: 100%;
+}
+
+.page-summary .pr3-ns {
+  flex: 1;
+}
+
+/* Hide images on non-featured articles for cleaner look */
+.page-summary:not(.featured) .pl3-ns {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .victorian-section-header {
+    padding: 0.75em 1em;
+    margin: 1.5em 0 1.5em;
+  }
+
+  .victorian-section-title {
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+  }
+
+  .victorian-section-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .page-summary.featured {
+    padding: 1.5em;
+    margin-bottom: 2em;
+  }
+
+  .page-summary.featured .title-article-item {
+    font-size: 1.6rem;
+  }
+
+  .page-summary:not(.featured) .title-article-item {
+    font-size: 1.2rem;
+  }
+
+  .victorian-date-badge {
+    font-size: 0.7rem;
+  }
+
+  .page-summary .flex-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .victorian-section-title {
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+  }
+
+  .victorian-section-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .page-summary.featured {
+    padding: 1em;
+  }
+
+  .page-summary.featured .title-article-item {
+    font-size: 1.4rem;
+  }
+
+  .page-summary:not(.featured) .title-article-item {
+    font-size: 1.1rem;
+  }
+
+  .victorian-date-badge {
+    font-size: 0.65rem;
+    padding: 0.3em 0.6em;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .victorian-section-header {
+    background: #fff;
+    border-top-color: #000;
+    border-bottom-color: #000;
+    page-break-after: avoid;
+  }
+
+  .victorian-section-header::before,
+  .victorian-section-header::after {
+    background: #000;
+  }
+
+  .page-summary.featured {
+    background: #fff;
+    border-color: #000;
+    page-break-inside: avoid;
+  }
+
+  .page-summary.featured::before {
+    border-color: #000;
+  }
+
+  .victorian-date-badge {
+    background: #fff;
+    border-color: #000;
+  }
+
+  .victorian-date-badge::before {
+    border-color: #000;
+  }
+}
