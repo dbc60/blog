@@ -4,14 +4,20 @@
     <div class="main-nav__items">
     {{- range .Site.Menus.nav -}}
       {{- $active := "" -}}
+      {{- $isActive := false -}}
       {{- if eq $showActiveNav true -}}
         {{- $isMenu := or ($currentPage.IsMenuCurrent "nav" .) ($currentPage.HasMenuCurrent "nav" .) -}}
         {{- if or $isMenu (eq $currentPage.Title .Name) -}}
           {{- $active = "navLink-active" -}}
+          {{- $isActive = true -}}
         {{- end -}}
       {{- end -}}
       {{- $text := print .Name | safeHTML }}
+      {{- if $isActive -}}
+      <a class="main-nav__link {{ $active }}" href="{{ .URL }}" aria-current="page">{{ $text }}</a>
+      {{- else -}}
       <a class="main-nav__link {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
+      {{- end -}}
     {{- end }}
     </div>
   </nav>

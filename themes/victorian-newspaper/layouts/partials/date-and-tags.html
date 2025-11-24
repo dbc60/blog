@@ -14,10 +14,10 @@
               <time class="victorian-dateline-date" datetime="{{ $dateTime }}">
                 {{- .PublishDate.Format $dateFormat -}}
               </time>
-              <span class="victorian-dateline-ornament">❖</span>
+              <span class="victorian-dateline-ornament" aria-hidden="true">❖</span>
               <span class="victorian-reading-stats-label">Estimated Reading Time:</span>
               <span class="victorian-dateline-date">{{ .ReadingTime}} minute{{- if ne .ReadingTime 1 -}}s{{- end -}}</span>
-              <span class="victorian-dateline-ornament">◆</span>
+              <span class="victorian-dateline-ornament" aria-hidden="true">◆</span>
               <span class="victorian-dateline-date">{{ .WordCount }} words</span>
             </div>
             {{- end -}}
@@ -42,7 +42,7 @@
               <div class="victorian-tag-list">
                 {{- range $index, $tag := . -}}
                   {{- if gt $index 0 -}}
-                    <span class="victorian-tag-separator">◆</span>
+                    <span class="victorian-tag-separator" aria-hidden="true">◆</span>
                   {{- end -}}
                   {{- $href := print (absURL "tags/") (urlize $tag) ".html" -}}
                   <a class="victorian-tag" href="{{ $href }}">{{ $tag }}</a>

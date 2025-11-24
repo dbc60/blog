@@ -3,6 +3,7 @@
 <html lang="{{ $lang }}">
   {{- block "head" . -}} {{- partial "head.html" . -}} {{- end -}}
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     {{ "<!-- begin body content -->" | safeHTML }}
     <div class="body-content">
     {{- $featuredImage := "" -}}
@@ -36,44 +37,44 @@
         <div class="sidebar-content">
           <ul class="wrapper-collections">
             <li class="wrapper-collection-items victorian victorian-contents">
-              <span class="wrapper-collection-border icon icon-books"> </span>
+              <span class="wrapper-collection-border icon icon-books" aria-hidden="true"> </span>
               <span class="wrapper-collection-border title">Contents</span>
               <header class="victorian-sidebar-header">
-                <span class="sidebar-header-ornament">✦</span>
+                <span class="sidebar-header-ornament" aria-hidden="true">✦</span>
                 <h2 class="victorian-sidebar-title">Table of Contents</h2>
                 <span class="sidebar-header-subtitle">Sections & Subsections</span>
               </header>
               {{- block "contents" (dict "context" . ) }} {{ partial "items-contents.html" . }} {{ end -}}
-              <span class="wrapper-collection-border icon icon-books"> </span>
+              <span class="wrapper-collection-border icon icon-books" aria-hidden="true"> </span>
             </li>
             <li class="wrapper-collection-items victorian victorian-latest">
-              <span class="wrapper-collection-border icon icon-quill"> </span>
+              <span class="wrapper-collection-border icon icon-quill" aria-hidden="true"> </span>
               <span class="wrapper-collection-border title">Latest Posts</span>
               <header class="victorian-sidebar-header">
-                <span class="sidebar-header-ornament">❖</span>
+                <span class="sidebar-header-ornament" aria-hidden="true">❖</span>
                 <h2 class="victorian-sidebar-title">Latest Intelligence</h2>
                 <span class="sidebar-header-subtitle">Recent Dispatches</span>
               </header>
               {{- block "latest" . }} {{ partial "items-latest.html" . }} {{ end -}}
-              <span class="wrapper-collection-border icon icon-quill"> </span>
+              <span class="wrapper-collection-border icon icon-quill" aria-hidden="true"> </span>
             </li>
             <li class="wrapper-collection-items victorian victorian-departments">
-              <span class="wrapper-collection-border icon icon-folder-open">
+              <span class="wrapper-collection-border icon icon-folder-open" aria-hidden="true">
               </span>
               <span class="wrapper-collection-border title">Collections</span>
               <header class="victorian-sidebar-header">
-                <span class="sidebar-header-ornament">◈</span>
+                <span class="sidebar-header-ornament" aria-hidden="true">◈</span>
                 <h2 class="victorian-sidebar-title">Departments</h2>
                 <span class="sidebar-header-subtitle">Classified Index</span>
               </header>
               {{- block "lists" . }} {{- partial "items-taxonomies.html" . -}}
               {{- end -}}
-              <span class="wrapper-collection-border icon icon-folder-open">
+              <span class="wrapper-collection-border icon icon-folder-open" aria-hidden="true">
               </span>
             </li>
           </ul>
         </div>
-        <main class="main-content">
+        <main id="main-content" class="main-content">
           {{- block "main" . -}}
           <h2>Default Main (Should Never Appear)</h2>
           {{- end }}

@@ -602,6 +602,56 @@ svg .plot th {padding-right: 1em; font-style: italic;}
 }
 
 /*************************
+  * Skip to Content Link  *
+  *************************/
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color600);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 100;
+  border-right: 3px solid var(--color500-adjacent-complement);
+  border-bottom: 3px solid var(--color500-adjacent-complement);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--color500-adjacent);
+  outline-offset: 2px;
+}
+
+/*************************
+  * Screen Reader Only    *
+  *************************/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/*************************
+  * Reduced Motion        *
+  *************************/
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*************************
   * Debug Border and Fill *
   *************************/
 /*****************************
