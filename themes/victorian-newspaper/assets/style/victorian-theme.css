@@ -11,14 +11,31 @@
  * ==========================================================================
  * Override base.css color palette with warm Victorian newspaper tones.
  * Uses CSS custom properties so no !important declarations are needed.
+ *
+ * CONTRAST RATIOS (WCAG Accessibility):
+ * All Victorian components tested for WCAG AA/AAA compliance
+ * Standards: AA-normal = 4.5:1, AA-large = 3:1, AAA-normal = 7:1, AAA-large = 4.5:1
+ *
+ * Key Contrast Ratios:
+ * - Body text (black) on #ebe8e0: 17.15:1 (AAA ✓✓)
+ * - Body text (black) on #f5f5f0: 19.20:1 (AAA ✓✓)
+ * - Links (#24599d) on #ebe8e0: 5.73:1 (AA ✓)
+ * - Links (#24599d) on #f5f5f0: 6.42:1 (AA ✓)
+ * - Link hover (#a32c25) on #ebe8e0: 5.83:1 (AA ✓)
+ * - Link hover (#a32c25) on #f5f5f0: 6.52:1 (AA ✓)
+ * - Navigation (#2a2a2a) on #f5f5f0: 13.12:1 (AAA ✓✓)
+ * - Sidebar headers (#1a1a1a) on #f5f5f0: 15.91:1 (AAA ✓✓)
+ * - Victorian tags (#333) on #e8e5dd: 10.04:1 (AAA ✓✓)
  * ========================================================================== */
 :root {
   /* Warm cream/beige tones mimicking aged newsprint */
+  /* Black text on #ebe8e0: 17.15:1 (AAA-normal ✓✓) */
   --gray100: #ebe8e0;        /* Warm cream (was cool #fcfcfc) */
   --gray150: #ebe8e0;        /* Warm cream (was cool #e3e3e3) */
   --background-main-default: #ebe8e0;  /* Override directly */
 
   /* Slightly lighter for main content area */
+  /* Black text on #f5f5f0: 19.20:1 (AAA-normal ✓✓) */
   --background-main-content: #f5f5f0;
 }
 
@@ -393,6 +410,7 @@ body {
  * ========================================================================== */
 
 /* Victorian Section Headers */
+/* Contrast: #1a1a1a on #f5f5f0 = 15.91:1 (AAA-normal ✓✓) */
 .victorian-sidebar-header {
   text-align: center;
   margin: 1.5em 0 1em;
@@ -733,6 +751,7 @@ body {
   align-items: baseline;
 }
 
+/* Contrast: #333 on #e8e5dd = 10.04:1 (AAA-normal ✓✓) */
 .victorian-tag {
   display: inline-block;
   padding: 0.15em 0.6em;
@@ -1089,6 +1108,7 @@ body {
 }
 
 /* Navigation Links */
+/* Contrast: #2a2a2a on #f5f5f0 = 13.12:1 (AAA-normal ✓✓) */
 .main-nav__link {
   font-family: 'Source Serif Pro', Georgia, serif;
   font-size: 0.95rem;

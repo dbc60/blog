@@ -5,6 +5,11 @@
 /*****************************************************************************/
 /* Some basic settings
  * The color palette using CSS Custom Properties
+ *
+ * CONTRAST RATIOS (WCAG Accessibility):
+ * Note: Victorian theme overrides --gray150 to #ebe8e0 (warm cream)
+ * All contrast ratios tested with Victorian theme colors (#ebe8e0 and #f5f5f0)
+ * Standards: AA-normal = 4.5:1, AA-large = 3:1, AAA-normal = 7:1, AAA-large = 4.5:1
  */
 :root {
   --color100: #dce8f7;
@@ -12,12 +17,14 @@
   --color300: #7ca9e1;
   --color400: #4c8ad6;
   --color500: #2f75cc;
+  /* Links: #24599d on Victorian backgrounds = 5.73-6.42:1 (AA-normal ✓, AAA-large ✓) */
   --color600: #24599d;
   --color700: #193e6d;
   --color800: #0e233d;
   --color900: #03070d;
   --gray100: #fcfcfc;
   --gray125: #efefef;
+  /* NOTE: Overridden by Victorian theme to #ebe8e0 (warm cream) */
   --gray150: #e3e3e3;
   --gray175: #d6d6d6;
   --gray200: #dedede;
@@ -35,7 +42,7 @@
   --color600-complement: #9d6824;
 
   /* Note: Adjacent colors are also called analogous colors */
-  /* anchor hover */
+  /* Link hover: #a32c25 on Victorian backgrounds = 5.83-6.52:1 (AA-normal ✓, AAA-large ✓) */
   /*--color500-adjacent: #0062a3;*/
   --color500-adjacent: #259ca3;
   --color500-shade1: #255da3;
@@ -52,6 +59,8 @@
   --color-border-left: #c4baad;
 
   /* Major components */
+  /* Body text: black on #ebe8e0 = 17.15:1 (AAA-normal ✓✓) */
+  /* Body text: black on #f5f5f0 = 19.20:1 (AAA-normal ✓✓) */
   --background-main-default: var(--gray150);
   --background-main-alternate-gray: var(--gray200);
   --background-main-shadow-gray: var(--gray300);
@@ -59,8 +68,11 @@
 
   /* variations on #edeae6 from https://www.colorhexa.com/edeae6 */
   --background-contrast: #edeae6;
+  /* Code blocks: black on #e2ded7 = 15.66:1 (AAA-normal ✓✓) */
   --background-contrast-shade1: #e2ded7;
   --background-contrast-complement: #e6e9ed;
+  /* Table headers: black on #697b92 = 4.85:1 (AA-normal ✓) */
+  /* Table headers: white on #697b92 = 4.33:1 (AA-large only, FAILS AA-normal) */
   --background-contrast-complement-shade1: #697b92;
   --background-code: var(--background-contrast-shade1);
 
@@ -604,6 +616,7 @@ svg .plot th {padding-right: 1em; font-style: italic;}
 /*************************
   * Skip to Content Link  *
   *************************/
+/* Contrast: white on #24599d = 7.02:1 (AAA-normal ✓✓) */
 .skip-link {
   position: absolute;
   top: -40px;
