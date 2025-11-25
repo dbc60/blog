@@ -34,7 +34,7 @@
         := (.Site.GetPage "/").Sections -}} {{- if eq 0 (len $sections) -}} {{-
         "<!--GETTING ROOT SECTIONS-->" | safeHTML -}} {{- $sections =
         $rootSections -}} {{- end -}}
-        <div class="sidebar-content">
+        <aside class="sidebar-content" aria-label="Site navigation and collections">
           <ul class="wrapper-collections">
             <li class="wrapper-collection-items victorian victorian-contents">
               <span class="wrapper-collection-border icon icon-books" aria-hidden="true"> </span>
@@ -73,7 +73,7 @@
               </span>
             </li>
           </ul>
-        </div>
+        </aside>
         <main id="main-content" class="main-content">
           {{- block "main" . -}}
           <h2>Default Main (Should Never Appear)</h2>
