@@ -39,6 +39,19 @@
     /* background-color: #1098ad; */
   }
 
+  /* Ensure headings always clear floated drop caps to prevent awkward indentation
+     when the leading paragraph is too short to wrap around the entire drop cap.
+     The margin-top accounts for the negative bottom margin on the drop cap. */
+  .c-drop-caps h1,
+  .c-drop-caps h2,
+  .c-drop-caps h3,
+  .c-drop-caps h4,
+  .c-drop-caps h5,
+  .c-drop-caps h6 {
+    clear: left;
+    margin-top: 1.5em;
+  }
+
   /* Firefox only */
   @supports (-moz-appearance:none) {
     .c-drop-caps > p:first-of-type::first-letter {

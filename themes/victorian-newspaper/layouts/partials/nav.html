@@ -14,9 +14,9 @@
       {{- end -}}
       {{- $text := print .Name | safeHTML }}
       {{- if $isActive -}}
-      <a class="main-nav__link {{ $active }}" href="{{ .URL }}" aria-current="page">{{ $text }}</a>
+      <a class="main-nav__link {{ $active }}" href="{{ .URL }}#top" aria-current="page">{{ $text }}</a>
       {{- else -}}
-      <a class="main-nav__link {{ $active }}" href="{{ .URL }}">{{ $text }}</a>
+      <a class="main-nav__link {{ $active }}" href="{{ .URL }}#top">{{ $text }}</a>
       {{- end -}}
     {{- end }}
     </div>

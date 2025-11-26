@@ -130,6 +130,14 @@ name = "Seedlings"
 url = "/garden/index.html"
 weight = 200
 [[menu.nav]]
+name = "Justice"
+url = "/justice/index.html"
+weight = 250
+[[menu.nav]]
+name = "Commentary"
+url = "/commentary/index.html"
+weight = 275
+[[menu.nav]]
 name = "About"
 url = "/about/index.html"
 weight = 300
@@ -178,3 +186,5 @@ journal = "/:sections/:slug/"
 note = "/:sections/:slug/"
 post = "/:year/:month/:slug/"
 garden = "/:sections/:slug/"
+justice = "/:sections/:slug/"
+commentary = "/:sections/:slug/"

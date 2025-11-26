@@ -1434,7 +1434,7 @@ body {
 }
 
 .page-summary:not(.featured) .flex-row {
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .page-summary .pl3-ns {
@@ -1448,11 +1448,7 @@ body {
 
 .page-summary .pr3-ns {
   flex: 1;
-}
-
-/* Hide images on non-featured articles for cleaner look */
-.page-summary:not(.featured) .pl3-ns {
-  display: none;
+  padding-left: 0;
 }
 
 /* Responsive Design */
