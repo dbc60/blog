@@ -10,18 +10,26 @@
 
   {{- /* Publication metadata bar */ -}}
   <div class="publication-metadata">
-    {{- $totalPosts := len (where .context.Site.RegularPages "Type" "in" .context.Site.Params.mainSections) -}}
-    {{- $currentYear := now.Year -}}
     {{- $siteStartYear := 2015 -}}
-    {{- $volumeNumber := sub $currentYear $siteStartYear | add 1 -}}
+    {{- $mainPages := where .context.Site.RegularPages "Type" "in" .context.Site.Params.mainSections -}}
+    {{- $latestPost := index (sort $mainPages "Date" "desc") 0 -}}
+    {{- $latestYear := $latestPost.Date.Year -}}
+    {{- $volumeNumber := sub $latestYear $siteStartYear | add 1 -}}
+    {{- $postsInYear := slice -}}
+    {{- range $mainPages -}}
+      {{- if eq .Date.Year $latestYear -}}
+        {{- $postsInYear = $postsInYear | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $totalPosts := len $postsInYear -}}
 
     <div class="metadata-left">
       <span class="metadata-label">Vol.</span> <span class="metadata-value">{{ $volumeNumber }}</span>
     </div>
 
     <div class="metadata-center">
-      <time class="publication-date" datetime="{{ now.Format "2006-01-02" }}">
-        {{ now.Format "Monday, January 2, 2006" }}
+      <time class="publication-date" datetime="{{ $latestPost.Date.Format "2006-01-02" }}">
+        {{ $latestPost.Date.Format "Monday, January 2, 2006" }}
       </time>
     </div>
 
