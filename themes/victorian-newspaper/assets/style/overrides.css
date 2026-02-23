@@ -296,12 +296,15 @@ thead {
 }
 
 /* Zebra stripes - alternating rows in the body have different background colors */
+/* Warm parchment family: #f0e6d0 (blockquote) as midpoint, lighter/darker steps */
+/* Black text on #f7f2e6: ~18:1 (AAA-normal ✓✓) */
+/* Black text on #e8d9bc: ~14:1 (AAA-normal ✓✓) */
 tbody tr:nth-child(odd) td:not(.lntd) {
-  background-color: var(--color200);
+  background-color: #f7f2e6;
 }
 
 tbody tr:nth-child(even) td:not(.lntd) {
-  background-color: var(--color300);
+  background-color: #e8d9bc;
 }
 
 tbody {
