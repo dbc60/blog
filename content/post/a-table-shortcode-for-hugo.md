@@ -67,25 +67,25 @@ This shortcode starts with realizing Hugo's built-in `.Site.Data` variable isn't
 
 Let's capture that in a variable for use later:
 
-{{< evergreen "/evergreen-notes/create-table/store-site-data.md" >}}
+{{< evergreen "/reference/create-table/store-site-data.md" >}}
 
 Next, get the data that's in the given file. The file is given in the `src` attribute:
 
-{{< evergreen "/evergreen-notes/create-table/src-file-path.md" >}}
+{{< evergreen "/reference/create-table/src-file-path.md" >}}
 
 Here's the code to pull out the data just for that file:
 
-{{< evergreen "/evergreen-notes/create-table/src-file-data.md" >}}
+{{< evergreen "/reference/create-table/src-file-data.md" >}}
 
 From here, I'll give a quick top-down view of the shortcode. It defines a table as an HTML `<table>` element with a class of the same name. The contents of the table is generated from a `buildTable` template and our data:
 
-{{< evergreen "/evergreen-notes/create-table/table-top-level-definition.md" >}}
+{{< evergreen "/reference/create-table/table-top-level-definition.md" >}}
 
 ## buildTable Template
 
 The `buildTable` template attempts to determine if the TOML data has a head and body. It also captures the data for a caption, any column groups, the head, body, and foot of the table. It starts with initializing some variables.
 
-{{< evergreen "/evergreen-notes/create-table/build-table-initialization.md" >}}
+{{< evergreen "/reference/create-table/build-table-initialization.md" >}}
 
 The next step is to collect all the keys in the map. The keys are expected to be the components of an HTML table.
 
@@ -95,11 +95,11 @@ The next step is to collect all the keys in the map. The keys are expected to be
 - head
 - foot
 
-{{< evergreen "/evergreen-notes/create-table/table-collect-keys" >}}
+{{< evergreen "/reference/create-table/table-collect-keys" >}}
 
 Now we can fill in all those variables.
 
-{{< evergreen "/evergreen-notes/create-table/table-capture-values" >}}
+{{< evergreen "/reference/create-table/table-capture-values" >}}
 
 There are several templates used by that chunk of code. They are small, so we can go through them quickly.
 
@@ -107,30 +107,30 @@ There are several templates used by that chunk of code. They are small, so we ca
 
 `createColGroup` creates column groups with the `<col>` element:
 
-{{< evergreen "/evergreen-notes/create-table/template-create-colgroup" >}}
+{{< evergreen "/reference/create-table/template-create-colgroup" >}}
 
 ## createRowsHead and  processMapHead Templates
 
 These two templates are mutually recursive. `createRowsHead` creates rows in the `<head>` section of the table. It processes each element of the row, creating a new `<th>` element as it goes.
 
-{{< evergreen "/evergreen-notes/create-table/template-create-rows-head" >}}
+{{< evergreen "/reference/create-table/template-create-rows-head" >}}
 
 If a new row needs to be generated, `createRowsHead` calls `processMapHead` which generates a new `<tr>` element. Likewise, `processMapHead` will call back to `createRowsHead` in the case that a column has more than one value.
 
-{{< evergreen "/evergreen-notes/create-table/template-process-map-head" >}}
+{{< evergreen "/reference/create-table/template-process-map-head" >}}
 
 ## createRows and processMap Templates
 
 These two templates are mutually recursive. `createRows` creates the column (`<td>`) elements for each row in `<body>` or `<foot>` element. Note that `createRows` is a recursive template, so it can handle some weirdly designed tables.
 
-{{< evergreen "/evergreen-notes/create-table/template-create-rows" >}}
+{{< evergreen "/reference/create-table/template-create-rows" >}}
 
 `processMap` either creates columns in a row, or generates a new row and calls itself recursively. If a column has more than one value, it calls back to `createRows` to process them.
 
-{{< evergreen "/evergreen-notes/create-table/template-process-map" >}}
+{{< evergreen "/reference/create-table/template-process-map" >}}
 
 ## The Complete create_table Shortcode
 
 Here's the whole thing w/o comments. It's not that useful, but it was a journey and an education to get here.
 
-{{< evergreen "/evergreen-notes/create-table/create-table-shortcode" >}}
+{{< evergreen "/reference/create-table/create-table-shortcode" >}}
