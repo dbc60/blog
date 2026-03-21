@@ -34,6 +34,8 @@ The one subsection that existed (`create-table`, documenting the `create_table` 
 ### Commentary (`/commentary/`)
 Empty. Removed from nav. Section and `_index.md` exist but no content has been written. Intent unclear — remove or repurpose when direction is decided.
 
+For commentary posts, run `hugo new --kind commentary content/commentary/your-post-title.md`
+
 ### Justice (`/justice/`)
 Empty. Removed from nav. Same status as Commentary.
 
