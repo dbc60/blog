@@ -22,5 +22,6 @@ The author of that article published their own page of [bookmarks](https://www.m
     - [Hundred Rabbits](https://100r.co/site/home.html) is the blog and notes of a couple, Devine Lu Linvega and Rekka Bellum, who live on a sailboat.
 - Miscellaneous
     - [Old occupation names](https://rmhh.co.uk/occup/).
+    - [Gwern Branwen](https://gwern.net/).
 
 [jamstack]: https://jamstack.org/

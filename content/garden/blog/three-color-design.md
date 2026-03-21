@@ -2,7 +2,7 @@
 "2026":
   - "03"
 title: Three-Color Design Principle
-date: 2026-03-19T00:00:00-05:00
+date: 2026-03-19T00:00:00-04:00
 years:
   - "2026"
 tags:

@@ -9,29 +9,31 @@ Status values: `planned` · `drafting` · `ready` · `published`
 ## Before Next Publish
 
 - [x] Update the Now page
-- [ ] Update the Blogroll page
-- [ ] Update `wander.js` (review for any needed changes before going live)
-- [ ] Audit existing draft posts — decide which to promote to Seedlings, which to keep hidden, which to discard
-- [ ] Start drafting Faultline Post 1 (push Faultline repo to GitHub before the second article)
-  - The first article will be about BUT
-  - The second article is about why Faultline was created
+- [x] Update the Blogroll page
+- [x] Update `wander.js` (review for any needed changes before going live)
+- [x] Audit existing draft posts — decide which to promote to Seedlings, which to keep hidden, which to discard
+- [-] Start drafting Faultline Post 1 (push Faultline repo to GitHub before the second article)
+  - I updated post/unit-test.md and that takes the place of the first new post in a long while.
+  - I can draft a post about BUT over the next week or two.
+  - I can push Faultline to GitHub while drafting the post about BUT.
+  - The next article will be about why Faultline was created.
 
 ## Current Draft Posts
 As of Thursday, March 19, 2026, there are 10 drafts across two sections:
 
 Posts (content/post/)
 - "Unit Test" — unit-test.md
-- "Testing With Permutations" — testing-with-permutations.md
-- "A Templating Journey" — a-templating-journey.md
-- "Software-Development Workshop" — software-development-workshop.md
+- "Testing With Permutations" — testing-with-permutations.md: unchanged. I might use it after the BUT/Faultline posts.
+- "A Templating Journey" — a-templating-journey.md: deleted.
+- "Software-Development Workshop" — software-development-workshop.md: deleted.
 
 Garden/Seedlings (content/garden/)
-- "Memory Allocator" — mem-allocator/_index.md (the section itself is a draft)
-- "A Deep Look at a Memory Allocator" — mem-allocator/a-deep-look-at-a-memory-allocator.md
-- "Partials" — blog/partials.md
-- "Shortcodes" — blog/shortcodes.md
-- "CSS" — blog/css.md
-- "HTML Layout" — blog/html-layout.md
+- "Memory Allocator" — mem-allocator/_index.md (the section itself is a draft): publish.
+- "A Deep Look at a Memory Allocator" — mem-allocator/a-deep-look-at-a-memory-allocator.md: publish.
+- "Partials" — blog/partials.md: deleted - it had no content.
+- "Shortcodes" — blog/shortcodes.md: deleted - it had no content.
+- "CSS" — blog/css.md: deleted - no content.
+- "HTML Layout" — blog/html-layout.md: deleted - no content.
 
 The garden ones already live in the right section for in-progress work. The question is mainly whether to flip `draft: false` on them so they appear publicly. The four post drafts are the ones that need a decision: finish and publish, demote to Seedlings, or discard. See `content-strategy.md` for the full policy on drafts vs. seedlings.
 
