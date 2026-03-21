@@ -3,7 +3,7 @@ title: "Writing a Unit Test Framework in C"
 date: 2025-01-30T20:40:29-05:00
 publishDate: 2026-03-21T00:00:00-04:00
 years: ["2025"]
-tags: [blog, c, testing]
+tags: [c, testing]
 ---
 The C programming language was one of the first programming languages I ever learned (after learning Basic, APL, and Fortran). I haven't written much in C lately and I miss it, so I decided I needed a project to write C on a regular basis.
 
