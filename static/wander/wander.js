@@ -22,7 +22,6 @@ window.wander = {
     "https://www.marginalia.nu/log/19-website-discoverability-crisis/",
     "https://www.marginalia.nu/links/bookmarks/",
     "https://wyrmworkspublishing.com/",
-    "https://gohugo.io/",
     "https://dataswamp.org/~solene/",
     "https://rmhh.co.uk/occup/",
     "https://gwern.net/",
