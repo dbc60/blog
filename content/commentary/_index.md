@@ -9,7 +9,7 @@ Personal opinions, hot takes, and reactions to current events—particularly pol
 <!--more-->
 ## What This Section Is
 
-Unlike the curated, evergreen resources in the [Justice & Equity](/justice/index.html#top) section, this space is for:
+This space is for:
 
 - **Timely reactions** – Responses to current political or social events
 - **Personal takes** – My own opinions, unpolished and unfiltered
