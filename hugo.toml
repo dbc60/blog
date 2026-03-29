@@ -126,13 +126,9 @@ name = "Posts"
 url = "/post/index.html"
 weight = 100
 [[menu.nav]]
-name = "Wander"
-url = "/wander/index.html"
-weight = 200
-[[menu.nav]]
 name = "Seedlings"
 url = "/garden/index.html"
-weight = 250
+weight = 200
 [[menu.nav]]
 name = "Commentary"
 url = "/commentary/index.html"
@@ -144,15 +140,19 @@ weight = 400
 [[menu.nav]]
 name = "Now"
 url = "/now/index.html"
-weight = 800
+weight = 500
 [[menu.nav]]
 name = "Blogroll"
 url = "/bookmark/index.html"
-weight = 1600
+weight = 600
 [[menu.nav]]
 name = "RSS"
 url = "/index.xml"
-weight = 3200
+weight = 700
+[[menu.nav]]
+name = "Wander"
+url = "/wander/index.html"
+weight = 800
 
 # More details about GDPR and Hugo privacy settings are at
 # https://gohugo.io/about/hugo-and-gdpr/

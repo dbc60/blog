@@ -23,5 +23,6 @@ The author of that article published their own page of [bookmarks](https://www.m
 - Miscellaneous
     - [Old occupation names](https://rmhh.co.uk/occup/).
     - [Gwern Branwen](https://gwern.net/).
+    - [Simon Wilson](https://simonwillison.net/).
 
 [jamstack]: https://jamstack.org/
