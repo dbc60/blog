@@ -45,3 +45,6 @@ I believe a shared library should encapsulate a suite of test cases. The test dr
 ## What Came Next
 
 The framework described here was completed and is called [Basic Unit Test](https://github.com/dbc60/but) (BUT). A follow-up post will cover the implementation in detail. After working with BUT, I identified one big design problem and several improvements worth pursuing, so I built a second framework called **Faultline**. I'll push that to GitHub soon and write more on that in a subsequent series. It was quite a journey.
+
+Update March 23, 2026: [Faultline](https://github.com/dbc60/faultline) is on GitHub.
+
