@@ -13,10 +13,11 @@
         {{- end -}}
       {{- end -}}
       {{- $text := print .Name | safeHTML }}
+      {{- $anchor := cond (strings.HasSuffix .URL ".xml") "" "#top" -}}
       {{- if $isActive -}}
-      <a class="main-nav__link {{ $active }}" href="{{ .URL }}#top" aria-current="page">{{ $text }}</a>
+      <a class="main-nav__link {{ $active }}" href="{{ .URL }}{{ $anchor }}" aria-current="page">{{ $text }}</a>
       {{- else -}}
-      <a class="main-nav__link {{ $active }}" href="{{ .URL }}#top">{{ $text }}</a>
+      <a class="main-nav__link {{ $active }}" href="{{ .URL }}{{ $anchor }}">{{ $text }}</a>
       {{- end -}}
     {{- end }}
     </div>
