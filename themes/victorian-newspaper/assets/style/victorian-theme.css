@@ -1133,22 +1133,26 @@ body {
   border-left: none;
 }
 
-/* Remove base.css separator and replace with Victorian ornaments */
+/* Victorian ornamental separator between links */
+.main-nav__sep {
+  color: transparent;
+  font-size: 0;
+  user-select: none;
+  position: relative;
+}
+
+.main-nav__sep::before {
+  content: '◆';
+  color: #666;
+  font-size: 0.5rem;
+  position: static;
+}
+
+/* Remove base.css separator; spacing handled by .main-nav__sep */
+.main-nav__link + .main-nav__sep + .main-nav__link,
 .main-nav__link + .main-nav__link {
   border-left: none;
   padding-left: 0.9em;
-}
-
-/* Add Victorian ornamental separator between links */
-.main-nav__link + .main-nav__link::before {
-  content: '◆';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #666;
-  font-size: 0.5em;
-  line-height: 1;
 }
 
 /* Hover State */
