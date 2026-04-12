@@ -42,7 +42,10 @@
                 </a>
               </div>
               <div class="pr3-ns">
-                <h2 class="title-article-item"><a href="{{ .Permalink }}#top">{{ .Title }}</a></h2>
+                <h2 class="title-article-item"><a href="{{ .Permalink }}#top">{{ .Title }}{{- with .Params.subtitle -}}{{- end -}}</a></h2>
+                {{- with .Params.subtitle -}}
+                <p class="title-subtitle">{{- . -}}</p>
+                {{- end -}}
                 {{- partial "date-and-tags.html" . -}}
                 {{ "<!-- this renders based on layouts/_default/summary.html (either the local one, or the one in a theme -->" | safeHTML }}
                 {{- .Render "summary" }}

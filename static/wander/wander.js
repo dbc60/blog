@@ -1,4 +1,4 @@
-window.wander = {
+const wander = {
   // Other Wander consoles that visitors can reach from my console.
   consoles: [
     'https://aartaka.me/wander/',
@@ -15,8 +15,10 @@ window.wander = {
     'https://blog.gridranger.dev/wander/',
     'https://arkholt.com/wander/',
   ],
+
   // My favourite websites and pages I recommend to the Wander community.
   pages: [
+    'https://19thcentury.us/',
     'https://www.mtblackgames.com/',
     'https://www.marginalia.nu/log/19-website-discoverability-crisis/',
     'https://www.marginalia.nu/links/bookmarks/',

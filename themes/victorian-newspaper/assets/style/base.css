@@ -493,6 +493,14 @@ dd {
   font-size: 2em;
 }
 
+/* Deck headline beneath a title; period-appropriate Victorian newspaper style */
+.title-subtitle {
+  font-size: 1.25em;
+  font-style: italic;
+  margin-top: -0.5em;
+  margin-bottom: 0.75em;
+}
+
 /*
   I don't think an h1 element should appear outside of the site title, which is styled via its ".siteTitle" class to make it more specific. In case it does I'll make it stand out.
 */
