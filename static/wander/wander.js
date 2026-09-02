@@ -16,7 +16,7 @@ const wander = {
     'https://arkholt.com/wander/',
   ],
 
-  // My favourite websites and pages I recommend to the Wander community.
+  // My favorite websites and pages I recommend to the Wander community.
   pages: [
     'https://19thcentury.us/',
     'https://wiki.wordsoftype.com/',
