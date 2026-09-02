@@ -19,10 +19,9 @@ const wander = {
   // My favourite websites and pages I recommend to the Wander community.
   pages: [
     'https://19thcentury.us/',
-    'https://www.mtblackgames.com/',
+    'https://wiki.wordsoftype.com/',
     'https://www.marginalia.nu/log/19-website-discoverability-crisis/',
     'https://www.marginalia.nu/links/bookmarks/',
-    'https://wyrmworkspublishing.com/',
     'https://dataswamp.org/~solene/',
     'https://rmhh.co.uk/occup/',
     'https://gwern.net/',

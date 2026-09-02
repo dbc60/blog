@@ -10,7 +10,7 @@ Purpose and intent for each section of the blog. Use this to decide where new co
 Full, finished blog posts. The primary content of the site. Topics include programming, project planning, sketching, drawing, kempo, and whatever else suits the moment.
 
 ### Wander (`/wander/`)
-Not a content section — infrastructure. Wander is a small, decentralised, self-hosted web console that lets visitors explore random pages from a community of personal websites. Each console loads pages recommended by the Wander community and can link to other Wander consoles, forming a lightweight decentralised network for browsing the small web. Think self-hosted web-ring or decentralized StumbleUpon. The nav entry surfaces the console to visitors.
+Not a content section — infrastructure. Wander is a small, decentralized, self-hosted web console that lets visitors explore random pages from a community of personal websites. Each console loads pages recommended by the Wander community and can link to other Wander consoles, forming a lightweight decentralized network for browsing the small web. Think self-hosted web-ring or decentralized StumbleUpon. The nav entry surfaces the console to visitors.
 
 ### Seedlings (`/garden/`)
 Draft posts made public. A seedling is a thought in progress — rough, incomplete, or exploratory. Showing work-in-progress is intentional. Inspired by the digital garden model: tend ideas in public rather than only publishing finished things.
