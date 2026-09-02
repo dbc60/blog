@@ -21,7 +21,7 @@ I replaced one transaction per test case with one per test suite and it still to
 
 Running with WAL only, test time was just over 7 seconds and a little more than 8 seconds total per run. With both WAL and one transaction per test suite, it now takes just under 7 seconds to run the tests and a little less than 8 seconds total run time.
 
-|                                      | Test Time (sec) | Total Time (sec) |
+| Configuration                        | Test Time (sec) | Total Time (sec) |
 | ------------------------------------ | ---------------:| ----------------:|
 | Baseline                             |            21.0 |             53.0 |
 | One Transaction per Test Suite       |            21.0 |             23.0 |
